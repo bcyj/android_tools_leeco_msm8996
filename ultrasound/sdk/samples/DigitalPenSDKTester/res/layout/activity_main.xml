@@ -1,0 +1,376 @@
+<!---/**************************************************************************
+*  Copyright (c) 2013-2014 Qualcomm Technologies, Inc.  All Rights Reserved.
+*  Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".DigitalPenSdkTesterActivity" >
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                style="@style/styleHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:text="@string/header_side_channel_listeners" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
+                style="@style/styleLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="@string/label_on_screen_side_channel" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupOnScreenSideChannel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radioOnScreenSideChannelOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:onClick="onClickOnScreenSideChannelRadio"
+                    android:text="@string/side_channel_off" />
+
+                <RadioButton
+                    android:id="@+id/radioOnScreenSideChannelScaled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickOnScreenSideChannelRadio"
+                    android:text="@string/side_channel_scaled" />
+
+                <RadioButton
+                    android:id="@+id/radioOnScreenSideChannelRaw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickOnScreenSideChannelRadio"
+                    android:text="@string/side_channel_raw" />
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
+                style="@style/styleLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="@string/label_off_screen_side_channel" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupOffScreenSideChannel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radioOffScreenSideChannelOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:onClick="onClickOffScreenSideChannelRadio"
+                    android:text="@string/side_channel_off" />
+
+                <RadioButton
+                    android:id="@+id/radioOffScreenSideChannelScaled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:onClick="onClickOffScreenSideChannelRadio"
+                    android:text="@string/side_channel_scaled" />
+
+                <RadioButton
+                    android:id="@+id/radioOffScreenSideChannelRaw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:onClick="onClickOffScreenSideChannelRadio"
+                    android:text="@string/side_channel_raw" />
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
+                style="@style/styleLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="@string/label_all_side_channel" />
+
+            <RadioGroup
+                android:id="@+id/RadioGroup01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radioAllSideChannelOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:onClick="onClickAllSideChannelRadio"
+                    android:text="@string/side_channel_off" />
+
+                <RadioButton
+                    android:id="@+id/radioAllSideChannelRaw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickAllSideChannelRadio"
+                    android:text="@string/side_channel_raw" />
+            </RadioGroup>
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textSideBandEventCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/placeholder"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <TextView
+        android:id="@+id/textListeners"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/placeholder"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textConfigItemsHeader"
+        style="@style/styleHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/configuration_items_header" />
+
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/styleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/off_screen_mode_header" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupOffScreenMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/radioButtonOffscreenDisable" >
+
+        <RadioButton
+            android:id="@+id/radioButtonOffscreenDuplicate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickOffscreenRadio"
+            android:text="@string/offscreen_mode_choice_duplicate" />
+
+        <RadioButton
+            android:id="@+id/radioButtonOffscreenExtend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickOffscreenRadio"
+            android:text="@string/offscreen_mode_choice_extend" />
+
+        <RadioButton
+            android:id="@+id/radioButtonOffscreenDisable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickOffscreenRadio"
+            android:text="@string/offscreen_mode_choice_disable" />
+    </RadioGroup>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <!-- Eraser -->
+
+        <TableRow
+            android:id="@+id/table2Row2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
+                style="@style/styleLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="@string/label_eraser_bypass" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupEraser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radioEraserOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:onClick="onClickEraserBypassRadio"
+                    android:text="@string/label_eraser_bypass_off" />
+
+                <RadioButton
+                    android:id="@+id/radioEraserEnable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickEraserBypassRadio"
+                    android:text="@string/label_eraser_bypass_enable" />
+            </RadioGroup>
+        </TableRow>
+
+        <!-- On-Screen Hover -->
+
+        <TableRow
+            android:id="@+id/table2Row1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
+                style="@style/styleLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="@string/label_on_screen_hover" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupOnScreenHover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radioOnScreenHoverEnable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:onClick="onClickOnScreenHoverRadio"
+                    android:text="@string/hover_choice_enable" />
+
+                <RadioButton
+                    android:id="@+id/radioOnScreenHoverEnableCustom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickOnScreenHoverRadio"
+                    android:text="@string/hover_choice_enable_custom" />
+
+                <EditText
+                    android:id="@+id/editTextOnScreenHoverEnableCustom"
+                    android:layout_width="73dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number" >
+                </EditText>
+
+                <RadioButton
+                    android:id="@+id/radioOnScreenHoverOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickOnScreenHoverRadio"
+                    android:text="@string/hover_choice_off" />
+            </RadioGroup>
+        </TableRow>
+
+        <!-- Off-Screen Hover -->
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
+                style="@style/styleLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="@string/label_off_screen_hover" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupOffScreenHover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radioOffScreenHoverEnable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:onClick="onClickOffScreenHoverRadio"
+                    android:text="@string/hover_choice_enable" />
+
+                <RadioButton
+                    android:id="@+id/radioOffScreenHoverEnableCustom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickOffScreenHoverRadio"
+                    android:text="@string/hover_choice_enable_custom" />
+
+                <EditText
+                    android:id="@+id/editTextOffScreenHoverEnableCustom"
+                    android:layout_width="73dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number" >
+                </EditText>
+
+                <RadioButton
+                    android:id="@+id/radioOffScreenHoverOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickOffScreenHoverRadio"
+                    android:text="@string/hover_choice_off" />
+            </RadioGroup>
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textMotionEventHeader"
+        style="@style/styleHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_motion_event_info" />
+
+    <TextView
+        android:id="@+id/textMotionEventCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/placeholder_motion"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</LinearLayout>

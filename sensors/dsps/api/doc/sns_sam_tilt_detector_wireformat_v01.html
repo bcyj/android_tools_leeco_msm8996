@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+<title>Message definition for the Tilt Detector service</title>
+<link rel="stylesheet" type="text/css" href="qmi_idl_wiredoc.css" />
+</head>
+
+<body>
+<h1>Message definition for the Tilt Detector service
+</h1>
+ This file defines messages used by Tilt Detector service.<br><br> As prerequisite, the sensor algorithm must use the common interface<br> defined in the Sensor Algorithm Framework (SAM)
+
+<h1>Service Type</h1>
+<ul>
+<li>QMI service type <b>SNS_QMI_SVC_ID_46</b>
+<li>Version <b>01</b>
+</ul>
+<h1><a name='Messages'>Messages</a></h1>
+<table class = 'tlv'><tr class='head'><th>Command</th><th>ID</th><th>Messages</th><th>Description</th></tr>
+<tr><td class='l'><a href='#SNS_SAM_TILT_DETECTOR_CANCEL'>SNS_SAM_TILT_DETECTOR_CANCEL</a></td><td>0x0000</td><td class='l'><a href="#SNS_SAM_TILT_DETECTOR_CANCEL_REQ">SNS_SAM_TILT_DETECTOR_CANCEL_REQ</a></br><a href="#SNS_SAM_TILT_DETECTOR_CANCEL_RESP">SNS_SAM_TILT_DETECTOR_CANCEL_RESP</a></br></td><td class='l'>Cancels all requests to the algorithm service from this client. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_TILT_DETECTOR_VERSION'>SNS_SAM_TILT_DETECTOR_VERSION</a></td><td>0x0001</td><td class='l'><a href="#SNS_SAM_TILT_DETECTOR_VERSION_REQ">SNS_SAM_TILT_DETECTOR_VERSION_REQ</a></br><a href="#SNS_SAM_TILT_DETECTOR_VERSION_RESP">SNS_SAM_TILT_DETECTOR_VERSION_RESP</a></br></td><td class='l'>This command requests algorithm service version. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_TILT_DETECTOR_ENABLE'>SNS_SAM_TILT_DETECTOR_ENABLE</a></td><td>0x0002</td><td class='l'><a href="#SNS_SAM_TILT_DETECTOR_ENABLE_REQ">SNS_SAM_TILT_DETECTOR_ENABLE_REQ</a></br><a href="#SNS_SAM_TILT_DETECTOR_ENABLE_RESP">SNS_SAM_TILT_DETECTOR_ENABLE_RESP</a></br></td><td class='l'>This command enables the significant motion detector service. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_TILT_DETECTOR_DISABLE'>SNS_SAM_TILT_DETECTOR_DISABLE</a></td><td>0x0003</td><td class='l'><a href="#SNS_SAM_TILT_DETECTOR_DISABLE_REQ">SNS_SAM_TILT_DETECTOR_DISABLE_REQ</a></br><a href="#SNS_SAM_TILT_DETECTOR_DISABLE_RESP">SNS_SAM_TILT_DETECTOR_DISABLE_RESP</a></br></td><td class='l'>This command disables the Tilt Detector service. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_TILT_DETECTOR_REPORT'>SNS_SAM_TILT_DETECTOR_REPORT</a></td><td>0x0005</td><td class='l'><a href="#SNS_SAM_TILT_DETECTOR_REPORT_IND">SNS_SAM_TILT_DETECTOR_REPORT_IND</a></br></td><td class='l'>Report from the Tilt Detector service. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_TILT_DETECTOR_ERROR'>SNS_SAM_TILT_DETECTOR_ERROR</a></td><td>0x0006</td><td class='l'><a href="#SNS_SAM_TILT_DETECTOR_ERROR_IND">SNS_SAM_TILT_DETECTOR_ERROR_IND</a></br></td><td class='l'>Asynchronous error report from the Tilt Detector service. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_TILT_DETECTOR_RESET'>SNS_SAM_TILT_DETECTOR_RESET</a></td><td>0x0020</td><td class='l'><a href="#SNS_SAM_TILT_DETECTOR_RESET_REQ">SNS_SAM_TILT_DETECTOR_RESET_REQ</a></br><a href="#SNS_SAM_TILT_DETECTOR_RESET_RESP">SNS_SAM_TILT_DETECTOR_RESET_RESP</a></br></td><td class='l'>This command resets Reference Gravity Vector to the Current Gravity Vector Estimation within the Tilt Detector service. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_TILT_DETECTOR_BATCH'>SNS_SAM_TILT_DETECTOR_BATCH</a></td><td>0x0021</td><td class='l'><a href="#SNS_SAM_TILT_DETECTOR_BATCH_REQ">SNS_SAM_TILT_DETECTOR_BATCH_REQ</a></br><a href="#SNS_SAM_TILT_DETECTOR_BATCH_RESP">SNS_SAM_TILT_DETECTOR_BATCH_RESP</a></br></td><td class='l'>This command handles batch mode for the Tilt Detector service. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_TILT_DETECTOR_BATCH_REPORT'>SNS_SAM_TILT_DETECTOR_BATCH_REPORT</a></td><td>0x0022</td><td class='l'><a href="#SNS_SAM_TILT_DETECTOR_BATCH_IND">SNS_SAM_TILT_DETECTOR_BATCH_IND</a></br></td><td class='l'>Report containing a batch of Tilt Detector outputs </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_TILT_DETECTOR_UPDATE_BATCH_PERIOD'>SNS_SAM_TILT_DETECTOR_UPDATE_BATCH_PERIOD</a></td><td>0x0023</td><td class='l'><a href="#SNS_SAM_TILT_DETECTOR_UPDATE_BATCH_PERIOD_REQ">SNS_SAM_TILT_DETECTOR_UPDATE_BATCH_PERIOD_REQ</a></br><a href="#SNS_SAM_TILT_DETECTOR_UPDATE_BATCH_PERIOD_RESP">SNS_SAM_TILT_DETECTOR_UPDATE_BATCH_PERIOD_RESP</a></br></td><td class='l'>This command updates active batch period for a Tilt Detector algorithm when batching is ongoing. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_GET_ALGO_ATTRIBUTES'>SNS_SAM_GET_ALGO_ATTRIBUTES</a></td><td>0x0024</td><td class='l'><a href="#SNS_SAM_TILT_DETECTOR_GET_ATTRIBUTES_REQ">SNS_SAM_TILT_DETECTOR_GET_ATTRIBUTES_REQ</a></br><a href="#SNS_SAM_TILT_DETECTOR_GET_ATTRIBUTES_RESP">SNS_SAM_TILT_DETECTOR_GET_ATTRIBUTES_RESP</a></br></td><td class='l'>This command requests the attributes of the algorithm service This command shall only be used by algorithm services. </td></tr>
+</table>
+<br><br>
+<h2><a name='SNS_SAM_TILT_DETECTOR_CANCEL'></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_CANCEL</a></h2>
+Cancels all requests to the algorithm service from this client.
+<h4>Message ID</h4>
+0x0000
+<h3><a name="SNS_SAM_TILT_DETECTOR_CANCEL_REQ"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_CANCEL_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_TILT_DETECTOR_CANCEL_RESP"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_CANCEL_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SAM_TILT_DETECTOR_CANCEL REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_TILT_DETECTOR_VERSION'></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_VERSION</a></h2>
+This command requests algorithm service version.
+<h4>Message ID</h4>
+0x0001
+<h3><a name="SNS_SAM_TILT_DETECTOR_VERSION_REQ"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_VERSION_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_TILT_DETECTOR_VERSION_RESP"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_VERSION_RESP</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>interface_version_number</td><td>4</td><td class='l'>Version number of the interface supported by the service. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_message_id</td><td>2</td><td class='l'>Maximum message ID supported by this service. </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SAM_TILT_DETECTOR_VERSION REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_TILT_DETECTOR_ENABLE'></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_ENABLE</a></h2>
+This command enables the significant motion detector service.
+<h4>Message ID</h4>
+0x0002
+<h3><a name="SNS_SAM_TILT_DETECTOR_ENABLE_REQ"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_ENABLE_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Control Point 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'>Tilt Angle Threshold</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>angle_thresh</td><td>4</td><td class='l'>The tilt-angle threshold in which a tilt event is detected, in degrees.<br><br> The Tilt Detector service keeps track of the Current Gravity Vector<br> Estimation averaged over a time window (configurable in the registry).<br> Once the angle between the Current Gravity Vector Estimation and the<br> Reference Gravity Vector surpasses the tilt-angle threshold, this<br> service will send an indication to the requesting client.<br><br> If this value is 0, the Tilt Detector will use the default tilt-angle<br> threshold. If this value exceeds SNS_SAM_TILT_DETECTOR_MAX_TILT_ANGLE_THRESH,<br> then this enable request will return the error "SENSOR1_EBAD_PARAM".<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'>Notify Suspend</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>5</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>proc_type</td><td>4</td><td class='l'>Defines the processor to monitor for suspend.<br> This is typically the processor from which the<br> request message originated.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>send_indications_during_suspend</td><td>1</td><td class='l'>Defines whether indications for this request are to be sent when the<br> processor is in the Suspend state<br>: - If send_indications_during_suspend=1 or TRUE, indications<br> will be sent for this request when the processor is in the Suspend state<br> (such indications may awaken the processor from Suspend).<br><ul><li>If send_indications_during_suspend=0 or FALSE, some indications </ul> will not be sent for this request when the processor is in the Suspend state.<br> The list of indications not sent are defined by the message in question.<br> </td></tr>
+
+</table>
+<h3><a name="SNS_SAM_TILT_DETECTOR_ENABLE_RESP"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_ENABLE_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'>Result Code</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'>Instance ID</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'> Algorithm instance ID maintained/assigned by SAM.<br> The client shall use this instance ID for future messages associated with<br> current algorithm instance.<br> </td></tr>
+
+</table>
+<h4>Error codes</h4>
+<ul> <li>QMI_ERR_NONE No error in the request <li>QMI_ERR_INTERNAL Unexpected error occurred during processing <li>QMI_ERR_INSUFFICIENT_RESOURCES Insufficient resources to support request</ul>
+<h4>Description of SNS_SAM_TILT_DETECTOR_ENABLE REQ/RESP</h4>
+ This command enables Tilt Detector service.
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_TILT_DETECTOR_DISABLE'></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_DISABLE</a></h2>
+This command disables the Tilt Detector service.
+<h4>Message ID</h4>
+0x0003
+<h3><a name="SNS_SAM_TILT_DETECTOR_DISABLE_REQ"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_DISABLE_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Control Point 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'>Instance ID</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>To identify the algorithm instance to be disabled. </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_TILT_DETECTOR_DISABLE_RESP"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_DISABLE_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'>Result Code</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'>Instance ID</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance id identifies the algorithm instance. </td></tr>
+
+</table>
+<h4>Error codes</h4>
+<ul> <li>QMI_ERR_NONE No error in the request <li>QMI_ERR_INTERNAL Unexpected error occurred during processing <li>QMI_ERR_INVALID_ARG Invalid argument (instance id) in the request</ul>
+<h4>Description of SNS_SAM_TILT_DETECTOR_DISABLE REQ/RESP</h4>
+ This command disables the Tilt Detector service identified<br> by the algorithm instance.
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_TILT_DETECTOR_REPORT'></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_REPORT</a></h2>
+Report from the Tilt Detector service.
+<h4>Message ID</h4>
+0x0005
+<h3><a name="SNS_SAM_TILT_DETECTOR_REPORT_IND"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_REPORT_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'>Instance ID</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance id identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'>Tilt Timestamp</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>tilt_timestamp</td><td>4</td><td class='l'>Timestamp of the last tilt event; in SSC ticks.<br> If the tilt event was detected at timestamp 0, then this value must<br> be set to 1. The value 0 is reserved for no tilt detected. </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SAM_TILT_DETECTOR_REPORT</h4>
+ This indication reports Tilt Detector state to client with associated<br> timestamp
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_TILT_DETECTOR_ERROR'></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_ERROR</a></h2>
+Asynchronous error report from the Tilt Detector service.
+<h4>Message ID</h4>
+0x0006
+<h3><a name="SNS_SAM_TILT_DETECTOR_ERROR_IND"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_ERROR_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'>Error</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>error</td><td>1</td><td class='l'>sensors error code </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'>Instance ID</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance id identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'>Timestamp</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp</td><td>4</td><td class='l'>Timestamp of when the error was detected; in SSC ticks </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SAM_TILT_DETECTOR_ERROR</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_TILT_DETECTOR_RESET'></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_RESET</a></h2>
+This command resets Reference Gravity Vector to the Current Gravity<br> Vector Estimation within the Tilt Detector service.
+<h4>Message ID</h4>
+0x0020
+<h3><a name="SNS_SAM_TILT_DETECTOR_RESET_REQ"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_RESET_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'>Instance ID</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance id identifies the algorithm instance. </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_TILT_DETECTOR_RESET_RESP"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_RESET_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'>Response</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'>Instance ID</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance id identifies the algorithm instance. </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_TILT_DETECTOR_RESET REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_TILT_DETECTOR_BATCH'></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_BATCH</a></h2>
+This command handles batch mode for the Tilt Detector service.
+<h4>Message ID</h4>
+0x0021
+<h3><a name="SNS_SAM_TILT_DETECTOR_BATCH_REQ"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_BATCH_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'>Instance ID</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance id identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'>Batch Period</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>batch_period</td><td>4</td><td class='l'>Specifies the interval over which reports are to be batched, in seconds;<br> Q16 format. If AP is in suspend and notify_suspend is FALSE, undelivered<br> reports will be batched in circular FIFO and delivered upon wakeup.<br> P = 0 to disable batching.<br> P > 0 to enable batching.<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'>Request Type</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>req_type</td><td>4</td><td class='l'>Field no longer supported in version 3 and later. Functionality can be<br> approximated using the notify_suspend flag in the ENABLE_REQ message. Max<br> buffer depth is returned in GET_ATTRIBUTES_RESP.<br><br> Optional request type<br>: 0 – Do not wake client from suspend when buffer is full.<br> 1 – Wake client from suspend when buffer is full.<br> 2 – Use to get max buffer depth. Does not enable/disable batching.<br> instance_id and batch_period are ignored for this request type.<br> Defaults to 0.<br> </td></tr>
+
+</table>
+<h3><a name="SNS_SAM_TILT_DETECTOR_BATCH_RESP"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_BATCH_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'>Response</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'>Instance ID</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Algorithm instance ID maintained/assigned by SAM </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'>Max Batch Size</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_batch_size</td><td>4</td><td class='l'>Max supported batch size </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x12</td><td class='l'></td><td>1</td><td class='l'>Timestamp</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp</td><td>4</td><td class='l'>Timestamp when the batch request was processed in SSC ticks </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_TILT_DETECTOR_BATCH REQ/RESP</h4>
+Set the batch period for an active algorithm stream.<br> A subsequent request may update or disable the batch period;<br> all batched output will be sent prior to the response message.
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_TILT_DETECTOR_BATCH_REPORT'></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_BATCH_REPORT</a></h2>
+Report containing a batch of Tilt Detector outputs
+<h4>Message ID</h4>
+0x0022
+<h3><a name="SNS_SAM_TILT_DETECTOR_BATCH_IND"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_BATCH_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'>Instance ID</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance id identifies the algorithm instance </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'>Tilt Timestamps</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>tilt_timestamps_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- tilt_timestamps</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>tilt_timestamps</td><td>Var</td><td class='l'>Detected tilt timestamps </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'>Indication Type</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ind_type</td><td>1</td><td class='l'>Optional batch indication type<br> SNS_BATCH_ONLY_IND - Standalone batch indication. Not part of a back to back indication stream<br> SNS_BATCH_FIRST_IND - First indication in stream of back to back indications<br> SNS_BATCH_INTERMEDIATE_IND - Intermediate indication in stream of back to back indications<br> SNS_BATCH_LAST_IND - Last indication in stream of back to back indications<br> </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_TILT_DETECTOR_BATCH_REPORT</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_TILT_DETECTOR_UPDATE_BATCH_PERIOD'></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_UPDATE_BATCH_PERIOD</a></h2>
+This command updates active batch period for a Tilt Detector<br> algorithm when batching is ongoing.
+<h4>Message ID</h4>
+0x0023
+<h3><a name="SNS_SAM_TILT_DETECTOR_UPDATE_BATCH_PERIOD_REQ"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_UPDATE_BATCH_PERIOD_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'>Instance ID</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance ID identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'>Active Batch Period</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>active_batch_period</td><td>4</td><td class='l'>Specifies new interval (in seconds, Q16) over which reports are to be<br> batched when the client processor is awake. Only takes effect if<br> batching is ongoing.<br> P > 0 to to override active batch period set in batch enable request.<br> P = 0 to switch to active batch period set in batch enable request.<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_TILT_DETECTOR_UPDATE_BATCH_PERIOD_RESP"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_UPDATE_BATCH_PERIOD_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'>Response</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'>Instance ID</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Algorithm instance ID maintained/assigned by SAM </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'>Timestamp</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp</td><td>4</td><td class='l'>Timestamp when the batch request was processed in SSC ticks </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_TILT_DETECTOR_UPDATE_BATCH_PERIOD REQ/RESP</h4>
+Messages deprecated and no longer supported in version 3 and<br> later. Functionality can be approximated using two clients and<br> the notify_suspend flag in the ENABLE_REQ message.
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_GET_ALGO_ATTRIBUTES'></a><a href='#Messages'>SNS_SAM_GET_ALGO_ATTRIBUTES</a></h2>
+This command requests the attributes of the algorithm service<br><br> This command shall only be used by algorithm services.
+<h4>Message ID</h4>
+0x0024
+<h3><a name="SNS_SAM_TILT_DETECTOR_GET_ATTRIBUTES_REQ"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_GET_ATTRIBUTES_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_TILT_DETECTOR_GET_ATTRIBUTES_RESP"></a><a href='#Messages'>SNS_SAM_TILT_DETECTOR_GET_ATTRIBUTES_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>algorithm_revision</td><td>4</td><td class='l'>Revision number of the algorithm implemented by the service </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>proc_type</td><td>4</td><td class='l'>ID of the processor on which the algorithm is running </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x05</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>supported_reporting_modes</td><td>4</td><td class='l'>Bitmask of all reporting modes supported by algorithm.<br> See sns_sam_report_e for reporting options </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x06</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>min_report_rate</td><td>4</td><td class='l'>Minimum report rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x07</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_report_rate</td><td>4</td><td class='l'>Maximum report rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x08</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>min_sample_rate</td><td>4</td><td class='l'>Minimum sample rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x09</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_sample_rate</td><td>4</td><td class='l'>Maximum sample rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x0A</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_batch_size</td><td>4</td><td class='l'>The maximum batch size (in reports) supported by this service,<br> as if it were the only service active on the system.<br> Will never return more than this many samples in one series of<br> batched indications.<br> Returns 0, if batching is not supported </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x0B</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>power</td><td>4</td><td class='l'>Power estimate for algorithm (in mA, Q16) </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>8</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sensorUID</td><td>8</td><td class='l'>SSC Unique identifier for this sensor </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>reserved_batch_size</td><td>4</td><td class='l'>The mimimum guaranteed batch size for this service. Shared amongst<br> all clients. If max_batch_size is '0', this field shall be ignored. </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_GET_ALGO_ATTRIBUTES REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+\appendix
+\chapter{Additional Information}
+\section{@FOOTER}
+

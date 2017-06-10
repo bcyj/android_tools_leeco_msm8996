@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2014 Qualcomm Technologies, Inc.
+    All Rights Reserved.
+    Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+<resources>
+    <style name="ConferDialerTheme"
+           parent="android:Theme.Material.Light">
+        <item name="android:textColorPrimary">@color/conferdialer_primary_text_color</item>
+        <item name="android:textColorSecondary">@color/conferdialer_secondary_text_color</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:actionBarStyle">@style/ConferDialerActionBarStyle</item>
+        <item name="android:actionOverflowButtonStyle">@style/ConferDialerActionBarOverflow</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_back_arrow</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:listViewStyle">@style/ListViewStyle</item>
+        <item name="android:overlapAnchor">true</item>
+        <item name="activated_background">@drawable/list_item_activated_background</item>
+        <item name="section_header_background">@drawable/list_title_holo</item>
+        <item name="list_section_header_height">32dip</item>
+        <item name="list_item_padding_top">12dp</item>
+        <item name="list_item_padding_right">32dp</item>
+        <item name="list_item_padding_bottom">12dp</item>
+        <item name="list_item_padding_left">16dp</item>
+        <item name="list_item_gap_between_image_and_text">
+            @dimen/contact_browser_list_item_gap_between_image_and_text
+        </item>
+        <item name="list_item_gap_between_label_and_data">5dip</item>
+        <item name="list_item_presence_icon_margin">4dip</item>
+        <item name="list_item_presence_icon_size">16dip</item>
+        <item name="list_item_photo_size">@dimen/contact_browser_list_item_photo_size</item>
+        <item name="list_item_profile_photo_size">70dip</item>
+        <item name="list_item_prefix_highlight_color">@color/people_app_theme_color</item>
+        <item name="list_item_background_color">@color/background_dialer_light</item>
+        <item name="list_item_header_text_indent">8dip</item>
+        <item name="list_item_header_text_color">@color/conferdialer_secondary_text_color</item>
+        <item name="list_item_header_text_size">14sp</item>
+        <item name="list_item_header_height">30dip</item>
+        <item name="list_item_data_width_weight">5</item>
+        <item name="list_item_label_width_weight">3</item>
+        <item name="contact_browser_list_padding_left">0dp</item>
+        <item name="contact_browser_list_padding_right">0dp</item>
+        <item name="contact_browser_background">@color/background_dialer_results</item>
+        <item name="list_item_name_text_color">@color/contact_list_name_text_color</item>
+        <item name="list_item_name_text_size">16sp</item>
+        <item name="list_item_text_indent">@dimen/contact_browser_list_item_text_indent</item>
+        <item name="list_item_text_offset_top">-2dp</item>
+        <item name="favorites_padding_bottom">?android:attr/actionBarSize</item>
+        <item name="android:colorPrimary">@color/dialer_theme_color</item>
+        <item name="android:colorPrimaryDark">@color/dialer_theme_color_dark</item>
+        <item name="dialpad_key_button_touch_tint">@color/dialer_dialpad_touch_tint</item>
+        <item name="android:colorControlActivated">@color/dialer_theme_color</item>
+    </style>
+
+    <style name="ConferDialerActionBarStyle" parent="android:Widget.Material.ActionBar">
+        <item name="android:background">@color/actionbar_background_color</item>
+        <item name="android:titleTextStyle">@style/ConferDialerActionBarTitleText</item>
+        <item name="android:height">56dp</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:icon">@android:color/transparent</item>
+        <item name="android:contentInsetStart">72dp</item>
+    </style>
+
+    <style name="ConferDialerActionBarWithoutTitleStyle" parent="ConferDialerActionBarStyle">
+        <item name="android:displayOptions"></item>
+        <item name="android:height">64dp</item>
+        <item name="android:contentInsetStart">0px</item>
+    </style>
+
+    <style name="ConferDialerActionBarTitleText"
+           parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/actionbar_text_color</item>
+    </style>
+
+    <style name="ConferDialerActionBarOverflow"
+           parent="@android:style/Widget.Material.Light.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_overflow_menu</item>
+    </style>
+
+    <style name="ConferDialerActionBarOverflowWhite"
+           parent="@android:style/Widget.Material.Light.ActionButton.Overflow">
+        <item name="android:src">@drawable/overflow_menu</item>
+    </style>
+
+    <style name="ConferDialerThemeWithoutActionBarOverlay" parent="ConferDialerTheme">
+        <item name="android:windowActionBarOverlay">false</item>
+        <item name="android:actionOverflowButtonStyle">@style/ConferDialerActionBarOverflowWhite</item>
+    </style>
+
+    <style name="ConfereenceDialerStyle" parent="ConferDialerThemeWithoutActionBarOverlay">
+        <item name="android:textColor">@color/setting_primary_color</item>
+        <item name="android:textColorSecondary">@color/setting_secondary_color</item>
+        <item name="android:windowBackground">@color/setting_background_color</item>
+        <item name="android:colorAccent">@color/dialtacts_theme_color</item>
+        <item name="android:textColorLink">@color/dialtacts_theme_color</item>
+    </style>
+
+</resources>

@@ -1,0 +1,32 @@
+#! /bin/sh
+#
+#Copyright (c) 2012-2014 Qualcomm Technologies, Inc.  All Rights Reserved.
+#Qualcomm Technologies Proprietary and Confidential.
+
+# qti   init.d script to start the Data Software's qti daemon
+
+set -e
+
+case "$1" in
+  start)
+        echo -n "Starting qti: "
+        echo "QTI:start" > /dev/kmsg
+	start-stop-daemon -S -b --exec /usr/bin/qti
+        echo "done"
+        ;;
+  stop)
+        echo -n "Stopping qti: "
+        start-stop-daemon -K -n qti
+        echo "done"
+        ;;
+  restart)
+        $0 stop
+        $0 start
+        ;;
+  *)
+        echo "Usage qti { start | stop | restart}" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

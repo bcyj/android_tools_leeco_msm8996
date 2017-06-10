@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Category mapping from ATSC to canonical genre -->
+    <string-array name="genre_mapping_atsc">
+        <item>Освіта|ОСВІТА</item>
+        <item>Розваги|РОЗВАГИ</item>
+        <item>Фільми|ФІЛЬМИ</item>
+        <item>Новини|НОВИНИ</item>
+        <item>Релігія|СТИЛЬ_ЖИТТЯ</item>
+        <item>Спорт|СПОРТ</item>
+        <item>Інше|ІНШЕ</item>
+        <item>Бойовики|ФІЛЬМИ</item>
+        <item>Реклама|ІНШЕ</item>
+        <item>Анімація|СІМ\'Я_ДІТИ</item>
+        <item>Антологія|ДРАМА</item>
+        <item>Автомобілі|ІНШЕ</item>
+        <item>Нагороди|РОЗВАГИ</item>
+        <item>Бейсбол|СПОРТ</item>
+        <item>Баскетбол|СПОРТ</item>
+        <item>Періодика|ІНШЕ</item>
+        <item>Бізнес|ІНШЕ</item>
+        <item>Класична|МУЗИКА</item>
+        <item>Коледжі|ОСВІТА</item>
+        <item>Бої|ІНШЕ</item>
+        <item>Комедія|КОМЕДІЯ</item>
+        <item>Коментарі|ІНШЕ</item>
+        <item>Концерт|МУЗИКА</item>
+        <item>Споживчий сектор|ІНШЕ</item>
+        <item>Сучасність|ІНШЕ</item>
+        <item>Детективи|ФІЛЬМИ</item>
+        <item>Танці|РОЗВАГИ</item>
+        <item>Документальні|НОВИНИ</item>
+        <item>Драма|ДРАМА</item>
+        <item>Початкова|ОСВІТА</item>
+        <item>Еротика|ФІЛЬМИ</item>
+        <item>Фізичні вправи|СПОРТ</item>
+        <item>Фантастика|ФІЛЬМИ</item>
+        <item>Ферма|ІНШЕ</item>
+        <item>Мода|СТИЛЬ_ЖИТТЯ</item>
+        <item>Художня література|МИСТЕЦТВО</item>
+        <item>Їжа|СТИЛЬ_ЖИТТЯ</item>
+        <item>Футбол|СПОРТ</item>
+        <item>Іноземне|ІНШЕ</item>
+        <item>Збір коштів|ІНШЕ</item>
+        <item>Ігри/Вікторини|ІГРИ</item>
+        <item>Сад|СТИЛЬ_ЖИТТЯ</item>
+        <item>Гольф|СПОРТ</item>
+        <item>Уряд|ІНШЕ</item>
+        <item>Здоров\'я|СТИЛЬ_ЖИТТЯ</item>
+        <item>Середня освіта|ОСВІТА</item>
+        <item>Історія|ОСВІТА</item>
+        <item>Хобі|СТИЛЬ_ЖИТТЯ</item>
+        <item>Хокей|СПОРТ</item>
+        <item>Дім|СТИЛЬ_ЖИТТЯ</item>
+        <item>Жахи|ФІЛЬМИ</item>
+        <item>Інформація|НОВИНИ</item>
+        <item>Інструкції|ІНШЕ</item>
+        <item>Міжнародні справи|ІНШЕ</item>
+        <item>Інтерв\'ю|ІНШЕ</item>
+        <item>Мови|ОСВІТА</item>
+        <item>Право|ІНШЕ</item>
+        <item>Прямий ефір|ІНШЕ</item>
+        <item>Місцеві події|ІНШЕ</item>
+        <item>Математика|ОСВІТА</item>
+        <item>Медицина|ІНШЕ</item>
+        <item>Зустрічі|ІНШЕ</item>
+        <item>Армія|ІНШЕ</item>
+        <item>Мінісеріали|ДРАМА</item>
+        <item>Музика|МУЗИКА</item>
+        <item>Містика|ФІЛЬМИ</item>
+        <item>Загальнонаціональні|ІНШЕ</item>
+        <item>Природа|ТВАРИНИ_ДИКА_ПРИРОДА</item>
+        <item>Поліція|ІНШЕ</item>
+        <item>Політика|ІНШЕ</item>
+        <item>Прем\'єри|ПРЕМ\'ЄРИ</item>
+        <item>Фонограми|ІНШЕ</item>
+        <item>Продукція|ІНШЕ</item>
+        <item>Професійне|ІНШЕ</item>
+        <item>Громадське|ІНШЕ</item>
+        <item>Перегони|СПОРТ</item>
+        <item>Читання|МИСТЕЦТВО</item>
+        <item>Ремонт|ІНШЕ</item>
+        <item>Повтор|ІНШЕ</item>
+        <item>Огляд|ІНШЕ</item>
+        <item>Романтичні|ФІЛЬМИ</item>
+        <item>Наука|НАУКА_ТЕХНІКА</item>
+        <item>Серіали|ДРАМА</item>
+        <item>Послуги|ІНШЕ</item>
+        <item>Покупки|ПОКУПКИ</item>
+        <item>Мильні опери|ДРАМА</item>
+        <item>Особливі події|ІНШЕ</item>
+        <item>Саспенс|ФІЛЬМИ</item>
+        <item>Ток-шоу|РОЗВАГИ</item>
+        <item>Техніка|НАУКА_ТЕХНІКА</item>
+        <item>Теніс|СПОРТ</item>
+        <item>Подорожі|ПОДОРОЖІ</item>
+        <item>Різне|РОЗВАГИ</item>
+        <item>Відео|МИСТЕЦТВО</item>
+        <item>Погода|НОВИНИ</item>
+        <item>Вестерн|ІНШЕ</item>
+        <item>Мистецтво|МИСТЕЦТВО</item>
+        <item>Автоперегони|СПОРТ</item>
+        <item>Авіація|СПОРТ</item>
+        <item>Біографія|НОВИНИ</item>
+        <item>Веслування|СПОРТ</item>
+        <item>Боулінг|СПОРТ</item>
+        <item>Бокс|СПОРТ</item>
+        <item>Мультфільми|СІМ\'Я_ДІТИ</item>
+        <item>Дитячі|СІМ\'Я_ДІТИ</item>
+        <item>Класичні фільми|ФІЛЬМИ</item>
+        <item>Спільнота|ІНШЕ</item>
+        <item>Комп\'ютери|НАУКА_ТЕХНІКА</item>
+        <item>Музика кантрі|МУЗИКА</item>
+        <item>Суд|ІНШЕ</item>
+        <item>Екстремальний спорт|СПОРТ</item>
+        <item>Сімейні|СІМ\'Я_ДІТИ</item>
+        <item>Фінанси|НОВИНИ</item>
+        <item>Гімнастика|СПОРТ</item>
+        <item>Головні новини|НОВИНИ</item>
+        <item>Кінні перегони|СПОРТ</item>
+        <item>Полювання/Рибальство/Туризм|ТВАРИНИ_ДИКА_ПРИРОДА</item>
+        <item>Незалежні|ІНШЕ</item>
+        <item>Джаз|МУЗИКА</item>
+        <item>Журнали|НОВИНИ</item>
+        <item>Перегони на мотоциклах|СПОРТ</item>
+        <item>Музика/Фільми/Книги|ІНШЕ</item>
+        <item>Новини міжнародні|НОВИНИ</item>
+        <item>Новини місцеві|НОВИНИ</item>
+        <item>Новини загальнонаціональні|НОВИНИ</item>
+        <item>Новини регіональні|НОВИНИ</item>
+        <item>Олімпійські ігри|СПОРТ</item>
+        <item>Мовою оригіналу|ФІЛЬМИ</item>
+        <item>Театральне мистецтво|МИСТЕЦТВО</item>
+        <item>Домашні улюбленці/Тварини|ТВАРИНИ_ДИКА_ПРИРОДА</item>
+        <item>Поп-музика|МУЗИКА</item>
+        <item>Рок-н-ролл|МУЗИКА</item>
+        <item>Наукова фантастика|ФІЛЬМИ</item>
+        <item>Самовдосконалення|ОСВІТА</item>
+        <item>Ситком|ДРАМА</item>
+        <item>Біг на ковзанах|СПОРТ</item>
+        <item>Лижні види спорту|СПОРТ</item>
+        <item>Футбол|СПОРТ</item>
+        <item>Легка атлетика|СПОРТ</item>
+        <item>Правда|ІНШЕ</item>
+        <item>Волейбол|СПОРТ</item>
+        <item>Боротьба|СПОРТ</item>
+    </string-array>
+
+    <!-- Category mapping from DVB to canonical genre -->
+    <string-array name="genre_mapping_dvb">
+        <item>фільми/драма|ФІЛЬМИ</item>
+        <item>детективи/трилери|ФІЛЬМИ</item>
+        <item>пригоди/вестерни/війни|ФІЛЬМИ</item>
+        <item>наукова фантастика/фентезі/жахи|ФІЛЬМИ</item>
+        <item>комедія|КОМЕДІЯ</item>
+        <item>мильні опери/мелодрами/фольклор|ДРАМА</item>
+        <item>романтичні|ФІЛЬМИ</item>
+        <item>серйозні/класика/релігійні/історичні/драма|ФІЛЬМИ</item>
+        <item>фільми для дорослих/драма|ФІЛЬМИ</item>
+        <item>новини/поточні події|НОВИНИ</item>
+        <item>новини/прогноз погоди|НОВИНИ</item>
+        <item>журнал новин|НОВИНИ</item>
+        <item>документальні|НОВИНИ</item>
+        <item>дискусії/інтерв\'ю/дебати|НОВИНИ</item>
+        <item>шоу/ігрові шоу|РОЗВАГИ</item>
+        <item>ігрові шоу/вікторини/змагання|ІГРИ</item>
+        <item>різноманітні шоу|РОЗВАГИ</item>
+        <item>ток-шоу|РОЗВАГИ</item>
+        <item>спорт|СПОРТ</item>
+        <item>особливі події (Олімпійські ігри, чемпіонати світу тощо)|СПОРТ</item>
+        <item>спортивні журнали|СПОРТ</item>
+        <item>футбол/амер. футбол|СПОРТ</item>
+        <item>теніс/сквош|СПОРТ</item>
+        <item>командні види спорту (крім футболу)|СПОРТ</item>
+        <item>атлетика|СПОРТ</item>
+        <item>автоперегони|СПОРТ</item>
+        <item>водні види спорту|СПОРТУ</item>
+        <item>зимові види спорту|СПОРТ</item>
+        <item>кінний спорт|СПОРТ</item>
+        <item>бойові мистецтва|СПОРТ</item>
+        <item>програми для дітей і юнацтва|СІМ\'Я_ДІТИ</item>
+        <item>програми для дошкільнят|СІМ\'Я_ДІТИ</item>
+        <item>розважальні програми для дітей 6-14 р.|СІМ\'Я_ДІТИ</item>
+        <item>розважальні програми для дітей 10-16 р.|СІМ\'Я_ДІТИ</item>
+        <item>інформаційні/освітні/шкільні програми|СІМ\'Я_ДІТИ</item>
+        <item>мультфільми/лялькові вистави|СІМ\'Я_ДІТИ</item>
+        <item>музика/балет/танці|МУЗИКА</item>
+        <item>рок/поп|МУЗИКА</item>
+        <item>серйозна музика/класична музика|МУЗИКА</item>
+        <item>народна/традиційна музика|МУЗИКА</item>
+        <item>джаз|МУЗИКА</item>
+        <item>мюзикли/опера|МУЗИКА</item>
+        <item>балет|РОЗВАГИ</item>
+        <item>мистецтво/культура|МИСТЕЦТВО</item>
+        <item>театральне мистецтво|МИСТЕЦТВО</item>
+        <item>образотворче мистецтво|МИСТЕЦТВО</item>
+        <item>релігія|СТИЛЬ_ЖИТТЯ</item>
+        <item>поп-культура/традиційне мистецтво|СТИЛЬ_ЖИТТЯ</item>
+        <item>література|МИСТЕЦТВО</item>
+        <item>фільми/кінематограф|МИСТЕЦТВО</item>
+        <item>експериментальне кіно/відео|МИСТЕЦТВО</item>
+        <item>мовлення/преса|МИСТЕЦТВО</item>
+        <item>нові медіа|МИСТЕЦТВО</item>
+        <item>журнали про мистецтво/культуру|МИСТЕЦТВО</item>
+        <item>мода|СТИЛЬ_ЖИТТЯ</item>
+        <item>соціальні/політичні проблеми/економіка|ІНШЕ</item>
+        <item>журнали/репортажі/документальні|НОВИНИ</item>
+        <item>економічні/соціальні поради|ІНШЕ</item>
+        <item>видатні люди|ІНШЕ</item>
+        <item>освіта/наука/факти|ОСВІТА</item>
+        <item>природа/тварини/довкілля|ТВАРИНИ_ДИКА_ПРИРОДА</item>
+        <item>технології/природничі науки|НАУКА_ТЕХНІКА</item>
+        <item>медицина/фізіологія/психологія|НАУКА_ТЕХНІКА</item>
+        <item>іноземні країни/експедиції|ОСВІТА</item>
+        <item>соціальні/спіритичні науки|НАУКА_ТЕХНІКА</item>
+        <item>післядипломна освіта|ОСВІТА</item>
+        <item>мови|ОСВІТА</item>
+        <item>хобі на дозвіллі|СТИЛЬ_ЖИТТЯ</item>
+        <item>туризм/подорожі|ПОДОРОЖІ</item>
+        <item>ручна праця|СТИЛЬ_ЖИТТЯ</item>
+        <item>автомобілі|СТИЛЬ_ЖИТТЯ</item>
+        <item>здоров\'я і гарна форма|СТИЛЬ_ЖИТТЯ</item>
+        <item>кулінарія|СТИЛЬ_ЖИТТЯ</item>
+        <item>реклама/покупки|ПОКУПКИ</item>
+        <item>садівництво|СТИЛЬ_ЖИТТЯ</item>
+        <item>мовою оригіналу|ІНШЕ</item>
+        <item>чорно-біле|ІНШЕ</item>
+        <item>неопубліковане|ІНШЕ</item>
+        <item>пряме включення|ІНШЕ</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB to canonical genre -->
+    <string-array name="genre_mapping_isdb">
+        <item>Анімація|ФІЛЬМИ</item>
+        <item>Бейсбол|СПОРТ</item>
+        <item>Дитячі пісні|МУЗИКА</item>
+        <item>Класика, опера|МУЗИКА</item>
+        <item>Кулінарні шоу|РОЗВАГИ</item>
+        <item>Комедійні програми|РОЗВАГИ</item>
+        <item>Смішні історії, розваги|РОЗВАГИ</item>
+        <item>Комп\'ютерні та відеоігри|НАУКА_ТЕХНІКА</item>
+        <item>Розмови, мови|ОСВІТА</item>
+        <item>Танці, балет|РОЗВАГИ</item>
+        <item>Дискусії, конференції|НОВИНИ</item>
+        <item>Економіка, ринкові звіти|НОВИНИ</item>
+        <item>Освітні проблеми|ОСВІТА</item>
+        <item>Події|РОЗВАГИ</item>
+        <item>Мода|СТИЛЬ_ЖИТТЯ</item>
+        <item>Фольк, музика народів світу|МУЗИКА</item>
+        <item>Ігри|ІГРИ</item>
+        <item>Садівництво, домашні улюбленці, ручна праця|СТИЛЬ_ЖИТТЯ</item>
+        <item>Гольф|СПОРТ</item>
+        <item>Плітки/таблоїд-шоу|РОЗВАГИ</item>
+        <item>Гастрономія, кулінарія|СТИЛЬ_ЖИТТЯ</item>
+        <item>Здоров\'я, медицина|СТИЛЬ_ЖИТТЯ</item>
+        <item>Хобі/освіта|СТИЛЬ_ЖИТТЯ</item>
+        <item>Кінні перегони, групові перегони|СПОРТ</item>
+        <item>Японське аніме|СІМ\'Я_ДІТИ</item>
+        <item>Японські балади, японська традиційна музика|МУЗИКА</item>
+        <item>Японські шахи (сьоґі) та "ґо"|ІГРИ</item>
+        <item>Японська драма|ДРАМА</item>
+        <item>Японські фільми|ФІЛЬМИ</item>
+        <item>Японська рок, поп-музика|МУЗИКА</item>
+        <item>Джаз, ф\'южн|МУЗИКА</item>
+        <item>Для учнів середніх і старших класів|ОСВІТА</item>
+        <item>Кабукі, класична драма|ДРАМА</item>
+        <item>Караоке, аматорські концерти|МУЗИКА</item>
+        <item>Неперервна освіта, кваліфікація|ОСВІТА</item>
+        <item>Малі діти, школярі|ОСВІТА</item>
+        <item>Концерт, живий звук|МУЗИКА</item>
+        <item>Житло, дім|СТИЛЬ_ЖИТТЯ</item>
+        <item>Місцеві програми|НОВИНИ</item>
+        <item>Маджонг, пінбол|ІГРИ</item>
+        <item>Марафон, атлетика, плавання|СПОРТ</item>
+        <item>Морські види спорту, зимові види спорту|СПОРТ</item>
+        <item>Сучасна драма, драма у стилі вестерн|ДРАМА</item>
+        <item>Автоспорт|СПОРТ</item>
+        <item>Мюзикли|МУЗИКА</item>
+        <item>Музика, мистецтво, індустріальне мистецтво|МИСТЕЦТВО</item>
+        <item>Музичне розмаїття|РОЗВАГИ</item>
+        <item>Новини, аналітика|НОВИНИ</item>
+        <item>Олімпійські, міжнародні ігри|СПОРТ</item>
+        <item>Інші ігри з м\'ячем|СПОРТ</item>
+        <item>Іноземна анімація|СІМ\'Я_ДІТИ</item>
+        <item>Іноземна драма|ДРАМА</item>
+        <item>Репортажі з-за кордону|НОВИНИ</item>
+        <item>Іноземні фільми|ФІЛЬМИ</item>
+        <item>Іноземна рок-музика, поп-музика|МУЗИКА</item>
+        <item>Історична драма|ДРАМА</item>
+        <item>Політика, національні збори|НОВИНИ</item>
+        <item>Популярні пісні, японські популярні пісні (енка)|МУЗИКА</item>
+        <item>Вікторини|ІГРИ</item>
+        <item>Чарти, музика на замовлення|МУЗИКА</item>
+        <item>Поточні, загальні|НОВИНИ</item>
+        <item>Покупки, замовлення поштою|ПОКУПКИ</item>
+        <item>Футбол|СПОРТ</item>
+        <item>Спецефекти|СІМ\'Я_ДІТИ</item>
+        <item>Спеціальні програми, документальні|НОВИНИ</item>
+        <item>Спецрепортажі|НОВИНИ</item>
+        <item>Спортивні новини|СПОРТ</item>
+        <item>Сумо, бойові види спорту|СПОРТ</item>
+        <item>Ток-шоу, різне|РОЗВАГИ</item>
+        <item>Мандри, різне|РОЗВАГИ</item>
+        <item>Повідомлення про дорожній рух|НОВИНИ</item>
+        <item>Подорожі, рибальство, відпочинок на природі|ТВАРИНИ_ДИКА_ПРИРОДА</item>
+        <item>Навчання в університеті, екзамени|ОСВІТА</item>
+        <item>Прогноз погоди|НОВИНИ</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB in Brazil to canonical genre -->
+    <string-array name="genre_mapping_isdb_br">
+        <item>Biografia|NEWS</item>
+        <item>Culinária|LIFE_STYLE</item>
+        <item>Documentário|NEWS</item>
+        <item>Educativo|EDUCATION</item>
+        <item>Erótico|MOVIES</item>
+        <item>Esporte|SPORTS</item>
+        <item>Filme|MOVIES</item>
+        <item>Гра|ІГРИ</item>
+        <item>Humorístico|COMEDY</item>
+        <item>Infantil|FAMILY_KIDS</item>
+        <item>Informação|LIFE_STYLE</item>
+        <item>Jornalismo|NEWS</item>
+        <item>Minissérie|DRAMA</item>
+        <item>Moda|LIFE_STYLE</item>
+        <item>Мюзикли|МУЗИКА</item>
+        <item>Premiação|ENTERTAINMENT</item>
+        <item>Реаліті-шоу|РОЗВАГИ</item>
+        <item>Religioso|LIFE_STYLE</item>
+        <item>Reportagem|NEWS</item>
+        <item>Село|СТИЛЬ_ЖИТТЯ</item>
+        <item>Saúde|LIFE_STYLE</item>
+        <item>Série|DRAMA</item>
+        <item>Série/seriado|DRAMA</item>
+        <item>Шоу|РОЗВАГИ</item>
+        <item>Telejornais|NEWS</item>
+        <item>Televendas|SHOPPING</item>
+        <item>Turismo|TRAVEL</item>
+        <item>Variedade|ENTERTAINMENT</item>
+        <item>Auditorium|ENTERTAINMENT</item>
+        <item>Нагороди|РОЗВАГИ</item>
+        <item>Біографія|НОВИНИ</item>
+        <item>Дитячі|СІМ\'Я_ДІТИ</item>
+        <item>Дитячі|СІМ\'Я_ДІТИ</item>
+        <item>Комедійні шоу|КОМЕДІЯ</item>
+        <item>Кулінарія|СТИЛЬ_ЖИТТЯ</item>
+        <item>Країна|СТИЛЬ_ЖИТТЯ</item>
+        <item>Дискусії/інтерв\'ю|НОВИНИ</item>
+        <item>Дискусії|НОВИНИ</item>
+        <item>Документальні|НОВИНИ</item>
+        <item>Освіта|ОСВІТА</item>
+        <item>Освіта|ОСВІТА</item>
+        <item>Технічні послуги|ТЕХНІЧНІ_НАУКИ</item>
+        <item>Еротика|ФІЛЬМИ</item>
+        <item>Мода|СТИЛЬ_ЖИТТЯ</item>
+        <item>Жіночі|РОЗВАГИ</item>
+        <item>Гра|ІГРИ</item>
+        <item>Здоров\'я|СТИЛЬ_ЖИТТЯ</item>
+        <item>Гумор|КОМЕДІЯ</item>
+        <item>Інформація|СТИЛЬ_ЖИТТЯ</item>
+        <item>Інтерв\'ю|НОВИНИ</item>
+        <item>Журналістика|НОВИНИ</item>
+        <item>За кадром|РОЗВАГИ</item>
+        <item>Мінісеріали|ДРАМА</item>
+        <item>Мінісеріали|ДРАМА</item>
+        <item>Кінофільми|Фільми</item>
+        <item>Фільми|ФІЛЬМИ</item>
+        <item>Мюзикли|РОЗВАГИ</item>
+        <item>Новини|НОВИНИ</item>
+        <item>Розіграш призів|ШОПІНГ</item>
+        <item>Лотерея|ШОПІНГ</item>
+        <item>Лотерея, телемагазин, розіграш призів|ШОПІНГ</item>
+        <item>Реаліті-шоу|РОЗВАГИ</item>
+        <item>Релігія|СТИЛЬ_ЖИТТЯ</item>
+        <item>Репортажі|НОВИНИ</item>
+        <item>Повідомлення|НОВИНИ</item>
+        <item>Село|СТИЛЬ_ЖИТТЯ</item>
+        <item>Серіали|ДРАМА</item>
+        <item>Телесеріал|ДРАМА</item>
+        <item>Шоу|РОЗВАГИ</item>
+        <item>Мильні опери|ДРАМА</item>
+        <item>Спорт|СПОРТ</item>
+        <item>Спорт|СПОРТ</item>
+        <item>Телемагазини|ШОПІНГ</item>
+        <item>Телемагазини|ШОПІНГ</item>
+        <item>Туризм|ПОДОРОЖІ</item>
+        <item>Подорожі|ПОДОРОЖІ</item>
+        <item>ТВ-новини|НОВИНИ</item>
+        <item>Різне|РОЗВАГИ</item>
+        <item>Естрада|РОЗВАГИ</item>
+    </string-array>
+</resources>

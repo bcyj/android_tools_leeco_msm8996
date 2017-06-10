@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2013-2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution.
+ * Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!--
+/**
+ * Copyright (c) 2009, The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Name of the status bar as seen in the applications info settings page. [CHAR LIMIT=12] -->
+    <string name="app_label">সিস্টেম UI</string>
+
+    <!-- The text for the button in the notification window-shade that clears
+         all of the currently visible notifications. [CHAR LIMIT=10]-->
+    <string name="status_bar_clear_all_button">পরিষ্কার করুন</string>
+
+    <!-- Title shown in recents popup for removing an application from the list -->
+    <string name="status_bar_recent_remove_item_title">তালিকা থেকে সরান</string>
+
+    <!-- Title shown in recents popup for inspecting an application\'s properties -->
+    <string name="status_bar_recent_inspect_item_title">অ্যাপ তথ্য</string>
+
+    <string name="status_bar_recent_clear_all_text">সমস্ত পরিষ্কার করুন</string>
+    <string name="status_bar_recent_task_manager_text">কার্য পরিচালক</string>
+
+    <!-- Message shown in the middle of the screen after clicking on the recent apps button
+         when there are no recent apps to show. Also used for accessibility. [CHAR LIMIT=45]-->
+    <string name="status_bar_no_recent_apps">আপনার সাম্প্রতিক স্ক্রিনগুলি এখানে উপস্থিত হয়</string>
+
+    <!-- Content description for the button to dismiss Recent Apps (only present on large
+         devices) -->
+    <string name="status_bar_accessibility_dismiss_recents">সাম্প্রতিক অ্যাপ বাতিল করুন</string>
+
+    <!-- Message that is read when you enter recent apps in TalkBack -->
+    <plurals name="status_bar_accessibility_recent_apps">
+        <item quantity="one">1টি স্ক্রিন ওভারভিউ</item>
+        <item quantity="other">%dটি স্ক্রিন ওভারভিউ</item>
+    </plurals>
+
+    <!-- The label in the bar at the top of the status bar when there are no notifications
+         showing.  [CHAR LIMIT=40]-->
+    <string name="status_bar_no_notifications_title">কোন বিজ্ঞপ্তি নেই</string>
+
+    <!-- The label for the group of notifications for ongoing events in the opened version of
+         the status bar.  An ongoing call is the prime example of this.  The MP3 music player
+         might be another example.   [CHAR LIMIT=40] -->
+    <string name="status_bar_ongoing_events_title">চলমান</string>
+
+    <!-- The label for the group of notifications for recent events in the opened version of
+         the status bar.  Recently received text messsages (SMS), emails, calendar alerts, etc.
+         [CHAR LIMIT=40] -->
+    <string name="status_bar_latest_events_title">বিজ্ঞপ্তি</string>
+
+    <!-- When the battery is low, this is displayed to the user in a dialog.  The title of the low battery alert.  [CHAR LIMIT=NONE]-->
+    <string name="battery_low_title">ব্যাটারি কম</string>
+
+    <!-- A message that appears when the battery level is getting low in a dialog.  This is
+        appened to the subtitle of the low battery alert.  "percentage" is the percentage of battery
+        remaining [CHAR LIMIT=none]-->
+    <string name="battery_low_percent_format"><xliff:g id="percentage">%s</xliff:g> অবশিষ্ট</string>
+
+    <!-- Same as battery_low_percent_format, with a notice about battery saver if on. [CHAR LIMIT=none]-->
+    <string name="battery_low_percent_format_saver_started"><xliff:g id="percentage">%s</xliff:g> অবশিষ্ট। ব্যাটারি সাশ্রয়কারী চালু আছে।</string>
+
+    <!-- A message that appears when a USB charger is plugged in and the device does not
+    support charging on it.  That is, a charger that fits into the USB port and goes into
+    a wall socket, not into a computer. (This happens because some devices require more
+    current than the USB spec allows.  [CHAR LIMIT=NONE] -->
+    <string name="invalid_charger">USB চার্জিং সমর্থিত নয়।\nশুধুমাত্র সরবরাহ করা চার্জার ব্যবহার করুন।</string>
+
+    <!-- First line of invalid_charger, used in the notification form.  [CHAR LIMIT=NONE]-->
+    <string name="invalid_charger_title">USB চার্জিং সমর্থিত নয়।</string>
+
+    <!-- Second line of invalid_charger, used in the notification form.  [CHAR LIMIT=NONE]-->
+    <string name="invalid_charger_text">কেবল সরবরাহিত চার্জারটি ব্যবহার করুন।</string>
+
+    <!-- When the battery is low, this is the label of the button to go to the
+         power usage activity to find out what drained the battery.  [CHAR LIMIT=30] -->
+    <string name="battery_low_why">সেটিংস</string>
+
+    <!-- Battery saver confirmation dialog title [CHAR LIMIT=NONE]-->
+    <string name="battery_saver_confirmation_title">ব্যাটারি সাশ্রয়কারী চালু করবেন?</string>
+
+    <!-- Battery saver confirmation dialog ok text [CHAR LIMIT=40]-->
+    <string name="battery_saver_confirmation_ok">চালু করুন</string>
+
+    <!-- Battery saver notification action [CHAR LIMIT=NONE]-->
+    <string name="battery_saver_start_action">ব্যাটারি সাশ্রয়কারী চালু করুন</string>
+
+    <!-- Name of the button that links to the Settings app. [CHAR LIMIT=NONE] -->
+    <string name="status_bar_settings_settings_button">সেটিংস</string>
+
+    <!-- Name of the button that links to the Wifi settings screen. [CHAR LIMIT=NONE] -->
+    <string name="status_bar_settings_wifi_button">Wi-Fi</string>
+
+    <!-- Label in the system panel for airplane mode (all radios are turned off)[CHAR LIMIT=30] -->
+    <string name="status_bar_settings_airplane">বিমান অবস্থা</string>
+
+    <!-- Label in system panel saying the device will use the orientation sensor to rotate [CHAR LIMIT=30] -->
+    <string name="status_bar_settings_auto_rotation">নিজে-ঘোরা স্ক্রিন</string>
+
+    <!-- Abbreviation / label for mute brightness mode button. Should be all caps. [CHAR LIMIT=6] -->
+    <string name="status_bar_settings_mute_label">নীরব</string>
+
+    <!-- Abbreviation / label for automatic brightness mode button. Should be all caps. [CHAR LIMIT=6] -->
+    <string name="status_bar_settings_auto_brightness_label">স্বয়ংক্রিয়</string>
+
+    <!-- Label in system panel saying the device will show notifications [CHAR LIMIT=30] -->
+    <string name="status_bar_settings_notifications">বিজ্ঞপ্তি</string>
+
+    <!-- Separator for PLMN and SPN in network name. -->
+    <string name="status_bar_network_name_separator" translatable="false">|</string>
+
+    <!-- Network connection string for Bluetooth Reverse Tethering -->
+    <string name="bluetooth_tethered">Bluetooth টিদার্ড</string>
+    <!-- Title of a button to open the settings for input methods [CHAR LIMIT=30] -->
+    <string name="status_bar_input_method_settings_configure_input_methods">সেট আপ ইনপুট পদ্ধতি</string>
+
+    <!-- Label of a toggle switch to disable use of the physical keyboard in favor of the IME. [CHAR LIMIT=25] -->
+    <string name="status_bar_use_physical_keyboard">বাস্তবিক কীবোর্ড</string>
+
+    <!-- Prompt for the USB device permission dialog [CHAR LIMIT=80] -->
+    <string name="usb_device_permission_prompt"><xliff:g id="application">%1$s</xliff:g> অ্যাপকে USB ডিভাইস অ্যাক্সেস করতে অনুমতি দিতে চান?</string>
+
+    <!-- Prompt for the USB accessory permission dialog [CHAR LIMIT=80] -->
+    <string name="usb_accessory_permission_prompt"><xliff:g id="application">%1$s</xliff:g> অ্যাপকে USB অ্যাক্সেসরি অ্যাক্সেস করতে অনুমতি দিতে চান?</string>
+
+    <!-- Prompt for the USB device confirm dialog [CHAR LIMIT=80] -->
+    <string name="usb_device_confirm_prompt">এই USB ডিভাইস সংযুক্ত হলে <xliff:g id="activity">%1$s</xliff:g> খুলবেন?</string>
+
+    <!-- Prompt for the USB accessory confirm dialog [CHAR LIMIT=80] -->
+    <string name="usb_accessory_confirm_prompt">এই USB অ্যাক্সেসরি সংযুক্ত হলে <xliff:g id="activity">%1$s</xliff:g> খুলবেন?</string>
+
+    <!-- Prompt for the USB accessory URI dialog [CHAR LIMIT=80] -->
+    <string name="usb_accessory_uri_prompt">এই USB অ্যাক্সেসরির সাথে ইনস্টল করা কোন অ্যাপ কাজ করে না। এই অ্যাক্সেসরির বিষয়ে আরও জানুন <xliff:g id="url">%1$s</xliff:g></string>
+
+    <!-- Title for USB accessory dialog.  Used when the name of the accessory cannot be determined.  [CHAR LIMIT=50] -->
+    <string name="title_usb_accessory">USB অ্যাক্সেসরি</string>
+
+    <!-- View button label for USB dialogs.  [CHAR LIMIT=15] -->
+    <string name="label_view">দেখুন</string>
+
+    <!-- Checkbox label for USB device dialogs.  [CHAR LIMIT=50] -->
+    <string name="always_use_device">এই USB ডিভাইসের ক্ষেত্রে ডিফল্ট ভাবে ব্যবহার করুন</string>
+
+    <!-- Checkbox label for USB accessory dialogs.  [CHAR LIMIT=50] -->
+    <string name="always_use_accessory">এই USB অ্যাক্সেসরির ক্ষেত্রে ডিফল্ট ভাবে ব্যবহার করুন</string>
+
+    <!-- Title of confirmation dialog for USB debugging -->
+    <string name="usb_debugging_title">USB ডিবাগিং এর অনুমতি দেবেন?</string>
+
+    <!-- Message of confirmation dialog for USB debugging -->
+    <string name="usb_debugging_message">কম্পিউটারের RSA কী ফিঙ্গার প্রিন্ট হল:\n<xliff:g id="fingerprint">%1$s</xliff:g></string>
+
+    <!-- Option to always allow USB debugging from the attached computer -->
+    <string name="usb_debugging_always">এই কম্পিউটার থেকে সর্বদা অনুমতি দিন</string>
+
+    <!-- Checkbox label for application compatibility mode ON (zooming app to look like it\'s running
+         on a phone).  [CHAR LIMIT=25] -->
+    <string name="compat_mode_on">স্ক্রিন পূরণ করতে জুম করুন</string>
+
+    <!-- Checkbox label for application compatibility mode OFF (normal mode on tablets).
+         [CHAR LIMIT=25] -->
+    <string name="compat_mode_off">স্ক্রিন পূরণ করতে টানুন</string>
+
+    <!-- Notification ticker displayed when a screenshot is being saved to the Gallery. [CHAR LIMIT=30] -->
+    <string name="screenshot_saving_ticker">স্ক্রিন্শট সংরক্ষণ করা হচ্ছে\u2026</string>
+    <!-- Notification title displayed when a screenshot is being saved to the Gallery. [CHAR LIMIT=50] -->
+    <string name="screenshot_saving_title">স্ক্রিন্শট সংরক্ষণ করা হচ্ছে\u2026</string>
+    <!-- Notification text displayed when a screenshot is being saved to the Gallery. [CHAR LIMIT=100] -->
+    <string name="screenshot_saving_text">স্ক্রিনশট সংরক্ষণ করা হচ্ছে।</string>
+    <!-- Notification title displayed when a screenshot is saved to the Gallery. [CHAR LIMIT=50] -->
+    <string name="screenshot_saved_title">স্ক্রিন্শট ক্যাপচার করা হয়েছে।</string>
+    <!-- Notification text displayed when a screenshot is saved to the Gallery. [CHAR LIMIT=100] -->
+    <string name="screenshot_saved_text">আপনার স্ক্রিনশট দেখতে স্পর্শ করুন।</string>
+    <!-- Notification title displayed when we fail to take a screenshot. [CHAR LIMIT=50] -->
+    <string name="screenshot_failed_title">স্ক্রিনশট ক্যাপচার করা যায়নি।</string>
+    <!-- Notification text displayed when we fail to take a screenshot. [CHAR LIMIT=100] -->
+    <string name="screenshot_failed_text">সীমাবদ্ধ সঞ্চয়স্থানের জন্য স্ক্রিনশট নিতে পারে না বা এটি অ্যাপ বা আপনার সংস্থা দ্বারা অনুমোদিত নয়।</string>
+
+    <!-- Title for the USB function chooser in UsbPreferenceActivity. [CHAR LIMIT=30] -->
+    <string name="usb_preference_title">USB ফাইল স্থানান্তর বিকল্প</string>
+    <!-- Label for the MTP USB function in UsbPreferenceActivity. [CHAR LIMIT=50] -->
+    <string name="use_mtp_button_title">কোন মিডিয়া প্লেয়ার হিসাবে মাউন্ট করুন (MTP)</string>
+    <!-- Label for the PTP USB function in UsbPreferenceActivity. [CHAR LIMIT=50] -->
+    <string name="use_ptp_button_title">কোন ক্যামেরা হিসাবে মাউন্ট করুন (PTP)</string>
+    <!-- Label for the installer CD image option in UsbPreferenceActivity. [CHAR LIMIT=50] -->
+    <string name="installer_cd_button_title">Mac এর জন্য Android ফাইল স্থানান্তর অ্যাপ ইনস্টল করুন</string>
+
+    <!-- Content description of the back button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_back">ব্যাক</string>
+    <!-- Content description of the home button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_home">বাড়ি</string>
+    <!-- Content description of the menu button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_menu">মেনু</string>
+    <!-- Content description of the recents button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_recent">ওভারভিউ</string>
+    <!-- Content description of the search button for accessibility. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_search_light">অনুসন্ধান</string>
+    <!-- Content description of the camera button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_camera_button">ক্যামেরা</string>
+    <!-- Content description of the phone button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_button">ফোন</string>
+    <!-- Content description of the unlock button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_unlock_button">আনলক</string>
+    <!-- Click action label for accessibility for the unlock button. [CHAR LIMIT=NONE] -->
+    <string name="unlock_label">আনলক</string>
+    <!-- Click action label for accessibility for the phone button. [CHAR LIMIT=NONE] -->
+    <string name="phone_label">ফোন খুলুন</string>
+    <!-- Click action label for accessibility for the phone button. [CHAR LIMIT=NONE] -->
+    <string name="camera_label">ক্যামেরা খুলুন</string>
+
+    <!-- Content description of the compatibility zoom button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_compatibility_zoom_button">সুসংগততা জুম বোতাম।</string>
+
+    <!-- Content description of picture of the compatibility zoom example for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_compatibility_zoom_example">অপেক্ষাকৃত ছোট থেকে বড় স্ক্রিনে জুম করুন।</string>
+
+    <!-- Content description of the bluetooth icon when connected for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_bluetooth_connected">Bluetooth সংযুক্ত।</string>
+    <!-- Content description of the bluetooth icon when connecting for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_bluetooth_disconnected">Bluetooth সংযোগ বিচ্ছিন্ন।</string>
+
+    <!-- Content description of the battery when no battery for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_battery">কোন ব্যাটারি নেই।</string>
+    <!-- Content description of the battery when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_one_bar">ব্যাটারি এক বার।</string>
+    <!-- Content description of the battery when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_two_bars">ব্যাটারি দুই বার।</string>
+     <!-- Content description of the battery when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_three_bars">ব্যাটারি তিনটি বার।</string>
+    <!-- Content description of the battery when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_full">ব্যাটারি ভর্তি।</string>
+
+    <!-- Content description of the phone signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_phone">কোন ফোন নেই।</string>
+    <!-- Content description of the phone signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_one_bar">ফোন এক বার।</string>
+    <!-- Content description of the phone signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_two_bars">ফোন দুই বার।</string>
+    <!-- Content description of the phone signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_three_bars">ফোন তিনটি বার।</string>
+    <!-- Content description of the phone signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_signal_full">পুরো ফোন সংকেত।</string>
+
+    <!-- Content description of the data signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_data">কোন ডেটা নেই।</string>
+    <!-- Content description of the data signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_one_bar">ডেটা এক বার।</string>
+    <!-- Content description of the data signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_two_bars">ডেটা দুই বার।</string>
+    <!-- Content description of the data signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_three_bars">ডেটা তিনটি বার।</string>
+    <!-- Content description of the data signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_signal_full">পুরো ডেটা সংকেত।</string>
+
+    <!-- Content description of the WIFI signal when WIFI is disabled for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_off">Wifi বন্ধ।</string>
+    <!-- Content description of the WIFI signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_wifi">Wifi সংযোগ বিচ্ছিন্ন।</string>
+    <!-- Content description of the WIFI signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_one_bar">Wifi এক দণ্ড।</string>
+    <!-- Content description of the WIFI signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_two_bars">Wifi দুইটি দণ্ড।</string>
+    <!-- Content description of the WIFI signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_three_bars">Wifi তিনটি দণ্ড।</string>
+    <!-- Content description of the WIFI signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_signal_full">WiFi সংকেত পুরো মাত্রায়।</string>
+
+    <!-- Content description of the wifi label showing what we are connected to. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_name"><xliff:g id="wifi" example="Home Network">%s</xliff:g>-এর সাথে সংযুক্ত।</string>
+
+    <!-- Content description of the bluetooth label showing what we are connected to. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_bluetooth_name"><xliff:g id="bluetooth" example="Car Audio">%s</xliff:g>-এর সাথে সংযুক্ত।</string>
+
+
+    <!-- Content description of the WiMAX signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_wimax">কোন WiMAX নেই।</string>
+    <!-- Content description of the WiMAX signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_one_bar">WiMAX এক বার।</string>
+    <!-- Content description of the WiMAX signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_two_bars">WiMAX দুইটি বার।</string>
+    <!-- Content description of the WiMAX signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_three_bars">WiMAX তিনটি বার।</string>
+    <!-- Content description of the WiMAX signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_signal_full">পুরো WiMAX সংকেত।</string>
+
+    <!-- Content description of an item with no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_signal">কোন সংকেত নেই।</string>
+    <!-- Content description of an item with no signal and no connection for accessibility (not shown on the screen) [CHAR LIMIT=NONE] -->
+    <string name="accessibility_not_connected">সংযুক্ত নয়।</string>
+    <!-- Content description of an item with zero signal bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_zero_bars">কোন দণ্ড নেই।</string>
+    <!-- Content description of an item with one signal bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_one_bar">এক দণ্ড।</string>
+    <!-- Content description of an item with two signal bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_two_bars">দুইটি দণ্ড।</string>
+    <!-- Content description of an item with three signal bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_three_bars">তিনটি দণ্ড।</string>
+    <!-- Content description of an item with full signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_signal_full">সংকেত পুরো মাত্রায়।</string>
+
+    <!-- Content description of an item that is turned on for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_on">চালু।</string>
+    <!-- Content description of an item that is turned off for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_off">বন্ধ।</string>
+    <!-- Content description of an item that is connected for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_connected">সংযুক্ত।</string>
+    <!-- Content description of an item that is connecting for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_connecting">সংযোগ হচ্ছে।</string>
+
+    <!-- Content description of the data connection type GPRS for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_gprs">GPRS</string>
+
+    <!-- Content description of the data connection type 1x for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_1x">1 X</string>
+
+    <!-- Content description of the data connection type HSPA and its variants for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_hspa">HSPA</string>
+
+    <!-- Content description of the data connection type 3G for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_3g">3G</string>
+
+    <!-- Content description of the data connection type 3.5G for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_3.5g">3.5G</string>
+
+    <!-- Content description of the data connection type 4G for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_4g">4G</string>
+
+    <!-- Content description of the data connection type LTE for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_lte">LTE</string>
+
+    <!-- Content description of the data connection type CDMA for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_cdma">CDMA</string>
+
+    <!-- Content description of the roaming data connection type for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_roaming">রোমিং</string>
+
+    <!-- Content description of the data connection type Edge for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_edge">এডজ</string>
+
+    <!-- Content description of the data connection type WiFi for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_wifi">Wi-Fi</string>
+
+    <!-- Content description of the data connection with no SIM for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_sim">কোন SIM নেই।</string>
+
+    <!-- Content description of the bluetooth tethering icon for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_bluetooth_tether">Bluetooth টিদারিং।</string>
+
+    <!-- Content description of the airplane mode icon for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_airplane_mode">বিমান মোড।</string>
+
+    <!-- Content description of the battery level icon for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_level">ব্যাটারি <xliff:g id="number">%d</xliff:g> শতাংশ৷</string>
+
+    <!-- Content description of the button for showing a settings panel in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_settings_button">সিস্টেম সেটিং।</string>
+
+    <!-- Content description of the button for showing a notifications panel in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_notifications_button">বিজ্ঞপ্তি।</string>
+
+    <!-- Content description of the button for removing a notification in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_remove_notification">বিজ্ঞপ্তি পরিষ্কার করুন।</string>
+
+    <!-- Content description of the enabled GPS icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_gps_enabled">GPS সক্ষম।</string>
+
+    <!-- Content description of the acquiring GPS icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_gps_acquiring">GPS বসানো চলছে।</string>
+
+    <!-- Content description of the TeleTypewriter(TTY) enabled icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_tty_enabled">TeleTypewriter সক্ষম।</string>
+
+    <!-- Content description of the ringer vibrate icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_ringer_vibrate">রিঙ্গার কম্পন।</string>
+
+    <!-- Content description of the ringer silent icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_ringer_silent">রিঙ্গার নীরব।</string>
+
+    <!-- Content description of the cast icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_casting">@string/quick_settings_casting</string>
+
+    <!-- Content description to tell the user that this button will remove an application from recents -->
+    <string name="accessibility_recents_item_will_be_dismissed"><xliff:g id="app" example="Calendar">%s</xliff:g> বাতিল করুন।</string>
+    <!-- Content description to tell the user an application has been removed from recents -->
+    <string name="accessibility_recents_item_dismissed"><xliff:g id="app" example="Calendar">%s</xliff:g> বাতিল করা হয়েছে।</string>
+    <!-- Content description to tell the user an application has been launched from recents -->
+    <string name="accessibility_recents_item_launched"><xliff:g id="app" example="Calendar">%s</xliff:g> শুরু করা হচ্ছে।</string>
+    <!-- Content description to tell the user a notification has been removed from the notification shade -->
+    <string name="accessibility_notification_dismissed">বিজ্ঞপ্তি বাতিল করা হয়েছে।</string>
+
+    <!-- Content description for the notification shade panel (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_notification_shade">বিজ্ঞপ্তি আবহ।</string>
+    <!-- Content description for the quick settings panel (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_quick_settings">দ্রুত সেটিং।</string>
+    <!-- Content description for the lock screen (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_lock_screen">লক স্ক্রিন।</string>
+    <!-- Content description for the settings button in the status bar header. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_settings">সেটিংস</string>
+    <!-- Content description for the recent apps panel (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_recent_apps">ওভারভিউ।</string>
+
+    <!-- Content description of the user tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_user">ব্যবহারকারী <xliff:g id="user" example="John Doe">%s</xliff:g>।</string>
+    <!-- Content description of the wifi tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_wifi"><xliff:g id="signal" example="Three bars">%1$s</xliff:g>.</string>
+    <!-- Announcement made when the wifi is turned off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_wifi_changed_off">Wifi বন্ধ আছে।</string>
+    <!-- Announcement made when the wifi is turned on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_wifi_changed_on">Wifi চালু আছে।</string>
+    <!-- Content description of the mobile data tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_mobile">মোবাইল <xliff:g id="signal" example="Three bars">%1$s</xliff:g>. <xliff:g id="type" example="4G">%2$s</xliff:g>. <xliff:g id="network" example="T-Mobile">%3$s</xliff:g>.</string>
+    <!-- Content description of the battery tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_battery">ব্যাটারি <xliff:g id="state" example="50% charging">%s</xliff:g>.</string>
+    <!-- Content description of the airplane mode tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_airplane_off">বিমান মোড বন্ধ।</string>
+    <!-- Content description of the airplane mode tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_airplane_on">বিমান মোড চালু৷</string>
+    <!-- Announcement made when the airplane mode changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_airplane_changed_off">বিমান মোড বন্ধ আছে।</string>
+    <!-- Announcement made when the airplane mode changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_airplane_changed_on">বিমান মোড চালু আছে।</string>
+    <!-- Content description of the mobile data tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_data_off">মোবাইল ডেটা বন্ধ আছে।</string>
+    <!-- Content description of the mobile data tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_data_on">মোবাইল ডেটা চালু আছে।</string>
+    <!-- Content description of the roaming tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_roaming_off">রোমিং বন্ধ।</string>
+    <!-- Content description of the roaming tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_roaming_on">রোমিং চালু।</string>
+    <!-- Content description of the bluetooth tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_off">ব্লুটুথ বন্ধ।</string>
+    <!-- Content description of the bluetooth tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_on">ব্লুটুথ চালু।</string>
+    <!-- Content description of the bluetooth tile in quick settings when connecting (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_connecting">ব্লুটুথ সংযোগ করা হচ্ছে।</string>
+    <!-- Content description of the bluetooth tile in quick settings when connected (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_connected">Bluetooth সংযুক্ত।</string>
+    <!-- Announcement made when the bluetooth is turned off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_changed_off">ব্লুটুথ বন্ধ আছে।</string>
+    <!-- Announcement made when the bluetooth is turned on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_changed_on">ব্লুটুথ চালু আছে।</string>
+    <!-- Content description of the location tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_off">অবস্থানের প্রতিবেদন বন্ধ।</string>
+    <!-- Content description of the location tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_on">অবস্থানের প্রতিবেদন চালু।</string>
+    <!-- Announcement made when the location tile changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_changed_off">অবস্থানের প্রতিবেদন বন্ধ করা হয়েছে।</string>
+    <!-- Announcement made when the location tile changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_changed_on">অবস্থানের প্রতিবেদন চালু আছে।</string>
+    <!-- Content description of the alarm tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_alarm">অ্যালার্ম <xliff:g id="time" example="Wed 3:30 PM">%s</xliff:g>-এ সেট আছে৷.</string>
+    <!-- Content description of quick settings detail panel close button (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_close">প্যানেল বন্ধ করুন।</string>
+    <!-- Content description of zen mode time condition plus button (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_more_time">বেশি বার।</string>
+    <!-- Content description of zen mode time condition minus button (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_less_time">কম বার।</string>
+    <!-- Content description of the flashlight tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_off">ফ্ল্যাশলাইট বন্ধ।</string>
+    <!-- Content description of the flashlight tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_on">ফ্ল্যাশলাইট চালু।</string>
+    <!-- Announcement made when the flashlight state changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_changed_off">ফ্ল্যাশলাইট বন্ধ আছে।</string>
+    <!-- Announcement made when the flashlight state changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_changed_on">ফ্ল্যাশলাইট চালু আছে।</string>
+    <!-- Announcement made when the color inversion state changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_color_inversion_changed_off">রঙ বিপরীতকরণ বন্ধ করা হয়েছে।</string>
+    <!-- Announcement made when the color inversion state changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_color_inversion_changed_on">রঙ বিপরীতকরণ চালু করা হয়েছে।</string>
+    <!-- Announcement made when the hotspot state changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_hotspot_changed_off">মোবাইল হটস্পট বন্ধ আছে।</string>
+    <!-- Announcement made when the hotspot state changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_hotspot_changed_on">মোবাইল হটস্পট চালু আছে।</string>
+    <!-- Announcement made when the screen stopped casting (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_casting_turned_off">স্ক্রিন কাস্টিং বন্ধ হয়েছে।</string>
+
+    <!-- Content description of the display brightness slider (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_brightness">প্রদর্শনের উজ্জ্বলতা</string>
+
+    <!-- Title of dialog shown when 2G-3G data usage has exceeded limit and has been disabled. [CHAR LIMIT=48] -->
+    <string name="data_usage_disabled_dialog_3g_title">2G-3G ডেটা বন্ধ</string>
+    <!-- Title of dialog shown when 4G data usage has exceeded limit and has been disabled. [CHAR LIMIT=48] -->
+    <string name="data_usage_disabled_dialog_4g_title">4G তথ্য বন্ধ</string>
+    <!-- Title of dialog shown when mobile data usage has exceeded limit and has been disabled. [CHAR LIMIT=48] -->
+    <string name="data_usage_disabled_dialog_mobile_title">সেলুলার ডেটা বন্ধ আছে</string>
+    <!-- Title of dialog shown when data usage has exceeded limit and has been disabled. [CHAR LIMIT=48] -->
+    <string name="data_usage_disabled_dialog_title">ডেটা বন্ধ</string>
+    <!-- Body of dialog shown when data usage has exceeded limit and has been disabled. [CHAR LIMIT=NONE] -->
+    <string name="data_usage_disabled_dialog">আপনার ডিভাইস ডেটা বন্ধ আছে কারণ এটি আপনার সেট করা সীমায় পৌঁছেছে।\n\nএটি আবার চালু করার ফলে আপনার ক্যারিয়ারে চার্জ ধার্য করা হতে পারে।</string>
+    <!-- Dialog button indicating that data connection should be re-enabled. [CHAR LIMIT=28] -->
+    <string name="data_usage_disabled_dialog_enable">ডেটা চালু করুন</string>
+
+    <!-- Text to display underneath the graphical signal strength meter when
+         no connection is available. [CHAR LIMIT=20] -->
+    <string name="status_bar_settings_signal_meter_disconnected">
+        কোন ইন্টারনেট সংযোগ নেই
+    </string>
+
+    <!-- Text to display underneath the graphical signal strength meter when
+         it is displaying Wi-Fi status and Wi-Fi is connected to a network
+         whose SSID is not available.
+         [CHAR LIMIT=20] -->
+    <string name="status_bar_settings_signal_meter_wifi_nossid">Wi-Fi সংযুক্ত</string>
+
+    <!-- Notification text: when GPS is getting a fix [CHAR LIMIT=50] -->
+    <string name="gps_notification_searching_text">GPS সন্ধান করা হচ্ছে</string>
+
+    <!-- Notification text: when GPS has found a fix [CHAR LIMIT=50] -->
+    <string name="gps_notification_found_text">GPS দ্বারা অবস্থান সেট</string>
+
+    <!-- Accessibility text describing the presence of active location requests by one or more apps -->
+    <string name="accessibility_location_active">অবস্থান অনুরোধগুলি সক্রিয়</string>
+
+    <!-- Content description of the clear button in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_clear_all">সমস্ত বিজ্ঞপ্তি পরিষ্কার করুন।</string>
+
+    <!-- Content description of button in notification inspector for system settings relating to
+         notifications from this application [CHAR LIMIT=NONE] -->
+    <string name="status_bar_notification_inspect_item_title">প্রজ্ঞাপন সেটিং</string>
+
+    <!-- Content description of button in notification inspetor for application-provided settings
+         for its own notifications [CHAR LIMIT=NONE] -->
+    <string name="status_bar_notification_app_settings_title"><xliff:g id="app_name" example="Calendar">%s</xliff:g> সেটিংস</string>
+
+    <!-- Description of the button in the phone-style notification panel that controls auto-rotation, when auto-rotation is on. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_off">স্ক্রীন নিজে থেকে ঘুরবে।</string>
+
+    <!-- Description of the button in the phone-style notification panel that controls auto-rotation, when auto-rotation is off. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_on_landscape">স্ক্রীন ল্যান্ডস্কেপ সজ্জায় রাখা থাকে।</string>
+
+    <!-- Description of the button in the phone-style notification panel that controls auto-rotation, when auto-rotation is off. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_on_portrait">স্ক্রীন পোর্ট্রেট সজ্জায় রাখা থাকে।</string>
+
+    <!-- Announcement made when the screen is rotating automatically again (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_off_changed">স্ক্রিন এখন স্বয়ংক্রিয়ভাবে ঘুরবে।</string>
+
+    <!-- Announcement made when the rotation lock state changes to landscape only (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_on_landscape_changed">স্ক্রিন এখন ল্যান্ডস্কেপ সজ্জারীতিতে লক আছে।</string>
+
+    <!-- Announcement made when the rotation lock state changes to portrait only (not shown on the screen).  [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_on_portrait_changed">স্ক্রিন এখন পোর্ট্রেট মোডে লক আছে।</string>
+
+    <!-- Name of the K-release easter egg: a display case for all our tastiest desserts. [CHAR LIMIT=30] -->
+    <string name="dessert_case">ডেজার্ট কেস</string>
+
+    <!-- Name of the launcher shortcut icon that allows dreams to be started immediately [CHAR LIMIT=20] -->
+    <string name="start_dreams">দিবাস্বপ্ন</string>
+
+    <!-- Textual description of Ethernet connections -->
+    <string name="ethernet_label">ইথারনেট</string>
+
+    <!-- QuickSettings: Airplane mode [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_airplane_mode_label">বিমান মোড</string>
+    <!-- QuickSettings: Mobile data [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_mobile_data_label">মোবাইল ডেটা</string>
+    <!-- QuickSettings: Roaming [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_roaming_label">রোমিং</string>
+    <!-- QuickSettings: Battery Charging [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_battery_charging_label">চার্জ হচ্ছে, <xliff:g id="number">%d</xliff:g><xliff:g id="percent">%%</xliff:g></string>
+    <!-- QuickSettings: Battery Charged [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_battery_charged_label">চার্জ করা হয়েছে।</string>
+    <!-- QuickSettings: Bluetooth [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_bluetooth_label">ব্লুটুথ</string>
+    <!-- QuickSettings: Bluetooth (Multiple) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_bluetooth_multiple_devices_label">Bluetooth (<xliff:g id="number">%d</xliff:g>টি ডিভাইস)</string>
+    <!-- QuickSettings: Bluetooth (Off) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_bluetooth_off_label">Bluetooth বন্ধ</string>
+    <!-- QuickSettings: Bluetooth detail panel, text when there are no items [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_bluetooth_detail_empty_text">কোনও জোড়বাঁধা ডিভাইস উপলব্ধ নেই</string>
+    <!-- QuickSettings: Brightness [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_brightness_label">উজ্জ্বলতা</string>
+    <!-- QuickSettings: Rotation Unlocked [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rotation_unlocked_label">স্বতঃ ঘূর্ণন</string>
+    <!-- QuickSettings: Rotation Locked [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rotation_locked_label">ঘূর্ণন লক আছে।</string>
+    <!-- QuickSettings: Locked to Portrait [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rotation_locked_portrait_label">প্রতিকৃতি</string>
+    <!-- QuickSettings: Locked to Landscape [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rotation_locked_landscape_label">প্রাকৃতিক ভূ-দৃশয়</string>
+    <!-- QuickSettings: IME [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_ime_label">ইনপুট করার পদ্ধতি</string>
+    <!-- QuickSettings: Location [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_label">অবস্থান</string>
+    <!-- QuickSettings: Location (Off) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_off_label">অবস্থান বন্ধ</string>
+    <!-- QuickSettings: Media device [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_media_device_label">মিডিয়া ডিভাইস</string>
+    <!-- QuickSettings: RSSI [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rssi_label">RSSI</string>
+    <!-- QuickSettings: RSSI (No network) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rssi_emergency_only">শুধুমাত্র আপত্কালীন কল</string>
+    <!-- QuickSettings: Settings [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_settings_label">সেটিংস</string>
+    <!-- QuickSettings: Time [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_time_label">সময়</string>
+    <!-- QuickSettings: User [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_user_label">আমাকে</string>
+    <!-- QuickSettings: Title of the user detail panel [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_user_title">ব্যবহারকারী</string>
+    <!-- QuickSettings: Label on the item for adding a new user [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_user_new_user">নতুন ব্যবহারকারী</string>
+    <!-- QuickSettings: Wifi [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_label">Wi-Fi</string>
+    <!-- QuickSettings: Wifi (Not connected) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_not_connected">সংযুক্ত নয়</string>
+    <!-- QuickSettings: Wifi (No network) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_no_network">কোন নেটওয়ার্ক নেই</string>
+    <!-- QuickSettings: Wifi (Off) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_off_label">Wi-Fi বন্ধ</string>
+    <!-- QuickSettings: Wifi detail panel, text when there are no items [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_detail_empty_text">কোনও সংরক্ষিত নেটওয়ার্ক উপলব্ধ নেই</string>
+    <!-- QuickSettings: Cast title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cast_title">কাস্ট স্ক্রিন</string>
+    <!-- QuickSettings: Cast detail panel, status text when casting [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_casting">অভিনয়ে</string>
+    <!-- QuickSettings: Cast detail panel, default device name [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cast_device_default_name">অনামী ডিভাইস</string>
+     <!-- QuickSettings: Cast detail panel, default device description [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cast_device_default_description">অভিনয়ে করতে প্রস্তুত</string>
+    <!-- QuickSettings: Cast detail panel, text when there are no items [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cast_detail_empty_text">কোনও ডিভাইস উপলব্ধ নেই</string>
+    <!-- QuickSettings: Brightness dialog title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_brightness_dialog_title">উজ্জ্বলতা</string>
+    <!-- QuickSettings: Brightness dialog auto brightness button [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_brightness_dialog_auto_brightness_label">স্বতঃ</string>
+    <!-- QuickSettings: Apn switch button label [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_apn_switch_label">APN স্যুইচ</string>
+    <!-- QuickSettings: Label for the toggle that controls whether display inversion is enabled. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_inversion_label">রঙগুলি বিপরীতকরণ করুন</string>
+    <!-- QuickSettings: Label for the toggle that controls whether display color correction is enabled. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_color_space_label">রঙ সংশোধনের মোড</string>
+    <!-- QuickSettings: Control panel: Label for button that navigates to settings. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_more_settings">আরও সেটিংস</string>
+    <!-- QuickSettings: Control panel: Label for button that dismisses control panel. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_done">হয়ে গেছে</string>
+    <!-- QuickSettings: Control panel: Label for connected device. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_connected">সংযুক্ত</string>
+    <!-- QuickSettings: Control panel: Label for a connected Wi-Fi access point when the connection is established by a Wi-Fi assistant application. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_connected_via_wfa">Wi\u2011Fi-এর মাধ্যমে সংযুক্ত</string>
+    <!-- QuickSettings: Control panel: Label for connecting device. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_connecting">সংযুক্ত করা হচ্ছে...</string>
+    <!-- QuickSettings: Tethering. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_tethering_label">টিদারিং</string>
+    <!-- QuickSettings: Hotspot. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_hotspot_label">হটস্পট</string>
+    <!-- QuickSettings: Notifications [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_notifications_label">বিজ্ঞপ্তি</string>
+    <!-- QuickSettings: Flashlight [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_flashlight_label">ফ্ল্যাশ লাইট</string>
+    <!-- QuickSettings: Cellular detail panel title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_title">সেলুলার ডেটা</string>
+    <!-- QuickSettings: Cellular detail panel, data usage title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_data_usage">ডাটা ব্যবহার</string>
+    <!-- QuickSettings: Cellular detail panel, remaining data title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_remaining_data">অবশিষ্ট তথ্য</string>
+    <!-- QuickSettings: Cellular detail panel, over limit title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_over_limit">সীমা ছাড়িয়েছে</string>
+    <!-- QuickSettings: Cellular detail panel, data used format string [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_data_used"><xliff:g id="data_used" example="2.0 GB">%s</xliff:g> ব্যবহার করা হয়েছে</string>
+    <!-- QuickSettings: Cellular detail panel, data limit format string [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_data_limit"><xliff:g id="data_limit" example="2.0 GB">%s</xliff:g> সীমা</string>
+    <!-- QuickSettings: Cellular detail panel, data warning format string [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_data_warning"><xliff:g id="data_limit" example="2.0 GB">%s</xliff:g> সতর্কতা</string>
+    <!-- QuickSettings: Dds [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_dds_sub">কার্ড <xliff:g id="number">%d</xliff:g> ডেটা</string>
+    <string name="quick_settings_data_off">ডেটা বন্ধ</string>
+
+    <!-- Recents: The empty recents string. [CHAR LIMIT=NONE] -->
+    <string name="recents_empty_message">আপনার সাম্প্রতিক স্ক্রিনগুলি এখানে উপস্থিত হয়</string>
+    <!-- Recents: The info panel app info button string. [CHAR LIMIT=NONE] -->
+    <string name="recents_app_info_button_label">অ্যাপ্লিকেশন তথ্য</string>
+    <!-- Recents: The screen pinning button. [CHAR LIMIT=NONE] -->
+    <string name="recents_lock_to_app_button_label">স্ক্রিন পিনিং</string>
+    <!-- Recents: Temporary string for the button in the recents search bar. [CHAR LIMIT=NONE] -->
+    <string name="recents_search_bar_label">সন্ধান</string>
+    <!-- Recents: Launch error string. [CHAR LIMIT=NONE] -->
+    <string name="recents_launch_error_message"><xliff:g id="app" example="Calendar">%s</xliff:g> শুরু করতে পারেনি।</string>
+
+
+    <!-- Expanded Status Bar Header: Battery Charged [CHAR LIMIT=40] -->
+    <string name="expanded_header_battery_charged">চার্জ করা হয়েছে</string>
+
+    <!-- Expanded Status Bar Header: Charging, no known time [CHAR LIMIT=40] -->
+    <string name="expanded_header_battery_charging">চার্জ করা হচ্ছে</string>
+
+    <!-- Expanded Status Bar Header: Charging, showing time left until charged [CHAR LIMIT=40] -->
+    <string name="expanded_header_battery_charging_with_time"><xliff:g id="charging_time" example="2 hrs 25 min">%s</xliff:g> পূর্ণ না হওয়া অবধি</string>
+
+    <!-- Expanded Status Bar Header: Not charging [CHAR LIMIT=40] -->
+    <string name="expanded_header_battery_not_charging">চার্জ করা হচ্ছে না</string>
+
+    <!-- Glyph to be overlaid atop the battery when the level is extremely low. Do not translate. -->
+    <string name="battery_meter_very_low_overlay_symbol">!</string>
+
+    <!-- Shows up when there is a user SSL CA Cert installed on the
+         device.  Indicates to the user that SSL traffic can be intercepted.
+         If the text fits on one line (~14 chars), it should start with a
+         linebreak to position it correctly.  [CHAR LIMIT=45] -->
+    <string name="ssl_ca_cert_warning">নেটওয়ার্কে\nনজর রাখা হতে পারে</string>
+
+    <!-- Description of the unlock target in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_target_search">অনুসন্ধান</string>
+    <!-- Description of the up direction in which one can to slide the handle in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_up"><xliff:g id="target_description" example="Unlock">%s</xliff:g> এর জন্য উপরে স্লাইড করুন।</string>
+    <!-- Description of the left direction in which one can to slide the handle in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_left">"<xliff:g id="target_description" example="Unlock">%s</xliff:g> এর জন্য বামে স্লাইড করুন।</string>
+
+    <!-- Zen mode: No interruptions title, with a warning about alarms. [CHAR LIMIT=60] -->
+    <string name="zen_no_interruptions_with_warning">কোনও বাধা নেই। এমনকি অ্যালার্মও নেই।</string>
+
+    <!-- Zen mode: No interruptions. [CHAR LIMIT=40] -->
+    <string name="zen_no_interruptions">কোনও বাধা নেই</string>
+
+    <!-- Zen mode: Only important interruptions. [CHAR LIMIT=40] -->
+    <string name="zen_important_interruptions">কেবল অগ্রাধিকারযুক্ত বাধা</string>
+
+    <!-- Zen mode: Next alarm information - just a time. [CHAR LIMIT=40] -->
+    <string name="zen_alarm_information_time">আপনার পরবর্তী অ্যালার্মটি <xliff:g id="alarm_time" example="5:00 PM">%s</xliff:g>-এ</string>
+
+    <!-- Zen mode: Next alarm information - day and time. [CHAR LIMIT=40] -->
+    <string name="zen_alarm_information_day_time">আপনার পরবর্তী অ্যালার্মটি <xliff:g id="alarm_day_and_time" example="Fri 5:00 PM">%s</xliff:g>-এ</string>
+
+    <!-- Zen mode: Next alarm warning. [CHAR LIMIT=40] -->
+    <string name="zen_alarm_warning">আপনি <xliff:g id="alarm_time" example="5:00 PM">%s</xliff:g>-এ আপনার অ্যালার্মটি শুনতে পাবেন না।</string>
+
+    <!-- Text for overflow card on Keyguard when there is not enough space for all notifications on Keyguard. [CHAR LIMIT=1] -->
+    <string name="keyguard_more_overflow_text">+<xliff:g id="number_of_notifications" example="5">%d</xliff:g></string>
+
+    <!-- An explanation for the visual speed bump in the notifications, which will appear when you click on it. [CHAR LIMIT=50] -->
+    <string name="speed_bump_explanation">স্বল্প জরুরী বিজ্ঞপ্তিগুলি নীচে</string>
+
+    <!-- Shows to explain the double tap interaction with notifications: After tapping a notification on Keyguard, this will explain users to tap again to launch a notification. [CHAR LIMIT=60] -->
+    <string name="notification_tap_again">খুলতে পুনরায় স্পর্শ করুন</string>
+
+    <!-- Shows when people have pressed the unlock icon to explain how to unlock. [CHAR LIMIT=60] -->
+    <string name="keyguard_unlock">আনলক করতে উপরে সোয়াইপ করুন</string>
+
+    <!-- Shows when people have clicked at the left edge of the screen to explain how to open the phone. In right-to-left languages, this is the opposite direction. [CHAR LIMIT=60] -->
+    <string name="phone_hint">ফোনে ডানে সোয়াইপ করুন</string>
+
+    <!-- Shows when people have clicked at the right edge of the screen to explain how to open the phone. In right-to-left languages, this is the opposite direction. [CHAR LIMIT=60] -->
+    <string name="camera_hint">ক্যামেরার জন্য বামে সোয়াইপ করুন</string>
+
+    <!-- Interruption level: None. [CHAR LIMIT=20] -->
+    <string name="interruption_level_none">কিছু নয়</string>
+
+    <!-- Interruption level: Priority. [CHAR LIMIT=20] -->
+    <string name="interruption_level_priority">অগ্রাধিকার</string>
+
+    <!-- Interruption level: All. [CHAR LIMIT=20] -->
+    <string name="interruption_level_all">সমস্ত</string>
+
+    <!-- Indication on the keyguard that is shown when the device is charging. [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_charging_time">চার্জ করা হচ্ছে (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> পূর্ণ না হওয়া অবধি)</string>
+
+    <!-- Related to user switcher --><skip/>
+
+    <!-- Accessibility label for the button that opens the user switcher. -->
+    <string name="accessibility_multi_user_switch_switcher">ব্যবহারকারী স্যুইচ করুন</string>
+
+    <!-- Accessibility label for the button that opens the user switcher and announces the current user. -->
+    <string name="accessibility_multi_user_switch_switcher_with_current">ব্যবহারকারী স্যুইচ করুন, বর্তমান ব্যবহারকারী <xliff:g id="current_user_name" example="John Doe">%s</xliff:g></string>
+
+    <!-- Accessibility label for the button that opens the quick contact of the user. -->
+    <string name="accessibility_multi_user_switch_quick_contact">প্রোফাইল দেখান</string>
+
+    <!-- Label for the adding a new user in the user switcher [CHAR LIMIT=35] -->
+    <string name="user_add_user">ব্যবহারকারী যোগ করুন</string>
+
+    <!-- Name for a freshly added user [CHAR LIMIT=30] -->
+    <string name="user_new_user_name">নতুন ব্যবহারকারী</string>
+
+    <!-- Name for the guest user [CHAR LIMIT=35] -->
+    <string name="guest_nickname">অতিথি</string>
+
+    <!-- Label for adding a new guest in the user switcher [CHAR LIMIT=35] -->
+    <string name="guest_new_guest">অতিথি যোগ করুন</string>
+
+    <!-- Label for exiting and removing the  guest session in the user switcher [CHAR LIMIT=35] -->
+    <string name="guest_exit_guest">অতিথি অপসারণ করুন</string>
+
+    <!-- Title of the confirmation dialog when exiting guest session [CHAR LIMIT=NONE] -->
+    <string name="guest_exit_guest_dialog_title">অতিথি অপসারণ করবেন?</string>
+
+    <!-- Message of the confirmation dialog when exiting guest session [CHAR LIMIT=NONE] -->
+    <string name="guest_exit_guest_dialog_message">এই সেশনের সমস্ত অ্যাপ ও ডেটা মুছে যাবে।</string>
+
+    <!-- Label for button in confirmation dialog when exiting guest session [CHAR LIMIT=35] -->
+    <string name="guest_exit_guest_dialog_remove">সরান</string>
+
+    <!-- Title of the notification when resuming an existing guest session [CHAR LIMIT=NONE] -->
+    <string name="guest_wipe_session_title">আমার স্বাগতম, অতিথি!</string>
+
+    <!-- Message of the notification when resuming an existing guest session [CHAR LIMIT=NONE] -->
+    <string name="guest_wipe_session_message">আপনি কি আপনার সেশন চালিয়ে যেতে চান?</string>
+
+    <!-- Notification when resuming an existing guest session: Action that starts a new session [CHAR LIMIT=35] -->
+    <string name="guest_wipe_session_wipe">আবার সূচনা করুন</string>
+
+    <!-- Notification when resuming an existing guest session: Action that continues with the current session [CHAR LIMIT=35] -->
+    <string name="guest_wipe_session_dontwipe">হ্যাঁ, অবিরত রাখুন</string>
+
+    <!-- Title for add user confirmation dialog [CHAR LIMIT=30] -->
+    <string name="user_add_user_title" msgid="2108112641783146007">নতুন ব্যবহারকারী যোগ করবেন?</string>
+
+    <!-- Message for add user confirmation dialog - short version. [CHAR LIMIT=none] -->
+    <string name="user_add_user_message_short" msgid="1511354412249044381">আপনি যখন কোনও নতুন ব্যবহারকারীকে যোগ করেন তখন সেই ব্যক্তিকে তার স্থান সেট আপ করতে হয়।\n\nযে কোনও ব্যবহারকারী অন্য সমস্ত ব্যবহারকারীর জন্য অ্যাপগুলি আপডেট করতে পারে। </string>
+
+
+    <!-- Battery saver notification title. [CHAR LIMIT=60]-->
+    <string name="battery_saver_notification_title">ব্যাটারি সাশ্রয়কারী চালু</string>
+
+    <!-- Battery saver notification text. [CHAR LIMIT=60] -->
+    <string name="battery_saver_notification_text">পারফরম্যান্স এবং ব্যাকগ্রাউন্ডের ডেটা হ্রাস করে</string>
+
+    <!-- Battery saver notification action text. [CHAR LIMIT=60] -->
+    <string name="battery_saver_notification_action_text">ব্যাটারি সাশ্রয়কারী বন্ধ করুন</string>
+
+    <!-- Battery level for expanded quick settings [CHAR LIMIT=2] -->
+    <string name="battery_level_template"><xliff:g id="level" example="45">%d</xliff:g>%%</string>
+
+    <!-- Text shown in place of notification contents when the notification is hidden on a secure lockscreen -->
+    <string name="notification_hidden_text">সামগ্রী লুকানো আছে</string>
+
+    <!-- Media projection permission dialog warning text. [CHAR LIMIT=NONE] -->
+    <string name="media_projection_dialog_text"><xliff:g id="app_seeking_permission" example="Hangouts">%s</xliff:g> আপনার স্ক্রিনে প্রদর্শিত হওয়া সমস্ত কিছু ক্যাপচার করতে শুরু করবে।</string>
+
+    <!-- Media projection permission dialog permanent grant check box. [CHAR LIMIT=NONE] -->
+    <string name="media_projection_remember_text">আবার দেখাবেন না</string>
+
+    <!-- The text to clear all notifications. [CHAR LIMIT=60] -->
+    <string name="clear_all_notifications_text">সমস্ত পরিষ্কার করুন</string>
+
+    <!-- Media projection permission dialog action text. [CHAR LIMIT=60] -->
+    <string name="media_projection_action_text">এখন শুরু করুন</string>
+
+    <!-- Text which is shown in the notification shade when there are no notifications. [CHAR LIMIT=30] -->
+    <string name="empty_shade_text">কোন বিজ্ঞপ্তি নেই</string>
+
+    <!-- Task Manager -->
+    <string name="tasklistview_title">কার্য পরিচালক</string>
+    <string name="message_switch_fail">এই কার্যে স্যুইচ করা যাবে না, কারণ এতে কোনও ইন্টারফেস নেই।</string>
+    <string name="tasklist_killall">সমস্ত সমাপ্ত করুন</string>
+    <string name="tasklist_stopall">সমস্ত থামান</string>
+    <string name="tasklist_stop">থামুন</string>
+    <string name="tasklist_memory_usage">"মুক্ত/মোট মেমোরি: [<xliff:g id="number">%s</xliff:g>] / [<xliff:g id="name">%s</xliff:g>]"</string>
+    <string name="message_keep_one_launcher">কমপক্ষে একটি হোম কার্যকলাপ রাখা উচিত!</string>
+
+    <!-- Footer device owned text [CHAR LIMIT=50] -->
+    <string name="device_owned_footer">ডিভাইসে নজর রাখা হতে পারে</string>
+
+    <!-- Footer profile owned text [CHAR LIMIT=50] -->
+    <string name="profile_owned_footer">প্রোফাইলে নজর রাখা হতে পারে</string>
+
+    <!-- Footer vpn present text [CHAR LIMIT=50] -->
+    <string name="vpn_footer">নেটওয়ার্কে নজর রাখা হতে পারে</string>
+
+    <!-- Monitoring dialog title for device owned devices [CHAR LIMIT=35] -->
+    <string name="monitoring_title_device_owned">ডিভাইসে নজর রাখা</string>
+
+    <!-- Monitoring dialog title for profile owned devices [CHAR LIMIT=35] -->
+    <string name="monitoring_title_profile_owned">প্রোফাইলে নজর রাখা</string>
+
+    <!-- Monitoring dialog title for normal devices  [CHAR LIMIT=35]-->
+    <string name="monitoring_title">নেটওয়ার্ক নজর দারি</string>
+
+    <!-- Monitoring dialog disable vpn button [CHAR LIMIT=30] -->
+    <string name="disable_vpn">VPN অক্ষম করুন</string>
+
+    <!-- Monitoring dialog disconnect vpn button [CHAR LIMIT=30] -->
+    <string name="disconnect_vpn">VPN সংযোগ বিচ্ছিন্ন করুন</string>
+
+    <!-- Monitoring dialog device owner body text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_device_owned">এই ডিভাইসটি পরিচালনা করছে:\n<xliff:g id="organization">%1$s</xliff:g>\n\nআপনার প্রশাসক আপনার ডিভাইস এবং নেটওয়ার্ক ক্রিয়াকলাপে তত্সহ ইমেল, অ্যাপসে ও ওয়েবসাইটগুলি সুরক্ষিত করতে সক্ষম।\n\nআরও তথ্যের জন্য আপনার প্রশাসকের সাথে যোগাযোগ করুন।</string>
+
+    <!-- Monitoring dialog non-legacy VPN text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_vpn">আপনি \"<xliff:g id="application">%1$s</xliff:g>\" একটি VPN সংযোগ সেট আপ করার অনুমতি দিয়েছেন।\n\nএই অ্যাপটি আপনার ডিভাইস এবং নেটওয়ার্কের ক্রিয়াকলাপ তৎসহ ইমেল, অ্যাপসে নজর রাখতে এবং ওয়েবসাইটগুলি সুরক্ষিত করতে পারে।</string>
+
+    <!-- Monitoring dialog legacy VPN text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_legacy_vpn">আপনি একটি VPN-এ সংযুক্ত (\"<xliff:g id="application">%1$s</xliff:g>\")।\n\nআপনার VPN পরিষেবা সরবরাহকারী আপনার ডিভাইস এবং নেটওয়ার্কের ক্রিয়াকলাপ তৎসহ ইমেল, অ্যাপসে নজর রাখতে এবং ওয়েবসাইটগুলি সুরক্ষিত করতে পারে।</string>
+
+    <!-- Monitoring dialog non-legacy VPN with device owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_vpn_device_owned">এই ডিভাইসটি পরিচালনা করছে:\n<xliff:g id="organization">%1$s</xliff:g>\n\nআপনার প্রশাসক আপনার নেটওয়ার্কের ক্রিয়াকলাপ তৎসহ ইমেল, অ্যাপসে নজর রাখতে এবং ওয়েবসাইটগুলি সুরক্ষিত করতে সক্ষম। আরও তথ্যের জন্য আপনার প্রশাসকের সাথে যোগাযোগ করুন।\n\nএছাড়াও, আপনি একটি VPN সংযোগ সেট আপ করতে \"<xliff:g id="application">%2$s</xliff:g>\" অনুমতি দিয়েছেন। এই অ্যাপটি আপনার নেটওয়ার্কের ক্রিয়াকলাপের উপরেও নজর রাখতে পারে।</string>
+
+    <!-- Monitoring dialog legacy VPN with device owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_legacy_vpn_device_owned">এই ডিভাইসটি পরিচালনা করছে:\n<xliff:g id="organization">%1$s</xliff:g>\n\nআপনার প্রশাসক আপনার নেটওয়ার্কের ক্রিয়াকলাপ তৎসহ ইমেল, অ্যাপসে নজর রাখতে এবং ওয়েবসাইটগুলি সুরক্ষিত করতে সক্ষম। আরও তথ্যের জন্য আপনার প্রশাসকের সাথে যোগাযোগ করুন।\n\nএছাড়াও, আপনি একটি VPN-এ সংযুক্ত (\"<xliff:g id="application">%2$s</xliff:g>\")। আপনার VPN পরিষেবা সরবরাহকারী নেটওয়ার্ক ক্রিয়াকলাপেও নজর রাখতে পারে।</string>
+
+    <!-- Monitoring dialog profile owner body text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_profile_owned">এই প্রোফাইলটি পরিচালনা করছে:\n<xliff:g id="organization">%1$s</xliff:g>\n\nআপনার প্রশাসক আপনার নেটওয়ার্ক ক্রিয়াকলাপে তৎসহ ইমেল, অ্যাপসে নজর রাখতে ও ওয়েবসাইটগুলি সুরক্ষিত করতে সক্ষম।\n\nআরও তথ্যের জন্য আপনার প্রশাসকের সাথে যোগাযোগ করুন।</string>
+
+    <!-- Monitoring dialog device and profile owner body text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_device_and_profile_owned">এই ডিভাইসটি পরিচালনা করছে:\n<xliff:g id="organization">%1$s</xliff:g>\nআপনার প্রোফাইল পরিচালনা করছে:\n<xliff:g id="organization">%2$s</xliff:g>\n\nআপনার প্রশাসক আপনার ডিভাইস এবং নেটওয়ার্ক ক্রিয়াকলাপ তৎসহ ইমেল, অ্যাপসে নজর রাখতে ও ওয়েবসাইটগুলি সুরক্ষিত করতে সক্ষম।\n\nআরও তথ্যের জন্য আপনার প্রশাসকের সাথে যোগাযোগ করুন।</string>
+
+    <!-- Monitoring dialog non-legacy VPN with profile owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_vpn_profile_owned">এই প্রোফাইলটি পরিচালনা করছে:\n<xliff:g id="organization">%1$s</xliff:g>\n\nআপনার প্রশাসক আপনার নেটওয়ার্কের ক্রিয়াকলাপ তৎসহ ইমেল, অ্যাপসে নজর রাখতে এবং ওয়েবসাইটগুলি সুরক্ষিত করতে সক্ষম। আরও তথ্যের জন্য আপনার প্রশাসকের সাথে যোগাযোগ করুন।\n\nএছাড়াও, আপনি একটি VPN সংযোগ সেট আপ করতে \"<xliff:g id="application">%2$s</xliff:g>\" অনুমতি দিয়েছেন। এই অ্যাপটি আপনার নেটওয়ার্কের ক্রিয়াকলাপের উপরেও নজর রাখতে পারে।</string>
+
+    <!-- Monitoring dialog legacy VPN with profile owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_legacy_vpn_profile_owned">এই প্রোফাইলটি পরিচালনা করছে:\n<xliff:g id="organization">%1$s</xliff:g>\n\nআপনার প্রশাসক আপনার নেটওয়ার্কের ক্রিয়াকলাপ তৎসহ ইমেল, অ্যাপসে নজর রাখতে এবং ওয়েবসাইটগুলি সুরক্ষিত করতে সক্ষম। আরও তথ্যের জন্য আপনার প্রশাসকের সাথে যোগাযোগ করুন।\n\nএছাড়াও, আপনি একটি VPN-এ সংযুক্ত (\"<xliff:g id="application">%2$s</xliff:g>\")। আপনার VPN পরিষেবা সরবরাহকারী নেটওয়ার্ক ক্রিয়াকলাপেও নজর রাখতে পারে।</string>
+
+    <!-- Monitoring dialog non-legacy VPN with device and profile owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_vpn_device_and_profile_owned">এই ডিভাইসটি পরিচালনা করছে:\n<xliff:g id="organization">%1$s</xliff:g>\nআপনার প্রোফাইলটি পরিচালনা করছে:\n<xliff:g id="organization">%2$s</xliff:g>\n\nআপনার প্রশাসক আপনার নেটওয়ার্কের ক্রিয়াকলাপ তৎসহ ইমেল, অ্যাপসে নজর রাখতে এবং ওয়েবসাইটগুলি সুরক্ষিত করতে সক্ষম। আরও তথ্যের জন্য আপনার প্রশাসকের সাথে যোগাযোগ করুন।\n\nএছাড়াও, আপনি একটি VPN সংযোগ সেট আপ করতে \"<xliff:g id="application">%3$s</xliff:g>\" অনুমতি দিয়েছেন। এই অ্যাপটি আপনার নেটওয়ার্কের ক্রিয়াকলাপের উপরেও নজর রাখতে পারে।</string>
+
+    <!-- Monitoring dialog legacy VPN with device and profile owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_legacy_vpn_device_and_profile_owned">এই ডিভাইসটি পরিচালনা করছে:\n<xliff:g id="organization">%1$s</xliff:g>\nআপনার প্রোফাইলটি পরিচালনা করছে:\n<xliff:g id="organization">%2$s</xliff:g>\n\nআপনার প্রশাসক আপনার নেটওয়ার্কের ক্রিয়াকলাপ তৎসহ ইমেল, অ্যাপসে নজর রাখতে এবং ওয়েবসাইটগুলি সুরক্ষিত করতে সক্ষম। আরও তথ্যের জন্য আপনার প্রশাসকের সাথে যোগাযোগ করুন।\n\nএছাড়াও, আপনি একটি VPN-এ সংযুক্ত (\"<xliff:g id="application">%3$s</xliff:g>\")। আপনার VPN পরিষেবা সরবরাহকারী নেটওয়ার্ক ক্রিয়াকলাপেও নজর রাখতে পারে।</string>
+
+    <!-- Indication on the keyguard that appears when the user disables trust agents until the next time they unlock manually. [CHAR LIMIT=NONE] -->
+    <string name="keyguard_indication_trust_disabled">আপনি ম্যানুয়ালী আনলক না করা অবধি ডিভাইসটি লক থাকবে</string>
+
+    <!-- Title of notification educating the user about enabling notifications on the lockscreen. [CHAR LIMIT=40] -->
+    <string name="hidden_notifications_title">বিজ্ঞপ্তিগুলি আরও দ্রুত পান</string>
+
+    <!-- Body of notification educating the user about enabling notifications on the lockscreen. [CHAR LIMIT=60] -->
+    <string name="hidden_notifications_text">আপনি আনলক করার আগে এগুলি দেখুন</string>
+
+    <!-- Cancel action for notification educating the user about enabling notifications on the lockscreen. [CHAR LIMIT=20] -->
+    <string name="hidden_notifications_cancel">না ধন্যবাদ</string>
+
+    <!-- continue action for notification educating the user about enabling notifications on the lockscreen. [CHAR LIMIT=20] -->
+    <string name="hidden_notifications_setup">সেট আপ</string>
+
+    <!-- Accessibility string for current zen mode and selected exit condition. A template that simply concatenates existing mode string and the current condition description. [CHAR LIMIT=20] -->
+    <string name="zen_mode_and_condition"><xliff:g id="zen_mode" example="Priority interruptions only">%1$s</xliff:g>. <xliff:g id="exit_condition" example="For one hour">%2$s</xliff:g></string>
+    <string name="high_definiation_voice">(HD)</string>
+
+    <!-- Screen pinning dialog title. -->
+    <string name="screen_pinning_title">স্ক্রিন পিন করা হয়েছে</string>
+    <!-- Screen pinning dialog description. -->
+    <string name="screen_pinning_description">এটি আপনি আনপিন না করা পর্যন্ত এটিকে দৃশ্যে রাখে। আনপিন করতে একই সাথে পিছনে ও ওভারভিউ স্পর্শ করে ধরে থাকুন।</string>
+    <!-- Screen pinning dialog description when in accessibility mode. -->
+    <string name="screen_pinning_description_accessible">এটি আপনি আনপিন না করা পর্যন্ত এটিকে দৃশ্যে রাখে। আনপিন করতে ওভারভিউ স্পর্শ করে ধরে থাকুন।</string>
+    <!-- Screen pinning positive response. -->
+    <string name="screen_pinning_positive">বুঝেছি</string>
+    <!-- Screen pinning negative response. -->
+    <string name="screen_pinning_negative">না ধন্যবাদ</string>
+
+    <!-- Hide quick settings tile confirmation title -->
+    <string name="quick_settings_reset_confirmation_title"><xliff:g id="tile_label" example="Hotspot">%1$s</xliff:g> লুকাবেন?</string>
+
+    <!-- Hide quick settings tile confirmation message -->
+    <string name="quick_settings_reset_confirmation_message">আপনি এটিকে পরের বার সেটিংসে চালু করলে এটি পুনরার্বিভাব হবে।</string>
+
+    <!-- Hide quick settings tile confirmation button -->
+    <string name="quick_settings_reset_confirmation_button">লুকান</string>
+</resources>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2013 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution, Apache license notifications and license are retained
+     for attribution purposes only.
+
+     Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.firewall"
+    android:versionCode="133"
+    android:versionName="1.3.3" >
+
+    <supports-screens android:anyDensity="true" />
+
+     <uses-sdk android:minSdkVersion="9"/>
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <permission android:name="com.android.firewall.READ_GRAVITY"
+        android:protectionLevel="signatureOrSystem" />
+    <permission android:name="com.android.firewall.WRITE_GRAVITY"
+        android:protectionLevel="signatureOrSystem" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <uses-library android:name="com.suntek.mway.rcs.client.api" android:required="false" />
+        <activity
+            android:name=".FirewallActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.INSERT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FirewallListPage"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:windowSoftInputMode="adjustResize" >
+            <intent-filter>
+                <action android:name="android.intent.action.INSERT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="BlockRecordTabActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity android:name="BlockMessageListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="com.android.firewall.action.BLOCK_MESSAGES"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="BlockCalllogListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:windowSoftInputMode="adjustResize" >
+                <action android:name="com.android.firewall.action.BLOCK_CALLS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+        </activity>
+        <activity
+            android:name=".FirewallSettingPage"
+            android:screenOrientation="portrait" />
+        <provider
+            android:name=".FirewallProvider"
+            android:authorities="com.android.firewall"
+            android:exported="true"
+            android:readPermission="com.android.firewall.READ_GRAVITY"
+            android:writePermission="com.android.firewall.WRITE_GRAVITY" />
+        <receiver
+            android:name=".AddBlockRecordReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.android.firewall.ADD_CALL_BLOCK_RECORD" />
+                <action android:name="com.android.firewall.ADD_RCS_MESSAGE_BLOCK_RECORD" />
+                <action android:name="com.android.firewall.ADD_SMS_BLOCK_RECORD" />
+                <action android:name="com.android.firewall.ADD_MMS_BLOCK_RECORD" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

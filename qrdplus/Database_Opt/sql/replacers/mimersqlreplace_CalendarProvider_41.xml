@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2013 Mimer Information Technology AB, info@mimer.com -->
+<MimerSQLReplace>
+
+<!-- Search calendar events by two searching terms-->
+<fromSQL id="GOCA411" statement="SELECT Instances._id AS _id, title, eventLocation, allDay, hasAlarm, displayColor, rrule, begin, end, Instances.event_id AS event_id, startDay, endDay, selfAttendeeStatus, organizer, ownerAccount, canOrganizerRespond, eventTimezone FROM (Instances INNER JOIN view_events AS Events ON (Instances.event_id=Events._id)) LEFT OUTER JOIN Attendees ON (Attendees.event_id=Events._id) WHERE (startDay&lt;=? AND endDay>=?) AND (visible=1) GROUP BY Instances._id HAVING (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) AND (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) ORDER BY startDay ASC, begin ASC, title ASC;">
+
+select "_id",title,eventLocation,allDay,hasAlarm,displayColor,rrule,"begin","end",event_id,startDay,endDay,selfAttendeeStatus,organizer,ownerAccount,canOrganizerRespond,eventTimezone 
+from (select group_concat(attendeeEmail) as group_email, group_concat(attendeeName) as group_name,
+      Instances."_id" as "_id",title,eventLocation,allDay,hasAlarm,displayColor,rrule,"begin","end",Instances.event_id as event_id,startDay,endDay,selfAttendeeStatus,organizer,ownerAccount,canOrganizerRespond,eventTimezone,description 
+        
+      from Instances join view_events Events on ((Instances.event_id = Events."_id")) 
+        left join Attendees on ((Attendees.event_id = Events."_id")) 
+        where ((startDay &lt;= :1:i1) and (endDay &gt;= :2:i2)) and ((visible = :13:i13)) 
+        group by Instances."_id") 
+where (title like :3:i3 collate current_collation_2  escape :14:i14 
+                or description like :4:i4 collate current_collation_2  escape :15:i15 
+                or eventLocation like :5:i5 collate current_collation_2  escape :16:i16 
+                or group_email like :6:i6 collate current_collation_2  escape :17:i17 
+                or group_name like :7:i7 collate current_collation_2  escape :18:i18) 
+              and (title like :8:i8 collate current_collation_2  escape :19:i19 
+                or description like :9:i9 collate current_collation_2  escape :20:i20 
+                or eventLocation like :10:i10 collate current_collation_2  escape :21:i21 
+                or group_email like :11:i11 collate current_collation_2  escape :22:i22 
+                or group_name like :12:i12 collate current_collation_2  escape :23:i23) 
+order by startDay,"begin",title;
+
+</fromSQL>
+
+<!-- Search calendar events by three searching terms-->
+  <fromSQL id="GOCA412" statement="SELECT Instances._id AS _id, title, eventLocation, allDay, hasAlarm, displayColor, rrule, begin, end, Instances.event_id AS event_id, startDay, endDay, selfAttendeeStatus, organizer, ownerAccount, canOrganizerRespond, eventTimezone FROM (Instances INNER JOIN view_events AS Events ON (Instances.event_id=Events._id)) LEFT OUTER JOIN Attendees ON (Attendees.event_id=Events._id) WHERE (startDay&lt;=? AND endDay>=?) AND (visible=1) GROUP BY Instances._id HAVING (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) AND (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) AND (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) ORDER BY startDay ASC, begin ASC, title ASC;" >
+ 
+select "_id",title,eventLocation,allDay,hasAlarm,displayColor,rrule,"begin","end", 		
+	event_id,startDay,endDay,selfAttendeeStatus,organizer,ownerAccount,canOrganizerRespond,eventTimezone 
+from (select Instances."_id" as "_id",title,eventLocation,allDay,hasAlarm,displayColor,rrule,"begin","end",Instances.event_id as 	
+	event_id,startDay,endDay,selfAttendeeStatus,organizer,ownerAccount,canOrganizerRespond,eventTimezone,
+        group_concat(attendeeEmail) as group_email, group_concat(attendeeName) as group_name, description
+        from (Instances join view_events Events on ((Instances.event_id = Events."_id"))) 
+                left join Attendees on ((Attendees.event_id = Events."_id")) 
+        where ((startDay &lt;= :1:i1) and (endDay &gt;= :2:i2)) and ((visible = :18:i18)) 
+        group by Instances."_id") 
+where (title like :3:i3 collate current_collation_2  escape :19:i19 
+        or description like :4:i4 collate current_collation_2  escape :20:i20 
+        or eventLocation like :5:i5 collate current_collation_2  escape :21:i21 
+        or group_email like :6:i6 collate current_collation_2  escape :22:i22 
+        or group_name like :7:i7 collate current_collation_2  escape :23:i23) 
+     and (title like :8:i8 collate current_collation_2  escape :24:i24 
+        or description like :9:i9 collate current_collation_2  escape :25:i25 
+        or eventLocation like :10:i10 collate current_collation_2  escape :26:i26 
+        or group_email like :11:i11 collate current_collation_2  escape :27:i27 
+        or group_name like :12:i12 collate current_collation_2  escape :28:i28) 
+    and (title like :13:i13 collate current_collation_2  escape :29:i29 
+       or description like :14:i14 collate current_collation_2  escape :30:i30 
+       or eventLocation like :15:i15 collate current_collation_2  escape :31:i31 
+       or group_email like :16:i16 collate current_collation_2  escape :32:i32 
+       or group_name like :17:i17 collate current_collation_2  escape :33:i33) 
+order by startDay,"begin",title;
+
+</fromSQL>
+
+<!-- Search calendar events by four searching terms-->
+  <fromSQL id="GOCA413" statement="SELECT Instances._id AS _id, title, eventLocation, allDay, hasAlarm, displayColor, rrule, begin, end, Instances.event_id AS event_id, startDay, endDay, selfAttendeeStatus, organizer, ownerAccount, canOrganizerRespond, eventTimezone FROM (Instances INNER JOIN view_events AS Events ON (Instances.event_id=Events._id)) LEFT OUTER JOIN Attendees ON (Attendees.event_id=Events._id) WHERE (startDay&lt;=? AND endDay&gt;=?) AND (visible=1) GROUP BY Instances._id HAVING (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) AND (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) AND (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) AND (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) ORDER BY startDay ASC, begin ASC, title ASC" >
+    select "_id",title,eventLocation,allDay,hasAlarm,displayColor,rrule,"begin","end",event_id,startDay,endDay,selfAttendeeStatus,organizer,ownerAccount,canOrganizerRespond,eventTimezone 
+from (select Instances."_id" as "_id",title,eventLocation,allDay,hasAlarm,displayColor,rrule,"begin","end",Instances.event_id as event_id,startDay,endDay,selfAttendeeStatus,organizer,ownerAccount,canOrganizerRespond,eventTimezone,
+      group_concat(attendeeEmail) as group_email, group_concat(attendeeName) as group_name, description  
+      from (Instances join view_events Events on ((Instances.event_id = Events."_id"))) 
+                left join Attendees on ((Attendees.event_id = Events."_id")) 
+      where ((startDay &lt;= :1:i1) and (endDay &gt;= :2:i2)) and ((visible = :23:i23)) 
+      group by Instances."_id") 
+where (title like :3:i3 collate current_collation_2  escape :24:i24    
+        or description like :4:i4 collate current_collation_2  escape :25:i25 
+        or eventLocation like :5:i5 collate current_collation_2  escape :26:i26 
+        or group_email like :6:i6 collate current_collation_2  escape :27:i27 
+        or group_name like :7:i7 collate current_collation_2  escape :28:i28) 
+     and (title like :8:i8 collate current_collation_2  escape :29:i29 
+        or description like :9:i9 collate current_collation_2  escape :30:i30 
+        or eventLocation like :10:i10 collate current_collation_2  escape :31:i31 
+        or group_email like :11:i11 collate current_collation_2  escape :32:i32 
+        or group_name like :12:i12 collate current_collation_2  escape :33:i33) 
+     and (title like :13:i13 collate current_collation_2  escape :34:i34 
+        or description like :14:i14 collate current_collation_2  escape :35:i35 
+        or eventLocation like :15:i15 collate current_collation_2  escape :36:i36 
+        or group_email like :16:i16 collate current_collation_2  escape :37:i37 
+        or group_name like :17:i17 collate current_collation_2  escape :38:i38) 
+     and (title like :18:i18 collate current_collation_2  escape :39:i39 
+        or description like :19:i19 collate current_collation_2  escape :40:i40 
+        or eventLocation like :20:i20 collate current_collation_2  escape :41:i41 
+        or group_email like :21:i21 collate current_collation_2  escape :42:i42 
+        or group_name like :22:i22 collate current_collation_2  escape :43:i43) 
+order by startDay,"begin",title;
+</fromSQL>
+
+<!-- Search calendar events by five searching terms-->
+  <fromSQL id="GOCA414" statement="SELECT Instances._id AS _id, title, eventLocation, allDay, hasAlarm, displayColor, rrule, begin, end, Instances.event_id AS event_id, startDay, endDay, selfAttendeeStatus, organizer, ownerAccount, canOrganizerRespond, eventTimezone FROM (Instances INNER JOIN view_events AS Events ON (Instances.event_id=Events._id)) LEFT OUTER JOIN Attendees ON (Attendees.event_id=Events._id) WHERE (startDay&lt;=? AND endDay&gt;=?) AND (visible=1) GROUP BY Instances._id HAVING (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) AND (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) AND (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) AND (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) AND (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) ORDER BY startDay ASC, begin ASC, title ASC" >
+    select "_id",title,eventLocation,allDay,hasAlarm,displayColor,rrule,"begin","end",event_id,startDay,endDay,selfAttendeeStatus,organizer,ownerAccount,canOrganizerRespond,eventTimezone 
+from (select Instances."_id" as "_id",title,eventLocation,allDay,hasAlarm,displayColor,rrule,"begin","end",Instances.event_id as event_id,startDay,endDay,selfAttendeeStatus,organizer,ownerAccount,canOrganizerRespond,eventTimezone,
+        group_concat(attendeeEmail) as group_email, group_concat(attendeeName) as group_name, description   
+      from (Instances join view_events Events on ((Instances.event_id = Events."_id"))) 
+                left join Attendees on ((Attendees.event_id = Events."_id")) 
+      where ((startDay &lt;= :1:i1) and (endDay &gt;= :2:i2)) and ((visible = :28:i28)) 
+      group by Instances."_id") 
+where (title like :3:i3 collate current_collation_2  escape :29:i29 
+        or description like :4:i4 collate current_collation_2  escape :30:i30 
+        or eventLocation like :5:i5 collate current_collation_2  escape :31:i31 
+        or group_email like :6:i6 collate current_collation_2  escape :32:i32 
+        or group_name like :7:i7 collate current_collation_2  escape :33:i33) 
+     and (title like :8:i8 collate current_collation_2  escape :34:i34 
+       or description like :9:i9 collate current_collation_2  escape :35:i35 
+       or eventLocation like :10:i10 collate current_collation_2  escape :36:i36 
+       or group_email like :11:i11 collate current_collation_2  escape :37:i37 
+       or group_name like :12:i12 collate current_collation_2  escape :38:i38) 
+     and (title like :13:i13 collate current_collation_2  escape :39:i39 
+       or description like :14:i14 collate current_collation_2  escape :40:i40 
+       or eventLocation like :15:i15 collate current_collation_2  escape :41:i41 
+       or group_email like :16:i16 collate current_collation_2  escape :42:i42 
+       or group_name like :17:i17 collate current_collation_2  escape :43:i43) 
+     and (title like :18:i18 collate current_collation_2  escape :44:i44 
+       or description like :19:i19 collate current_collation_2  escape :45:i45 
+       or eventLocation like :20:i20 collate current_collation_2  escape :46:i46 
+       or group_email like :21:i21 collate current_collation_2  escape :47:i47 
+       or group_name like :22:i22 collate current_collation_2  escape :48:i48) 
+     and (title like :23:i23 collate current_collation_2  escape :49:i49 
+       or description like :24:i24 collate current_collation_2  escape :50:i50 
+       or eventLocation like :25:i25 collate current_collation_2  escape :51:i51 
+       or group_email like :26:i26 collate current_collation_2  escape :52:i52 
+       or group_name like :27:i27 collate current_collation_2  escape :53:i53) 
+order by startDay,"begin",title;
+</fromSQL>
+<!--	END	-->
+
+
+<!-- BEGIN - CTS tests -->
+<fromSQL id="GOCA415" statement="SELECT begin FROM (Instances INNER JOIN view_events AS Events ON (Instances.event_id=Events._id)) LEFT OUTER JOIN Attendees ON (Attendees.event_id=Events._id) WHERE (startDay&lt;=? AND endDay&gt;=?) AND (calendar_id=?) GROUP BY Instances._id HAVING (title LIKE ? ESCAPE ? OR description LIKE ? ESCAPE ? OR eventLocation LIKE ? ESCAPE ? OR group_concat(attendeeEmail) LIKE ? ESCAPE ? OR group_concat(attendeeName) LIKE ? ESCAPE ? ) AND (title LIKE ? ESCAPE ? OR description LIKE ? ESCAPE ? OR eventLocation LIKE ? ESCAPE ? OR group_concat(attendeeEmail) LIKE ? ESCAPE ? OR group_concat(attendeeName) LIKE ? ESCAPE ? ) ORDER BY begin ASC">
+
+	select "begin" 
+	from ( select "begin", title, description, eventLocation, group_concat("attendeeEmail") group_email, group_concat("attendeeName") group_name
+	       from "Instances" join "view_events" "Events" on (("Instances"."event_id" = "Events"."_id")) 
+		left join "Attendees" on (("Attendees"."event_id" = "Events"."_id")) 
+		where (("startDay" &lt;= ?) and ("endDay" &gt;= ?)) and (("calendar_id" = ?)) 
+		group by "Instances"."_id") 
+	where ("title" like ? escape ? or "description" like ? escape ? or "eventLocation" like ? escape ?  
+		or group_email like ? escape ? 
+		or group_name like ? escape ?) 
+		and ("title" like ? escape ? or "description" like ? escape ? or "eventLocation" like ? escape ? 
+		or group_email like ? escape ? 
+		or group_name like ? escape ?) 
+	order by "begin"
+
+</fromSQL> 
+
+<fromSQL id="GOCA416" statement="SELECT begin FROM (Instances INNER JOIN view_events AS Events ON (Instances.event_id=Events._id)) LEFT OUTER JOIN Attendees ON (Attendees.event_id=Events._id) WHERE (begin&lt;=? AND end&gt;=?) AND (calendar_id=?) GROUP BY Instances._id HAVING (title LIKE ? ESCAPE ? OR description LIKE ? ESCAPE ? OR eventLocation LIKE ? ESCAPE ? OR group_concat(attendeeEmail) LIKE ? ESCAPE ? OR group_concat(attendeeName) LIKE ? ESCAPE ? ) AND (title LIKE ? ESCAPE ? OR description LIKE ? ESCAPE ? OR eventLocation LIKE ? ESCAPE ? OR group_concat(attendeeEmail) LIKE ? ESCAPE ? OR group_concat(attendeeName) LIKE ? ESCAPE ? ) ORDER BY begin ASC">
+
+	select "begin" 
+	from ( select "begin", title, description, eventLocation, group_concat("attendeeEmail") group_email, group_concat("attendeeName") group_name
+		from "Instances" 
+		join "view_events" "Events" on (("Instances"."event_id" = "Events"."_id")) 
+		left join "Attendees" on (("Attendees"."event_id" = "Events"."_id")) 
+		where (("begin" &lt;= ?) and ("end" &gt;= ?)) and (("calendar_id" = ?)) 
+		group by "Instances"."_id") 
+	where ("title" like ? escape ? or "description" like ? escape ? or "eventLocation" like ? escape ? 
+		or group_email like ? escape ? 
+		or group_name like ? escape ?) 
+		and ("title" like ? escape ? or "description" like ? escape ? or "eventLocation" like ? escape ? 
+		or group_email like ? escape ? 
+		or group_name like ? escape ?) 
+	order by "begin"
+
+</fromSQL> 
+
+<!-- END - CTS tests -->
+	
+<!-- BEGIN CTS 4.2.2 -->
+<!-- BEGIN - test case = android.provider.cts.CalendarTest#testInstanceSearch -->
+<fromSQL id="GOCA417" statement="SELECT begin FROM (Instances INNER JOIN view_events AS Events ON (Instances.event_id=Events._id)) LEFT OUTER JOIN Attendees ON (Attendees.event_id=Events._id) WHERE (startDay&lt;=? AND endDay&gt;=?) AND (calendar_id=1023) GROUP BY Instances._id HAVING (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) AND (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) ORDER BY begin ASC">
+
+	select "begin" 
+	from ( select "begin", title, description, eventLocation, group_concat("attendeeEmail") group_email, group_concat("attendeeName") group_name
+	       from "Instances" join "view_events" "Events" on (("Instances"."event_id" = "Events"."_id")) 
+		left join "Attendees" on (("Attendees"."event_id" = "Events"."_id")) 
+		where (("startDay" &lt;= :1:i1) and ("endDay" &gt;= :2:i2)) and (("calendar_id" = :13:i13)) 
+		group by "Instances"."_id") 
+	where ("title" like :3:i3 escape :14:i14 or "description" like :4:i4 escape :15:i15 or "eventLocation" like :5:i5 escape :16:i16  
+		or group_email like :6:i6 escape :17:i17 
+		or group_name like :7:i7 escape :18:i18) 
+		and ("title" like :8:i8 escape :19:i19 or "description" like :9:i9 escape :20:i20 or "eventLocation" like :10:i10 escape :21:i21 
+		or group_email like :11:i11 escape :22:i22 
+		or group_name like :12:i12 escape :23:i23) 
+	order by "begin"
+
+</fromSQL> 
+
+<fromSQL id="GOCA418" statement="SELECT begin FROM (Instances INNER JOIN view_events AS Events ON (Instances.event_id=Events._id)) LEFT OUTER JOIN Attendees ON (Attendees.event_id=Events._id) WHERE (begin&lt;=? AND end&gt;=?) AND (calendar_id=2072) GROUP BY Instances._id HAVING (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) AND (title LIKE ? ESCAPE &quot;#&quot; OR description LIKE ? ESCAPE &quot;#&quot; OR eventLocation LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeEmail) LIKE ? ESCAPE &quot;#&quot; OR group_concat(attendeeName) LIKE ? ESCAPE &quot;#&quot; ) ORDER BY begin ASC">
+
+	select "begin" 
+	from ( select "begin", title, description, eventLocation, group_concat("attendeeEmail") group_email, group_concat("attendeeName") group_name
+	       from "Instances" join "view_events" "Events" on (("Instances"."event_id" = "Events"."_id")) 
+		left join "Attendees" on (("Attendees"."event_id" = "Events"."_id")) 
+		where (("begin" &lt;= :1:i1) and ("end" &gt;= :2:i2)) and (("calendar_id" = :13:i13)) 
+		group by "Instances"."_id") 
+	where ("title" like :3:i3 escape :14:i14 or "description" like :4:i4 escape :15:i15 or "eventLocation" like :5:i5 escape :16:i16  
+		or group_email like :6:i6 escape :17:i17 
+		or group_name like :7:i7 escape :18:i18) 
+		and ("title" like :8:i8 escape :19:i19 or "description" like :9:i9 escape :20:i20 or "eventLocation" like :10:i10 escape :21:i21 
+		or group_email like :11:i11 escape :22:i22 
+		or group_name like :12:i12 escape :23:i23) 
+	order by "begin"
+
+</fromSQL> 
+<!-- END - test case = android.provider.cts.CalendarTest#testInstanceSearch -->
+
+<!-- END CTS 4.2.2 -->
+
+
+<!-- BEGIN 4.4 -->
+<!-- "Limit 20" is translated to "fetch ?" and leads to large tempory table row length -->
+<fromSQL id="GOCA441"
+		statement="SELECT eventEndTimezone, isOrganizer, cal_sync9, cal_sync8, cal_sync7, cal_sync6, cal_sync5, rrule, cal_sync4, cal_sync3, cal_sync2, cal_sync1, hasAlarm, rdate, dtstart, sync_data1, sync_data2, hasAttendeeData, sync_data3, sync_data4, description, sync_data5, sync_data6, sync_data7, sync_data8, sync_data9, customAppPackage, hasExtendedProperties, eventLocation, dtend, allDay, sync_data10, organizer, lastSynced, deleted, originalInstanceTime, mutators, selfAttendeeStatus, eventColor_index, eventTimezone, lastDate, guestsCanModify, guestsCanSeeGuests, exrule, title, _id, _sync_id, uid2445, cal_sync10, dirty, availability, calendar_id, original_id, customAppUri, originalAllDay, accessLevel, duration, guestsCanInviteOthers, original_sync_id, eventColor, exdate, eventStatus FROM view_events WHERE (account_name='simin.test@gmail.com' AND account_type='com.google' AND ((_sync_id IS NULL OR (_sync_id IS NOT NULL AND lastSynced = 0 AND (dirty != 0 OR deleted != 0))) AND _id>?)) ORDER BY _id LIMIT 20">
+
+select eventEndTimezone,isOrganizer,cal_sync9,cal_sync8,cal_sync7,cal_sync6,cal_sync5,rrule,cal_sync4,cal_sync3,cal_sync2,cal_sync1,hasAlarm,rdate,dtstart,sync_data1,sync_data2,hasAttendeeData,sync_data3,sync_data4,description,sync_data5,sync_data6,sync_data7,sync_data8,sync_data9,customAppPackage,hasExtendedProperties,eventLocation,dtend,allDay,sync_data10,organizer,lastSynced,deleted,originalInstanceTime,mutators,selfAttendeeStatus,eventColor_index,eventTimezone,lastDate,guestsCanModify,guestsCanSeeGuests,exrule,title,"_id","_sync_id",uid2445,cal_sync10,dirty,availability,calendar_id,original_id,customAppUri,originalAllDay,accessLevel,duration,guestsCanInviteOthers,original_sync_id,eventColor,exdate,eventStatus from view_events where ((account_name = :2:i2) and (account_type = :3:i3) and (("_sync_id" is null or ("_sync_id" is not null and (lastSynced = :4:i4) and ((dirty &lt;&gt; :5:i5) or (deleted &lt;&gt; :6:i6)))) and ("_id" &gt; :1:i1) and (1=1 or :7:i7=1))) order by "_id" fetch 20
+		
+	</fromSQL>
+
+<!-- END 4.4 -->
+
+<!-- Qualcomm Technologies JB replaceser -->
+
+<fromSQL id="QUCA411" statement="DELETE FROM CalendarAlerts WHERE _id IN (SELECT ca._id FROM CalendarAlerts AS ca LEFT OUTER JOIN Instances USING (event_id,begin,end) LEFT OUTER JOIN Reminders AS r ON (ca.event_id=r.event_id AND ca.minutes=r.minutes) LEFT OUTER JOIN view_events AS e ON (ca.event_id=e._id) WHERE Instances.begin ISNULL   OR ca.alarmTime&lt;?   OR (r.minutes ISNULL       AND ca.minutes IS NOT NULL)   OR e.visible=?)">
+		
+		delete from "CalendarAlerts" 
+		where "_id" in(
+			select "ca"."_id" 
+			from "CalendarAlerts" "ca" 
+				left join "Instances" "ii" on (("ca"."event_id" = "ii"."event_id") and ("ca"."begin" = "ii"."begin") and ("ca"."end" = "ii"."end")) 
+				left join "Reminders" "r" on (("ca"."event_id" = "r"."event_id") and ("ca"."minutes" = "r"."minutes")) 
+				left join "view_events" "e" on (("ca"."event_id" = "e"."_id")) 
+			where "ii"."begin" is null or ("ca"."alarmTime" &lt; ?) 
+				or ("r"."minutes" is null and ("ca"."minutes" is not null)) 
+				or ("e"."visible" = ?))
+		
+	</fromSQL>
+
+<!-- BEGIN 4.4 -->
+<!-- large tempory table row length  -->
+<fromSQL id="QUCA441"
+		statement="SELECT eventEndTimezone, isOrganizer, cal_sync9, cal_sync8, cal_sync7, cal_sync6, cal_sync5, rrule, cal_sync4, cal_sync3, cal_sync2, cal_sync1, hasAlarm, rdate, dtstart, sync_data1, sync_data2, hasAttendeeData, sync_data3, sync_data4, description, sync_data5, sync_data6, sync_data7, sync_data8, sync_data9, customAppPackage, hasExtendedProperties, eventLocation, dtend, allDay, sync_data10, organizer, lastSynced, deleted, originalInstanceTime, mutators, selfAttendeeStatus, eventColor_index, eventTimezone, lastDate, guestsCanModify, guestsCanSeeGuests, exrule, title, _id, _sync_id, uid2445, cal_sync10, dirty, availability, calendar_id, original_id, customAppUri, originalAllDay, accessLevel, duration, guestsCanInviteOthers, original_sync_id, eventColor, exdate, eventStatus FROM view_events WHERE (account_name='simin.test@gmail.com' AND account_type='com.google' AND (_sync_id =? AND lastSynced =?)) ORDER BY _id LIMIT 1">
+
+select eventEndTimezone,isOrganizer,cal_sync9,cal_sync8,cal_sync7,cal_sync6,cal_sync5,rrule,cal_sync4,cal_sync3,cal_sync2,cal_sync1,hasAlarm,rdate,dtstart,sync_data1,sync_data2,hasAttendeeData,sync_data3,sync_data4,description,sync_data5,sync_data6,sync_data7,sync_data8,sync_data9,customAppPackage,hasExtendedProperties,eventLocation,dtend,allDay,sync_data10,organizer,lastSynced,deleted,originalInstanceTime,mutators,selfAttendeeStatus,eventColor_index,eventTimezone,lastDate,guestsCanModify,guestsCanSeeGuests,exrule,title,"_id","_sync_id",uid2445,cal_sync10,dirty,availability,calendar_id,original_id,customAppUri,originalAllDay,accessLevel,duration,guestsCanInviteOthers,original_sync_id,eventColor,exdate,eventStatus 
+from view_events 
+where "_id" = (select min("_id") from view_events 
+               where account_name = :3:i3 and account_type = :4:i4 and "_sync_id" = :1:i1 and lastSynced = :2:i2 and (1=1 or :5:i5=1))
+
+		
+	</fromSQL>
+
+<!-- END 4.4 -->
+
+
+</MimerSQLReplace>

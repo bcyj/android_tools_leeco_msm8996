@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (c) 2013 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution, Apache license notifications and license are retained
+ * for attribution purposes only.
+ *
+ * Copyright (C) 2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <!-- <include
+        layout="@layout/banner"
+        android:layout_alignParentTop="true"
+        android:id="@+id/banner" /> -->
+
+    <RelativeLayout
+        android:id="@+id/inner_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingTop="16dip"
+        android:paddingLeft="16dip"
+        android:paddingRight="16dip">
+        <TextView
+            android:id="@+id/please_enter_pin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/please_enter_pin"
+            android:textStyle="bold"
+            android:layout_below="@id/inner_layout"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:paddingBottom="10dip"/>
+
+        <EditText
+            android:id="@+id/user_supplied_pin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_below="@id/please_enter_pin"
+            android:inputType="phone"
+            android:imeOptions="actionNone"/>
+
+        <TextView
+            android:id="@+id/pin_help"
+            android:paddingTop="8dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pin_help"
+            android:layout_below="@+id/user_supplied_pin"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/pin_ok"
+            android:text="@string/install"
+            android:layout_width="150dip"
+            android:paddingLeft="6dip"
+            android:layout_gravity="left"
+            android:layout_weight="0.4"
+            android:layout_height="wrap_content"/>
+        <View
+            android:id="@+id/buttons_spacer_left"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_weight="0.2" />
+        <Button
+            android:id="@+id/pin_cancel"
+            android:layout_width="150dip"
+            android:paddingRight="6dip"
+            android:layout_gravity="right"
+            android:text="@string/ignore"
+            android:layout_weight="0.4"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</RelativeLayout>

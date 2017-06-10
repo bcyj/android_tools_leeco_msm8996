@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- used in various places to indicate there is one song for a given artist or album -->
+    <string name="onesong">"1 песма"</string>
+    <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
+    <plurals name="Nsongs">
+        <item quantity="other">"Песме (<xliff:g id="COUNT">%d</xliff:g>)"</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other">"<xliff:g id="COUNT_FOR_ARTIST">%2$d</xliff:g> од <xliff:g id="TOTAL_COUNT">%1$d</xliff:g> песама"</item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+        <!-- number of albums is one -->
+        <item quantity="one">"1 албум"</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other">"Албуми (<xliff:g id="COUNT">%d</xliff:g>)"</item>
+    </plurals>
+
+    <!--
+    This string is used as the format string in a String.format call,
+    and 5 additional arguments are available for printing:
+    1 - hours
+    2 - minutes
+    3 - minutes%60
+    4 - seconds
+    5 - second%60
+    -->
+    <skip/>
+    <!-- Do not translate. Duration format for duration < 1 hour -->
+    <string translatable="false" name="durationformatshort"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    <!-- Do not translate. Duration format for duration >= 1 hour -->
+    <string translatable="false" name="durationformatlong"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    <!-- Menu item that takes the user back to the top level screen of the music player -->
+    <string name="goto_start">"Библиотека"</string>
+    <!-- Menu item that switches the music player in to party shuffle mode -->
+    <string name="party_shuffle">"Насумичан редослед за журку"</string>
+    <!-- Menu item that switches the music player out of party shuffle mode -->
+    <string name="party_shuffle_off">"Насумичан редослед за журку је искључен"</string>
+    <!-- Menu item that clear all playlists mode -->
+    <string name="clear_all_playlists">Обриши све плејлисте</string>
+    <!-- Menu item that deletes the currently selected item, which might be a single song, or a collection of songs.
+         The user will be prompted to confirm before deletion actually takes place -->
+    <string name="delete_item">"Избриши"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in shuffle mode -->
+    <string name="shuffle_all">"Пусти све насумично"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in list order -->
+    <string name="play_all">"Пусти све"</string>
+    <!-- Menu item to play song in music -->
+    <string name="open_in_music">Отвори у музици</string>
+    <!-- Menu item to share audio or video -->
+    <string name="share">Подели</string>
+
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc">"Желите ли да трајно избришете све песме извођача <xliff:g id="ARTIST">%s</xliff:g> са SD картице?"</string>
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc_nosdcard">"Желите ли да трајно избришете све песме извођача <xliff:g id="ARTIST">%s</xliff:g> са USB меморије?"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc">"Желите ли да трајно избришете цео албум „<xliff:g id="ALBUM">%s</xliff:g>“ са SD картице?"</string>
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc_nosdcard">"Желите ли да трајно избришете цео албум „<xliff:g id="ALBUM">%s</xliff:g>“ са USB меморије?"</string>
+
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc">"Желите ли трајно да избришете „<xliff:g id="SONG">%s</xliff:g>“ са SD картице?"</string>
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc_nosdcard">"Желите ли да трајно избришете „<xliff:g id="SONG">%s</xliff:g>“ са USB меморије?"</string>
+
+    <!-- Delete confirmation dialog, confirmation button text -->
+    <string name="delete_confirm_button_text">У реду</string>
+    <!-- Toast confirming that song(s) was/were deleted. -->
+    <plurals name="NNNtracksdeleted">
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">"1 песма је избрисана."</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other">"Песме (<xliff:g id="SONGS_TO_DELETE">%d</xliff:g>) су избрисане."</item>
+    </plurals>
+
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning">"Скенирање SD картице…"</string>
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning_nosdcard">"Скенирање USB меморије…"</string>
+
+    <!-- title of the "current playlist" screen when not in party shuffle mode -->
+    <string name="nowplaying_title">"Сада се репродукује"</string>
+    <!-- title of the "current playlist" screen when in party shuffle mode-->
+    <string name="partyshuffle_title">"Насумичан редослед за журку"</string>
+    <!-- Artist screen title -->
+    <string name="artists_title">"Извођачи"</string>
+    <!-- Category label on Library screen -->
+    <string name="albums_menu">"Албуми"</string>
+    <!-- Albums screen title -->
+    <string name="albums_title">"Албуми"</string>
+    <!-- Category label on Library screen -->
+    <string name="tracks_menu">"Песме"</string>
+    <!-- Songs screen title -->
+    <string name="tracks_title">"Песме"</string>
+    <!-- Category label on Library screen -->
+    <string name="folder_menu">Директоријум</string>
+    <!-- Folder screen title -->
+    <string name="folders_title">Директоријум</string>
+    <!-- Category label on Library screen -->
+    <string name="playlists_menu">"Плејлисте"</string>
+    <!-- Playlists screen title -->
+    <string name="playlists_title">"Плејлисте"</string>
+    <!-- Videos screen title -->
+    <string name="videos_title">"Видео снимци"</string>
+    <!-- All media screen title -->
+    <string name="all_title">"Сви медији"</string>
+    <!-- Category label on Library screen -->
+    <string name="browse_menu">"Извођачи"</string>
+    <!-- Library screen, menu item -->
+    <string name="search_title">"Претражи"</string>
+    <!-- Title of screen when there are no songs, or if the SD card is busy -->
+    <string name="no_tracks_title">"Нема песама"</string>
+    <!-- Title of screen when there are no videos, or if the SD card is busy -->
+    <string name="no_videos_title">"Нема видео снимака"</string>
+    <!-- Title of screen when there are no playlists, or if the SD card is busy -->
+    <string name="no_playlists_title">"Нема плејлиста"</string>
+    <!-- Playlist context menu item to delete the selected playlist. -->
+    <string name="delete_playlist_menu">"Избриши"</string>
+    <!-- Playlist context menu item to edit the selected playlist -->
+    <string name="edit_playlist_menu">"Измени"</string>
+    <!-- Playlist context menu item to rename the selected playlist-->
+    <string name="rename_playlist_menu">"Преименуј"</string>
+    <!-- Dialog box message shown when clearing all playlists-->
+    <string name="clear_all_playlists_message">Желите ли да обришете све плејлисте?</string>
+    <!-- Dialog box message shown when deleting a playlist-->
+    <string name="delete_playlist_message">Желите ли да избришете \"<xliff:g id="name">%s</xliff:g>\"?</string>
+    <!-- Dialog box button -->
+    <string name="delete_playlist_button_ok">У реду</string>
+    <string name="delete_playlist_button_cancel">Откажи</string>
+    <!-- Transient popup message shown after deleting a playlist -->
+    <string name="playlist_deleted_message">"Плејлиста је избрисана."</string>
+    <!-- Transient popup message shown after renaming a playlist -->
+    <string name="playlist_renamed_message">"Плејлиста је преименована."</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in list view -->
+    <string name="recentlyadded">"Недавно додато"</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in title bar of songs list -->
+    <string name="recentlyadded_title">"Недавно додато"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in list view -->
+    <string name="podcasts_listitem">"Поткастови"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in title bar of songs list -->
+    <string name="podcasts_title">"Поткастови"</string>
+    <!-- all recordings will show up in the media database in a playlist with thiis name -->
+    <string name="audio_db_playlist_name">Моји снимци</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title">"Нема SD картице"</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title_nosdcard">"Нема USB меморије"</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message">"У телефон није уметнута SD картицa."</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message_nosdcard">"Телефон нема USB меморију."</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title">"SD картица је недоступна"</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title_nosdcard">"USB меморија је недоступна"</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message">"SD картица је заузета."</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message_nosdcard">"Жао нам је, USB меморија је заузета."</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title">"Грешка у вези са SD картицом"</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title_nosdcard">"Грешка у USB меморији"</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message">"Дошло је до грешке на SD картици."</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message_nosdcard">"Дошло је до грешке у USB меморији."</string>
+    <!-- Default name of artist that doesn\'t have a name in the metadata -->
+    <string name="unknown_artist_name">"Непознати извођач"</string>
+    <!-- Default name of album that doesn\'t have a name in the metadata -->
+    <string name="unknown_album_name">"Непознати албум"</string>
+    <!-- Default name of folder that doesn\'t have a path in the metadata -->
+    <string name="unknown_folder_name">Непозната путања</string>
+    <!-- Default name of folder that doesn\'t have a count in the metadata -->
+    <string name="unknown_folder_count">Непознати број</string>
+    <!-- Toast after turning shuffle on -->
+    <string name="shuffle_on_notif">"Насумично пуштање је укључено."</string>
+    <!-- Toast after turning shuffle off -->
+    <string name="shuffle_off_notif">"Насумично пуштање је искључено."</string>
+    <!-- Toast after turning repeat off -->
+    <string name="repeat_off_notif">"Понављање је искључено."</string>
+    <!-- Toast after turning single repeat on -->
+    <string name="repeat_current_notif">"Понављање тренутне песме."</string>
+    <!-- Toast after turning repeat all on -->
+    <string name="repeat_all_notif">"Понављање свих песама."</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu">"Користи као тон звона телефона"</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short">"Користи као тон звона"</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set">"„<xliff:g id="NAME">%s</xliff:g>“ је постављена као тон звона телефона."</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu_1">Користи као звоно лежишта 1</string>
+    <string name="ringtone_menu_2">Користи као звоно лежишта 2</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short_1">Користи као звоно 1</string>
+    <string name="ringtone_menu_short_2">Користи као звоно 2</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_1">Звоно \"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" је подешено као звоно лежишта 1.</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_2">Звоно \"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" је подешено као звоно лежишта 2.</string>
+    <!-- Context menu item -->
+    <string name="play_selection">"Пусти"</string>
+    <!-- Context menu item -->
+    <string name="add_to_playlist">"Додај на плејлисту"</string>
+    <!-- Context menu item -->
+    <string name="queue">"Актуелна плејлиста"</string>
+    <!-- Context menu item -->
+    <string name="new_playlist">"Ново"</string>
+    <!-- Template for newly created playlist name -->
+    <string name="new_playlist_name_template">"Нова плејлиста <xliff:g id="NUMBER">%d</xliff:g>"</string>
+    <!-- Toasts after adding song(s) to playlists -->
+    <plurals name="NNNtrackstoplaylist">
+        <!-- message shown when one song was added -->
+        <item quantity="one">"1 песма је додата на плејлисту."</item>
+        <!-- message shown when zero or more than one song was added -->
+        <item quantity="other">"Песама додато на плејлисту: <xliff:g id="NUMBER">%d</xliff:g>"</item>
+    </plurals>
+    <!-- Toast after selecting an empty playlist -->
+    <string name="emptyplaylist">"Изабрана плејлиста је празна."</string>
+    <!-- Button name when saving a playlist -->
+    <string name="create_playlist_create_text">"Сачувај"</string>
+    <!-- Button name when saving a playlist and the new playlist will overwrite an existing one -->
+    <string name="create_playlist_overwrite_text">"Замени"</string>
+    <!-- Dialog box title -->
+    <string name="service_start_error_title">"Проблем са репродукцијом"</string>
+    <!-- Dialog box message -->
+    <string name="service_start_error_msg">"Песму није могуће пустити."</string>
+    <!-- Dialog box button -->
+    <string name="service_start_error_button">У реду</string>
+    <!-- Time span edit options that appear when editing system playlist "Recently added" -->
+    <!-- Used to indicate the number of weeks the "recently added" playlist covers in a selector widget -->
+    <string-array name="weeklist">
+        <item>"1 недеља"</item>
+        <item>"2 недеље"</item>
+        <item>"3 недеље"</item>
+        <item>"4 недеље"</item>
+        <item>"5 недеља"</item>
+        <item>"6 недеља"</item>
+        <item>"7 недеља"</item>
+        <item>"8 недеља"</item>
+        <item>"9 недеља"</item>
+        <item>"10 недеља"</item>
+        <item>"11 недеља"</item>
+        <item>"12 недеља"</item>
+    </string-array>
+    <!-- Button name in time span picker -->
+    <string name="weekpicker_set">"Готово"</string>
+    <!-- Title of time span picker -->
+    <string name="weekpicker_title">"Подешавање времена"</string>
+    <!-- Do not translate. Background color for currently dragged item in playlist edit mode. -->
+    <color name="dragndrop_background">#e0103010</color>
+    <!-- Do not translate. Background color for albums in the artists list view. -->
+    <color name="expanding_child_background">#ff404040</color>
+
+    <!-- menu item to save the current list as a new playlist -->
+    <string name="save_as_playlist">"Сачувај као плејлисту"</string>
+    <!-- menu item to clear the current playlist -->
+    <string name="clear_playlist">"Обриши плејлисту"</string>
+
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicbrowserlabel">"Музика"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicshortcutlabel">"Музичка плејлиста"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediaplaybacklabel">"Музика"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="videobrowserlabel">"Видео снимци"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediapickerlabel">"Музика"</string>
+
+    <!-- Shown as a transient message whenever a file fails to play -->
+    <string name="playback_failed">"Плејер не подржава овај тип аудио датотеке."</string>
+    <!-- Shown as a transient message whenever a file fails to open -->
+    <string name="open_failed">Жао нам је, није могуће отворити датотеку.</string>
+
+    <!-- Text for the "cancel" button in the "delete" and "create playlist" confirmation dialogs -->
+    <string name="cancel">"Откажи"</string>
+
+    <!-- context menu item to remove the selected item from the playlist -->
+    <string name="remove_from_playlist">"Уклони из плејлисте"</string>
+
+    <!-- shown when connecting to a music stream, before it starts playing -->
+    <string name="streamloadingtext">"Повезивање са хостом <xliff:g id="HOST">%s</xliff:g>..."</string>
+
+    <!-- title of contextual music search menu -->
+    <string name="mediasearch">"Потражите <xliff:g id="TERM">%s</xliff:g> помоћу:"</string>
+
+    <!-- Shown in the title bar while the list of artists is being retrieved in the background -->
+    <string name="working_artists">"Извођачи..."</string>
+    <!-- Shown in the title bar while the list of albums is being retrieved in the background -->
+    <string name="working_albums">"Албуми…"</string>
+    <!-- Shown in the title bar while the list of songs is being retrieved in the background -->
+    <string name="working_songs">"Песме..."</string>
+    <!-- Shown in the title bar while the list of folders is being retrieved in the background -->
+    <string name="working_folders">Директоријуми\u2026</string>
+    <!-- Shown in the title bar while the list of playlists is being retrieved in the background -->
+    <string name="working_playlists">"Плејлисте…"</string>
+
+    <!-- Shown in the music picker while loading the music database. -->
+    <string name="loading">"Учитава се..."</string>
+    <!-- Menu in music picker to sort the list by track/song name. -->
+    <string name="sort_by_track">"Нумере"</string>
+    <!-- Menu in music picker to sort the list by album name. -->
+    <string name="sort_by_album">"Албуми"</string>
+    <!-- Menu in music picker to sort the list by artist name. -->
+    <string name="sort_by_artist">"Извођачи"</string>
+    <!--  Title of the music picker activity. -->
+    <string name="music_picker_title">"Избор музичке нумере"</string>
+
+    <!-- The string used to describe Music as a searchable item within system search settings. -->
+    <string name="search_settings_description">"Извођачи, албуми и песме"</string>
+
+    <!-- Shown in the search box as a hint -->
+    <string name="search_hint">"Претражите музику"</string>
+    <string name="search_hint_video">Пронађи видео</string>
+
+    <!--The fast scroll thumb will show one character from this string depending on the position in the list -->
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+
+    <!-- Text shown on widget when first loaded -->
+    <string name="widget_initial_text">"Додирните да бисте изабрали музику."</string>
+
+    <!-- Menu text for the item controlling the audio effects panel [CHAR LIMIT=15] -->
+    <string name="effectspanel">"Звучни ефекти"</string>
+
+    <string name="duplicate_playlist_name_alert">Већ постоји плејлиста с именом \"<xliff:g id="name">%s</xliff:g>\". Унесите друго име.</string>
+    <string name="same_playlist_name_alert">Име плејлисте \"<xliff:g id="name">%s</xliff:g>\" није промењено. Унесите друго име.</string>
+    <string name="button_ok">У реду</string>
+    <string name="list_empty">Нема музике у плејлисти.</string>
+
+    <!-- Shown when video is played after disable Gallery app from Settings -->
+    <string name="enable_gallery_app">Видео снимак не може да се репродукује. Омогућите апликацију Галерија у подешавањима.</string>
+    <string name="close_music">"Крај"</string>
+    <string name="delete_video_item_message">Желите ли да избришете \"<xliff:g id="name">%s</xliff:g>\"?</string>
+    <string name="video_deleted_message">Видео датотека је избрисана.</string>
+
+    <!-- Menu item that takes the user link to net to see more music -->
+    <string name="more_music">Још музике</string>
+    <!-- Menu item that takes the user link to net to see more video -->
+    <string name="more_video">Још видео снимака</string>
+    <!--gesture control playback status-->
+    <string name="music_gesture_play">"Репродукуј/паузирај звук"</string>
+    <string name="music_gesture_prev">"Репродукуј претходну нумеру"</string>
+    <string name="music_gesture_next">"Репродукуј следећу нумеру"</string>
+
+    <!-- DRM Related Strings -->
+    <string name="no_permission_for_drm">"Нажалост, није могуће поделити DRM датотеку"</string>
+    <string name="drm_license_info">Информације о DRM лиценци</string>
+    <string name="drm_ringtone_error">Датотека са CD-а/SD картице не може да служи као мелодија звона</string>
+
+</resources>

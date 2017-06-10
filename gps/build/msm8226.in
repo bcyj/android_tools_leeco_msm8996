@@ -1,0 +1,21 @@
+# GPS Makefile for target msm8226
+
+# Define C/C++ features
+
+GPS_FEATURES := \
+        -D FEATURE_COARSE_POS_TIMESTAMP_AGE \
+        -D FEATURE_LOC_MW_EFS_ACCESS \
+        -D FEATURE_RPC_CHAR_ARRAY
+
+# Additional entries in gps.conf, bash string format
+GPS_CONF_FOR_TARGET := \
+# Wiper (wifi positioning), 1=enable, 0=disable
+ENABLE_WIPER=1
+
+GPS_LOC_API_V02_ENABLED := true
+FEATURE_CGPS_XTRA_T := true
+
+FEATURE_GNSS_BIT_API := true
+GPS_FEATURES += \
+        -D FEATURE_GNSS_BIT_API
+

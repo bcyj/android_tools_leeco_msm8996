@@ -1,0 +1,370 @@
+/*****************************************************************************
+  @FILE     sns_sam_smd_v01.idl
+
+  @BRIEF    Message definition for the Significant motion detector service
+
+  @DESCRIPTION
+  This file defines messages used by Significant motion detector service.
+
+  As prerequisite, the sensor algorithm must use the common interface
+  defined in the Sensor algorithm framework
+
+  The messages defined herein will be passed to the Sensor framework using
+  the sensor1_write() API.
+
+  @COPYRIGHT
+  Copyright (c) 2013-2014 Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+*****************************************************************************/
+include "sns_sam_common_v01.idl";
+
+revision 2;
+
+const SNS_SAM_SMD_SUID = 0x69c33e48a464e1a6;
+
+enum {
+  SNS_SAM_SMD_STATE_UNKNOWN = 0,    /**< Motion state unknown. */
+  SNS_SAM_SMD_STATE_NO_MOTION = 1,  /**< No motion. */
+  SNS_SAM_SMD_STATE_MOTION = 2      /**< In motion. */
+} sns_sam_smd_state_enum;
+
+struct {
+  sns_sam_smd_state_enum motion_state;
+  /**< Detected motion state.
+  */
+  uint8 motion_state_probability;
+  /**< Probability of the reported motion state, scaled to a percentage (0 to 100).
+  */
+} sns_sam_smd_report_data_type;
+
+/* Following are message definitions shared by all significant motion detector related services */
+
+//============================================================================
+/** @COMMAND SNS_SAM_SMD_CANCEL
+    @BRIEF Cancels all requests to the algorithm service from this client.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//============================================================================
+/** @COMMAND SNS_SAM_SMD_VERSION
+    @BRIEF This command requests algorithm service version.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//============================================================================
+/** @COMMAND SNS_SAM_SMD_ENABLE
+    @BRIEF This command enables the significant motion detector service.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+    @COMMAND_VERSION 1.0
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_SMD_ENABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Control Point
+//----------------------------------------------------------------------------
+message {
+  //! Notify Suspend
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  optional sns_suspend_notification_s notify_suspend;
+  /**< Identifies whether indications for this request are to be sent
+       when the processor is in the Suspend state.
+
+       If this field is not specified, the default value is set to:
+       notify_suspend->proc_type = SNS_PROC_APPS
+       notify_suspend->send_indications_during_suspend = FALSE
+
+       This field does not have any bearing on error indication
+       messages, which are sent even during Suspend.
+    */
+} sns_sam_smd_enable_req_msg;
+
+//! @MSG     SNS_SAM_SMD_ENABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+  //! Result Code
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  mandatory sns_common_resp_s resp = 2;
+  /**< Common response message. */
+
+  //! Instance ID
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  optional uint8 instance_id;
+  /**< Algorithm instance ID, which is maintained/assigned by the SAM.
+       The client must use this instance ID for future messages associated with
+       the current algorithm instance.
+    */
+} sns_sam_smd_enable_resp_msg;
+
+/** @ERROR
+    -QMI_ERR_NONE           No error in the request
+    -QMI_ERR_INTERNAL       Unexpected error occurred during processing
+    -QMI_ERR_INSUFFICIENT_RESOURCES  Insufficient resources to support request
+*/
+
+/** @DESCRIPTION
+    This command enables Significant motion detector service.
+*/
+
+//============================================================================
+/** @COMMAND SNS_SAM_SMD_DISABLE
+    @BRIEF This command disables the significant motion detector service.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+    @COMMAND_VERSION 1.0
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_SMD_DISABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Control Point
+//----------------------------------------------------------------------------
+message {
+  //! Instance ID
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  mandatory uint8 instance_id;
+  /**< Identifies the algorithm instance to be disabled.  */
+} sns_sam_smd_disable_req_msg;
+
+//! @MSG     SNS_SAM_SMD_DISABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+  //! Result Code
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  mandatory sns_common_resp_s resp = 2;
+  /**< Common response message. */
+
+  //! Instance ID
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  optional uint8 instance_id;
+  /**< Identifies the algorithm instance.  */
+} sns_sam_smd_disable_resp_msg;
+
+/** @ERROR
+    -QMI_ERR_NONE           No error in the request
+    -QMI_ERR_INTERNAL       Unexpected error occurred during processing
+    -QMI_ERR_INVALID_ARG    Invalid argument (instance id) in the request
+*/
+
+/** @DESCRIPTION
+    This command disables the Significant motion detector service identified
+    by the algorithm instance.
+*/
+
+//============================================================================
+/** @COMMAND SNS_SAM_SMD_GET_REPORT
+    @BRIEF This command request for the latest Significant motion detector report
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+    @COMMAND_VERSION 1.0
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_SMD_GET_REPORT_REQ
+//! @TYPE    Request
+//! @SENDER  Control Point
+//----------------------------------------------------------------------------
+
+message {
+  //! Instance ID
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  mandatory uint8 instance_id;
+  /**< Identifies the algorithm instance.  */
+} sns_sam_smd_get_report_req_msg;
+
+//! @MSG     SNS_SAM_SMD_GET_REPORT_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  //! Result Code
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  mandatory sns_common_resp_s resp = 2;
+  /**< Common response message. */
+
+  //! Instance ID
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  optional uint8 instance_id;
+  /**< Identifies the algorithm instance.  */
+
+  //! Timestamp
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  optional uint32 timestamp;
+  /**< Timestamp of the input with which latest state was detected, in SSC ticks.  */
+
+  //! Report Data
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  optional sns_sam_smd_report_data_type report_data;
+  /**< Significant motion detector service report.  */
+} sns_sam_smd_get_report_resp_msg;
+
+/** @ERROR
+    -QMI_ERR_NONE           No error in the request
+    -QMI_ERR_INTERNAL       Unexpected error occurred during processing
+    -QMI_ERR_INVALID_ARG    Invalid argument (instance id) in the request
+*/
+
+/** @DESCRIPTION
+    This command request for the latest Significant motion detector report
+    by the service identified by the specified algorithm instance.
+*/
+
+//============================================================================
+/** @COMMAND SNS_SAM_SMD_REPORT
+    @BRIEF Report from the significant motion detector service.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+    @COMMAND_VERSION 1.0
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_SMD_REPORT_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+  //! Instance ID
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  mandatory uint8 instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+
+  //! Timestamp
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  mandatory uint32 timestamp;
+  /**< Timestamp of the input with which the latest state was detected, in SSC ticks. */
+
+  //! Report Data
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  mandatory sns_sam_smd_report_data_type report_data;
+  /**< Significant motion detector service report.  */
+} sns_sam_smd_report_ind_msg;
+
+/** @DESCRIPTION
+    This indication reports significant motion detector state to client
+    with associated timestamp
+*/
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_SMD_ERROR
+    @BRIEF Asynchronous error report from the significant motion detector service.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+    @COMMAND_VERSION 1.0
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_SMD_ERROR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//============================================================================
+message {
+  //! Error Code
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  mandatory uint8 error;
+  /**< QMI error code, please refer to common_v01.h */
+
+  //! Instance ID
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  mandatory uint8 instance_id;
+  /**< Instance id identifies the algorithm instance. */
+
+  //! Timestamp
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  mandatory uint32 timestamp;
+  /**< Timestamp of when the error was detected; in SSC ticks */
+} sns_sam_smd_error_ind_msg;
+
+/** @DESCRIPTION
+    This indication reports significant motion detector service errors to client
+    with associated timestamp
+*/
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_SAM_SMD_SVC {
+  //! @ID SNS_SAM_SMD_CANCEL
+  sns_common_cancel_req_msg        SNS_SAM_SMD_CANCEL_REQ,
+  sns_common_cancel_resp_msg       SNS_SAM_SMD_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_SAM_SMD_VERSION
+  sns_common_version_req_msg       SNS_SAM_SMD_VERSION_REQ,
+  sns_common_version_resp_msg      SNS_SAM_SMD_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SAM_SMD_ENABLE
+  sns_sam_smd_enable_req_msg       SNS_SAM_SMD_ENABLE_REQ,
+  sns_sam_smd_enable_resp_msg      SNS_SAM_SMD_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_SAM_SMD_DISABLE
+  sns_sam_smd_disable_req_msg      SNS_SAM_SMD_DISABLE_REQ,
+  sns_sam_smd_disable_resp_msg     SNS_SAM_SMD_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_SAM_SMD_GET_REPORT
+  sns_sam_smd_get_report_req_msg   SNS_SAM_SMD_GET_REPORT_REQ,
+  sns_sam_smd_get_report_resp_msg  SNS_SAM_SMD_GET_REPORT_RESP
+    = 0x04;
+
+  //! @ID SNS_SAM_SMD_REPORT
+  sns_sam_smd_report_ind_msg       SNS_SAM_SMD_REPORT_IND
+    = 0x05;
+
+  //! @ID SNS_SAM_SMD_ERROR
+  sns_sam_smd_error_ind_msg        SNS_SAM_SMD_ERROR_IND
+    = 0x06;
+
+  //! @ID SNS_SAM_GET_ALGO_ATTRIBUTES
+  sns_sam_get_algo_attrib_req_msg  SNS_SAM_SMD_GET_ATTRIBUTES_REQ,
+  sns_sam_get_algo_attrib_resp_msg SNS_SAM_SMD_GET_ATTRIBUTES_RESP
+    = 0x24;
+
+} = 0x128;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+*/
+
+//============================================================================
+// End of Module
+//============================================================================

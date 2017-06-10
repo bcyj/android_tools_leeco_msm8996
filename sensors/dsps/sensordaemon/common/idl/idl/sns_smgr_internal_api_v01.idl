@@ -1,0 +1,262 @@
+/*****************************************************************************
+  @FILE     sensor_smgr_internal_api.idl
+
+  @BRIEF    Manages individual sensors, and retrieves sensor samples.
+
+  @DESCRIPTION
+  This is the Sensor Manager Internal (sensor_mgr) API specification. It defines the
+  messages used to configure individual sensors and retrieve sensor samples
+  from sensors. 
+  The sensor manager does not support any complex algorithms although it
+  does provide basic filter functionality.
+
+  The messages defined herein will be passed to the Sensor framework using
+  the sensor1  API.
+
+*******************************************************************************
+*   Copyright (c) 2010 - 2013 Qualcomm Technologies, Inc.  All Rights Reserved.
+*   Qualcomm Technologies Proprietary and Confidential.
+********************************************************************************/
+include "sns_common_v01.idl";
+
+revision 3;
+
+
+const SNS_SMGR_REG_HW_MD_INT_ADD =0;
+/**< register HW MD interupt in sns_smgr_reg_hw_md_int_req_msg */
+
+const SNS_SMGR_REG_HW_MD_INT_DEL =1;
+/**< un-register HW MD interupt in sns_smgr_reg_hw_md_int_req_msg */
+
+const SNS_MODULE_APPS_SAM =1;
+/**< identify source module as SAM on apps processor */
+
+const SNS_MODULE_DSPS_SAM =13;
+/**< identify source module as SAM on DSPS/ADSP processor */
+
+const SNS_SMGR_REG_HW_MD_INT_ENABLED =0;
+/**< successful to register HW MD interupt in sns_smgr_reg_hw_md_int_resp_msg 
+     or sns_smgr_reg_hw_md_int_ind_msg */
+
+const SNS_SMGR_REG_HW_MD_INT_DISABLED =1;
+/**< failed  to register HW MD interupt in sns_smgr_reg_hw_md_int_resp_msg 
+    or sns_smgr_reg_hw_md_int_ind_msg*/
+
+const SNS_SMGR_REG_HW_MD_INT_OCCURRED =2;
+/**< HW MD interupt happened in sns_smgr_reg_hw_md_int_ind_msg */
+
+
+const SNS_SMGR_INTERNAL_DEV_ACCESS_RESP_SUCCESS    = 0;
+/**< Access successful */
+const SNS_SMGR_INTERNAL_DEV_ACCESS_RESP_ERR_DEVICE = 1;
+/**< Device error */
+const SNS_SMGR_INTERNAL_DEV_ACCESS_RESP_ERR_ADDR   = 2;
+/**< Invalid address */
+
+const SNS_SMGR_INTERNAL_MAX_DATA_LEN = 512;
+/**< Maximum number of bytes to be read/written in a single request */
+
+//!============================================================================
+/** @COMMAND SNS_SMGR_REG_HW_MD_INT
+    @BRIEF This command requests to register HW Motion Detection Interrupt.
+    SMGR will turn on MD  int if all accel requests are  from  clients who registered 
+    MD int and  report ID from both requests match; 
+    SMGR will suspend reports by these requests and turn on MD int until MD int happens.
+    Client can register for HW MD interupt first and request accel data with same report ID later ;
+    Or request for accel data first, then register for HW MD interrupt later with the same report ID.
+    The MD requests is deleted when the client explicitly deregisters or when MD interrupt occurs and 
+    SMGR notifies client. 
+    If associated streaming is canceled, it doesn’t imply canceling the HW MD registering request.
+    How SMGR should treat the HW MD registering message if it does not have an associated streaming 
+    but there is a streaming by other client. Still SMGR save and maintains the HW MD registering requests?
+    SMGR will maintain the request, and treat this request the same as other client such as QMD.
+    Previous MD request is deleted if a new one has the same source module and report ID.
+*/
+//!============================================================================
+//! @MSG     SNS_SMGR_REG_HW_MD_INT_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//! @VERSION 1.2
+message { 
+  mandatory uint8                  ReportId;
+  /**< ID assigned by client to distinguish client's reports */
+  mandatory uint8             Action;
+  /**< SNS_SMGR_REG_HW_MD_INT_ADD =0 ,Add;
+       SNS_SMGR_REG_HW_MD_INT_DEL =1, Delete */
+  optional  uint8             SrcModule;
+  /**< Added in @VERSION 1.2
+       This field is used to subscribe to Motion Detect interrupt. If the
+       field is used, it accepts only the values below. All other
+       values are rejected (indicated as DISABLED in the corresponding
+       response message).
+
+       If the field is enabled and it is a valid value (from the list
+       below), the response will indicated ENABLED (provided that
+       interrupt is supported.). When the interrupt is un-subscribed after
+       an ENABLED response, an indication is sent to the client.
+
+       SNS_MODULE_APPS_SAM =1,  SAM on apps;
+       SNS_MODULE_DSPS_SAM =13, SAM on DSPS/ADSP */
+} sns_smgr_reg_hw_md_int_req_msg;
+
+
+//! @MSG     SNS_SMGR_REG_HW_MD_INT_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//! @VERSION 1.2
+message { 
+   mandatory sns_common_resp_s Resp = 2;
+   mandatory uint8                  ReportId;
+  /**< ID assigned by client to distinguish client's reports */
+   mandatory uint8             result; 
+  /**< SNS_SMGR_REG_HW_MD_INT_ENABLED =0 , success;
+       SNS_SMGR_REG_HW_MD_INT_DISABLED =1, fail */
+} sns_smgr_reg_hw_md_int_resp_msg;
+
+//! @MSG     SNS_SMGR_REG_HW_MD_INT_RESP
+//! @TYPE    indication
+//! @SENDER  Service
+//! @VERSION 1.1
+message {
+  mandatory uint8                  ReportId;
+  /**< ID assigned by client to distinguish client's reports */
+  mandatory uint8          indication; 
+  /**< see #define SNS_SMGR_REG_HW_MD_INT_XXX_XXX */ 
+} sns_smgr_reg_hw_md_int_ind_msg;
+
+//!============================================================================
+/** @COMMAND SNS_SMGR_INTERNAL_DEV_ACCESS_READ
+
+    @BRIEF This command allows the client to access I/O registers in sensor
+           hardware. All requests are processed synchronously.
+*/
+//!============================================================================
+//! @MSG      SNS_SMGR_INTERNAL_DEV_ACCESS_READ_REQ
+//! @TYPE     Request
+//! @SENDER   Client
+//! @VERSION  1.3
+message {
+  mandatory uint8         SensorId;
+  /**< Desired Sensor ID associated with the request */
+
+  mandatory uint64        Addr;
+  /**< Address of device register. Assumes both client and service know
+       the actual length of the address in question.
+   */
+
+  mandatory uint32        Bytes_len;
+  /**< Number of data bytes to read */
+} sns_smgr_internal_dev_access_read_req_msg;
+
+//! @MSG      SNS_SMGR_INTERNAL_DEV_ACCESS_READ_RESP
+//! @TYPE     Response
+//! @SENDER   Service
+//! @VERSION  1.3
+message {
+  mandatory sns_common_resp_s     Resp = 2;
+
+  optional uint16                 Result;
+  /**<
+    Lower byte (LSB) defines the status of the associated request:
+    - SNS_SMGR_INTERNAL_DEV_ACCESS_RESP_SUCCESS - the request has been accepted
+    - SNS_SMGR_INTERNAL_DEV_ACCESS_RESP_ERR_DEVICE - generic I/O error
+    - SNS_SMGR_INTERNAL_DEV_ACCESS_RESP_ERR_ADDR   - invalid device address
+
+    Upper byte (MSB) defines any (optional) additional error code information.
+  */
+
+  optional uint8                  SensorId;
+  /**< Sensor ID associated with the request message */
+
+  optional uint64                 Addr;
+  /**< Address of device register */
+
+  optional uint8                  Bytes<SNS_SMGR_INTERNAL_MAX_DATA_LEN>;
+  /**< Data bytes read from hardware register */
+} sns_smgr_internal_dev_access_read_resp_msg;
+
+//!============================================================================
+/** @COMMAND SNS_SMGR_INTERNAL_DEV_ACCESS_WRITE
+
+    @BRIEF This command allows the client to access I/O registers in sensor
+           hardware. All requests are processed synchronously.
+*/
+//!============================================================================
+//! @MSG      SNS_SMGR_INTERNAL_DEV_ACCESS_WRITE_REQ
+//! @TYPE     Request
+//! @SENDER   Client
+//! @VERSION  1.3
+message {
+  mandatory uint8         SensorId;
+  /**< Desired Sensor ID associated with the request */
+
+  mandatory uint64        Addr;
+  /**< Address of device register. Assumes both client and service know
+       the actual length of the address in question.
+   */
+
+  mandatory uint32        Bytes<SNS_SMGR_INTERNAL_MAX_DATA_LEN>;
+  /**< Data bytes to be written */
+} sns_smgr_internal_dev_access_write_req_msg;
+
+//! @MSG      SNS_SMGR_INTERNAL_DEV_ACCESS_WRITE_RESP
+//! @TYPE     Response
+//! @SENDER   Service
+//! @VERSION  1.3
+message {
+  mandatory sns_common_resp_s     Resp = 2;
+
+  optional uint16                 Result;
+  /**<
+    Lower byte (LSB) defines the status of the associated request:
+    - SNS_SMGR_INTERNAL_DEV_ACCESS_RESP_SUCCESS - the request has been accepted
+    - SNS_SMGR_INTERNAL_DEV_ACCESS_RESP_ERR_DEVICE - generic I/O error
+    - SNS_SMGR_INTERNAL_DEV_ACCESS_RESP_ERR_ADDR   - invalid device address
+
+    Upper byte (MSB) defines any (optional) additional error code information.
+  */
+
+  optional uint8                  SensorId;
+  /**< Sensor ID associated with the request message */
+} sns_smgr_internal_dev_access_write_resp_msg;
+
+//!============================================================================
+//! Service definition
+//! ============================================================================
+
+
+service SNS_SMGR_INTERNAL_SVC {
+  //! @ID SNS_COMMON_CANCEL
+  sns_common_cancel_req_msg              SNS_SMGR_INTERNAL_CANCEL_REQ,
+  sns_common_cancel_resp_msg             SNS_SMGR_INTERNAL_CANCEL_RESP;
+  
+  //! @ID SNS_COMMON_VERSION
+  sns_common_version_req_msg             SNS_SMGR_INTERNAL_VERSION_REQ,
+  sns_common_version_resp_msg            SNS_SMGR_INTERNAL_VERSION_RESP;
+
+  //! @ID SNS_SMGR_REG_HW_MD_INT
+  sns_smgr_reg_hw_md_int_req_msg         SNS_SMGR_REG_HW_MD_INT_REQ,
+  sns_smgr_reg_hw_md_int_resp_msg        SNS_SMGR_REG_HW_MD_INT_RESP;
+  sns_smgr_reg_hw_md_int_ind_msg         SNS_SMGR_REG_HW_MD_INT_IND;
+
+  //! @ID SNS_SMGR_INTERNAL_DEV_ACCESS_READ
+  sns_smgr_internal_dev_access_read_req_msg   SNS_SMGR_INTERNAL_DEV_ACCESS_READ_REQ,
+  sns_smgr_internal_dev_access_read_resp_msg  SNS_SMGR_INTERNAL_DEV_ACCESS_READ_RESP
+    = 0x20;
+
+  //! @ID SNS_SMGR_INTERNAL_DEV_ACCESS_WRITE
+  sns_smgr_internal_dev_access_write_req_msg   SNS_SMGR_INTERNAL_DEV_ACCESS_WRITE_REQ,
+  sns_smgr_internal_dev_access_write_resp_msg  SNS_SMGR_INTERNAL_DEV_ACCESS_WRITE_RESP
+    = 0x21;
+} = SNS_QMI_SVC_ID_13;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+Our sensor API is the greatest!
+*/
+//============================================================================
+// End of Module
+//============================================================================

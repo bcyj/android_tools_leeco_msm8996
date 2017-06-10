@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2013 Mimer Information Technology AB, info@mimer.com -->
+<!--Android 2.3 replacements -->
+<MimerSQLReplace>
+  
+  <!-- The below statements are really not related to the contacts provider but rather
+       the CTS Database tests. -->
+
+  <fromSQL id="GOCO2328" translateOnLoad="False" statement="Create TABLE test (_id INTEGER PRIMARY KEY,  number_1 INTEGER, number_2 INTEGER );">
+    <statement>create unique sequence test_temporary</statement>
+    <statement>Create TABLE test ("_id" INTEGER PRIMARY KEY default next_value of test_temporary ,  number_1 INTEGER, number_2 INTEGER )</statement>
+  </fromSQL>
+
+  <!-- End CTS Database test statements -->
+
+</MimerSQLReplace>

@@ -1,0 +1,26 @@
+#! /bin/sh
+
+set -e
+
+case "$1" in
+  start)
+    echo -n "Starting csdserver: "
+    start-stop-daemon -S -b -a /usr/bin/csd_server
+    echo "done"
+    ;;
+  stop)
+    echo -n "Stopping csdserver: "
+    start-stop-daemon -K -n csdserver
+    echo "done"
+    ;;
+  restart)
+    $0 stop
+    $0 start
+    ;;
+  *)
+    echo "Usage csdserver { start | stop | restart }" >&2
+    exit 1
+    ;;
+esac
+
+exit 0

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2014 pci-suntektech Technologies, Inc.  All Rights Reserved.
+     pci-suntektech Technologies Proprietary and Confidential.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/topic_reveive_time"
+    android:background="@drawable/topic_message_bg"
+    android:padding="10dp" >
+
+    <RelativeLayout
+        android:id="@+id/top_iamge_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/top_iamge"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:minHeight="200dp" />
+
+        <TextView
+            android:id="@+id/top_content_text"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_alignBottom="@+id/top_iamge"
+            android:background="@drawable/checked_image_transparency"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:textColor="@color/black1"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/other_item_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_iamge_view"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:visibility="gone" >
+    </LinearLayout>
+
+</RelativeLayout>

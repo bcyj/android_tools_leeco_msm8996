@@ -1,0 +1,33 @@
+         USF Testing Documentation
+
+TEST NAME: usf_test
+
+INPUTS:
+
+[Test Type]
+
+  -n, --nominal              Tests all channels once with both blocking
+                             and non-blocking requets.
+  -a, --adversarial          Run scenarios that are expected to fail.
+  -s, --stress               Run the nominal & adversarial 1000 iterations.
+  -r, --repeatability        Run the nominal & adversarial tests 5 times.
+
+[Options]
+
+  -v, --verbose <verbosity>  Run with varying test information displayed.
+  -h, --help                 Print help message and exit.
+
+If no 'test type' is specified, then the nominal case is executed.
+
+DESCRIPTION:
+
+This test checks ioctl interface of the Ultrasound Framework (USF) driver and
+its communication with the USM module in the aDSP (QDSP6).
+
+TARGETS:
+
+  -8960  FLUID LIQUID
+
+NOTES:
+
+

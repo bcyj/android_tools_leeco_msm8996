@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2014, Qualcomm Technologies, Inc.
+    All Rights Reserved.
+    Qualcomm Technologies Proprietary and Confidential.
+ -->
+ <!--
+    @para:
+        mode name: string shown on the menu list.
+        mbn name: file name of mbn files.
+        prop name: name of property.
+        prop value: value of property.
+    @format:
+        <mode name="xxx">
+            <mbn name="xxx"/> // !! please put no more than one mbn item inside <mode>...</mode>
+            <prop name="xxx" value="xxx"/> // you can add more than one prop items.
+        </mode>
+ -->
+<ModemTestModeConfig>
+    <mode name="CMCC Default">
+        <mbn name="cmcc_default"/>
+        <prop name="persist.radio.sglte.plmn_list" value=""/>
+        <prop name="persist.radio.sglte_iin_list" value=""/>
+        <prop name="persist.radio.sglte_csfb" value="false"/>
+    </mode>
+
+    <mode name="CMCC Lab">
+        <mbn name="cmcc_lab"/>
+        <prop name="persist.radio.sglte.plmn_list" value=""/>
+        <prop name="persist.radio.sglte_iin_list" value=""/>
+        <prop name="persist.radio.sglte_csfb" value="false"/>
+    </mode>
+
+    <mode name="CMCC Field">
+        <mbn name="cmcc_field"/>
+        <prop name="persist.radio.sglte.plmn_list" value=""/>
+        <prop name="persist.radio.sglte_iin_list" value=""/>
+        <prop name="persist.radio.sglte_csfb" value="false"/>
+    </mode>
+
+    <mode name="CMCC CSFB Cases(enable CSFB)">
+        <mbn name="cmcc_lab_csfb"/>
+        <prop name="persist.radio.sglte.plmn_list" value="460,02:001,01:002,11:003,21:004,31:005,41:006,51:007,61:008,71:466,02:310,102:316,002:"/>
+        <prop name="persist.radio.sglte_iin_list" value="000000,898600,898602,898607,123456"/>
+        <prop name="persist.radio.sglte_csfb" value="true"/>
+    </mode>
+
+    <mode name="CMCC CSFB Cases(disable CSFB)">
+        <mbn name="cmcc_lab"/>
+        <prop name="persist.radio.sglte.plmn_list" value="460,02:001,01:002,11:003,21:004,31:005,41:006,51:007,61:008,71:466,02:310,102:316,002:"/>
+        <prop name="persist.radio.sglte_iin_list" value="000000,898600,898602,898607,123456"/>
+        <prop name="persist.radio.sglte_csfb" value="false"/>
+    </mode>
+
+    <mode name="CT">
+        <mbn name="ct"/>
+    </mode>
+
+    <mode name="CTA Default">
+        <mbn name="cta_default"/>
+    </mode>
+
+    <mode name="CTA CDMA">
+        <mbn name="cta_cdma"/>
+    </mode>
+
+    <mode name="CTA TDS-CDMA(SGLTE)">
+        <mbn name="cta_tds_cdma"/>
+    </mode>
+
+    <mode name="GCF Default">
+        <mbn name="gcf_default"/>
+    </mode>
+
+    <mode name="2G Protocal 34.3">
+        <mbn name="gcf_2g_protocol_343"/>
+    </mode>
+
+    <mode name="2G SIM 27.17.1.5.7 / 27.17.1.5.8">
+        <mbn name="gcf_2g_sim"/>
+    </mode>
+
+    <mode name="3G SIM 5.1.5.3 / 5.1.5.4">
+        <mbn name="gcf_3g_sim"/>
+    </mode>
+</ModemTestModeConfig>

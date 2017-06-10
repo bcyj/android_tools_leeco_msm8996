@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (c) 2014-2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<resources>
+    <!-- Whether to enable auto provisioning the app for new SIM card on boot.
+    <bool name="config_auto_provision_enable">true</bool>
+    -->
+
+
+    <!-- display for radio tech -->
+    <bool name="config_display_rat">true</bool>
+    <!-- Configuartion to set zen mode when silent mode is on -->
+    <bool name="config_setZenModeWhenSilentModeOn">true</bool>
+
+    <!-- config delay timer to start PPPOE
+    <integer name="config_delay_startPPPOE_timer" translatable="false">5000</integer>
+    -->
+
+    <!-- Configuration to support rotation lock toggle -->
+    <bool name="config_forceSupportRotationLockToggle">true</bool>
+
+    <!-- Defines the set of global actions. Actions may still be disabled or hidden based
+         on the current state of the device.
+         Each item must be one of the following strings:
+         "power" = Power off
+         "reboot" = Reboot
+         "settings" = An action to launch settings
+         "airplane" = Airplane mode toggle
+         "bugreport" = Take bug report, if available
+         "silent" = silent mode
+         "users" = list of users
+         -->
+    <string-array translatable="false" name="config_globalActionsList">
+        <item>power</item>
+        <item>profile</item>
+        <item>reboot</item>
+        <item>airplane</item>
+        <item>silent</item>
+    </string-array>
+
+    <!-- Remote server that can provide NTP responses. -->
+    <string translatable="false" name="config_ntpServer">asia.pool.ntp.org</string>
+
+    <!-- monitor locale change -->
+    <bool name="config_monitor_locale_change">true</bool>
+</resources>

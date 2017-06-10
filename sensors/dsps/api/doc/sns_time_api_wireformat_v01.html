@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+<title>Sensors Time APIs</title>
+<link rel="stylesheet" type="text/css" href="qmi_idl_wiredoc.css" />
+</head>
+
+<body>
+<h1>Sensors Time APIs
+</h1>
+ This file describes the messages which defines the Sensors Time APIs.<br> These APIs allow clients to request timestamps from different<br> processors through the Sensors Time Sevice.<br><br> The messages defined herin will be passed to the Sensor framework using<br> the sensor1_write() API.
+
+<h1>Service Type</h1>
+<ul>
+<li>QMI service type <b>SNS_QMI_SVC_ID_22</b>
+<li>Version <b>01</b>
+</ul>
+<h1><a name='Messages'>Messages</a>
+<table class = 'tlv'><tr class='head'><th>Command</th><th>ID</th><th>Messages</th><th>Description</th></tr>
+<tr><td class='l'><a href='#SNS_COMMON_CANCEL'>SNS_COMMON_CANCEL</a></td><td></td><td class='l'></td><td class='l'>This command cancel all requests from a client to any sensor service This shall be the first message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_COMMON_VERSION'>SNS_COMMON_VERSION</a></td><td></td><td class='l'></td><td class='l'>This command requests the version of the sensor service This shall be the second message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_TIME_TIMESTAMP'>SNS_TIME_TIMESTAMP</a></td><td>0x0000</td><td class='l'><a href="#SNS_TIME_TIMESTAMP_REQ">SNS_TIME_TIMESTAMP_REQ</a></br><a href="#SNS_TIME_TIMESTAMP_RESP">SNS_TIME_TIMESTAMP_RESP</a></br></td><td class='l'>This command generates equivalent timestamps for multiple sources. </td></tr>
+</table>
+<br><br>
+<h4>Description of  REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_TIME_TIMESTAMP'></a><a href='#Messages'>SNS_TIME_TIMESTAMP</a></h2>
+This command generates equivalent timestamps for multiple sources.
+<h4>Message ID</h4>
+0x0000
+<h3><a name="SNS_TIME_TIMESTAMP_REQ"></a><a href='#Messages'>SNS_TIME_TIMESTAMP_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_TIME_TIMESTAMP_RESP"></a><a href='#Messages'>SNS_TIME_TIMESTAMP_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE <br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp_dsps</td><td>4</td><td class='l'>Timestamp from the DSPS in clock ticks </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>8</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp_apps</td><td>8</td><td class='l'>Timestamp from the Apps processor in nanoseconds since last epoch </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x12</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>error_code</td><td>4</td><td class='l'></td></tr>
+
+</table>
+<h4>Description of SNS_TIME_TIMESTAMP REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>

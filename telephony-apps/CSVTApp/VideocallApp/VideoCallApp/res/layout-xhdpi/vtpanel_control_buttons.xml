@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<com.borqs.videocall.VTPanelControlButtons xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:VTScreen="http://schemas.android.com/apk/res/com.borqs.videocall"
+    android:layout_width="fill_parent"
+    android:layout_height="94dp"
+    android:layout_centerInParent="true"
+    VTScreen:height_local="94dp"
+    VTScreen:height_remote="94dp"
+    VTScreen:height_remote_only="94dp"
+    VTScreen:left_local="0dp"
+    VTScreen:left_remote="0dp"
+    VTScreen:left_remote_only="0dp"
+    VTScreen:top_local="370dp"
+    VTScreen:top_remote="370dp"
+    VTScreen:top_remote_only="370dp"
+    VTScreen:width_local="360dp"
+    VTScreen:width_remote="360dp"
+    VTScreen:width_remote_only="360dp"
+    android:background="#161719"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+    <FrameLayout
+        android:id="@+id/btnmute"
+        android:layout_width="120dp"
+        android:layout_height="94dp"
+        android:layout_centerInParent="true"
+        android:background="#161719"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/btn_mute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_micro_phone" />
+
+        <TextView
+            android:id="@+id/textMute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="58dp"
+            android:singleLine="true"
+            android:text="@string/button_mute"
+            android:textColor="#ffffff"
+            android:textSize="12dp" />
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="1dp"
+        android:layout_height="94dp"
+        android:background="#393a3b" >
+    </ImageView>
+
+    <FrameLayout
+        android:id="@+id/btnSwitch"
+        android:layout_width="120dp"
+        android:layout_height="94dp"
+        android:background="#161719"
+        android:gravity="center" >
+
+	    <ImageView
+            android:id="@+id/btn_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:id="@+id/txtSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="58dp"
+            android:text="@string/switch_camera"
+            android:textColor="#ffffff"
+            android:textSize="12dp" />
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="1dp"
+        android:layout_height="94dp"
+        android:background="#393a3b" >
+    </ImageView>
+
+   <FrameLayout
+        android:id="@+id/btn_close_camera"
+        android:layout_width="120dp"
+        android:layout_height="94dp"
+        android:background="#161719"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/img_close_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_block_camera"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:id="@+id/txtClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="58dp"
+            android:text="@string/close_camera_option"
+            android:textColor="#ffffff"
+            android:textSize="12dp" />
+    </FrameLayout>
+
+ </LinearLayout>
+</com.borqs.videocall.VTPanelControlButtons>

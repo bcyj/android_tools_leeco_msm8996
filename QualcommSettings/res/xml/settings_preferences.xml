@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+*@file settings_preferences.xml
+*@brief Lists of preferences used in the qualcommSettings UI.
+*Copyright (c) 2009-2011, 2013, 2014 Qualcomm Technologies, Inc.
+*All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+-->
+
+<PreferenceScreen
+   xmlns:android="http://schemas.android.com/apk/res/android">
+
+   <PreferenceCategory
+      android:key="qualcomm_settings"
+      android:title="@string/QualcommSettings">
+
+      <CheckBoxPreference
+         android:key="dim_screen"
+         android:title="@string/dim_screen_title"
+         android:summary="@string/dim_screen_summary"
+         android:defaultValue="false"
+         />
+
+      <CheckBoxPreference
+         android:key="spdif_audio_device"
+         android:title="@string/spdif_device_title"
+         android:summary="@string/spdif_device_summary"
+         android:defaultValue="false"
+         />
+
+      <CheckBoxPreference
+         android:key="diag_log"
+         android:title="@string/diag_title"
+         android:summary="@string/diag_summary"
+         android:defaultValue="false"
+         />
+
+      <CheckBoxPreference
+         android:key="stay_on"
+         android:title="@string/stay_on_plugged_title"
+         android:summary="@string/stay_on_plugged_summary"
+         android:defaultValue="true"
+         />
+
+      <CheckBoxPreference
+         android:key="usb_mass_storage"
+         android:title="@string/usb_mass_storage_title"
+         android:summary="@string/usb_mass_storage_summary"
+         android:defaultValue="false"
+         />
+
+      <CheckBoxPreference
+         android:key="usb_remote_wakeup"
+         android:title="@string/usb_remote_wakeup_title"
+         android:summary="@string/usb_remote_wakeup_summary"
+         android:defaultValue="false"
+         />
+
+      <CheckBoxPreference
+         android:key="sd_polling"
+         android:title="@string/sd_poll_title"
+         android:summary="@string/sd_poll_summary"
+         android:defaultValue="true"
+         />
+
+      <CheckBoxPreference
+         android:key="disable_hdmi_audio_output"
+         android:title="@string/disable_hdmi_audio_output_title"
+         android:summary="@string/disable_hdmi_audio_output_summary"
+         android:defaultValue="false"
+         />
+
+       <CheckBoxPreference
+         android:key="anc"
+         android:title="@string/anc_title"
+         android:summary="@string/anc_summary"
+         android:defaultValue="false"
+         />
+
+      <CheckBoxPreference
+        android:key="sensors"
+        android:title="@string/sensors_title"
+        android:summary="@string/sensors_summary"
+        android:defaultValue="true"
+        />
+
+      <CheckBoxPreference
+         android:key="usb_hub"
+         android:title="@string/usb_hub_title"
+         android:summary="@string/usb_hub_summary"
+         android:defaultValue="false"
+         />
+
+      <ListPreference
+         android:key="auto_answer_voice_call"
+         android:title="@string/auto_answer_title"
+         android:summary="@string/auto_answer_summary"
+         android:entries="@array/auto_answer_entries"
+         android:entryValues="@array/auto_answer_values"
+         android:defaultValue="@string/auto_answer_default"
+         />
+
+      <EditTextPreference android:key="go_dormant"
+         android:title="@string/go_dormant_title"
+         android:summary="@string/go_dormant_summary"
+         android:dialogTitle="@string/go_dormant_title"
+         android:editable="true" />
+
+      <ListPreference
+         android:key="usb_composition"
+         android:title="@string/usb_composition_title"
+         android:summary="@string/usb_composition_summary"
+         android:entries="@array/usb_composition_entries"
+         android:entryValues="@array/usb_composition_values"
+         android:defaultValue="@string/usb_composition_default"
+         />
+
+     <Preference
+         android:key="cabl_settings"
+         android:title="@string/cabl_settings_title"
+         android:summary="@string/cabl_settings_summary"
+         />
+
+     <Preference
+         android:key="svi_settings"
+         android:title="@string/svi_settings_title"
+         android:summary="@string/svi_settings_summary"
+         />
+
+     <Preference
+         android:key="ad_settings"
+         android:title="@string/ad_settings_title"
+         android:summary="@string/ad_settings_summary"
+         />
+
+     <Preference
+         android:key="pp_settings"
+         android:title="@string/pp_settings_title"
+         android:summary="@string/pp_settings_summary"
+         />
+
+      <ListPreference
+         android:key="usb_otg_mode"
+         android:title="@string/usb_otg_mode_title"
+         android:summary="@string/usb_otg_mode_summary"
+         android:entries="@array/usb_otg_mode_values"
+         android:entryValues="@array/usb_otg_mode_values"
+         android:defaultValue="@string/usb_otg_mode_default"
+         />
+
+      <Preference
+         android:key="data_usage"
+         android:title="@string/data_usage_title"
+         android:summary="@string/data_usage_summary"
+         />
+
+     <CheckBoxPreference
+        android:key="data_monitor"
+        android:title="@string/data_monitor_title"
+        android:summary="@string/data_monitor_summary"
+        android:defaultValue="true"
+         />
+
+     <CheckBoxPreference
+        android:key="gestures_touch_injection"
+        android:title="@string/touch_injection_title"
+        android:summary="@string/touch_injection_summary"
+        android:defaultValue="false"
+        />
+      <Preference
+        android:key="set_cdma_sub_src"
+        android:title="@string/set_cdma_sub_src_title"
+        android:summary="@string/set_cdma_sub_src_summary"
+        />
+
+      <PreferenceScreen
+        android:key="voice_call_features"
+        android:title="@string/voice_call_features_title"
+        android:summary="@string/voice_call_features_summary">
+
+        <!-- Intent to launch the VoiceCallFeatures-->
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.qualcomm.qualcommsettings"
+            android:targetClass="com.qualcomm.qualcommsettings.VoiceCallFeatures" />
+      </PreferenceScreen>
+
+      <PreferenceScreen
+        android:key="multi_sim_settings"
+        android:title="@string/multi_sim_settings_title"
+        />
+        
+      <PreferenceScreen
+        android:key="voice_call_features"
+        android:title="@string/voice_call_features_title"
+        android:summary="@string/voice_call_features_summary">
+
+        <!-- Intent to launch the VoiceCallFeatures-->
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.qualcomm.qualcommsettings"
+            android:targetClass="com.qualcomm.qualcommsettings.VoiceCallFeatures" />
+      </PreferenceScreen>
+
+      <PreferenceScreen
+        android:key="cdma_nwk_avoidance"
+        android:title="@string/cdma_nwk_avoidance_title"
+        android:summary="@string/cdma_nwk_avoidance_summary">
+
+        <!-- Intent to launch the CdmaNwkAvoidance-->
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.qualcomm.qualcommsettings"
+            android:targetClass="com.qualcomm.qualcommsettings.CdmaNwkAvoidance" />
+      </PreferenceScreen>
+
+      <Preference
+        android:key="nfc_default_route_setting"
+        android:title="@string/nfc_default_route_setting_title"
+        />
+   </PreferenceCategory>
+
+   <PreferenceCategory android:title="@string/storage_device_settings_title">
+        <PreferenceScreen
+            android:key="file_manager"
+            android:title="@string/view_storage_title"
+            android:summary="@string/view_storage_summary">
+            <PreferenceCategory android:title="@string/file_browser_packages_list"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>

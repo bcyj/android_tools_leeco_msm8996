@@ -1,0 +1,22 @@
+# Copyright (c) 2010 Qualcomm Technologies, Inc.
+
+# GPS Makefile for target msm8660_surf
+
+# Define C/C++ features
+GPS_FEATURES := \
+        -D FEATURE_COARSE_POS_TIMESTAMP_AGE \
+	-D FEATURE_LOC_MW_EFS_ACCESS \
+        -D FEATURE_RPC_CHAR_ARRAY
+
+# Additional entries in gps.conf, bash string format
+GPS_CONF_FOR_TARGET := \
+# Wiper (wifi positioning), 1=enable, 0=disable\
+ENABLE_WIPER=1
+
+ifeq ($(GPSONE_BIT_API_ENABLE), 1)
+FEATURE_GNSS_BIT_API := true
+GPS_FEATURES += \
+        -D FEATURE_GNSS_BIT_API
+endif # GPSONE_BIT_API_ENABLE
+
+FEATURE_CGPS_XTRA_T := true

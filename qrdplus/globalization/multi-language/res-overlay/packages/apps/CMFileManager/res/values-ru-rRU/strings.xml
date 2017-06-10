@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+<!--
+     Copyright (C) 2012-2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- The name of the app -->
+    <string name="app_name">Файлы</string>
+    <!-- The description of the app -->
+    <string name="app_description">Файловый менеджер CyanogenMod</string>
+
+    <!-- Human readable sizes -->
+    <string name="size_bytes">Б</string>
+    <string name="size_kilobytes">КБ</string>
+    <string name="size_megabytes">МБ</string>
+    <string name="size_gigabytes">ГБ</string>
+
+    <!-- Date/time format order (%1$s: date; %2$s: time) -->
+    <string name="datetime_format_order">%1$s %2$s</string>
+
+    <!-- Devices types -->
+    <string name="device_blockdevice">Блочное устройство</string>
+    <string name="device_characterdevice">Символьное устройство</string>
+    <string name="device_namedpipe">Именованный конвейер</string>
+    <string name="device_domainsocket">Доменный сокет</string>
+
+    <!-- Mount Point States -->
+    <string name="mount_point_readonly">R/O</string>
+    <string name="mount_point_readwrite">R/W</string>
+
+    <!-- Default buttons -->
+    <string name="ok" translatable="false">@android:string/ok</string>
+    <string name="cancel" translatable="false">@android:string/cancel</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="all">"Все"</string>
+    <string name="overwrite">Заменить</string>
+    <string name="select">Выбрать</string>
+
+    <!-- The root directory name -->
+    <string name="root_directory_name"><![CDATA[<Корневая папка>]]></string>
+    <!-- The search result name -->
+    <string name="search_result_name">Поиск: <xliff:g id="terms">%1$s</xliff:g></string>
+
+    <!-- Loading waiting message -->
+    <string name="loading_message">Загрузка\u2026</string>
+    <!-- Computing message -->
+    <string name="computing_message" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Computing new line message -->
+    <string name="computing_message_ln" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Cancelled message -->
+    <string name="cancelled_message">Отменено</string>
+    <!-- Error message -->
+    <string name="error_message">Ошибка</string>
+    <!-- Copy text content description -->
+    <string name="copy_text_cd">Нажмите, чтобы скопировать текст в буфер обмена</string>
+    <!-- Copy text content message -->
+    <string name="copy_text_msg">Текст скопирован в буфер обмена</string>
+
+    <!-- Warning dialog title -->
+    <string name="warning_title">Внимание</string>
+    <!-- Error dialog title -->
+    <string name="error_title">Обнаружена ошибка</string>
+    <!-- Confirm operation dialog title -->
+    <string name="confirm_operation">Подтвердите операцию</string>
+    <!-- Confirm overwrite dialog title -->
+    <string name="confirm_overwrite">Подтвердите замену</string>
+    <!-- Confirm deletion dialog title -->
+    <string name="confirm_deletion">Подтвердите удаление</string>
+
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Title -->
+    <string name="msgs_change_to_prompt_access_mode_title">Подтвердить переключение</string>
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Message -->
+    <string name="msgs_change_to_prompt_access_mode_msg">Запуск в режиме суперпользователя невозможен. Переключиться в безопасный режим?</string>
+
+    <!-- A console couldn\'t be created - Without privileges, the app won\'t work -->
+    <string name="msgs_cant_create_console">Не удаётся получить необходимые привилегии</string>
+    <!-- The message shown when an allocation of a privileged console fails, and a non
+         privileged is allocated -->
+    <string name="msgs_privileged_console_alloc_failed">Запуск в режиме суперпользователя невозможен. Переключение в безопасный режим</string>
+    <!-- The selected setting was not applied or stored -->
+    <string name="msgs_settings_save_failure">Не удалось сохранить настройки</string>
+    <!-- The initial directory has an invalid or inaccessible reference -->
+    <string name="msgs_settings_invalid_initial_directory">Начальная папка «<xliff:g id="initial_dir">%1$s</xliff:g>» недоступна. Переход в корневую папку\u2026</string>
+    <!-- Root is not available message -->
+    <string name="root_not_available_msg">Корневой каталог не доступен на этом устройстве. Выполнить операцию невозможно.</string>
+
+    <!-- Success -->
+    <string name="msgs_success">Действие выполнено</string>
+    <!-- Unknown error -->
+    <string name="msgs_unknown">Произошла ошибка. Операция завершилась неудачно.</string>
+    <!-- When an operation requires elevated privileged (normally caused for the use of a
+         non-privileged console) -->
+    <string name="msgs_insufficient_permissions">Эта операция требует повышенных привилегий. Попробуйте переключиться в режим суперпользователя.</string>
+    <!-- When an operation fails because the device has run out of storage. -->
+    <string name="msgs_no_disk_space">Операция не выполнена, т. к. на устройстве нет свободного места.</string>
+    <!-- The file or directory was not found -->
+    <string name="msgs_file_not_found">Файл или папка не найдены</string>
+    <!-- The command reference couldn\'t be created (not found or invalid definition)
+         (normally caused by a development error) -->
+    <string name="msgs_command_not_found">Команда для выполнения операции не найдена или неверна</string>
+    <!-- I/O exception -->
+    <string name="msgs_io_failed">Ошибка ввода-вывода</string>
+    <!-- Operation timeout detected -->
+    <string name="msgs_operation_timeout">Время выполнения операции истекло</string>
+    <!-- The operation returns an invalid exit code -->
+    <string name="msgs_operation_failure">Операция не удалась</string>
+    <!-- A console couldn\'t be allocated -->
+    <string name="msgs_console_alloc_failure">Произошла внутренняя ошибка</string>
+    <!-- An operation can\'t be cancelled -->
+    <string name="msgs_operation_can_not_be_cancelled">Операция не может быть отменена</string>
+    <!-- The operation requieres mount the file system prior to execute the command -->
+    <string name="msgs_read_only_filesystem">Файловая система доступна только для чтения. Попробуйте смонтировать файловую систему для чтения/записи</string>
+    <!-- Illegal argument (normally caused by a development error when calling internal api) -->
+    <string name="msgs_illegal_argument">Недопустимый аргумент. Вызов не удался</string>
+    <!-- The operation will cause inconsistencies -->
+    <string name="msgs_unresolved_inconsistencies">Невозможно выполнить операцию.\n\nЭто приведёт к созданию несоответствий файловой системы.</string>
+    <!-- Operation not permitted in current directory -->
+    <string name="msgs_operation_not_allowed_in_current_directory">Невозможно выполнить операцию.\n\nНельзя переместить папку саму в себя.</string>
+
+    <!-- The advice message prior to exit the app -->
+    <string name="msgs_push_again_to_exit">Нажмите ещё раз для выхода</string>
+
+    <!-- There is no registered app that can handle the mime-type -->
+    <string name="msgs_not_registered_app">Не найдено приложений для открытия файлов данного типа</string>
+
+    <!-- Overwrite files? -->
+    <string name="msgs_overwrite_files">Некоторые файлы уже существуют в папке назначения.\n\nЗаменить?</string>
+
+    <!-- The association of an action to the app failed -->
+    <string name="msgs_action_association_failed">Привязка приложения к действию не удалась</string>
+
+    <!-- An operation requires elevated privileged. Ask the user. -->
+    <string name="advise_insufficient_permissions">Операция требует повышенных привилегий.\n\nПереключиться в режим суперпользователя?</string>
+
+    <!-- The parent directory of the current directory in navigation view -->
+    <string name="parent_dir">Вверх</string>
+    <!-- External storage descripton -->
+    <string name="external_storage">Внешний накопитель</string>
+    <!-- Usb storage descripton -->
+    <string name="usb_storage">Память USB</string>
+
+    <!-- ActionBar Buttons - FileSystem -->
+    <string name="actionbar_button_filesystem_cd">Информация о файловой системе</string>
+    <!-- ActionBar Buttons - Sort Mode -->
+    <string name="actionbar_button_sort_mode_cd">Режим сортировки</string>
+    <!-- ActionBar Buttons - Layout Mode -->
+    <string name="actionbar_button_layout_mode_cd">Вид объектов</string>
+    <!-- ActionBar Buttons - Other View Options -->
+    <string name="actionbar_button_other_view_options_cd">Настройки отображения</string>
+    <!-- ActionBar Buttons - Done -->
+    <string name="actionbar_button_selection_done_cd">Готово</string>
+    <!-- ActionBar Buttons - Actions -->
+    <string name="actionbar_button_actions_cd">Действия</string>
+    <!-- ActionBar Buttons - Search -->
+    <string name="actionbar_button_search_cd">Поиск</string>
+    <!-- ActionBar Buttons - Overflow -->
+    <string name="actionbar_button_overflow_cd">Дополнительные действия</string>
+    <!-- ActionBar Buttons - Storage volumes -->
+    <string name="actionbar_button_storage_cd">Накопительные устройства</string>
+    <!-- ActionBar Buttons - Save -->
+    <string name="actionbar_button_save_cd">Сохранить</string>
+    <!-- ActionBar Buttons - Print -->
+    <string name="actionbar_button_print_cd">"Печать"</string>
+
+    <!-- Navigation View - Sort - Sort by name (ascending) -->
+    <string name="sort_by_name_asc">По имени ▲</string>
+    <!-- Navigation View - Sort - Sort by name (descending) -->
+    <string name="sort_by_name_desc">По имени ▼</string>
+    <!-- Navigation View - Sort - Sort by date (ascending) -->
+    <string name="sort_by_date_asc">По дате ▲</string>
+    <!-- Navigation View - Sort - Sort by date (descending) -->
+    <string name="sort_by_date_desc">По дате ▼</string>
+    <!-- Navigation View - Sort - Sort by size (ascending) -->
+    <string name="sort_by_size_asc">По размеру \u25B2</string>
+    <!-- Navigation View - Sort - Sort by size (descending) -->
+    <string name="sort_by_size_desc">По размеру \u25BC</string>
+    <!-- Navigation View - Sort - Sort by type (ascending) -->
+    <string name="sort_by_type_asc">По типу \u25B2</string>
+    <!-- Navigation View - Sort - Sort by type (descending) -->
+    <string name="sort_by_type_desc">По типу \u25BC</string>
+
+    <!-- Navigation View - Layout - Icons -->
+    <string name="layout_icons">Значки</string>
+    <!-- Navigation View - Layout - Simple -->
+    <string name="layout_simple">Список</string>
+    <!-- Navigation View - Layout - Details -->
+    <string name="layout_details">Подробный список</string>
+
+    <!-- Navigation View - View - Show folders first -->
+    <string name="cm_filemanager_show_dirs_first">Папки первыми</string>
+    <!-- Navigation View - View - Show hidden files option -->
+    <string name="cm_filemanager_show_hidden">Скрытые файлы</string>
+    <!-- Navigation View - View - Show system files option -->
+    <string name="cm_filemanager_show_system">Системные файлы</string>
+    <!-- Navigation View - View - Show symlinks option -->
+    <string name="cm_filemanager_show_symlinks">Симлинки</string>
+
+    <!-- Filesystem Info (no data). Dialog title -->
+    <string name="filesystem_info_warning_title">Нет информации</string>
+    <!-- Filesystem Info (no data). Dialog message -->
+    <string name="filesystem_info_warning_msg">Нет доступной информации о файловой системе</string>
+    <!-- Filesystem Info - Filesystem couldn\'t be mounted -->
+    <string name="filesystem_info_cant_be_mounted_msg">Файловая система не может быть смонтирована/отмонтирована</string>
+    <!-- Filesystem Info - Not allowed message -->
+    <string name="filesystem_info_mount_not_allowed_msg">Перемонтирование файловой системы в безопасном режиме невозможно. Нажмите для переключения в режим суперпользователя.</string>
+    <!-- Filesystem Info - Mount failed -->
+    <string name="filesystem_info_mount_failed_msg">Не удалось смонтировать файловую систему. Некоторые файловые системы, такие как SD-карты, не могут быть смонтированы/отмонтированы, потому что они имеют встроенную файловую систему только для чтения</string>
+    <!-- Filesystem Info Dialog - Title -->
+    <string name="filesystem_info_dialog_title">Информация о файловой системе</string>
+    <!-- Filesystem Info Dialog - Tab - Info -->
+    <string name="filesystem_info_dialog_tab_info">Информация</string>
+    <!-- Filesystem Info Dialog - Tab - Disk Usage -->
+    <string name="filesystem_info_dialog_tab_disk_usage">Диск</string>
+    <!-- Filesystem Info Dialog - Status Label -->
+    <string name="filesystem_info_dialog_status">Статус:</string>
+    <!-- Filesystem Info Dialog - Mount Point Label -->
+    <string name="filesystem_info_dialog_mount_point">Точка монт.:</string>
+    <!-- Filesystem Info Dialog - Device Label -->
+    <string name="filesystem_info_dialog_device">Устройство:</string>
+    <!-- Filesystem Info Dialog - Type Label -->
+    <string name="filesystem_info_dialog_type">Тип ФС:</string>
+    <!-- Filesystem Info Dialog - Options Label -->
+    <string name="filesystem_info_dialog_options">Опции монт.:</string>
+    <!-- Filesystem Info Dialog - Dump/Pass Label -->
+    <string name="filesystem_info_dialog_dump_pass">Разгрузка / передача:</string>
+    <!-- Filesystem Info Dialog - Virtual Label -->
+    <string name="filesystem_info_dialog_virtual">Вирт.:</string>
+    <!-- Filesystem Info Dialog - Total Disk Usage -->
+    <string name="filesystem_info_dialog_total_disk_usage">Объём:</string>
+    <!-- Filesystem Info Dialog - Used Disk Usage -->
+    <string name="filesystem_info_dialog_used_disk_usage">Исп.:</string>
+    <!-- Filesystem Info Dialog - Free Disk Usage -->
+    <string name="filesystem_info_dialog_free_disk_usage">Своб.:</string>
+
+    <!-- Fso Properties - Not allowed message -->
+    <string name="fso_properties_permissions_not_allowed_msg">Изменение разрешений невозможно в безопасном режиме. Нажмите для переключения в режим суперпользователя</string>
+    <!-- Fso Properties - Failed to change owner to fso -->
+    <string name="fso_properties_failed_to_change_owner_msg">Изменение владельца не удалось.\n\nПо соображениям безопасности, некоторые файловые системы (например, используемые на SD-картах) не позволяют изменять владельца</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_group_msg">Изменение группы не удалось.\n\nПо соображениям безопасности, некоторые файловые системы (например, используемые на SD-картах) не позволяют изменять группы</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_permission_msg">Изменение разрешений не удалось.\n\nПо соображениям безопасности, некоторые файловые системы (например, используемые на SD-картах) не позволяют изменять разрешения</string>
+    <!-- Fso Properties Dialog - Title -->
+    <string name="fso_properties_dialog_title">Свойства</string>
+    <!-- Fso Properties Dialog - Tab - Info -->
+    <string name="fso_properties_dialog_tab_info">Основные</string>
+    <!-- Fso Properties Dialog - Tab - Permissions -->
+    <string name="fso_properties_dialog_tab_permissions">Разрешения</string>
+    <!-- Fso Properties Dialog - Name Label -->
+    <string name="fso_properties_dialog_name">Имя:</string>
+    <!-- Fso Properties Dialog - Parent Folder Label -->
+    <string name="fso_properties_dialog_parent">Адрес:</string>
+    <!-- Fso Properties Dialog - Type Label -->
+    <string name="fso_properties_dialog_type">Тип:</string>
+    <!-- Fso Properties Dialog - Category Label -->
+    <string name="fso_properties_dialog_category">Категория:</string>
+    <!-- Fso Properties Dialog - Link Label -->
+    <string name="fso_properties_dialog_link">Ссылка:</string>
+    <!-- Fso Properties Dialog - Size Label -->
+    <string name="fso_properties_dialog_size">Размер:</string>
+    <!-- Fso Properties Dialog - Contains Label -->
+    <string name="fso_properties_dialog_contains">Содержит:</string>
+    <!-- Fso Properties Dialog - Last Accessed Time Label -->
+    <string name="fso_properties_dialog_last_accessed_date">Доступ:</string>
+    <!-- Fso Properties Dialog - Last Modified Time Label -->
+    <string name="fso_properties_dialog_last_modified_date">Модифиц.:</string>
+    <!-- Fso Properties Dialog - Last Changed Time -->
+    <string name="fso_properties_dialog_last_changed_date">Изменено:</string>
+    <!-- Fso Properties Dialog - Owner Label -->
+    <string name="fso_properties_dialog_owner">Владелец:</string>
+    <!-- Fso Properties Dialog - Group Label -->
+    <string name="fso_properties_dialog_group">Группа:</string>
+    <!-- Fso Properties Dialog - Others Label -->
+    <string name="fso_properties_dialog_others">Другие:</string>
+    <!-- Fso Properties Dialog - Special Label -->
+    <string name="fso_properties_dialog_special" translatable="false">S</string>
+    <!-- Fso Properties Dialog - Read Label -->
+    <string name="fso_properties_dialog_read" translatable="false">R</string>
+    <!-- Fso Properties Dialog - Write Label -->
+    <string name="fso_properties_dialog_write" translatable="false">W</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_execute" translatable="false">X</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_folder_items" translatable="false"><xliff:g id="folders">%1$s</xliff:g> / <xliff:g id="files">%2$s</xliff:g></string>
+    <!-- Fso Properties Dialog - Skip media scan -->
+    <string name="fso_properties_dialog_include_in_media_scan">Не искать медиа:</string>
+    <string name="fso_failed_to_allow_media_scan">Не удалось разрешить поиск медиафайлов</string>
+    <string name="fso_failed_to_prevent_media_scan">Не удалось запретить поиск медиафайлов</string>
+    <string name="fso_delete_nomedia_dir_title">Удалить каталог .nomedia</string>
+    <string name="fso_delete_nomedia_dir_body">Этот каталог содержит вложенный каталог .nomedia.\n\nВы действительно хотите удалить его со всем содержимым?</string>
+    <string name="fso_delete_nomedia_non_empty_title">Удалить файл .nomedia</string>
+    <string name="fso_delete_nomedia_non_empty_body">Этот каталог содержит непустой файл .nomedia.\n\nВы действительно хотите удалить его?</string>
+
+    <!-- History - History activity title -->
+    <string name="history">"История"</string>
+    <!-- History - The history is empty -->
+    <string name="msgs_history_empty">История пуста</string>
+    <!-- History - The history reference is not in the actual history list -->
+    <string name="msgs_history_unknown">Неизвестный пункт истории</string>
+
+    <!-- Search - Search activity title -->
+    <string name="search">Результат поиска</string>
+    <!-- Search - Search hint message -->
+    <string name="search_hint">Введите условие поиска</string>
+    <!-- Search - Voice search hint message -->
+    <string name="search_voice_hint">Произнесите условие поиска</string>
+    <!-- Search - Search error message -->
+    <string name="search_error_msg">При поиске произошла ошибка. Ничего не найдено</string>
+    <!-- Search - Search no results message -->
+    <string name="search_no_results_msg">Ничего не найдено</string>
+    <!-- Search - Number of items found in directory -->
+    <string name="search_found_items_in_directory"><xliff:g id="items">%1$s</xliff:g> в <xliff:g id="path">%2$s</xliff:g></string>
+    <!-- Search - Search query terms -->
+    <string name="search_terms">&lt;b&gt;Запрос:&lt;/b&gt; <xliff:g id="terms">%1$s</xliff:g></string>
+    <!-- Search - Confirm search -->
+    <string name="search_few_characters_title">Подтвердите поиск</string>
+    <!-- Search - Some terms of the search are too small. The operation could be very costly -->
+    <string name="search_few_characters_msg">Поисковый запрос очень короткий, поиск может занять много времени.\n\nВы действительно хотите продолжить?</string>
+    <!-- Search - Searching dialog title -->
+    <string name="searching">Пожалуйста, подождите\u2026</string>
+    <!-- Search - Searching label -->
+    <string name="searching_action_label">Выполняется поиск\u2026</string>
+
+    <!-- Picker Activity -->
+    <string name="picker" translatable="false">@string/app_name</string>
+    <!-- Picker Activity - Dialog title -->
+    <string name="picker_title">Выберите файл</string>
+    <string name="directory_picker_title">Выберите папку</string>
+
+    <!-- Editor - Editor activity title -->
+    <string name="editor">Редактор</string>
+    <!-- Editor - Invalid file message -->
+    <string name="editor_invalid_file_msg">Недопустимый файл</string>
+    <!-- Editor - File not found message -->
+    <string name="editor_file_not_found_msg">Файл не найден</string>
+    <!-- Editor - File size exceed the limit -->
+    <string name="editor_file_exceed_size_msg">Файл слишком большой для открытия на этом устройстве</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog title -->
+    <string name="editor_dirty_ask_title">Подтвердите выход</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog message -->
+    <string name="editor_dirty_ask_msg">Имеются несохранённые изменения.\n\nВыйти без сохранения?</string>
+    <!-- Editor - Save operation success -->
+    <string name="editor_successfully_saved">Файл успешно сохранён</string>
+    <!-- Editor - Read-only file mode -->
+    <string name="editor_read_only_mode">Файл открыт только для чтения</string>
+    <!-- Editor - Dumping message -->
+    <string name="dumping_message">Создание дампа\u2026</string>
+    <!-- Editor - Displaying -->
+    <string name="displaying_message">Отображение\u2026</string>
+
+    <!-- Bookmarks - Bookmarks activity title -->
+    <string name="bookmarks">Закладки</string>
+    <!-- Bookmarks - Bookmark name - Home -->
+    <string name="bookmarks_home">Домой</string>
+    <!-- Bookmarks - Bookmark name - Root folder -->
+    <string name="bookmarks_root_folder">Корневая папка</string>
+    <!-- Bookmarks - Bookmark name - System folder -->
+    <string name="bookmarks_system_folder">Системная папка</string>
+    <!-- Bookmarks - Bookmark name - Secure storage -->
+    <string name="bookmarks_secure">Безопасное хранилище</string>
+    <!-- Bookmarks - Bookmark name - Remote storage -->
+    <string name="bookmarks_remote">Удаленное хранилище</string>
+    <!-- Bookmarks - Bookmark name - Button - Initial directory content description -->
+    <string name="bookmarks_button_config_cd">Установить начальной папкой</string>
+    <!-- Bookmarks - Bookmark name - Button - Remove bookmark content description -->
+    <string name="bookmarks_button_remove_bookmark_cd">Удалить из закладок</string>
+    <!-- Bookmarks - Bookmarks - Actions - Bookmark successfully added -->
+    <string name="bookmarks_msgs_add_success">Закладка успешно создана</string>
+
+    <!-- Initial directory dialog title -->
+    <string name="initial_directory_dialog_title">Начальная папка</string>
+    <!-- Initial directory label -->
+    <string name="initial_directory_label">Выбор начальной папки:</string>
+    <!-- Initial directory is relative -->
+    <string name="initial_directory_relative_msg">Относительные пути не допускаются</string>
+    <!-- Initial directory error message -->
+    <string name="initial_directory_error_msg">При установке начальной папки произошла ошибка</string>
+
+    <!-- Menu - Navigation - Search -->
+    <string name="menu_search">"Поиск"</string>
+    <!-- Menu - Navigation - Settings -->
+    <string name="menu_settings">"Настройки"</string>
+    <!-- Menu - History - Clear history -->
+    <string name="menu_clear_history">Очистить историю</string>
+    <!-- Menu - Editor - No suggestions -->
+    <string name="menu_no_suggestions">Не предл. исправления</string>
+    <!-- Menu - Editor - Word wrap -->
+    <string name="menu_word_wrap">Перенос текста</string>
+    <!-- Menu - Editor - Sintax highlight -->
+    <string name="menu_syntax_highlight">Подсветка синтаксиса</string>
+
+    <!-- Regular expression for create copy action -->
+    <string name="create_copy_regexp"><xliff:g id="name">%1$s</xliff:g> — копия<xliff:g id="extension">%2$s</xliff:g></string>
+    <!-- Regular expression for new compressed file -->
+    <string name="create_new_compress_file_regexp"><xliff:g id="name">%1$s</xliff:g> — новый<xliff:g id="extension">%2$s</xliff:g></string>
+
+    <!-- Waiting dialog - Performing operation message -->
+    <string name="waiting_dialog_msg">Обработка\u2026</string>
+    <!-- Waiting dialog - Copying title -->
+    <string name="waiting_dialog_copying_title">Копирование\u2026</string>
+    <!-- Waiting dialog - Copying message -->
+    <string name="waiting_dialog_copying_msg">
+    &lt;b&gt;Из&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>&lt;br/&gt;
+    &lt;b&gt;В&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g></string>
+    <!-- Waiting dialog - Moving title -->
+    <string name="waiting_dialog_moving_title">Перемещение\u2026</string>
+    <!-- Waiting dialog - Moving message -->
+    <string name="waiting_dialog_moving_msg">
+    &lt;b&gt;Из&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>&lt;br/&gt;
+    &lt;b&gt;В&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g></string>
+    <!-- Waiting dialog - Deleting title -->
+    <string name="waiting_dialog_deleting_title">Удаление\u2026</string>
+    <!-- Waiting dialog - Deleting message -->
+    <string name="waiting_dialog_deleting_msg">
+    &lt;b&gt;Файл&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_extracting_title">Извлечение\u2026</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_extracting_msg">
+    &lt;b&gt;Файл&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_compressing_title">Сжатие\u2026</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_compressing_msg">
+    &lt;b&gt;Файл&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Initializing the dialog -->
+    <string name="waiting_dialog_analizing_msg"><![CDATA[<b>Анализ\u2026</b>]]></string>
+    <!-- Extracting - Success message -->
+    <string name="msgs_extracting_success">Файлы извлечены в «<xliff:g id="destination">%1$s</xliff:g>»</string>
+    <!-- Compressing - Success message -->
+    <string name="msgs_compressing_success">Архив «<xliff:g id="destination">%1$s</xliff:g>» создан</string>
+
+    <!-- Actions Dialog - Title -->
+    <string name="actions_dialog_title">Действия</string>
+    <!-- Actions Dialog - Menu - Properties of current folder -->
+    <string name="actions_menu_properties_current_folder">Свойства</string>
+    <!-- Actions Dialog - Menu - Refresh -->
+    <string name="actions_menu_refresh">Обновить</string>
+    <!-- Actions Dialog - Menu - New directory -->
+    <string name="actions_menu_new_directory">Новая папка</string>
+    <!-- Actions Dialog - Menu - New file -->
+    <string name="actions_menu_new_file">Новый файл</string>
+    <!-- Actions Dialog - Menu - Select all -->
+    <string name="actions_menu_select_all">Выделить все</string>
+    <!-- Actions Dialog - Menu - Deselect all -->
+    <string name="actions_menu_deselect_all">Снять выдел.</string>
+    <!-- Actions Dialog - Menu - Select -->
+    <string name="actions_menu_select">Выделить</string>
+    <!-- Actions Dialog - Menu - Deselect -->
+    <string name="actions_menu_deselect">Снять выделение</string>
+    <!-- Actions Dialog - Menu - Copy/Paste selection -->
+    <string name="actions_menu_paste_selection">Скопировать выделенное сюда</string>
+    <!-- Actions Dialog - Menu - Move selection -->
+    <string name="actions_menu_move_selection">Переместить выделенное сюда</string>
+    <!-- Actions Dialog - Menu - Delete selection -->
+    <string name="actions_menu_delete_selection">Удалить выделенное</string>
+    <!-- Actions Dialog - Menu - Compress selection -->
+    <string name="actions_menu_compress_selection">Создать архив из выделенного</string>
+    <!-- Actions Dialog - Menu - Create link -->
+    <string name="actions_menu_create_link">Создать ссылку</string>
+    <!-- Actions Dialog - Menu - Open -->
+    <string name="actions_menu_open">Открыть</string>
+    <!-- Actions Dialog - Menu - Open with -->
+    <string name="actions_menu_open_with">Открыть в\u2026</string>
+    <!-- Actions Dialog - Menu - Execute -->
+    <string name="actions_menu_execute">Выполнить</string>
+    <!-- Actions Dialog - Menu - Send -->
+    <string name="actions_menu_send">Отправить</string>
+    <!-- Actions Dialog - Menu - Send selection -->
+    <string name="actions_menu_send_selection">Отправить выделенное</string>
+    <!-- Actions Dialog - Menu - Compress -->
+    <string name="actions_menu_compress">Создать архив</string>
+    <!-- Actions Dialog - Menu - Extract -->
+    <string name="actions_menu_extract">Извлечь</string>
+    <!-- Actions Dialog - Menu - Delete -->
+    <string name="actions_menu_delete">Удалить</string>
+    <!-- Actions Dialog - Menu - Rename -->
+    <string name="actions_menu_rename">Переименовать</string>
+    <!-- Actions Dialog - Menu - Create copy -->
+    <string name="actions_menu_create_copy">Создать копию</string>
+    <!-- Actions Dialog - Menu - Properties -->
+    <string name="actions_menu_properties">Свойства</string>
+    <!-- Actions Dialog - Menu - Add to bookmarks -->
+    <string name="actions_menu_add_to_bookmarks">В закладки</string>
+    <!-- Actions Dialog - Menu - Add shortcut -->
+    <string name="actions_menu_add_shortcut">Добавить ярлык</string>
+    <!-- Actions Dialog - Menu - Open parent folder -->
+    <string name="actions_menu_open_parent_folder">Открыть папку с файлом</string>
+    <!-- Actions Dialog - Menu - Compute checksum -->
+    <string name="actions_menu_compute_checksum">Контрольные суммы</string>
+    <!-- Actions Dialog - Menu - Print -->
+    <string name="actions_menu_print">Печать</string>
+    <!-- Actions Dialog - Menu - Set as home -->
+    <string name="actions_menu_set_as_home">Сделать главной</string>
+
+    <!-- Actions - Ask user prior to do an undone operation. Dialog message -->
+    <string name="actions_ask_undone_operation_msg">Это действие необратимо. Вы хотите продолжить?</string>
+
+    <!-- Enter Name Dialog - Label -->
+    <string name="input_name_dialog_label">Имя:</string>
+    <!-- Enter Name Dialog - Message - Empty name -->
+    <string name="input_name_dialog_message_empty_name">Имя не может быть пустым</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_path_name">Недопустимое имя. Нельзя использовать символы: <xliff:g id="invalid_characters">%1$s</xliff:g></string>
+    <!-- Enter Name Dialog - Message - Invalid name length -->
+    <string name="input_name_dialog_message_invalid_name_length">Слишком длинное имя файла. Оно должно содержать 255 символов или меньше.</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_name">Недопустимое имя. Имена «.» и «..» не разрешены</string>
+    <!-- Enter Name Dialog - Message - Name exists -->
+    <string name="input_name_dialog_message_name_exists">Имя уже используется в этой папке</string>
+
+    <!-- Associations Dialog - Title -->
+    <string name="associations_dialog_title">Ассоциации</string>
+    <!-- Associations Dialog - Remember the user action -->
+    <string name="associations_dialog_remember">Запомнить выбор</string>
+    <!-- Associations Dialog - Open with Title -->
+    <string name="associations_dialog_openwith_title">Открыть в\u2026</string>
+    <!-- Associations Dialog - Open action (button title) -->
+    <string name="associations_dialog_openwith_action">Открыть</string>
+    <!-- Associations Dialog - Send with Title -->
+    <string name="associations_dialog_sendwith_title">Отправить через\u2026</string>
+    <!-- Associations Dialog - Send action (button title) -->
+    <string name="associations_dialog_sendwith_action">Отправить</string>
+
+    <!-- Inline Autocomplete Widget - Tab message nothing to complete -->
+    <string name="inline_autocomplete_tab_nothing_to_complete_msg">Нечего дополнять</string>
+
+    <!-- Execution console - Title -->
+    <string name="execution_console_title">Консоль</string>
+    <!-- Execution console - The script name label -->
+    <string name="execution_console_script_name_label">Скрипт:</string>
+    <!-- Execution console - The script execution time label -->
+    <string name="execution_console_script_execution_time_label">Время:</string>
+    <!-- Execution console - The script exit code label -->
+    <string name="execution_console_script_exitcode_label">Код завершения:</string>
+    <!-- Execution console - The script execution time seconds string -->
+    <string name="execution_console_script_execution_time_text"><xliff:g id="seconds">%1$s</xliff:g> сек.</string>
+
+    <!-- Compute checksum - Title -->
+    <string name="compute_checksum_title">Контрольные суммы</string>
+    <!-- Compute checksum - The file name label -->
+    <string name="compute_checksum_filename_label">Файл:</string>
+    <!-- Compute checksum - The MD5 label -->
+    <string name="compute_checksum_md5_label" translatable="false">MD5:</string>
+    <!-- Compute checksum - The SHA1 label -->
+    <string name="compute_checksum_sha1_label" translatable="false">SHA-1:</string>
+    <!-- Compute checksum - The computing checksum message-->
+    <string name="compute_checksum_computing_checksum_msg">Расчёт контрольных сумм\u2026</string>
+
+    <!-- Mime/Types - Folder -->
+    <string name="mime_folder">Папка</string>
+    <!-- Mime/Types - Symlink -->
+    <string name="mime_symlink">Симлинк</string>
+    <!-- Mime/Types - Unknown -->
+    <string name="mime_unknown">Неизвестно</string>
+
+    <!--  Filetime formats -->
+    <string name="filetime_format_mode_system">Системные</string>
+    <string name="filetime_format_mode_locale">Локальные</string>
+    <string name="filetime_format_mode_ddMMyyyy_HHmmss">дд/мм/гггг чч:мм:сс</string>
+    <string name="filetime_format_mode_MMddyyyy_HHmmss">мм/дд/гггг чч:мм:сс</string>
+    <string name="filetime_format_mode_yyyyMMdd_HHmmss">гггг-мм-дд чч:мм:сс</string>
+
+    <!-- Selection -->
+    <!-- For example "2 folders and 1 file selected." -->
+    <string name="selection_folders_and_files">Выделены <xliff:g id="folders">%1$s</xliff:g> и <xliff:g id="files">%2$s</xliff:g></string>
+
+    <!-- Category descriptions -->
+    <string name="category_system">"СИСТЕМА"</string>
+    <string name="category_app">ПРИЛОЖЕНИЕ</string>
+    <string name="category_binary">ДВОИЧНЫЙ</string>
+    <string name="category_text">ТЕКСТ</string>
+    <string name="category_document">ДОКУМЕНТ</string>
+    <string name="category_ebook">ЭЛЕКТРОННАЯ КНИГА</string>
+    <string name="category_mail">ПОЧТА</string>
+    <string name="category_compress">СЖАТИЕ</string>
+    <string name="category_exec">ИСПОЛНЯЕМЫЙ</string>
+    <string name="category_database">БАЗА ДАННЫХ</string>
+    <string name="category_font">ШРИФТ</string>
+    <string name="category_image">ИЗОБРАЖЕНИЕ</string>
+    <string name="category_audio">АУДИО</string>
+    <string name="category_video">ВИДЕО</string>
+    <string name="category_security">БЕЗОПАСНОСТЬ</string>
+    <string name="category_all">ВСЕ</string>
+
+    <!-- Compression - Compression modes dialog title -->
+    <string name="compression_mode_title">Формат сжатия</string>
+    <!-- Compression - Supported archive and compression modes -->
+    <string name="compression_mode_tar" translatable="false">Tar (tar)</string>
+    <string name="compression_mode_tar_gzip" translatable="false">Tar/gzip (tar.gz)</string>
+    <string name="compression_mode_tar_gzip2" translatable="false">Tar/gzip (tgz)</string>
+    <string name="compression_mode_tar_bzip" translatable="false">Tar/bzip (tar.bz2)</string>
+    <string name="compression_mode_gzip" translatable="false">Gzip (gz)</string>
+    <string name="compression_mode_bzip" translatable="false">Bzip (bz2)</string>
+    <string name="compression_mode_zip" translatable="false">Zip (zip)</string>
+
+    <!-- Shortcut. Failed to handle the shortcut -->
+    <string name="shortcut_failed_msg">Не удалось обработать ярлык</string>
+    <!-- Shortcut. The shortcut was created -->
+    <string name="shortcut_creation_success_msg">Ярлык создан успешно</string>
+    <!-- Shortcut. The shortcut wasn\'t created -->
+    <string name="shortcut_creation_failed_msg">Ошибка создания ярлыка</string>
+
+    <!-- Preferences title -->
+    <string name="pref">Настройки</string>
+    <!-- Preferences - General title -->
+    <string name="pref_general">Основные настройки</string>
+    <!-- Preferences - Search title -->
+    <string name="pref_search">Поиск</string>
+    <!-- Preferences - Storage title -->
+    <string name="pref_storage">Параметры хранилища</string>
+    <!-- Preferences - Editor title -->
+    <string name="pref_editor">Редактор</string>
+    <!-- Preferences - Themes title -->
+    <string name="pref_themes">Темы</string>
+    <!-- Preferences - About title -->
+    <string name="pref_about">О приложении</string>
+    <!-- Preferences - About summary -->
+    <string name="pref_about_summary">Файловый менеджер, версия <xliff:g id="version">%1$s</xliff:g>\n\u00A9 Проект CyanogenMod, 2014</string>
+
+    <!-- Preferences - General - Behaviour category -->
+    <string name="pref_general_behaviour_category">Основные</string>
+    <!-- Preferences - General - Case sensitive sort and navigating title -->
+    <string name="pref_case_sensitive_sort">Учитывать регистр</string>
+    <!-- Preferences - General - Case sensitive sort and navigating summary -->
+    <string name="pref_case_sensitive_sort_summary">Сортировка результатов при поиске или навигации</string>
+    <!-- Preferences - General - Filetime format mode title -->
+    <string name="pref_filetime_format_mode">Формат даты/времени</string>
+    <!-- Preferences - General -Disk usage warning level title -->
+    <string name="pref_disk_usage_warning_level">Уровень предупреждения исп. памяти</string>
+    <!-- Preferences - General - Disk usage warning level summary -->
+    <!-- FIXME Use "percent" instead of "%" symbol, because it make crash the app on getSummary
+         of ListPreference. This should be fixed in frameworks base prior to be added here. -->
+    <string name="pref_disk_usage_warning_level_summary" formatted="false">Отмечать красным индикатор занятого места, если диск заполнен на <xliff:g id="level">%1$s</xliff:g> процентов</string>
+    <!-- Preferences - General - Compute folder statistics title -->
+    <string name="pref_compute_folder_statistics">Показ. число объектов папки</string>
+    <!-- Preferences - General - Compute folder statistics summary on -->
+    <string name="pref_compute_folder_statistics_on">Внимание! Анализ содержимого папок может увеличить время обработки их свойств</string>
+    <!-- Preferences - General - Display thumbs -->
+    <string name="pref_display_thumbs">Показывать эскизы</string>
+    <!-- Preferences - General - Display thumbs summary -->
+    <string name="pref_display_thumbs_summary">Отображение эскизов картинок, видеозаписей, музыкальных файлов и приложений</string>
+    <!-- Preferences - General - Use flinger detection -->
+    <string name="pref_use_flinger">Использовать жесты</string>
+    <!-- Preferences - General - Use flinger detection summary -->
+    <string name="pref_use_flinger_summary">Проведите справа налево для удаления файла или папки</string>
+    <!-- Preferences - General - Advanced settings category -->
+    <string name="pref_general_advanced_settings_category">Дополнительные функции</string>
+    <!-- Preferences - General - Access mode -->
+    <string name="pref_access_mode">Режим доступа</string>
+    <!-- Preferences - General - Safe mode -->
+    <string name="pref_access_mode_safe">Безопасный режим</string>
+    <!-- Preferences - General - Safe mode summary -->
+    <string name="pref_access_mode_safe_summary">Безопасный режим\n\nПриложение имеет доступ только к файловой системе накопителей (SD-карты или USB)</string>
+    <!-- Preferences - General - Prompt user mode -->
+    <string name="pref_access_mode_prompt">Режим запроса</string>
+    <!-- Preferences - General - Prompt user mode summary -->
+    <string name="pref_access_mode_prompt_summary">Режим запроса\n\nПриложение работает с полным доступом к файловой системе, но будет выводить запрос перед выполнением привилегированных действий</string>
+    <!-- Preferences - General - Root access mode -->
+    <string name="pref_access_mode_root">Режим суперпользователя</string>
+    <!-- Preferences - General - Root access mode summary -->
+    <string name="pref_access_mode_root_summary">Режим суперпользователя\n\nВнимание! Этот режим может вывести ваше устройство из строя. Все действия в этом режиме выполняются на ваш страх и риск</string>
+    <!-- Preferences - General - Restrict secondary users access title -->
+    <string name="pref_restrict_secondary_users_access_title">Ограничение доступа</string>
+    <!-- Preferences - General - Restrict secondary users access summary -->
+    <string name="pref_restrict_secondary_users_access_summary">Запретить другим пользователям устройства доступ к системным папкам</string>
+    <!-- Preferences - Search - Results category -->
+    <string name="pref_search_results_category">Результаты</string>
+    <!-- Preferences - Search - Show relevance widget -->
+    <string name="pref_show_relevance_widget">Показывать актуальность</string>
+    <!-- Preferences - Search - Highlight search terms -->
+    <string name="pref_highlight_terms">Выделять условия поиска</string>
+    <!-- Preferences - Search - Sort results mode -->
+    <string name="pref_sort_search_results_mode">Режим сортировки</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_none">Не сортировать</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_name">По имени</string>
+    <!-- Preferences - Search - Sort results mode. Relevance -->
+    <string name="pref_sort_search_results_mode_relevance">По актуальности</string>
+    <!-- Preferences - Search - Privacity category -->
+    <string name="pref_search_privacity_category">Конфиденциальность</string>
+    <!-- Preferences - Search - Save search terms -->
+    <string name="pref_save_search_terms">Сохранять поисковые запросы</string>
+    <!-- Preferences - Search - Save search terms summary on -->
+    <string name="pref_save_search_terms_on">Поисковые запросы сохраняются и используются в качестве подсказок</string>
+    <!-- Preferences - Search - Save search terms summary off -->
+    <string name="pref_save_search_terms_off">Поисковые запросы не сохраняются</string>
+    <!-- Preferences - Search - Remove saved search terms -->
+    <string name="pref_remove_saved_search_terms">Удалить сохранённые запросы</string>
+    <!-- Preferences - Search - Remove saved search terms summary -->
+    <string name="pref_remove_saved_search_terms_summary">Нажмите для удаления всех сохранённых поисковых запросов</string>
+    <!-- Preferences - Search - Suggestions were truncated -->
+    <string name="pref_remove_saved_search_terms_msg">Сохранённые поисковые запросы удалены</string>
+    <!-- Preferences - Storage - Secure Storage category -->
+    <string name="pref_secure_storage_category">Безопасное хранилище</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync title -->
+    <string name="pref_secure_storage_delayed_sync_title">Отложенная синхронизация</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync summary -->
+    <string name="pref_secure_storage_delayed_sync_summary">Синхронизация безопасных файловых систем требует значительных затрат. Если выбран этот режим, синхронизация выполняется во время бездействия файловой системы, что ускоряет реакцию системы на любую операцию, но создает риск потери информации, не синхронизированной своевременно, в случае аварийного завершения работы приложения.</string>
+    <!-- Preferences - Storage - Secure Storage - Reset password title -->
+    <string name="pref_secure_storage_reset_password_title">Сменить пароль</string>
+    <!-- Preferences - Storage - Secure Storage - Delete storage title -->
+    <string name="pref_secure_storage_delete_storage_title">Удалить хранилище</string>
+    <!-- Preferences - Editor - Behaviour category -->
+    <string name="pref_editor_behaviour_category">Поведение</string>
+    <!-- Preferences - Editor - No suggestions -->
+    <string name="pref_no_suggestions">Не предлагать исправления</string>
+    <!-- Preferences - Editor - No suggestions summary -->
+    <string name="pref_no_suggestions_desc">Не показывать варианты исправлений при редактировании файла</string>
+    <!-- Preferences - Editor - Word wrap -->
+    <string name="pref_word_wrap">Включить перенос текста</string>
+    <!-- Preferences - Editor - Hex dump -->
+    <string name="pref_hexdump">Шестнадцатеричный формат</string>
+    <!-- Preferences - Editor - Hex dump desc -->
+    <string name="pref_hexdump_desc">Вывод содержимого бинарных файлов в шестнадцатеричном формате</string>
+    <!-- Preferences - Editor - Syntax highlight category -->
+    <string name="pref_editor_syntax_highlight_category">Подсветка синтаксиса</string>
+    <!-- Preferences - Editor - Syntax highlight -->
+    <string name="pref_syntax_highlight">Включить подсветку синтаксиса</string>
+    <!-- Preferences - Editor - Syntax highlight summary -->
+    <string name="pref_syntax_highlight_desc">Подсвечивать синтаксис редактируемого файла (для поддерживаемых редактором типов файлов)</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme -->
+    <string name="pref_syntax_highlight_color_scheme">Цветовая схема</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme summary -->
+    <string name="pref_syntax_highlight_color_scheme_desc">Выбор цветовой схемы подсветки синтаксиса</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme -->
+    <string name="pref_syntax_sh_use_theme_default">Схема по умолчанию</string>
+    <!-- Preferences - Editor - Syntax highlight -Color Scheme summary -->
+    <string name="pref_syntax_sh_use_theme_default_desc">Использовать схему подсветки синтаксиса текущей темы</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme - Items category -->
+    <string name="pref_editor_sh_item_category">Элементы</string>
+    <!-- Preferences - Themes - Themes selection category -->
+    <string name="pref_themes_selection_category">Темы</string>
+    <!-- Preferences - Themes - Set theme button -->
+    <string name="pref_themes_set_theme">Применить</string>
+    <!-- Preferences - Themes - Confirmation message -->
+    <string name="pref_themes_confirmation">Тема успешно применена</string>
+    <!-- Preferences - Themes - Theme not found message -->
+    <string name="pref_themes_not_found">Тема не найдена</string>
+
+    <!-- Preferences - Debug - Capture debug traces -->
+    <string name="pref_debug_traces">Записывать отладочные данные</string>
+
+    <!-- Themes - Default theme name -->
+    <string name="theme_default_name">Светлая тема</string>
+    <!-- Themes - Default theme description -->
+    <string name="theme_default_description">Светлая тема для файлового менеджера CyanogenMod</string>
+    <!-- Themes - Default theme author -->
+    <string name="themes_author">CyanogenMod</string>
+
+    <!-- Navigation drawer -->
+    <string name="drawer_open">"Открыть панель навигации"</string>
+    <string name="drawer_close">"Закрыть панель навигации"</string>
+
+    <!-- ColorPickerDialog -->
+    <!-- The text of the alpha slider control -->
+    <string name="color_picker_alpha_slider_text">Прозрачность</string>
+    <!-- The label of the current color panel -->
+    <string name="color_picker_current_text">Текущий:</string>
+    <!-- The label of the new color panel -->
+    <string name="color_picker_new_text">Новый:</string>
+    <!-- The label of the color input -->
+    <string name="color_picker_color">Цвет:</string>
+
+    <!-- Android Syntax Highlight -->
+    <string name="ash_reset_color_scheme">Восстановить цветовую схему по умолчанию</string>
+    <string name="ash_text">Текст</string>
+    <string name="ash_assignment">Присваивание</string>
+    <string name="ash_singleline_comment">Однострочный комментарий</string>
+    <string name="ash_multiline_comment">Многострочный комментарий</string>
+    <string name="ash_keyword">Ключевое слово</string>
+    <string name="ash_quoted_string">Строка в кавычках</string>
+    <string name="ash_variable">Переменная</string>
+
+    <!-- Secure Storage -->
+    <!-- Secure Storage dialog title - Unlock -->
+    <string name="secure_storage_unlock_title">Разблокировать хранилище</string>
+    <!-- Secure Storage dialog title - Create -->
+    <string name="secure_storage_create_title">Создать хранилище</string>
+    <!-- Secure Storage dialog title - Reset -->
+    <string name="secure_storage_reset_title">Сменить пароль</string>
+    <!-- Secure Storage dialog title - Delete -->
+    <string name="secure_storage_delete_title">Удалить хранилище</string>
+    <!-- Secure Storage unlock dialog message (secure storage exists) -->
+    <string name="secure_storage_unlock_key_prompt_msg">Введите пароль для разблокировки файловой системы безопасного хранилища.</string>
+    <!-- Secure Storage unlock dialog message (new secure storage) -->
+    <string name="secure_storage_unlock_key_new_msg">Введите пароль для защиты файловой системы безопасного хранилища.</string>
+    <!-- Secure Storage unlock dialog message (reset the current password) -->
+    <string name="secure_storage_unlock_key_reset_msg">Введите текущий и новый пароли для сброса файловой системы безопасного хранилища.</string>
+    <!-- Secure Storage unlock dialog message (delete the secure storage) -->
+    <string name="secure_storage_unlock_key_delete_msg">Введите текущий пароль для удаления файловой системы безопасного хранилища.</string>
+    <!-- Secure Storage unlock dialog old key title -->
+    <string name="secure_storage_unlock_old_key_title">Старый пароль:</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_new_key_title">Новый пароль:</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_key_title">Пароль:</string>
+    <!-- Secure Storage unlock dialog repeat key title-->
+    <string name="secure_storage_unlock_repeat_title">Повтор пароля:</string>
+    <!-- Secure Storage create button -->
+    <string name="secure_storage_create_button">"Создать"</string>
+    <!-- Secure Storage unlock button -->
+    <string name="secure_storage_unlock_button">"Разблокировать"</string>
+    <!-- Secure Storage reset button -->
+    <string name="secure_storage_reset_button">"Сброс"</string>
+    <!-- Secure Storage delete button -->
+    <string name="secure_storage_delete_button">"Удалить"</string>
+    <!-- Secure Storage unlock failed toast -->
+    <string name="secure_storage_unlock_failed">Невозможно разблокировать хранилище</string>
+    <!-- Secure Storage unlock validation, length -->
+    <string name="secure_storage_unlock_validation_length">Количество символов в пароле не может быть меньше <xliff:g id="characters">%1$d</xliff:g>.</string>
+    <!-- Secure Storage unlock validation, equal -->
+    <string name="secure_storage_unlock_validation_equals">Пароли не совпадают.</string>
+
+    <!-- Print messages -->
+    <!-- Unsupported document format -->
+    <string name="print_unsupported_document">Формат документа не поддерживается</string>
+    <!-- Unsupported image format -->
+    <string name="print_unsupported_image">Формат изображения не поддерживается</string>
+    <!-- Print header -->
+    <string name="print_document_header">Документ: <xliff:g id="document_name">%1$s</xliff:g></string>
+    <!-- Print footer -->
+    <string name="print_document_footer">Страница <xliff:g id="page_number">%1$s</xliff:g></string>
+
+    <!-- Security - Extract relative or absolute files -->
+    <string name="security_warning_extract">Внимание!\n\n Извлечение архива с относительными или абсолютными путями может привести к повреждению устройства путём перезаписи системных файлов.\n\nВы действительно хотите продолжить?</string>
+
+    <!-- ChangeLog - Dialog title -->
+    <string name="changelog_title">Список изменений</string>
+
+    <!-- Welcome Dialog - Title -->
+    <string name="welcome_title">Приветствуем вас!</string>
+    <!-- Welcome Dialog - Message -->
+    <string name="welcome_msg">
+    Добро пожаловать в файловый менеджер CyanogenMod.\n\nЭто приложение поможет вам получить доступ к файловой системе и выполнять операции, которые могут вывести из строя ваше устройство. Для предотвращения этого, оно запустится в безопасном режиме с минимальными привилегиями. \n\nВы можете получить доступ к расширенным, полнопривилегированным функциям в настройках. Это ваша ответственность. Убедитесь, чтобы ваши действия не нарушили файловую систему. \n\nКоманда CyanogenMod\n</string>
+
+    <string name="easy_mode_type_icon">Значок для типа MIME</string>
+    <string name="easy_mode_type_none">Все файлы</string>
+    <string name="easy_mode_type_images">"Изображения"</string>
+    <string name="easy_mode_type_videos">"Видео"</string>
+    <string name="easy_mode_type_music">"Музыка"</string>
+    <string name="easy_mode_type_documents">"Документы"</string>
+
+    <string name="activity_not_found_exception">Не удалось найти приложение для открытия файла</string>
+    <string name="no_permission_for_drm">"Предоставить доступ к файлу DRM невозможно"</string>
+    <string name="actions_menu_drm_license_info">Информация о лицензии DRM</string>
+</resources>

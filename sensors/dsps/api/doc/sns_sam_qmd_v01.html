@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+<title>Message definition for QMD.
+
+Common IDL file for the sensors subsystem
+
+</title>
+<link rel="stylesheet" type="text/css" href="qmi.css" />
+</head>
+
+<body>
+<h1>Message definition for QMD.<br><br>Common IDL file for the sensors subsystem
+</h1>
+ This file defines QMD messages used by QMD-related algorithm services,<br> including AMD (absolute motion detection), VMD (vehicle motion detection),<br> and RMD (relative motion detection).<br><br> As prerequisite, the sensor algorithm must use the common Interface<br> defined in the Sensor Algorithms framework.<br><br> The messages defined herin will be passed to the Sensor framework using<br> the sensor1_write() API.<br><br><br><br> Defines common structures and types used by the sensors messages.<br><br><br> Copyright (c) 2010 Qualcomm Technologies, Inc. All Rights Reserved. <br> Qualcomm Technologies Proprietary and Confidential.
+<h1>Service Type</h1>
+<ul><li>QMI service type <b>HASH(0x1554190)</b><li>Version <b>01</b></ul>
+<h1><a name='Messages'>Messages</a></h1>
+<table class = 'tlv'><tr class='head'><th>Command</th><th>ID</th><th>Messages</th><th>Description</th></tr>
+<tr><td class='l'><a href='#SNS_COMMON_CANCEL'>SNS_COMMON_CANCEL</a></td><td></td><td class='l'></td><td class='l'>This command cancel all requests from a client to any sensor service This shall be the first message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_COMMON_VERSION'>SNS_COMMON_VERSION</a></td><td></td><td class='l'></td><td class='l'>This command requests the version of the sensor service This shall be the second message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SAM_ALGO_ENABLE'>SAM_ALGO_ENABLE</a></td><td></td><td class='l'><a href='#SAM_ALGO_ENABLE_REQ_msg'>SAM_ALGO_ENABLE_REQ</a></br><a href='#SAM_ALGO_ENABLE_RESP_msg'>SAM_ALGO_ENABLE_RESP</a></br></td><td class='l'>This command enables a sensor algorithm. </td></tr>
+<tr><td class='l'><a href='#SAM_ALGO_DISABLE'>SAM_ALGO_DISABLE</a></td><td></td><td class='l'><a href='#SAM_ALGO_DISABLE_REQ_msg'>SAM_ALGO_DISABLE_REQ</a></br><a href='#SAM_ALGO_DISABLE_RESP_msg'>SAM_ALGO_DISABLE_RESP</a></br></td><td class='l'>This command disables a sensor algorithm. </td></tr>
+<tr><td class='l'><a href='#SAM_ALGO_REPORT'>SAM_ALGO_REPORT</a></td><td></td><td class='l'><a href='#SAM_ALGO_REPORT_IND_msg'>SAM_ALGO_REPORT_IND</a></br></td><td class='l'>Output report from a sensor algorithm. </td></tr>
+<tr><td class='l'><a href='#SAM_ALGO_GET_REPORT'>SAM_ALGO_GET_REPORT</a></td><td></td><td class='l'><a href='#SAM_ALGO_GET_REPORT_REQ_msg'>SAM_ALGO_GET_REPORT_REQ</a></br><a href='#SAM_ALGO_GET_REPORT_RESP_msg'>SAM_ALGO_GET_REPORT_RESP</a></br></td><td class='l'>This command fetches latest report output from a sensor algorithm. </td></tr>
+<tr><td class='l'><a href='#SAM_ALGO_ERROR'>SAM_ALGO_ERROR</a></td><td></td><td class='l'><a href='#SAM_ALGO_ERROR_IND_msg'>SAM_ALGO_ERROR_IND</a></br></td><td class='l'>Asynchronous error report from a sensor algorithm. </td></tr>
+<tr><td class='l'><a href='#SAM_ALGO_CANCEL'>SAM_ALGO_CANCEL</a></td><td></td><td class='l'></td><td class='l'>This command cancels all requests to the algorithm service. </td></tr>
+<tr><td class='l'><a href='#SAM_ALGO_VERSION'>SAM_ALGO_VERSION</a></td><td></td><td class='l'></td><td class='l'>This command requests algorithm service version. </td></tr>
+</table>
+<br><br>
+<br><br><table class='sep'><tr><td></td></tr></table>
+<h2><a name='SAM_ALGO_ENABLE'></a><a href='#Messages'>SAM_ALGO_ENABLE</a></h2>
+This command enables a sensor algorithm.
+<h4>Message ID</h4>
+0x0000
+<h3><a name='SAM_ALGO_ENABLE_REQ_msg'></a><a href='#Messages'>SAM_ALGO_ENABLE_REQ</a></h3><h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Type</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x158c7bc)</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>report_period</td><td>4</td><td>uint32</td><td class='l'>Unit of seconds, Q16; value of 0 means reporting on new event only <br> For user-specified configuration. Default is to use factory config. </td></tr>
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name='SAM_ALGO_ENABLE_RESP_msg'></a><a href='#Messages'>SAM_ALGO_ENABLE_RESP</a></h3><h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Type</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x1587f70)</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>resp</td><td>2</td><td>sns_common_resp_s</td><td class='l'></td></tr>
+<tr class='row_1'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x15849c0)</td></tr>
+<tr class='row_1'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_1'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td>uint8</td><td class='l'> The instance ID is maintained/assigned by SAM.<br> The client shall use this instance ID for future messages associated with<br> current algorithm instance.<br> </td></tr>
+</table>
+<h4>Optional TLVs</h4>
+None
+<br><br><table class='sep'><tr><td></td></tr></table>
+<h2><a name='SAM_ALGO_DISABLE'></a><a href='#Messages'>SAM_ALGO_DISABLE</a></h2>
+This command disables a sensor algorithm.
+<h4>Message ID</h4>
+0x0000
+<h3><a name='SAM_ALGO_DISABLE_REQ_msg'></a><a href='#Messages'>SAM_ALGO_DISABLE_REQ</a></h3><h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Type</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x157ffb0)</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td>uint8</td><td class='l'>To identify an instance of an algorithm. </td></tr>
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name='SAM_ALGO_DISABLE_RESP_msg'></a><a href='#Messages'>SAM_ALGO_DISABLE_RESP</a></h3><h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Type</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x1579f40)</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>resp</td><td>2</td><td>sns_common_resp_s</td><td class='l'></td></tr>
+<tr class='row_1'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x157801c)</td></tr>
+<tr class='row_1'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_1'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td>uint8</td><td class='l'></td></tr>
+</table>
+<h4>Optional TLVs</h4>
+None
+<br><br><table class='sep'><tr><td></td></tr></table>
+<h2><a name='SAM_ALGO_REPORT'></a><a href='#Messages'>SAM_ALGO_REPORT</a></h2>
+Output report from a sensor algorithm.
+<h4>Message ID</h4>
+0x0000
+<h3><a name='SAM_ALGO_REPORT_IND_msg'></a><a href='#Messages'>SAM_ALGO_REPORT_IND</a></h3><h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Type</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x15723dc)</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td>uint8</td><td class='l'></td></tr>
+<tr class='row_1'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x15708ac)</td></tr>
+<tr class='row_1'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_1'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp</td><td>4</td><td>uint32</td><td class='l'>time stamp of input which caused this indication; in ticks </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x156d700)</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'></td><td></td><td></td><td class='l'></td></tr>
+</table>
+<h4>Optional TLVs</h4>
+None
+<br><br><table class='sep'><tr><td></td></tr></table>
+<h2><a name='SAM_ALGO_GET_REPORT'></a><a href='#Messages'>SAM_ALGO_GET_REPORT</a></h2>
+This command fetches latest report output from a sensor algorithm.
+<h4>Message ID</h4>
+0x0000
+<h3><a name='SAM_ALGO_GET_REPORT_REQ_msg'></a><a href='#Messages'>SAM_ALGO_GET_REPORT_REQ</a></h3><h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Type</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x1568850)</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td>uint8</td><td class='l'>To identify an instance of an algorithm. </td></tr>
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name='SAM_ALGO_GET_REPORT_RESP_msg'></a><a href='#Messages'>SAM_ALGO_GET_REPORT_RESP</a></h3><h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Type</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x1563cbc)</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>resp</td><td>2</td><td>sns_common_resp_s</td><td class='l'></td></tr>
+<tr class='row_1'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x1560efc)</td></tr>
+<tr class='row_1'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_1'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td>uint8</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x155f024)</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp</td><td>4</td><td>uint32</td><td class='l'></td></tr>
+<tr class='row_1'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x155be78)</td></tr>
+<tr class='row_1'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_1'><td class='l'>Value</td><td>&rarr;</td><td class='l'></td><td></td><td></td><td class='l'></td></tr>
+</table>
+<h4>Optional TLVs</h4>
+None
+<br><br><table class='sep'><tr><td></td></tr></table>
+<h2><a name='SAM_ALGO_ERROR'></a><a href='#Messages'>SAM_ALGO_ERROR</a></h2>
+Asynchronous error report from a sensor algorithm.
+<h4>Message ID</h4>
+0x0000
+<h3><a name='SAM_ALGO_ERROR_IND_msg'></a><a href='#Messages'>SAM_ALGO_ERROR_IND</a></h3><h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Type</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x1556cc8)</td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>error</td><td>1</td><td>uint8</td><td class='l'></td></tr>
+<tr class='row_1'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td>uint8</td><td class='l'>HASH(0x1553f98)</td></tr>
+<tr class='row_1'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td>uint16</td><td class='l'></td></tr>
+<tr class='row_1'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td>uint8</td><td class='l'></td></tr>
+</table>
+<h4>Optional TLVs</h4>
+None
+<br><br><table class='sep'><tr><td></td></tr></table>
+<h2>Additional Information</h2>None
+
+</body>

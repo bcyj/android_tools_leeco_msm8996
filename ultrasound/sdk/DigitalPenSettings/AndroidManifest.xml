@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+-/**************************************************************************
+* @file    AndroidManifest.xml
+* @brief   Gets generated when creating any activity using android sdk
+*          Provides the permissions required by the activity and activity name
+*  Copyright (C) 2012-2014 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="qti.digitalpen"
+    android:sharedUserId="android.uid.system" >
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <uses-library android:name="com.qti.snapdragon.digitalpen.digitalpenservice" />
+
+        <activity
+            android:name=".DigitalPenSettingsActivity"
+            android:label="@string/app_name_long"
+            android:windowSoftInputMode="stateUnchanged" >
+            <intent-filter android:label="@string/app_name" >
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.qti.snapdragon.sdk.digitalpen.SETTINGS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

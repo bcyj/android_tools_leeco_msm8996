@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2013 Mimer Information Technology AB, info@mimer.com -->
+<!-- Mimer SQL replacement for Media provider runtime queries in Android 4.0 -->
+<MimerSQLReplace>
+  <fromSQL id="GOME401" statement="SELECT audio.album_id AS _id, album, count(*) AS numsongs, count(CASE WHEN artist_id==? THEN ? ELSE NULL END) AS numsongs_by_artist, album_art._data AS album_art FROM audio LEFT OUTER JOIN album_art ON audio.album_id=album_art.album_id WHERE (is_music=? AND audio.album_id IN (SELECT album_id FROM artists_albums_map WHERE artist_id=?)) GROUP BY audio.album_id ORDER BY album_key">
+SELECT "audio"."album_id" AS "_id",
+    "album",
+    COUNT(*) AS "numsongs",
+    COUNT(
+        CASE
+            WHEN ("artist_id" = ?)
+            THEN ?
+            ELSE NULL
+        END)            AS "numsongs_by_artist",
+    "album_art"."_data" AS "album_art",
+    "album_key"
+FROM "audio"
+LEFT JOIN "album_art"
+ON  ("audio"."album_id" = "album_art"."album_id")
+WHERE (("is_music" = ?)
+    AND exists
+        (SELECT "album_id"
+           FROM "artists_albums_map" aam
+            WHERE ("artist_id" = ?)
+            and "audio"."album_id" = aam.album_id))
+GROUP BY "audio"."album_id"
+ORDER BY "album_key"
+  </fromSQL>
+
+  <fromSQL id="GOME402" statement="SELECT bucket_id, media_type, bucket_display_name FROM files WHERE (1) GROUP BY ?,(?) ORDER BY MAX(datetaken) DESC">
+SELECT "bucket_id",
+    "media_type",
+    "bucket_display_name"
+FROM( SELECT "bucket_id",
+            "media_type",
+            "bucket_display_name",
+            MAX("datetaken") AS max_date_taken
+        FROM "files"
+        where (1 = 1 or :1:i1 = 1 or :2:i2 = 1)
+        GROUP BY "bucket_id",
+            "media_type")
+ORDER BY max_date_taken DESC
+  </fromSQL>
+
+  
+ <!-- To avoid using Grant select permission on different tables to SYSADM. We need to add only one replacer which queries information schema.-->
+ <fromSQL id="GOME403"
+	    statement="PRAGMA table_info(?)">
+	    
+	    select 1, column_name, 1, 1, COLUMN_DEFAULT
+        from INFORMATION_SCHEMA.COLUMNS
+        where TABLE_SCHEMA = current_user
+        AND (column_default is null or upper(column_default) not like ('%WITH CHECK OPTION%'))
+            AND TABLE_NAME = :a
+	    
+ </fromSQL>
+ 
+ <!-- run media scanner, when there is long path name to compare, we get sql exception -22048, string truncation issue.  
+ LIKE operator host variable had 128 limit, so we have casted to 256 -->
+ <fromSQL id="GOME404" statement="SELECT _id FROM files WHERE _data LIKE ?AND format=12289">
+     
+     select "_id" from "files" where "_data" like cast(? as nvarchar(256)) and ("format" = 12289)
+     
+ </fromSQL>
+	
+<fromSQL id="GOME405" statement="INSERT INTO albums(album, album_key) VALUES(?, ?);">
+    INSERT {IGNORE} INTO albums(album, album_key) VALUES(?, ?)
+</fromSQL>
+
+<fromSQL id="GOME406" statement="INSERT INTO artists(artist_key, artist) VALUES(?, ?);">
+    INSERT {IGNORE} INTO artists(artist_key, artist) VALUES(?, ?)
+    
+</fromSQL>
+
+<fromSQL id="GOME407" statement="UPDATE albums SET album=? WHERE rowid=?">
+UPDATE albums SET album=? WHERE album_id=?
+</fromSQL>
+
+<!--  String data truncation when scanning media -->
+<fromSQL id="GOME408" statement="SELECT _id FROM files WHERE _data LIKE ?1 AND lower(_data)=lower(?1) AND format=12289">
+select "_id" from files where "_data" like cast(:1:i1 as nvarchar(256)) collate current_collation_2  and (lower("_data") = lower(:1:i1)) and (format = :2:i2)
+</fromSQL>
+
+
+
+
+<!-- Qualcomm Technologies replacers -->
+
+</MimerSQLReplace>

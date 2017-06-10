@@ -1,0 +1,504 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+<title>Message definition for Gravity vector.</title>
+<link rel="stylesheet" type="text/css" href="qmi_idl_wiredoc.css" />
+</head>
+
+<body>
+<h1>Message definition for Gravity vector.
+</h1>
+ This file defines messages provided to clients to use<br> Gravity/Linear Acceleration algorithm services.
+
+<h1>Service Type</h1>
+<ul>
+<li>QMI service type <b>SNS_QMI_SVC_ID_20</b>
+<li>Version <b>01</b>
+</ul>
+<h1><a name='Messages'>Messages</a></h1>
+<table class = 'tlv'><tr class='head'><th>Command</th><th>ID</th><th>Messages</th><th>Description</th></tr>
+<tr><td class='l'><a href='#SNS_COMMON_CANCEL'>SNS_COMMON_CANCEL</a></td><td>0x0000</td><td class='l'><a href="#SNS_SAM_GRAVITY_CANCEL_REQ">SNS_SAM_GRAVITY_CANCEL_REQ</a></br><a href="#SNS_SAM_GRAVITY_CANCEL_RESP">SNS_SAM_GRAVITY_CANCEL_RESP</a></br></td><td class='l'>Cancels all requests from a client to any sensor service. This must be the first message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_COMMON_VERSION'>SNS_COMMON_VERSION</a></td><td>0x0001</td><td class='l'><a href="#SNS_SAM_GRAVITY_VERSION_REQ">SNS_SAM_GRAVITY_VERSION_REQ</a></br><a href="#SNS_SAM_GRAVITY_VERSION_RESP">SNS_SAM_GRAVITY_VERSION_RESP</a></br></td><td class='l'>Requests the version of the sensor service. This must be the second message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_GRAVITY_ENABLE'>SNS_SAM_GRAVITY_ENABLE</a></td><td>0x0002</td><td class='l'><a href="#SNS_SAM_GRAVITY_ENABLE_REQ">SNS_SAM_GRAVITY_ENABLE_REQ</a></br><a href="#SNS_SAM_GRAVITY_ENABLE_RESP">SNS_SAM_GRAVITY_ENABLE_RESP</a></br></td><td class='l'>This command enables a Gravity algorithm. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_GRAVITY_DISABLE'>SNS_SAM_GRAVITY_DISABLE</a></td><td>0x0003</td><td class='l'><a href="#SNS_SAM_GRAVITY_DISABLE_REQ">SNS_SAM_GRAVITY_DISABLE_REQ</a></br><a href="#SNS_SAM_GRAVITY_DISABLE_RESP">SNS_SAM_GRAVITY_DISABLE_RESP</a></br></td><td class='l'>This command disables a Gravity algorithm. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_GRAVITY_GET_REPORT'>SNS_SAM_GRAVITY_GET_REPORT</a></td><td>0x0004</td><td class='l'><a href="#SNS_SAM_GRAVITY_GET_REPORT_REQ">SNS_SAM_GRAVITY_GET_REPORT_REQ</a></br><a href="#SNS_SAM_GRAVITY_GET_REPORT_RESP">SNS_SAM_GRAVITY_GET_REPORT_RESP</a></br></td><td class='l'>This command fetches latest report output of a Gravity algorithm. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_GRAVITY_REPORT'>SNS_SAM_GRAVITY_REPORT</a></td><td>0x0005</td><td class='l'><a href="#SNS_SAM_GRAVITY_REPORT_IND">SNS_SAM_GRAVITY_REPORT_IND</a></br></td><td class='l'>Report containing the Gravity algorithm output. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_GRAVITY_ERROR'>SNS_SAM_GRAVITY_ERROR</a></td><td>0x0006</td><td class='l'><a href="#SNS_SAM_GRAVITY_ERROR_IND">SNS_SAM_GRAVITY_ERROR_IND</a></br></td><td class='l'>Asynchronous error indication for a Gravity algorithm. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_GRAVITY_BATCH'>SNS_SAM_GRAVITY_BATCH</a></td><td>0x0021</td><td class='l'><a href="#SNS_SAM_GRAVITY_BATCH_REQ">SNS_SAM_GRAVITY_BATCH_REQ</a></br><a href="#SNS_SAM_GRAVITY_BATCH_RESP">SNS_SAM_GRAVITY_BATCH_RESP</a></br></td><td class='l'>This command handles batch mode for a Gravity algorithm. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_GRAVITY_BATCH_REPORT'>SNS_SAM_GRAVITY_BATCH_REPORT</a></td><td>0x0022</td><td class='l'><a href="#SNS_SAM_GRAVITY_BATCH_IND">SNS_SAM_GRAVITY_BATCH_IND</a></br></td><td class='l'>Report containing a batch of algorithm outputs. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_GRAV_UPDATE_BATCH_PERIOD'>SNS_SAM_GRAV_UPDATE_BATCH_PERIOD</a></td><td>0x0023</td><td class='l'><a href="#SNS_SAM_GRAV_UPDATE_BATCH_PERIOD_REQ">SNS_SAM_GRAV_UPDATE_BATCH_PERIOD_REQ</a></br><a href="#SNS_SAM_GRAV_UPDATE_BATCH_PERIOD_RESP">SNS_SAM_GRAV_UPDATE_BATCH_PERIOD_RESP</a></br></td><td class='l'>This command updates active batch period for a Gravity algorithm when batching is ongoing. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_GET_ALGO_ATTRIBUTES'>SNS_SAM_GET_ALGO_ATTRIBUTES</a></td><td>0x0024</td><td class='l'><a href="#SNS_SAM_GRAV_GET_ATTRIBUTES_REQ">SNS_SAM_GRAV_GET_ATTRIBUTES_REQ</a></br><a href="#SNS_SAM_GRAV_GET_ATTRIBUTES_RESP">SNS_SAM_GRAV_GET_ATTRIBUTES_RESP</a></br></td><td class='l'>This command requests the attributes of the algorithm service This command shall only be used by algorithm services. </td></tr>
+</table>
+<br><br>
+<h2><a name='SNS_COMMON_CANCEL'></a><a href='#Messages'>SNS_COMMON_CANCEL</a></h2>
+Cancels all requests from a client to any sensor service.<br> This must be the first message of any sensor service.
+<h4>Message ID</h4>
+0x0000
+<h3><a name="SNS_SAM_GRAVITY_CANCEL_REQ"></a><a href='#Messages'>SNS_SAM_GRAVITY_CANCEL_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_GRAVITY_CANCEL_RESP"></a><a href='#Messages'>SNS_SAM_GRAVITY_CANCEL_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_COMMON_CANCEL REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_COMMON_VERSION'></a><a href='#Messages'>SNS_COMMON_VERSION</a></h2>
+Requests the version of the sensor service.<br> This must be the second message of any sensor service.
+<h4>Message ID</h4>
+0x0001
+<h3><a name="SNS_SAM_GRAVITY_VERSION_REQ"></a><a href='#Messages'>SNS_SAM_GRAVITY_VERSION_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_GRAVITY_VERSION_RESP"></a><a href='#Messages'>SNS_SAM_GRAVITY_VERSION_RESP</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>interface_version_number</td><td>4</td><td class='l'>Version number of the interface supported by the service. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_message_id</td><td>2</td><td class='l'>Maximum message ID supported by this service. </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_COMMON_VERSION REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_GRAVITY_ENABLE'></a><a href='#Messages'>SNS_SAM_GRAVITY_ENABLE</a></h2>
+This command enables a Gravity algorithm.
+<h4>Message ID</h4>
+0x0002
+<h3><a name="SNS_SAM_GRAVITY_ENABLE_REQ"></a><a href='#Messages'>SNS_SAM_GRAVITY_ENABLE_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>report_period</td><td>4</td><td class='l'>Report period in seconds; Q16 format. Determines the algorithm output<br> report rate. Specify 0 to report at the sampling rate.<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sample_rate</td><td>4</td><td class='l'>Sample rate in Hz; Q16 format. If the sample rate is<br> less than the report rate, it is set to the report rate.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>5</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>proc_type</td><td>4</td><td class='l'>Defines the processor to monitor for suspend.<br> This is typically the processor from which the<br> request message originated.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>send_indications_during_suspend</td><td>1</td><td class='l'>Defines whether indications for this request are to be sent when the<br> processor is in the Suspend state<br>: - If send_indications_during_suspend=1 or TRUE, indications<br> will be sent for this request when the processor is in the Suspend state<br> (such indications may awaken the processor from Suspend).<br><ul><li>If send_indications_during_suspend=0 or FALSE, some indications </ul> will not be sent for this request when the processor is in the Suspend state.<br> The list of indications not sent are defined by the message in question.<br> </td></tr>
+
+</table>
+<h3><a name="SNS_SAM_GRAVITY_ENABLE_RESP"></a><a href='#Messages'>SNS_SAM_GRAVITY_ENABLE_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'> Instance ID, which is assigned by the SAM.<br> The client must use this instance ID for future messages associated with<br> the current algorithm instance.<br> </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_GRAVITY_ENABLE REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_GRAVITY_DISABLE'></a><a href='#Messages'>SNS_SAM_GRAVITY_DISABLE</a></h2>
+This command disables a Gravity algorithm.
+<h4>Message ID</h4>
+0x0003
+<h3><a name="SNS_SAM_GRAVITY_DISABLE_REQ"></a><a href='#Messages'>SNS_SAM_GRAVITY_DISABLE_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Identifies the algorithm instance. </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_GRAVITY_DISABLE_RESP"></a><a href='#Messages'>SNS_SAM_GRAVITY_DISABLE_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Identifies the algorithm instance. </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_GRAVITY_DISABLE REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_GRAVITY_GET_REPORT'></a><a href='#Messages'>SNS_SAM_GRAVITY_GET_REPORT</a></h2>
+This command fetches latest report output of a Gravity algorithm.
+<h4>Message ID</h4>
+0x0004
+<h3><a name="SNS_SAM_GRAVITY_GET_REPORT_REQ"></a><a href='#Messages'>SNS_SAM_GRAVITY_GET_REPORT_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Identifies the algorithm instance. </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_GRAVITY_GET_REPORT_RESP"></a><a href='#Messages'>SNS_SAM_GRAVITY_GET_REPORT_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp</td><td>4</td><td class='l'>Timestamp of the input used to generate the algorithm output. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x12</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>25</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>gravity</td><td>12</td><td class='l'>Gravity vector along axis x/y/z; units: m/s/s; SAE coordinate frame. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>lin_accel</td><td>12</td><td class='l'>Linear acceleration along axis x/y/z; units: m/s/s; SAE coordinate frame. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>accuracy</td><td>1</td><td class='l'>Sensor accuracy<br>: SNS_SENSOR_ACCURACY_UNRELIABLE = 0,<br> SNS_SENSOR_ACCURACY_LOW = 1,<br> SNS_SENSOR_ACCURACY_MEDIUM = 2,<br> SNS_SENSOR_ACCURACY_HIGH = 3 </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x13</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>device_motion_state</td><td>4</td><td class='l'>Device's current motion state, as calculated in the gravity algorithm.<br> GRAVITY_DEV_STATE_UNKNOWN = 0<br> GRAVITY_DEV_ABS_REST = 1<br> GRAVITY_DEV_REL_REST = 2<br> GRAVITY_DEV_MOTION = 3 </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_GRAVITY_GET_REPORT REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_GRAVITY_REPORT'></a><a href='#Messages'>SNS_SAM_GRAVITY_REPORT</a></h2>
+Report containing the Gravity algorithm output.
+<h4>Message ID</h4>
+0x0005
+<h3><a name="SNS_SAM_GRAVITY_REPORT_IND"></a><a href='#Messages'>SNS_SAM_GRAVITY_REPORT_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp</td><td>4</td><td class='l'>Timestamp of the input used to generate the algorithm output. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>25</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>gravity</td><td>12</td><td class='l'>Gravity vector along axis x/y/z; units: m/s/s; SAE coordinate frame. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>lin_accel</td><td>12</td><td class='l'>Linear acceleration along axis x/y/z; units: m/s/s; SAE coordinate frame. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>accuracy</td><td>1</td><td class='l'>Sensor accuracy<br>: SNS_SENSOR_ACCURACY_UNRELIABLE = 0,<br> SNS_SENSOR_ACCURACY_LOW = 1,<br> SNS_SENSOR_ACCURACY_MEDIUM = 2,<br> SNS_SENSOR_ACCURACY_HIGH = 3 </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>device_motion_state</td><td>4</td><td class='l'>Device's current motion state, as calculated in the gravity algorithm<br>: GRAVITY_DEV_STATE_UNKNOWN = 0,<br> GRAVITY_DEV_ABS_REST = 1,<br> GRAVITY_DEV_REL_REST = 2,<br> GRAVITY_DEV_MOTION = 3 </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_GRAVITY_REPORT</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_GRAVITY_ERROR'></a><a href='#Messages'>SNS_SAM_GRAVITY_ERROR</a></h2>
+Asynchronous error indication for a Gravity algorithm.
+<h4>Message ID</h4>
+0x0006
+<h3><a name="SNS_SAM_GRAVITY_ERROR_IND"></a><a href='#Messages'>SNS_SAM_GRAVITY_ERROR_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>error</td><td>1</td><td class='l'>Sensor1 error code. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Identifies the algorithm instance. </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SAM_GRAVITY_ERROR</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_GRAVITY_BATCH'></a><a href='#Messages'>SNS_SAM_GRAVITY_BATCH</a></h2>
+This command handles batch mode for a Gravity algorithm.
+<h4>Message ID</h4>
+0x0021
+<h3><a name="SNS_SAM_GRAVITY_BATCH_REQ"></a><a href='#Messages'>SNS_SAM_GRAVITY_BATCH_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>batch_period</td><td>4</td><td class='l'>Specifies the interval over which reports are to be batched, in seconds;<br> Q16 format. If AP is in suspend and notify_suspend is FALSE, undelivered<br> reports will be batched in circular FIFO and delivered upon wakeup.<ul><li>P = 0 -- Disable batching<li>P > 0 -- Enable batching</ul> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>req_type</td><td>4</td><td class='l'>Field no longer supported in version 8 and later. Functionality can be<br> approximated using the notify_suspend flag in the ENABLE_REQ message. Max<br> buffer depth is returned in GET_ATTRIBUTES_RESP.<br><br> Optional request type<br>: - 0 -– Do not wake the client from Suspend when the buffer is full (default)<ul><li>1 –- Wake the client from Suspend when the buffer is full<li>2 –- Used to get the maximum buffer depth. This does not enable/disable</ul> batching. instance_id and batch_period are ignored for this request type.<br> </td></tr>
+
+</table>
+<h3><a name="SNS_SAM_GRAVITY_BATCH_RESP"></a><a href='#Messages'>SNS_SAM_GRAVITY_BATCH_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_batch_size</td><td>4</td><td class='l'>Maximum supported batch size. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x12</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp</td><td>4</td><td class='l'>Timestamp when the batch request was processed, in SSC ticks. </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_GRAVITY_BATCH REQ/RESP</h4>
+Set the batch period for an active algorithm stream.<br> A subsequent request may update or disable the batch period;<br> all batched output will be sent prior to the response message.
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_GRAVITY_BATCH_REPORT'></a><a href='#Messages'>SNS_SAM_GRAVITY_BATCH_REPORT</a></h2>
+Report containing a batch of algorithm outputs.
+<h4>Message ID</h4>
+0x0022
+<h3><a name="SNS_SAM_GRAVITY_BATCH_IND"></a><a href='#Messages'>SNS_SAM_GRAVITY_BATCH_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>first_report_timestamp</td><td>4</td><td class='l'>Timestamp of the input used to generate the first algorithm output in the<br> batch, in SSC ticks. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp_offsets_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- timestamp_offsets</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>timestamp_offsets</td><td>Var</td><td class='l'>Offsets from the timestamp of the previous report in the batch. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>reports_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- gravity<ul><li>lin_accel<li>accuracy<li>device_motion_state</ul></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>gravity</td><td>12</td><td class='l'>Gravity vector along axis x/y/z; units: m/s/s; SAE coordinate frame. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>lin_accel</td><td>12</td><td class='l'>Linear acceleration along axis x/y/z; units: m/s/s; SAE coordinate frame. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>accuracy</td><td>1</td><td class='l'>Sensor accuracy<br>: SNS_SENSOR_ACCURACY_UNRELIABLE = 0,<br> SNS_SENSOR_ACCURACY_LOW = 1,<br> SNS_SENSOR_ACCURACY_MEDIUM = 2,<br> SNS_SENSOR_ACCURACY_HIGH = 3 </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>device_motion_state</td><td>4</td><td class='l'>Device's current motion state, as calculated in the gravity algorithm<br>: GRAVITY_DEV_STATE_UNKNOWN = 0,<br> GRAVITY_DEV_ABS_REST = 1,<br> GRAVITY_DEV_REL_REST = 2,<br> GRAVITY_DEV_MOTION = 3 </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ind_type</td><td>1</td><td class='l'>Optional batch indication type<br>: - SNS_BATCH_ONLY_IND -- Standalone batch indication; not part of a back-to-back indication stream<ul><li>SNS_BATCH_FIRST_IND -- First indication in a stream of back-to-back indications<li>SNS_BATCH_INTERMEDIATE_IND -- Intermediate indication in a stream of back-to-back indications<li>SNS_BATCH_LAST_IND -- Last indication in a stream of back-to-back indications</ul> </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_GRAVITY_BATCH_REPORT</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_GRAV_UPDATE_BATCH_PERIOD'></a><a href='#Messages'>SNS_SAM_GRAV_UPDATE_BATCH_PERIOD</a></h2>
+This command updates active batch period for a Gravity algorithm<br> when batching is ongoing.
+<h4>Message ID</h4>
+0x0023
+<h3><a name="SNS_SAM_GRAV_UPDATE_BATCH_PERIOD_REQ"></a><a href='#Messages'>SNS_SAM_GRAV_UPDATE_BATCH_PERIOD_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>active_batch_period</td><td>4</td><td class='l'>Specifies the new interval (in seconds, Q16 format) over which reports<br> are to be batched when the client processor is awake. This only takes<br> effect if batching is ongoing<br>: - P > 0 -- Override the active batch period set in the batch enable request<ul><li>P = 0 -- Switch to the active batch period set in the batch enable request</ul> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_GRAV_UPDATE_BATCH_PERIOD_RESP"></a><a href='#Messages'>SNS_SAM_GRAV_UPDATE_BATCH_PERIOD_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp</td><td>4</td><td class='l'>Timestamp when the batch request was processed, in SSC ticks. </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_GRAV_UPDATE_BATCH_PERIOD REQ/RESP</h4>
+Messages deprecated and no longer supported in version 8 and<br> later. Functionality can be approximated using two clients and<br> the notify_suspend flag in the ENABLE_REQ message.
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_GET_ALGO_ATTRIBUTES'></a><a href='#Messages'>SNS_SAM_GET_ALGO_ATTRIBUTES</a></h2>
+This command requests the attributes of the algorithm service<br><br> This command shall only be used by algorithm services.
+<h4>Message ID</h4>
+0x0024
+<h3><a name="SNS_SAM_GRAV_GET_ATTRIBUTES_REQ"></a><a href='#Messages'>SNS_SAM_GRAV_GET_ATTRIBUTES_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_GRAV_GET_ATTRIBUTES_RESP"></a><a href='#Messages'>SNS_SAM_GRAV_GET_ATTRIBUTES_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that any data contained in the response<br> should not be used (other than sns_err_t) to determine the type of error. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>algorithm_revision</td><td>4</td><td class='l'>Revision number of the algorithm implemented by the service </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>proc_type</td><td>4</td><td class='l'>ID of the processor on which the algorithm is running </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x05</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>supported_reporting_modes</td><td>4</td><td class='l'>Bitmask of all reporting modes supported by algorithm.<br> See sns_sam_report_e for reporting options </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x06</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>min_report_rate</td><td>4</td><td class='l'>Minimum report rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x07</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_report_rate</td><td>4</td><td class='l'>Maximum report rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x08</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>min_sample_rate</td><td>4</td><td class='l'>Minimum sample rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x09</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_sample_rate</td><td>4</td><td class='l'>Maximum sample rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x0A</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_batch_size</td><td>4</td><td class='l'>The maximum batch size (in reports) supported by this service,<br> as if it were the only service active on the system.<br> Will never return more than this many samples in one series of<br> batched indications.<br> Returns 0, if batching is not supported </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x0B</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>power</td><td>4</td><td class='l'>Power estimate for algorithm (in mA, Q16) </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>8</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sensorUID</td><td>8</td><td class='l'>SSC Unique identifier for this sensor </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>reserved_batch_size</td><td>4</td><td class='l'>The mimimum guaranteed batch size for this service. Shared amongst<br> all clients. If max_batch_size is '0', this field shall be ignored. </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_GET_ALGO_ATTRIBUTES REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+\appendix
+\chapter{Additional Information}
+\section{@FOOTER}
+

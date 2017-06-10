@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- used in various places to indicate there is one song for a given artist or album -->
+    <string name="onesong">1 പാട്ട്</string>
+    <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
+    <plurals name="Nsongs">
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> പാട്ടുകൾ</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other"><xliff:g id="count_for_artist">%2$d</xliff:g> / <xliff:g id="total_count">%1$d</xliff:g> പാട്ടുകൾ</item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+        <!-- number of albums is one -->
+        <item quantity="one">1 ആൽബം</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ആൽബങ്ങൾ</item>
+    </plurals>
+
+    <!--
+    This string is used as the format string in a String.format call,
+    and 5 additional arguments are available for printing:
+    1 - hours
+    2 - minutes
+    3 - minutes%60
+    4 - seconds
+    5 - second%60
+    -->
+    <skip/>
+    <!-- Do not translate. Duration format for duration < 1 hour -->
+    <string translatable="false" name="durationformatshort"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    <!-- Do not translate. Duration format for duration >= 1 hour -->
+    <string translatable="false" name="durationformatlong"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    <!-- Menu item that takes the user back to the top level screen of the music player -->
+    <string name="goto_start">ലൈബ്രറി</string>
+    <!-- Menu item that switches the music player in to party shuffle mode -->
+    <string name="party_shuffle">പാർട്ടി ഷഫിൾ</string>
+    <!-- Menu item that switches the music player out of party shuffle mode -->
+    <string name="party_shuffle_off">പാർട്ടി ഷഫിൾ ഓഫ്</string>
+    <!-- Menu item that clear all playlists mode -->
+    <string name="clear_all_playlists">എല്ലാ പ്ലേലിസ്റ്റുകളും മായ്ക്കുക</string>
+    <!-- Menu item that deletes the currently selected item, which might be a single song, or a collection of songs.
+         The user will be prompted to confirm before deletion actually takes place -->
+    <string name="delete_item">ഇല്ലാതാക്കുക</string>
+    <!-- Menu item to play back all the songs in the currently showing list in shuffle mode -->
+    <string name="shuffle_all">എല്ലാം വാങ്ങുക</string>
+    <!-- Menu item to play back all the songs in the currently showing list in list order -->
+    <string name="play_all">എല്ലാം പ്ലേ ചെയ്യുക</string>
+    <!-- Menu item to play song in music -->
+    <string name="open_in_music">സംഗീതത്തിൽ തുറക്കുക</string>
+    <!-- Menu item to share audio or video -->
+    <string name="share">പങ്കിടുക</string>
+
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc">SD കാർഡിൽ നിന്ന് <xliff:g id="artist">%s</xliff:g> വഴിയായി എല്ലാ പാട്ടുകളും ശാശ്വതമായി ഇല്ലാതാക്കണോ?</string>
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc_nosdcard">USB സംഭരണത്തിൽ നിന്ന് <xliff:g id="artist">%s</xliff:g> വഴിയായി എല്ലാ പാട്ടുകളും ശാശ്വതമായി ഇല്ലാതാക്കണോ?</string>
+
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc">SD കാർഡിൽ നിന്ന് \"<xliff:g id="album">%s</xliff:g>\" എന്ന മുഴുവൻ ആൽബവും ശാശ്വതമായി ഇല്ലാതാക്കണോ?</string>
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc_nosdcard">USB സംഭരണത്തിൽ നിന്ന് \"<xliff:g id="album">%s</xliff:g>\" എന്ന മുഴുവൻ ആൽബവും ശാശ്വതമായി ഇല്ലാതാക്കണോ?</string>
+
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc">SD കാർഡിൽ നിന്ന് \"<xliff:g id="song">%s</xliff:g>\" ശാശ്വതമായി ഇല്ലാതാക്കണോ?</string>
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc_nosdcard">USB സംഭരണത്തിൽ നിന്ന് \"<xliff:g id="song">%s</xliff:g>\" ശാശ്വതമായി ഇല്ലാതാക്കണോ?</string>
+
+    <!-- Delete confirmation dialog, confirmation button text -->
+    <string name="delete_confirm_button_text">ശരി</string>
+    <!-- Toast confirming that song(s) was/were deleted. -->
+    <plurals name="NNNtracksdeleted">
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">1 പാട്ട് ഇല്ലാതാക്കി.</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> പാട്ടുകൾ ഇല്ലാതാക്കി.</item>
+    </plurals>
+
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning">SD കാർഡ് സ്കാൻ ചെയ്യുന്നു\u2026</string>
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning_nosdcard">USB സംഭരണം സ്കാൻ ചെയ്യുന്നു\u2026</string>
+
+    <!-- title of the "current playlist" screen when not in party shuffle mode -->
+    <string name="nowplaying_title">ഇപ്പോള്‍ പ്ലേചെയ്യുന്നു</string>
+    <!-- title of the "current playlist" screen when in party shuffle mode-->
+    <string name="partyshuffle_title">പാർട്ടി ഷഫിൾ</string>
+    <!-- Artist screen title -->
+    <string name="artists_title">ആർട്ടിസ്റ്റുകൾ</string>
+    <!-- Category label on Library screen -->
+    <string name="albums_menu">ആൽബങ്ങൾ</string>
+    <!-- Albums screen title -->
+    <string name="albums_title">ആൽബങ്ങൾ</string>
+    <!-- Category label on Library screen -->
+    <string name="tracks_menu">പാട്ടുകൾ</string>
+    <!-- Songs screen title -->
+    <string name="tracks_title">പാട്ടുകൾ</string>
+    <!-- Category label on Library screen -->
+    <string name="folder_menu">ഫോൾഡർ</string>
+    <!-- Folder screen title -->
+    <string name="folders_title">ഫോൾഡർ</string>
+    <!-- Category label on Library screen -->
+    <string name="playlists_menu">പ്ലേലിസ്റ്റുകൾ</string>
+    <!-- Playlists screen title -->
+    <string name="playlists_title">പ്ലേലിസ്റ്റുകൾ</string>
+    <!-- Videos screen title -->
+    <string name="videos_title">വീഡിയോകള്‍</string>
+    <!-- All media screen title -->
+    <string name="all_title">എല്ലാ മീഡിയയും</string>
+    <!-- Category label on Library screen -->
+    <string name="browse_menu">ആർട്ടിസ്റ്റുകൾ</string>
+    <!-- Library screen, menu item -->
+    <string name="search_title">തിരയുക</string>
+    <!-- Title of screen when there are no songs, or if the SD card is busy -->
+    <string name="no_tracks_title">പാട്ടുകള്‍ ഇല്ല</string>
+    <!-- Title of screen when there are no videos, or if the SD card is busy -->
+    <string name="no_videos_title">വീഡിയോകൾ ഒന്നുമില്ല</string>
+    <!-- Title of screen when there are no playlists, or if the SD card is busy -->
+    <string name="no_playlists_title">പ്ലേലിസ്റ്റുകൾ ഇല്ല</string>
+    <!-- Playlist context menu item to delete the selected playlist. -->
+    <string name="delete_playlist_menu">ഇല്ലാതാക്കുക</string>
+    <!-- Playlist context menu item to edit the selected playlist -->
+    <string name="edit_playlist_menu">എഡിറ്റുചെയ്യുക</string>
+    <!-- Playlist context menu item to rename the selected playlist-->
+    <string name="rename_playlist_menu">പേര് മാറ്റുക</string>
+    <!-- Dialog box message shown when clearing all playlists-->
+    <string name="clear_all_playlists_message">എല്ലാ പ്ലേലിസ്റ്റുകളും മായ്ക്കാൻ ആഗ്രഹിക്കുന്നുണ്ടോ?</string>
+    <!-- Dialog box message shown when deleting a playlist-->
+    <string name="delete_playlist_message">\"<xliff:g id="name">%s</xliff:g>\" ഇല്ലാതാക്കണമെന്ന് ഉറപ്പാണോ?</string>
+    <!-- Dialog box button -->
+    <string name="delete_playlist_button_ok">ശരി</string>
+    <string name="delete_playlist_button_cancel">റദ്ദാക്കുക</string>
+    <!-- Transient popup message shown after deleting a playlist -->
+    <string name="playlist_deleted_message">പ്ലേലിസ്റ്റ് ഇല്ലാതാക്കി.</string>
+    <!-- Transient popup message shown after renaming a playlist -->
+    <string name="playlist_renamed_message">പ്ലേലിസ്റ്റിന്‍റെ പേരുമാറ്റി.</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in list view -->
+    <string name="recentlyadded">സമീപകാലത്ത് ചേര്‍ത്തത്</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in title bar of songs list -->
+    <string name="recentlyadded_title">സമീപകാലത്ത് ചേര്‍ത്തത്</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in list view -->
+    <string name="podcasts_listitem">പോഡ്‌കാസ്റ്റുകൾ</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in title bar of songs list -->
+    <string name="podcasts_title">പോഡ്‌കാസ്റ്റുകൾ</string>
+    <!-- all recordings will show up in the media database in a playlist with thiis name -->
+    <string name="audio_db_playlist_name">എന്റെ റെക്കോർഡിംഗുകൾ</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title">SD കാർഡ് ഇല്ല</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title_nosdcard">USB സംഭരണം ഇല്ല</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message">നിങ്ങളുടെ ഫോണില്‍ ഒരു SD കാര്‍ഡ് ഇട്ടിട്ടില്ല.</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message_nosdcard">നിങ്ങളുടെ ഫോണിൽ USB സംഭരണമില്ല.</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title">SD കാര്‍ഡ് ലഭ്യമല്ല</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title_nosdcard">USB സംഭരണംലഭ്യമല്ല</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message">നിങ്ങളുടെ SD കാര്‍ഡ് തിരക്കിലാണ്.</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message_nosdcard">നിങ്ങളുടെ USB സംഭരണം തിരക്കിൽ.</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title">SD കാര്‍ഡ് പിശക്</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title_nosdcard">USB സംഭരണം പിശക്</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message">നിങ്ങളുടെ SD കാര്‍ഡില്‍ ഒരു പിശക് നേരിട്ടു.</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message_nosdcard">നിങ്ങളുടെ USB സംഭരണത്തിൽ ഒരു പിശക് നേരിട്ടു.</string>
+    <!-- Default name of artist that doesn\'t have a name in the metadata -->
+    <string name="unknown_artist_name">അജ്ഞാത ആർട്ടിസ്റ്റ്</string>
+    <!-- Default name of album that doesn\'t have a name in the metadata -->
+    <string name="unknown_album_name">അജ്ഞാത ആല്‍ബം</string>
+    <!-- Default name of folder that doesn\'t have a path in the metadata -->
+    <string name="unknown_folder_name">അജ്ഞാത പാത്ത്</string>
+    <!-- Default name of folder that doesn\'t have a count in the metadata -->
+    <string name="unknown_folder_count">അജ്ഞാതമായ എണ്ണം</string>
+    <!-- Toast after turning shuffle on -->
+    <string name="shuffle_on_notif">ഷഫിള്‍ ഓണ്‍ ആകുന്നു.</string>
+    <!-- Toast after turning shuffle off -->
+    <string name="shuffle_off_notif">ഷഫിള്‍ ഓഫ് ആകുന്നു.</string>
+    <!-- Toast after turning repeat off -->
+    <string name="repeat_off_notif">ആവര്‍ത്തനം ഓഫ് ആകുന്നു.</string>
+    <!-- Toast after turning single repeat on -->
+    <string name="repeat_current_notif">നിലവിലെ ഗാനം ആവര്‍ത്തിക്കുക.</string>
+    <!-- Toast after turning repeat all on -->
+    <string name="repeat_all_notif">എല്ലാ പാട്ടുകളും ആവർത്തിക്കുന്നു.</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu">ഫോൺ റിംഗ്ടോണായി ഉപയോഗിക്കുക</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short">റിംഗ്ടോണായി ഉപയോഗിക്കുക</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" ഫോൺ റിംഗ്ടോണായി ക്രമീകരിക്കുക.</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu_1">സ്ലോട്ട് 1 റിംഗ്ടോണായി ഉപയോഗിക്കുക</string>
+    <string name="ringtone_menu_2">സ്ലോട്ട് 2 റിംഗ്ടോണായി ഉപയോഗിക്കുക</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short_1">റിംഗ്‌ടോൺ 1 ആയി ഉപയോഗിക്കുക</string>
+    <string name="ringtone_menu_short_2">റിംഗ്‌ടോൺ 2 ആയി ഉപയോഗിക്കുക</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_1">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" സ്ലോട്ട് 1 റിംഗ്ടോണായി ക്രമീകരിക്കുക.</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_2">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" സ്ലോട്ട് 2 റിംഗ്ടോണായി ക്രമീകരിക്കുക.</string>
+    <!-- Context menu item -->
+    <string name="play_selection">പ്ലേ ചെയ്യുക</string>
+    <!-- Context menu item -->
+    <string name="add_to_playlist">പ്ലേലിസ്റ്റിലേക്ക് കൂട്ടിച്ചേർക്കുക</string>
+    <!-- Context menu item -->
+    <string name="queue">നിലവിലെ പ്ലേലിസ്റ്റ്</string>
+    <!-- Context menu item -->
+    <string name="new_playlist">പുതിയ</string>
+    <!-- Template for newly created playlist name -->
+    <string name="new_playlist_name_template">പുതിയ പ്ലേലിസ്റ്റ് <xliff:g id="number">%d</xliff:g></string>
+    <!-- Toasts after adding song(s) to playlists -->
+    <plurals name="NNNtrackstoplaylist">
+        <!-- message shown when one song was added -->
+        <item quantity="one">1 പാട്ട് പ്ലേലിസ്റ്റിലേക്ക് ചേർത്തു.</item>
+        <!-- message shown when zero or more than one song was added -->
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> പാട്ടുകൾ പ്ലേലിസ്റ്റിലേക്ക് ചേർത്തു.</item>
+    </plurals>
+    <!-- Toast after selecting an empty playlist -->
+    <string name="emptyplaylist">തിരഞ്ഞെടുത്ത പ്ലേലിസ്റ്റ് ശൂന്യമാണ്.</string>
+    <!-- Button name when saving a playlist -->
+    <string name="create_playlist_create_text">സംരക്ഷിക്കുക</string>
+    <!-- Button name when saving a playlist and the new playlist will overwrite an existing one -->
+    <string name="create_playlist_overwrite_text">മേലെയെഴുതുക</string>
+    <!-- Dialog box title -->
+    <string name="service_start_error_title">പ്ലേബാക്ക് പ്രശ്നം</string>
+    <!-- Dialog box message -->
+    <string name="service_start_error_msg">പാട്ട് പ്ലേ ചെയ്യാൻ കഴിഞ്ഞില്ല.</string>
+    <!-- Dialog box button -->
+    <string name="service_start_error_button">ശരി</string>
+    <!-- Time span edit options that appear when editing system playlist "Recently added" -->
+    <!-- Used to indicate the number of weeks the "recently added" playlist covers in a selector widget -->
+    <string-array name="weeklist">
+        <item>"1 ആഴ്ച "</item>
+        <item>"2 ആഴ്ചകൾ"</item>
+        <item>"3 ആഴ്ചകൾ"</item>
+        <item>"4 ആഴ്ചകൾ"</item>
+        <item>"5 ആഴ്ചകൾ"</item>
+        <item>"6 ആഴ്ചകൾ"</item>
+        <item>"7 ആഴ്ചകൾ"</item>
+        <item>"8 ആഴ്ചകൾ"</item>
+        <item>"9 ആഴ്ചകൾ"</item>
+        <item>"10 ആഴ്ചകൾ"</item>
+        <item>"11 ആഴ്ചകൾ"</item>
+        <item>"12 ആഴ്ചകൾ"</item>
+    </string-array>
+    <!-- Button name in time span picker -->
+    <string name="weekpicker_set">പൂർത്തിയായി</string>
+    <!-- Title of time span picker -->
+    <string name="weekpicker_title">സമയം ക്രമീകരിക്കുക</string>
+    <!-- Do not translate. Background color for currently dragged item in playlist edit mode. -->
+    <color name="dragndrop_background">#e0103010</color>
+    <!-- Do not translate. Background color for albums in the artists list view. -->
+    <color name="expanding_child_background">#ff404040</color>
+
+    <!-- menu item to save the current list as a new playlist -->
+    <string name="save_as_playlist">പ്ലേലിസ്റ്റായി സംരക്ഷിക്കുക</string>
+    <!-- menu item to clear the current playlist -->
+    <string name="clear_playlist">പ്ലേലിസ്റ്റ് മായ്ക്കുക</string>
+
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicbrowserlabel">സംഗീതം</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicshortcutlabel">സംഗീത പ്ലേലിസ്റ്റ്</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediaplaybacklabel">സംഗീതം</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="videobrowserlabel">വീഡിയോകള്‍</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediapickerlabel">സംഗീതം</string>
+
+    <!-- Shown as a transient message whenever a file fails to play -->
+    <string name="playback_failed">ഇത്തരത്തിലുള്ള ഓഡിയോ ഫയല്‍ ഈ പ്ലെയര്‍ പിന്തുണയ്ക്കുന്നില്ല.</string>
+    <!-- Shown as a transient message whenever a file fails to open -->
+    <string name="open_failed">ക്ഷമിക്കണം, ഫയൽ തുറക്കാൻ കഴിയില്ല.</string>
+
+    <!-- Text for the "cancel" button in the "delete" and "create playlist" confirmation dialogs -->
+    <string name="cancel">റദ്ദാക്കുക</string>
+
+    <!-- context menu item to remove the selected item from the playlist -->
+    <string name="remove_from_playlist">പ്ലേലിസ്റ്റിൽ നിന്ന് നീക്കംചെയ്യുക</string>
+
+    <!-- shown when connecting to a music stream, before it starts playing -->
+    <string name="streamloadingtext"><xliff:g id="host">%s</xliff:g>\u2026-ലേക്ക് ബന്ധിപ്പിക്കുന്നു</string>
+
+    <!-- title of contextual music search menu -->
+    <string name="mediasearch">ഇനിപ്പറയുന്ന ഉപയോഗിച്ച് <xliff:g id="term" example="Beethoven">%s</xliff:g>-നായി സ്കാൻ ചെയ്യുക:</string>
+
+    <!-- Shown in the title bar while the list of artists is being retrieved in the background -->
+    <string name="working_artists">ആർട്ടിസ്റ്റുകൾ\u2026</string>
+    <!-- Shown in the title bar while the list of albums is being retrieved in the background -->
+    <string name="working_albums">ആൽബങ്ങൾ\u2026</string>
+    <!-- Shown in the title bar while the list of songs is being retrieved in the background -->
+    <string name="working_songs">പാട്ടുകൾ\u2026</string>
+    <!-- Shown in the title bar while the list of folders is being retrieved in the background -->
+    <string name="working_folders">ഫോൾഡറുകൾ\u2026</string>
+    <!-- Shown in the title bar while the list of playlists is being retrieved in the background -->
+    <string name="working_playlists">പ്ലേലിസ്റ്റുകൾ\u2026</string>
+
+    <!-- Shown in the music picker while loading the music database. -->
+    <string name="loading">ലോഡുചെയ്യുന്നു\u2026</string>
+    <!-- Menu in music picker to sort the list by track/song name. -->
+    <string name="sort_by_track">ട്രാക്കുകൾ</string>
+    <!-- Menu in music picker to sort the list by album name. -->
+    <string name="sort_by_album">ആൽബങ്ങൾ</string>
+    <!-- Menu in music picker to sort the list by artist name. -->
+    <string name="sort_by_artist">ആർട്ടിസ്റ്റുകൾ</string>
+    <!--  Title of the music picker activity. -->
+    <string name="music_picker_title">സംഗീത ട്രാക്ക് തിരഞ്ഞെടുക്കുക</string>
+
+    <!-- The string used to describe Music as a searchable item within system search settings. -->
+    <string name="search_settings_description">ആർട്ടിസ്റ്റുകൾ, ആൽബങ്ങൾ, ട്രാക്കുകൾ</string>
+
+    <!-- Shown in the search box as a hint -->
+    <string name="search_hint">സംഗീതം തിരയുക</string>
+    <string name="search_hint_video">വീഡിയോ തിരയുക</string>
+
+    <!--The fast scroll thumb will show one character from this string depending on the position in the list -->
+    <string name="fast_scroll_alphabet">\u0020ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+
+    <!-- Text shown on widget when first loaded -->
+    <string name="widget_initial_text">സംഗീതം തിരഞ്ഞെടുക്കാൻ തൊടുക.</string>
+
+    <!-- Menu text for the item controlling the audio effects panel [CHAR LIMIT=15] -->
+    <string name="effectspanel">ശബ്ദ ഇഫക്റ്റുകൾ</string>
+
+    <string name="duplicate_playlist_name_alert">\"<xliff:g id="name">%s</xliff:g>\" എന്ന് പേരുള്ള ഒരു പ്ലേലിസ്റ്റ് ഇതിനകം തന്നെ ഉണ്ട്. വേറൊരു പേര് തിരഞ്ഞെടുക്കുക.</string>
+    <string name="same_playlist_name_alert">പ്ലേലിസ്റ്റ് \"<xliff:g id="name">%s</xliff:g>\"-ന്റെ പേര് മാറ്റിയിട്ടില്ല. വേറൊരു പേര് തിരഞ്ഞെടുക്കുക.</string>
+    <string name="button_ok">ശരി</string>
+    <string name="list_empty">പ്ലേലിസ്റ്റില്‍ സംഗീതം ഇല്ല</string>
+
+    <!-- Shown when video is played after disable Gallery app from Settings -->
+    <string name="enable_gallery_app">വീഡിയോ പ്ലേ ചെയ്യാനാകുന്നില്ല, ക്രമീകരണങ്ങളിൽ നിന്ന് ഗാലറി ആപ് പ്രാപ്തമാക്കുക..</string>
+    <string name="close_music">"അവസാനിപ്പിക്കുക"</string>
+    <string name="delete_video_item_message">\"<xliff:g id="name">%s</xliff:g>\" ഇല്ലാതാക്കണമെന്ന് ഉറപ്പാണോ?</string>
+    <string name="video_deleted_message">വീഡിയോ ഫയൽ ഇല്ലാതാക്കി.</string>
+
+    <!-- Menu item that takes the user link to net to see more music -->
+    <string name="more_music">കൂടുതൽ സംഗീതം</string>
+    <!-- Menu item that takes the user link to net to see more video -->
+    <string name="more_video">കൂടുതൽ വീഡിയോ</string>
+    <!--gesture control playback status-->
+    <string name="music_gesture_play">"ഓഡിയോ പ്ലേ ചെയ്യുക/താൽക്കാലികമായി നിർത്തുക"</string>
+    <string name="music_gesture_prev">"മുമ്പത്തെ ട്രാക്ക് പ്ലേ ചെയ്യുക"</string>
+    <string name="music_gesture_next">"അടുത്ത ട്രാക്ക് പ്ലേ ചെയ്യുക</string>
+
+    <!-- DRM Related Strings -->
+    <string name="no_permission_for_drm">"ക്ഷമിക്കുക, Drm ഫയൽ പങ്കിടരുത്"</string>
+    <string name="drm_license_info">Drm ലൈസൻസ് വിവരം</string>
+    <string name="drm_ringtone_error">റിംഗ്‌ടോണായി CD/SD ഫയലുകൾ ക്രമീകരിക്കാൻ കഴിയില്ല</string>
+
+</resources>

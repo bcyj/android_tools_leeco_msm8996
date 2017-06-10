@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2015 Qualcomm Technologies, Inc. All Rights Reserved.
+    Qualcomm Technologies Proprietary and Confidential.
+-->
+
+<!--
+    Email providers that are considered "universal" and are appropriate for *all* android
+    platform devices should be defined in providers.xml.
+
+    Entries that are device, product or carrier-specific should be added as overlays
+    in the appropriate providers_product.xml file.
+
+    Because overlays must correspond to an existing platform resource, this empty placeholder
+    is included in the platform build.
+-->
+
+<providers_product>
+
+    <!-- Telcel variant -->
+    <provider id="itelcel" label="itelcel" domain="itelcel.com">
+        <incoming uri="pop3://pop3.itelcel.com:110" username="$email" />
+        <outgoing uri="smtp://smtp.itelcel.com:25" username="$email" />
+    </provider>
+
+</providers_product>

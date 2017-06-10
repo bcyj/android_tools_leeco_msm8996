@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright (c) 2013, 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">সারটিফিকেট ইন্সটলার</string>
+
+    <!-- Title of the file picker screen -->
+    <string name="pick_file_title">একটি সার্টিফিকেট বাছুন</string>
+
+    <!-- Title of dialog to enter password for pkcs12 -->
+    <string name="pkcs12_password_dialog_title">সার্টিফিকেটের সারমর্ম নির্ণয় করুন</string>
+    <!-- message in progress bar when waiting for extracting certs from a pkcs12 package -->
+    <string name="extracting_pkcs12">নিষ্কাশন চলছে\u2026</string>
+    <!-- Title of dialog to enter password for pkcs12 file -->
+    <string name="pkcs12_file_password_dialog_title">%s থেকে সারমর্ম নির্ণয় করুন</string>
+    <!-- Title of dialog to name a credential -->
+    <string name="name_credential_dialog_title">সার্টিফিকেটের নাম করুন</string>
+    <!-- Description for the credential name input box -->
+    <string name="credential_name">সার্টিফিকেটের নাম:</string>
+    <!-- Title of the credential info -->
+    <!-- Description for the credential password input box -->
+    <string name="credential_password">সার্টিফিকেটের সারমর্ম নির্ণয় করার জন্য পাসওয়ার্ড টাইপ করুন।</string>
+    <string name="credential_info">এই প্যাকেজে রয়েছে:</string>
+    <string name="p12_description">PKCS12 কীস্টোরে সার্টিফিকেট।</string>
+
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE] -->
+    <string name="one_userkey">একজন ইউজারের কী</string>
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE] -->
+    <string name="one_usercrt">একজন ইউজারের সার্টিফিকেট</string>
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE] -->
+    <string name="one_cacrt">একটি CA সার্টিফিকেট</string>
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE]-->
+    <string name="n_cacrts">%d CA সার্টিফিকেট</string>
+
+    <string name="password_error">সঠিক পাসওয়ার্ড টাইপ করুন।</string>
+    <string name="password_empty_error">পাসওয়ার্ড টাইপ করুন।</string>
+    <string name="name_empty_error">নাম টাইপ করুন।</string>
+    <string name="name_char_error">অনুগ্রহ করে একটি নাম এন্টার করুন যাতে শুধুমাত্র অক্ষর ও সংখ্যা থাকে।</string>
+    <string name="storage_error">সার্টিফিকেটটি সংরক্ষণ করতে অক্ষম করুন। পুনরায় চেষ্টা করার জন্য OK ক্লিক করুন।</string>
+    <string name="unable_to_save_cert">সার্টিফিকেটটি সংরক্ষণ করতে অক্ষম করুন। প্রমানপত্র স্টোরেজ সক্ষম নয় বা সঠিকভাবে সক্রিয় করা হয়েছে।</string>
+    <string name="cert_not_saved">সার্টিফিকেট সংস্থাপন করা নেই।</string>
+    <string name="no_cert_to_saved">সংস্থাপন করার মত কোনও সার্টিফিকেট নেই।</string>
+    <string name="invalid_cert">সার্টিফিকেট অবৈধ।</string>
+
+    <!-- toast message -->
+    <string name="cert_is_added"><xliff:g id="credential">%s</xliff:g> সংস্থাপন করা হয়েছে।</string>
+    <!-- toast message -->
+    <string name="cert_too_large_error">ইনষ্টল করা যায় নি কারণ সার্টিফিকেটের মাপ খুব বড়।</string>
+    <!-- toast message -->
+    <string name="cert_missing_error">ইনষ্টল করা যায় নি কারণ সার্টিফিকেট ফাইলের অবস্থান খুঁজে বার করা যায় নি।</string>
+    <!-- toast message -->
+    <string name="cert_read_error">ইনষ্টল করা যায় নি কারণ সার্টিফিকেট ফাইল পড়া যায় নি।</string>
+
+    <!-- Shown when the certificate file can\'t be found.  [CHAR LIMIT=NONE] -->
+    <string name="no_cert_file_found" product="nosdcard">USB স্টোরেজে কোনও সার্টিফিকেট ফাইল পাওয়া যায়নি।</string>
+    <string name="no_cert_file_found" product="default">SD কার্ডে কোনও সার্টিফিকেট ফাইল পাওয়া যায়নি।</string>
+    <!-- Shown when USB storage can\'t be found to look for a certificate.  [CHAR LIMIT=30] -->
+    <string name="sdcard_not_present" product="nosdcard">USB স্টোরেজ লভ্য নয়।</string>
+    <string name="sdcard_not_present" product="default">SD কার্ড বর্তমান নেই।</string>
+
+    <!-- Message displayed when a user other than the owner on a multi-user system tries to
+         install a certificate into the certificate store. [CHAR LIMIT=NONE] -->
+    <string name="only_primary_user_allowed">কেবলমাত্র এই উপকরণের মালিক সার্টিফিকেট ইনষ্টল করতে পারেন।</string>
+
+    <!-- Label for spinner that shows the possible usage for a credential. Shown when user is
+         installing a credential [CHAR LIMIT=40] -->
+    <string name="credential_usage_label">প্রমাণপত্রর ব্যবহার:</string>
+
+    <!-- Usage type for a credential that the user is installing. The label will restrict the
+         type of use for that credential. [CHAR LIMIT=40] -->
+    <string-array name="credential_usage">
+        <item>VPN এবং অ্যাপস</item>
+        <item>Wi-Fi</item>
+    </string-array>
+</resources>

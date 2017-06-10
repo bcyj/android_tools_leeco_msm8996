@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <Button
+        android:id="@string/ipv4_apns"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/available_ipv4"
+        android:layout_below="@string/ipv4_table"
+        android:layout_alignParentLeft="true" >
+    </Button>
+
+    <TableLayout
+        android:id="@string/ipv4_table"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:stretchColumns="1"
+        android:layout_below="@string/active_table"
+        android:layout_alignParentLeft="true" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:text="@string/state:"
+                android:textSize="7pt" >
+            </TextView>
+            <TextView
+                android:id="@string/ipv4_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:text="@string/default_text"
+                android:textSize="7pt" >
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:text="@string/interface:"
+                android:textSize="7pt" >
+            </TextView>
+            <TextView
+                android:id="@string/ipv4_interface"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:text="@string/default_text"
+                android:textSize="7pt" >
+            </TextView>
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:id="@string/active_table"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:stretchColumns="1"
+        android:layout_below="@string/stop_feature"
+        android:layout_alignParentLeft="true" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#ff0000ff"
+            android:orientation="horizontal" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:text="@string/current_ipv4"
+                android:textSize="7pt" >
+            </TextView>
+            <TextView
+                android:id="@string/active_apn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:text="@string/default_text"
+                android:textSize="7pt" >
+            </TextView>
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@string/stop_feature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop"
+        android:textSize="8pt"
+        android:typeface="sans"
+        android:textStyle="bold"
+        android:textColor="#ffff3333"
+        android:layout_below="@string/start_feature"
+        android:layout_alignParentRight="true" >
+    </Button>
+
+    <Button
+        android:id="@string/start_feature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start"
+        android:textSize="8pt"
+        android:typeface="sans"
+        android:textStyle="bold"
+        android:textColor="#ff339900"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" >
+    </Button>
+
+    <TextView
+        android:id="@string/type_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_text"
+        android:textSize="12pt"
+        android:typeface="sans"
+        android:padding ="5dip"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" >
+    </TextView>
+
+    <TextView
+        android:id="@string/enable_disable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/press_start"
+        android:textSize="7pt"
+        android:layout_alignBottom="@string/stop_feature"
+        android:layout_below="@string/type_name"
+        android:layout_alignParentLeft="true" >
+    </TextView>
+</RelativeLayout>

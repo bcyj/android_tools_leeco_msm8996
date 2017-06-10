@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+<!--
+     Copyright (C) 2012-2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- The name of the app -->
+    <string name="app_name">Meneja Faili</string>
+    <!-- The description of the app -->
+    <string name="app_description">Meneja faili ya CyanogenMod</string>
+
+    <!-- Human readable sizes -->
+    <string name="size_bytes">"B"</string>
+    <string name="size_kilobytes">kB</string>
+    <string name="size_megabytes">"MB"</string>
+    <string name="size_gigabytes">"GB"</string>
+
+    <!-- Date/time format order (%1$s: date; %2$s: time) -->
+    <string name="datetime_format_order">%1$s %2$s</string>
+
+    <!-- Devices types -->
+    <string name="device_blockdevice">Zuia kifaa</string>
+    <string name="device_characterdevice">Kifaa cha herufi</string>
+    <string name="device_namedpipe">Bomba lenye jina</string>
+    <string name="device_domainsocket">Soketi ya kikoa</string>
+
+    <!-- Mount Point States -->
+    <string name="mount_point_readonly">RO</string>
+    <string name="mount_point_readwrite">RW</string>
+
+    <!-- Default buttons -->
+    <string name="ok" translatable="false">@android:string/ok</string>
+    <string name="cancel" translatable="false">@android:string/cancel</string>
+    <string name="yes">Ndiyo</string>
+    <string name="no">Hapana</string>
+    <string name="all">"Zote"</string>
+    <string name="overwrite">"Hifadhi upya"</string>
+    <string name="select">"Chagua"</string>
+
+    <!-- The root directory name -->
+    <string name="root_directory_name"><![CDATA[<Folda msingi>]]></string>
+    <!-- The search result name -->
+    <string name="search_result_name">Tafuta: <xliff:g id="terms">%1$s</xliff:g></string>
+
+    <!-- Loading waiting message -->
+    <string name="loading_message">"Inapakia…"</string>
+    <!-- Computing message -->
+    <string name="computing_message" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Computing new line message -->
+    <string name="computing_message_ln" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Cancelled message -->
+    <string name="cancelled_message">Umeghairiwa.</string>
+    <!-- Error message -->
+    <string name="error_message">Hitilafu.</string>
+    <!-- Copy text content description -->
+    <string name="copy_text_cd">Donoa ili uakili maandishi kwenye ubao pogoa</string>
+    <!-- Copy text content message -->
+    <string name="copy_text_msg">Maandishi yamenakiliwa kwenye ubao pogoa</string>
+
+    <!-- Warning dialog title -->
+    <string name="warning_title">Onyo</string>
+    <!-- Error dialog title -->
+    <string name="error_title">Hitilafu imegunduliwa</string>
+    <!-- Confirm operation dialog title -->
+    <string name="confirm_operation">Thibitisha kitendo</string>
+    <!-- Confirm overwrite dialog title -->
+    <string name="confirm_overwrite">Thibitisha uandikizaji</string>
+    <!-- Confirm deletion dialog title -->
+    <string name="confirm_deletion">Thibitisha ufutaji</string>
+
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Title -->
+    <string name="msgs_change_to_prompt_access_mode_title">Thibitisha ubadilishaji</string>
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Message -->
+    <string name="msgs_change_to_prompt_access_mode_msg">Imeshindwa kuendesha modi ya Kifukia Msingi. Inabadilishwa kwa modi Salama.\n\nJe, unataka kutekeleza badilisho hili?</string>
+
+    <!-- A console couldn\'t be created - Without privileges, the app won\'t work -->
+    <string name="msgs_cant_create_console">Imeshindwa kupata ruhusa zinazohitajika kufanya kazi.</string>
+    <!-- The message shown when an allocation of a privileged console fails, and a non
+         privileged is allocated -->
+    <string name="msgs_privileged_console_alloc_failed">Imeshindwa kuendesha modi ya Kufikia Msingi. Inabadilishwa kwa modi Salama.</string>
+    <!-- The selected setting was not applied or stored -->
+    <string name="msgs_settings_save_failure">Mpangilio haukuweza kutekelezwa au kuhifadhiwa.</string>
+    <!-- The initial directory has an invalid or inaccessible reference -->
+    <string name="msgs_settings_invalid_initial_directory">Folda ya kwanza \'<xliff:g id="initial_dir">%1$s</xliff:g>\' sio halali. Inabadilishwa kwa folda kuu.</string>
+    <!-- Root is not available message -->
+    <string name="root_not_available_msg">Root haipatikani katika kifaa hiki. Haiwezi kutekeleza kitendo hiki.</string>
+
+    <!-- Success -->
+    <string name="msgs_success">Kitendo kilikamilishwa kwa mafanikio.</string>
+    <!-- Unknown error -->
+    <string name="msgs_unknown">Hitilafu iligunduliwa. Kitendo hakikufanikiwa.</string>
+    <!-- When an operation requires elevated privileged (normally caused for the use of a
+         non-privileged console) -->
+    <string name="msgs_insufficient_permissions">Kitendo hiki kinahitaji ruhusa za kiwango cha juu. Jaribu kubadilisha modi ya Kufikia Msingi.</string>
+    <!-- When an operation fails because the device has run out of storage. -->
+    <string name="msgs_no_disk_space">Utendaji huu haujafaulu kwa sababu hakuna nafasi iliyobakia kwenye kifaa.</string>
+    <!-- The file or directory was not found -->
+    <string name="msgs_file_not_found">Faili au folda haikupatikana</string>
+    <!-- The command reference couldn\'t be created (not found or invalid definition)
+         (normally caused by a development error) -->
+    <string name="msgs_command_not_found">Amri ya kitendo haikupatikana au ina ufafanuzi usio halali.</string>
+    <!-- I/O exception -->
+    <string name="msgs_io_failed">Kutofaulu kusoma/kuandika.</string>
+    <!-- Operation timeout detected -->
+    <string name="msgs_operation_timeout">Muda wa kitendo umekwisha.</string>
+    <!-- The operation returns an invalid exit code -->
+    <string name="msgs_operation_failure">Kitendo hakikufaulu.</string>
+    <!-- A console couldn\'t be allocated -->
+    <string name="msgs_console_alloc_failure">Hitilafu ya ndani ilitokea.</string>
+    <!-- An operation can\'t be cancelled -->
+    <string name="msgs_operation_can_not_be_cancelled">Kitendo hakiwezi kukatizwa.</string>
+    <!-- The operation requieres mount the file system prior to execute the command -->
+    <string name="msgs_read_only_filesystem">Mfumo wa faili ni wa kusoma peke yake. Jaribu kuweka mfumo wa faili kama soma-andika kabla ya kujaribu kitendo hicho.</string>
+    <!-- Illegal argument (normally caused by a development error when calling internal api) -->
+    <string name="msgs_illegal_argument">Hoja isiyo halali. Mwito haujafaulu.</string>
+    <!-- The operation will cause inconsistencies -->
+    <string name="msgs_unresolved_inconsistencies">Kitendo hiki hakiruhusiwi kwa sababu kitasababisha ukinzani.</string>
+    <!-- Operation not permitted in current directory -->
+    <string name="msgs_operation_not_allowed_in_current_directory">Kitendo hiki hakiruhusiwa katika folda ya sasa.\n\nFolda ya mwishilio haiwezi kuwa folda ndogo ya chanzo au kuwa sawa na chanzo.</string>
+
+    <!-- The advice message prior to exit the app -->
+    <string name="msgs_push_again_to_exit">Bonyeza tena ili utoke.</string>
+
+    <!-- There is no registered app that can handle the mime-type -->
+    <string name="msgs_not_registered_app">Hakuna rogramu imesajiliwa ili kushughulikia aina ya faili iliyochaguliwa.</string>
+
+    <!-- Overwrite files? -->
+    <string name="msgs_overwrite_files">Baadhi ya faili tayari ziko katika folda ya mwishilio.\n\nZiandikize?</string>
+
+    <!-- The association of an action to the app failed -->
+    <string name="msgs_action_association_failed">Kuhusisha hatia kwenye programu hakujafaulu.</string>
+
+    <!-- An operation requires elevated privileged. Ask the user. -->
+    <string name="advise_insufficient_permissions">Kitendo hiki kinahitaji ruhusa za kiwango cha juu.\n\nJe, unataka kubadilisha kwa modi ya Kufikia Msingi?</string>
+
+    <!-- The parent directory of the current directory in navigation view -->
+    <string name="parent_dir">Folda mzazi</string>
+    <!-- External storage descripton -->
+    <string name="external_storage">Hifadhi ya nje</string>
+    <!-- Usb storage descripton -->
+    <string name="usb_storage">"Hifadhi ya USB"</string>
+
+    <!-- ActionBar Buttons - FileSystem -->
+    <string name="actionbar_button_filesystem_cd">Maelezo ya mfumo wa faili</string>
+    <!-- ActionBar Buttons - Sort Mode -->
+    <string name="actionbar_button_sort_mode_cd">Modi ya kupanga</string>
+    <!-- ActionBar Buttons - Layout Mode -->
+    <string name="actionbar_button_layout_mode_cd">Modi ya mpangilio</string>
+    <!-- ActionBar Buttons - Other View Options -->
+    <string name="actionbar_button_other_view_options_cd">Chaguo zingine za mtazamo</string>
+    <!-- ActionBar Buttons - Done -->
+    <string name="actionbar_button_selection_done_cd">GOTOKA</string>
+    <!-- ActionBar Buttons - Actions -->
+    <string name="actionbar_button_actions_cd">Hatua</string>
+    <!-- ActionBar Buttons - Search -->
+    <string name="actionbar_button_search_cd">"Tafuta"</string>
+    <!-- ActionBar Buttons - Overflow -->
+    <string name="actionbar_button_overflow_cd">"Chaguo zaidi"</string>
+    <!-- ActionBar Buttons - Storage volumes -->
+    <string name="actionbar_button_storage_cd">Viwango vya hifadhi</string>
+    <!-- ActionBar Buttons - Save -->
+    <string name="actionbar_button_save_cd">"Hifadhi"</string>
+    <!-- ActionBar Buttons - Print -->
+    <string name="actionbar_button_print_cd">"Chapisha"</string>
+
+    <!-- Navigation View - Sort - Sort by name (ascending) -->
+    <string name="sort_by_name_asc">Kwa jina \u25B2</string>
+    <!-- Navigation View - Sort - Sort by name (descending) -->
+    <string name="sort_by_name_desc">Kwa jina \u25BC</string>
+    <!-- Navigation View - Sort - Sort by date (ascending) -->
+    <string name="sort_by_date_asc">Kwa tarehe \u25B2</string>
+    <!-- Navigation View - Sort - Sort by date (descending) -->
+    <string name="sort_by_date_desc">Kwa tarehe \u25BC</string>
+    <!-- Navigation View - Sort - Sort by size (ascending) -->
+    <string name="sort_by_size_asc">Kwa ukubwa \u25B2</string>
+    <!-- Navigation View - Sort - Sort by size (descending) -->
+    <string name="sort_by_size_desc">Kwa ukubwa \u25BC</string>
+    <!-- Navigation View - Sort - Sort by type (ascending) -->
+    <string name="sort_by_type_asc">Kwa aina \u25B2</string>
+    <!-- Navigation View - Sort - Sort by type (descending) -->
+    <string name="sort_by_type_desc">Kwa aina \u25BC</string>
+
+    <!-- Navigation View - Layout - Icons -->
+    <string name="layout_icons">Ikoni</string>
+    <!-- Navigation View - Layout - Simple -->
+    <string name="layout_simple">Rahisi</string>
+    <!-- Navigation View - Layout - Details -->
+    <string name="layout_details">"Maelezo"</string>
+
+    <!-- Navigation View - View - Show folders first -->
+    <string name="cm_filemanager_show_dirs_first">Onyesha folda kwanza</string>
+    <!-- Navigation View - View - Show hidden files option -->
+    <string name="cm_filemanager_show_hidden">Onyesha faili zilizofichwa</string>
+    <!-- Navigation View - View - Show system files option -->
+    <string name="cm_filemanager_show_system">Onyesha faili za mfumo</string>
+    <!-- Navigation View - View - Show symlinks option -->
+    <string name="cm_filemanager_show_symlinks">Onyesha viungo rejeo</string>
+
+    <!-- Filesystem Info (no data). Dialog title -->
+    <string name="filesystem_info_warning_title">Hakuna maelezo</string>
+    <!-- Filesystem Info (no data). Dialog message -->
+    <string name="filesystem_info_warning_msg">Hakuna maelezo yanapatikana kwa mfumo wa faili.</string>
+    <!-- Filesystem Info - Filesystem couldn\'t be mounted -->
+    <string name="filesystem_info_cant_be_mounted_msg">Mfumo wa faili hauwezi kuwekwa/kuondolewa.</string>
+    <!-- Filesystem Info - Not allowed message -->
+    <string name="filesystem_info_mount_not_allowed_msg">Vitendo vya kuweka mfumo wa faili hauruhusiwi katika modi Salama. Donoa ili ubadilishe kwa modi ya Kufikia Msingi.</string>
+    <!-- Filesystem Info - Mount failed -->
+    <string name="filesystem_info_mount_failed_msg">Kitendo cha kuweka mfumo wa faili hakijafaulu. Baadhi ya mifumo ya faili, kama kadi za SD, haiwezi kuwekwa/kuondolewa kwa sababu imeundwa kama mifumo ya faili ya kusoma peke yake.</string>
+    <!-- Filesystem Info Dialog - Title -->
+    <string name="filesystem_info_dialog_title">Maelezo ya mfumo wa faili</string>
+    <!-- Filesystem Info Dialog - Tab - Info -->
+    <string name="filesystem_info_dialog_tab_info">"Maelezo"</string>
+    <!-- Filesystem Info Dialog - Tab - Disk Usage -->
+    <string name="filesystem_info_dialog_tab_disk_usage">Matumizi ya diski</string>
+    <!-- Filesystem Info Dialog - Status Label -->
+    <string name="filesystem_info_dialog_status">Hali:</string>
+    <!-- Filesystem Info Dialog - Mount Point Label -->
+    <string name="filesystem_info_dialog_mount_point">Eneo la kuweka:</string>
+    <!-- Filesystem Info Dialog - Device Label -->
+    <string name="filesystem_info_dialog_device">Kifaa:</string>
+    <!-- Filesystem Info Dialog - Type Label -->
+    <string name="filesystem_info_dialog_type">Aina:</string>
+    <!-- Filesystem Info Dialog - Options Label -->
+    <string name="filesystem_info_dialog_options">Chaguo:</string>
+    <!-- Filesystem Info Dialog - Dump/Pass Label -->
+    <string name="filesystem_info_dialog_dump_pass">Dumpo / Pita:</string>
+    <!-- Filesystem Info Dialog - Virtual Label -->
+    <string name="filesystem_info_dialog_virtual">Mnemba:</string>
+    <!-- Filesystem Info Dialog - Total Disk Usage -->
+    <string name="filesystem_info_dialog_total_disk_usage">Yote:</string>
+    <!-- Filesystem Info Dialog - Used Disk Usage -->
+    <string name="filesystem_info_dialog_used_disk_usage">Iliyotumiwa:</string>
+    <!-- Filesystem Info Dialog - Free Disk Usage -->
+    <string name="filesystem_info_dialog_free_disk_usage">Nafasi inayopatikana:</string>
+
+    <!-- Fso Properties - Not allowed message -->
+    <string name="fso_properties_permissions_not_allowed_msg">Vitendo vya ruhusu hauruhusiwi katika modi Salama. Donoa ili ubadilishe kwa modi ya Kufikia Msingi.</string>
+    <!-- Fso Properties - Failed to change owner to fso -->
+    <string name="fso_properties_failed_to_change_owner_msg">Ubadilishaji wa utendaji wa mmiliki haujafaulu.\n\nKwa sababu za usalama, maadhi ya mifumo ya faili, kama kadi za SD, usiruhusu ubadilishaji wa umiliki.</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_group_msg">Ubadilishaji wa utendaji wa kundi haujafaulu.\n\nKwa sababu za usalama, maadhi ya mifumo ya faili, kama kadi za SD, usiruhusu ubadilishaji wa makundi.</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_permission_msg">Ubadilishaji wa utendaji wa ruhusa haujafaulu.\n\nKwa sababu za usalama, maadhi ya mifumo ya faili, kama kadi za SD, usiruhusu ubadilishaji wa ruhusa.</string>
+    <!-- Fso Properties Dialog - Title -->
+    <string name="fso_properties_dialog_title">Sifa</string>
+    <!-- Fso Properties Dialog - Tab - Info -->
+    <string name="fso_properties_dialog_tab_info">"Maelezo"</string>
+    <!-- Fso Properties Dialog - Tab - Permissions -->
+    <string name="fso_properties_dialog_tab_permissions">"Idhini"</string>
+    <!-- Fso Properties Dialog - Name Label -->
+    <string name="fso_properties_dialog_name">Jina:</string>
+    <!-- Fso Properties Dialog - Parent Folder Label -->
+    <string name="fso_properties_dialog_parent">Kuu:</string>
+    <!-- Fso Properties Dialog - Type Label -->
+    <string name="fso_properties_dialog_type">Aina:</string>
+    <!-- Fso Properties Dialog - Category Label -->
+    <string name="fso_properties_dialog_category">Kategoria:</string>
+    <!-- Fso Properties Dialog - Link Label -->
+    <string name="fso_properties_dialog_link">Kiungo:</string>
+    <!-- Fso Properties Dialog - Size Label -->
+    <string name="fso_properties_dialog_size">Ukubwa:</string>
+    <!-- Fso Properties Dialog - Contains Label -->
+    <string name="fso_properties_dialog_contains">Maudhui:</string>
+    <!-- Fso Properties Dialog - Last Accessed Time Label -->
+    <string name="fso_properties_dialog_last_accessed_date">Ilifikiwa:</string>
+    <!-- Fso Properties Dialog - Last Modified Time Label -->
+    <string name="fso_properties_dialog_last_modified_date">Ilirekebishwa:</string>
+    <!-- Fso Properties Dialog - Last Changed Time -->
+    <string name="fso_properties_dialog_last_changed_date">Ilibadilishwa:</string>
+    <!-- Fso Properties Dialog - Owner Label -->
+    <string name="fso_properties_dialog_owner">Mmiliki:</string>
+    <!-- Fso Properties Dialog - Group Label -->
+    <string name="fso_properties_dialog_group">Kundi:</string>
+    <!-- Fso Properties Dialog - Others Label -->
+    <string name="fso_properties_dialog_others">Zingine:</string>
+    <!-- Fso Properties Dialog - Special Label -->
+    <string name="fso_properties_dialog_special" translatable="false">S</string>
+    <!-- Fso Properties Dialog - Read Label -->
+    <string name="fso_properties_dialog_read" translatable="false">R</string>
+    <!-- Fso Properties Dialog - Write Label -->
+    <string name="fso_properties_dialog_write" translatable="false">W</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_execute" translatable="false">X</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_folder_items" translatable="false"><xliff:g id="folders">%1$s</xliff:g> / <xliff:g id="files">%2$s</xliff:g></string>
+    <!-- Fso Properties Dialog - Skip media scan -->
+    <string name="fso_properties_dialog_include_in_media_scan">Ruka skani ya media:</string>
+    <string name="fso_failed_to_allow_media_scan">Haijafaulu kuruhusu kuskani media</string>
+    <string name="fso_failed_to_prevent_media_scan">Haijafaulu kuzuia kuskani media</string>
+    <string name="fso_delete_nomedia_dir_title">Futa saraka ya .nomedia</string>
+    <string name="fso_delete_nomedia_dir_body">Saraka hii ina saraka ya .nomedia.\n\nJe, unataka kuifuta na maudhui yake yote?</string>
+    <string name="fso_delete_nomedia_non_empty_title">Futa faili ya .nomedia</string>
+    <string name="fso_delete_nomedia_non_empty_body">Saraka hii ina faili isiyotupu ya .nomedia.\n\nJe, unataka kuifuta?</string>
+
+    <!-- History - History activity title -->
+    <string name="history">"Historia"</string>
+    <!-- History - The history is empty -->
+    <string name="msgs_history_empty">Historia ni tupu.</string>
+    <!-- History - The history reference is not in the actual history list -->
+    <string name="msgs_history_unknown">Kipengele cha historia kisichojulikana.</string>
+
+    <!-- Search - Search activity title -->
+    <string name="search">Tafuta matokeo</string>
+    <!-- Search - Search hint message -->
+    <string name="search_hint">Charaza utafutaji wako</string>
+    <!-- Search - Voice search hint message -->
+    <string name="search_voice_hint">Ongea utafutaji wako</string>
+    <!-- Search - Search error message -->
+    <string name="search_error_msg">Hitilafu ilitokea wakati wa utafutaji. Hakuna matokeo yamepatikana.</string>
+    <!-- Search - Search no results message -->
+    <string name="search_no_results_msg">Hakuna matokeo yamepatikana.</string>
+    <!-- Search - Number of items found in directory -->
+    <string name="search_found_items_in_directory"><xliff:g id="items">%1$s</xliff:g> katika <xliff:g id="path">%2$s</xliff:g></string>
+    <!-- Search - Search query terms -->
+    <string name="search_terms">&lt;b&gt;Masharti:&lt;/b&gt; <xliff:g id="terms">%1$s</xliff:g></string>
+    <!-- Search - Confirm search -->
+    <string name="search_few_characters_title">Thibitisha utafutaji</string>
+    <!-- Search - Some terms of the search are too small. The operation could be very costly -->
+    <string name="search_few_characters_msg">Baadhi ya maneno ya utafutaji yana herufi chache. Kitendo hiki kinaweza kuchukua muda mrefu na kutumia rasilimali nyingi za mfumo.\n\nJe, unataka kuendelea?</string>
+    <!-- Search - Searching dialog title -->
+    <string name="searching">"Tafadhali subiri…"</string>
+    <!-- Search - Searching label -->
+    <string name="searching_action_label">Utafutaji unaendelea.</string>
+
+    <!-- Picker Activity -->
+    <string name="picker" translatable="false">@string/app_name</string>
+    <!-- Picker Activity - Dialog title -->
+    <string name="picker_title">Chagua faili</string>
+    <string name="directory_picker_title">Chagua saraka</string>
+
+    <!-- Editor - Editor activity title -->
+    <string name="editor">Mhariri</string>
+    <!-- Editor - Invalid file message -->
+    <string name="editor_invalid_file_msg">Faili isiyo halali.</string>
+    <!-- Editor - File not found message -->
+    <string name="editor_file_not_found_msg">Faili haijapatikana.</string>
+    <!-- Editor - File size exceed the limit -->
+    <string name="editor_file_exceed_size_msg">Faili ni kubwa sana kufunguliwa ndani ya kifaa hiki.</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog title -->
+    <string name="editor_dirty_ask_title">Thibitisha utokaji</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog message -->
+    <string name="editor_dirty_ask_msg">Kuna mabadiliko ambayo hayajahifadhiwa.\n\nToka bila kuhifadhi?</string>
+    <!-- Editor - Save operation success -->
+    <string name="editor_successfully_saved">Faili ilihifadhiwa kwa mafanikio.</string>
+    <!-- Editor - Read-only file mode -->
+    <string name="editor_read_only_mode">Faili imefunguliwa katika modi ya kusoma peke yake.</string>
+    <!-- Editor - Dumping message -->
+    <string name="dumping_message">Kuunda dampo ya hex \u2026</string>
+    <!-- Editor - Displaying -->
+    <string name="displaying_message">Kuonyesha\u2026</string>
+
+    <!-- Bookmarks - Bookmarks activity title -->
+    <string name="bookmarks">Alamisho</string>
+    <!-- Bookmarks - Bookmark name - Home -->
+    <string name="bookmarks_home">"Nyumbani"</string>
+    <!-- Bookmarks - Bookmark name - Root folder -->
+    <string name="bookmarks_root_folder">Folda kuu</string>
+    <!-- Bookmarks - Bookmark name - System folder -->
+    <string name="bookmarks_system_folder">Mfumo wa folda</string>
+    <!-- Bookmarks - Bookmark name - Secure storage -->
+    <string name="bookmarks_secure">Hifadhi salama</string>
+    <!-- Bookmarks - Bookmark name - Remote storage -->
+    <string name="bookmarks_remote">Hifadhi ya mbali</string>
+    <!-- Bookmarks - Bookmark name - Button - Initial directory content description -->
+    <string name="bookmarks_button_config_cd">Weka folda ya kwanza.</string>
+    <!-- Bookmarks - Bookmark name - Button - Remove bookmark content description -->
+    <string name="bookmarks_button_remove_bookmark_cd">Ondoa alamisho.</string>
+    <!-- Bookmarks - Bookmarks - Actions - Bookmark successfully added -->
+    <string name="bookmarks_msgs_add_success">Alamisho imeongezwa kwa mafanikio.</string>
+
+    <!-- Initial directory dialog title -->
+    <string name="initial_directory_dialog_title">Folda ya kwanza</string>
+    <!-- Initial directory label -->
+    <string name="initial_directory_label">Chagua folda ya kwanza:</string>
+    <!-- Initial directory is relative -->
+    <string name="initial_directory_relative_msg">Njia zinazohusiana haziruhusiwi.</string>
+    <!-- Initial directory error message -->
+    <string name="initial_directory_error_msg">Hitilafu imetokea wakati wa kuhifadhi folda ya kwanza.</string>
+
+    <!-- Menu - Navigation - Search -->
+    <string name="menu_search">"Tafuta"</string>
+    <!-- Menu - Navigation - Settings -->
+    <string name="menu_settings">"Mipangilio"</string>
+    <!-- Menu - History - Clear history -->
+    <string name="menu_clear_history">Futa historia</string>
+    <!-- Menu - Editor - No suggestions -->
+    <string name="menu_no_suggestions">Hakuna mapendekezo</string>
+    <!-- Menu - Editor - Word wrap -->
+    <string name="menu_word_wrap">Kufungasha neno</string>
+    <!-- Menu - Editor - Sintax highlight -->
+    <string name="menu_syntax_highlight">Uangaziaji wa sintaksia</string>
+
+    <!-- Regular expression for create copy action -->
+    <string name="create_copy_regexp"><xliff:g id="name">%1$s</xliff:g> - nakili<xliff:g id="extension">%2$s</xliff:g></string>
+    <!-- Regular expression for new compressed file -->
+    <string name="create_new_compress_file_regexp"><xliff:g id="name">%1$s</xliff:g> - mpya<xliff:g id="extension">%2$s</xliff:g></string>
+
+    <!-- Waiting dialog - Performing operation message -->
+    <string name="waiting_dialog_msg">Kufanya kitendo\u2026</string>
+    <!-- Waiting dialog - Copying title -->
+    <string name="waiting_dialog_copying_title">Kunakili\u2026</string>
+    <!-- Waiting dialog - Copying message -->
+    <string name="waiting_dialog_copying_msg">&lt;b&gt;Kuanzia&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>&lt;br/&gt;&lt;b&gt;Hadi&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g></string>
+    <!-- Waiting dialog - Moving title -->
+    <string name="waiting_dialog_moving_title">Kusogea\u2026</string>
+    <!-- Waiting dialog - Moving message -->
+    <string name="waiting_dialog_moving_msg">&lt;b&gt;Kuanzia&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>&lt;br/&gt;&lt;b&gt;Hadi&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g></string>
+    <!-- Waiting dialog - Deleting title -->
+    <string name="waiting_dialog_deleting_title">Kufuta\u2026</string>
+    <!-- Waiting dialog - Deleting message -->
+    <string name="waiting_dialog_deleting_msg">&lt;b&gt;Faili&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_extracting_title">"Inadondoa..."</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_extracting_msg">&lt;b&gt;Faili&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_compressing_title">Kugandamiza\u2026</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_compressing_msg">&lt;b&gt;Faili&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Initializing the dialog -->
+    <string name="waiting_dialog_analizing_msg"><![CDATA[<b>Uchanganuzi\u2026</b>]]></string>
+    <!-- Extracting - Success message -->
+    <string name="msgs_extracting_success">Kitendo cha uchopoaji kilikamilishwa kwa mafanikio. Data ilichopolewa kwa <xliff:g id="destination">%1$s</xliff:g>.</string>
+    <!-- Compressing - Success message -->
+    <string name="msgs_compressing_success">Kitendo cha ugandamizaji kilikamilishwa kwa mafanikio. Data iligandamizwa kwa <xliff:g id="destination">%1$s</xliff:g>.</string>
+
+    <!-- Actions Dialog - Title -->
+    <string name="actions_dialog_title">Hatua</string>
+    <!-- Actions Dialog - Menu - Properties of current folder -->
+    <string name="actions_menu_properties_current_folder">Sifa</string>
+    <!-- Actions Dialog - Menu - Refresh -->
+    <string name="actions_menu_refresh">"Onyesha upya"</string>
+    <!-- Actions Dialog - Menu - New directory -->
+    <string name="actions_menu_new_directory">Folda mpya</string>
+    <!-- Actions Dialog - Menu - New file -->
+    <string name="actions_menu_new_file">Faili mpya</string>
+    <!-- Actions Dialog - Menu - Select all -->
+    <string name="actions_menu_select_all">Chagua zote</string>
+    <!-- Actions Dialog - Menu - Deselect all -->
+    <string name="actions_menu_deselect_all">Tengua uchaguzi wa zote</string>
+    <!-- Actions Dialog - Menu - Select -->
+    <string name="actions_menu_select">"Chagua"</string>
+    <!-- Actions Dialog - Menu - Deselect -->
+    <string name="actions_menu_deselect">Tengua uteuzi</string>
+    <!-- Actions Dialog - Menu - Copy/Paste selection -->
+    <string name="actions_menu_paste_selection">Nakili uteuzi hapa</string>
+    <!-- Actions Dialog - Menu - Move selection -->
+    <string name="actions_menu_move_selection">Sogeza uteuzi hapa</string>
+    <!-- Actions Dialog - Menu - Delete selection -->
+    <string name="actions_menu_delete_selection">Futa uteuzi</string>
+    <!-- Actions Dialog - Menu - Compress selection -->
+    <string name="actions_menu_compress_selection">Gandamiza uteuzi</string>
+    <!-- Actions Dialog - Menu - Create link -->
+    <string name="actions_menu_create_link">Unda kiungo</string>
+    <!-- Actions Dialog - Menu - Open -->
+    <string name="actions_menu_open">"Fungua"</string>
+    <!-- Actions Dialog - Menu - Open with -->
+    <string name="actions_menu_open_with">"Fungua ukitumia"</string>
+    <!-- Actions Dialog - Menu - Execute -->
+    <string name="actions_menu_execute">"Tekeleza"</string>
+    <!-- Actions Dialog - Menu - Send -->
+    <string name="actions_menu_send">"Tuma"</string>
+    <!-- Actions Dialog - Menu - Send selection -->
+    <string name="actions_menu_send_selection">Tuma uteuzi</string>
+    <!-- Actions Dialog - Menu - Compress -->
+    <string name="actions_menu_compress">Gandamiza</string>
+    <!-- Actions Dialog - Menu - Extract -->
+    <string name="actions_menu_extract">Chopoa</string>
+    <!-- Actions Dialog - Menu - Delete -->
+    <string name="actions_menu_delete">"Futa"</string>
+    <!-- Actions Dialog - Menu - Rename -->
+    <string name="actions_menu_rename">"Badilisha jina"</string>
+    <!-- Actions Dialog - Menu - Create copy -->
+    <string name="actions_menu_create_copy">Unda nakala</string>
+    <!-- Actions Dialog - Menu - Properties -->
+    <string name="actions_menu_properties">Sifa</string>
+    <!-- Actions Dialog - Menu - Add to bookmarks -->
+    <string name="actions_menu_add_to_bookmarks">Ongeza kwenye alamisho</string>
+    <!-- Actions Dialog - Menu - Add shortcut -->
+    <string name="actions_menu_add_shortcut">Ongeza mkato</string>
+    <!-- Actions Dialog - Menu - Open parent folder -->
+    <string name="actions_menu_open_parent_folder">Fungua folda mzazi</string>
+    <!-- Actions Dialog - Menu - Compute checksum -->
+    <string name="actions_menu_compute_checksum">Kokotoa namba thibitishi</string>
+    <!-- Actions Dialog - Menu - Print -->
+    <string name="actions_menu_print">"Chapisha"</string>
+    <!-- Actions Dialog - Menu - Set as home -->
+    <string name="actions_menu_set_as_home">Weka kama mwanzo</string>
+
+    <!-- Actions - Ask user prior to do an undone operation. Dialog message -->
+    <string name="actions_ask_undone_operation_msg">Hatua hii haiwezi kutenguliwa. Je, unataka kuendelea?</string>
+
+    <!-- Enter Name Dialog - Label -->
+    <string name="input_name_dialog_label">Jina:</string>
+    <!-- Enter Name Dialog - Message - Empty name -->
+    <string name="input_name_dialog_message_empty_name">Jina haliwezi kuwachwa tupu.</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_path_name">Jina lisilo halali. Herufi \'<xliff:g id="invalid_characters">%1$s</xliff:g>\' haziruhusiwi.</string>
+    <!-- Enter Name Dialog - Message - Invalid name length -->
+    <string name="input_name_dialog_message_invalid_name_length">Jina la faili ni lirefu sana, tafadhali tumia herufi 255 au chache.</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_name">Jina lisilo halali. Majina \'.\' and \'..\' hayaruhusiwi.</string>
+    <!-- Enter Name Dialog - Message - Name exists -->
+    <string name="input_name_dialog_message_name_exists">Tayari jina lipo.</string>
+
+    <!-- Associations Dialog - Title -->
+    <string name="associations_dialog_title">Uhusiano</string>
+    <!-- Associations Dialog - Remember the user action -->
+    <string name="associations_dialog_remember">Kumbuka uteuzi</string>
+    <!-- Associations Dialog - Open with Title -->
+    <string name="associations_dialog_openwith_title">"Fungua ukitumia"</string>
+    <!-- Associations Dialog - Open action (button title) -->
+    <string name="associations_dialog_openwith_action">Fungua</string>
+    <!-- Associations Dialog - Send with Title -->
+    <string name="associations_dialog_sendwith_title">Tuma na</string>
+    <!-- Associations Dialog - Send action (button title) -->
+    <string name="associations_dialog_sendwith_action">Tuma</string>
+
+    <!-- Inline Autocomplete Widget - Tab message nothing to complete -->
+    <string name="inline_autocomplete_tab_nothing_to_complete_msg">Hakuna kitu cha kukamilisha.</string>
+
+    <!-- Execution console - Title -->
+    <string name="execution_console_title">Kiweko</string>
+    <!-- Execution console - The script name label -->
+    <string name="execution_console_script_name_label">Hati:</string>
+    <!-- Execution console - The script execution time label -->
+    <string name="execution_console_script_execution_time_label">Saa:</string>
+    <!-- Execution console - The script exit code label -->
+    <string name="execution_console_script_exitcode_label">Msimbo wa kutoka:</string>
+    <!-- Execution console - The script execution time seconds string -->
+    <string name="execution_console_script_execution_time_text">Sekunde <xliff:g id="seconds">%1$s</xliff:g>.</string>
+
+    <!-- Compute checksum - Title -->
+    <string name="compute_checksum_title">Kokotoa namba thibitishi</string>
+    <!-- Compute checksum - The file name label -->
+    <string name="compute_checksum_filename_label">Faili:</string>
+    <!-- Compute checksum - The MD5 label -->
+    <string name="compute_checksum_md5_label" translatable="false">MD5:</string>
+    <!-- Compute checksum - The SHA1 label -->
+    <string name="compute_checksum_sha1_label" translatable="false">SHA-1:</string>
+    <!-- Compute checksum - The computing checksum message-->
+    <string name="compute_checksum_computing_checksum_msg">Kukokotoa namba thibitishi\u2026</string>
+
+    <!-- Mime/Types - Folder -->
+    <string name="mime_folder">Folda</string>
+    <!-- Mime/Types - Symlink -->
+    <string name="mime_symlink">Kiungo rejeo</string>
+    <!-- Mime/Types - Unknown -->
+    <string name="mime_unknown">"Haijulikani"</string>
+
+    <!--  Filetime formats -->
+    <string name="filetime_format_mode_system">Ya mfumo</string>
+    <string name="filetime_format_mode_locale">Ya eneo</string>
+    <string name="filetime_format_mode_ddMMyyyy_HHmmss">ss/mm/mmmm ss:dd:ss</string>
+    <string name="filetime_format_mode_MMddyyyy_HHmmss">mm/ss/mmmm ss:dd:ss</string>
+    <string name="filetime_format_mode_yyyyMMdd_HHmmss">mmmm-mm-ss ss:dd:ss</string>
+
+    <!-- Selection -->
+    <!-- For example "2 folders and 1 file selected." -->
+    <string name="selection_folders_and_files"><xliff:g id="folders">%1$s</xliff:g> na <xliff:g id="files">%2$s</xliff:g> zimechaguliwa.</string>
+
+    <!-- Category descriptions -->
+    <string name="category_system">MFUMO</string>
+    <string name="category_app">PROGRAMU</string>
+    <string name="category_binary">JOZI</string>
+    <string name="category_text">MAANDISHI</string>
+    <string name="category_document">HATI</string>
+    <string name="category_ebook">EBOOK</string>
+    <string name="category_mail">BARUA</string>
+    <string name="category_compress">GANDAMIZA</string>
+    <string name="category_exec">INAYOWEZA KUTEKELEZWA</string>
+    <string name="category_database">HIFADHIDATA</string>
+    <string name="category_font">FONTI</string>
+    <string name="category_image">PICHA</string>
+    <string name="category_audio">SAUTI</string>
+    <string name="category_video">VIDEO</string>
+    <string name="category_security">USALAMA</string>
+    <string name="category_all">ZOTE</string>
+
+    <!-- Compression - Compression modes dialog title -->
+    <string name="compression_mode_title">Modi ya ugandamizaji</string>
+    <!-- Compression - Supported archive and compression modes -->
+    <string name="compression_mode_tar" translatable="false">Tar (tar)</string>
+    <string name="compression_mode_tar_gzip" translatable="false">Tar/gzip (tar.gz)</string>
+    <string name="compression_mode_tar_gzip2" translatable="false">Tar/gzip (tgz)</string>
+    <string name="compression_mode_tar_bzip" translatable="false">Tar/bzip (tar.bz2)</string>
+    <string name="compression_mode_gzip" translatable="false">Gzip (gz)</string>
+    <string name="compression_mode_bzip" translatable="false">Bzip (bz2)</string>
+    <string name="compression_mode_zip" translatable="false">Zip (zip)</string>
+
+    <!-- Shortcut. Failed to handle the shortcut -->
+    <string name="shortcut_failed_msg">Haijafaulu kushughulikia mkato.</string>
+    <!-- Shortcut. The shortcut was created -->
+    <string name="shortcut_creation_success_msg">Mkato umeundwa kwa mafanikio.</string>
+    <!-- Shortcut. The shortcut wasn\'t created -->
+    <string name="shortcut_creation_failed_msg">Uundaji wa mkato haujafaulu.</string>
+
+    <!-- Preferences title -->
+    <string name="pref">"Mipangilio"</string>
+    <!-- Preferences - General title -->
+    <string name="pref_general">"Mipangilio ya kawaida"</string>
+    <!-- Preferences - Search title -->
+    <string name="pref_search">Chaguo za utafutaji</string>
+    <!-- Preferences - Storage title -->
+    <string name="pref_storage">Chaguo za hifadhi</string>
+    <!-- Preferences - Editor title -->
+    <string name="pref_editor">Chaguo za mhariri</string>
+    <!-- Preferences - Themes title -->
+    <string name="pref_themes">Mandhari</string>
+    <!-- Preferences - About title -->
+    <string name="pref_about">"Kuhusu"</string>
+    <!-- Preferences - About summary -->
+    <string name="pref_about_summary">Meneja wa Faili v<xliff:g id="version">%1$s</xliff:g>\nHakimiliki \u00A9 2012–2014 Mradi wa CyanogenMod</string>
+
+    <!-- Preferences - General - Behaviour category -->
+    <string name="pref_general_behaviour_category">Jumla</string>
+    <!-- Preferences - General - Case sensitive sort and navigating title -->
+    <string name="pref_case_sensitive_sort">Ugutuka herufi</string>
+    <!-- Preferences - General - Case sensitive sort and navigating summary -->
+    <string name="pref_case_sensitive_sort_summary">Zingatia herifu wakati unarambaza au kupanga matokeo ya utafutaji</string>
+    <!-- Preferences - General - Filetime format mode title -->
+    <string name="pref_filetime_format_mode">Fomati ya tarehe/saa</string>
+    <!-- Preferences - General -Disk usage warning level title -->
+    <string name="pref_disk_usage_warning_level">Onyo la matumizi ya diski</string>
+    <!-- Preferences - General - Disk usage warning level summary -->
+    <!-- FIXME Use "percent" instead of "%" symbol, because it make crash the app on getSummary
+         of ListPreference. This should be fixed in frameworks base prior to be added here. -->
+    <string name="pref_disk_usage_warning_level_summary" formatted="false">Onyesha rangi tofauti katika wiji za matumizi ya diski zinapofika asilimia <xliff:g id="level">%1$s</xliff:g> ya nafasi inayosalia ya diski</string>
+    <!-- Preferences - General - Compute folder statistics title -->
+    <string name="pref_compute_folder_statistics">Kokotoa takwimu za folda</string>
+    <!-- Preferences - General - Compute folder statistics summary on -->
+    <string name="pref_compute_folder_statistics_on">Onyo! Takwimu za folda ya ukokotoaji huchukua muda mrefu na kutumia rasilimali nyingi za mfumo</string>
+    <!-- Preferences - General - Display thumbs -->
+    <string name="pref_display_thumbs">"Hakiki"</string>
+    <!-- Preferences - General - Display thumbs summary -->
+    <string name="pref_display_thumbs_summary">Onyesha picha ya hakiki ya programu, faili za muziki, picha na video</string>
+    <!-- Preferences - General - Use flinger detection -->
+    <string name="pref_use_flinger">Tumia ishara za kutelezesha</string>
+    <!-- Preferences - General - Use flinger detection summary -->
+    <string name="pref_use_flinger_summary">Tumia ugunduzi wa ishara ya kutelezesha kushoto hadi kulia ili ufute faili au folda</string>
+    <!-- Preferences - General - Advanced settings category -->
+    <string name="pref_general_advanced_settings_category">"Mipangilio ya kina"</string>
+    <!-- Preferences - General - Access mode -->
+    <string name="pref_access_mode">Modi ya kufikia</string>
+    <!-- Preferences - General - Safe mode -->
+    <string name="pref_access_mode_safe">"Mtindo salama"</string>
+    <!-- Preferences - General - Safe mode summary -->
+    <string name="pref_access_mode_safe_summary">Modi salama\n\nProgramu inaendeshwa bila ruhusa na mifumo ya faili inayoweza kufikiwa ni viwango vya hifadhi (kadi za SD na USB)</string>
+    <!-- Preferences - General - Prompt user mode -->
+    <string name="pref_access_mode_prompt">Modi ya Kuuliza Mtumiaji</string>
+    <!-- Preferences - General - Prompt user mode summary -->
+    <string name="pref_access_mode_prompt_summary">Modi ya Kuuliza Mtumiaji\n\nProgramu unaendeshwa na ufikiaji kamili kwenye mfumo wa faili lakini itaitisha ruhusa kabla ya kutekeleza hatuo zozote za hali ya juu</string>
+    <!-- Preferences - General - Root access mode -->
+    <string name="pref_access_mode_root">Modi ya Kufikia Faili Kuu</string>
+    <!-- Preferences - General - Root access mode summary -->
+    <string name="pref_access_mode_root_summary">Modi ya Kufikia Faili Kuu\n\nOnyo! Modi hii huruhusu vitendo vinavyoweza kuvunja kifaa chako. Ni wajibu wako kuhakikishwa kwamba kitendo ni salama</string>
+    <!-- Preferences - General - Restrict secondary users access title -->
+    <string name="pref_restrict_secondary_users_access_title">Zuia ufikiaji wa watumiaji</string>
+    <!-- Preferences - General - Restrict secondary users access summary -->
+    <string name="pref_restrict_secondary_users_access_summary">Zuia ufikiaji wa watumiaji wa pili kwa mfumo mzima</string>
+    <!-- Preferences - Search - Results category -->
+    <string name="pref_search_results_category">"Matokeo"</string>
+    <!-- Preferences - Search - Show relevance widget -->
+    <string name="pref_show_relevance_widget">Onyesha wiji ya umuhimu</string>
+    <!-- Preferences - Search - Highlight search terms -->
+    <string name="pref_highlight_terms">Angazia maneno ya utafutaji</string>
+    <!-- Preferences - Search - Sort results mode -->
+    <string name="pref_sort_search_results_mode">Modi ya kupanga matokeo</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_none">Hakuna upangaji</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_name">"Kwa jina"</string>
+    <!-- Preferences - Search - Sort results mode. Relevance -->
+    <string name="pref_sort_search_results_mode_relevance">Kwa umuhimu</string>
+    <!-- Preferences - Search - Privacity category -->
+    <string name="pref_search_privacity_category">"Faragha"</string>
+    <!-- Preferences - Search - Save search terms -->
+    <string name="pref_save_search_terms">Hifadhi maneno ya utafutaji</string>
+    <!-- Preferences - Search - Save search terms summary on -->
+    <string name="pref_save_search_terms_on">Maneno ya utafutaji yatahifadhiwa na kutumiwa kama mapendekezo katika utafutaji wa siku za baadaye</string>
+    <!-- Preferences - Search - Save search terms summary off -->
+    <string name="pref_save_search_terms_off">Maneno ya utafutaji hayatahifadhiwa</string>
+    <!-- Preferences - Search - Remove saved search terms -->
+    <string name="pref_remove_saved_search_terms">Ondoa maneno ya utafutaji yaliyohifadhiwa</string>
+    <!-- Preferences - Search - Remove saved search terms summary -->
+    <string name="pref_remove_saved_search_terms_summary">Donoa ili uondoe maneno yote ya utafutaji yaliyohifadhiwa</string>
+    <!-- Preferences - Search - Suggestions were truncated -->
+    <string name="pref_remove_saved_search_terms_msg">Maneno yote ya utafutaji yaliyohifadhiwa yataondolewa</string>
+    <!-- Preferences - Storage - Secure Storage category -->
+    <string name="pref_secure_storage_category">Hifadhi salama</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync title -->
+    <string name="pref_secure_storage_delayed_sync_title">Ulandanishaji uliocheleweshwa</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync summary -->
+    <string name="pref_secure_storage_delayed_sync_summary">Ulandanishaji wa mfumo salama wa faili ni kitendo cha gharama ya juu. Wezesha chaguo hili ili kuruhusu majibu ya haraka baada ya kila kitendo, ukifanya ulandanishaji wakati mfumo wa faili uko katika hali ya kutotumika, lakini kwa kupoteza maelezo yanayosubiri ambayo hayajalandanishwa ikiwa programu itakwama.</string>
+    <!-- Preferences - Storage - Secure Storage - Reset password title -->
+    <string name="pref_secure_storage_reset_password_title">Weka nenosiri upya</string>
+    <!-- Preferences - Storage - Secure Storage - Delete storage title -->
+    <string name="pref_secure_storage_delete_storage_title">Futa hifadhi</string>
+    <!-- Preferences - Editor - Behaviour category -->
+    <string name="pref_editor_behaviour_category">Tabia</string>
+    <!-- Preferences - Editor - No suggestions -->
+    <string name="pref_no_suggestions">Hakuna mapendekezo</string>
+    <!-- Preferences - Editor - No suggestions summary -->
+    <string name="pref_no_suggestions_desc">Usionyeshe mapendelezo ya kamusi wakati wa kuhariri faili</string>
+    <!-- Preferences - Editor - Word wrap -->
+    <string name="pref_word_wrap">Kufungasha neno</string>
+    <!-- Preferences - Editor - Hex dump -->
+    <string name="pref_hexdump">Faili jozi za dampo ya hex</string>
+    <!-- Preferences - Editor - Hex dump desc -->
+    <string name="pref_hexdump_desc">Wakati unafungua faili jozi, unda dampo ya hex ya faili na uifungue katika kionyeshaji cha hex</string>
+    <!-- Preferences - Editor - Syntax highlight category -->
+    <string name="pref_editor_syntax_highlight_category">Uangaziaji wa sintaksia</string>
+    <!-- Preferences - Editor - Syntax highlight -->
+    <string name="pref_syntax_highlight">Uangaziaji wa sintaksia</string>
+    <!-- Preferences - Editor - Syntax highlight summary -->
+    <string name="pref_syntax_highlight_desc">Angazia sintaksia ya faili inayoonyeshwa katika kihariri (wakati kichakataji cha kuangazia sintaksia kinapatikana tu kwa aina ya faili)</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme -->
+    <string name="pref_syntax_highlight_color_scheme">Mpango wa rangi</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme summary -->
+    <string name="pref_syntax_highlight_color_scheme_desc">Chagua mpango wa rangi wa kuangazia sintaksia</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme -->
+    <string name="pref_syntax_sh_use_theme_default">Tumia chaguo-msingi la mandhari</string>
+    <!-- Preferences - Editor - Syntax highlight -Color Scheme summary -->
+    <string name="pref_syntax_sh_use_theme_default_desc">Tumia uangaziaji wa sintaksia wa chaguo-msingi wa mandhari ya sasa</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme - Items category -->
+    <string name="pref_editor_sh_item_category">Vipengele</string>
+    <!-- Preferences - Themes - Themes selection category -->
+    <string name="pref_themes_selection_category">Mandhari</string>
+    <!-- Preferences - Themes - Set theme button -->
+    <string name="pref_themes_set_theme">Weka mandhari</string>
+    <!-- Preferences - Themes - Confirmation message -->
+    <string name="pref_themes_confirmation">Mandhari yametekelezwa kwa mafanikio.</string>
+    <!-- Preferences - Themes - Theme not found message -->
+    <string name="pref_themes_not_found">Mandhari hayajapatikana.</string>
+
+    <!-- Preferences - Debug - Capture debug traces -->
+    <string name="pref_debug_traces">Maeleo ya ueuaji wa logi</string>
+
+    <!-- Themes - Default theme name -->
+    <string name="theme_default_name">Mandhari Angavu</string>
+    <!-- Themes - Default theme description -->
+    <string name="theme_default_description">Mandhari mepesi ya Meneja Faili ya CyanogenMod.</string>
+    <!-- Themes - Default theme author -->
+    <string name="themes_author">CyanogenMod</string>
+
+    <!-- Navigation drawer -->
+    <string name="drawer_open">"Fungua menyu"</string>
+    <string name="drawer_close">"Funga menyu"</string>
+
+    <!-- ColorPickerDialog -->
+    <!-- The text of the alpha slider control -->
+    <string name="color_picker_alpha_slider_text">Alfa</string>
+    <!-- The label of the current color panel -->
+    <string name="color_picker_current_text">Sasa:</string>
+    <!-- The label of the new color panel -->
+    <string name="color_picker_new_text">Mpya:</string>
+    <!-- The label of the color input -->
+    <string name="color_picker_color">Rangi:</string>
+
+    <!-- Android Syntax Highlight -->
+    <string name="ash_reset_color_scheme">Rejeza mpango wa chaguo-msingi wa rangi ya mandhari</string>
+    <string name="ash_text">"Tuma ujumbe wa maandishi"</string>
+    <string name="ash_assignment">Upangaji</string>
+    <string name="ash_singleline_comment">Maoni ya Mstari Mmoja</string>
+    <string name="ash_multiline_comment">Maoni ya Mistari Mingi</string>
+    <string name="ash_keyword">Neno msingi</string>
+    <string name="ash_quoted_string">Mtungo uliotajwa</string>
+    <string name="ash_variable">Tofauti</string>
+
+    <!-- Secure Storage -->
+    <!-- Secure Storage dialog title - Unlock -->
+    <string name="secure_storage_unlock_title">Fungua hifadhi</string>
+    <!-- Secure Storage dialog title - Create -->
+    <string name="secure_storage_create_title">Unda hifadhi</string>
+    <!-- Secure Storage dialog title - Reset -->
+    <string name="secure_storage_reset_title">Weka nenosiri upya</string>
+    <!-- Secure Storage dialog title - Delete -->
+    <string name="secure_storage_delete_title">Futa hifadhi</string>
+    <!-- Secure Storage unlock dialog message (secure storage exists) -->
+    <string name="secure_storage_unlock_key_prompt_msg">Charaza nenosiri ili ufungue mfumo wa faili wa hifadhi salama.</string>
+    <!-- Secure Storage unlock dialog message (new secure storage) -->
+    <string name="secure_storage_unlock_key_new_msg">Charaza nenosiri ili ulinde mfumo wa faili wa hifadhi salama.</string>
+    <!-- Secure Storage unlock dialog message (reset the current password) -->
+    <string name="secure_storage_unlock_key_reset_msg">Charaza nenosiri la sasa na lipya ili uweke mfumo wa faili wa hifadhi salama upya.</string>
+    <!-- Secure Storage unlock dialog message (delete the secure storage) -->
+    <string name="secure_storage_unlock_key_delete_msg">Charaza nenosiri ili ufute mfumo wa faili wa hifadhi salama.</string>
+    <!-- Secure Storage unlock dialog old key title -->
+    <string name="secure_storage_unlock_old_key_title">Nenosiri la zamani:</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_new_key_title">Nenosiri lipya:</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_key_title">Nenosiri:</string>
+    <!-- Secure Storage unlock dialog repeat key title-->
+    <string name="secure_storage_unlock_repeat_title">Rudia nenosiri:</string>
+    <!-- Secure Storage create button -->
+    <string name="secure_storage_create_button">"Unda"</string>
+    <!-- Secure Storage unlock button -->
+    <string name="secure_storage_unlock_button">"Fungua"</string>
+    <!-- Secure Storage reset button -->
+    <string name="secure_storage_reset_button">"Weka upya"</string>
+    <!-- Secure Storage delete button -->
+    <string name="secure_storage_delete_button">Futa</string>
+    <!-- Secure Storage unlock failed toast -->
+    <string name="secure_storage_unlock_failed">Haiwezi kufungua hifadhi</string>
+    <!-- Secure Storage unlock validation, length -->
+    <string name="secure_storage_unlock_validation_length">Lazima nenosiri liwe na angalau herufi <xliff:g id="characters">%1$d</xliff:g>.</string>
+    <!-- Secure Storage unlock validation, equal -->
+    <string name="secure_storage_unlock_validation_equals">Nenosiri halilingani.</string>
+
+    <!-- Print messages -->
+    <!-- Unsupported document format -->
+    <string name="print_unsupported_document">Fomati ya hati isiyokubaliwa</string>
+    <!-- Unsupported image format -->
+    <string name="print_unsupported_image">Fomati ya picha isiyokubaliwa</string>
+    <!-- Print header -->
+    <string name="print_document_header">Hati: <xliff:g id="document_name">%1$s</xliff:g></string>
+    <!-- Print footer -->
+    <string name="print_document_footer">Ukurasa <xliff:g id="page_number">%1$s</xliff:g></string>
+
+    <!-- Security - Extract relative or absolute files -->
+    <string name="security_warning_extract">Onyo!\n\nKuchopoa faili ya jalada yenye njia zinazohusiana au njia kamili kunaweza kusababisha uharibifu wa kifaa chako kwa kuandikiza faili za mfumo.\n\nJe, unataka kuendelea?</string>
+
+    <!-- ChangeLog - Dialog title -->
+    <string name="changelog_title">Badilisha logi</string>
+
+    <!-- Welcome Dialog - Title -->
+    <string name="welcome_title">Karibu</string>
+    <!-- Welcome Dialog - Message -->
+    <string name="welcome_msg">Karibu kwa meneja faili ya CyanogenMod.\n\nProgramu hii hukuruhusu angaanga mfumo wa faili na kufanya vitendo vinavyoweza kuharibu kifaa chako. Ili uzuie uharibifu, programu itawaka katika modi salama isiyo ya hali ya juu.\n\nUnaweza kufikia modi iliyoendelea, ya hali ya juu kupitia Mipangilio. Ni jukumu lako kuhakikisha kwamba kitendo hakitaharibu mfumo wako.\n\nTimu ya CyanogenMod</string>
+
+    <string name="easy_mode_type_icon">Ikoni ya aina ya uigaji</string>
+    <string name="easy_mode_type_none">Faili Zote</string>
+    <string name="easy_mode_type_images">"Picha"</string>
+    <string name="easy_mode_type_videos">"Video"</string>
+    <string name="easy_mode_type_music">"Muziki"</string>
+    <string name="easy_mode_type_documents">"Hati"</string>
+
+    <string name="activity_not_found_exception">Haikuweza kupata programu ya kufungua faili hii</string>
+    <string name="no_permission_for_drm">"Samahani, faili ya DRM haiwezi kushirikishwa"</string>
+    <string name="actions_menu_drm_license_info">Maelezo ya leseni ya Drm</string>
+</resources>

@@ -1,0 +1,1456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!--
+/*
+**
+** Copyright 2007 The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Choices for timezone picker first level.
+         These values will be used as search terms for TimeZone displayName
+         strings. --> <skip/>
+    <!-- The time zone picker screen has two levels.  The first level allows the user to choose a region. -->
+    <string-array name="timezone_filters">
+    <!-- The next level of the time zoner picker should show time zones from the Americas. -->
+        <item>အေမရိကန္</item>
+    <!-- The next level of the time zoner picker should show time zones from Europe. -->
+        <item>ဥေရာပ</item>
+    <!-- The next level of the time zoner picker should show time zones from Africa. -->
+        <item>အာဖရိက</item>
+    <!-- The next level of the time zoner picker should show time zones from Asia. -->
+        <item>အာရွ</item>
+    <!-- The next level of the time zoner picker should show time zones from Australia. -->
+        <item>ၾသစေတးလ်</item>
+    <!-- The next level of the time zoner picker should show time zones from Pacific. -->
+        <item>ပစိဖိတ္</item>
+    <!-- The next level of the time zoner picker should show time zones from ALL regions. -->
+        <item>အားလံုး</item>
+    </string-array>
+
+     <!-- There is a setting to control the format of dates displayed throughout the system.  This is in the Date & Time Settings screen.  These will be adjusted to use punctuation appropriate to the user\'s locale. -->
+    <string-array name="date_format_values" translatable="false">
+        <!-- The blank item means to use whatever the locale calls for. -->
+        <item/>
+        <item>MM-dd-yyyy</item>
+        <item>dd-MM-yyyy</item>
+        <item>yyyy-MM-dd</item>
+    </string-array>
+
+    <!-- Display settings.  The delay in inactivity before the screen is turned off. These are shown in a list dialog. -->
+    <string-array name="screen_timeout_entries">
+        <item>၁၅ စကၠန္႔</item>
+        <item>၃၀ စကၠန္႔</item>
+        <item>၁ မိနစ္</item>
+        <item>၂ မိနစ္</item>
+        <item>၅ မိနစ္</item>
+        <item>၁၀ မိနစ္</item>
+        <item>၃၀မိနစ္</item>
+        <item>ဘယ်တော့မှ</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="screen_timeout_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>15000</item>
+        <!-- Do not translate. -->
+        <item>30000</item>
+        <!-- Do not translate. -->
+        <item>60000</item>
+        <!-- Do not translate. -->
+        <item>120000</item>
+        <!-- Do not translate. -->
+        <item>300000</item>
+        <!-- Do not translate. -->
+        <item>600000</item>
+        <!-- Do not translate. -->
+        <item>1800000</item>
+        <!-- Do not translate. -->
+        <item>-1</item>
+    </string-array>
+
+    <!-- Display settings.  The delay in inactivity before the dream is shown. These are shown in a list dialog. -->
+    <string-array name="dream_timeout_entries">
+        <item>မည္သည့္အခါမွ</item>
+        <item>၁၅ စကၠန္႔</item>
+        <item>၃၀ စကၠန္႔</item>
+        <item>၁ မိနစ္</item>
+        <item>၂ မိနစ္</item>
+        <item>၅ မိနစ္</item>
+        <item>၁၀ မိနစ္</item>
+        <item>၃၀ မိနစ္</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="dream_timeout_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>15000</item>
+        <!-- Do not translate. -->
+        <item>30000</item>
+        <!-- Do not translate. -->
+        <item>60000</item>
+        <!-- Do not translate. -->
+        <item>120000</item>
+        <!-- Do not translate. -->
+        <item>300000</item>
+        <!-- Do not translate. -->
+        <item>600000</item>
+        <!-- Do not translate. -->
+        <item>1800000</item>
+    </string-array>
+
+    <!-- Security settings.  The delay after screen is turned off until device locks.
+         These are shown in a list dialog. -->
+    <string-array name="lock_after_timeout_entries">
+        <item>ခ်က္ခ်င္း</item>
+        <item>၅ စကၠန္႔</item>
+        <item>၁၅ စကၠန္႔</item>
+        <item>၃၀ စကၠန္႔</item>
+        <item>၁ မိနစ္</item>
+        <item>၂ မိနစ္</item>
+        <item>၅ မိနစ္</item>
+        <item>၁၀ မိနစ္</item>
+        <item>၃၀ မိနစ္</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="lock_after_timeout_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>5000</item>
+        <!-- Do not translate. -->
+        <item>15000</item>
+        <!-- Do not translate. -->
+        <item>30000</item>
+        <!-- Do not translate. -->
+        <item>60000</item>
+        <!-- Do not translate. -->
+        <item>120000</item>
+        <!-- Do not translate. -->
+        <item>300000</item>
+        <!-- Do not translate. -->
+        <item>600000</item>
+        <!-- Do not translate. -->
+        <item>1800000</item>
+    </string-array>
+
+    <string-array name="entries_font_size">
+        <item msgid="6490061470416867723">ေသးငယ္ေသာ</item>
+        <item msgid="3579015730662088893">ပံုမွန္</item>
+        <item msgid="1678068858001018666">အႀကီးစား</item>
+        <item msgid="490158884605093126">ဧရာမ</item>
+    </string-array>
+
+    <string-array name="entryvalues_font_size" translatable="false">
+        <item>0.85</item>
+        <item>1.0</item>
+        <item>1.15</item>
+        <item>1.30</item>
+    </string-array>
+
+    <!-- TTS settings -->
+
+    <!-- Default speech rate choices -->
+    <string-array name="tts_rate_entries">
+        <item>အလြန္ေနွးသည္</item>
+        <item>ေႏွးသည္</item>
+        <item>ပံုမွန္</item>
+        <item>ျမန္သည္</item>
+        <item>ပိုျမန္စြာ</item>
+        <item>အလြန္ျမန္စြာ</item>
+        <item>သြက္သြက္</item>
+        <item>အရမ္းသြက္စြာ</item>
+        <item>အျမန္ဆံုး</item>
+    </string-array>
+    <!-- Do not translate. -->
+    <string-array name="tts_rate_values">
+        <item>60</item>
+        <item>80</item>
+        <item>100</item>
+        <item>150</item>
+        <item>200</item>
+        <item>250</item>
+        <item>300</item>
+        <item>350</item>
+        <item>400</item>
+    </string-array>
+
+    <!-- Default pitch choices -->
+    <string-array name="tts_pitch_entries">
+        <item>အလြန္နည္းေသာ</item>
+        <item>နည္းေသာ</item>
+        <item>ပံုမွန္</item>
+        <item>ျမင့္မားျခင္း</item>
+        <item>အလြန္ျမင့္မားျခင္း</item>
+    </string-array>
+    <!-- Do not translate. -->
+    <string-array name="tts_pitch_values">
+        <item>50</item>
+        <item>80</item>
+        <item>100</item>
+        <item>120</item>
+        <item>150</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="tts_demo_strings" translatable="false">
+        <item>This is an example of speech synthesis in English.</item>
+        <item>Voici un échantillon de synthèse vocale en français.</item>
+        <item>Dies ist ein Beispiel für Sprachsynthese in Deutsch.</item>
+        <item>Questo è un esempio di sintesi vocale in italiano.</item>
+        <item>Este es un ejemplo de síntesis de voz en español.</item>
+        <item>이것은 한국어 음성 합성의 예입니다.</item>
+    </string-array>
+    <string-array name="tts_demo_string_langs" translatable="false">
+        <item>eng</item>
+        <item>fra</item>
+        <item>deu</item>
+        <item>ita</item>
+        <item>spa</item>
+        <item>kor</item>
+    </string-array>
+
+    <!-- AGPS settings -->
+
+    <!-- agps network -->
+    <string-array name="agps_network_values">
+     <item>0</item>
+     <item>1</item>
+    </string-array>
+    <string-array name="agps_network_entries">
+     <item>"အိမ္ကြန္ယက္"</item>
+     <item>"ကြန္ယက္အားလံုး"</item>
+   </string-array>
+   <!-- agps si mode type -->
+    <string-array name="agps_si_mode_values" translatable="false">
+     <item>0</item>
+     <item>1</item>
+    </string-array>
+    <string-array name="agps_si_mode_entries">
+     <item>"MSB"</item>
+     <item>"MSA"</item>
+    </string-array>
+    <!-- agps apn type -->
+    <string-array name="agps_apn_values">
+     <item>0</item>
+     <item>1</item>
+    </string-array>
+    <string-array name="agps_apn_entries">
+     <item>"CMWAP"</item>
+     <item>"CMNET"</item>
+    </string-array>
+    <!-- agps reset type -->
+    <string-array name="agps_reset_type_values">
+     <item>0</item>
+     <item>1</item>
+     <item>2</item>
+    </string-array>
+    <string-array name="agps_reset_type_entries">
+     <item>"ပူေသာ"</item>
+     <item>"ေႏြးေသာ"</item>
+     <item>"ေအးေသာ"</item>
+    </string-array>
+
+    <!-- Wi-Fi settings -->
+
+    <!-- Match this with the order of NetworkInfo.DetailedState. --> <skip/>
+    <!-- Wi-Fi settings. The status messages when the network is unknown. -->
+    <string-array name="wifi_status">
+        <!-- Status message of Wi-Fi when it is idle. -->
+        <item/>
+        <!-- Status message of Wi-Fi when it is scanning. -->
+        <item>စကန္ ျပဳလုပ္ေနၿပီ</item>
+        <!-- Status message of Wi-Fi when it is connecting. -->
+        <item>ခ်ိတ္ဆက္ေနသည္</item>
+        <!-- Status message of Wi-Fi when it is authenticating. -->
+        <item>စစ္မွန္ေၾကာင္းအတည္ျပဳေနသည္</item>
+        <!-- Status message of Wi-Fi when it is obtaining IP address. -->
+        <item>အိုင္ပီလိပ္စာရယူေနသည္</item>
+        <!-- Status message of Wi-Fi when it is connected. -->
+        <item>ဆက္သြယ္ထားၿပီး</item>
+        <!-- Status message of Wi-Fi when it is suspended. -->
+        <item>ဆိုင္းငံ့ထားသည္</item>
+        <!-- Status message of Wi-Fi when it is disconnecting. -->
+        <item>အဆက္အသြယ္ျဖတ္ေတာက္ေနသည္</item>
+        <!-- Status message of Wi-Fi when it is disconnected. -->
+        <item>ခ်ိတ္ဆက္မႈျပတ္ေတာက္သည္</item>
+        <!-- Status message of Wi-Fi when it is a failure. -->
+        <item>မေအာင္ျမင္ပါ</item>
+        <!-- Status message of Wi-Fi when it is blocked. -->
+        <item>ပိတ္ထားသည္</item>
+        <!-- Status message of Wi-Fi when connectiong is being verified. -->
+        <item>ေနွးေကြးေသာဆက္သြယ္မႈကို ယာယီေရွာင္ရွားထားသည္</item>
+    </string-array>
+
+    <!-- Match this with the order of NetworkInfo.DetailedState. --> <skip/>
+    <!-- Wi-Fi settings. The status messages when the network is known. -->
+    <string-array name="wifi_status_with_ssid">
+        <!-- Status message of Wi-Fi when it is idle. -->
+        <item/>
+        <!-- Status message of Wi-Fi when it is scanning. -->
+        <item>စကန္ ျပဳလုပ္ေနၿပီ</item>
+        <!-- Status message of Wi-Fi when it is connecting to a network. -->
+        <item><xliff:g id="NETWORK_NAME">%1$s</xliff:g> ႏွင့္ ဆက္သြယ္ေနပါသည္</item>
+        <!-- Status message of Wi-Fi when it is authenticating with a network. -->
+        <item><xliff:g id="NETWORK_NAME">%1$s</xliff:g>ႏွင့္စစ္မွန္ေၾကာင္းအတည္ျပဳေနသည္</item>
+        <!-- Status message of Wi-Fi when it is obtaining IP address from a network. -->
+        <item><xliff:g id="NETWORK_NAME">%1$s</xliff:g> မွ IP လိပ္စာရယူေနသည္</item>
+        <!-- Status message of Wi-Fi when it is connected to a network. -->
+        <item><xliff:g id="NETWORK_NAME">%1$s</xliff:g> ႏွင့္ ဆက္သြယ္ထားၿပီး</item>
+        <!-- Status message of Wi-Fi when it is suspended. -->
+        <item>ဆိုင္းငံ့ထားသည္</item>
+        <!-- Status message of Wi-Fi when it is disconnecting from a network. -->
+        <item><xliff:g id="NETWORK_NAME">%1$s</xliff:g>မွ ဆက္သြယ္မႈျဖတ္ေတာက္သြားသည္</item>
+        <!-- Status message of Wi-Fi when it is disconnected. -->
+        <item>ခ်ိတ္ဆက္မႈျပတ္ေတာက္သည္</item>
+        <!-- Status message of Wi-Fi when it is a failure. -->
+        <item>မေအာင္ျမင္ပါ</item>
+        <!-- Status message of Wi-Fi when it is blocked. -->
+        <item>ပိတ္ထားသည္</item>
+        <!-- Status message of Wi-Fi when connectiong is being verified. -->
+        <item>ေနွးေကြးေသာဆက္သြယ္မႈကို ယာယီေရွာင္ရွားထားသည္</item>
+    </string-array>
+
+    <!-- Match this with the constants in AccessPoint. --> <skip/>
+    <!-- Wi-Fi security choices used when manually added a Wi-Fi network -->
+    <string-array name="wifi_security">
+        <!-- The Wi-Fi network does not have any security. -->
+        <item>@string/wifi_security_none</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_wep</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_psk_generic</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_eap</item>
+
+    </string-array>
+
+    <!-- Match this with the constants in AccessPoint. --> <skip/>
+    <!-- Wi-Fi security types for New User Dialog. EAP is not configurable. -->
+    <string-array name="wifi_security_no_eap">
+        <!-- The Wi-Fi network does not have any security. -->
+        <item>@string/wifi_security_none</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_wep</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_psk_generic</item>
+    </string-array>
+
+   <!-- Wi-Fi AP settings.  The type of security a Wi-Fi AP supports. -->
+   <!-- Note that adding/removing/moving the items will need wifi settings code change. -->
+    <string-array name="wifi_ap_security">
+        <item>@string/wifi_security_none</item>
+        <item>@string/wifi_security_wpa2</item>
+    </string-array>
+
+    <!-- Match this with the constants in WifiDialog. --> <skip/>
+    <!-- Wi-Fi settings.  The type of EAP method a Wi-Fi network has. -->
+    <string-array name="wifi_eap_method">
+        <!-- Do not translate. -->
+        <item>"PEAP"</item>
+        <!-- Do not translate. -->
+        <item>"TLS"</item>
+        <!-- Do not translate. -->
+        <item>"TTLS"</item>
+        <!-- Do not translate. -->
+        <item>"PWD"</item>
+    </string-array>
+
+   <!-- Wi-Fi WPS setup for p2p connections.  -->
+   <!-- Note that adding/removing/moving the items will need wifi settings code change. -->
+    <string-array name="wifi_p2p_wps_setup">
+        <!-- Push button based configuration involves pushing a button on two connecting devices [CHAR LIMIT=30]-->
+        <item>ႏွိပ္ရန္ခလုတ္</item>
+        <!-- This involves entering a pin obtained from a peer device [CHAR LIMIT=30] -->
+        <item>တန္းတူစက္ပစၥည္းမွပင္နံပါတ္</item>
+        <!-- This involves generating a pin from this device [CHAR LIMIT=20] -->
+        <item>ဤစက္မွ ပင္နံပါတ္</item>
+    </string-array>
+
+    <!-- Match this with the order of WifiP2pDevice.Status -->
+    <!-- Wi-Fi p2p settings device status message -->
+    <string-array name="wifi_p2p_status">
+        <item>ဆက္သြယ္ထားၿပီး</item>
+        <item>ဖိတ္ေခၚထားၿပီး</item>
+        <item>မေအာင္ျမင္ပါ</item>
+        <item>ခ်ိတ္ဆက္ႏိုင္ေသာ</item>
+        <item>အတိုင္းအတာ ျပင္ပ</item>
+   </string-array>
+
+
+    <!-- Bluetooth Settings -->
+
+    <!-- Discoverable mode timeout options -->
+    <string-array name="bluetooth_visibility_timeout_entries">
+        <item>၂ မိနစ္</item>
+        <item>၅ မိနစ္</item>
+        <item>၁ နာရီ</item>
+        <item>ဘယ္ေတာ့မွအခ်ိန္မကုန္ဆံုးေစရ</item>
+    </string-array>
+
+    <!-- Match this with drawable.wifi_signal. --> <skip/>
+    <!-- Wi-Fi settings. The signal strength a Wi-Fi network has. -->
+    <string-array name="wifi_signal">
+        <item>ညံ့သည္</item>
+        <item>သင့္တင့္သည္</item>
+        <item>ေကာင္းသည္</item>
+        <item>အလြန္ေကာင္းသည္</item>
+    </string-array>
+
+    <!-- Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi sleep policy. -->
+    <string-array name="wifi_sleep_policy_entries">
+        <!-- Always keep Wi-Fi on when screen turns off. -->
+        <item>အျမဲတမ္း</item>
+        <!-- Keep Wi-Fi on when screen turns off and plugged in.  When on battery, go to sleep when screen turns off. -->
+        <item>ႀကိဳးျဖင့္ဆက္ထားသည့္အခါသာ</item>
+        <!-- Do not keep Wi-Fi on when screen turns off.  [CHAR LIMIT=40] -->
+        <item>မည္သည့္အခါမွ</item>
+    </string-array>
+
+    <!-- Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi sleep policy. Used when
+         the device is Wi-Fi-only. [CHAR LIMIT=30] -->
+    <string-array name="wifi_sleep_policy_entries_wifi_only">
+        <!-- Always keep Wi-Fi on when screen turns off. -->
+        <item>အျမဲတမ္း</item>
+        <!-- Keep Wi-Fi on when screen turns off and plugged in.  When on battery, go to sleep when screen turns off. -->
+        <item>ပလပ္အင္ ရွိေသာအခါမွသာ</item>
+        <!-- Do not keep Wi-Fi on when screen turns off, for Wi-Fi-only devices, no other data connection -->
+        <item>မည္သည့္အခါမွ</item>
+    </string-array>
+
+    <!-- Match with wifi_sleep_policy_entries and the values of the settings in Settings class. --> <skip/>
+    <!-- Do not translate. -->
+    <string-array name="wifi_sleep_policy_values">
+        <!-- Do not translate. -->
+        <item>2</item>
+        <!-- Do not translate. -->
+        <item>1</item>
+        <!-- Do not translate. -->
+        <item>0</item>
+    </string-array>
+
+    <!-- Data Usage settings. Range of data usage. -->
+    <string-array name="data_usage_data_range">
+        <!-- Last 30 days [CHAR LIMIT=25]-->
+        <item>ေနာက္ဆံုး ရက္ ၃၀</item>
+        <!-- Set usage cycle [CHAR LIMIT=25]-->
+        <item>သံုးစြဲမႈ စက္ဝန္း သတ္မွတ္ရန္...</item>
+    </string-array>
+
+    <!-- Sim Cards display numbers. Range of data usage. -->
+    <string-array name="sim_card_data_range">
+        <!-- Last 4 digits [CHAR LIMIT=40]-->
+        <item>ေနာက္ဆံုး ဂဏန္း ၄ လံုး</item>
+        <!-- First 4 digits [CHAR LIMIT=40]-->
+        <item>ပထမ ဂဏန္း ၄ လံုး</item>
+    </string-array>
+
+    <!-- Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi frequency band. -->
+    <string-array name="wifi_frequency_band_entries">
+        <!-- Operation on both 2.4 GHz and 5 GHz [CHAR LIMIT=25]-->
+        <item>အလိုအေလ်ာက္</item>
+        <!-- Operation on 5 GHz alone [CHAR LIMIT=25]-->
+        <item>၅ GHzသာ</item>
+        <!-- Operation on 2.4 GHz alone [CHAR LIMIT=25]-->
+        <item>၂.၄ GHz သာ</item>
+    </string-array>
+
+    <!-- Match with wifi_frequency_band_entries and the values of the settings in WifiManager. -->
+    <!-- Do not translate. -->
+    <string-array name="wifi_frequency_band_values">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>1</item>
+        <!-- Do not translate. -->
+        <item>2</item>
+    </string-array>
+
+
+    <!-- Display options for UsageStats class -->
+    <string-array name="usage_stats_display_order_types">
+        <item>အသံုးျပဳၾကာခ်ိန္</item>
+        <item>ေနာက္ဆံုး အၾကိမ္ အသံုးျပဳခဲ့</item>
+        <item>အပလီေကးရွင္းအမည္</item>
+    </string-array>
+
+    <!-- EAP method -->
+    <string-array name="wifi_eap_entries">
+        <item>"PEAPနည်းလမ်း"</item>
+        <item>"TLS"</item>
+        <item>"TTLS"</item>
+        <item>"PWD"</item>
+    </string-array>
+
+    <!-- Phase 2 options for PEAP -->
+    <string-array name="wifi_peap_phase2_entries">
+        <item>တစ္ခုမွမဟုတ္ပါ</item>
+        <item>"MSCHAPV2"</item>
+        <item>"GTC"</item>
+    </string-array>
+
+    <!-- Phase 2 options for rest of EAP methods -->
+    <string-array name="wifi_phase2_entries">
+        <item>တစ္ခုမွမဟုတ္ပါ</item>
+        <item>"PAP"</item>
+        <item>"MSCHAP"</item>
+        <item>"MSCHAPV2"</item>
+        <item>"GTC"</item>
+    </string-array>
+
+    <!-- Wi-Fi IP settings. -->
+   <!-- Note that adding/removing/moving the items will need wifi settings code change. -->
+    <string-array name="wifi_ip_settings">
+        <!-- Use DHCP (Dynamic Host Configuration Protocol) for obtaining IP settings [CHAR LIMIT=25] -->
+        <item>"DHCP"</item>
+        <!-- Use statically defined IP settings [CHAR LIMIT=25]-->
+        <item>ပံုမွန္ျဖစ္ေသာ</item>
+    </string-array>
+
+    <!-- Wi-Fi proxy settings. -->
+    <!-- Note that adding/removing/moving the items will need wifi settings code change. -->
+    <string-array name="wifi_proxy_settings">
+        <!-- No HTTP proxy is used for the current wifi network [CHAR LIMIT=25] -->
+        <item>တစ္ခုမွမဟုတ္ပါ</item>
+        <!-- Manual HTTP proxy settings are used for the current wifi network [CHAR LIMIT=25] -->
+        <item>ကိုယ္တိုင္ထည့္သြင္းျခင္း</item>
+        <!-- Proxy Auto-Config URL that is used for the current wifi network [CHAR LIMIT=25] -->
+        <item>ပေရာက္စီေအာ္တို-စီစဥ္</item>
+    </string-array>
+
+    <!-- Authentication Types used in APN editor -->
+    <string-array name="apn_auth_entries">
+        <item>ဘာမွမဟုတ္</item>
+        <item>"PAP"</item>
+        <item>"CHAP"</item>
+        <item>PAP သို႔မဟုတ္ CHAP</item>
+    </string-array>
+
+    <string-array translatable="false" name="apn_auth_values">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>1</item>
+        <!-- Do not translate. -->
+        <item>2</item>
+        <!-- Do not translate. -->
+        <item>3</item>
+    </string-array>
+
+    <!-- Authentication Types used in APN editor -->
+    <string-array name="apn_protocol_entries">
+        <item>"IPv4"</item>
+        <item>"IPv6"</item>
+        <item>"IPv4/IPv6"</item>
+    </string-array>
+
+    <string-array translatable="false" name="apn_protocol_values">
+        <!-- Do not translate. -->
+        <item>IP</item>
+        <!-- Do not translate. -->
+        <item>IPV6</item>
+        <!-- Do not translate. -->
+        <item>IPV4V6</item>
+    </string-array>
+
+    <!-- Bearer Info used in APN editor -->
+    <string-array name="bearer_entries">
+        <item>ျမန္ႏႈန္းျမင့္လိုင္း</item>
+        <item>"eHRPD"</item>
+        <item>သတ္မွတ္မထားပါ</item>
+    </string-array>
+
+    <string-array translatable="false" name="bearer_values">
+        <!-- Do not translate. -->
+        <item>14</item>
+        <!-- Do not translate. -->
+        <item>13</item>
+        <!-- Do not translate. -->
+        <item>0</item>
+    </string-array>
+
+    <!-- MVNO Info used in APN editor -->
+    <string-array name="mvno_type_entries">
+        <!-- Do not translate. -->
+        <item>တစ္ခုမွမဟုတ္ပါ</item>
+        <!-- Do not translate. -->
+        <item>"SPN"</item>
+        <!-- Do not translate. -->
+        <item>"IMSI"</item>
+        <!-- Do not translate. -->
+        <item>"GID"</item>
+    </string-array>
+
+    <string-array translatable="false" name="mvno_type_values">
+        <!-- Do not translate. -->
+        <item/>
+        <!-- Do not translate. -->
+        <item>spn</item>
+        <!-- Do not translate. -->
+        <item>imsi</item>
+        <!-- Do not translate. -->
+        <item>gid</item>
+    </string-array>
+
+    <!-- Apps on SD installation location options in ApplicationSettings -->
+    <string-array name="app_install_location_entries">
+        <item>စက္တြင္း သိုေလွာင္စရာ</item>
+        <item>ဖယ္ရွား၍ရေသာ SD ကတ္</item>
+        <item>စနစ္အား ဆံုးျဖတ္ပါေစ</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="app_install_location_values" translatable="false">
+        <item>device</item>
+        <item>sdcard</item>
+        <item>auto</item>
+    </string-array>
+
+    <!-- App ops permissions -->
+    <string-array name="app_ops_permissions">
+        <item>ခြင့္ျပဳထားသည္</item>
+        <item>လစ္လ်ဴရႈထားသည္</item>
+        <item>အျမဲ ေမးပါ</item>
+    </string-array>
+
+    <!-- Names of categories of app ops tabs -->
+    <string-array name="app_ops_categories">
+        <item>တည္ေနရာ</item>
+        <item>ကိုယ္ေရးကိုယ္တာ</item>
+        <item>စာပို႔ျခင္း</item>
+        <item>မီဒီယာ</item>
+        <item>စက္ပစၥည္း</item>
+        <item>လုပ္ငန္းစနစ္စတင္ပါ</item>
+    </string-array>
+
+    <!-- User display names for app ops codes -->
+    <string-array name="app_ops_summaries">
+        <item>တည္ေနရာအၾကမ္း</item>
+        <item>တည္ေနရာအေခ်ာ</item>
+        <item>ဂ်ီပီအက္စ္</item>
+        <item>တုန္ခါျခင္း</item>
+        <item>အဆက္အသြယ္မ်ားဖတ္ရန္</item>
+        <item>အဆက္အသြယ္မ်ားအား ျပင္ဆင္ရန္</item>
+        <item>ဖုန္းေခၚမွတ္တမ္းကို ဖတ္ရန္</item>
+        <item>ဖုန္းေခၚမွတ္တမ္းကို ေရးရန္</item>
+        <item>ျပကၡဒိန္ဖတ္ရန္</item>
+        <item>ျပကၡဒိန္ျပင္ဆင္ရန္</item>
+        <item>ဝိုင္-ဖိုင္ ရွာေဖြရန္</item>
+        <item>အေၾကာင္းၾကားခ်က္</item>
+        <item>ဆဲလ္ျဖန္႔ၾကက္စူးစမ္းသည္</item>
+        <item>ဖုန္းေခၚရန္</item>
+        <item>စာတိုဖတ္ရန္</item>
+        <item>စာတိုေရးရန္</item>
+        <item>စာတိုလက္ခံရန္</item>
+        <item>အေရးေပၚစာတိုလက္ခံရန္</item>
+        <item>ရုပ္သံစာလက္ခံရန္</item>
+        <item>WAP push လက္ခံရန္</item>
+        <item>စာတိုပို႔ရန္</item>
+        <item>ကတ္ထဲမွ စာတိုဖတ္ရန္</item>
+        <item>ICC စာတိုေရးရန္</item>
+        <item>ဆက္တင္မ်ား ျပင္ဆင္ရန္</item>
+        <item>အေပၚမွ ဆြဲရန္</item>
+        <item>အေၾကာင္းၾကားခ်က္မ်ားအား အသံုးျပဳခြင့္</item>
+        <item>ကင္မရာ</item>
+        <item>အသံဖမ္းျခင္း</item>
+        <item>အသံဖြင့္ျခင္း</item>
+        <item>ကလစ္ဘုတ္ ဖတ္ရန္</item>
+        <item>ကလစ္ဘုတ္ ျပင္ဆင္ရန္</item>
+        <item>မီဒီယာခလုတ္မ်ား</item>
+        <item>အသံျပတ္သားေအာင္ခ်ိန္ရန္</item>
+        <item>ပင္မအသံ အတိုးအက်ယ္</item>
+        <item>စကားသံ အတိုးအက်ယ္</item>
+        <item>ျမည္သံ အတိုးအက်ယ္</item>
+        <item>မီဒီယာ အသံအတိုးအက်ယ္</item>
+        <item>ႏႈိးစက္သံ အတိုးအက်ယ္</item>
+        <item>အေၾကာင္းၾကားသံ အတိုးအက်ယ္</item>
+        <item>ဘလူးတုသ္သံအတိုးအက်ယ္</item>
+        <item>ဖြင့္လွ်က္ထားရွိရန္</item>
+        <item>တည္ေနရာအား ေစာင့္ၾကည့္စစ္ေဆးရန္</item>
+        <item>စြမ္းအားျမင့္ ဖန္သားျပင္ တည္ေနရာ</item>
+        <item>သံုးစြဲမႈ စာရင္းအင္းမ်ားကို ရယူရန္</item>
+        <item>မိုက္ခရိုဖုန္း အသံတိတ္/မတိတ္ရန္</item>
+        <item>ပရိုဂ်က္ မီဒီယာ</item>
+        <item>VPN ကို စဖြင့္သံုးရန္</item>
+        <item>"VPN ကို စဖွင့်သုံးရန်"</item>
+        <item>wlan ဖလွယ္မႈ</item>
+        <item>ဘလူးတုသ္ ဖလွယ္မႈ</item>
+        <item>MMS ပို႔ပါ</item>
+        <item>MMS ကုိဖတ္ပါ</item>
+        <item>MMS ကုိေရးပါ</item>
+        <item>အလုိလုိ စတင္ပါ</item>
+        <item>nfc ဖလွယ္မႈ</item>
+        <item>SMS ကုိဖ်က္ပါ</item>
+        <item>MMS ကုိဖ်က္ပါ</item>
+        <item>အဆက္အသြယ္မ်ားကုိ ဖ်က္ပါ</item>
+        <item>ေခၚဆိုမႈ မွတ္တမ္းကုိ ဖ်က္ပါ</item>
+        <item>ေဒတာ ဖလွယ္မႈ</item>
+    </string-array>
+
+    <!-- User display names for app ops codes -->
+    <string-array name="app_ops_labels">
+        <item>တည္ေနရာ</item>
+        <item>တည္ေနရာ</item>
+        <item>တည္ေနရာ</item>
+        <item>တုန္ခါျခင္း</item>
+        <item>အဆက္အသြယ္မ်ားကို ဖတ္ပါ</item>
+        <item>အဆက္အသြယ္မ်ားကို ေရးပါ</item>
+        <item>ဖုန္းေခၚမွတ္တမ္းကို ဖတ္ပါ</item>
+        <item>ဖုန္းေခၚမွတ္တမ္းကို ေရးပါ</item>
+        <item>ျပကၡဒိန္ ဖတ္ပါ</item>
+        <item>ျပကၡဒိန္ ျပင္ဆင္ပါ</item>
+        <item>တည္ေနရာ</item>
+        <item>အေၾကာင္းၾကားစာကို တင္ရန္</item>
+        <item>တည္ေနရာ</item>
+        <item>ဖုန္းေခၚပါ</item>
+        <item>စာတို ဖတ္ရန္</item>
+        <item>စာတို ေရးရန္</item>
+        <item>စာတို လက္ခံရန္</item>
+        <item>စာတို လက္ခံရန္</item>
+        <item>ရုပ္သံစာ လက္ခံရန္</item>
+        <item>ရုပ္သံစာ လက္ခံရန္</item>
+        <item>စာတို ပို႔ရန္</item>
+        <item>စာတို ဖတ္ရန္</item>
+        <item>စာတို ေရးရန္</item>
+        <item>ဆက္တင္မ်ား ျပင္ဆင္ရန္</item>
+        <item>အေပၚမွ ဆြဲရန္</item>
+        <item>အေၾကာင္းၾကားခ်က္မ်ားအား အသံုးျပဳခြင့္</item>
+        <item>ကင္မရာ</item>
+        <item>အသံဖမ္းရန္</item>
+        <item>အသံဖြင့္ရန္</item>
+        <item>ေနာက္ခံမွတ္တမ္း ဖတ္ရန္</item>
+        <item>ကလစ္ဘုတ္ ျပင္ဆင္ရန္</item>
+        <item>မီဒီယာခလုတ္မ်ား</item>
+        <item>အသံျပတ္သားေအာင္ခ်ိန္ရန္</item>
+        <item>ပင္မအသံ အတိုးအက်ယ္</item>
+        <item>စကားသံ အတိုးအက်ယ္</item>
+        <item>ဖုန္းျမည္သံ အတိုးအက်ယ္</item>
+        <item>မီဒီယာအသံအတိုးအက်ယ္</item>
+        <item>ႏႈိးစက္သံ အတိုးအက်ယ္</item>
+        <item>အေၾကာင္းၾကားသံ အတိုးအက်ယ္</item>
+        <item>ဘလူးတုသ္သံ အတိုးအက်ယ္</item>
+        <item>ဖြင့္လွ်က္ထားရွိရန္</item>
+        <item>တည္ေနရာ</item>
+        <item>တည္ေနရာ</item>
+        <item>သံုးစြဲမႈ စာရင္းအင္းမ်ားကို ရယူရန္</item>
+        <item>မိုက္ခရိုဖုန္း အသံတိတ္/မတိတ္ရန္</item>
+        <item>သိသာလြယ္ေသာ ၀င္းဒိုး</item>
+        <item>ပေရာဂ်က္ မီဒီယာ</item>
+        <item>"VPN ကို စဖွင့်သုံးရန်"</item>
+        <item>WLAN ဖလွယ္မႈ</item>
+        <item>ဘလူးတုသ္ ဖလွယ္မႈ</item>
+        <item>MMS ပို့ပါ</item>
+        <item>MMS ကုိဖတ္ပါ</item>
+        <item>MMS ကုိေရးပါ</item>
+        <item>အလုိလုိ စတင္ပါ</item>
+        <item>Nfc ဖလွယ္မႈ</item>
+        <item>SMS ကုိဖ်က္ပါ</item>
+        <item>MMS ကုိဖ်က္ပါ</item>
+        <item>အဆက္အသြယ္မ်ားကုိ ဖ်က္ပါ</item>
+        <item>ေခၚဆိုမႈ မွတ္တမ္းကုိ ဖ်က္ပါ</item>
+        <item>ေဒတာ ဖလွယ္မႈ</item>
+    </string-array>
+
+    <!-- Titles for the list of long press timeout options. -->
+    <string-array name="long_press_timeout_selector_titles">
+        <!-- A title for the option for short long-press timeout [CHAR LIMIT=25] -->
+        <item>အတို</item>
+        <!-- A title for the option for medium long-press timeout [CHAR LIMIT=25] -->
+        <item>အေတာ္အသင့္</item>
+        <!-- A title for the option for long long-press timeout [CHAR LIMIT=25] -->
+        <item>အရွည္</item>
+    </string-array>
+
+    <!-- Values for the list of long press timeout options. -->
+    <string-array name="long_press_timeout_selector_values" translatable="false">
+        <item>500</item>
+        <item>1000</item>
+        <item>1500</item>
+    </string-array>
+
+    <!-- Titles for captioning typeface preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_typeface_selector_titles">
+        <item>မူလစာလံုး</item>
+        <item>"Sans-serif"</item>
+        <item>"Sans-serif condensed"</item>
+        <item>"Sans-serif monospace"</item>
+        <item>Seri</item>
+        <item>"Serif monospace"</item>
+        <item>Casua</item>
+        <item>Cursiv</item>
+        <item>စာလံုးႀကီး ဆိုဒ္ေသးမ်ား</item>
+    </string-array>
+
+    <!-- Values for captioning typeface preference. -->
+    <string-array name="captioning_typeface_selector_values" translatable="false">
+        <item/>
+        <item>sans-serif</item>
+        <item>sans-serif-condensed</item>
+        <item>sans-serif-monospace</item>
+        <item>serif</item>
+        <item>serif-monospace</item>
+        <item>casual</item>
+        <item>cursive</item>
+        <item>sans-serif-smallcaps</item>
+    </string-array>
+
+    <!-- Titles for captioning font size preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_font_size_selector_titles">
+        <item>အလြန္ေသးရန္</item>
+        <item>ေသးငယ္ရန္</item>
+        <item>ပံုမွန္</item>
+        <item>အႀကီးစား</item>
+        <item>အလြန္ႀကီးရန္</item>
+    </string-array>
+
+    <!-- Values for captioning font size preference. -->
+    <string-array name="captioning_font_size_selector_values" translatable="false">
+        <item>0.25</item>
+        <item>0.5</item>
+        <item>1.0</item>
+        <item>1.5</item>
+        <item>2.0</item>
+    </string-array>
+
+    <!-- Titles for captioning character edge type preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_edge_type_selector_titles">
+        <item>ပံုေသ</item>
+        <item>မရွိ</item>
+        <item>အနားသတ္</item>
+        <item>အရိပ္ခ်ေပး</item>
+        <item>ျမႇင့္တင္ရန္</item>
+        <item>နွိမ့္ခ်ရန္</item>
+    </string-array>
+
+    <!-- Values for captioning character edge type preference. -->
+    <integer-array name="captioning_edge_type_selector_values" translatable="false">
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </integer-array>
+
+    <!-- Titles for captioning color preference. -->
+    <string-array name="captioning_color_selector_titles" translatable="false">
+        <item>@string/color_unspecified</item>
+        <item>@string/color_white</item>
+        <item>@string/color_black</item>
+        <item>@string/color_red</item>
+        <item>@string/color_yellow</item>
+        <item>@string/color_green</item>
+        <item>@string/color_cyan</item>
+        <item>@string/color_blue</item>
+        <item>@string/color_magenta</item>
+    </string-array>
+
+    <!-- Values for captioning color preference. -->
+    <integer-array name="captioning_color_selector_values" translatable="false">
+        <item>0x00000100</item>
+        <item>0xFFFFFFFF</item>
+        <item>0xFF000000</item>
+        <item>0xFFFF0000</item>
+        <item>0xFFFFFF00</item>
+        <item>0xFF00FF00</item>
+        <item>0xFF00FFFF</item>
+        <item>0xFF0000FF</item>
+        <item>0xFFFF00FF</item>
+        <item>0xFF000055</item>
+        <item>0xFF0000AA</item>
+        <item>0xFF005500</item>
+        <item>0xFF005555</item>
+        <item>0xFF0055AA</item>
+        <item>0xFF0055FF</item>
+        <item>0xFF00AA00</item>
+        <item>0xFF00AA55</item>
+        <item>0xFF00AAAA</item>
+        <item>0xFF00AAFF</item>
+        <item>0xFF00FF55</item>
+        <item>0xFF00FFAA</item>
+        <item>0xFF550000</item>
+        <item>0xFF550055</item>
+        <item>0xFF5500AA</item>
+        <item>0xFF5500FF</item>
+        <item>0xFF555500</item>
+        <item>0xFF555555</item>
+        <item>0xFF5555AA</item>
+        <item>0xFF5555FF</item>
+        <item>0xFF55AA00</item>
+        <item>0xFF55AA55</item>
+        <item>0xFF55AAAA</item>
+        <item>0xFF55AAFF</item>
+        <item>0xFF55FF00</item>
+        <item>0xFF55FF55</item>
+        <item>0xFF55FFAA</item>
+        <item>0xFF55FFFF</item>
+        <item>0xFFAA0000</item>
+        <item>0xFFAA0055</item>
+        <item>0xFFAA00AA</item>
+        <item>0xFFAA00FF</item>
+        <item>0xFFAA5500</item>
+        <item>0xFFAA5555</item>
+        <item>0xFFAA55AA</item>
+        <item>0xFFAA55FF</item>
+        <item>0xFFAAAA00</item>
+        <item>0xFFAAAA55</item>
+        <item>0xFFAAAAAA</item>
+        <item>0xFFAAAAFF</item>
+        <item>0xFFAAFF00</item>
+        <item>0xFFAAFF55</item>
+        <item>0xFFAAFFAA</item>
+        <item>0xFFAAFFFF</item>
+        <item>0xFFFF0055</item>
+        <item>0xFFFF00AA</item>
+        <item>0xFFFF5500</item>
+        <item>0xFFFF5555</item>
+        <item>0xFFFF55AA</item>
+        <item>0xFFFF55FF</item>
+        <item>0xFFFFAA00</item>
+        <item>0xFFFFAA55</item>
+        <item>0xFFFFAAAA</item>
+        <item>0xFFFFAAFF</item>
+        <item>0xFFFFFF55</item>
+        <item>0xFFFFFFAA</item>
+    </integer-array>
+
+    <!-- Titles for captioning opacity preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_opacity_selector_titles">
+        <item>၂၅.ဝ၀%</item>
+        <item>၅၀.ဝ၀%</item>
+        <item>၇၅.ဝ၀%</item>
+        <item>၁၀ဝ.ဝ၀%</item>
+    </string-array>
+
+    <!-- Values for captioning opacity preference. -->
+    <integer-array name="captioning_opacity_selector_values" translatable="false">
+        <item>0x40FFFFFF</item>
+        <item>0x80FFFFFF</item>
+        <item>0xC0FFFFFF</item>
+        <item>0xFFFFFFFF</item>
+    </integer-array>
+
+    <!-- Titles for captioning text style preset preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_preset_selector_titles">
+        <item>အက္ပ္ ပံုေသမ်ားကို သံုးရန္</item>
+        <item>အမည္းေပၚအျဖဴ</item>
+        <item>အျဖဴေပၚအမည္း</item>
+        <item>အမည္းေပၚအဝါ</item>
+        <item>အျပာေပၚအဝါ</item>
+        <item>မိမိစိတ္ႀကိဳက္</item>
+    </string-array>
+
+    <!-- Values for captioning text style preset preference. -->
+    <integer-array name="captioning_preset_selector_values" translatable="false">
+        <item>4</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>-1</item>
+    </integer-array>
+
+    <!-- Titles for logd limit size selection preference. [CHAR LIMIT=14] -->
+    <string-array name="select_logd_size_titles">
+        <item>"64K"</item>
+        <item>"256K"</item>
+        <item>"1M"</item>
+        <item>"4M"</item>
+        <item>"16M"</item>
+    </string-array>
+
+    <!-- Titles for logd limit size lowram selection preference. [CHAR LIMIT=14] -->
+    <string-array name="select_logd_size_lowram_titles">
+        <item>၆၄K</item>
+        <item>၂၅၆K</item>
+        <item>၁M</item>
+    </string-array>
+
+    <!-- Values for logd limit size selection preference. -->
+    <string-array name="select_logd_size_values" translatable="false">
+        <item>65536</item>
+        <item>262144</item>
+        <item>1048576</item>
+        <item>4194304</item>
+        <item>16777216</item>
+    </string-array>
+
+    <!-- Summaries for logd limit size selection preference. [CHAR LIMIT=30]-->
+    <string-array name="select_logd_size_summaries">
+        <item>64K ေလာ့ ဘာဖားတြက္</item>
+        <item>256K ေလာ့ ဘာဖားတြက္</item>
+        <item>1M ေလာ့ ဘာဖားတြက္</item>
+        <item>4M ေလာ့ ဘာဖားတြက္</item>
+        <item>16M ေလာ့ ဘာဖားတြက္</item>
+    </string-array>
+
+    <!-- Titles for HDCP checking preference. [CHAR LIMIT=35] -->
+    <string-array name="hdcp_checking_titles">
+        <item>မည္သည့္အခါမွ မစစ္ေဆးပါႏွင့္</item>
+        <item>DRMအေၾကာင္းအရာကိုသာ စစ္ေဆးမည္</item>
+        <item>အျမဲစစ္ေဆးရန္</item>
+    </string-array>
+
+    <!-- Values for HDCP checking preference. -->
+    <string-array name="hdcp_checking_values" translatable="false">
+        <item>never</item>
+        <item>drm-only</item>
+        <item>always</item>
+    </string-array>
+
+    <!-- Summaries for HDCP checking preference. [CHAR LIMIT=100]-->
+    <string-array name="hdcp_checking_summaries">
+        <item>HDCP စစ္ေဆးျခင္းအား မည္သည့္အခါမွ် မသံုးပါႏွင့္</item>
+        <item>DRMအေၾကာင္းအရာအတြက္ HDCP စစ္ေဆးျခင္းကိုသံုးမည္</item>
+        <item>HDCP စစ္ေဆးျခင္းအားအျမဲသံုးပါ</item>
+    </string-array>
+
+    <!-- Titles for window animation scale preference. [CHAR LIMIT=35] -->
+    <string-array name="window_animation_scale_entries">
+        <item>လႈပ္ရွားသက္ဝင္မႈပံုမ်ားကိုပိတ္ပါ</item>
+        <item>လႈပ္ရွားသက္ဝင္မႈပံု စေကး ၅ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္မႈပံု စေကး ၁ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္မႈပံု စေကး ၁.၅ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္မႈပံု စေကး ၂ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္မႈပံု စေကး ၅ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္မႈပံု စေကး ၁၀ဆ</item>
+    </string-array>
+
+    <!-- Values for window animation scale preference. -->
+    <string-array name="window_animation_scale_values" translatable="false">
+        <item>0</item>
+        <item>.5</item>
+        <item>1</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+
+    <!-- Titles for transition animation scale preference. [CHAR LIMIT=35] -->
+    <string-array name="transition_animation_scale_entries">
+        <item>လႈပ္ရွားသက္ဝင္မႈပံုမ်ားကိုပိတ္ပါ</item>
+        <item>လႈပ္ရွားသက္ဝင္မႈပံု စေကး ၅ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္မႈပံု စေကး ၁ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္မႈပံု စေကး ၁.၅ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္မႈပံု စေကး ၂ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္မႈပံု စေကး ၅ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္မႈပံု စေကး ၁၀ဆ</item>
+    </string-array>
+
+    <!-- Values for transition animation scale preference. -->
+    <string-array name="transition_animation_scale_values" translatable="false">
+        <item>0</item>
+        <item>.5</item>
+        <item>1</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+
+    <!-- Titles for animator duration scale preference. [CHAR LIMIT=35] -->
+    <string-array name="animator_duration_scale_entries">
+        <item>လႈပ္ရွားသက္ဝင္ပံုမ်ားကိုပိတ္ပါ</item>
+        <item>လႈပ္ရွားသက္ဝင္ပံုရိပ္ စေကး ဝ.၅ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္ပံုရိပ္ စေကး ၁ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္ပံုရိပ္ စေကး ၁.၅ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္ပံုရိပ္ စေကး ၂ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္ပံုရိပ္ စေကး ၅ဆ</item>
+        <item>လႈပ္ရွားသက္ဝင္ပံုရိပ္ စေကး ၁၀ဆ</item>
+    </string-array>
+
+    <!-- Values for animator duration scale preference. -->
+    <string-array name="animator_duration_scale_values" translatable="false">
+        <item>0</item>
+        <item>.5</item>
+        <item>1</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+
+    <!-- Titles for overlay display devices preference. [CHAR LIMIT=35] -->
+    <string-array name="overlay_display_devices_entries">
+        <item>တစ္ခုမွမဟုတ္ပါ</item>
+        <item>၇၂၀×၄၈၀ mdpi</item>
+        <item>၇၂၀×၄၈၀mdpi (စိတ္ခ်ရေသာ)</item>
+        <item>၁၂၈၀×၇၂၀  tvdpi</item>
+        <item>၁၂၈၀×၇၂၀ tvdpi (စိတ္ခ်ရေသာ)</item>
+        <item>၁၉၂၀×၁၀၈၀ xhdpi</item>
+        <item>၁၉၂၀×၁၀၈၀ xhdpi (စိတ္ခ်ရေသာ)</item>
+        <item>၁၂၈၀×၇၂၀ tvdpi ႏွင့္ ၁၉၂၀×၁၀၈၀ xhdpi</item>
+    </string-array>
+
+    <!-- Values for overlay display devices preference. -->
+    <string-array name="overlay_display_devices_values" translatable="false">
+        <item/>
+        <item>720x480/160</item>
+        <item>720x480/160,secure</item>
+        <item>1280x720/213</item>
+        <item>1280x720/213,secure</item>
+        <item>1920x1080/320</item>
+        <item>1920x1080/320,secure</item>
+        <item>1280x720/213;1920x1080/320</item>
+    </string-array>
+
+    <!-- Titles for OpenGL traces preference. [CHAR LIMIT=35] -->
+    <string-array name="enable_opengl_traces_entries">
+        <item>တစ္ခုမွမဟုတ္ပါ</item>
+        <item>ေလာ့ဂ္ကက္</item>
+        <item>စနစ္ေျခရာခံျခင္း (ရုပ္ပံုမ်ား)</item>
+        <item>glGetError အမွားတက္လွ်င္ေခၚေသာလုပ္ငန္းစဥ္</item>
+    </string-array>
+
+    <!-- Values for OpenGL traces preference. -->
+    <string-array name="enable_opengl_traces_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>systrace</item>
+        <item>error</item>
+    </string-array>
+
+    <!-- Titles for non-rectangular clipping preference. [CHAR LIMIT=35] -->
+    <string-array name="show_non_rect_clip_entries">
+        <item>ပိတ္</item>
+        <item>စတုဂံမဟုတ္ေသာ ေဖာက္ရန္အပိုင္းကို အျပာေရာင္ျဖင့္ဆြဲပါ</item>
+        <item>စမ္းသပ္ထားေသာ ပံုဆြဲရန္ၫႊန္္ၾကားခ်က္မ်ားကို အစိမ္းေရာင္ျဖင့္ အသားေပး ေဖာ္ျပပါ</item>
+    </string-array>
+
+    <!-- Values for non-rectangular clipping preference. -->
+    <string-array name="show_non_rect_clip_values" translatable="false">
+        <item>hide</item>
+        <item>region</item>
+        <item>highlight</item>
+    </string-array>
+
+    <!-- Titles for frame time tracking preference. [CHAR LIMIT=35] -->
+    <string-array name="track_frame_time_entries">
+        <item>ပိတ္</item>
+        <item>ဖန္သားျပင္ေပၚမွာ မ်ဥ္းတန္းကဲ့သို႔</item>
+        <item>adb shell dumpsys ထဲမွ gfxinfo</item>
+    </string-array>
+
+    <!-- Values for frame time tracking preference. -->
+    <string-array name="track_frame_time_values" translatable="false">
+        <item>false</item>
+        <item>visual_bars</item>
+        <item>true</item>
+    </string-array>
+
+    <!-- Titles for debug overdraw preference. [CHAR LIMIT=50] -->
+    <string-array name="debug_hw_overdraw_entries">
+        <item>ပိတ္</item>
+        <item>ရွိရင္းစြဲထက္ပိုေသာ ဧရိယာမ်ားကိုျပရန္</item>
+        <item>အေရာင္ေရာေႏွာေသာဧရိယာမ်ားျပရန္</item>
+    </string-array>
+
+    <!-- Values for debug overdraw preference. -->
+    <string-array name="debug_hw_overdraw_values" translatable="false">
+        <item>false</item>
+        <item>show</item>
+        <item>show_deuteranomaly</item>
+    </string-array>
+
+    <!-- Titles for app process limit preference. [CHAR LIMIT=35] -->
+    <string-array name="app_process_limit_entries">
+        <item>သတ္မွတ္စံႏႈန္း</item>
+        <item>ေနာက္ခံျပဳလုပ္ေနေသာလုပ္ငန္းစဥ္မရွိ</item>
+        <item>အမ်ားဆံုး လုပ္ငန္းစဥ္ ၁ ခု</item>
+        <item>အမ်ားဆံုး လုပ္ငန္းစဥ္ ၂ ခု</item>
+        <item>အမ်ားဆံုး လုပ္ငန္းစဥ္ ၃ ခု</item>
+        <item>အမ်ားဆံုး လုပ္ငန္းစဥ္ ၄ ခု</item>
+    </string-array>
+
+    <!-- Values for app process limit preference. -->
+    <string-array name="app_process_limit_values" translatable="false">
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <!-- Match this with the constants in VpnProfile. --> <skip/>
+    <!-- Short names for each VPN type, not really translatable. [CHAR LIMIT=20] -->
+    <string-array name="vpn_types" translatable="false">
+        <item>PPTP</item>
+        <item>L2TP/IPSec PSK</item>
+        <item>L2TP/IPSec RSA</item>
+        <item>IPSec Xauth PSK</item>
+        <item>IPSec Xauth RSA</item>
+        <item>IPSec Hybrid RSA</item>
+    </string-array>
+
+    <!-- Match this with the constants in VpnProfile. --> <skip/>
+    <!-- Longer descriptions for each VPN type. [CHAR LIMIT=100] -->
+    <string-array name="vpn_types_long">
+        <item>"PPTP VPN"</item>
+        <item>ႀကိဳတင္ ေပးထားတဲ့ ကီးပါရွိေသာL2TP/IPSec VPN</item>
+        <item>အသိအမွတ္ျပဳလက္မွတ္ပါရွိေသာL2TP/IPSec VPN</item>
+        <item>ႀကိဳတင္ေပးထားတဲ့ ကီးႏွင့္Xauthစစ္မွန္ေၾကာင္းပါရွိေသာIPSec VPN</item>
+        <item>အသိအမွတ္ျပဳလက္မွတ္ႏွင့္Xauthစစ္မွန္ေၾကာင္းပါရွိေသာIPSec VPN</item>
+        <item>အသိအမွတ္ျပဳလက္မွတ္မ်ားႏွင့္ ေရာေႏွာထားတဲ့ စစ္မွန္ေၾကာင္းပါရွိေသာIPSec VPN</item>
+    </string-array>
+
+    <!-- Match this with the constants in LegacyVpnInfo. --> <skip/>
+    <!-- Status for a VPN network. [CHAR LIMIT=100] -->
+    <string-array name="vpn_states">
+        <!-- Status message when VPN is disconnected. -->
+        <item>ခ်ိတ္ဆက္မႈျပတ္ေတာက္သည္</item>
+        <!-- Status message when VPN is initializing. -->
+        <item>စတင္ေနသည္</item>
+        <!-- Status message when VPN is connecting. -->
+        <item>ခ်ိတ္ဆက္ေနသည္</item>
+        <!-- Status message when VPN is connected. -->
+        <item>ခ်ိတ္ဆက္ထားၿပီး</item>
+        <!-- Status message when VPN is timeout. -->
+        <item>သတ္မွတ္ခ်ိန္ေက်ာ္လြန္သြားသည္</item>
+        <!-- Status message when VPN is failed. -->
+        <item>မေအာင္ျမင္ပါ</item>
+    </string-array>
+
+    <!-- User content ratings for restricted users [CHAR LIMIT=30] -->
+    <string-array name="user_content_ratings_entries" translatable="false">
+        <item>Ascended being</item>
+        <item>Human</item>
+        <item>Neanderthal</item>
+        <item>Chimp</item>
+        <item>Monkey</item>
+    </string-array>
+
+    <!-- Values for user content ratings for restricted users -->
+    <string-array name="user_content_ratings_values" translatable="false">
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+
+    <!-- Values for premium SMS permission selector [CHAR LIMIT=30] -->
+    <string-array name="security_settings_premium_sms_values">
+        <!-- Ask user before sending to premium SMS short code. -->
+        <item>ေမးပါ</item>
+        <!-- Never allow app to send to premium SMS short code. -->
+        <item>ဘယ္ေတာ့မွခြင့္မျပဳပါ</item>
+        <!-- Always allow app to send to premium SMS short code. -->
+        <item>အျမဲခြင့္ျပဳပါ</item>
+    </string-array>
+
+    <!-- [CHAR LIMIT=30] Labels for memory states -->
+    <string-array name="ram_states">
+        <!-- Normal desired memory state. -->
+        <item>ပံုမွန္</item>
+        <!-- Moderate memory state, not as good as normal. -->
+        <item>အေတာ္အသင့္</item>
+        <!-- Memory is running low. -->
+        <item>နည္းေနသည္</item>
+        <!-- Memory is critical. -->
+        <item>စိုးရိမ္ရသည္</item>
+    </string-array>
+
+    <!-- Display color space adjustment modes for accessibility -->
+    <string-array name="daltonizer_type_entries" translatable="false">
+        <item>@string/daltonizer_mode_deuteranomaly</item>
+        <item>@string/daltonizer_mode_protanomaly</item>
+        <item>@string/daltonizer_mode_tritanomaly</item>
+    </string-array>
+
+    <!-- Values for display color space adjustment modes for accessibility -->
+    <string-array name="daltonizer_type_values" translatable="false">
+        <item>12</item>
+        <item>11</item>
+        <item>13</item>
+    </string-array>
+
+    <!-- values for screen color adjusting -->
+    <string-array name="screen_color_setting">
+        <item>စံသတ္မွတ္ခ်က္</item>
+        <item>ထင္ရွားေသာ</item>
+        <item>စိတ္ႀကိဳက္</item>
+    </string-array>
+
+    <!-- Display color space adjustment modes for developers -->
+    <string-array name="simulate_color_space_entries" translatable="false">
+        <item>@string/daltonizer_mode_disabled</item>
+        <item>@string/daltonizer_mode_monochromacy</item>
+        <item>@string/daltonizer_mode_deuteranomaly</item>
+        <item>@string/daltonizer_mode_protanomaly</item>
+        <item>@string/daltonizer_mode_tritanomaly</item>
+    </string-array>
+
+    <!-- Values for display color space adjustment modes for developers -->
+    <string-array name="simulate_color_space_values" translatable="false">
+        <item>-1</item>
+        <item>0</item>
+        <item>2</item>
+        <item>1</item>
+        <item>3</item>
+    </string-array>
+
+    <!-- Setting display values for zen mode -->
+    <string-array name="entries_zen_mode">
+        <item>ပိတ္</item>
+        <item>ကန္႔သတ္ခ်က္ရွိေသာ အ​ေႏွာင့္အယွက္မ်ား</item>
+        <item>အေႏွာင့္အယွက္မရွိ</item>
+    </string-array>
+
+    <!-- Setting values for zen mode, must match the Settings.Global.ZEN_MODE_ constants -->
+    <string-array name="entryvalues_zen_mode" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- Battery saver mode: allowable trigger threshold levels. -->
+    <integer-array name="battery_saver_trigger_values" translatable="false">
+        <item>0</item>
+        <item>5</item>
+        <item>15</item>
+    </integer-array>
+
+    <!-- Process stats memory use details: labels for memory states -->
+    <string-array name="proc_stats_memory_states">
+        <item>ပံုမွန္</item>
+        <item>အေတာ္အသင့္</item>
+        <item>နိမ့္</item>
+        <item>အေရးပါ</item>
+    </string-array>
+
+    <!-- Process stats memory use details: labels for process -->
+    <string-array name="proc_stats_process_states">
+        <item>တခ်ိန္လံုး</item>
+        <item>အသံုး အမ်ားဆံုး</item>
+        <item>အေရးႀကီး (ေရွ႕ပိုင္း)</item>
+        <item>အေရးႀကီး (ေနာက္ခံ)</item>
+        <item>ဘက္ခ္အပ္</item>
+        <item>အထူး ႀကီးေလး</item>
+        <item>ဝန္ေဆာင္မႈ (ဖြင့္ထား)</item>
+        <item>ဝန္ေဆာင္မႈ (ျပန္ဖြင့္ေန)</item>
+        <item>လက္ခံယူသူ</item>
+        <item>ပင္မ</item>
+        <item>ေနာက္ဆံုး သံုးမႈ</item>
+        <item>ကက္ရ္ွ လုပ္ထား (အသံုးျပဳမႈ)</item>
+        <item>ကက္ရွ္ လုပ္ထား (အသံုးျပဳသူ ေဖာက္သည္)</item>
+        <item>ကက္ရွ္ လုပ္ထား (ဗလာ)</item>
+    </string-array>
+
+    <!-- Defined the hide accounts\' type -->
+    <string-array name="hide_account_list">
+        <item>com.qualcomm.qti.calendarlocalaccount</item>
+        <item>com.android.localphone</item>
+        <item>com.android.sim</item>
+    </string-array>
+
+
+    <string-array name="cellcular2wifi_entries">
+        <item>အလုိလို ခ်ိတ္ဆက္ပါ</item>
+        <item>လက္ျဖင့္ ခ်ိတ္ဆက္ပါ</item>
+        <item>အျမဲ ေမးပါ</item>
+    </string-array>
+
+    <string-array name="cellcular2wifi_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="hidesupl_plmn_list">
+        <item>46001</item>
+    </string-array>
+
+    <string-array name="origin_carrier_names" translateable="false">
+        <item>CMCC</item>
+        <item>CHINA\u0020\u0020MOBILE</item>
+        <item>CHN-UNICOM</item>
+        <item>China Mobile</item>
+        <item>China Unicom</item>
+        <item>China Telecom</item>
+        <item>中国移动</item>
+        <item>中国联通</item>
+        <item>中国电信</item>
+        <item>Searching for Service</item>
+    </string-array>
+    <string-array name="locale_carrier_names" translatable="false">
+        <item>China_Mobile</item>
+        <item>China_Mobile</item>
+        <item>China_Unicom</item>
+        <item>China_Mobile</item>
+        <item>China_Unicom</item>
+        <item>China_Telecom</item>
+        <item>China_Mobile</item>
+        <item>China_Unicom</item>
+        <item>China_Telecom</item>
+        <item>roamingTextSearching</item>
+    </string-array>
+
+    <string-array name="wifi_hotsopt_mode_entries">
+        <item>အမြဲ</item>
+        <item>၅ မိနစ္ၾကာ စက္အလုပ္ မလုပ္ခ်ိန္မွာ ပိတ္ပါ</item>
+        <item>၁၀ မိနစ္ၾကာ စက္အလုပ္ မလုပ္ခ်ိန္မွာ ပိတ္ပါ</item>
+    </string-array>
+
+    <string-array name="wifi_hotsopt_mode_entryValues">
+        <item>Always</item>
+        <item>Turn_off_5min</item>
+        <item>Turn_off_10min</item>
+    </string-array>
+
+    <string-array name="wifi_hotsopt_mode_summaries">
+        <item>အမြဲ</item>
+        <item>၅ မိနစ္ၾကာ စက္အလုပ္ မလုပ္ခ်ိန္မွာ ပိတ္ပါ</item>
+        <item>၁၀ မိနစ္ၾကာ စက္အလုပ္ မလုပ္ခ်ိန္မွာ ပိတ္ပါ</item>
+    </string-array>
+
+    <string-array name="default_sim_name">
+        <item>SUB 1</item>
+        <item>SUB 2</item>
+        <item>SUB 3</item>
+    </string-array>
+    <string-array name="hidedm_plmn_list">
+        <item>46000</item>
+        <item>46002</item>
+        <item>46003</item>
+        <item>46007</item>
+    </string-array>
+    <string-array name="plmn_list_for_apn_disable">
+        <item>46001</item>
+        <item>46009</item>
+    </string-array>
+
+    <!-- Array of titles for sim color for multi-sim -->
+    <string-array name="color_picker">
+        <item>စိမ္းျပာ</item>
+        <item>အျပာ</item>
+        <item>မဲနယ္ေရာင္</item>
+        <item>ခရမ္း</item>
+        <item>ပန္းေရာင္</item>
+        <item>အနီ</item>
+    </string-array>
+</resources>

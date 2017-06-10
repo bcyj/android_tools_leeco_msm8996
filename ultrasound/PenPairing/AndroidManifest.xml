@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+-/**************************************************************************
+*  Copyright (C) 2013-2014 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qti.ultrasound.penpairing"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="20"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="19" />
+
+    <permission
+        android:name="com.qti.ultrasound.penpairing.BROADCAST_PERMISSION"
+        android:protectionLevel="dangerous" >
+    </permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <uses-library android:name="com.qti.snapdragon.digitalpen.digitalpenservice" />
+
+        <activity
+            android:name="com.qti.ultrasound.penpairing.MainActivity"
+            android:label="@string/app_name_long" >
+            <intent-filter android:label="@string/app_name" >
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.qti.ultrasound.penpairing.SemiAutomaticActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.qti.ultrasound.penpairing.PairingActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.qti.ultrasound.penpairing.PairedPensActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.qti.ultrasound.penpairing.SWCalibrationActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.qti.ultrasound.penpairing.TesterActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <receiver
+            android:name="PairingBroadcastReceiver"
+            android:permission="com.qti.ultrasound.penpairing.BROADCAST_PERMISSION" >
+            <intent-filter>
+                <action android:name="com.qti.ultrasound.penpairing.ADD_PEN" >
+                </action>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

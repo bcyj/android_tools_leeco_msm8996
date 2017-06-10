@@ -1,0 +1,32 @@
+#! /bin/sh
+#
+#Copyright (c) 2011-2013 Qualcomm Technologies, Inc.  All Rights Reserved.
+#Qualcomm Technologies Proprietary and Confidential.
+
+# QCMAP_ConnectionManager   init.d script to start the Data Software's QCMAP_ConnectionManager daemon
+
+set -e
+
+case "$1" in
+  start)
+        echo -n "Starting QCMAP_ConnectionManager: "
+        echo "QCMAP:start" > /dev/kmsg
+        start-stop-daemon -S -b -a QCMAP_ConnectionManager /etc/mobileap_cfg.xml d
+        echo "done"
+        ;;
+  stop)
+        echo -n "Stopping QCMAP_ConnectionManager: "
+        start-stop-daemon -K -n QCMAP_ConnectionManager
+        echo "done"
+        ;;
+  restart)
+        $0 stop
+        $0 start
+        ;;
+  *)
+        echo "Usage QCMAP_ConnectionManager { start | stop | restart}" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

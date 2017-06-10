@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- This is the name of the Download Manager application. -->
+    <string name="app_label">"İndirme Yöneticisi"</string>
+
+    <!-- This is the short description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission controls access to the Download Manager by
+        applications that initiate downloads. -->
+    <string name="permlab_downloadManager">"İndirme yöneticisine erişin."</string>
+    <!-- This is the long description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission controls access to the Download Manager by
+        applications that initiate downloads. -->
+    <string name="permdesc_downloadManager">"Uygulamaya, indirme yöneticisine erişme ve dosya indirmek için indirme yöneticisini kullanma izni verir. Zararlı uygulamalar indirme işlemlerini kesmek ve özel bilgilere erişmek için bunu kullanabilir."</string>
+
+    <!-- This is the short description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission controls access to some advanced (and
+        dangerous) features from the Download Manager that are needed by
+        system applications but aren\'t necessary for regular applications
+        that just initiate plain downloads. -->
+    <string name="permlab_downloadManagerAdvanced">"Gelişmiş indirme yöneticisi işlevleri."</string>
+    <!-- This is the long description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission controls access to some advanced (and
+        dangerous) features from the Download Manager that are needed by
+        system applications but aren\'t necessary for regular applications
+        that just initiate plain downloads. -->
+    <string name="permdesc_downloadManagerAdvanced">"Uygulamaya, indirme yöneticisinin gelişmiş fonksiyonlarına erişme izni verir. Zararlı uygulamalar indirme işlemlerini kesmek ve özel bilgilere erişmek için bunu kullanabilir."</string>
+
+    <string name="permlab_downloadCompletedIntent">"İndirme bildirimleri gönder."</string>
+    <!-- This is the long description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission allows an application to tell other
+        applications that their downloads have completed. -->
+    <string name="permdesc_downloadCompletedIntent">"Uygulamaya, tamamlanan indirme işlemleriyle ilgili bildirim gönderme izni verir. Zararlı uygulamalar dosya indiren diğer uygulamaların çalışma biçimini etkilemek için bunu kullanabilir."</string>
+
+    <!-- Title for permission to see all downloads to EXTERNAL [CHAR LIMIT=25] -->
+    <string name="permlab_seeAllExternal" product="nosdcard">"USB belleğe yapln tüm indr göster"</string>
+    <!-- Title for permission to see all downloads to EXTERNAL -->
+    <string name="permlab_seeAllExternal" product="default">"SD karta yapılan tüm indirmeleri gör"</string>
+    <!-- Description for the permission to see all downloads to EXTERNAL -->
+    <string name="permdesc_seeAllExternal">"Uygulamaya, indiren uygulamadan bağımsız olarak, SD karta yapılan tüm indirme işlemlerini görme izni verir."</string>
+
+    <!-- The label for the permission to download files to the download cache
+    that can\'t be automatically deleted by the download manager to free up
+    space [CHAR LIMIT=50] -->
+    <string name="permlab_downloadCacheNonPurgeable">"İndirme önbelleğinde alan ayır"</string>
+    <!-- The full sentence description for the permission to download files to
+    the download cache that can\'t be automatically deleted by the download
+    manager to free up space [CHAR LIMIT=160] -->
+    <string name="permdesc_downloadCacheNonPurgeable">"Uygulamaya, dosyaları indirme önbelleğine indirme izni verir. İndirme önbelleği indirme yöneticisine daha fazla alan gerektiğinde otomatik olarak silinemez."</string>
+
+    <!-- The label for the permission to download files through the download
+    manager without any notification being shown to the user [CHAR LIMIT=50] -->
+    <string name="permlab_downloadWithoutNotification">"dosyaları bildirimde bulunmadan indirme"</string>
+
+    <!-- The full sentence description for the permission to download files
+    through the download manager without any notification being shown to the
+    user [CHAR LIMIT=160] -->
+    <string name="permdesc_downloadWithoutNotification">"Uygulamaya, kullanıcıya herhangi bir bildirim göstermeden, dosyaları indirme yöneticisi ile indirme izni verir."</string>
+
+    <!-- The label for the permission to access all downloads in the download
+    manager, not just those owned by the calling user [CHAR LIMIT=50] -->
+    <string name="permlab_accessAllDownloads">"Tüm sistem indirmelerine erişim"</string>
+
+    <!-- The full sentence description for the permission to access all
+    downloads in the download manager, not just those owned by the calling user
+    [CHAR LIMIT=160] -->
+    <string name="permdesc_accessAllDownloads">"Uygulamaya, sistemdeki herhangi bir uygulama tarafından başlatılan tüm indirme işlemlerini görüntüleme ve değiştirme izni verir."</string>
+
+
+    <!-- This is the title that is used when displaying the notification
+    for a download that doesn\'t have a title associated with it. -->
+    <string name="download_unknown_title">"&lt;Adsız&gt;"</string>
+
+    <!-- When a download completes, a notification is displayed, and this
+        string is used to indicate that the download successfully completed.
+        Note that such a download could have been initiated by a variety of
+        applications, including (but not limited to) the browser, an email
+        application, a content marketplace. -->
+    <string name="notification_download_complete">"İndirme işlemi tamamlandı."</string>
+
+    <!-- When a download completes, a notification is displayed, and this
+        string is used to indicate that the download failed.
+        Note that such a download could have been initiated by a variety of
+        applications, including (but not limited to) the browser, an email
+        application, a content marketplace. -->
+    <string name="notification_download_failed">"İndirme işlemi başarısız oldu."</string>
+
+    <!-- When a download is paused because it\'s too large to download over a
+        mobile connection, and Wi-Fi is unavailable, this string is displayed in
+        the system notification for the running download, beneath the download
+        title and description.  Note that such a download could have been
+        initiated by a variety of applications, including (but not limited to)
+        the browser, an email application, a content marketplace.
+        [CHAR LIMIT=24] -->
+    <string name="notification_need_wifi_for_size">"İndirme boyutu Kablosuz bağlantı gerektiriyor."</string>
+
+    <!-- Notification shown when a download has been paused because a user policy
+        has blocked network access to applications running in background. [CHAR LIMIT=24] -->
+    <string name="notification_paused_in_background">"Arka planda duraklatıldı."</string>
+
+    <!-- Title for dialog when a download exceeds the carrier-specified maximum size of downloads
+        over the mobile network and Wi-Fi is required.  The user has the choice to either queue the
+        download to start next time Wi-Fi is available or cancel the download altogether. [CHAR
+        LIMIT=50] -->
+    <string name="wifi_required_title">"İndirme boyutu operatör ağı için çok büyük"</string>
+
+    <!-- Text for dialog when a download exceeds the carrier-specified maximum size of downloads
+        over the mobile network and Wi-Fi is required.  The user has the choice to either queue the
+        download to start next time Wi-Fi is available or cancel the download altogether. [CHAR
+        LIMIT=200] -->
+    <string name="wifi_required_body">"Bu <xliff:g id="SIZE">%s </xliff:g> boyutundaki indirme işlemini tamamlamak için Kablosuz bağlantıyı kullanmalısınız. \n\nBu indirme işlemini Kablosuz ağa bir sonraki bağlanmanızda başlatmak için <xliff:g id="QUEUE_TEXT">%s </xliff:g> öğesine dokunun."</string>
+
+    <!-- Title for dialog when a download exceeds the carrier-specified recommended maximum size of
+        downloads over the mobile network, and the user may choose to start the download over mobile
+        anyway or to queue for download to start next time a Wi-Fi connection is available [CHAR
+        LIMIT=50] -->
+    <string name="wifi_recommended_title">"Daha sonra indirmek için kuyruğa alınsın mı?"</string>
+
+    <!-- Text for dialog when a download exceeds the carrier-specified recommended maximum size of
+        downloads over the mobile network, and the user may choose to start the download over mobile
+        anyway or to queue for download to start next time a Wi-Fi connection is available [CHAR
+        LIMIT=200] -->
+    <string name="wifi_recommended_body">"Bu <xliff:g id="SIZE">%s </xliff:g> boyutundaki indirme işlemine şimdi başlanırsa pil ömrü kısalabilir ve/veya mobil veri bağlantınız fazla miktarda kullanılabilir ve bunun sonucunda, veri planınıza bağlı olarak mobil operatörünüz sizden ücret talep edebilir.\n\n Bu indirme işlemini Kablosuz ağa bir sonraki bağlanmanızda başlatmak için <xliff:g id="QUEUE_TEXT">%s</xliff:g> düğmesine dokunun."</string>
+
+
+    <!-- Text for button to queue a download to start next time Wi-Fi is available [CHAR LIMIT=25]
+        -->
+    <string name="button_queue_for_wifi">"Kuyruğa al"</string>
+
+    <!-- Text for button to cancel a download because it\'s too large to proceed over the mobile
+         network and the user does not want to queue it for Wi-Fi [CHAR LIMIT=25] -->
+    <string name="button_cancel_download">"İptal"</string>
+
+    <!-- Text for button to start a download over the mobile connection now, even though it\'s over
+         the carrier-specified recommended maximum size for downloads over the mobile connection
+         [CHAR LIMIT=25] -->
+    <string name="button_start_now">"Şimdi başlat"</string>
+
+    <!-- Short representation of download progress percentage. [CHAR LIMIT=8] -->
+    <string name="download_percent"><xliff:g id="number">%d</xliff:g><xliff:g id="percent">%%</xliff:g></string>
+
+    <!-- Title summarizing active downloads. [CHAR LIMIT=32] -->
+    <plurals name="notif_summary_active">
+        <item quantity="one">"1 dosya indiriliyor"</item>
+        <item quantity="other">"<xliff:g id="NUMBER">%d</xliff:g> dosya indiriliyor"</item>
+    </plurals>
+
+    <!-- Title summarizing waiting downloads. [CHAR LIMIT=32] -->
+    <plurals name="notif_summary_waiting">
+        <item quantity="one">"1 dosya bekliyor"</item>
+        <item quantity="other">"<xliff:g id="NUMBER">%d</xliff:g> dosya bekliyor"</item>
+    </plurals>
+
+    <!-- Time remaining until download is complete. [CHAR LIMIT=32] -->
+    <string name="download_remaining">"<xliff:g id="DURATION">%s</xliff:g> kaldı"</string>
+
+    <!-- Text for a toast appearing when a user clicks on a completed download, informing the user
+         that there is no application on the device that can open the file that was downloaded
+         [CHAR LIMIT=200] -->
+    <string name="download_no_application_title">"Dosya açılamıyor"</string>
+
+    <!-- Label describing Downloads as a storage root [CHAR LIMIT=32] -->
+    <string name="root_downloads">"İndirilenler"</string>
+
+    <!-- Status indicating that the download has been queued to start in the future.  Appears for an
+         individual item in the download list.  [CHAR LIMIT=24] -->
+    <string name="download_queued">"Sıraya alındı"</string>
+    <!-- Status indicating that the system is currently downloading the file.  Appears for an
+         individual item in the download list.  [CHAR LIMIT=24] -->
+    <string name="download_running">"Devam ediyor"</string>
+    <!-- Status indicating that the download has ended without completing successfully.  Appears for
+         an individual item in the download list.  [CHAR LIMIT=24] -->
+    <string name="download_error">"Başarısız"</string>
+
+    <!-- Representation of download progress percentage when running. [CHAR LIMIT=24] -->
+    <string name="download_running_percent">Yürütülüyor, <xliff:g id="percentage" example="50%">%s</xliff:g></string>
+
+    <string name="download_paused">Duraklatıldı</string>
+    <plurals name="notif_summary_paused">
+        <item quantity="one">1 dosya duraklatıldı</item>
+        <item quantity="other"><xliff:g id="number">%d</xliff:g> dosyaları duraklatıldı</item>
+    </plurals>
+    <string name="download_paused_percent">Duraklatıldı, <xliff:g id="percent">%%</xliff:g><xliff:g id="number">%d</xliff:g></string>
+
+    <plurals name="notif_summary_queued">
+        <item quantity="one">1 dosya sıraya alındı</item>
+        <item quantity="other"><xliff:g id="number">%d</xliff:g> dosyaları sıraya alındı</item>
+    </plurals>
+    <string name="download_queued_percent">Kuyrukta, <xliff:g id="percent">%%</xliff:g><xliff:g id="number">%d</xliff:g></string>
+
+    <string name="action_consumes_rights">Bu ortam dosyasını çalarak hakları kullanmış olacaksınız.</string>
+</resources>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2011-2012, Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/llBtn"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true">
+		<Button
+		android:id="@+id/btnStart"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/start"
+		android:layout_alignParentBottom="true"
+		/>
+
+		<Button
+			android:id="@+id/btnPause"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="@string/pause"
+			android:visibility="gone"
+			/>
+		<Button
+			android:id="@+id/btnReset"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="@string/reset"
+                        android:layout_toEndOf="@id/btnPause"
+			android:visibility="gone"
+			/>
+	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/llStopWatch"
+		android:orientation="horizontal"
+		android:layout_alignParentTop="true"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/black"
+		>
+	    <TextView
+	    	android:id="@+id/tvStopWatch"
+	    	android:textColor="@color/white"
+	    	android:shadowDx="-1"
+	    	android:shadowDy="2"
+	    	android:shadowRadius="1"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:textAppearance="?android:attr/textAppearanceLarge"
+	        android:layout_weight="1"
+                android:gravity="end"
+            android:textSize="43sp"
+	    	/>
+		<TextView
+	    	android:id="@+id/tvMilliSecond"
+		    android:textColor="@color/white"
+		    android:shadowColor="@color/white"
+		    android:shadowDx="-1"
+		    android:shadowDy="1"
+		    android:shadowRadius="1"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:textAppearance="?android:attr/textAppearanceLarge"
+		    android:layout_weight="3"
+                    android:gravity="start"
+                    android:paddingStart="2dp"
+		    android:textSize="19sp"
+		    />
+	</LinearLayout>
+	<ListView
+		android:id="@+id/lvRecords"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/llStopWatch"
+		android:layout_above="@id/llBtn"
+		/>
+</RelativeLayout>

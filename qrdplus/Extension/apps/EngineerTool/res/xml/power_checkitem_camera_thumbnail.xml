@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015, Qualcomm Technologies, Inc. All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<checkitem xmlns:android="http://schemas.android.com/apk/res/android"
+    label="Thumbnail Encoding" function="propR"
+    params="persist.camera.tn.disable,0" expect="1"
+    summary_values="@array/off_on_values" summary_labels="@array/off_on_labels">
+    <dialog title="@string/dialog_edit_label">
+        <view>
+            <switch label="Thumbnail Encoding" function="propR"
+                params="persist.camera.tn.disable,0">
+                <set checked="false" value="1" />
+                <set checked="true" value="0" />
+            </switch>
+        </view>
+        <positive label="@android:string/ok" function="propW"
+            params="persist.camera.tn.disable,(EditContent)" />
+        <negative label="@android:string/cancel" />
+    </dialog>
+</checkitem>

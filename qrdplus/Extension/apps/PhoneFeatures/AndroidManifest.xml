@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2013-2014 Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.qti.phonefeature"
+    android:sharedUserId="android.uid.phone" >
+
+    <permission
+        android:name="com.qualcomm.permission.USE_PHONE_SERVICE"
+        android:protectionLevel="signatureOrSystem" />
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL"/>
+
+    <application
+        android:name=".AppGlobals"
+        android:process="com.android.phone"
+        android:supportsRtl="true" >
+
+        <uses-library android:name="com.qualcomm.qcrilhook" />
+
+        <receiver android:name=".DefaultReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.SIM_STATE_CHANGED" />
+                <action android:name="com.android.phone.ACTION_PHONE_READY" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".FeatureService" />
+
+        <activity
+            android:name=".PrimarySubSetting"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:icon="@drawable/ic_settings_sim_display"
+            android:label="@string/multi_sim_settings_title" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.qualcomm.qti.phonefeature.LTE_CONFIGURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ConfirmDialog"
+                android:configChanges="orientation|screenSize|keyboardHidden"
+                android:theme="@android:style/Theme.NoDisplay" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.qualcomm.qti.phonefeature.DISABLE_TDD_LTE" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".FeatureProvider"
+            android:authorities="com.qualcomm.qti.phonefeature.FEATURE_PROVIDER"
+            android:exported="true"
+            android:permission="com.qualcomm.permission.USE_PHONE_SERVICE" />
+    </application>
+
+</manifest>

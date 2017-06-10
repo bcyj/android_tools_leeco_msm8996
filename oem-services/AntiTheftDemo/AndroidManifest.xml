@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---******************************************************************************
+* @file    AndroidManifest.xml
+* @brief   Gets generated when creating any activity using android sdk
+           Provides the permissions required by the activity and activity name
+* Copyright (c) 2014 Qualcomm Technologies, Inc.  All Rights Reserved.
+* Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qti.antitheftdemo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.qti.antitheftdemo.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.qti.antitheftdemo.ConfigurationActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <receiver android:name=".AntiTheftReceiver">
+            <intent-filter >
+                <action android:name="android.intent.action.SERVICE_STATE" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".DeviceManagerAdminReceiver"
+            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+            <intent-filter>
+                <!-- This action is required -->
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin" />
+        </receiver>
+    </application>
+</manifest>

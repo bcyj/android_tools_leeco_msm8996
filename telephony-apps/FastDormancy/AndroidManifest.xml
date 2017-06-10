@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2013, Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.fastdormancy" android:sharedUserId="android.uid.system">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
+
+    <application android:process="com.qualcomm.telephony">
+        <uses-library android:name="com.qualcomm.qcrilhook"/>
+
+        <receiver android:name=".FastDormancyReceiver"
+            android:label="FastDormancyReceiver">
+         <intent-filter>
+           <action android:name="android.intent.action.BOOT_COMPLETED"/>
+         </intent-filter>
+       </receiver>
+
+        <service android:name="FastDormancyService"/>
+    </application>
+
+</manifest>

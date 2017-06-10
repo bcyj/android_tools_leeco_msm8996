@@ -1,0 +1,81 @@
+/*****************************************************************************
+  @FILE     sns_debug_interface.idl
+
+  @BRIEF    Interface to the Debug module on the DSPS processor
+
+  @DESCRIPTION
+  Debug module helps sensor modules in sending debug strings to the 
+  apps processor. 
+  The strings will be displayed with QXDM or LogCat on the apps processor. 
+
+*****************************************************************************/
+include "sns_common_v01.idl";
+
+revision 1;
+
+const SNS_DEBUG_MAX_FILENAME_SIZE = 30;
+/**<  maximum number of characters in the name of a file */
+const SNS_DEBUG_MAX_LOG_SIZE = 150;
+/**<  maximum size (uint32) in a log packet, therefore max number of bytes supported is 600 bytes */
+const SNS_DEBUG_NUM_PARAMS_ALLWD = 3;
+/**<  maximum number of parameters allowed for a debug string */
+
+//!============================================================================
+/** @COMMAND SNS_DEBUG_STRING_ID
+    @BRIEF This command is used to print a debug string.
+*/
+//!============================================================================
+
+message {
+  mandatory uint16 string_identifier;
+  /**< String ID */
+  mandatory uint8 module_id;
+  /**< Module Identifier */
+  mandatory uint8 str_priority;
+  /**< Priority */
+  mandatory int32 param_values<SNS_DEBUG_NUM_PARAMS_ALLWD>;
+  /**< Parameter values */
+  mandatory uint32 line_number;
+  /**< Line number */
+  mandatory char file_name<SNS_DEBUG_MAX_FILENAME_SIZE>;
+  /**< Filename */
+} sns_debug_string_id_ind_msg;
+
+//!============================================================================
+/** @COMMAND SNS_DEBUG_LOG
+    @BRIEF This command is used to send a log packet.
+*/
+//!============================================================================
+
+message {
+  mandatory uint16 log_pkt_type;
+  /**< Log Packet Type */
+  mandatory uint16    logpkt_size;
+  /**< Size of log packet */
+  mandatory uint32 log_pkt_contents<SNS_DEBUG_MAX_LOG_SIZE>;
+  /**< Log Packet contents */
+} sns_debug_log_ind_msg;
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_DEBUG_SVC { 
+  //! @ID SNS_COMMON_CANCEL
+    sns_common_cancel_req_msg	       SNS_DEBUG_CANCEL_REQ,
+    sns_common_cancel_resp_msg	       SNS_DEBUG_CANCEL_RESP
+    = 0x00; 
+
+  //! @ID SNS_COMMON_VERSION
+   sns_common_version_req_msg	       SNS_DEBUG_VERSION_REQ,
+   sns_common_version_resp_msg	       SNS_DEBUG_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_DEBUG_STRING_ID
+   sns_debug_string_id_ind_msg          SNS_DEBUG_STRING_ID_IND
+   = 0x02;  
+
+  //! @ID SNS_DEBUG_LOG
+   sns_debug_log_ind_msg               SNS_DEBUG_LOG_IND
+   = 0x03;
+
+} = SNS_QMI_SVC_ID_7;

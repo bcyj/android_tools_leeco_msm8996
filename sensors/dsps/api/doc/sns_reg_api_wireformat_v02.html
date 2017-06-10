@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+<title>Sensors Registry APIs</title>
+<link rel="stylesheet" type="text/css" href="qmi_idl_wiredoc.css" />
+</head>
+
+<body>
+<h1>Sensors Registry APIs
+</h1>
+ This file describes the messages which defines the Sensors Registry APIs.<br> These APIs allow clients to store and retrieve data in the registry through<br> the Sensors Registry Sevice.<br><br> The messages defined herin will be passed to the Sensor framework using<br> the sensor1_write() API.
+
+<h1>Service Type</h1>
+<ul>
+<li>QMI service type <b>SNS_QMI_SVC_ID_15</b>
+<li>Version <b>02</b>
+</ul>
+<h1><a name='Messages'>Messages</a></h1>
+<table class = 'tlv'><tr class='head'><th>Command</th><th>ID</th><th>Messages</th><th>Description</th></tr>
+<tr><td class='l'><a href='#SNS_REG_CANCEL'>SNS_REG_CANCEL</a></td><td>0x0000</td><td class='l'></td><td class='l'>This command cancels an outstanding Sensors Registry command. </td></tr>
+<tr><td class='l'><a href='#SNS_REG_VERSION'>SNS_REG_VERSION</a></td><td>0x0001</td><td class='l'></td><td class='l'>This command requests Sensors Registry Service version number. </td></tr>
+<tr><td class='l'><a href='#SNS_REG_SINGLE_READ'>SNS_REG_SINGLE_READ</a></td><td>0x0002</td><td class='l'><a href="#SNS_REG_SINGLE_READ_REQ">SNS_REG_SINGLE_READ_REQ</a></br><a href="#SNS_REG_SINGLE_READ_RESP">SNS_REG_SINGLE_READ_RESP</a></br></td><td class='l'>This command reads a single item from the registry. </td></tr>
+<tr><td class='l'><a href='#SNS_REG_GROUP_READ'>SNS_REG_GROUP_READ</a></td><td>0x0004</td><td class='l'><a href="#SNS_REG_GROUP_READ_REQ">SNS_REG_GROUP_READ_REQ</a></br><a href="#SNS_REG_GROUP_READ_RESP">SNS_REG_GROUP_READ_RESP</a></br></td><td class='l'>This command reads a single item from the registry. </td></tr>
+<tr><td class='l'><a href='#SNS_REG_SINGLE_WRITE'>SNS_REG_SINGLE_WRITE</a></td><td>0x0005</td><td class='l'><a href="#SNS_REG_SINGLE_WRITE_REQ">SNS_REG_SINGLE_WRITE_REQ</a></br><a href="#SNS_REG_SINGLE_WRITE_RESP">SNS_REG_SINGLE_WRITE_RESP</a></br><a href="#SNS_REG_GROUP_WRITE_REQ">SNS_REG_GROUP_WRITE_REQ</a></br><a href="#SNS_REG_GROUP_WRITE_RESP">SNS_REG_GROUP_WRITE_RESP</a></br></td><td class='l'>This command writes a single item to the registry. This command writes a single item to the registry. </td></tr>
+<tr><td class='l'><a href='#SNS_REG_SINGLE_WRITE'>SNS_REG_SINGLE_WRITE</a></td><td>0x0005</td><td class='l'><a href="#SNS_REG_SINGLE_WRITE_REQ">SNS_REG_SINGLE_WRITE_REQ</a></br><a href="#SNS_REG_SINGLE_WRITE_RESP">SNS_REG_SINGLE_WRITE_RESP</a></br><a href="#SNS_REG_GROUP_WRITE_REQ">SNS_REG_GROUP_WRITE_REQ</a></br><a href="#SNS_REG_GROUP_WRITE_RESP">SNS_REG_GROUP_WRITE_RESP</a></br></td><td class='l'>This command writes a single item to the registry. This command writes a single item to the registry. </td></tr>
+</table>
+<br><br>
+<h4>Description of  REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_REG_SINGLE_READ'></a><a href='#Messages'>SNS_REG_SINGLE_READ</a></h2>
+This command reads a single item from the registry.
+<h4>Message ID</h4>
+0x0002
+<h3><a name="SNS_REG_SINGLE_READ_REQ"></a><a href='#Messages'>SNS_REG_SINGLE_READ_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>item_id</td><td>2</td><td class='l'>ID of the registry entry to be read </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_REG_SINGLE_READ_RESP"></a><a href='#Messages'>SNS_REG_SINGLE_READ_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>item_id</td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>data_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- data</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>data</td><td>Var</td><td class='l'></td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_REG_SINGLE_READ REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_REG_GROUP_READ'></a><a href='#Messages'>SNS_REG_GROUP_READ</a></h2>
+This command reads a single item from the registry.
+<h4>Message ID</h4>
+0x0004
+<h3><a name="SNS_REG_GROUP_READ_REQ"></a><a href='#Messages'>SNS_REG_GROUP_READ_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>group_id</td><td>2</td><td class='l'>ID of the group of registry entries to be read </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_REG_GROUP_READ_RESP"></a><a href='#Messages'>SNS_REG_GROUP_READ_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>group_id</td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>data_len</td><td>2</td><td class='l'>Number of sets of the following elements<br>:- data</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>data</td><td>Var</td><td class='l'></td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_REG_GROUP_READ REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_REG_SINGLE_WRITE'></a><a href='#Messages'>SNS_REG_SINGLE_WRITE</a></h2>
+This command writes a single item to the registry.<br><br>This command writes a single item to the registry.
+<h4>Message ID</h4>
+0x0005
+<h3><a name="SNS_REG_SINGLE_WRITE_REQ"></a><a href='#Messages'>SNS_REG_SINGLE_WRITE_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>item_id</td><td>2</td><td class='l'>ID of the registry entry to be written </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>data_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- data</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>data</td><td>Var</td><td class='l'>Item data to be written to the registry. Data types of uint8/16/32/64 and<br> int8/16/32/64 are supported </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_REG_SINGLE_WRITE_RESP"></a><a href='#Messages'>SNS_REG_SINGLE_WRITE_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_REG_GROUP_WRITE_REQ"></a><a href='#Messages'>SNS_REG_GROUP_WRITE_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>group_id</td><td>2</td><td class='l'>ID of the registry entry to be written </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>data_len</td><td>2</td><td class='l'>Number of sets of the following elements<br>:- data</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>data</td><td>Var</td><td class='l'>Item data to be written to the registry. Data types of uint8/16/32/64 and<br> int8/16/32/64 are supported </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_REG_GROUP_WRITE_RESP"></a><a href='#Messages'>SNS_REG_GROUP_WRITE_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_REG_SINGLE_WRITE REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>

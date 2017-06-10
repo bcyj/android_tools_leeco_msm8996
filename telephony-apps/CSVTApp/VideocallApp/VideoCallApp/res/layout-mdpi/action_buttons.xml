@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<com.borqs.videocall.VTPanelActionButtons xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:VTScreen="http://schemas.android.com/apk/res/com.borqs.videocall"
+    android:layout_width="fill_parent"
+    android:layout_height="40dp"
+    android:layout_centerInParent="true"
+    VTScreen:height_local="40dp"
+    VTScreen:height_remote="40dp"
+    VTScreen:height_remote_only="40dp"
+    VTScreen:left_local="0dp"
+    VTScreen:left_remote="0dp"
+    VTScreen:left_remote_only="0dp"
+    VTScreen:top_local="250dp"
+    VTScreen:top_remote="250dp"
+    VTScreen:top_remote_only="250dp"
+    VTScreen:width_local="240dp"
+    VTScreen:width_remote="240dp"
+    VTScreen:width_remote_only="240dp"
+    android:background="@drawable/bg_tray"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line_divider_horizontal" >
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/btnSwitch"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:background="@drawable/video_call_btn_record_selector"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/btn_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="1dp" />
+
+            <TextView
+                android:id="@+id/txtSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="25dp"
+                android:text="@string/switch_camera"
+                android:textColor="#ffffff"
+                android:textSize="8dp" />
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="2dp"
+            android:layout_height="40dp"
+            android:background="@drawable/cmcc_phone_line_vertical" >
+        </ImageView>
+        <!--
+       <FrameLayout android:id="@+id/btnKeyboard"
+				android:layout_width="70dp"
+              android:layout_height="200dp"
+		android:gravity="center"
+              android:background="@drawable/video_call_btn_keypad_selector">
+			<ImageView android:id="@+id/btn_keyboard"
+				android:layout_width="70dp"
+				android:layout_height="200dp"
+				android:background="@drawable/cmcc_phone_vtcall_btn_icon_dialer_two"/>
+			<TextView android:textSize="8dp"
+              android:textColor="#ffffff"
+              android:singleLine="true"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="140dp"
+              android:layout_gravity="top|center_horizontal"
+			  android:text="@string/button_keyboard"
+              />
+	   </FrameLayout>
+        -->
+
+        <FrameLayout
+            android:id="@+id/btnmute"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/video_call_btn_mute_selector"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/btn_mute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/ic_micro_phone" />
+
+            <TextView
+                android:id="@+id/textMute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="25dp"
+                android:singleLine="true"
+                android:text="@string/button_mute"
+                android:textColor="#ffffff"
+                android:textSize="8dp" />
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="2dp"
+            android:layout_height="40dp"
+            android:background="@drawable/cmcc_phone_line_vertical" >
+        </ImageView>
+        <!--
+		<FrameLayout android:id="@+id/btnRecord"
+		android:layout_width="160dp"
+		android:layout_height="162dp"
+		android:gravity="center"
+		android:background="@drawable/video_call_btn_record_selector">
+			<ImageView android:id="@+id/btn_record"
+				android:layout_width="160dp"
+				android:layout_height="162dp"
+				android:background="@drawable/cmcc_phone_vtcall_btn_icon_record"/>
+			<TextView android:id="@+id/recordDuration"
+              android:textSize="16dp"
+              android:textColor="#ec1f1f"
+              android:singleLine="true"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="top|center_horizontal"
+              android:paddingTop="6dp"
+              />
+<TextView     android:id="@+id/txtRecord"
+              android:textSize="16dp"
+              android:textColor="#ffffff"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="110dp"
+              android:layout_gravity="top|center_horizontal"
+			  android:text="@string/record_audio"
+              />
+		</FrameLayout>
+        -->
+
+        <FrameLayout
+            android:id="@+id/btn_switch_speaker"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:background="@drawable/video_call_btn_keypad_selector"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/img_switch_speaker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="1dp" />
+
+            <TextView
+                android:id="@+id/textSpeaker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="25dp"
+                android:singleLine="true"
+                android:text="@string/switch_to_speaker"
+                android:textColor="#ffffff"
+                android:textSize="8dp" />
+        </FrameLayout>
+    </LinearLayout>
+
+</com.borqs.videocall.VTPanelActionButtons>

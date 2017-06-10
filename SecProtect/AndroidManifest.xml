@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qapp.secprotect"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" >
+    </uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.Light" >
+
+        <!-- SecProtect -->
+        <activity
+            android:name=".framework.SecProtect"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/file_protection"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".authaccess.PromptActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:process=":secprotect"
+            android:taskAffinity="qapp.secprotect"
+            android:theme="@android:style/Theme.NoDisplay" >
+        </activity>
+        <activity
+            android:name=".authaccess.RequestActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:process=":secprotect"
+            android:taskAffinity="qapp.secprotect"
+            android:theme="@android:style/Theme.NoDisplay" >
+        </activity>
+        <activity
+            android:name=".authaccess.SettingsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/authaccess" >
+            <intent-filter>
+                <action android:name="qapp.intent.action.secprotect" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- EncryptData -->
+        <activity
+            android:name=".encryptdata.EncryptDataActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/encryptdata"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="qapp.intent.action.secprotect" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".encryptdata.PasswordActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/password"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+
+</manifest>

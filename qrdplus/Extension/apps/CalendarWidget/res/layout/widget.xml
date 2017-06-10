@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2013, Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@null" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header">
+
+        <ImageButton
+            android:id="@+id/go_to_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/today_normal"
+            android:background="@drawable/background_selector" />
+        <TextView
+            android:id="@+id/today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_marginStart="8dip"
+            android:layout_marginTop="8dip"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_alignParentStart="true" />
+        <ProgressBar
+            style="@android:style/Widget.ProgressBar.Inverse"
+            android:id="@+id/refreshing"
+            android:layout_width="22dip"
+            android:layout_height="22dip"
+            android:layout_marginTop="10dip"
+            android:layout_marginEnd="9dip"
+            android:layout_alignParentEnd="true" />
+
+        <ImageButton
+            android:id="@+id/refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/refresh_normal"
+            android:background="@drawable/background_selector" />
+
+        <ImageButton
+            android:id="@+id/add_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_toStartOf="@+id/refresh"
+            android:src="@drawable/add_event_normal"
+            android:background="@drawable/background_selector" />
+
+        <Button
+            android:id="@+id/choose_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="140dip"
+            android:layout_marginEnd="15dip"
+            android:layout_marginTop="-5dip"
+            android:layout_toStartOf="@+id/add_event"
+            style="@android:style/Widget.Holo.Spinner"
+            android:gravity="center"
+            android:textSize="19sp"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dip"
+        android:layout_marginStart="4dip"
+        android:paddingTop="5dip"
+        android:background="@drawable/bg_date">
+
+        <GridView
+            android:id="@+id/week_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dip"
+            android:numColumns="7" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dip"
+            android:layout_marginStart="20dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/div_h" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:id="@+id/week_number"
+                android:layout_width="20dip"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:scrollbars="none" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="-1dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/div_v" />
+
+            <GridView
+                android:id="@+id/date_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="7"
+                android:horizontalSpacing="5dip" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

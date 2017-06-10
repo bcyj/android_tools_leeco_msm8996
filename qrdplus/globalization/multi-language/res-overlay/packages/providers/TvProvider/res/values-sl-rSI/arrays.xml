@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Category mapping from ATSC to canonical genre -->
+    <string-array name="genre_mapping_atsc">
+        <item>Izobraževanje|IZOBRAŽEVANJE</item>
+        <item>Zabava|ZABAVA</item>
+        <item>Film|FILMI</item>
+        <item>Novice|NOVICE</item>
+        <item>Vera|ŽIVLJENJSKI SLOG</item>
+        <item>Športi|ŠPORT</item>
+        <item>Drugo|DRUGO</item>
+        <item>Akcija|FILMI</item>
+        <item>Oglas|DRUGO</item>
+        <item>Animirani|DRUŽINSKI IN OTROŠKI</item>
+        <item>Antologija|DRAMA</item>
+        <item>Avtomobilizem|DRUGO</item>
+        <item>Nagrade|ZABAVA</item>
+        <item>Baseball|ŠPORT</item>
+        <item>Košarka|ŠPORT</item>
+        <item>Bilten|DRUGO</item>
+        <item>Poslovno|DRUGO</item>
+        <item>Klasična|GLASBA</item>
+        <item>Izobraževanje|ZOBRAŽEVANJE</item>
+        <item>Borbene|DRUGO</item>
+        <item>Komedije|KOMEDIJE</item>
+        <item>Komentiranje|DRUGO</item>
+        <item>Koncertna|GLASBA</item>
+        <item>Potrošniki|DRUGO</item>
+        <item>Sodobno|DRUGO</item>
+        <item>Kriminalke|FILMI</item>
+        <item>Ples|ZABAVA</item>
+        <item>Dokumentarci|NOVICE</item>
+        <item>Drama|DRAMA</item>
+        <item>Osnovnošolsko|IZOBRAŽEVANJE</item>
+        <item>Erotika|FILMI</item>
+        <item>Vadba|ŠPORT</item>
+        <item>Fantazijski|FILMI</item>
+        <item>Kmetijstvo|DRUGO</item>
+        <item>Moda|ŽIVLJENJSKI SLOG</item>
+        <item>Leposlovje|UMETNOST</item>
+        <item>Hrana|ŽIVLJENJSKI SLOG</item>
+        <item>Ameriški nogomet|ŠPORT</item>
+        <item>Tuje|DRUGO</item>
+        <item>Zbiranje donacij|DRUGO</item>
+        <item>Kviz|GAMING</item>
+        <item>Vrt|ŽIVLJENJSKI SLOG</item>
+        <item>Golf|ŠPORT</item>
+        <item>Vlada|DRUGO</item>
+        <item>Zdravje|ŽIVLJENJSKI SLOG</item>
+        <item>Srednja šola|IZOBRAŽEVANJE</item>
+        <item>Zgodovina|IZOBRAŽEVANJE</item>
+        <item>Konjički|ŽIVLJENJSKI SLOG</item>
+        <item>Hokej|ŠPORT</item>
+        <item>Dom|ŽIVLJENJSKI SLOG</item>
+        <item>Grozljivke|FILMI</item>
+        <item>Informacije|NOVICE</item>
+        <item>Navodila|DRUGO</item>
+        <item>Mednarodno|DRUGO</item>
+        <item>Intervju|DRUGO</item>
+        <item>Jezik|IZOBRAŽEVANJE</item>
+        <item>Pravo|DRUGO</item>
+        <item>V živo|DRUGO</item>
+        <item>Lokalno|DRUGO</item>
+        <item>Matematika|IZOBRAŽEVANJE</item>
+        <item>Medicina|DRUGO</item>
+        <item>Sestanki|DRUGO</item>
+        <item>Vojska|DRUGO</item>
+        <item>Mini serije|DRAMA</item>
+        <item>Glasba|GLASBA</item>
+        <item>Misterij|FILMI</item>
+        <item>Nacionalno|DRUGO</item>
+        <item>Narava|ŽIVALI IN DIVJINA</item>
+        <item>Policija|DRUGO</item>
+        <item>Politika|DRUGO</item>
+        <item>Premier|PREMIER</item>
+        <item>Vnaprej posneto|DRUGO</item>
+        <item>Izdelki|DRUGO</item>
+        <item>Profesionalno|DRUGO</item>
+        <item>Javno|DRUGO</item>
+        <item>Dirkanje|ŠPORT</item>
+        <item>Branje|UMETNOST</item>
+        <item>Popravila|DRUGO</item>
+        <item>Ponavljanje|DRUGO</item>
+        <item>Ocene|DRUGO</item>
+        <item>Romantični|FILMI</item>
+        <item>Znanost|TEHNOLOGIJA IN ZNANOST</item>
+        <item>Serije|DRAMA</item>
+        <item>Storitve|DRUGO</item>
+        <item>Nakupovanje|NAKUPOVANJE</item>
+        <item>Limonade|DRAMA</item>
+        <item>Posebno|DRUGO</item>
+        <item>Srhljivka|FILMI</item>
+        <item>Govor|ZABAVA</item>
+        <item>Tehnika|TECH_SCIENCE</item>
+        <item>Tenis|ŠPORT</item>
+        <item>Potovanje|POTOVANJE</item>
+        <item>Različno|ZABAVA</item>
+        <item>Video|UMETNOST</item>
+        <item>Vreme|NOVICE</item>
+        <item>zahodno|DRUGO</item>
+        <item>Umetnost|UMETNOST</item>
+        <item>Avtomobilske dirke|ŠPORT</item>
+        <item>Letalstvo|ŠPORT</item>
+        <item>Biografije|NOVICE</item>
+        <item>Čolni|ŠPORT</item>
+        <item>Bowling|ŠPORT</item>
+        <item>Boks|ŠPORT</item>
+        <item>Risanke|DRUŽINA OTROCI</item>
+        <item>Otroški|DRUŽINA OTROCI</item>
+        <item>Klasični filmi|FILMI</item>
+        <item>Družba|DRUGO</item>
+        <item>Računalništvo|TEHNOLOGIJA IN ZNANOST</item>
+        <item>Country|GLASBA</item>
+        <item>Sodišče|DRUGO</item>
+        <item>Ekstremni športi|ŠPORT</item>
+        <item>Družinski|DRUŽINA OTROCI</item>
+        <item>Finance|NOVICE</item>
+        <item>Gimnastika|ŠPORT</item>
+        <item>Najpomembnejše novice|NOVICE</item>
+        <item>Konjske dirke|ŠPORT</item>
+        <item>Lov/ribolov/narava|ŽIVALI IN DIVJINA</item>
+        <item>Neodvisno|DRUGO</item>
+        <item>Jazz|GLASBA</item>
+        <item>Revije|NOVICE</item>
+        <item>Motociklizem|ŠPORT</item>
+        <item>Glasba/filmi/knjige|DRUGO</item>
+        <item>Mednarodne novice|NOVICE</item>
+        <item>Lokalne novice|NOVICE</item>
+        <item>Državne novice|NOVICE</item>
+        <item>Regionalne novice|NOVICE</item>
+        <item>Olimpijske igre|ŠPORT</item>
+        <item>Originalni|FILMI</item>
+        <item>Scenske umetnosti|UMETNOST</item>
+        <item>Hišni ljubljenčki/živali|ŽIVALI IN DIVJINA</item>
+        <item>Pop|GLASBA</item>
+        <item>Rock  Roll|GLASBA</item>
+        <item>Znanstvena fantastika|FILMI</item>
+        <item>Samoizpopolnjevanje|IZOBRAŽEVANJE</item>
+        <item>Humoristična nanizanka|DRAMA</item>
+        <item>Rolkanje|ŠPORT</item>
+        <item>Smučanje|ŠPORT</item>
+        <item>Nogomet|ŠPORT</item>
+        <item>Steze/igrišča|ŠPORT</item>
+        <item>Resnično|DRUGO</item>
+        <item>Odbojka|ŠPORT</item>
+        <item>Rokoborba|ŠPORT</item>
+    </string-array>
+
+    <!-- Category mapping from DVB to canonical genre -->
+    <string-array name="genre_mapping_dvb">
+        <item>Filmi/drama|FILMI</item>
+        <item>Detektivke/trilerji|FILMI</item>
+        <item>Pustolovski/vesterni/vojni|FILMI</item>
+        <item>Znanstvena fantastika/fantazijski/grozljivke|FILMI</item>
+        <item>Komedije|KOMEDIJE</item>
+        <item>Limonade/melodrama/ljudsko|DRAMA</item>
+        <item>Romantični|FILMI</item>
+        <item>Resni/klasični/verski/zgodovinski filmi/drama|FILMI</item>
+        <item>filmi za odrasle/drama|FILMI</item>
+        <item>novice/poročila|NEWS</item>
+        <item>Novice/vremenska napoved|NOVICE</item>
+        <item>Novičarske revije|NOVICE</item>
+        <item>Dokumentarci|NOVICE</item>
+        <item>Omizja/intervjuji/pogovori|NOVICE</item>
+        <item>Oddaje/televizijske igre|ZABAVA</item>
+        <item>Televizijske igre/kviz/tekmovanja|IGRE</item>
+        <item>Različne oddaje|ZABAVA</item>
+        <item>Pogovorne oddaje|ZABAVA</item>
+        <item>Športi|ŠPORT</item>
+        <item>Posebni dogodki (olimpijske igre, svetovni pokal.)|ŠPORT</item>
+        <item>Športne revije|ŠPORT</item>
+        <item>Ameriški nogomet/nogomet|ŠPORT</item>
+        <item>Tenis/skvoš|ŠPORT</item>
+        <item>Ekipni športi (brez nogometa)|ŠPORT</item>
+        <item>Atletika|ŠPORT</item>
+        <item>Avto-moto športi|ŠPORT</item>
+        <item>Vodni športi|ŠPORT</item>
+        <item>Zimski športi|ŠPORT</item>
+        <item>Konjeništvo|ŠPORT</item>
+        <item>Borilni športi|ŠPORT</item>
+        <item>Otroški ali mladinski program|DRUŽINA IN OTROCI</item>
+        <item>Programi za predšolske otroke|DRUŽINA IN OTROCI</item>
+        <item>Zabavni programi za 6- do 14-letnike|DRUŽINA IN OTROCI</item>
+        <item>Zabavni programi za 10- do 16-letnike|DRUŽINA IN OTROCI</item>
+        <item>Informativne/izobraževalni/šolski programi|DRUŽINA IN OTROCI</item>
+        <item>Risanke/lutke|DRUŽINA OTROCI</item>
+        <item>Glasba/balet/plesna glasba|GLASBA</item>
+        <item>Rock/pop|GLASBA</item>
+        <item>Resna glasba/klasična glasba|GLASBA</item>
+        <item>Ljudska/tradicionalna glasba|GLASBA</item>
+        <item>Jazz|GLASBA</item>
+        <item>Muzikal/opera|MUSIC</item>
+        <item>Balet|ZABAVA</item>
+        <item>Umetnosti/kultura|UMETNOST</item>
+        <item>Scenske umetnosti|UMETNOST</item>
+        <item>Likovne umetnosti|UMETNOST</item>
+        <item>Vera|ŽIVLJENJSKI SLOG</item>
+        <item>Popularna kultura/tradicionalna umetnost|ŽIVLJENJSKI SLOG</item>
+        <item>Literatura|UMETNOST</item>
+        <item>Filmi/kino|UMETNOST</item>
+        <item>Eksperimentalni filmi/video|UMETNOST</item>
+        <item>Oddaje/novinarstvo|UMETNOSTI</item>
+        <item>Novi mediji|UMETNOST</item>
+        <item>Umetnost/kulturne revije|UMETNOST</item>
+        <item>Moda|ŽIVLJENJSKI SLOG</item>
+        <item>Družbene/politične zadeve/ekonomija|DRUGO</item>
+        <item>Revije/poročila/dokumentarci|NOVICE</item>
+        <item>Ekonomska/socialna svetovanja|DRUGO</item>
+        <item>Izjemni ljudje|DRUGO</item>
+        <item>Izobraževanje/znanost/dejstva|IZOBRAŽEVANJE</item>
+        <item>Narava/živali/okolje|ŽIVALI IN DIVJINA</item>
+        <item>Tehnologija/naravoslovje|TEHNOLOGIJA IN ZNANOST</item>
+        <item>Medicina/fiziologija/psihologija|TEHNOLOGIJA IN ZNANOST</item>
+        <item>Tuje države/ekspedicije|IZOBRAŽEVANJE</item>
+        <item>Družbene/duhovne vede|TEHNOLOGIJA IN ZNANOST</item>
+        <item>Nadaljnje izobraževanje|IZOBRAŽEVANJE</item>
+        <item>Jeziki|IZOBRAŽEVANJE</item>
+        <item>Konjički|ŽIVLJENJSKI SLOG</item>
+        <item>Turizem/potovanja|POTOVANJE</item>
+        <item>Rokodelstvo|ŽIVLJENJSKI SLOG</item>
+        <item>Motorji|ŽIVLJENJSKI SLOG</item>
+        <item>Fitnes in zdravje|ŽIVLJENJSKI SLOG</item>
+        <item>Kuhanje|ŽIVLJENJSKI SLOG</item>
+        <item>Oglaševanje/nakupovanje|NAKUPOVANJE</item>
+        <item>Vrtnarjenje|ŽIVLJENJSKI SLOG</item>
+        <item>Prvotni jezik|DRUGO</item>
+        <item>Črno in belo|DRUGO</item>
+        <item>Neobjavljeno|DRUGO</item>
+        <item>Prenos v živo|DRUGO</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB to canonical genre -->
+    <string-array name="genre_mapping_isdb">
+        <item>Animirani|FILMI</item>
+        <item>Baseball|ŠPORT</item>
+        <item>Otroci in pesem|GLASBA</item>
+        <item>Klasična, opera|GLASBA</item>
+        <item>Kuharske zvrsti|ZABAVA</item>
+        <item>Humoristični program|ZABAVA</item>
+        <item>Humoristične zgodbe, zabava|ZABAVA</item>
+        <item>Računalniške, televizijske igre|TEHNOLOGIJA IN ZNANOST</item>
+        <item>Pogovori, jeziki|IZOBRAŽEVANJE</item>
+        <item>Ples, balet|ZABAVA</item>
+        <item>Razprava, konferenca|NOVICE</item>
+        <item>Finance, tržna poročila|NOVICE</item>
+        <item>Težave z učenjem|IZOBRAŽEVANJE</item>
+        <item>Dogodki|ZABAVA</item>
+        <item>Moda|ŽIVLJENJSKI SLOG</item>
+        <item>Folk, glasbe sveta|GLASBA</item>
+        <item>Igre|IGRE</item>
+        <item>Vrtnarjenje, ljubljenčki, ustvarjanje|ŽIVLJENJSKI SLOG</item>
+        <item>Golf|ŠPORT</item>
+        <item>Trači/tabloidne oddaje|ZABAVA</item>
+        <item>Gurman, kuhanje|ŽIVLJENJSKI SLOG</item>
+        <item>Zdravje, zdravljenje|ŽIVLJENJSKI SLOG</item>
+        <item>Konjički/izobraževanje|ŽIVLJENJSKI SLOG</item>
+        <item>Konjske dirke, javne dirke|ŠPORT</item>
+        <item>Anime|DRUŽINA IN OTROCI</item>
+        <item>Japonske balade, Japonska tradicionalna glasba|GLASBA</item>
+        <item>Japonski šah (shogi) in "go"|IGRE</item>
+        <item>Japonske drame|DRAMA</item>
+        <item>Japonski filmi|FILMI</item>
+        <item>Japonski rock, pop|GLASBA</item>
+        <item>Jazz, fusion|GLASBA</item>
+        <item>Dijaki osnovne in srednje šole|IZOBRAŽEVANJE</item>
+        <item>Kabuki, klasična drama|DRAMA</item>
+        <item>Karaoke, amatersko pevsko tekmovanje|GLASBA</item>
+        <item>Vseživljenjsko učenje, usposabljanje|IZOBRAŽEVANJE</item>
+        <item>Majhni otroci, šolarji|IZOBRAŽEVANJE</item>
+        <item>Koncert v živo|GLASBA</item>
+        <item>Bivanje, dom|ŽIVLJENJSKI SLOG</item>
+        <item>Lokalni program|NOVICE</item>
+        <item>Mah-jong, Fliper|IGRE</item>
+        <item>Maraton, atletika, plavanje|ŠPORT</item>
+        <item>Morski športi, zimski športi|ŠPORT</item>
+        <item>Sodobna drama, vestern – drama|DRAMA</item>
+        <item>Avto-moto športi|ŠPORT</item>
+        <item>Muzikal|GLASBA</item>
+        <item>Glasba, umetnost, industrijsko oblikovanje|UMETNOST</item>
+        <item>Glasbene zvrsti|ZABAVA</item>
+        <item>Novice in analize|NOVICE</item>
+        <item>Olimpijske, mednarodne igre|ŠPORT</item>
+        <item>Druge igre z žogo|ŠPORT</item>
+        <item>Tuja animacija|DRUŽINA IN OTROCI</item>
+        <item>Tuja drama|DRAMA</item>
+        <item>Tujina, mednarodno poročilo|NOVICE</item>
+        <item>Tuji filmi|FILMI</item>
+        <item>Tuji rock, pop|GLASBA</item>
+        <item>Zgodovinska drama|DRAMA</item>
+        <item>Politika, državni zbor|NOVICE</item>
+        <item>Popularne skladbe, japonske popularne skladbe (skladbe enka)|GLASBA</item>
+        <item>Kviz|IGRE</item>
+        <item>Lestvice, glasbene želje|GLASBA</item>
+        <item>Redne, splošne|NOVICE</item>
+        <item>Nakupovanje, spletna naročila|NAKUPOVANJE</item>
+        <item>Nogomet|ŠPORT</item>
+        <item>Posebni učinki|DRUŽINA IN OTROCI</item>
+        <item>Poseben program, dokumentarna oddaja|NOVICE</item>
+        <item>Posebno poročilo|NOVICE</item>
+        <item>Športne novice|ŠPORT</item>
+        <item>Sumo, borilni športi|ŠPORT</item>
+        <item>Pogovorne vsebine|ZABAVA</item>
+        <item>Potovanja|ZABAVA</item>
+        <item>Prometno poročilo|NOVICE</item>
+        <item>Potovanja, ribolov, zabava na prostem|ŽIVALI IN DIVJINA</item>
+        <item>Študenti, preverjanje|IZOBRAŽEVANJE</item>
+        <item>Vremensko poročilo|NOVICE</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB in Brazil to canonical genre -->
+    <string-array name="genre_mapping_isdb_br">
+        <item>Biografia|NEWS</item>
+        <item>Culinária|LIFE_STYLE</item>
+        <item>Documentário|NEWS</item>
+        <item>Educativo|EDUCATION</item>
+        <item>Erótico|MOVIES</item>
+        <item>Esporte|SPORTS</item>
+        <item>Filme|MOVIES</item>
+        <item>Kvizi|IGRE</item>
+        <item>Humorístico|COMEDY</item>
+        <item>Infantil|FAMILY_KIDS</item>
+        <item>Informação|LIFE_STYLE</item>
+        <item>Jornalismo|NEWS</item>
+        <item>Minissérie|DRAMA</item>
+        <item>Moda|LIFE_STYLE</item>
+        <item>Muzikal|GLASBA</item>
+        <item>Premiação|ENTERTAINMENT</item>
+        <item>Resničnostne oddaje|ZABAVA</item>
+        <item>Religioso|LIFE_STYLE</item>
+        <item>Reportagem|NEWS</item>
+        <item>Podeželje|ŽIVLJENJSKI SLOG</item>
+        <item>Saúde|LIFE_STYLE</item>
+        <item>Série|DRAMA</item>
+        <item>Série/seriado|DRAMA</item>
+        <item>Oddaje|ZABAVA</item>
+        <item>Telejornais|NEWS</item>
+        <item>Televendas|SHOPPING</item>
+        <item>Turismo|TRAVEL</item>
+        <item>Variedade|ENTERTAINMENT</item>
+        <item>Auditorium|ENTERTAINMENT</item>
+        <item>Nagrade|ZABAVA</item>
+        <item>Biografije|NOVICE</item>
+        <item>Otroško|DRUŽINA OTROCI</item>
+        <item>Otroški|DRUŽINA OTROCI</item>
+        <item>Komično|KOMEDIJE</item>
+        <item>Kuhanje|ŽIVLJENJSKI SLOG</item>
+        <item>Country|ŽIVLJENJSKI SLOG</item>
+        <item>Omizja/intervjuji|NOVICE</item>
+        <item>Omizja|NOVICE</item>
+        <item>Dokumentarci|NOVICE</item>
+        <item>Izobraževanje|IZOBRAŽEVANJE</item>
+        <item>Izobraževanje|IZOBRAŽEVANJE</item>
+        <item>Inženirstvo|TEHNOLOGIJA IN ZNANOST</item>
+        <item>Erotika|FILMI</item>
+        <item>Moda|ŽIVLJENJSKI SLOG</item>
+        <item>Ženska izbira|ZABAVA</item>
+        <item>Kvizi|IGRE</item>
+        <item>Zdravje|ŽIVLJENJSKI SLOG</item>
+        <item>Humoristično|KOMEDIJA</item>
+        <item>Informacije|ŽIVLJENJSKI SLOG</item>
+        <item>Intervju|NOVICE</item>
+        <item>Novinarstvo|NOVICE</item>
+        <item>Snemanje|ZABAVA</item>
+        <item>Mini serije|DRAMA</item>
+        <item>Mini serije|DRAMA</item>
+        <item>Celovečerci|FILMI</item>
+        <item>Film|FILMI</item>
+        <item>Glasbeno|ZABAVA</item>
+        <item>Novice|NOVICE</item>
+        <item>Cenitve|NAKUPOVANJE</item>
+        <item>Igre na srečo|NAKUPOVANJE</item>
+        <item>Igre na srečo, TV-prodaja, cenitve|NAKUPOVANJE</item>
+        <item>Resničnostne oddaje|ZABAVA</item>
+        <item>Vera|ŽIVLJENJSKI SLOG</item>
+        <item>Poročanje|NOVICE</item>
+        <item>Poročila|NOVICE</item>
+        <item>Podeželje|ŽIVLJENJSKI SLOG</item>
+        <item>Serije|DRAMA</item>
+        <item>Serije/TV-oddaje|DRAMA</item>
+        <item>Oddaje|ZABAVA</item>
+        <item>Limonade|DRAMA</item>
+        <item>Športi|ŠPORT</item>
+        <item>Športi|ŠPORT</item>
+        <item>TV-prodaja|NAKUPOVANJE</item>
+        <item>TV-prodaja|NAKUPOVANJE</item>
+        <item>Turizem|POTOVANJA</item>
+        <item>Potovanje|POTOVANJE</item>
+        <item>TV-novice|NOVICE</item>
+        <item>Različno|ZABAVA</item>
+        <item>Različne oddaje|ZABAVA</item>
+    </string-array>
+</resources>

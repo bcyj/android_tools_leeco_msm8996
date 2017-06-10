@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Copyright (c) 2012 Qualcomm Technologies, Inc.  All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+ -->
+<PreferenceScreen 
+      	xmlns:android="http://schemas.android.com/apk/res/android"
+      	android:key="wfd_advance_settings_in_child_screen"
+      	android:title="WFD Advanced Settings"
+      	android:summary="Choose to configure advance settings">
+      	
+	<ListPreference
+		android:key="@string/wfd_resolution_settings"
+		android:title="@string/resolution_list_title"
+		android:summary="@string/resolution_list_summary"
+		android:entries="@array/resolution_list_options"
+		android:entryValues="@array/resolution_list_options_values"
+		android.dialogTitle="@string/resolution_dialog_title"
+		android.defaultValue="@string/resolution_list_options_default_values" />
+		
+	<ListPreference
+		android:key="@string/wfd_bitrate_settings"
+		android:title="@string/bitrate_list_title"
+		android:summary="@string/bitrate_list_summary"
+		android:entries="@array/bitrate_list_options"
+		android:entryValues="@array/bitrate_list_options_values"
+		android.dialogTitle="@string/bitrate_dialog_title"
+		android.defaultValue="@string/bitrate_list_options_default_values" />	
+		
+	<Preference 
+		android:key="wfd_connection_parameters"
+		android:title="WFD Connection Parameters" 
+		android:summary="Select to view connection parameters" />
+	
+	<CheckBoxPreference 
+		android:key="audio"
+		android:title="WFD audio only" 
+		android:summary="Select to have WFD to play audio only" />
+	
+	<CheckBoxPreference 
+		android:key="video"
+		android:title="WFD video only" 
+		android:summary="Select to have WFD to play video only" />	
+	
+	<Preference 
+		android:key="wfd_development_ui" 
+		android:title="WFD Advance Development UI"
+		android:summary="Select to display advance UI" />
+</PreferenceScreen>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Choices for the "Reminder method" spinner.
+         These must be kept in sync with the reminder_methods_values array.
+         [CHAR LIMIT=10]
+    -->
+    <string-array name="reminder_methods_labels">
+        <item>"Thông báo"</item>
+        <item>"Email"</item>
+        <item>"SMS"</item>
+        <item>"Báo thức"</item>
+    </string-array>
+
+    <!-- This maps reminder_methods_labels to internal constants. -->
+    <integer-array name="reminder_methods_values" translatable="false">
+        <item>1</item>  <!-- METHOD_ALERT -->
+        <item>2</item>  <!-- METHOD_EMAIL -->
+        <item>3</item>  <!-- METHOD_SMS -->
+        <item>4</item>  <!-- METHOD_ALARM -->
+    </integer-array>
+
+    <!-- Choices for the "Reminder minutes" spinner.
+         These must be kept in sync with the reminder_minutes_values array.
+         For consistency, the format should match what
+         EventViewUtils.constructReminderLabel() generates.  (TODO: eliminate
+         this and just generate the list from reminder_minutes_values?)
+         [CHAR LIMIT=15]
+    -->
+    <string-array name="reminder_minutes_labels">
+        <item>"0 phút"</item>
+        <item>"1 phút"</item>
+        <item>"5 phút"</item>
+        <item>"10 phút"</item>
+        <item>"15 phút"</item>
+        <item>"20 phút"</item>
+        <item>"25 phút"</item>
+        <item>"30 phút"</item>
+        <item>"45 phút"</item>
+        <item>"1 giờ"</item>
+        <item>"2 giờ"</item>
+        <item>"3 giờ"</item>
+        <item>"12 giờ"</item>
+        <item>"24 giờ"</item>
+        <item>"2 ngày"</item>
+        <item>"1 tuần"</item>
+    </string-array>
+
+    <integer-array name="reminder_minutes_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+        <item>120</item>
+        <item>180</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>2880</item>
+        <item>10080</item>
+    </integer-array>
+
+  <!-- Choices for the "Reminder minutes" spinner in the settings.
+         These must be kept in sync with the preferences_default_reminder_values array.
+         [CHAR LIMIT=12]
+    -->
+       <string-array name="preferences_default_reminder_labels">
+        <item>"Không"</item>
+        <item>"0 phút"</item>
+        <item>"1 phút"</item>
+        <item>"5 phút"</item>
+        <item>"10 phút"</item>
+        <item>"15 phút"</item>
+        <item>"20 phút"</item>
+        <item>"25 phút"</item>
+        <item>"30 phút"</item>
+        <item>"45 phút"</item>
+        <item>"1 giờ"</item>
+        <item>"2 giờ"</item>
+        <item>"3 giờ"</item>
+        <item>"12 giờ"</item>
+        <item>"24 giờ"</item>
+        <item>"2 ngày"</item>
+        <item>"1 tuần"</item>
+    </string-array>
+
+    <string-array name="preferences_default_reminder_values" translatable="false">
+        <item>"-1"</item>
+        <item>"0"</item>
+        <item>"1"</item>
+        <item>"5"</item>
+        <item>"10"</item>
+        <item>"15"</item>
+        <item>"20"</item>
+        <item>"25"</item>
+        <item>"30"</item>
+        <item>"45"</item>
+        <item>"60"</item>
+        <item>"120"</item>
+        <item>"180"</item>
+        <item>"720"</item>
+        <item>"1440"</item>
+        <item>"2880"</item>
+        <item>"10080"</item>
+    </string-array>
+
+    <string-array name="preferences_week_start_day_labels">
+        <item>"Ngôn ngữ mặc định"</item>
+        <item>"Thứ Bảy"</item>
+        <item>"Chủ nhật"</item>
+        <item>"Thứ Hai"</item>
+    </string-array>
+
+    <string-array name="preferences_week_start_day_values" translatable="false">
+        <item>"-1"</item>
+        <item>"7"</item>
+        <item>"1"</item>
+        <item>"2"</item>
+    </string-array>
+
+
+
+    <string-array name="availability">
+        <item>"Bận"</item>
+        <item>"Sẵn có"</item>
+        <item>"Thử nghiệm"</item>
+    </string-array>
+
+    <!-- This maps reminder_methods_labels to internal constants. -->
+    <integer-array name="availability_values" translatable="false">
+        <item>0</item>  <!-- Busy -->
+        <item>1</item>  <!-- Available -->
+        <item>2</item>  <!-- Tentative -->
+    </integer-array>
+
+    <string-array name="visibility">
+        <item>"Mặc định"</item>
+        <item>"Riêng tư"</item>
+        <item>"Công khai"</item>
+    </string-array>
+
+    <string-array name="ordinal_labels">
+        <item>"đầu tiên"</item>
+        <item>"thứ hai"</item>
+        <item>"thứ ba"</item>
+        <item>"thứ tư"</item>
+        <item>"cuối cùng"</item>
+    </string-array>
+
+    <!-- Invitation responses -->
+    <string-array name="response_labels1">
+        <item>"Không có phản hồi"</item>
+        <item>"Có"</item>
+        <item>"Có thể"</item>
+        <item>"Không"</item>
+    </string-array>
+
+    <!-- The corresponding indices are defined in DeleteEventHelper.java -->
+    <!-- This is a list of choices displayed when the user deletes an event.
+         It only is shown when deleting a recurring event.
+    -->
+    <skip/>
+    <string-array name="delete_repeating_labels">
+        <item>"Chỉ sự kiện này"</item>
+        <item>"Sự kiện này và các sự kiện trong tương lai"</item>
+        <item>"Tất cả sự kiện"</item>
+    </string-array>
+
+    <!-- DO NOT TRANSLATE These values need to correspond to the indices
+         defined in DeleteEventHelper.java-->
+    <integer-array name="delete_repeating_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+
+    <!-- The corresponding indices are defined in DeleteEventHelper.java -->
+    <!-- This is the same array as above (the "delete_repeating_labels" array,
+         except that the first element "Only this event" is removed.  This
+         array exists to work-around a bug in the CalendarProvider and sync
+         code where you can\'t delete one instance of a repeating event that
+         was created on the phone until that event has been synced to the server.
+     -->
+    <skip/>
+    <string-array name="delete_repeating_labels_no_selected">
+        <item>"Sự kiện này &amp; các sự kiện trong tương lai"</item>
+        <item>"Tất cả sự kiện"</item>
+    </string-array>
+
+    <!-- The corresponding array indices are defined in EventInfoActivity.java -->
+    <skip/>
+    <!-- The list of choices displayed in a dialog box when the user wants to
+    respond to an invitation that repeats. -->
+    <string-array name="change_response_labels">
+        <!-- The choice for responding to only one instance of a repeating event -->
+        <item>"Chỉ sự kiện này"</item>
+        <!-- The choice for responding to all instances of a repeating event -->
+        <item>"Tất cả sự kiện trong hàng loạt sự kiện"</item>
+    </string-array>
+
+    <!-- Strings for buttons in drop down menu -->
+    <string-array name="buttons_list">
+        <item>"Ngày"</item>
+        <item>"Tuần"</item>
+        <item>"Tháng"</item>
+        <item>"Lịch biểu"</item>
+        <item>"Năm"</item>
+    </string-array>
+
+    <!-- Experimental options for skipping reminders. [CHAR LIMIT = 37] -->
+    <string-array name="preferences_skip_reminders_labels">
+        <!-- Default choice -->
+        <item>"Chỉ khi bị từ chối"</item>
+        <!-- Second option, for skipping reminders to events not yet responded to. -->
+        <item>"Nếu bị từ chối hoặc không phản hổi"</item>
+    </string-array>
+
+    <string-array name="preferences_skip_reminders_values" translatable="false">
+        <item>declined</item>
+        <item>not_responded</item>
+    </string-array>
+
+    <!-- Recurrence picker: How events are to be repeated.  [CHAR LIMIT = 20] -->
+    <string-array name="recurrence_freq">
+        <item>"LẶP LẠI HÀNG NGÀY"</item>
+        <item>"LẶP LẠI HÀNG TUẦN"</item>
+        <item>"LẶP LẠI HÀNG THÁNG"</item>
+        <item>"LẶP LẠI HÀNG NĂM"</item>
+    </string-array>
+
+    <!-- The following sets of strings describe a monthly recurring event, which will repeat
+         on the Nth WEEKDAY of every month. For example, the 3rd Monday of every month, or
+         the last Sunday. These are set up like this to resolve any gender-matching issues
+         that were present in some languages.
+     -->
+    <!-- Repeat a monthly event on the same nth day of every Sunday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_sun">
+        <item>"vào mọi Chủ Nhật đầu tiên"</item>
+        <item>"vào mọi Chủ Nhật thứ hai"</item>
+        <item>"vào mọi Chủ Nhật thứ ba"</item>
+        <item>"vào mọi Chủ Nhật thứ tư"</item>
+        <item>"vào mọi Chủ Nhật cuối cùng"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Monday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_mon">
+        <item>"vào mọi Thứ Hai đầu tiên"</item>
+        <item>"vào mọi Thứ Hai thứ hai"</item>
+        <item>"vào mọi Thứ Hai thứ ba"</item>
+        <item>"vào mọi Thứ Hai thứ tư"</item>
+        <item>"vào mọi Thứ Hai cuối cùng"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Tuesday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_tues">
+        <item>"vào mọi Thứ Ba đầu tiên"</item>
+        <item>"vào mọi Thứ Ba thứ hai"</item>
+        <item>"vào mọi Thứ Ba thứ ba"</item>
+        <item>"vào mọi Thứ Ba thứ tư"</item>
+        <item>"vào mọi Thứ Ba cuối cùng"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Wednesday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_wed">
+        <item>"vào mọi Thứ Tư đầu tiên"</item>
+        <item>"vào mọi Thứ Tư thứ hai"</item>
+        <item>"vào mọi Thứ Tư thứ ba"</item>
+        <item>"vào mọi Thứ Tư thứ tư"</item>
+        <item>"vào mọi Thứ Tư cuối cùng"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Thursday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_thurs">
+        <item>"vào mọi Thứ Năm đầu tiên"</item>
+        <item>"vào mọi Thứ Năm thứ hai"</item>
+        <item>"vào mọi Thứ Năm thứ ba"</item>
+        <item>"vào mọi Thứ Năm thứ tư"</item>
+        <item>"vào mọi Thứ Năm cuối cùng"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Friday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_fri">
+        <item>"vào mọi Thứ Sáu đầu tiên"</item>
+        <item>"vào mọi Thứ Sáu thứ hai"</item>
+        <item>"vào mọi Thứ Sáu thứ ba"</item>
+        <item>"vào mọi Thứ Sáu thứ tư"</item>
+        <item>"vào mọi Thứ Sáu cuối cùng"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Saturday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_sat">
+        <item>"vào mọi Thứ Bảy đầu tiên"</item>
+        <item>"vào mọi Thứ Bảy thứ hai"</item>
+        <item>"vào mọi Thứ Bảy thứ ba"</item>
+        <item>"vào mọi Thứ Bảy thứ tư"</item>
+        <item>"vào mọi Thứ Bảy cuối cùng"</item>
+    </string-array>
+</resources>

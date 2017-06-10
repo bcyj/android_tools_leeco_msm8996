@@ -1,0 +1,287 @@
+/*****************************************************************************
+  @FILE     sns_sam_gyro_tap.idl
+
+  @BRIEF    Message definition for gyro tap.
+
+  @DESCRIPTION
+  This file defines messages used by gyro tap algo service.
+
+  As prerequisite, the sensor algorithm must use the common Interface
+  defined in the Sensor Algorithms framework.
+
+  The messages defined herein will be passed to the Sensor framework using
+  the sensor1_write() API.
+
+  Copyright (c) 2012, 2014 Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+include "sns_common_v01.idl";
+
+revision 2;
+
+const SNS_SAM_GYRO_TAP_SUID = 0x226b1b3e147f0598;
+
+/** ENUMs are for reference onl#y, uint8 is used instead */
+
+//! @ENUM   SNS_SAM_TAP_EVENT_ENUM
+enum {
+  GYRO_TAP_LEFT        = 1,
+  /**< Phone is tapped on the left. #*/
+  GYRO_TAP_RIGHT       = 2,
+  /**< Phone is tapped on the right. */
+  GYRO_TAP_TOP         = 3,
+  /**< Phone is tapped on the top. */
+  GYRO_TAP_BOTTOM      = 4,
+  /**< Phone is tapped on the bottom. */
+  GYRO_TAP_FRONT       = 5,
+  /**< Phone is tapped on the front. */
+  GYRO_TAP_BACK       = 6
+  /**< Phone is tapped on the back. */
+} sns_sam_gyro_tap_event_e;
+
+/** Following are message definitions shared by all gyro tap related services */
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP
+    @BRIEF This command enables a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_GYRO_TAP_ENABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  /**< Unit of seconds, Q16; value of 0 means reporting on new event only */ 
+  mandatory uint32 report_period;
+
+  optional int32 sample_rate;
+  /**< sample rate in Hz, Q16 */
+
+  optional int32 tap_time_win;
+  /**< time over which a tap must occur, s,  Q16 */
+  optional int32 tap_time_sleep;
+  /**< max time over which a tap can occur, s,  Q16 */
+  optional int32 tap_dir_win;
+  /**< time over which a tap direction is determined, s,  Q16 */
+  optional int32 history_win ;
+  /**< Maintained length of history  - post tentative tap, s,  Q16 */
+  optional int32 orientation_change_win;
+  /**< time over which an orientation change is determined, s,  Q16 */
+  optional int32 jerk_win ;
+  /**< time over which a jerk is determined, s,  Q16 */
+
+  optional int32 accel_tap_thresh; 
+  /**< accel threshold in m/s/s, Q16 */
+  optional int32 mild_accel_tap_thresh; 
+  /**< mild tap accel threshold in m/s/s, Q16 */
+  optional int32 gyro_tap_thresh; 
+  /**< gyro_tap threshold in radians/s, Q16 */
+
+  optional int32 lr_min_accel_jerk_thresh_min; 
+  /**< left/right min min-accel-jerk threshold in m/s/s, Q16 */
+  optional int32 lr_min_gyro_jerk_thresh_min; 
+  /**< left/right min min-gyro-jerk threshold in radians/s, Q16 */
+  optional int32 lr_max_accel_jerk_thresh_min; 
+  /**< left/right max min-accel-jerk threshold in m/s/s, Q16 */
+  optional int32 lr_max_gyro_jerk_thresh_min; 
+  /**< left/right max min-gyro-jerk threshold in radians/s, Q16 */
+
+  optional int32 tb_accel_jerk_min_thresh; 
+  /**< top/botton min jerk threshold in m/s/s, Q16 */
+  optional int32 tb_gyro_jerk_min_thresh; 
+  /**< top/bottom min gyro jerk threshold in radians/s, Q16 */
+
+  optional int32 lr_accel_rat_jerk_yx;
+  /**< ratio of L/R accel jerk for y/x axes */
+  optional int32 lr_accel_rat_jerk_yz;
+  /**< ratio of L/R accel jerk for y/z axes */
+  optional int32 lr_gyro_rat_jerk_zy;
+  /**< ratio of L/R gyro jerk for z/y axes */
+  optional int32 lr_gyro_rat_jerk_zx;
+  /**< ratio of L/R gyro jerk for z/x axes */
+
+  optional int32 tb_accel_rat_jerk_xy;
+  /**< ratio of T/B accel jerk for x/y axes */
+  optional int32 lr_accel_rat_jerk_xz;
+  /**< ratio of T/B accel jerk for x/z axes */
+  optional int32 tb_gyro_rat_jerk_yx;
+  /**< ratio of T/B gyro jerk for y/x axes */
+  optional int32 tb_gyro_rat_jerk_yz;
+  /**< ratio of T/B gyro jerk for y/z axes */
+
+  optional int32 tb_accel_z_thresh;
+  /**< t/b accel z thresh, ms/s/s, Q16 */
+  optional int32 tb_accel_z_rat_zx;
+  /**< t/b accel z versus zx ratio */
+  optional int32 tb_accel_z_rat_zy;
+  /**< t/b accel z versus zy ratio */
+
+  optional uint8 ori_change_reject_mode; 
+  /**< orientation change rejection mode (0 == off, 1 == on)*/
+  optional int32 ori_check_win;
+  /**< orientation check window , seconds, Q16 */ 
+  optional int32 ori_change_win;
+  /**< orientation change window , seconds, Q16 */ 
+  optional int32 ori_change_thr;
+  /**< orientation change threshold metric */ 
+
+  optional uint8 z_axis_inc; 
+  /**< Z axis anamoly handling mode (0 == off, 1 == on)*/
+  optional int8 loaded_z_axis_anamoly; 
+  /**< Z axis anamoly loaded */ 
+  optional uint8 loaded_axis_3_valid; 
+  /**< Z axis load valid */ 
+} sns_sam_gyro_tap_enable_req_msg;
+
+//! @MSG     SNS_SAM_GYRO_TAP_ENABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  optional uint8                             instance_id;
+  /**<
+    The instance ID is maintained/assigned by SAM.
+    The client shall use this instance ID for future messages associated with
+    current algorithm instance.
+  */
+} sns_sam_gyro_tap_enable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP_DISABLE
+    @BRIEF This command disables a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_GYRO_TAP_DISABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< To identify an instance of an algorithm.  */
+} sns_sam_gyro_tap_disable_req_msg;
+
+//! @MSG     SNS_SAM_GYRO_TAP_DISABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  optional uint8                             instance_id;
+} sns_sam_gyro_tap_disable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP_REPORT_IND
+    @BRIEF Output report from a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_GYRO_TAP_REPORT_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+
+  /**< time stamp of input which caused this indication; in ticks */
+  mandatory uint32                           timestamp;
+
+  /**< TAP direction */
+  mandatory sns_sam_gyro_tap_event_e         tap_event; 
+
+} sns_sam_gyro_tap_report_ind_msg;
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP_ERROR
+    @BRIEF Asynchronous error report from a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_GYRO_TAP_ERROR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//============================================================================
+
+message {
+  mandatory uint8                            error; /**< sensors error code */
+  mandatory uint8                            instance_id;
+} sns_sam_gyro_tap_error_ind_msg;
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP_CANCEL
+    @BRIEF This command cancels all requests to the algorithm service.
+*/
+//============================================================================
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP_VERSION
+    @BRIEF This command requests algorithm service version.
+*/
+//============================================================================
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP_ENABLE
+    @BRIEF This command enables the GYRO TAP algorithm service.
+*/
+//============================================================================
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP_REPORT
+    @BRIEF This command requests/reports GYRO TAP algorithm reports
+*/
+//============================================================================
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_SAM_GYRO_TAP_SVC {
+  //! @ID SNS_SAM_GYRO_TAP_CANCEL
+  sns_common_cancel_req_msg        SNS_SAM_GYRO_TAP_CANCEL_REQ,
+  sns_common_cancel_resp_msg       SNS_SAM_GYRO_TAP_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_SAM_GYRO_TAP_VERSION
+  sns_common_version_req_msg       SNS_SAM_GYRO_TAP_VERSION_REQ,
+  sns_common_version_resp_msg      SNS_SAM_GYRO_TAP_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SAM_GYRO_TAP_ENABLE
+  sns_sam_gyro_tap_enable_req_msg       SNS_SAM_GYRO_TAP_ENABLE_REQ,
+  sns_sam_gyro_tap_enable_resp_msg      SNS_SAM_GYRO_TAP_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_SAM_GYRO_TAP_DISABLE
+  sns_sam_gyro_tap_disable_req_msg      SNS_SAM_GYRO_TAP_DISABLE_REQ,
+  sns_sam_gyro_tap_disable_resp_msg     SNS_SAM_GYRO_TAP_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_SAM_GYRO_TAP_REPORT
+  sns_sam_gyro_tap_report_ind_msg       SNS_SAM_GYRO_TAP_REPORT_IND
+    = 0x04;
+
+  //! @ID SNS_SAM_GYRO_TAP_ERROR
+  sns_sam_gyro_tap_error_ind_msg        SNS_SAM_GYRO_TAP_ERROR_IND
+    = 0x05;
+
+} = SNS_QMI_SVC_ID_29;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+*/
+
+//============================================================================
+// End of Module
+//============================================================================

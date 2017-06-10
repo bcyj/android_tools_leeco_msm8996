@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---/**************************************************************************
+* @file    AndroidManifest.xml
+*
+* Copyright (c) 2012, 2014 Qualcomm Technologies, Inc.  All Rights Reserved.
+* Qualcomm Technologies Proprietary and Confidential.
+*****************************************************************************-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   package="com.qualcomm.timeservice"
+   android:sharedUserId="android.uid.system">
+
+   <application>
+      <receiver android:name=".TimeServiceBroadcastReceiver"
+         android:exported="false"
+         android:label="TimeServiceBroadcastReceiver">
+         <intent-filter>
+            <action android:name="android.intent.action.TIME_SET" />
+         </intent-filter>
+         <intent-filter>
+            <action android:name="android.intent.action.DATE_CHANGED" />
+         </intent-filter>
+      </receiver>
+   </application>
+</manifest>

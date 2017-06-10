@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+    Qualcomm Technologies Proprietary and Confidential.
+-->
+
+<resources>
+    <!-- On user confirmation, activity is launched to disable apm.
+         Below config is used for the same -->
+    <bool name="config_telephony_enable_apm_setting_launch">true</bool>
+
+    <!-- Menu to end current active call will be added for the following use case :
+         Device A and Device B are in active call
+         Device A receives another call from Device C. Call with Device B goes on Hold
+         Device A receives another call from Device D.
+         At this point, menu will be displayed
+            a) To end active call i.e. Call with C
+            b) Accept call from Device D.
+            c) Call with Device B will continue to be on Hold
+         Below config is used for the same
+     -->
+    <bool name="config_end_active_accept_incoming">true</bool>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2013 Mimer Information Technology AB, info@mimer.com -->
+<MimerSQLReplace>
+	<!-- To avoid using Grant select permission on different tables to SYSADM. 
+		We need to add only one replacer which queries information schema. -->
+	<fromSQL id="GOEM401" statement="PRAGMA table_info(?)">
+
+		select 1, column_name, 1, 1, COLUMN_DEFAULT
+		from INFORMATION_SCHEMA.COLUMNS
+		where TABLE_SCHEMA = 'email'
+		AND (column_default is null or upper(column_default) not like ('%WITH CHECK OPTION%'))
+		AND
+		TABLE_NAME = ?
+
+	</fromSQL>
+
+
+
+<!-- Qualcomm Technologies replacers -->
+
+</MimerSQLReplace>

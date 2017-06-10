@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---/**************************************************************************
+* @file    AndroidManifest.xml
+* Copyright (c) 2012 Qualcomm Technologies, Inc. All Rights Reserved.
+* Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   package="com.qualcomm.qcrilmsgtunnel"
+   android:sharedUserId="android.uid.phone">
+
+   <protected-broadcast android:name="android.intent.action.SAFE_WIFI_CHANNELS_CHANGED" />
+
+   <permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL"
+               android:protectionLevel="signatureOrSystem" />
+
+   <uses-permission android:name="android.permission.WAKE_LOCK" />
+   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+   <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
+
+   <application>
+      <receiver android:name="QcrilMsgTunnelAutoboot">
+         <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+         </intent-filter>
+      </receiver>
+      <service android:name="QcrilMsgTunnelService"
+               android:exported="true"
+               android:permission="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
+   </application>
+</manifest>

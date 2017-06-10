@@ -1,0 +1,21 @@
+set echo off;
+-- Copyright (C) 2013 Mimer Information Technology AB, info@mimer.com
+set message off;
+select count(*) from android_metadata;
+alter databank media_internal_db drop filesize;
+enter 'media_external' using 'nopass';
+select count(*) from android_metadata;
+alter databank media_external_db drop filesize;
+leave;
+enter 'media_external_1' using 'nopass';
+select count(*) from android_metadata;
+alter databank media_external_1_db drop filesize;
+leave;
+enter 'media_external_2' using 'nopass';
+select count(*) from android_metadata;
+alter databank media_external_2_db drop filesize;
+leave;
+--enter 'media_external_3' using 'nopass';
+--select count(*) from android_metadata;
+--alter databank media_external_3_db drop filesize;
+--leave;

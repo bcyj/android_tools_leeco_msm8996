@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Names of packages and authorities that are common to all apps
+    and read from resources -->
+
+    <!-- Permissions label for reading attachments -->
+    <string name="permission_read_attachment_label">"ईमेल अटैचमेंट पढ़ें"</string>
+    <!-- Permissions description for reading attachments -->
+    <string name="permission_read_attachment_desc">"ऐप्स  को आपके ईमेल अटैचमेंट पढ़ने देता है."</string>
+    <!-- Permissions label for accessing the main provider -->
+    <string name="permission_access_provider_label">"ईमेल प्रदाता के डेटा तक पहुंचें"</string>
+    <!-- Permissions description for accessing the main provider -->
+    <string name="permission_access_provider_desc">"इस ऐप्स को प्राप्‍त संदेशों, भेजे गए संदेशों, उपयोगकर्ता नाम और पासवर्ड सहित आपके ईमेल डेटाबेस में पहुंच देता है."</string>
+
+    <!-- Name of application on Home screen -->
+    <string name="app_name">"ईमेल"</string>
+
+    <!-- Actions will be used as buttons and in menu items -->
+    <skip/>
+
+    <!--  Menu item used to create a new quick response [CHAR_LIMIT=16] -->
+    <string name="create_action">"नया बनाएं"</string>
+
+    <!-- Message informing user when a list that would contain quick responses
+            is empty [CHAR_LIMIT=80] -->
+    <string name="quick_responses_empty_view">"कोई झटपट उत्तर नहीं."</string>
+    <!-- Menu item -->
+    <string name="account_settings_action">"खाता सेटिंग"</string>
+    <!-- The next set of strings are used in local display and may be localized. -->
+    <!-- In the UI, the inbox will be displayed with this name -->
+    <string name="mailbox_name_display_inbox">"इनबॉक्स"</string>
+    <!-- In the UI, the outbox will be displayed with this name -->
+    <string name="mailbox_name_display_outbox">"आउट-बॉक्स"</string>
+    <!-- In the UI, the drafts will be displayed with this name -->
+    <string name="mailbox_name_display_drafts">"अधूरा ईमेल"</string>
+    <!-- In the UI, the trash will be displayed with this name -->
+    <string name="mailbox_name_display_trash">"मिटाया हुआ"</string>
+    <!-- In the UI, the sent will be displayed with this name -->
+    <string name="mailbox_name_display_sent">"भेजा गया"</string>
+    <!-- In the UI, the junk will be displayed with this name -->
+    <string name="mailbox_name_display_junk">"जंक"</string>
+    <!-- In the UI, the starred will be displayed with this name -->
+    <string name="mailbox_name_display_starred">"तारांकित"</string>
+    <!-- In the UI, the unread will be displayed with this name [CHAR LIMIT=15] -->
+    <string name="mailbox_name_display_unread">"अपठित"</string>
+
+    <!-- Title of debug screen -->
+    <string name="debug_title">"डीबग करें"</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_debug_logging_label" translatable="false">
+        Enable extra debug logging?</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_verbose_logging_label" translatable="false">
+        Enable exchange logging?</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_file_logging_label" translatable="false">
+        Enable sd card logging?</string>
+    <!-- Do Not Translate.  Button label, shown only on debug screen -->
+    <string name="debug_clear_webview_cache" translatable="false">
+        Clear WebView cache</string>
+    <!-- Do Not Translate. Button label. Shown only on debug screen -->
+    <string name="debug_clear_migration_state" translatable="false">Clear migration state</string>
+    <!-- Do Not Translate.  Checkbox label, shown on debug screen. -->
+    <string name="debug_force_one_minute_refresh_label" translatable="false">
+        Force 1-minute refresh for POP/IMAP</string>
+    <!-- Do Not Translate.  Checkbox label, shown on debug screen. -->
+    <string name="debug_enable_strict_mode_label" translatable="false">
+        Enable strict mode (with logging)</string>
+
+
+    <!-- Label shown in the account selector to select "Combined view", which contains
+         Combined Inbox, Combined Outbox, etc. [CHAR LIMIT=30] -->
+    <string name="mailbox_list_account_selector_combined_view">"संयोजित दृश्‍य"</string>
+
+    <!-- Header for forwarded original messages -->
+    <string name="message_compose_fwd_header_fmt">\n\n"--------मूल संदेश --------\nविषय: <xliff:g id="SUBJECT">%1$s</xliff:g>\nप्रेषक: <xliff:g id="SENDER">%2$s</xliff:g>\nप्रति: <xliff:g id="TO">%3$s</xliff:g>\nCC: <xliff:g id="CC_0">%4$s</xliff:g>\n\n"</string>
+    <!-- Title for dialog containing list of quick responses that user may insert
+            into message body. [CHAR_LIMIT=30] -->
+    <string name="message_compose_insert_quick_response_list_title">"झटपट उत्तर सम्मिलित करें"</string>
+    <!-- Menu item for inserting quick responses into email compose activity. [CHAR_LIMIT=30] -->
+    <string name="message_compose_insert_quick_response_menu_title">"झटपट उत्तर सम्मिलित करें"</string>
+    <!-- Toast upon using "send" when one or more attachments will need to be background loaded
+      [CHAR LIMIT=none]-->
+    <string name="message_view_attachment_background_load">"आपके द्वारा अग्रेषित संदेश को भेजने से पहले उसके एक या अधिक अटैचमेंट डाउनलोड किए जाएंगे."</string>
+
+    <!-- String used in place of a message that could not be properly decoded (e.g. bad base64
+         data was received.) [CHAR LIMIT=none] -->
+    <string name="message_decode_error">"संदेश डीकोड करते समय कोई त्रुटि आई थी."</string>
+
+    <!-- Notification ticker when a forwarded attachment couldn\'t be sent [CHAR LIMIT=none] -->
+    <string name="forward_download_failed_ticker">"एक या अधिक अटैचमेंट अग्रेषित नहीं किए जा सके."</string>
+    <!-- Notification title when a forwarded attachment couldn\'t be sent [CHAR LIMIT=30]-->
+    <string name="forward_download_failed_title">"अटैचमेंट अग्रेषित नहीं किया गया"</string>
+
+    <!-- Notification ticker when email account authentication fails [CHAR LIMIT=none] -->
+    <string name="login_failed_ticker">"<xliff:g id="ACCOUNT_NAME">%s</xliff:g> में प्रवेश करना विफल रहा."</string>
+    <!-- Notification title when email account authentication fails [CHAR LIMIT=30]-->
+    <string name="login_failed_title">"प्रवेश नहीं हो सका"</string>
+
+    <!-- Title of screen when setting up new email account [CHAR LIMIT=45] -->
+    <string name="account_setup_basics_title">"खाता सेटअप"</string>
+    <!-- Title of screen when trying to get oauth authentication -->
+    <string name="oauth_authentication_title">"प्रमाणीकरण का अनुरोध किया जा रहा है"</string>
+    <!-- Title of screen to choose with authentication to use -->
+    <string name="sign_in_title">"प्रवेश करें"</string>
+
+    <!-- Warning if there is a problem authenticating with oauth -->
+    <string name="oauth_error_description">"प्रमाणीकृत करने में असमर्थ"</string>
+    <!-- Warning label displayed when the email address or password are incorrect -->
+    <string name="password_warning_label">"ईमेल पता या पासवर्ड गलत है"</string>
+    <!-- Label displayed to confirm what email address we are trying to validate -->
+    <string name="email_confirmation_label">"ईमेल पता:"</string>
+    <!-- Headline of screen when setting up new email account (large text over divider)
+        [CHAR LIMIT=none] -->
+    <string name="account_setup_basics_headline">"ईमेल खाता"</string>
+    <!-- On "Set up email" screen, enthusiastic welcome message. -->
+    <string name="accounts_welcome">"आप बस कुछ ही चरणों में अपना खाता सेट कर सकते हैं."</string>
+    <!-- On "Set up email" screen, hint for account email address text field -->
+    <string name="account_setup_basics_email_label">"ईमेल पता"</string>
+
+    <!-- Label between OAuth and password authentication, indicating the user must do one or the other [CHAR LIMIT=40] -->
+    <string name="or_label">"या"</string>
+    <!-- Label for signing in with Google using OAuth -->
+    <string name="sign_in_with_google">"Google से प्रवेश करें"</string>
+    <!-- On "Set up email" screen, hint for account email password text field, should be uppercase where applicable -->
+    <string name="account_setup_basics_password_label">"पासवर्ड"</string>
+    <!-- hint for account email password text field -->
+    <string name="password_hint">"पासवर्ड"</string>
+    <!--  On the "Setup up email" screen, label indicating what service we are signed in with [CHAR LIMIT=40] -->
+    <string name="signed_in_with_service_label">"%s के साथ प्रवेश किया"</string>
+    <!-- Label for the authentication section, should be uppercase where applicable [CHAR LIMIT=20] -->
+    <string name="authentication_label">"प्रमाणीकरण"</string>
+    <!-- Label for the add authentication icon [CHAR LIMIT=40] -->
+    <string name="add_authentication_label">"प्रमाणीकरण जोड़ें"</string>
+    <!-- Label for the add authentication icon [CHAR LIMIT=40] -->
+    <string name="clear_authentication_label">"प्रमाणीकरण साफ़ करें"</string>
+    <!-- Button name on "Set up email" screen, with action underlined using html [CHAR LIMIT=20] -->
+    <string name="account_setup_basics_manual_setup_action">"मैन्‍युअल सेटअप"</string>
+    <!-- Toast when we can\'t build a URI from the given email & password -->
+    <!-- Note, the error message in the toast is purposefully vague, because I *don\'t* know
+        exactly what\'s wrong. -->
+    <string name="account_setup_username_password_toast">"कोई मान्‍य ईमेल पता और पासवर्ड लिखें."</string>
+    <!-- Title of dialog shown when a duplicate account is created -->
+    <string name="account_duplicate_dlg_title">"डुप्‍लिकेट खाता"</string>
+    <!-- Message of dialog shown when a duplicate account is created.  The display name of
+         the duplicate account is displayed. -->
+    <string name="account_duplicate_dlg_message_fmt">"आप पहले से ही \"<xliff:g id="DUPLICATE">%s</xliff:g>\" खाते के लिए इस उपयोगकर्ता नाम का उपयोग कर रहे हैं."</string>
+
+    <!-- On check-settings screen, this is the initially-displayed message. -->
+    <string name="account_setup_check_settings_retr_info_msg">"खाता जानकारी पुनर्प्राप्त कर रहा है…"</string>
+    <!-- Appears on screen while system is checking incoming server settings -->
+    <string name="account_setup_check_settings_check_incoming_msg">"सर्वर सेटिंग सत्यापित की जा रही हैं…"</string>
+    <!-- Appears on screen while system is checking outgoing server settings -->
+    <string name="account_setup_check_settings_check_outgoing_msg">"smtp सेटिंग सत्यापित की जा रही हैं…"</string>
+        <!-- Appears on screen while system is creating the account -->
+    <string name="account_setup_creating_account_msg">"खाता बना रहा है..."</string>
+
+    <!-- Headline text that appears on "Confirm account type" screen [CHAR LIMIT=none] -->
+    <string name="account_setup_ab_headline">"खाता प्रकार की दुबारा पूछें"</string>
+    <!-- Explanatory text that appears on the "Confirm account type" screen [CHAR LIMIT=none] -->
+    <string name="account_setup_ab_instructions_format">"आपने दर्शाया था कि <xliff:g id="EMAIL">%1$s</xliff:g> <xliff:g id="USERPROTOCOL">%2$s</xliff:g> का उपयोग करता है, लेकिन हो सकता है कि खाता <xliff:g id="PROVIDERPROTOCOL">%3$s</xliff:g> का उपयोग करे"</string>
+
+    <!-- Text that appears on "Set up email" screen after successfully setting up an account
+        [CHAR LIMIT=none] -->
+    <string name="account_setup_names_headline">"आपका खाता सेट हो गया है और शीघ्र ही ईमेल मिलने वाला है!"</string>
+    <!-- On "Set up email" screen, label of text field -->
+    <string name="account_setup_names_account_name_label">"इस खाते को कोई नाम दें (वैकल्पिक)"</string>
+    <!-- On "Set up email" screen, label of text field -->
+    <string name="account_setup_names_user_name_label">"आपका नाम (आउटगोइंग संदेशों में प्रदर्शित)"</string>
+
+    <!-- Headline for the the account type selector (IMAP or POP3 or EAS) [CHAR LIMIT=none] -->
+    <string name="account_setup_account_type_headline">"खाता प्रकार"</string>
+    <!-- "Add new email account" screen, text that appears on screen -->
+    <string name="account_setup_account_type_instructions">"यह किस प्रकार का खाता है?"</string>
+
+    <!-- "Incoming server settings" screen, headline (text over divider) [CHAR LIMIT=none] -->
+    <string name="account_setup_incoming_headline">"इनकमिंग सर्वर सेटिंग"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_username_label">"उपयोगकर्ता नाम"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_password_label">"पासवर्ड"</string>
+    <!-- "Incoming server settings" screen, label for text field -->
+    <string name="account_setup_password_subheading">"पासवर्ड"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_server_label">"सर्वर"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_port_label">"पोर्ट"</string>
+    <!-- "Incoming server settings" screen, label for pop-up menu, should be uppercase where applicable -->
+    <string name="account_setup_incoming_security_label">"सुरक्षा प्रकार"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an unencrypted session -->
+    <string name="account_setup_incoming_security_none_label">"कोई नहीं"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session on the selected port, accepting all SSL certificates -->
+    <string name="account_setup_incoming_security_ssl_trust_certificates_label">"SSL/TLS (सभी प्रमाणपत्र स्‍वीकार करें)"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session on the selected port, including SSL certificate
+        checks -->
+    <string name="account_setup_incoming_security_ssl_label">"SSL/TLS"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session overlaid on a plain text session using the selected
+        port, accepting all SSL certificates -->
+    <string name="account_setup_incoming_security_tls_trust_certificates_label">"STARTTLS (सभी प्रमाणपत्र स्‍वीकार करें)"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session overlaid on a plain text session on the selected
+        port, including SSL certificate checks -->
+    <string name="account_setup_incoming_security_tls_label">"STARTTLS"</string>
+    <!-- "Incoming server settings" screen, label for pop-up menu -->
+    <string name="account_setup_incoming_delete_policy_label">"ईमेल को सर्वर से हटाएं"</string>
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <string name="account_setup_incoming_delete_policy_never_label">"कभी नहीं"</string>
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <string name="account_setup_incoming_delete_policy_delete_label">"जब मैं इनबॉक्‍स से हटाऊं"</string>
+    <!-- "Incoming server settings" screen, label for setting IMAP path prefix: -->
+    <string name="account_setup_incoming_imap_path_prefix_label">"IMAP पथ का पहला भाग"</string>
+    <!-- "Incoming server settings" screen, hint for setting IMAP path prefix: -->
+    <string name="account_setup_incoming_imap_path_prefix_hint">"वैकल्पिक"</string>
+
+    <!-- "Outgoing server settings" screen, headline (text over divider) [CHAR LIMIT=none] -->
+    <string name="account_setup_outgoing_headline">"आउटगोइंग सर्वर सेटिंग"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_smtp_server_label">"SMTP सर्वर"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_port_label">"पोर्ट"</string>
+    <!-- On "Outgoing server settings" screen, label for pop-up menu, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_security_label">"सुरक्षा प्रकार"</string>
+    <!-- On "Outgoing server settings" screen, label for check box, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_require_login_label">"प्रवेश आवश्यक"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable-->
+    <string name="account_setup_outgoing_username_label">"उपयोगकर्ता नाम"</string>
+
+    <!-- On "Exchange" setup screen, a heading title for the current client certificate, should be uppercase where applicable [CHAR LIMIT=50] -->
+    <string name="account_setup_exchange_certificate_title">"क्लाइंट प्रमाणपत्र"</string>
+    <!-- On "Exchange" setup screen, a button label to include a client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_select_certificate">"चुनें"</string>
+    <!-- On "Exchange" setup screen, a button label to include a client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_use_certificate">"क्लाइंट प्रमाणपत्र का उपयोग करें"</string>
+    <!-- On "Exchange" setup screen, a button label to remove the currently used client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_remove_certificate">"निकालें"</string>
+    <!-- On "Exchange" setup screen, placeholder text to indicate no client
+         certificate is used [CHAR LIMIT=50] -->
+    <string name="account_setup_exchange_no_certificate">"कोई नहीं"</string>
+    <!-- On "Exchange" setup screen, the exchange device-id label, should be uppercase where applicable [CHAR LIMIT=30] -->
+    <string name="account_setup_exchange_device_id_label">"मोबाइल डिवाइस आईडी"</string>
+
+    <!-- In Account setup options screen, Activity headline [CHAR LIMIT=none] -->
+    <string name="account_setup_options_headline">"खाता विकल्प"</string>
+    <!-- In Account setup options screen, label for email check frequency selector -->
+    <string name="account_setup_options_mail_check_frequency_label">"समन्वयन आवृत्ति."</string>
+    <!-- In Account setup options & Account Settings screens, label for email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_never">"कभी नहीं"</string>
+    <!-- In Account setup options & Account Settings screens, label for email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_push">"स्‍वत: (पुश)"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_5min">"प्रत्‍येक 5 मिनट"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_10min">"प्रत्‍येक 10 मिनट"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_15min">"प्रत्‍येक 15 मिनट"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_30min">"प्रत्‍येक 30 मिनट"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_1hour">"प्रत्‍येक घंटा"</string>
+    <!-- In Account setup options & Account Settings screens, check box for new-mail notification -->
+    <string name="account_setup_options_notify_label">"ईमेल आने पर मुझे सूचित करें"</string>
+    <!-- In Account setup options screen, optional check box to also sync contacts -->
+    <string name="account_setup_options_sync_contacts_label">"संपर्कों को इस खाते से समन्ववित करें"</string>
+    <!-- In Account setup options screen, optional check box to also sync contacts -->
+    <string name="account_setup_options_sync_calendar_label">"इस खाते से कैलेंडर समन्‍वयित करें"</string>
+    <!-- In Account setup options screen, check box to sync email -->
+    <string name="account_setup_options_sync_email_label">"इस खाते से ईमेल समन्वयित करें"</string>
+    <!-- In Account setup options screen, check box to auto-download attachments  [CHAR LIMIT=none] -->
+    <string name="account_setup_options_background_attachments_label">"वाई-फ़ाई  से कनेक्‍ट होने पर अटैचमेंट को स्‍वचालित रूप से डाउनलोड करें"</string>
+    <!-- Dialog title when "setup" could not finish -->
+    <string name="account_setup_failed_dlg_title">"पूरा नहीं हो सका"</string>
+    <!-- In Account setup options screen, label for email lookback selector -->
+    <string name="account_setup_options_mail_window_label">"ईमेल यहां से समन्वयित करें:"</string>
+    <!-- In account setup options & account settings screens (exchange), sync window length; this
+        implies loading a \'reasonable\' number of messages [CHAR LIMIT=25] -->
+    <string name="account_setup_options_mail_window_auto">"स्वचालित"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1day">"अंतिम दिन"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_3days">"पिछले तीन दिन"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1week">"पिछले सप्ताह"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_2weeks">"पिछले दो सप्ताह"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1month">"पिछले माह"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_all">"सभी"</string>
+    <!-- Per-mailbox sync window setting.  This means "use the account\'s sync window setting" [CHAR LIMIT=40] -->
+    <string name="account_setup_options_mail_window_default">"उपयोगकर्ता खाता डिफ़ॉल्ट"</string>
+
+    <!-- "Setup could not finish" dialog text; e.g., Username or password incorrect -->
+    <string name="account_setup_failed_dlg_auth_message">"उपयोगकर्ता नाम या पासवर्ड गलत है."</string>
+
+    <!-- Account setup autodiscover auth failure dialog title. This is shown when autodiscover hits
+        an "access denied" server error, which could imply incorrect username/password or that no
+        autodiscover service has been configured for the domain [CHAR LIMIT=40] -->
+    <string name="account_setup_autodiscover_dlg_authfail_title">"खाता सेटअप के साथ समस्या"</string>
+    <!-- Account setup autodiscover auth failure dialog message. This is shown when autodiscover hits
+        an "access denied" server error, which could imply incorrect username/password or that no
+        autodiscover service has been configured for the domain [CHAR LIMIT=NONE] -->
+    <string name="account_setup_autodiscover_dlg_authfail_message">"दुबारा पूछें कि उपयोगकर्तानाम, पासवर्ड, और खाता सेटिंग सही हैं."</string>
+
+    <!-- An error message presented to the user when the server\'s identity
+         cannot be established or trusted [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_dlg_certificate_message">"सर्वर से सुरक्षित रूप से कनेक्‍ट नहीं हो सकता."</string>
+    <!-- An error message presented to the user when the server\'s identity
+         cannot be established or trusted [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"सर्वर से सुरक्षित रूप से कनेक्‍ट नहीं हो सकता.\n(<xliff:g id="ERROR">%s</xliff:g>)"</string>
+    <!-- An error message presented to the user when the server requires a
+         client certificate to connect [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_certificate_required">"एक क्लाइंट प्रमाणपत्र की आवश्यकता है. क्या आप क्लाइंट प्रमाणपत्र के साथ सर्वर से कनेक्ट होना चाहते हैं?"</string>
+    <!-- An error message presented to the user when the certificate they
+         specified for connecting to a server is inaccessible [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_certificate_inaccessible">"प्रमाणपत्र अमान्‍य है या उस पर पहुंचा नहीं जा सकता."</string>
+
+    <!-- Dialog text for ambiguous setup failure; server error/bad credentials [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_check_credentials_message">"सर्वर ने एक त्रुटि के साथ प्रतिसाद दिया. अपना उपयोगकर्ता नाम और पासवर्ड जांचें फिर पुन: प्रयास करें."</string>
+
+    <!-- "Setup could not finish" dialog text; e.g., Cannot connect to server -->
+    <string name="account_setup_failed_dlg_server_message">"सर्वर से कनेक्‍ट नहीं हो सकता."</string>
+    <!-- "Setup could not finish" dialog text; e.g., Cannot connect to server\n(Connection timed out) -->
+    <string name="account_setup_failed_dlg_server_message_fmt">"सर्वर से कनेक्‍ट नहीं कर सकता.\n(<xliff:g id="ERROR">%s</xliff:g>)"</string>
+
+    <!-- Additional diagnostic text when TLS was required but the server doesn\'t support it -->
+    <string name="account_setup_failed_tls_required">"TLS आवश्‍यक है लेकिन सर्वर द्वारा समर्थित नहीं है."</string>
+    <!-- Additional diagnostic text when server does not support any of our authentication methods -->
+    <string name="account_setup_failed_auth_required">"प्रमाणीकरण की विधियां सर्वर द्वारा समर्थित नहीं हैं."</string>
+    <!-- Additional diagnostic text when server connection failed due to security error -->
+    <string name="account_setup_failed_security">"सुरक्षा त्रुटि के कारण सर्वर से कनेक्‍शन नहीं खोल सका."</string>
+    <!-- Additional diagnostic text when server connection failed due to io error (connection) -->
+    <string name="account_setup_failed_ioerror">"सर्वर से कनेक्शन खोला नहीं जा सका."</string>
+    <!-- Additional diagnostic text when server connection failed due to our inability to support a
+         required EAS protocol version [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_protocol_unsupported">"आपने गलत सर्वर पता लिखा है या सर्वर को उस प्रोटोकॉल वर्शन की आवश्‍यकता है जिसका समर्थन ईमेल नहीं करता."</string>
+    <!-- Additional diagnostic text when server access was denied; the user should contact the
+         administrator of the server for more information [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_access_denied">"आपको इस सर्वर के साथ समन्वयित करने की अनुमति नहीं है. अधिक जानकारी के लिए अपने सर्वर के व्यवस्थापक से संपर्क करें."</string>
+
+    <!-- Dialog title when validation requires security provisioning (e.g. support
+         for device lock PIN, or remote wipe.) and we ask the user permission before continuing -->
+    <string name="account_setup_security_required_title">"दूरस्‍थ सुरक्षा व्यवस्थापन"</string>
+    <!-- Additional diagnostic text when validation requires security provisioning (e.g. support
+         for device lock PIN, or remote wipe.) and we ask the user permission before continuing.
+         [CHAR LIMIT=none] -->
+    <string name="account_setup_security_policies_required_fmt">"सर्वर <xliff:g id="SERVER">%s</xliff:g> के लिए आवश्‍यक है कि आप अपने Android डिवाइस की कुछ सुरक्षा सुविधाओं को दूरस्थ रूप से नियंत्रित करने दें. क्‍या आप यह खाता सेट करना पूर्ण करना चाहते हैं?"</string>
+    <!-- Additional diagnostic text when validation failed due to required provisioning not
+         being supported [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_security_policies_unsupported">"इस सर्वर को ऐसी सुरक्षा सुविधाओं की आवश्यकता है जिनका समर्थन आपका Android डिवाइस नहीं करता, जिनमें शामिल हैं: <xliff:g id="ERROR">%s</xliff:g>"</string>
+    <!-- Warning given to users when they request disabling device administration (i.e. that their
+         administered accounts will be deleted) [CHAR LIMIT=none] -->
+    <string name="disable_admin_warning">"चेतावनी: आपके डिवाइस को प्रबंधित करने के लिए ईमेल ऐप्स का प्राधिकार प्रयोग में नहीं कर देने से उसके लिए आवश्यक सभी ईमेल खाते, उनके ईमेल, संपर्क, कैलेंडर ईवेंट, और अन्‍य डेटा सहित, हटा दिए जाएंगे."</string>
+
+    <!-- Dialog shown when the account requires some amount of device security provisioning,
+         just before jumping into system settings such as Device Policy grant, PIN/password,
+         or encryption setup.  [CHAR_LIMIT=40] -->
+    <string name="account_security_dialog_title">"सुरक्षा अपडेट"</string>
+    <!-- Additional diagnostic text when the account requires some amount of device security
+         provisioning, just before jumping into system settings such as Device Policy grant,
+         PIN/password, or encryption setup.  [CHAR LIMIT=none] -->
+    <string name="account_security_dialog_content_fmt">"आपको <xliff:g id="ACCOUNT">%s</xliff:g> के लिए अपनी सुरक्षा सेटिंग अपडेट करने की आवश्यकता है."</string>
+
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_unsupported_ticker_fmt">"सुरक्षा आवश्‍यकताओं के कारण खाता \"<xliff:g id="ACCOUNT">%s</xliff:g>\" समन्‍वयित नहीं किया जा सकता."</string>
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_needed_ticker_fmt">"खाते \"<xliff:g id="ACCOUNT">%s</xliff:g>\" को सुरक्षा सेटिंग अपडेट की आवश्‍यकता है."</string>
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_changed_ticker_fmt">"\"<xliff:g id="ACCOUNT">%s</xliff:g>\" खाते ने अपनी सुरक्षा सेटिंग बदल दी है; किसी उपयोगकर्ता कार्यवाही की आवश्‍यकता नहीं."</string>
+    <!-- Notification content title when device security required [CHAR_LIMIT=30] -->
+    <string name="security_notification_content_update_title">"सुरक्षा अपडेट आवश्यक"</string>
+    <!-- Notification content title when device security policies have changed [CHAR_LIMIT=36] -->
+    <string name="security_notification_content_change_title">"सुरक्षा नीतियां बदल दी गई हैं"</string>
+    <!-- Notification content title when device security policies cannot be met [CHAR_LIMIT=30] -->
+    <string name="security_notification_content_unsupported_title">"सुरक्षा नीतियां पूरी नहीं हो सकतीं"</string>
+    <!-- Title of the activity that dispatches changes to device security.  Not normally seen. -->
+    <string name="account_security_title">"डिवाइस सुरक्षा"</string>
+    <!-- Additional diagnostic text when the email app asserts control of the phone.
+        [CHAR LIMIT=none] -->
+    <string name="account_security_policy_explanation_fmt">"सर्वर <xliff:g id="SERVER">%s</xliff:g> के लिए यह आवश्‍यक है कि आप उसे अपने Android डिवाइस की कुछ सुरक्षा सुविधाओं को दूरस्थ रूप से नियंत्रित करने दें."</string>
+
+    <!-- "Setup could not finish" dialog action button -->
+    <string name="account_setup_failed_dlg_edit_details_action">"विवरण संपादित करें"</string>
+
+    <!-- Notification ticker when device password is getting ready to expire [CHAR_LIMIT=80] -->
+    <string name="password_expire_warning_ticker_fmt">"आपको \"<xliff:g id="ACCOUNT">%s</xliff:g>\" के लिए अपना लॉक स्‍क्रीन पिन या पासवर्ड बदलने की आवश्यकता है."</string>
+    <!-- Notification content title when device password is getting ready to expire
+            [CHAR_LIMIT=30] -->
+    <string name="password_expire_warning_content_title">"स्‍क्रीन लॉक करें पासवर्ड समाप्त होने वाला है"</string>
+
+    <!-- Notification ticker when device password has expired [CHAR_LIMIT=80] -->
+    <string name="password_expired_ticker">"आपकी स्‍क्रीन लॉक करें पिन या पासवर्ड की समय-सीमा समाप्त हो गई है."</string>
+    <!-- Notification content title when device password has expired [CHAR_LIMIT=28] -->
+    <string name="password_expired_content_title">"स्‍क्रीन लॉक करें पासवर्ड की समय-सीमा समाप्त"</string>
+
+    <!-- Dialog title if device pin/password is going to expire soon. [CHAR_LIMIT=40] -->
+    <string name="password_expire_warning_dialog_title">"स्‍क्रीन लॉक करें पासवर्ड समाप्त होने वाला है"</string>
+    <!-- Dialog content device pin/password is going to expire soon. [CHAR_LIMIT=none] -->
+    <string name="password_expire_warning_dialog_content_fmt">"आपको शीघ्र ही अपना लॉक स्क्रीन पिन या पासवर्ड को बदलना होगा, अन्यथा <xliff:g id="ACCOUNT">%s</xliff:g> का डेटा मिट जाएगा. क्या आप इसे अभी बदलना चाहते हैं?"</string>
+
+    <!-- Dialog title if device pin/password has already expired. [CHAR_LIMIT=40] -->
+    <string name="password_expired_dialog_title">"स्‍क्रीन लॉक करें पासवर्ड की समय-सीमा समाप्त हो गई है"</string>
+    <!-- Dialog content device pin/password has already expired. [CHAR_LIMIT=none] -->
+    <string name="password_expired_dialog_content_fmt">"<xliff:g id="ACCOUNT">%s</xliff:g> का डेटा आपके डिवाइस से मिटाया जा रहा है. आप इसे अपने लॉक स्क्रीन पिन या पासवर्ड बदलकर पुनर्स्थापित कर सकते हैं. क्या आप इसे अभी बदलना चाहते हैं?"</string>
+
+    <!-- On AccountSettingsXL, dialog text if you try to exit in/out/eas fragment (server settings)
+         without checking/saving [CHAR LIMIT=none]-->
+    <string name="account_settings_exit_server_settings">"न सहेजे गए परिवर्तनों को छोड़ें?"</string>
+
+    <!-- On Settings screen, setting option name -->
+    <!-- Title of account preference for downloading attachments in background [CHAR LIMIT=32] -->
+    <string name="account_settings_background_attachments_label">"अटैचमेंट को डाउनलोड करें"</string>
+    <!-- Summary of account preference for downloading attachments in background [CHAR LIMIT=64] -->
+    <string name="account_settings_background_attachments_summary">"WiFi के माध्यम से हाल के संदेशों के अटैचमेंट स्वत: डाउनलोड करें"</string>
+    <string name="account_settings_notify_label">"ईमेल नोटिफिकेशन"</string>
+    <!-- On Settings screen, summary line when called via AccountManager for Exchange accounts
+        [CHAR LIMIT=50] -->
+    <string name="account_settings_summary">"आवृत्ति, नोटिफिकेशन आदि समन्वयन करें."</string>
+    <!-- On Settings screen, setting summary text -->
+    <string name="account_settings_notify_summary">"ईमेल आने पर सूचना भेजें"</string>
+    <!-- On Settings screen, setting option name and title of dialog box that opens -->
+    <string name="account_settings_mail_check_frequency_label">"समन्वयन आवृत्ति"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_incoming_label">"इनकमिंग सेटिंग"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_incoming_summary">"उपयोगकर्ता नाम, पासवर्ड, और अन्‍य इनकमिंग सर्वर सेटिंग"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_outgoing_label">"आउटगोइंग सेटिंग"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_outgoing_summary">"उपयोगकर्ता नाम, पासवर्ड, और अन्‍य आउटगोइंग सर्वर सेटिंग"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_enforced_label">"नीतियां लागू की गईं"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_enforced_summary">"कोई नहीं"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_unsupported_label">"असमर्थित नीतियां"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_unsupported_summary">"कोई नहीं"</string>
+    <!-- On Settings screen, label for button that attempts to sync the account -->
+    <string name="account_settings_retry_label">"समन्‍वयन का प्रयास करें"</string>
+    <!-- On Settings screen, summmary for button that attempts to sync an account [CHAR LIMIT=64] -->
+    <string name="account_settings_retry_summary">"इस खाते को समन्वयित करने के लिए यहां स्पर्श करें"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_description_label">"खाता नाम"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_name_label">"आपका नाम"</string>
+    <!-- On Settings screen, setting option name. Allows user to modify saved quick responses
+        for insertion in message body. [CHAR_LIMIT=24]-->
+    <string name="account_settings_edit_quick_responses_label">"झटपट उत्तर"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_edit_quick_responses_summary">"वह लेख संपादित करें जिसे आप अक्सर ईमेल लिखते समय शामिल करते हैं"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_notifications">"सूचना सेटिंग"</string>
+    <!-- On Settings screen, section heading for data usage [CHAR LIMIT=70] -->
+    <string name="account_settings_data_usage">"डेटा उपयोग"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_policies">"सुरक्षा नीतियां"</string>
+
+    <string name="system_folders_title">"सिस्टम फ़ोल्डर"</string>
+    <string name="system_folders_trash_title">"मिटाया हुआ फ़ोल्डर"</string>
+    <string name="system_folders_trash_summary">"अपने सर्वर का मिटाया हुआ फ़ोल्डर चुनें"</string>
+    <string name="system_folders_trash_dlg">"अपने सर्वर का मिटाया हुआ फ़ोल्डर चुनें"</string>
+    <string name="system_folders_sent_title">"भेजे गए आइटम फ़ोल्डर"</string>
+    <string name="system_folders_sent_summary">"अपने सर्वर का भेजे गए आइटम फ़ोल्डर चुनें"</string>
+    <string name="system_folders_sent_dlg">"अपने सर्वर का भेजे गए आइटम फ़ोल्डर चुनें"</string>
+
+    <!-- On settings screen, dialog heading informing user to create or edit a quick response -->
+    <string name="edit_quick_response_dialog">"झटपट उत्तर"</string>
+    <!-- On settings screen, edit quick response dialog\'s "save" button -->
+    <string name="save_action">"सहेजें"</string>
+
+    <!-- On settings screen, sync contacts check box label [CHAR LIMIT=20]-->
+    <string name="account_settings_sync_contacts_enable">"संपर्कों को समन्वयन करें"</string>
+    <!-- On settings screen, sync contacts summary text [CHAR LIMIT=35] -->
+    <string name="account_settings_sync_contacts_summary">"इस खाते के लिए संपर्क समन्वयन करें"</string>
+    <!-- On settings screen, sync calendar check box label [CHAR LIMIT=20]-->
+        <string name="account_settings_sync_calendar_enable">"कैलेंडर समन्वयन करें"</string>
+    <!-- On settings screen, sync calendar summary text [CHAR LIMIT=50] -->
+    <string name="account_settings_sync_calendar_summary">"इस खाता के लिए कैलें. इवेंट समन्व. करें"</string>
+    <!-- On settings screen, sync email check box label [CHAR LIMIT=20]-->
+    <string name="account_settings_sync_email_enable">"ईमेल समन्‍वयित करें"</string>
+    <!-- On settings screen, sync email summary text [CHAR LIMIT=35] -->
+    <string name="account_settings_sync_email_summary">"इस खाते के लिए ईमेल समन्वयन करें"</string>
+
+    <!-- On Settings screen, vibrate pop-up menu label -->
+    <string name="label_notification_vibrate_title">"कंपन"</string>
+
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_ringtone">"रिंगटोन चुनें"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_servers">"सर्वर सेटिंग"</string>
+
+    <!-- Mailbox settings activity title [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_activity_title">"समन्वयन विकल्‍प"</string>
+    <!-- Mailbox settings activity title, with the target folder name [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_activity_title_with_mailbox">"समन्वयन विकल्प (<xliff:g id="MAILBOXX_NAME">%s</xliff:g>)"</string>
+    <!-- On mailbox settings screen: Whether to sync this mailbox when the account syncs. -->
+    <string name="mailbox_settings_sync_enabled_label">"यह फ़ोल्डर समन्वयित करें"</string>
+    <!-- On mailbox settings screen: Explanatory text for what it means to "sync this folder". -->
+    <string name="mailbox_settings_sync_enabled_summary">"कनेक्ट होने पर संदेश डाउनलोड हो जाएंगे"</string>
+    <!-- On mailbox settings screen: Mailbox sync window (the number of days to synchronize email for) setting label [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_mailbox_sync_window_label">"इतने दिनों के मेल समन्वयित करें"</string>
+
+    <!-- Message that appears when adding a T-Online account -->
+    <string name="provider_note_t_online">"यह ईमेल खाता सेट करने से पहले, T-Online वेबसाइट पर जाएं और POP3 ईमेल पहुंच के लिए पासवर्ड बनाएं."</string>
+
+    <!-- Short name of Microsoft Exchange account type; used by AccountManager -->
+    <string name="exchange_eas_name" translatable="false">Exchange</string>
+    <!-- Long name of Microsoft Exchange account type; used by AccountManager -->
+    <string name="exchange_name_alternate">"Microsoft Exchange ActiveSync"</string>
+
+    <!-- Message that appears if the AccountManager cannot create the system Account -->
+    <string name="system_account_create_failed">"खाता नहीं बनाया जा सका. पुन: प्रयास करें."</string>
+
+    <!-- Strings that support the DeviceAdmin / DevicePolicyManager API -->
+    <!-- Name of the DeviceAdmin (seen in settings & in user confirmation screen) -->
+    <string name="device_admin_label">"ईमेल"</string>
+    <!-- Long-form description of the DeviceAdmin (2nd line in settings & in user conf. screen) -->
+    <string name="device_admin_description">"सर्वर-विशिष्ट सुरक्षा नीतियों को सक्षम करता है"</string>
+
+    <!-- A policy disallowing the user of the device\'s camera [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_camera">"डिवाइस के कैमरे के उपयोग की अनुमति न दें"</string>
+    <!-- A policy requiring a device lock screen password [CHAR LIMIT=50] -->
+    <string name="policy_require_password">"डिवाइस पासवर्ड आवश्‍यक"</string>
+    <!-- A policy disallowing the reuse of recent passwords [CHAR LIMIT=50] -->
+    <string name="policy_password_history">"हाल के पासवर्ड का पुन: उपयोग प्रतिबं. करें"</string>
+    <!-- A policy that forces a password to expire after a set period of time [CHAR LIMIT=50] -->
+    <string name="policy_password_expiration">"पासवर्ड के लिए समय सीमा समाप्ति आवश्यक"</string>
+    <!-- A policy requiring a maximum amount of time the device can sit idle before the lock screen
+        is activated [CHAR LIMIT=50] -->
+    <string name="policy_screen_timeout">"स्क्रीन लॉक के लिए प्रयोग में नहीं डिवाइस चाहिए"</string>
+    <!-- A policy limiting the number of old calendar events synced [CHAR LIMIT=50] -->
+    <string name="policy_calendar_age">"समन्‍वयित कैलेंडर ईवेंट की संख्‍या सीमित करें"</string>
+    <!-- A policy limiting the number of emails synced [CHAR LIMIT=50] -->
+    <string name="policy_email_age">"समन्‍वयित ईमेल की संख्‍या सीमित करें"</string>
+
+    <!-- The four strings below represent "quick responses" which the user can insert into a
+        message being composed with just a couple of taps.  These four responses MUST be defined,
+        but need not include a string (i.e. they are optional).  Further, the responses can be
+        customized as necessary by the translator, in case one or more of these is inappropriate in
+        a particular locale or if there are better options available. -->
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_1">"धन्यवाद!"</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_2">"मुझे अच्छा लगता है!"</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_3">"मैं इसे बाद में पढ़ूंगा/पढ़ूगी और आपसे संपर्क करूंगा/करूंगी."</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_4">"आइए इस पर चर्चा करने के लिए कोई मीटिंग सेट करें."</string>
+
+    <!-- This is shown when a user responds to a meeting invitation [CHAR LIMIT=none]-->
+    <string name="confirm_response">"प्रतिक्रिया भेज रहा है..."</string>
+
+    <!-- Used by AccountManager -->
+    <!-- Account type name as used by AccountManager UI (IMAP is not translatable) [CHAR LIMIT=30] -->
+    <string name="imap_name">व्यक्तिगत (IMAP)</string>
+    <!-- Account type name as used by AccountManager UI (POP3 is not translatable) [CHAR LIMIT=30] -->
+    <string name="pop3_name">व्यक्तिगत (POP3)</string>
+
+    <!-- Displayed when the user must pick his server\'s trash folder from a list [CHAR LIMIT 30]-->
+    <string name="trash_folder_selection_title">"<xliff:g id="ACCOUNT">%s</xliff:g> का सर्वर मिटाया हुआ फ़ोल्डर चुनें"</string>
+    <!-- Displayed when the user must pick his server\'s sent items folder from a list [CHAR LIMIT 30]-->
+    <string name="sent_folder_selection_title">"<xliff:g id="ACCOUNT">%s</xliff:g> के लिए सर्वर प्रेषित आइटम फ़ोल्डर चुनें"</string>
+    <string name="account_waiting_for_folders_msg">"फ़ोल्डर सूची लोड कर रहा है…"</string>
+
+    <!-- Feedback uri to be used when feedback is enabled -->
+    <string name="email_feedback_uri" translatable="false"/>
+
+    <string name="account_manager_type_exchange" translatable="false">com.android.exchange</string>
+    <string name="account_manager_type_pop3" translatable="false">com.android.email.pop3</string>
+    <string name="account_manager_type_imap" translatable="false">com.android.email.imap</string>
+    <string name="account_manager_type_legacy_imap" translatable="false">com.android.email.imap</string>
+    <string name="intent_exchange_action" translatable="false">com.android.email.EXCHANGE_INTENT</string>
+    <string name="intent_exchange_cert_action" translatable="false">com.android.email.EXCHANGE_REQUEST_CERT</string>
+    <string name="intent_exchange_package" translatable="false">com.android.exchange</string>
+    <string name="intent_account_manager_entry" translatable="false">com.android.email.activity.setup.ACCOUNT_MANAGER_ENTRY</string>
+    <string name="intent_force_create_email_account" translatable="false">com.android.email.FORCE_CREATE_ACCOUNT</string>
+    <string name="intent_create_email_account" translatable="false">com.android.email.CREATE_NEW_ACCOUNT</string>
+    <string name="authority_email_provider" translatable="false">com.android.email.provider</string>
+    <string name="authority_conversation_provider" translatable="false">com.android.email.conversation.provider</string>
+    <string name="authority_account_cache_provider" translatable="false">com.android.email.accountcache</string>
+    <string name="protocol_legacy_imap" translatable="false">imap</string>
+    <string name="protocol_imap" translatable="false">imap</string>
+    <string name="protocol_pop3" translatable="false">pop3</string>
+    <string name="protocol_eas" translatable="false">eas</string>
+
+    <!-- Content Provider Authority for Eml Attachments -->
+    
+
+    <!-- Provider name for widgets -->
+    <string name="widget_provider" translatable="false">com.android.email.provider.WidgetProvider</string>
+
+    <string name="print_job_name" translatable="false">Email - <xliff:g id="subject">%1$s</xliff:g></string>
+
+    <!-- This message indicates no quick responses exist to choose from -->
+    <string name="no_quick_responses">"कोई भी उपलब्ध नहीं"</string>
+
+    <!-- Activity name of the compose activity that should be reconciled -->
+    <!-- Do not disable the compose activity even there isn\'t any account.
+    <string name="reconciliation_compose_activity_name" translatable="false">com.android.email.activity.ComposeActivityEmail</string>
+    -->
+    <string name="reconciliation_compose_activity_name" translatable="false"/>
+
+    <!-- Gmail name for redirecting during account setup -->
+    <string name="gmail_name">"Gmail"</string>
+
+    <!-- Name for preference entry which leads to the per-folder sync settings activity -->
+    <string name="folder_sync_settings_pref_title">"फ़ोल्डर समन्वयन सेटिंग"</string>
+
+    <!-- In Account setup options & Account Settings screens, Email sync size option. -->
+    <string name="account_settings_sync_size_enable">प्रति मेल सिंक आकार कॉन्फ़िगर करें</string>
+    <string name="account_settings_sync_size_enable_summary">डाटा सहेजने के लिए, आप अपने खाते के प्रति मेल सिंक आकार को कॉन्फ़िगर कर सकते हैं</string>
+    <string name="account_settings_sync_size_label">सिंक आकार चुनें</string>
+    <string name="account_settings_sync_size_category_label">सिंक आकार सेटिंग्स</string>
+
+    <string name="account_setup_options_mail_sync_size_all">संपूर्ण</string>
+    <string name="account_setup_options_mail_sync_size_20k">20KB</string>
+    <string name="account_setup_options_mail_sync_size_100k">100KB</string>
+    <string name="account_setup_options_mail_sync_size_200k">200KB</string>
+    <string name="account_setup_options_mail_sync_size_500k">500KB</string>
+    <string name="account_setup_options_mail_sync_size_1M">1MB</string>
+
+    <!-- Customize Email account\'s signature -->
+    <string name="default_email_signature"/>
+
+    <!--Delete email account -->
+    <string name="remove_email_account">"खाता निकालें"</string>
+    <string name="remove_email_account_continue">"जारी रखें"</string>
+    <string name="remove_email_account_message">आप सेटिंग्स ऐप पर जाने वाले हैं, जहाँ आप खाते निकाल सकते हैं</string>
+</resources>

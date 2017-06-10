@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2013-2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution.
+ * Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- used in various places to indicate there is one song for a given artist or album -->
+    <string name="onesong">"1 首歌曲"</string>
+    <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
+    <plurals name="Nsongs">
+        <item quantity="other">"<xliff:g id="COUNT">%d</xliff:g> 首歌曲"</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other">"專輯共 <xliff:g id="TOTAL_COUNT">%1$d</xliff:g> 首歌曲，其中 <xliff:g id="COUNT_FOR_ARTIST">%2$d</xliff:g> 首為所選歌手/創作人的歌曲"</item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+        <!-- number of albums is one -->
+        <item quantity="one">"1 張專輯"</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other">"<xliff:g id="COUNT">%d</xliff:g> 張專輯"</item>
+    </plurals>
+
+    <!--
+    This string is used as the format string in a String.format call,
+    and 5 additional arguments are available for printing:
+    1 - hours
+    2 - minutes
+    3 - minutes%60
+    4 - seconds
+    5 - second%60
+    -->
+    <skip/>
+    <!-- Do not translate. Duration format for duration < 1 hour -->
+    <string translatable="false" name="durationformatshort"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    <!-- Do not translate. Duration format for duration >= 1 hour -->
+    <string translatable="false" name="durationformatlong"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    <!-- Menu item that takes the user back to the top level screen of the music player -->
+    <string name="goto_start">"音樂庫"</string>
+    <!-- Menu item that switches the music player in to party shuffle mode -->
+    <string name="party_shuffle">"派對隨機播放"</string>
+    <!-- Menu item that switches the music player out of party shuffle mode -->
+    <string name="party_shuffle_off">"關閉派對隨機播放"</string>
+    <!-- Menu item that clear all playlists mode -->
+    <string name="clear_all_playlists">清除所有播放清單</string>
+    <!-- Menu item that deletes the currently selected item, which might be a single song, or a collection of songs.
+         The user will be prompted to confirm before deletion actually takes place -->
+    <string name="delete_item">"刪除"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in shuffle mode -->
+    <string name="shuffle_all">"隨機播放所有歌曲"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in list order -->
+    <string name="play_all">"全部播放"</string>
+    <!-- Menu item to play song in music -->
+    <string name="open_in_music">"在音樂播放器中打開"</string>
+    <!-- Menu item to share audio or video -->
+    <string name="share">"分享"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc">"將「<xliff:g id="ARTIST">%s</xliff:g>」的所有歌曲從 SD 記憶卡中永久刪除？"</string>
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc_nosdcard">"將「<xliff:g id="ARTIST">%s</xliff:g>」的所有歌曲從 USB 儲存裝置中永久刪除？"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc">"將整張「<xliff:g id="ALBUM">%s</xliff:g>」專輯從 SD 記憶卡中永久刪除？"</string>
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc_nosdcard">"將整張「<xliff:g id="ALBUM">%s</xliff:g>」專輯從 USB 儲存裝置中永久刪除？"</string>
+
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc">"將「<xliff:g id="SONG">%s</xliff:g>」從 SD 記憶卡中永久刪除？"</string>
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc_nosdcard">"將「<xliff:g id="SONG">%s</xliff:g>」從 USB 儲存裝置中永久刪除？"</string>
+
+    <!-- Delete confirmation dialog, confirmation button text -->
+    <string name="delete_confirm_button_text">"確定"</string>
+    <!-- Toast confirming that song(s) was/were deleted. -->
+    <plurals name="NNNtracksdeleted">
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">"已刪除 1 首歌曲。"</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other">"已刪除 <xliff:g id="SONGS_TO_DELETE">%d</xliff:g> 首歌曲。"</item>
+    </plurals>
+
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning">"正在掃瞄 SD 卡..."</string>
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning_nosdcard">"正在掃瞄 USB 儲存裝置..."</string>
+
+    <!-- title of the "current playlist" screen when not in party shuffle mode -->
+    <string name="nowplaying_title">"現正播放"</string>
+    <!-- title of the "current playlist" screen when in party shuffle mode-->
+    <string name="partyshuffle_title">"派對隨機播放"</string>
+    <!-- Artist screen title -->
+    <string name="artists_title">"歌手/創作人"</string>
+    <!-- Category label on Library screen -->
+    <string name="albums_menu">"專輯"</string>
+    <!-- Albums screen title -->
+    <string name="albums_title">"專輯"</string>
+    <!-- Category label on Library screen -->
+    <string name="tracks_menu">"歌曲"</string>
+    <!-- Songs screen title -->
+    <string name="tracks_title">"歌曲"</string>
+    <!-- Category label on Library screen -->
+    <string name="folder_menu">資料夾</string>
+    <!-- Folder screen title -->
+    <string name="folders_title">資料夾</string>
+    <!-- Category label on Library screen -->
+    <string name="playlists_menu">"播放清單"</string>
+    <!-- Playlists screen title -->
+    <string name="playlists_title">"播放清單"</string>
+    <!-- Videos screen title -->
+    <string name="videos_title">"影片"</string>
+    <!-- All media screen title -->
+    <string name="all_title">"所有媒體"</string>
+    <!-- Category label on Library screen -->
+    <string name="browse_menu">"歌手/創作人"</string>
+    <!-- Library screen, menu item -->
+    <string name="search_title">"搜尋"</string>
+    <!-- Title of screen when there are no songs, or if the SD card is busy -->
+    <string name="no_tracks_title">"沒有歌曲"</string>
+    <!-- Title of screen when there are no videos, or if the SD card is busy -->
+    <string name="no_videos_title">"沒有影片"</string>
+    <!-- Title of screen when there are no playlists, or if the SD card is busy -->
+    <string name="no_playlists_title">"沒有播放清單"</string>
+    <!-- Playlist context menu item to delete the selected playlist. -->
+    <string name="delete_playlist_menu">"刪除"</string>
+    <!-- Playlist context menu item to edit the selected playlist -->
+    <string name="edit_playlist_menu">"編輯"</string>
+    <!-- Playlist context menu item to rename the selected playlist-->
+    <string name="rename_playlist_menu">"重新命名"</string>
+    <!-- Dialog box message shown when clearing all playlists-->
+    <string name="clear_all_playlists_message">要清除所有播放清單嗎？</string>
+    <!-- Dialog box message shown when deleting a playlist-->
+    <string name="delete_playlist_message">"要刪除「<xliff:g id="name">%s</xliff:g>」嗎？"</string>
+    <!-- Dialog box button -->
+    <string name="delete_playlist_button_ok">"確定"</string>
+    <string name="delete_playlist_button_cancel">"取消"</string>
+    <!-- Transient popup message shown after deleting a playlist -->
+    <string name="playlist_deleted_message">"已刪除播放清單。"</string>
+    <!-- Transient popup message shown after renaming a playlist -->
+    <string name="playlist_renamed_message">"已重新命名播放清單。"</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in list view -->
+    <string name="recentlyadded">"最近新增的歌曲"</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in title bar of songs list -->
+    <string name="recentlyadded_title">"最近新增的歌曲"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in list view -->
+    <string name="podcasts_listitem">"播客 (Podcast)"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in title bar of songs list -->
+    <string name="podcasts_title">"播客 (Podcast)"</string>
+    <!-- all recordings will show up in the media database in a playlist with thiis name -->
+    <string name="audio_db_playlist_name">"我的錄音"</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title">"沒有 SD 卡"</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title_nosdcard">"沒有 USB 儲存裝置"</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message">"您的手機並未插入 SD 記憶卡。"</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message_nosdcard">"您的手機沒有 USB 儲存裝置。"</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title">"無法使用 SD 卡"</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title_nosdcard">"沒有 USB 儲存裝置可供使用"</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message">"SD 記憶卡忙碌中。"</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message_nosdcard">"您的 USB 儲存裝置忙碌中。"</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title">"SD 卡錯誤"</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title_nosdcard">"USB 儲存裝置錯誤"</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message">"您的 SD 卡發生錯誤。"</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message_nosdcard">"您的 USB 儲存裝置發生錯誤。"</string>
+    <!-- Default name of artist that doesn\'t have a name in the metadata -->
+    <string name="unknown_artist_name">"未知歌手/創作人"</string>
+    <!-- Default name of album that doesn\'t have a name in the metadata -->
+    <string name="unknown_album_name">"未知專輯"</string>
+    <!-- Default name of folder that doesn\'t have a path in the metadata -->
+    <string name="unknown_folder_name">不明路徑</string>
+    <!-- Default name of folder that doesn\'t have a count in the metadata -->
+    <string name="unknown_folder_count">不明數目</string>
+    <!-- Toast after turning shuffle on -->
+    <string name="shuffle_on_notif">"已開啟隨機播放。"</string>
+    <!-- Toast after turning shuffle off -->
+    <string name="shuffle_off_notif">"已關閉隨機播放。"</string>
+    <!-- Toast after turning repeat off -->
+    <string name="repeat_off_notif">"已關閉重複播放。"</string>
+    <!-- Toast after turning single repeat on -->
+    <string name="repeat_current_notif">"重複播放目前歌曲。"</string>
+    <!-- Toast after turning repeat all on -->
+    <string name="repeat_all_notif">"重複播放所有歌曲。"</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu">"設為手機鈴聲"</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short">"設為鈴聲"</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set">"已將「<xliff:g id="NAME">%s</xliff:g>」設為手機鈴聲。"</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu_1">"用作卡1鈴聲"</string>
+    <string name="ringtone_menu_2">"用作卡2鈴聲"</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short_1">使用為鈴聲 1</string>
+    <string name="ringtone_menu_short_2">使用為鈴聲 2</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_1">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" 設定為 slot 1 鈴聲。</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_2">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" 設定為 slot 2 鈴聲。</string>
+    <!-- Context menu item -->
+    <string name="play_selection">"播放"</string>
+    <!-- Context menu item -->
+    <string name="add_to_playlist">"加入播放清單"</string>
+    <!-- Context menu item -->
+    <string name="queue">"目前播放清單"</string>
+    <!-- Context menu item -->
+    <string name="new_playlist">"新進榜"</string>
+    <!-- Template for newly created playlist name -->
+    <string name="new_playlist_name_template">"新播放清單 <xliff:g id="NUMBER">%d</xliff:g>"</string>
+    <!-- Toasts after adding song(s) to playlists -->
+    <plurals name="NNNtrackstoplaylist">
+        <!-- message shown when one song was added -->
+        <item quantity="one">"已將 1 首歌曲加入播放清單。"</item>
+        <!-- message shown when zero or more than one song was added -->
+        <item quantity="other">"已將 <xliff:g id="NUMBER">%d</xliff:g> 首歌曲新增至播放清單。"</item>
+    </plurals>
+    <!-- Toast after selecting an empty playlist -->
+    <string name="emptyplaylist">"所選播放清單沒有任何內容。"</string>
+    <!-- Button name when saving a playlist -->
+    <string name="create_playlist_create_text">"儲存"</string>
+    <!-- Button name when saving a playlist and the new playlist will overwrite an existing one -->
+    <string name="create_playlist_overwrite_text">"覆寫"</string>
+    <!-- Dialog box title -->
+    <string name="service_start_error_title">"播放問題"</string>
+    <!-- Dialog box message -->
+    <string name="service_start_error_msg">"無法播放這首歌曲。"</string>
+    <!-- Dialog box button -->
+    <string name="service_start_error_button">"確定"</string>
+    <!-- Time span edit options that appear when editing system playlist "Recently added" -->
+    <!-- Used to indicate the number of weeks the "recently added" playlist covers in a selector widget -->
+    <string-array name="weeklist">
+        <item>"1 星期"</item>
+        <item>"2 星期"</item>
+        <item>"3 星期"</item>
+        <item>"4 星期"</item>
+        <item>"5 星期"</item>
+        <item>"6 星期"</item>
+        <item>"7 星期"</item>
+        <item>"8 星期"</item>
+        <item>"9 星期"</item>
+        <item>"10 星期"</item>
+        <item>"11 星期"</item>
+        <item>"12 星期"</item>
+    </string-array>
+    <!-- Button name in time span picker -->
+    <string name="weekpicker_set">"完成"</string>
+    <!-- Title of time span picker -->
+    <string name="weekpicker_title">"設定時間"</string>
+    <!-- Do not translate. Background color for currently dragged item in playlist edit mode. -->
+    <color name="dragndrop_background">#e0103010</color>
+    <!-- Do not translate. Background color for albums in the artists list view. -->
+    <color name="expanding_child_background">#ff404040</color>
+
+    <!-- menu item to save the current list as a new playlist -->
+    <string name="save_as_playlist">"另存為播放清單"</string>
+    <!-- menu item to clear the current playlist -->
+    <string name="clear_playlist">"清除播放清單"</string>
+
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicbrowserlabel">"音樂"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicshortcutlabel">"音樂播放清單"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediaplaybacklabel">"音樂"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="videobrowserlabel">"影片"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediapickerlabel">"音樂"</string>
+
+    <!-- Shown as a transient message whenever a file fails to play -->
+    <string name="playback_failed">"播放器不支援這種音頻檔案。"</string>
+    <!-- Shown as a transient message whenever a file fails to open -->
+    <string name="open_failed">很抱歉，無法開啟檔案。</string>
+
+    <!-- Text for the "cancel" button in the "delete" and "create playlist" confirmation dialogs -->
+    <string name="cancel">"取消"</string>
+
+    <!-- context menu item to remove the selected item from the playlist -->
+    <string name="remove_from_playlist">"從播放清單中移除"</string>
+
+    <!-- shown when connecting to a music stream, before it starts playing -->
+    <string name="streamloadingtext">"正在連接 <xliff:g id="HOST">%s</xliff:g>..."</string>
+
+    <!-- title of contextual music search menu -->
+    <string name="mediasearch">"透過以下工具，搜尋與「<xliff:g id="TERM">%s</xliff:g>」相符的結果："</string>
+
+    <!-- Shown in the title bar while the list of artists is being retrieved in the background -->
+    <string name="working_artists">"歌手/創作人..."</string>
+    <!-- Shown in the title bar while the list of albums is being retrieved in the background -->
+    <string name="working_albums">"專輯..."</string>
+    <!-- Shown in the title bar while the list of songs is being retrieved in the background -->
+    <string name="working_songs">"歌曲..."</string>
+    <!-- Shown in the title bar while the list of folders is being retrieved in the background -->
+    <string name="working_folders">資料夾\u2026</string>
+    <!-- Shown in the title bar while the list of playlists is being retrieved in the background -->
+    <string name="working_playlists">"播放清單..."</string>
+
+    <!-- Shown in the music picker while loading the music database. -->
+    <string name="loading">"正在載入..."</string>
+    <!-- Menu in music picker to sort the list by track/song name. -->
+    <string name="sort_by_track">"曲目"</string>
+    <!-- Menu in music picker to sort the list by album name. -->
+    <string name="sort_by_album">"專輯"</string>
+    <!-- Menu in music picker to sort the list by artist name. -->
+    <string name="sort_by_artist">"歌手/創作人"</string>
+    <!--  Title of the music picker activity. -->
+    <string name="music_picker_title">"選擇音樂曲目"</string>
+
+    <!-- The string used to describe Music as a searchable item within system search settings. -->
+    <string name="search_settings_description">"歌手/創作人、專輯及曲目"</string>
+
+    <!-- Shown in the search box as a hint -->
+    <string name="search_hint">"搜尋音樂"</string>
+    <string name="search_hint_video">搜尋影片</string>
+
+    <!--The fast scroll thumb will show one character from this string depending on the position in the list -->
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+
+    <!-- Text shown on widget when first loaded -->
+    <string name="widget_initial_text">"輕觸即可選擇音樂。"</string>
+
+    <!-- Menu text for the item controlling the audio effects panel [CHAR LIMIT=15] -->
+    <string name="effectspanel">"音效"</string>
+
+    <string name="duplicate_playlist_name_alert">已存在名為\"<xliff:g id="name">%s</xliff:g>\"的播放清單，請選擇其他名稱。</string>
+    <string name="same_playlist_name_alert">播放清單 \"<xliff:g id="name">%s</xliff:g>\" 名稱未有變更。請選擇另一名稱。</string>
+    <string name="button_ok">確定</string>
+    <string name="list_empty">播放列表中沒有音樂。</string>
+
+    <!-- Shown when video is played after disable Gallery app from Settings -->
+    <string name="enable_gallery_app">視頻檔案無法開啟，請從設定啟用圖片庫。</string>
+    <string name="close_music">「結束」</string>
+    <string name="delete_video_item_message">您想刪除 \"<xliff:g id="name">%s</xliff:g>\" 嗎？</string>
+    <string name="video_deleted_message">視訊檔案已刪除。</string>
+
+    <!-- Menu item that takes the user link to net to see more music -->
+    <string name="more_music">更多音樂</string>
+    <!-- Menu item that takes the user link to net to see more video -->
+    <string name="more_video">更多影片</string>
+    <!--gesture control playback status-->
+    <string name="music_gesture_play">"播放/暫停音訊"</string>
+    <string name="music_gesture_prev">"播放上一個曲目"</string>
+    <string name="music_gesture_next">"播放下一個曲目"</string>
+
+    <!-- DRM Related Strings -->
+    <string name="no_permission_for_drm">"很抱歉，無法分享 Drm 檔案。"</string>
+    <string name="drm_license_info">Drm 許可證信息</string>
+    <string name="drm_ringtone_error">未能設定 CD/SD 檔案為鈴聲</string>
+
+</resources>

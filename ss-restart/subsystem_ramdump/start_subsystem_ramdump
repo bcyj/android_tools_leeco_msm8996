@@ -1,0 +1,26 @@
+#! /bin/sh
+
+set -e
+
+case "$1" in
+   start)
+	echo -n "Starting subsystem_ramdump: "
+	start-stop-daemon -S -b -a /usr/bin/subsystem_ramdump
+	echo "done"
+	;;
+   stop)
+	echo -n "Stopping subsystem_ramdump: "
+	start-stop-daemon -K -n subsystem_ramdump
+	echo "done"
+	;;
+   restart)
+	$0 stop
+	$0 start
+	;;
+   *)
+	echo "Usage subsystem_ramdump{ start | stop | restart }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

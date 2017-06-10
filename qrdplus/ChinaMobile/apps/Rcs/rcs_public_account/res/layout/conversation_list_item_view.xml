@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2014 pci-suntektech Technologies, Inc.  All Rights Reserved.
+     pci-suntektech Technologies Proprietary and Confidential.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rcs_public_account_btn_bg"
+    android:paddingBottom="@dimen/padding_micro"
+    android:paddingLeft="@dimen/padding_small"
+    android:paddingRight="@dimen/padding_small"
+    android:paddingTop="@dimen/padding_micro" >
+
+    <RelativeLayout
+        android:id="@+id/layout_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@drawable/head_photo_selector"
+        android:clickable="true" >
+
+        <ImageView
+            android:id="@+id/imgBtn_Photo"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="#00000000"
+            android:focusable="false"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/textUnread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/imgBtn_Photo"
+            android:layout_alignTop="@+id/imgBtn_Photo"
+            android:background="@drawable/bg_miss_count"
+            android:gravity="center"
+            android:textColor="#ffffffff"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/padding_medium"
+        android:layout_toRightOf="@+id/layout_photo"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/text_Name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:textColor="@color/black1"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/text_LatestMessageDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_small"
+                android:singleLine="true"
+                android:textColor="@color/gray1"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_LatestMessageType"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dip"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/gray1"
+            android:textSize="14sp"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

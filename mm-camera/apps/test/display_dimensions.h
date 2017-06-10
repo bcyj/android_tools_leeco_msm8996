@@ -1,0 +1,13 @@
+#ifndef __DISPLAY_DIMENSIONS
+#define __DISPLAY_DIMENSIONS
+
+#define PREVIEW_WIDTH     800
+#define PREVIEW_HEIGHT    480
+#define DISPLAY_WIDTH     800
+#define DISPLAY_HEIGHT    480
+#define THUMBNAIL_WIDTH   192 
+#define THUMBNAIL_HEIGHT  144
+#define PICTURE_WIDTH     1280
+#define PICTURE_HEIGHT    960
+
+#endif

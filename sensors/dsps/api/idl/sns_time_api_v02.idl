@@ -1,0 +1,129 @@
+/*****************************************************************************
+  @FILE     sns_time_api_v02.idl
+
+  @BRIEF    Sensors Time APIs
+
+  @DESCRIPTION
+  This file describes the messages which defines the Sensors Time APIs.
+  These APIs allow clients to request timestamps from different
+  processors through the Sensors Time Sevice.
+
+  The messages defined herin will be passed to the Sensor framework using
+  the sensor1_write() API.
+
+  @COPYRIGHT Copyright (c) 2012-2014 Qualcomm Technologies, Inc.  All Rights Reserved
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+include "sns_common_v01.idl";
+
+revision 5;
+
+enum
+{
+   SENSOR_TIME_ESUCCESS = 0,    /*< No error */
+   SENSOR_TIME_EINTERNAL = -1,  /*< Internal Error */
+   SENSOR_TIME_EINIT = -2,      /*< Service not initalized */
+   SENSOR_TIME_EAPPS = -3,      /*<Unable to determine Apps-processor time */
+   SENSOR_TIME_EDSPS = -4       /*<Unable to determine dsps time */
+} sensor_time_results_e;
+
+
+enum
+{
+   SNS_SSC_IMPL = 10,     /*< SSC implementation */
+   SNS_APPS_IMPL = 50     /*< Apps processor implementation */
+} sensor_time_instance_id_e;
+
+/** Following are message definitions shared by all time-related services */
+
+//============================================================================
+/** @COMMAND SNS_TIME_TIMESTAMP
+    @BRIEF This command generates equivalent timestamps for multiple sources.
+    @USAGE Production
+    @SECURITY_LEVEL Low Risk
+    @REQUIRED_ACTION Default
+    @CMD_VERSION 2.3
+*/
+//============================================================================
+
+//! @MSG     SNS_TIME_TIMESTAMP_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  //! @VERSION 2.3
+  optional boolean                 reg_report;
+  /**< Register for periodic timestamp offset reports */
+} sns_time_timestamp_req_msg;
+
+//! @MSG     SNS_TIME_TIMESTAMP_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s     resp = 2;
+
+  optional uint32                 timestamp_dsps;
+  /**< Timestamp from the DSPS in clock ticks */
+  optional uint64                 timestamp_apps;
+  /**< Timestamp from the Apps processor in nanoseconds since last epoch */
+  optional sensor_time_results_e  error_code;
+  /**< Error code which may indicate the invalidity of the included timestamp values */
+  optional uint32                 dsps_rollover_cnt;
+  /**< Number of times the DSPS clock has "rolled over" and restarted at 0 */
+  optional uint64                 timestamp_apps_boottime;
+  /**< Timestamp from the Apps processor in nanoseconds since boot */
+} sns_time_timestamp_resp_msg;
+
+//============================================================================
+/** @COMMAND SNS_TIME_TIMESTAMP_REPORT
+    @BRIEF Report containing equivalent apps and SSC timestamps.
+    @USAGE Production
+    @SECURITY_LEVEL Low Risk
+    @REQUIRED_ACTION Default
+    @CMD_VERSION 2.3
+*/
+//============================================================================
+
+//! @MSG     SNS_TIME_TIMESTAMP_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint32                 timestamp_dsps;
+  /**< Timestamp from the DSPS in clock ticks */
+  mandatory uint64                 timestamp_apps;
+  /**< Timestamp from the Apps processor in nanoseconds since last epoch */
+  mandatory uint32                 dsps_rollover_cnt;
+  /**< Number of times the DSPS clock has "rolled over" and restarted at 0 */
+  optional uint64                  timestamp_apps_boottime;
+  /**< Timestamp from the Apps processor in nanoseconds since boot */
+} sns_time_timestamp_ind_msg;
+
+//!============================================================================
+//! Service definition
+//! ============================================================================
+
+
+service SNS_TIME2_SVC {
+  //! @ID SNS_COMMON_CANCEL
+  sns_common_cancel_req_msg       SNS_TIME_CANCEL_REQ,
+  sns_common_cancel_resp_msg      SNS_TIME_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_COMMON_VERSION
+  sns_common_version_req_msg      SNS_TIME_VERSION_REQ,
+  sns_common_version_resp_msg     SNS_TIME_VERSION_RESP;
+
+  //! @ID SNS_TIME_TIMESTAMP
+  sns_time_timestamp_req_msg      SNS_TIME_TIMESTAMP_REQ,
+  sns_time_timestamp_resp_msg     SNS_TIME_TIMESTAMP_RESP;
+
+  //! @ID SNS_TIME_TIMESTAMP_REPORT
+  sns_time_timestamp_ind_msg      SNS_TIME_TIMESTAMP_IND;
+
+} = SNS_QMI_SVC_ID_24;

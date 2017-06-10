@@ -1,0 +1,43 @@
+<!--
+ /* ====================================================================
+ * Copyright (c) 2014 Qualcomm Technologies, Inc. All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ * =====================================================================
+ * @file AndroidManifest.java
+ *
+ */
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.qti.snapdragon.qdcm_mobile"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="com.qti.snapdragon.sdk.permission.DISPLAY_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
+        <uses-library
+            android:name="com.qti.snapdragon.sdk.display"
+            android:required="true" />
+
+        <activity
+            android:name="com.qualcomm.qti.snapdragon.qdcm_mobile.QdcmMobileMain"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

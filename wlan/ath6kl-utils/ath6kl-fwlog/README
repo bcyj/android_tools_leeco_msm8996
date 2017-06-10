@@ -1,0 +1,32 @@
+ath6kl firmware log recorder and reorderer
+Copyright (c) 2012, Qualcomm Atheros, Inc.
+All Rights Reserved.
+Qualcomm Atheros Confidential and Proprietary.
+
+
+Usage:
+
+Run ath6kl-fwlog-record on the ath6kl device to record firmware log into
+a file.
+
+Command line:
+ath6kl-fwlog-record <path to fwlog_block> <path to log file> <max length>
+
+Maximum length is the maximum number of bytes that will be stored into
+the log file. When more data is available, oldest entries are dropped.
+
+For example:
+ath6kl-fwlog-record /sys/kernel/debug/ieee80211/phy0/ath6kl/fwlog_block \
+    /tmp/ath6kl-fwlog 1000000
+
+Copy the /tmp/ath6kl-fwlog to the host that is used to analyze the log,
+e.g., with dbgParser.
+
+The firmware log entries in the log file generated with
+ath6kl-fwlog-record needs to be reordered before parsing it with
+dbgParser. This can be done with ath6kl-fwlog-reorder on the same host
+that has dbgParser.
+
+for example:
+ath6kl-fwlog-reorder /tmp/ath6kl-fwlog /tmp/ath6kl-fwlog.reorder
+dbgParser -d $OLCA -t2 /tmp/ath6kl-fwlog.reorder /tmp/ath6kl-fwlog.txt

@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2013-2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution.
+ * Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!--
+/**
+ * Copyright (c) 2009, The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Name of the status bar as seen in the applications info settings page. [CHAR LIMIT=12] -->
+    <string name="app_label">"సిస్టమ్ UI"</string>
+
+    <!-- The text for the button in the notification window-shade that clears
+         all of the currently visible notifications. [CHAR LIMIT=10]-->
+    <string name="status_bar_clear_all_button">"క్లియర్ చేయండి"</string>
+
+    <!-- Title shown in recents popup for removing an application from the list -->
+    <string name="status_bar_recent_remove_item_title">"జాబితా నుండి తీసివేయండి"</string>
+
+    <!-- Title shown in recents popup for inspecting an application\'s properties -->
+    <string name="status_bar_recent_inspect_item_title">"అనువర్తన సమాచారం"</string>
+
+    <string name="status_bar_recent_clear_all_text">అన్నింటినీ క్లియర్ చేయి</string>
+    <string name="status_bar_recent_task_manager_text">విధి నిర్వాహకులు</string>
+
+    <!-- Message shown in the middle of the screen after clicking on the recent apps button
+         when there are no recent apps to show. Also used for accessibility. [CHAR LIMIT=45]-->
+    <string name="status_bar_no_recent_apps">"మీ ఇటీవలి స్క్రీన్‌లు ఇక్కడ కనిపిస్తాయి"</string>
+
+    <!-- Content description for the button to dismiss Recent Apps (only present on large
+         devices) -->
+    <string name="status_bar_accessibility_dismiss_recents">"ఇటీవలి అనువర్తనాలను తీసివేయండి"</string>
+
+    <!-- Message that is read when you enter recent apps in TalkBack -->
+    <plurals name="status_bar_accessibility_recent_apps">
+        <item quantity="one">"స్థూలదృష్టిలో 1 స్క్రీన్ ఉంది"</item>
+        <item quantity="other">"స్థూలదృష్టిలో %d స్క్రీన్‌లు ఉన్నాయి"</item>
+    </plurals>
+
+    <!-- The label in the bar at the top of the status bar when there are no notifications
+         showing.  [CHAR LIMIT=40]-->
+    <string name="status_bar_no_notifications_title">"నోటిఫికేషన్‌లు లేవు"</string>
+
+    <!-- The label for the group of notifications for ongoing events in the opened version of
+         the status bar.  An ongoing call is the prime example of this.  The MP3 music player
+         might be another example.   [CHAR LIMIT=40] -->
+    <string name="status_bar_ongoing_events_title">"కొనసాగుతున్నవి"</string>
+
+    <!-- The label for the group of notifications for recent events in the opened version of
+         the status bar.  Recently received text messsages (SMS), emails, calendar alerts, etc.
+         [CHAR LIMIT=40] -->
+    <string name="status_bar_latest_events_title">"నోటిఫికేషన్‌లు"</string>
+
+    <!-- When the battery is low, this is displayed to the user in a dialog.  The title of the low battery alert.  [CHAR LIMIT=NONE]-->
+    <string name="battery_low_title">"బ్యాటరీ తక్కువగా ఉంది"</string>
+
+    <!-- A message that appears when the battery level is getting low in a dialog.  This is
+        appened to the subtitle of the low battery alert.  "percentage" is the percentage of battery
+        remaining [CHAR LIMIT=none]-->
+    <string name="battery_low_percent_format">"<xliff:g id="PERCENTAGE">%s</xliff:g> మిగిలి ఉంది"</string>
+
+    <!-- Same as battery_low_percent_format, with a notice about battery saver if on. [CHAR LIMIT=none]-->
+    <string name="battery_low_percent_format_saver_started">"<xliff:g id="PERCENTAGE">%s</xliff:g> మిగిలి ఉంది. బ్యాటరీ సేవర్ ఆన్‌లో ఉంది."</string>
+
+    <!-- A message that appears when a USB charger is plugged in and the device does not
+    support charging on it.  That is, a charger that fits into the USB port and goes into
+    a wall socket, not into a computer. (This happens because some devices require more
+    current than the USB spec allows.  [CHAR LIMIT=NONE] -->
+    <string name="invalid_charger">"USB ఛార్జింగ్‌కు మద్దతు లేదు.\nఅందించిన ఛార్జర్‌ను మాత్రమే ఉపయోగించండి."</string>
+
+    <!-- First line of invalid_charger, used in the notification form.  [CHAR LIMIT=NONE]-->
+    <string name="invalid_charger_title">"USB ఛార్జింగ్‌కి మద్దతు లేదు."</string>
+
+    <!-- Second line of invalid_charger, used in the notification form.  [CHAR LIMIT=NONE]-->
+    <string name="invalid_charger_text">"అందించిన ఛార్జర్‌ను మాత్రమే ఉపయోగించండి."</string>
+
+    <!-- When the battery is low, this is the label of the button to go to the
+         power usage activity to find out what drained the battery.  [CHAR LIMIT=30] -->
+    <string name="battery_low_why">"సెట్టింగ్‌లు"</string>
+
+    <!-- Battery saver confirmation dialog title [CHAR LIMIT=NONE]-->
+    <string name="battery_saver_confirmation_title">"బ్యాటరీ సేవర్‌ను ఆన్ చేయాలా?"</string>
+
+    <!-- Battery saver confirmation dialog ok text [CHAR LIMIT=40]-->
+    <string name="battery_saver_confirmation_ok">"ఆన్ చేయి"</string>
+
+    <!-- Battery saver notification action [CHAR LIMIT=NONE]-->
+    <string name="battery_saver_start_action">"బ్యాటరీ సేవర్‌ను ఆన్ చేయి"</string>
+
+    <!-- Name of the button that links to the Settings app. [CHAR LIMIT=NONE] -->
+    <string name="status_bar_settings_settings_button">"సెట్టింగ్‌లు"</string>
+
+    <!-- Name of the button that links to the Wifi settings screen. [CHAR LIMIT=NONE] -->
+    <string name="status_bar_settings_wifi_button">"Wi-Fi"</string>
+
+    <!-- Label in the system panel for airplane mode (all radios are turned off)[CHAR LIMIT=30] -->
+    <string name="status_bar_settings_airplane">"ఎయిర్‌ప్లేన్ మోడ్"</string>
+
+    <!-- Label in system panel saying the device will use the orientation sensor to rotate [CHAR LIMIT=30] -->
+    <string name="status_bar_settings_auto_rotation">"స్క్రీన్‌ను స్వయంచాలకంగా తిప్పండి"</string>
+
+    <!-- Abbreviation / label for mute brightness mode button. Should be all caps. [CHAR LIMIT=6] -->
+    <string name="status_bar_settings_mute_label">"మ్యూట్"</string>
+
+    <!-- Abbreviation / label for automatic brightness mode button. Should be all caps. [CHAR LIMIT=6] -->
+    <string name="status_bar_settings_auto_brightness_label">"స్వయంచాలకం"</string>
+
+    <!-- Label in system panel saying the device will show notifications [CHAR LIMIT=30] -->
+    <string name="status_bar_settings_notifications">"నోటిఫికేషన్‌లు"</string>
+
+    <!-- Separator for PLMN and SPN in network name. -->
+    <string name="status_bar_network_name_separator" translatable="false">|</string>
+
+    <!-- Network connection string for Bluetooth Reverse Tethering -->
+    <string name="bluetooth_tethered">"బ్లూటూత్ టీథర్ చేయబడింది"</string>
+    <!-- Title of a button to open the settings for input methods [CHAR LIMIT=30] -->
+    <string name="status_bar_input_method_settings_configure_input_methods">"ఇన్‌పుట్ పద్ధతులను సెటప్ చేయండి"</string>
+
+    <!-- Label of a toggle switch to disable use of the physical keyboard in favor of the IME. [CHAR LIMIT=25] -->
+    <string name="status_bar_use_physical_keyboard">"భౌతిక కీబోర్డ్"</string>
+
+    <!-- Prompt for the USB device permission dialog [CHAR LIMIT=80] -->
+    <string name="usb_device_permission_prompt">"USB పరికరాన్ని ప్రాప్యత చేయడానికి అనువర్తనాన్ని <xliff:g id="APPLICATION">%1$s</xliff:g> అనుమతించాలా?"</string>
+
+    <!-- Prompt for the USB accessory permission dialog [CHAR LIMIT=80] -->
+    <string name="usb_accessory_permission_prompt">"USB ఉపకరణాన్ని ప్రాప్యత చేయడానికి అనువర్తనం <xliff:g id="APPLICATION">%1$s</xliff:g>ను అనుమతించాలా?"</string>
+
+    <!-- Prompt for the USB device confirm dialog [CHAR LIMIT=80] -->
+    <string name="usb_device_confirm_prompt">"ఈ USB పరికరం కనెక్ట్ చేయబడినప్పుడు <xliff:g id="ACTIVITY">%1$s</xliff:g>ని తెరవాలా?"</string>
+
+    <!-- Prompt for the USB accessory confirm dialog [CHAR LIMIT=80] -->
+    <string name="usb_accessory_confirm_prompt">"ఈ USB ఉపకరణం కనెక్ట్ చేయబడినప్పుడు <xliff:g id="ACTIVITY">%1$s</xliff:g>ని తెరవాలా?"</string>
+
+    <!-- Prompt for the USB accessory URI dialog [CHAR LIMIT=80] -->
+    <string name="usb_accessory_uri_prompt">"ఈ USB ఉపకరణంతో ఇన్‌స్టాల్ చేయబడిన అనువర్తనాలు ఏవీ పని చేయవు. ఈ ఉపకరణం గురించి <xliff:g id="URL">%1$s</xliff:g>లో మరింత తెలుసుకోండి"</string>
+
+    <!-- Title for USB accessory dialog.  Used when the name of the accessory cannot be determined.  [CHAR LIMIT=50] -->
+    <string name="title_usb_accessory">"USB ఉపకరణం"</string>
+
+    <!-- View button label for USB dialogs.  [CHAR LIMIT=15] -->
+    <string name="label_view">"వీక్షించండి"</string>
+
+    <!-- Checkbox label for USB device dialogs.  [CHAR LIMIT=50] -->
+    <string name="always_use_device">"ఈ USB పరికరానికి డిఫాల్ట్‌గా ఉపయోగించండి"</string>
+
+    <!-- Checkbox label for USB accessory dialogs.  [CHAR LIMIT=50] -->
+    <string name="always_use_accessory">"ఈ USB ఉపకరణానికి డిఫాల్ట్‌గా ఉపయోగించండి"</string>
+
+    <!-- Title of confirmation dialog for USB debugging -->
+    <string name="usb_debugging_title">"USB డీబగ్గింగ్‌ను అనుమతించాలా?"</string>
+
+    <!-- Message of confirmation dialog for USB debugging -->
+    <string name="usb_debugging_message">"ఇది కంప్యూటర్ యొక్క RSA కీ వేలిముద్ర:\n<xliff:g id="FINGERPRINT">%1$s</xliff:g>"</string>
+
+    <!-- Option to always allow USB debugging from the attached computer -->
+    <string name="usb_debugging_always">"ఈ కంప్యూటర్ నుండి ఎల్లప్పుడూ అనుమతించు"</string>
+
+    <!-- Checkbox label for application compatibility mode ON (zooming app to look like it\'s running
+         on a phone).  [CHAR LIMIT=25] -->
+    <string name="compat_mode_on">"స్క్రీన్‌కు నింపేలా జూమ్ చేయండి"</string>
+
+    <!-- Checkbox label for application compatibility mode OFF (normal mode on tablets).
+         [CHAR LIMIT=25] -->
+    <string name="compat_mode_off">"స్క్రీన్‌కు నింపేలా విస్తరించండి"</string>
+
+    <!-- Notification ticker displayed when a screenshot is being saved to the Gallery. [CHAR LIMIT=30] -->
+    <string name="screenshot_saving_ticker">"స్క్రీన్‌షాట్‌ను సేవ్ చేస్తోంది…"</string>
+    <!-- Notification title displayed when a screenshot is being saved to the Gallery. [CHAR LIMIT=50] -->
+    <string name="screenshot_saving_title">"స్క్రీన్‌షాట్‌ను సేవ్ చేస్తోంది…"</string>
+    <!-- Notification text displayed when a screenshot is being saved to the Gallery. [CHAR LIMIT=100] -->
+    <string name="screenshot_saving_text">"స్క్రీన్‌షాట్ సేవ్ చేయబడుతోంది."</string>
+    <!-- Notification title displayed when a screenshot is saved to the Gallery. [CHAR LIMIT=50] -->
+    <string name="screenshot_saved_title">"స్క్రీన్‌షాట్ క్యాప్చర్ చేయబడింది."</string>
+    <!-- Notification text displayed when a screenshot is saved to the Gallery. [CHAR LIMIT=100] -->
+    <string name="screenshot_saved_text">"మీ స్క్రీన్‌షాట్‌ను వీక్షించడానికి తాకండి."</string>
+    <!-- Notification title displayed when we fail to take a screenshot. [CHAR LIMIT=50] -->
+    <string name="screenshot_failed_title">"స్క్రీన్‌షాట్‌ను క్యాప్చర్ చేయడం సాధ్యపడలేదు."</string>
+    <!-- Notification text displayed when we fail to take a screenshot. [CHAR LIMIT=100] -->
+    <string name="screenshot_failed_text">"పరిమిత నిల్వ స్థలం కారణంగా స్క్రీన్‌షాట్‌‌ను తీయడం సాధ్యపడదు లేదా దీన్ని మీ అనువర్తనం లేదా మీ సంస్థ అనుమతించలేదు."</string>
+
+    <!-- Title for the USB function chooser in UsbPreferenceActivity. [CHAR LIMIT=30] -->
+    <string name="usb_preference_title">"USB ఫైల్ బదిలీ ఎంపికలు"</string>
+    <!-- Label for the MTP USB function in UsbPreferenceActivity. [CHAR LIMIT=50] -->
+    <string name="use_mtp_button_title">"మీడియా ప్లేయర్‌గా (MTP) మౌంట్ చేయి"</string>
+    <!-- Label for the PTP USB function in UsbPreferenceActivity. [CHAR LIMIT=50] -->
+    <string name="use_ptp_button_title">"కెమెరాగా (PTP) మౌంట్ చేయి"</string>
+    <!-- Label for the installer CD image option in UsbPreferenceActivity. [CHAR LIMIT=50] -->
+    <string name="installer_cd_button_title">"Macకు Android ఫైల్ బదిలీ అను. ఇన్‌స్టాల్ చేయండి"</string>
+
+    <!-- Content description of the back button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_back">"వెనుకకు"</string>
+    <!-- Content description of the home button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_home">"హోమ్"</string>
+    <!-- Content description of the menu button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_menu">"మెను"</string>
+    <!-- Content description of the recents button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_recent">"స్థూలదృష్టి"</string>
+    <!-- Content description of the search button for accessibility. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_search_light">"శోధించు"</string>
+    <!-- Content description of the camera button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_camera_button">"కెమెరా"</string>
+    <!-- Content description of the phone button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_button">"ఫోన్"</string>
+    <!-- Content description of the unlock button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_unlock_button">"అన్‌లాక్ చేయి"</string>
+    <!-- Click action label for accessibility for the unlock button. [CHAR LIMIT=NONE] -->
+    <string name="unlock_label">"అన్‌లాక్ చేయి"</string>
+    <!-- Click action label for accessibility for the phone button. [CHAR LIMIT=NONE] -->
+    <string name="phone_label">"ఫోన్‌ను తెరువు"</string>
+    <!-- Click action label for accessibility for the phone button. [CHAR LIMIT=NONE] -->
+    <string name="camera_label">"కెమెరాను తెరువు"</string>
+
+    <!-- Content description of the compatibility zoom button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_compatibility_zoom_button">"అనుకూలత జూమ్ బటన్."</string>
+
+    <!-- Content description of picture of the compatibility zoom example for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_compatibility_zoom_example">"చిన్న స్క్రీన్ నుండి పెద్దదానికి జూమ్ చేయండి."</string>
+
+    <!-- Content description of the bluetooth icon when connected for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_bluetooth_connected">"బ్లూటూత్ కనెక్ట్ చేయబడింది."</string>
+    <!-- Content description of the bluetooth icon when connecting for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_bluetooth_disconnected">"బ్లూటూత్ డిస్‌కనెక్ట్ చేయబడింది."</string>
+
+    <!-- Content description of the battery when no battery for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_battery">"బ్యాటరీ లేదు."</string>
+    <!-- Content description of the battery when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_one_bar">"బ్యాటరీ ఒక బారు."</string>
+    <!-- Content description of the battery when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_two_bars">"బ్యాటరీ రెండు బార్లు."</string>
+     <!-- Content description of the battery when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_three_bars">"బ్యాటరీ మూడు బార్లు."</string>
+    <!-- Content description of the battery when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_full">"బ్యాటరీ నిండింది."</string>
+
+    <!-- Content description of the phone signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_phone">"ఫోన్ లేదు."</string>
+    <!-- Content description of the phone signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_one_bar">"ఫోన్ ఒక బారు."</string>
+    <!-- Content description of the phone signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_two_bars">"ఫోన్ రెండు బార్లు."</string>
+    <!-- Content description of the phone signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_three_bars">"ఫోన్ మూడు బార్లు."</string>
+    <!-- Content description of the phone signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_signal_full">"ఫోన్ సిగ్నల్ పూర్తిగా ఉంది."</string>
+
+    <!-- Content description of the data signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_data">"డేటా లేదు."</string>
+    <!-- Content description of the data signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_one_bar">"డేటా ఒక బారు."</string>
+    <!-- Content description of the data signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_two_bars">"డేటా రెండు బార్‌లు."</string>
+    <!-- Content description of the data signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_three_bars">"డేటా మూడు బార్లు."</string>
+    <!-- Content description of the data signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_signal_full">"డేటా సిగ్నల్ సంపూర్ణంగా ఉంది."</string>
+
+    <!-- Content description of the WIFI signal when WIFI is disabled for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_off">"వైఫై ఆఫ్‌లో ఉంది."</string>
+    <!-- Content description of the WIFI signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_wifi">"వైఫై డిస్‌కనెక్ట్ చేయబడింది."</string>
+    <!-- Content description of the WIFI signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_one_bar">"వైఫై ఒక బార్ కలిగి ఉంది."</string>
+    <!-- Content description of the WIFI signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_two_bars">"వైఫై రెండు బార్‌లు కలిగి ఉంది."</string>
+    <!-- Content description of the WIFI signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_three_bars">"వైఫై మూడు బార్‌లు కలిగి ఉంది."</string>
+    <!-- Content description of the WIFI signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_signal_full">"వైఫై సిగ్నల్ పూర్తిగా ఉంది."</string>
+
+    <!-- Content description of the wifi label showing what we are connected to. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_name">"<xliff:g id="WIFI">%s</xliff:g>కి కనెక్ట్ చేయబడింది."</string>
+
+    <!-- Content description of the bluetooth label showing what we are connected to. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_bluetooth_name">"<xliff:g id="BLUETOOTH">%s</xliff:g>కి కనెక్ట్ చేయబడింది."</string>
+
+
+    <!-- Content description of the WiMAX signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_wimax">"WiMAX లేదు."</string>
+    <!-- Content description of the WiMAX signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_one_bar">"WiMAX ఒక బార్ కలిగి ఉంది."</string>
+    <!-- Content description of the WiMAX signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_two_bars">"WiMAX రెండు బార్‌లు కలిగి ఉంది."</string>
+    <!-- Content description of the WiMAX signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_three_bars">"WiMAX మూడు బార్‌లు కలిగి ఉంది."</string>
+    <!-- Content description of the WiMAX signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_signal_full">"WiMAX సిగ్నల్ పూర్తిగా ఉంది."</string>
+
+    <!-- Content description of an item with no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_signal">"సిగ్నల్ లేదు."</string>
+    <!-- Content description of an item with no signal and no connection for accessibility (not shown on the screen) [CHAR LIMIT=NONE] -->
+    <string name="accessibility_not_connected">"కనెక్ట్ చేయబడలేదు."</string>
+    <!-- Content description of an item with zero signal bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_zero_bars">"సున్నా బార్‌లు."</string>
+    <!-- Content description of an item with one signal bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_one_bar">"ఒక బార్."</string>
+    <!-- Content description of an item with two signal bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_two_bars">"రెండు బార్‌లు కలిగి ఉంది."</string>
+    <!-- Content description of an item with three signal bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_three_bars">"మూడు బార్‌లు కలిగి ఉంది."</string>
+    <!-- Content description of an item with full signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_signal_full">"సిగ్నల్ పూర్తిగా ఉంది."</string>
+
+    <!-- Content description of an item that is turned on for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_on">"ఆన్‌లో ఉంది."</string>
+    <!-- Content description of an item that is turned off for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_off">"ఆఫ్‌లో ఉంది."</string>
+    <!-- Content description of an item that is connected for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_connected">"కనెక్ట్ చేయబడింది."</string>
+    <!-- Content description of an item that is connecting for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_connecting">"కనెక్ట్ అవుతోంది."</string>
+
+    <!-- Content description of the data connection type GPRS for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_gprs">"GPRS"</string>
+
+    <!-- Content description of the data connection type 1x for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_1x">"1 X"</string>
+
+    <!-- Content description of the data connection type HSPA and its variants for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_hspa">"HSPA"</string>
+
+    <!-- Content description of the data connection type 3G for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_3g">"3G"</string>
+
+    <!-- Content description of the data connection type 3.5G for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_3.5g">"3.5G"</string>
+
+    <!-- Content description of the data connection type 4G for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_4g">"4G"</string>
+
+    <!-- Content description of the data connection type LTE for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_lte">"LTE"</string>
+
+    <!-- Content description of the data connection type CDMA for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_cdma">"CDMA"</string>
+
+    <!-- Content description of the roaming data connection type for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_roaming">"రోమింగ్"</string>
+
+    <!-- Content description of the data connection type Edge for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_edge">"ఎడ్జ్"</string>
+
+    <!-- Content description of the data connection type WiFi for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_wifi">"Wi-Fi"</string>
+
+    <!-- Content description of the data connection with no SIM for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_sim">"SIM లేదు."</string>
+
+    <!-- Content description of the bluetooth tethering icon for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_bluetooth_tether">"బ్లూటూత్ టెథెరింగ్."</string>
+
+    <!-- Content description of the airplane mode icon for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_airplane_mode">"ఎయిర్‌ప్లేన్ మోడ్."</string>
+
+    <!-- Content description of the battery level icon for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_level">"బ్యాటరీ <xliff:g id="NUMBER">%d</xliff:g> శాతం."</string>
+
+    <!-- Content description of the button for showing a settings panel in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_settings_button">"సిస్టమ్ సెట్టింగ్‌లు."</string>
+
+    <!-- Content description of the button for showing a notifications panel in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_notifications_button">"నోటిఫికేషన్‌లు."</string>
+
+    <!-- Content description of the button for removing a notification in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_remove_notification">"నోటిఫికేషన్‌ను క్లియర్ చేయండి."</string>
+
+    <!-- Content description of the enabled GPS icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_gps_enabled">"GPS ప్రారంభించబడింది."</string>
+
+    <!-- Content description of the acquiring GPS icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_gps_acquiring">"GPSని పొందడం."</string>
+
+    <!-- Content description of the TeleTypewriter(TTY) enabled icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_tty_enabled">"టెలిటైప్‌రైటర్ ప్రారంభించబడింది."</string>
+
+    <!-- Content description of the ringer vibrate icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_ringer_vibrate">"రింగర్ వైబ్రేట్‌లో ఉంది."</string>
+
+    <!-- Content description of the ringer silent icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_ringer_silent">"రింగర్ నిశ్శబ్దంలో ఉంది."</string>
+
+    <!-- Content description of the cast icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_casting">@string/quick_settings_casting</string>
+
+    <!-- Content description to tell the user that this button will remove an application from recents -->
+    <string name="accessibility_recents_item_will_be_dismissed">"<xliff:g id="APP">%s</xliff:g>ని తీసివేయండి."</string>
+    <!-- Content description to tell the user an application has been removed from recents -->
+    <string name="accessibility_recents_item_dismissed">"<xliff:g id="APP">%s</xliff:g> తీసివేయబడింది."</string>
+    <!-- Content description to tell the user an application has been launched from recents -->
+    <string name="accessibility_recents_item_launched">"<xliff:g id="APP">%s</xliff:g>ని ప్రారంభిస్తోంది."</string>
+    <!-- Content description to tell the user a notification has been removed from the notification shade -->
+    <string name="accessibility_notification_dismissed">"నోటిఫికేషన్ తీసివేయబడింది."</string>
+
+    <!-- Content description for the notification shade panel (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_notification_shade">"నోటిఫికేషన్ షేడ్."</string>
+    <!-- Content description for the quick settings panel (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_quick_settings">"శీఘ్ర సెట్టింగ్‌లు."</string>
+    <!-- Content description for the lock screen (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_lock_screen">"లాక్ స్క్రీన్."</string>
+    <!-- Content description for the settings button in the status bar header. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_settings">"సెట్టింగ్‌లు"</string>
+    <!-- Content description for the recent apps panel (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_recent_apps">"స్థూలదృష్టి."</string>
+
+    <!-- Content description of the user tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_user">"వినియోగదారు <xliff:g id="USER">%s</xliff:g>."</string>
+    <!-- Content description of the wifi tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_wifi"><xliff:g id="signal" example="Three bars">%1$s</xliff:g>.</string>
+    <!-- Announcement made when the wifi is turned off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_wifi_changed_off">"వైఫై ఆఫ్ చేయబడింది."</string>
+    <!-- Announcement made when the wifi is turned on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_wifi_changed_on">"వైఫై ఆన్ చేయబడింది."</string>
+    <!-- Content description of the mobile data tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_mobile">"మొబైల్ <xliff:g id="SIGNAL">%1$s</xliff:g>. <xliff:g id="TYPE">%2$s</xliff:g>. <xliff:g id="NETWORK">%3$s</xliff:g>."</string>
+    <!-- Content description of the battery tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_battery">"బ్యాటరీ <xliff:g id="STATE">%s</xliff:g>."</string>
+    <!-- Content description of the airplane mode tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_airplane_off">"ఎయిర్‌ప్లైన్ మోడ్ ఆఫ్‌లో ఉంది."</string>
+    <!-- Content description of the airplane mode tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_airplane_on">"ఎయిర్‌ప్లైన్ మోడ్ ఆన్‌లో ఉంది."</string>
+    <!-- Announcement made when the airplane mode changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_airplane_changed_off">"ఎయిర్‌ప్లైన్ మోడ్ ఆఫ్ చేయబడింది."</string>
+    <!-- Announcement made when the airplane mode changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_airplane_changed_on">"ఎయిర్‌ప్లైన్ మోడ్ ఆన్ చేయబడింది."</string>
+    <!-- Content description of the mobile data tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_data_off">మొబైల్ డేటా ఆఫ్.</string>
+    <!-- Content description of the mobile data tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_data_on">మొబైల్ డేటా ఆన్.</string>
+    <!-- Content description of the roaming tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_roaming_off">రోమింగ్ ఆఫ్.</string>
+    <!-- Content description of the roaming tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_roaming_on">రోమింగ్ ఆన్.</string>
+    <!-- Content description of the bluetooth tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_off">"బ్లూటూత్ ఆఫ్‌లో ఉంది."</string>
+    <!-- Content description of the bluetooth tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_on">"బ్లూటూత్ ఆన్‌లో ఉంది."</string>
+    <!-- Content description of the bluetooth tile in quick settings when connecting (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_connecting">"బ్లూటూత్ కనెక్ట్ అవుతోంది."</string>
+    <!-- Content description of the bluetooth tile in quick settings when connected (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_connected">"బ్లూటూత్ కనెక్ట్ చేయబడింది."</string>
+    <!-- Announcement made when the bluetooth is turned off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_changed_off">"బ్లూటూత్ ఆఫ్ చేయబడింది."</string>
+    <!-- Announcement made when the bluetooth is turned on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_changed_on">"బ్లూటూత్ ఆన్ చేయబడింది."</string>
+    <!-- Content description of the location tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_off">"స్థాన నివేదన ఆఫ్‌లో ఉంది."</string>
+    <!-- Content description of the location tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_on">"స్థాన నివేదన ఆన్‌లో ఉంది."</string>
+    <!-- Announcement made when the location tile changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_changed_off">"స్థాన నివేదన ఆఫ్ చేయబడింది."</string>
+    <!-- Announcement made when the location tile changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_changed_on">"స్థాన నివేదన ఆన్ చేయబడింది."</string>
+    <!-- Content description of the alarm tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_alarm">"<xliff:g id="TIME">%s</xliff:g>కి అలారం సెట్ చేయబడింది."</string>
+    <!-- Content description of quick settings detail panel close button (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_close">"ప్యానెల్‌ను మూసివేయి."</string>
+    <!-- Content description of zen mode time condition plus button (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_more_time">"ఎక్కువ సమయం."</string>
+    <!-- Content description of zen mode time condition minus button (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_less_time">"తక్కువ సమయం."</string>
+    <!-- Content description of the flashlight tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_off">"ఫ్లాష్‌లైట్ ఆఫ్‌లో ఉంది."</string>
+    <!-- Content description of the flashlight tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_on">"ఫ్లాష్‌లైట్ ఆన్‌లో ఉంది."</string>
+    <!-- Announcement made when the flashlight state changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_changed_off">"ఫ్లాష్‌లైట్ ఆఫ్ చేయబడింది."</string>
+    <!-- Announcement made when the flashlight state changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_changed_on">"ఫ్లాష్‌లైట్ ఆన్ చేయబడింది."</string>
+    <!-- Announcement made when the color inversion state changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_color_inversion_changed_off">"రంగు విలోమం ఆఫ్ చేయబడింది."</string>
+    <!-- Announcement made when the color inversion state changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_color_inversion_changed_on">"రంగు విలోమం ఆన్ చేయబడింది."</string>
+    <!-- Announcement made when the hotspot state changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_hotspot_changed_off">"మొబైల్ హాట్‌స్పాట్ ఆఫ్ చేయబడింది."</string>
+    <!-- Announcement made when the hotspot state changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_hotspot_changed_on">"మొబైల్ హాట్‌స్పాట్ ఆన్ చేయబడింది."</string>
+    <!-- Announcement made when the screen stopped casting (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_casting_turned_off">"స్క్రీన్ ప్రసారం ఆపివేయబడింది."</string>
+
+    <!-- Content description of the display brightness slider (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_brightness">"ప్రదర్శన ప్రకాశం"</string>
+
+    <!-- Title of dialog shown when 2G-3G data usage has exceeded limit and has been disabled. [CHAR LIMIT=48] -->
+    <string name="data_usage_disabled_dialog_3g_title">"2G-3G డేటా ఆఫ్‌లో ఉంది"</string>
+    <!-- Title of dialog shown when 4G data usage has exceeded limit and has been disabled. [CHAR LIMIT=48] -->
+    <string name="data_usage_disabled_dialog_4g_title">"4G డేటా ఆఫ్‌లో ఉంది"</string>
+    <!-- Title of dialog shown when mobile data usage has exceeded limit and has been disabled. [CHAR LIMIT=48] -->
+    <string name="data_usage_disabled_dialog_mobile_title">"సెల్యూలార్ డేటా ఆఫ్‌లో ఉంది"</string>
+    <!-- Title of dialog shown when data usage has exceeded limit and has been disabled. [CHAR LIMIT=48] -->
+    <string name="data_usage_disabled_dialog_title">"డేటా ఆఫ్‌లో ఉంది"</string>
+    <!-- Body of dialog shown when data usage has exceeded limit and has been disabled. [CHAR LIMIT=NONE] -->
+    <string name="data_usage_disabled_dialog">"మీ పరికరం మీరు సెట్ చేసిన పరిమితిని చేరుకున్నందున డేటాను ఆఫ్ చేసింది.\n\nదీన్ని తిరిగి ఆన్ చేయడం వలన మీ క్యారియర్‌ను బట్టి ఛార్జీలు పడవచ్చు."</string>
+    <!-- Dialog button indicating that data connection should be re-enabled. [CHAR LIMIT=28] -->
+    <string name="data_usage_disabled_dialog_enable">"డేటాను ఆన్ చేయి"</string>
+
+    <!-- Text to display underneath the graphical signal strength meter when
+         no connection is available. [CHAR LIMIT=20] -->
+    <string name="status_bar_settings_signal_meter_disconnected">"ఇంటర్నెట్ కనెక్షన్ లేదు"</string>
+
+    <!-- Text to display underneath the graphical signal strength meter when
+         it is displaying Wi-Fi status and Wi-Fi is connected to a network
+         whose SSID is not available.
+         [CHAR LIMIT=20] -->
+    <string name="status_bar_settings_signal_meter_wifi_nossid">"Wi-Fi కనెక్ట్ చేయబడింది"</string>
+
+    <!-- Notification text: when GPS is getting a fix [CHAR LIMIT=50] -->
+    <string name="gps_notification_searching_text">"GPS కోసం శోధిస్తోంది"</string>
+
+    <!-- Notification text: when GPS has found a fix [CHAR LIMIT=50] -->
+    <string name="gps_notification_found_text">"స్థానం GPS ద్వారా సెట్ చేయబడింది"</string>
+
+    <!-- Accessibility text describing the presence of active location requests by one or more apps -->
+    <string name="accessibility_location_active">"స్థాన అభ్యర్థనలు సక్రియంగా ఉన్నాయి"</string>
+
+    <!-- Content description of the clear button in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_clear_all">"అన్ని నోటిఫికేషన్‌లను క్లియర్ చేయండి."</string>
+
+    <!-- Content description of button in notification inspector for system settings relating to
+         notifications from this application [CHAR LIMIT=NONE] -->
+    <string name="status_bar_notification_inspect_item_title">"నోటిఫికేషన్ సెట్టింగ్‌లు"</string>
+
+    <!-- Content description of button in notification inspetor for application-provided settings
+         for its own notifications [CHAR LIMIT=NONE] -->
+    <string name="status_bar_notification_app_settings_title">"<xliff:g id="APP_NAME">%s</xliff:g> సెట్టింగ్‌లు"</string>
+
+    <!-- Description of the button in the phone-style notification panel that controls auto-rotation, when auto-rotation is on. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_off">"స్క్రీన్ స్వయంచాలకంగా తిప్పబడుతుంది."</string>
+
+    <!-- Description of the button in the phone-style notification panel that controls auto-rotation, when auto-rotation is off. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_on_landscape">"స్క్రీన్ ల్యాండ్‌స్కేప్ దృగ్విన్యాసంలో లాక్ చేయబడుతుంది."</string>
+
+    <!-- Description of the button in the phone-style notification panel that controls auto-rotation, when auto-rotation is off. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_on_portrait">"స్క్రీన్ పోర్ట్రెయిట్ దృగ్విన్యాసంలో లాక్ చేయబడుతుంది."</string>
+
+    <!-- Announcement made when the screen is rotating automatically again (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_off_changed">"స్క్రీన్ ఇప్పుడు స్వయంచాలకంగా తిరుగుతుంది."</string>
+
+    <!-- Announcement made when the rotation lock state changes to landscape only (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_on_landscape_changed">"స్క్రీన్ ఇప్పుడు ల్యాండ్‌స్కేప్ దృగ్విన్యాసంలో లాక్ చేయబడింది."</string>
+
+    <!-- Announcement made when the rotation lock state changes to portrait only (not shown on the screen).  [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_on_portrait_changed">"స్క్రీన్ ఇప్పుడు పోర్ట్రెయిట్ దృగ్విన్యాసంలో లాక్ చేయబడింది."</string>
+
+    <!-- Name of the K-release easter egg: a display case for all our tastiest desserts. [CHAR LIMIT=30] -->
+    <string name="dessert_case">"డెజర్ట్ కేస్"</string>
+
+    <!-- Name of the launcher shortcut icon that allows dreams to be started immediately [CHAR LIMIT=20] -->
+    <string name="start_dreams">"డేడ్రీమ్"</string>
+
+    <!-- Textual description of Ethernet connections -->
+    <string name="ethernet_label">"ఈథర్‌నెట్"</string>
+
+    <!-- QuickSettings: Airplane mode [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_airplane_mode_label">"ఎయిర్‌ప్లేన్ మోడ్"</string>
+    <!-- QuickSettings: Mobile data [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_mobile_data_label">మొబైల్ డేటా</string>
+    <!-- QuickSettings: Roaming [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_roaming_label">రోమింగ్</string>
+    <!-- QuickSettings: Battery Charging [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_battery_charging_label">"ఛార్జ్ చేయబడుతోంది, <xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g>"</string>
+    <!-- QuickSettings: Battery Charged [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_battery_charged_label">"ఛార్జ్ చేయబడింది"</string>
+    <!-- QuickSettings: Bluetooth [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_bluetooth_label">"బ్లూటూత్"</string>
+    <!-- QuickSettings: Bluetooth (Multiple) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_bluetooth_multiple_devices_label">"బ్లూటూత్ (<xliff:g id="NUMBER">%d</xliff:g> పరికరాలు)"</string>
+    <!-- QuickSettings: Bluetooth (Off) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_bluetooth_off_label">"బ్లూటూత్ ఆఫ్‌లో ఉంది"</string>
+    <!-- QuickSettings: Bluetooth detail panel, text when there are no items [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_bluetooth_detail_empty_text">"జత చేసిన పరికరాలు ఏవీ అందుబాటులో లేవు"</string>
+    <!-- QuickSettings: Brightness [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_brightness_label">"ప్రకాశం"</string>
+    <!-- QuickSettings: Rotation Unlocked [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rotation_unlocked_label">"స్వయంచాలకంగా తిప్పడం"</string>
+    <!-- QuickSettings: Rotation Locked [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rotation_locked_label">"తిప్పడం లాక్ చేయబడింది"</string>
+    <!-- QuickSettings: Locked to Portrait [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rotation_locked_portrait_label">"పోర్ట్రెయిట్"</string>
+    <!-- QuickSettings: Locked to Landscape [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rotation_locked_landscape_label">"ల్యాండ్‌స్కేప్"</string>
+    <!-- QuickSettings: IME [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_ime_label">"ఇన్‌పుట్ పద్ధతి"</string>
+    <!-- QuickSettings: Location [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_label">"స్థానం"</string>
+    <!-- QuickSettings: Location (Off) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_off_label">"స్థానం ఆఫ్‌లో ఉంది"</string>
+    <!-- QuickSettings: Media device [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_media_device_label">"ప్రసార మాధ్యమ పరికరం"</string>
+    <!-- QuickSettings: RSSI [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rssi_label">"RSSI"</string>
+    <!-- QuickSettings: RSSI (No network) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rssi_emergency_only">"అత్యవసర కాల్‌లు మాత్రమే"</string>
+    <!-- QuickSettings: Settings [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_settings_label">"సెట్టింగ్‌లు"</string>
+    <!-- QuickSettings: Time [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_time_label">"సమయం"</string>
+    <!-- QuickSettings: User [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_user_label">"నేను"</string>
+    <!-- QuickSettings: Title of the user detail panel [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_user_title">"వినియోగదారు"</string>
+    <!-- QuickSettings: Label on the item for adding a new user [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_user_new_user">"కొత్త వినియోగదారు"</string>
+    <!-- QuickSettings: Wifi [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_label">"Wi-Fi"</string>
+    <!-- QuickSettings: Wifi (Not connected) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_not_connected">"కనెక్ట్ చేయబడలేదు"</string>
+    <!-- QuickSettings: Wifi (No network) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_no_network">"నెట్‌వర్క్ లేదు"</string>
+    <!-- QuickSettings: Wifi (Off) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_off_label">"Wi-Fi ఆఫ్‌లో ఉంది"</string>
+    <!-- QuickSettings: Wifi detail panel, text when there are no items [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_detail_empty_text">"సేవ్ చేసిన నెట్‌వర్క్‌లు ఏవీ అందుబాటులో లేవు"</string>
+    <!-- QuickSettings: Cast title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cast_title">"ప్రసార స్క్రీన్"</string>
+    <!-- QuickSettings: Cast detail panel, status text when casting [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_casting">"ప్రసారం చేస్తోంది"</string>
+    <!-- QuickSettings: Cast detail panel, default device name [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cast_device_default_name">"పేరులేని పరికరం"</string>
+     <!-- QuickSettings: Cast detail panel, default device description [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cast_device_default_description">"ప్రసారం చేయడానికి సిద్ధంగా ఉంది"</string>
+    <!-- QuickSettings: Cast detail panel, text when there are no items [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cast_detail_empty_text">"పరికరాలు ఏవీ అందుబాటులో లేవు"</string>
+    <!-- QuickSettings: Brightness dialog title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_brightness_dialog_title">"ప్రకాశం"</string>
+    <!-- QuickSettings: Brightness dialog auto brightness button [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_brightness_dialog_auto_brightness_label">"స్వయంచాలకం"</string>
+    <!-- QuickSettings: Apn switch button label [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_apn_switch_label">APN స్విచ్</string>
+    <!-- QuickSettings: Label for the toggle that controls whether display inversion is enabled. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_inversion_label">"రంగులను తారుమారు చేయి"</string>
+    <!-- QuickSettings: Label for the toggle that controls whether display color correction is enabled. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_color_space_label">"రంగు సవరణ మోడ్"</string>
+    <!-- QuickSettings: Control panel: Label for button that navigates to settings. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_more_settings">"మరిన్ని సెట్టింగ్‌లు"</string>
+    <!-- QuickSettings: Control panel: Label for button that dismisses control panel. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_done">"పూర్తయింది"</string>
+    <!-- QuickSettings: Control panel: Label for connected device. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_connected">"కనెక్ట్ చేయబడినది"</string>
+    <!-- QuickSettings: Control panel: Label for a connected Wi-Fi access point when the connection is established by a Wi-Fi assistant application. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_connected_via_wfa">"Wi‑Fi సహాయకం ద్వారా కనెక్ట్ చేయబడింది"</string>
+    <!-- QuickSettings: Control panel: Label for connecting device. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_connecting">"కనెక్ట్ అవుతోంది..."</string>
+    <!-- QuickSettings: Tethering. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_tethering_label">"టీథరింగ్"</string>
+    <!-- QuickSettings: Hotspot. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_hotspot_label">"హాట్‌స్పాట్"</string>
+    <!-- QuickSettings: Notifications [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_notifications_label">"నోటిఫికేషన్‌లు"</string>
+    <!-- QuickSettings: Flashlight [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_flashlight_label">"ఫ్లాష్‌లైట్"</string>
+    <!-- QuickSettings: Cellular detail panel title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_title">"సెల్యులార్ డేటా"</string>
+    <!-- QuickSettings: Cellular detail panel, data usage title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_data_usage">"డేటా వినియోగం"</string>
+    <!-- QuickSettings: Cellular detail panel, remaining data title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_remaining_data">"మిగిలిన డేటా"</string>
+    <!-- QuickSettings: Cellular detail panel, over limit title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_over_limit">"పరిమితి మించిపోయింది"</string>
+    <!-- QuickSettings: Cellular detail panel, data used format string [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_data_used">"<xliff:g id="DATA_USED">%s</xliff:g> వినియోగించబడింది"</string>
+    <!-- QuickSettings: Cellular detail panel, data limit format string [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_data_limit">"<xliff:g id="DATA_LIMIT">%s</xliff:g> పరిమితి"</string>
+    <!-- QuickSettings: Cellular detail panel, data warning format string [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_data_warning">"<xliff:g id="DATA_LIMIT">%s</xliff:g> హెచ్చరిక"</string>
+    <!-- QuickSettings: Dds [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_dds_sub">కార్డ్ <xliff:g id="number">%d</xliff:g> డేటా</string>
+    <string name="quick_settings_data_off">డేటా ఆఫ్‌లో ఉంది</string>
+
+    <!-- Recents: The empty recents string. [CHAR LIMIT=NONE] -->
+    <string name="recents_empty_message">"మీ ఇటీవలి స్క్రీన్‌లు ఇక్కడ కనిపిస్తాయి"</string>
+    <!-- Recents: The info panel app info button string. [CHAR LIMIT=NONE] -->
+    <string name="recents_app_info_button_label">"అనువర్తన సమాచారం"</string>
+    <!-- Recents: The screen pinning button. [CHAR LIMIT=NONE] -->
+    <string name="recents_lock_to_app_button_label">"స్క్రీన్ పిన్నింగ్"</string>
+    <!-- Recents: Temporary string for the button in the recents search bar. [CHAR LIMIT=NONE] -->
+    <string name="recents_search_bar_label">"శోధించు"</string>
+    <!-- Recents: Launch error string. [CHAR LIMIT=NONE] -->
+    <string name="recents_launch_error_message">"<xliff:g id="APP">%s</xliff:g>ని ప్రారంభించడం సాధ్యపడలేదు."</string>
+
+
+    <!-- Expanded Status Bar Header: Battery Charged [CHAR LIMIT=40] -->
+    <string name="expanded_header_battery_charged">"ఛార్జ్ చేయబడింది"</string>
+
+    <!-- Expanded Status Bar Header: Charging, no known time [CHAR LIMIT=40] -->
+    <string name="expanded_header_battery_charging">"ఛార్జ్ అవుతోంది"</string>
+
+    <!-- Expanded Status Bar Header: Charging, showing time left until charged [CHAR LIMIT=40] -->
+    <string name="expanded_header_battery_charging_with_time">"పూర్తిగా నిండటానికి <xliff:g id="CHARGING_TIME">%s</xliff:g>"</string>
+
+    <!-- Expanded Status Bar Header: Not charging [CHAR LIMIT=40] -->
+    <string name="expanded_header_battery_not_charging">"ఛార్జ్ కావడం లేదు"</string>
+
+    <!-- Glyph to be overlaid atop the battery when the level is extremely low. Do not translate. -->
+    <string name="battery_meter_very_low_overlay_symbol">!</string>
+
+    <!-- Shows up when there is a user SSL CA Cert installed on the
+         device.  Indicates to the user that SSL traffic can be intercepted.
+         If the text fits on one line (~14 chars), it should start with a
+         linebreak to position it correctly.  [CHAR LIMIT=45] -->
+    <string name="ssl_ca_cert_warning">"నెట్‌వర్క్\nపర్యవేక్షించబడవచ్చు"</string>
+
+    <!-- Description of the unlock target in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_target_search">"శోధించండి"</string>
+    <!-- Description of the up direction in which one can to slide the handle in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_up">"<xliff:g id="TARGET_DESCRIPTION">%s</xliff:g> కోసం పైకి స్లైడ్ చేయండి."</string>
+    <!-- Description of the left direction in which one can to slide the handle in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_left">"<xliff:g id="TARGET_DESCRIPTION">%s</xliff:g> కోసం ఎడమవైపుకు స్లైడ్ చేయండి."</string>
+
+    <!-- Zen mode: No interruptions title, with a warning about alarms. [CHAR LIMIT=60] -->
+    <string name="zen_no_interruptions_with_warning">"అంతరాయాలు లేవు. అలారాలు కూడా లేవు."</string>
+
+    <!-- Zen mode: No interruptions. [CHAR LIMIT=40] -->
+    <string name="zen_no_interruptions">"అంతరాయాలు లేకుండా"</string>
+
+    <!-- Zen mode: Only important interruptions. [CHAR LIMIT=40] -->
+    <string name="zen_important_interruptions">"ప్రాధాన్య అంతరాయాలు మాత్రమే"</string>
+
+    <!-- Zen mode: Next alarm information - just a time. [CHAR LIMIT=40] -->
+    <string name="zen_alarm_information_time">"మీ తదుపరి అలారం <xliff:g id="ALARM_TIME">%s</xliff:g>కి ఉంది"</string>
+
+    <!-- Zen mode: Next alarm information - day and time. [CHAR LIMIT=40] -->
+    <string name="zen_alarm_information_day_time">"మీ తదుపరి అలారం <xliff:g id="ALARM_DAY_AND_TIME">%s</xliff:g>"</string>
+
+    <!-- Zen mode: Next alarm warning. [CHAR LIMIT=40] -->
+    <string name="zen_alarm_warning">"మీరు <xliff:g id="ALARM_TIME">%s</xliff:g>కి సెట్ చేసిన అలారం మీకు వినిపించదు"</string>
+
+    <!-- Text for overflow card on Keyguard when there is not enough space for all notifications on Keyguard. [CHAR LIMIT=1] -->
+    <string name="keyguard_more_overflow_text">"+<xliff:g id="NUMBER_OF_NOTIFICATIONS">%d</xliff:g>"</string>
+
+    <!-- An explanation for the visual speed bump in the notifications, which will appear when you click on it. [CHAR LIMIT=50] -->
+    <string name="speed_bump_explanation">"తక్కువ అత్యవసర నోటిఫికేషన్‌లు దిగువన"</string>
+
+    <!-- Shows to explain the double tap interaction with notifications: After tapping a notification on Keyguard, this will explain users to tap again to launch a notification. [CHAR LIMIT=60] -->
+    <string name="notification_tap_again">"తెరవడానికి మళ్లీ తాకండి"</string>
+
+    <!-- Shows when people have pressed the unlock icon to explain how to unlock. [CHAR LIMIT=60] -->
+    <string name="keyguard_unlock">"అన్‌లాక్ చేయడానికి ఎగువకు స్వైప్ చేయండి"</string>
+
+    <!-- Shows when people have clicked at the left edge of the screen to explain how to open the phone. In right-to-left languages, this is the opposite direction. [CHAR LIMIT=60] -->
+    <string name="phone_hint">"ఫోన్ కోసం కుడివైపుకి స్వైప్ చేయండి"</string>
+
+    <!-- Shows when people have clicked at the right edge of the screen to explain how to open the phone. In right-to-left languages, this is the opposite direction. [CHAR LIMIT=60] -->
+    <string name="camera_hint">"కెమెరా కోసం ఎడమవైపుకి స్వైప్ చేయండి"</string>
+
+    <!-- Interruption level: None. [CHAR LIMIT=20] -->
+    <string name="interruption_level_none">"వేటికీ వద్దు"</string>
+
+    <!-- Interruption level: Priority. [CHAR LIMIT=20] -->
+    <string name="interruption_level_priority">"ప్రాధాన్యత"</string>
+
+    <!-- Interruption level: All. [CHAR LIMIT=20] -->
+    <string name="interruption_level_all">"అన్నిటికీ"</string>
+
+    <!-- Indication on the keyguard that is shown when the device is charging. [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_charging_time">"ఛార్జ్ అవుతోంది (పూర్తిగా నిండటానికి <xliff:g id="CHARGING_TIME_LEFT">%s</xliff:g>)"</string>
+
+    <!-- Related to user switcher --><skip/>
+
+    <!-- Accessibility label for the button that opens the user switcher. -->
+    <string name="accessibility_multi_user_switch_switcher">"వినియోగదారుని మార్చు"</string>
+
+    <!-- Accessibility label for the button that opens the user switcher and announces the current user. -->
+    <string name="accessibility_multi_user_switch_switcher_with_current">"వినియోగదారుని మార్చు, ప్రస్తుత వినియోగదారు <xliff:g id="CURRENT_USER_NAME">%s</xliff:g>"</string>
+
+    <!-- Accessibility label for the button that opens the quick contact of the user. -->
+    <string name="accessibility_multi_user_switch_quick_contact">"ప్రొఫైల్‌ని చూపు"</string>
+
+    <!-- Label for the adding a new user in the user switcher [CHAR LIMIT=35] -->
+    <string name="user_add_user">"వినియోగదారుని జోడించండి"</string>
+
+    <!-- Name for a freshly added user [CHAR LIMIT=30] -->
+    <string name="user_new_user_name">"కొత్త వినియోగదారు"</string>
+
+    <!-- Name for the guest user [CHAR LIMIT=35] -->
+    <string name="guest_nickname">"అతిథి"</string>
+
+    <!-- Label for adding a new guest in the user switcher [CHAR LIMIT=35] -->
+    <string name="guest_new_guest">"అతిథిని జోడించండి"</string>
+
+    <!-- Label for exiting and removing the  guest session in the user switcher [CHAR LIMIT=35] -->
+    <string name="guest_exit_guest">"అతిథిని తీసివేయండి"</string>
+
+    <!-- Title of the confirmation dialog when exiting guest session [CHAR LIMIT=NONE] -->
+    <string name="guest_exit_guest_dialog_title">"అతిథిని తీసివేయాలా?"</string>
+
+    <!-- Message of the confirmation dialog when exiting guest session [CHAR LIMIT=NONE] -->
+    <string name="guest_exit_guest_dialog_message">"ఈ సెషన్‌లోని అన్ని అనువర్తనాలు మరియు డేటా తొలగించబడతాయి."</string>
+
+    <!-- Label for button in confirmation dialog when exiting guest session [CHAR LIMIT=35] -->
+    <string name="guest_exit_guest_dialog_remove">"తీసివేయి"</string>
+
+    <!-- Title of the notification when resuming an existing guest session [CHAR LIMIT=NONE] -->
+    <string name="guest_wipe_session_title">"పునఃస్వాగతం, అతిథి!"</string>
+
+    <!-- Message of the notification when resuming an existing guest session [CHAR LIMIT=NONE] -->
+    <string name="guest_wipe_session_message">"మీరు మీ సెషన్‌ని కొనసాగించాలనుకుంటున్నారా?"</string>
+
+    <!-- Notification when resuming an existing guest session: Action that starts a new session [CHAR LIMIT=35] -->
+    <string name="guest_wipe_session_wipe">"మొదటి నుండి ప్రారంభించు"</string>
+
+    <!-- Notification when resuming an existing guest session: Action that continues with the current session [CHAR LIMIT=35] -->
+    <string name="guest_wipe_session_dontwipe">"అవును, కొనసాగించు"</string>
+
+    <!-- Title for add user confirmation dialog [CHAR LIMIT=30] -->
+    <string name="user_add_user_title" msgid="2108112641783146007">"కొత్త వినియోగదారుని జోడించాలా?"</string>
+
+    <!-- Message for add user confirmation dialog - short version. [CHAR LIMIT=none] -->
+    <string name="user_add_user_message_short" msgid="1511354412249044381">"మీరు కొత్త వినియోగదారుని జోడించినప్పుడు, ఆ వ్యక్తి తన స్థలాన్ని సెటప్ చేసుకోవాలి.\n\nఏ వినియోగదారు అయినా మిగతా అందరు వినియోగదారుల కోసం అనువర్తనాలను నవీకరించగలరు."</string>
+
+
+    <!-- Battery saver notification title. [CHAR LIMIT=60]-->
+    <string name="battery_saver_notification_title">"బ్యాటర్ సేవర్ ఆన్ చేయబడింది"</string>
+
+    <!-- Battery saver notification text. [CHAR LIMIT=60] -->
+    <string name="battery_saver_notification_text">"పనితీరుని మరియు నేపథ్య డేటాను తగ్గిస్తుంది"</string>
+
+    <!-- Battery saver notification action text. [CHAR LIMIT=60] -->
+    <string name="battery_saver_notification_action_text">"బ్యాటరీ సేవర్‌ను ఆఫ్ చేయి"</string>
+
+    <!-- Battery level for expanded quick settings [CHAR LIMIT=2] -->
+    <string name="battery_level_template">"<xliff:g id="LEVEL">%d</xliff:g>%%"</string>
+
+    <!-- Text shown in place of notification contents when the notification is hidden on a secure lockscreen -->
+    <string name="notification_hidden_text">"కంటెంట్‌లు దాచబడ్డాయి"</string>
+
+    <!-- Media projection permission dialog warning text. [CHAR LIMIT=NONE] -->
+    <string name="media_projection_dialog_text">"<xliff:g id="APP_SEEKING_PERMISSION">%s</xliff:g> మీ స్క్రీన్‌పై కనిపించే ప్రతిదాన్ని క్యాప్చర్ చేయడం ప్రారంభిస్తుంది."</string>
+
+    <!-- Media projection permission dialog permanent grant check box. [CHAR LIMIT=NONE] -->
+    <string name="media_projection_remember_text">"మళ్లీ చూపవద్దు"</string>
+
+    <!-- The text to clear all notifications. [CHAR LIMIT=60] -->
+    <string name="clear_all_notifications_text">"అన్నీ క్లియర్ చేయండి"</string>
+
+    <!-- Media projection permission dialog action text. [CHAR LIMIT=60] -->
+    <string name="media_projection_action_text">"ఇప్పుడే ప్రారంభించు"</string>
+
+    <!-- Text which is shown in the notification shade when there are no notifications. [CHAR LIMIT=30] -->
+    <string name="empty_shade_text">"నోటిఫికేషన్‌లు లేవు"</string>
+
+    <!-- Task Manager -->
+    <string name="tasklistview_title">విధి నిర్వాహకులు</string>
+    <string name="message_switch_fail">ఈ విధికి మారలేరు, ఎందుకంటే దీనికి ఇంటర్‌ఫేస్ లేదు.</string>
+    <string name="tasklist_killall">అన్నింటినీ ముగించు</string>
+    <string name="tasklist_stopall">అన్నింటినీ ఆపివేయి</string>
+    <string name="tasklist_stop">"ఆపివేయి"</string>
+    <string name="tasklist_memory_usage">"ఖాళీ/మొత్తం మెమరీ: [<xliff:g id="number">%s</xliff:g>] / [<xliff:g id="name">%s</xliff:g>]"</string>
+    <string name="message_keep_one_launcher">కనీసం ఒక్క హోమ్ కార్యాచరణని కలిగి ఉండాలి!</string>
+
+    <!-- Footer device owned text [CHAR LIMIT=50] -->
+    <string name="device_owned_footer">"పరికరం పర్యవేక్షించబడవచ్చు"</string>
+
+    <!-- Footer profile owned text [CHAR LIMIT=50] -->
+    <string name="profile_owned_footer">"ప్రొఫైల్‌ని పర్యవేక్షించవచ్చు"</string>
+
+    <!-- Footer vpn present text [CHAR LIMIT=50] -->
+    <string name="vpn_footer">"నెట్‌వర్క్ పర్యవేక్షించబడవచ్చు"</string>
+
+    <!-- Monitoring dialog title for device owned devices [CHAR LIMIT=35] -->
+    <string name="monitoring_title_device_owned">"పరికర పర్యవేక్షణ"</string>
+
+    <!-- Monitoring dialog title for profile owned devices [CHAR LIMIT=35] -->
+    <string name="monitoring_title_profile_owned">"ప్రొఫైల్ పర్యవేక్షణ"</string>
+
+    <!-- Monitoring dialog title for normal devices  [CHAR LIMIT=35]-->
+    <string name="monitoring_title">"నెట్‌వర్క్ పర్యవేక్షణ"</string>
+
+    <!-- Monitoring dialog disable vpn button [CHAR LIMIT=30] -->
+    <string name="disable_vpn">"VPNని నిలిపివేయి"</string>
+
+    <!-- Monitoring dialog disconnect vpn button [CHAR LIMIT=30] -->
+    <string name="disconnect_vpn">"VPNను డిస్‌కనెక్ట్ చేయి"</string>
+
+    <!-- Monitoring dialog device owner body text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_device_owned">"ఈ పరికరం దీని నిర్వహణలో ఉంది:\n<xliff:g id="ORGANIZATION">%1$s</xliff:g>\n\nమీ నిర్వాహకుడు ఇమెయిల్‌లు, అనువర్తనాలు మరియు సురక్షిత వెబ్‌సైట్‌లతో సహా మీ పరికరాన్ని మరియు నెట్‌వర్క్ కార్యాచరణను పర్యవేక్షించగలరు.\n\nమరింత సమాచారం కోసం, మీ నిర్వాహకుడిని సంప్రదించండి."</string>
+
+    <!-- Monitoring dialog non-legacy VPN text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_vpn">"మీరు VPN కనెక్షన్‌ను సెటప్ చేయడానికి \"<xliff:g id="APPLICATION">%1$s</xliff:g>\"కి అనుమతి ఇచ్చారు.\n\nఈ అనువర్తనం ఇమెయిల్‌లు, అనువర్తనాలు మరియు సురక్షిత వెబ్‌సైట్‌లతో సహా మీ పరికరాన్ని మరియు నెట్‌వర్క్ కార్యాచరణను పర్యవేక్షించగలదు."</string>
+
+    <!-- Monitoring dialog legacy VPN text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_legacy_vpn">"మీరు VPN (\"<xliff:g id="APPLICATION">%1$s</xliff:g>\")కి కనెక్ట్ చేయబడ్డారు.\n\nమీ VPN సేవా ప్రదాత ఇమెయిల్‌లు, అనువర్తనాలు మరియు సురక్షిత వెబ్‌సైట్‌లతో సహా మీ పరికరాన్ని మరియు నెట్‌వర్క్ కార్యాచరణను పర్యవేక్షించగలరు."</string>
+
+    <!-- Monitoring dialog non-legacy VPN with device owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_vpn_device_owned">"ఈ పరికరం దీని నిర్వహణలో ఉంది:\n<xliff:g id="ORGANIZATION">%1$s</xliff:g>\n\nమీ నిర్వాహకుడు ఇమెయిల్‌లు, అనువర్తనాలు మరియు సురక్షిత వెబ్‌సైట్‌లతో సహా మీ నెట్‌వర్క్ కార్యాచరణను పర్యవేక్షించగలరు. మరింత సమాచారం కోసం, మీ నిర్వాహకుడిని సంప్రదించండి.\n\nఅలాగే, మీరు VPN కనెక్షన్‌ను సెటప్ చేయడానికి \"<xliff:g id="APPLICATION">%2$s</xliff:g>\"ని అనుమతించారు. కనుక ఈ అనువర్తనం కూడా నెట్‌వర్క్ కార్యాచరణను పర్యవేక్షించగలదు."</string>
+
+    <!-- Monitoring dialog legacy VPN with device owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_legacy_vpn_device_owned">"ఈ పరికరం దీని నిర్వహణలో ఉంది:\n<xliff:g id="ORGANIZATION">%1$s</xliff:g>\n\nమీ నిర్వాహకుడు ఇమెయిల్‌లు, అనువర్తనాలు మరియు సురక్షిత వెబ్‌సైట్‌లతో సహా మీ నెట్‌వర్క్ కార్యాచరణను పర్యవేక్షించగలరు. మరింత సమాచారం కోసం, మీ నిర్వాహకుడిని సంప్రదించండి.\n\nఅలాగే, మీరు VPN (\"<xliff:g id="APPLICATION">%2$s</xliff:g>\")కి కనెక్ట్ చేయబడ్డారు. కనుక మీ VPN సేవా ప్రదాత కూడా నెట్‌వర్క్ కార్యాచరణను పర్యవేక్షించగలరు."</string>
+
+    <!-- Monitoring dialog profile owner body text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_profile_owned">"ఈ ప్రొఫైల్ వీరి నిర్వహణలో ఉంది:\n<xliff:g id="ORGANIZATION">%1$s</xliff:g>\n\nమీ నిర్వాహకుడు ఇమెయిల్‌లు, అనువర్తనాలు మరియు సురక్షిత వెబ్‌సైట్‌లతో సహా మీ పరికరం మరియు నెట్‌వర్క్ కార్యాచరణను పర్యవేక్షించగలరు.\n\nమరింత సమాచారం కోసం, మీ నిర్వాహకుడిని సంప్రదించండి."</string>
+
+    <!-- Monitoring dialog device and profile owner body text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_device_and_profile_owned">"ఈ పరికరం వీరి నిర్వహణలో ఉంది:\n<xliff:g id="ORGANIZATION_0">%1$s</xliff:g>\nమీ ప్రొఫైల్ వీరి నిర్వహణలో ఉంది:\n<xliff:g id="ORGANIZATION_1">%2$s</xliff:g>\n\nమీ నిర్వాహకుడు ఇమెయిల్‌లు, అనువర్తనాలు మరియు సురక్షిత వెబ్‌సైట్‌లతో సహా మీ పరికరం మరియు నెట్‌వర్క్ కార్యాచరణను పర్యవేక్షించగలరు.\n\nమరింత సమాచారం కోసం, మీ నిర్వాహకుడిని సంప్రదించండి."</string>
+
+    <!-- Monitoring dialog non-legacy VPN with profile owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_vpn_profile_owned">"ఈ ప్రొఫైల్ వీరి నిర్వహణలో ఉంది:\n<xliff:g id="ORGANIZATION">%1$s</xliff:g>\n\nమీ నిర్వాహ. ఇమెయి., అనువ. మరియు సురక్షిత వెబ్‌సైట్‌లతో సహా మీ నెట్‌వ. కార్యాచరణను పర్యవేక్షించగలరు. మరింత సమాచారం కోసం, మీ నిర్వాహకుడిని సంప్రదించండి.\n\nఅలాగే, మీరు VPN కనెక్షన్‌ని సెటప్ చేయడానికి \"<xliff:g id="APPLICATION">%2$s</xliff:g>\"కి అనుమతి ఇచ్చారు. కాబట్టి, ఈ అనువ. కూడా నెట్‌. కార్యా. పర్యవేక్షించగలదు."</string>
+
+    <!-- Monitoring dialog legacy VPN with profile owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_legacy_vpn_profile_owned">"ఈ ప్రొఫైల్ వీరి నిర్వహణలో ఉంది:\n<xliff:g id="ORGANIZATION">%1$s</xliff:g>\n\nమీ నిర్వా. ఇమెయి., అనువ. మరియు సురక్షిత వెబ్‌సైట్‌లతో సహా మీ నెట్‌వర్క్ కార్యాచరణను పర్యవేక్షించగలరు. మరింత సమాచారం కోసం, మీ నిర్వాహకుడిని సంప్రదించండి.\n\nఅలాగే, మీరు VPN (\"<xliff:g id="APPLICATION">%2$s</xliff:g>\")కి కనెక్ట్ చేయబడ్డారు. కాబట్టి, మీ VPN సేవ ప్రదాత కూడా నెట్‌వర్క్ కార్యాచరణను పర్యవేక్షించగలరు."</string>
+
+    <!-- Monitoring dialog non-legacy VPN with device and profile owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_vpn_device_and_profile_owned">"ఈ పరి. వీరి నిర్వహణలో ఉంది:\n<xliff:g id="ORGANIZATION_0">%1$s</xliff:g>\nమీ ప్రొఫైల్ వీరి నిర్వ. ఉంది:\n<xliff:g id="ORGANIZATION_1">%2$s</xliff:g>\n\nమీ నిర్వాహ. ఇమెయి., అనువ. మరియు సురక్షిత వెబ్‌సై. సహా మీ నెట్‌. కార్యా. పర్యవేక్షించగలరు. మరింత సమా. కోసం, మీ నిర్వాహ. సంప్ర..\n\nఅలాగే, మీరు VPN కనెక్షన్ సెటప్ చేయడా. \"<xliff:g id="APPLICATION">%3$s</xliff:g>\"కి అనుమతి ఇచ్చారు. కాబట్టి, ఈ అనువ. కూడా నెట్‌వర్క్ కార్యా. పర్యవేక్షించగలదు."</string>
+
+    <!-- Monitoring dialog legacy VPN with device and profile owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_legacy_vpn_device_and_profile_owned">"ఈ పరి. వీరి నిర్వహణలో ఉంది:\n<xliff:g id="ORGANIZATION_0">%1$s</xliff:g>\nమీ ప్రొఫైల్ వీరి నిర్వ. ఉంది:\n<xliff:g id="ORGANIZATION_1">%2$s</xliff:g>\n\nమీ నిర్వా. ఇమెయి., అనువ. మరియు సురక్షిత వెబ్‌‌సైట్‌లతో సహా మీ నెట్‌వ. కార్యా. పర్యవేక్షించగలరు. మరింత సమా. కోసం, మీ నిర్వాహ. సంప్రదించండి.\n\nఅలాగే, మీరు VPN (\"<xliff:g id="APPLICATION">%3$s</xliff:g>\")కి కనెక్ట్ చేయబ.. కాబట్టి, మీ VPN సేవ ప్రదాత కూడా నెట్‌వర్క్ కార్యా. పర్యవేక్షించగలరు."</string>
+
+    <!-- Indication on the keyguard that appears when the user disables trust agents until the next time they unlock manually. [CHAR LIMIT=NONE] -->
+    <string name="keyguard_indication_trust_disabled">"మీరు మాన్యువల్‌గా అన్‌లాక్ చేస్తే మినహా పరికరం లాక్ చేయబడి ఉంటుంది"</string>
+
+    <!-- Title of notification educating the user about enabling notifications on the lockscreen. [CHAR LIMIT=40] -->
+    <string name="hidden_notifications_title">"నోటిఫికేషన్‌లను వేగంగా పొందండి"</string>
+
+    <!-- Body of notification educating the user about enabling notifications on the lockscreen. [CHAR LIMIT=60] -->
+    <string name="hidden_notifications_text">"వీటిని మీరు అన్‌లాక్ చేయకముందే చూడండి"</string>
+
+    <!-- Cancel action for notification educating the user about enabling notifications on the lockscreen. [CHAR LIMIT=20] -->
+    <string name="hidden_notifications_cancel">"వద్దు, ధన్యవాదాలు"</string>
+
+    <!-- continue action for notification educating the user about enabling notifications on the lockscreen. [CHAR LIMIT=20] -->
+    <string name="hidden_notifications_setup">"సెటప్ చేయి"</string>
+
+    <!-- Accessibility string for current zen mode and selected exit condition. A template that simply concatenates existing mode string and the current condition description. [CHAR LIMIT=20] -->
+    <string name="zen_mode_and_condition">"<xliff:g id="ZEN_MODE">%1$s</xliff:g>. <xliff:g id="EXIT_CONDITION">%2$s</xliff:g>"</string>
+    <string name="high_definiation_voice">(HD)</string>
+
+    <!-- Screen pinning dialog title. -->
+    <string name="screen_pinning_title">"స్క్రీన్ పిన్ చేయబడింది"</string>
+    <!-- Screen pinning dialog description. -->
+    <string name="screen_pinning_description">"ఇది మీరు అన్‌పిన్ చేసే వరకు దీన్ని వీక్షణలో ఉంచుతుంది. అన్‌పిన్ చేయడానికి వెనుకకు మరియు స్థూలదృష్టిని ఒకేసారి తాకి, ఉంచండి."</string>
+    <!-- Screen pinning dialog description when in accessibility mode. -->
+    <string name="screen_pinning_description_accessible">"ఇది మీరు అన్‌పిన్ చేసే వరకు దీన్ని వీక్షణలో ఉంచుతుంది. అన్‌పిన్ చేయడానికి స్థూలదృష్టిని తాకి, ఉంచండి."</string>
+    <!-- Screen pinning positive response. -->
+    <string name="screen_pinning_positive">"అర్థమైంది"</string>
+    <!-- Screen pinning negative response. -->
+    <string name="screen_pinning_negative">"వద్దు, ధన్యవాదాలు"</string>
+
+    <!-- Hide quick settings tile confirmation title -->
+    <string name="quick_settings_reset_confirmation_title">"<xliff:g id="TILE_LABEL">%1$s</xliff:g>ని దాచాలా?"</string>
+
+    <!-- Hide quick settings tile confirmation message -->
+    <string name="quick_settings_reset_confirmation_message">"మీరు సెట్టింగ్‌ల్లో దీన్ని ఆన్ చేసిన తదుపరిసారి ఇది కనిపిస్తుంది."</string>
+
+    <!-- Hide quick settings tile confirmation button -->
+    <string name="quick_settings_reset_confirmation_button">"దాచు"</string>
+</resources>

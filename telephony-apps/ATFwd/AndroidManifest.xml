@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---/******************************************************************************
+* @file    AndroidManifest.xml
+*  Coppyright (C) 2012 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   package="com.qualcomm.atfwd"
+   android:sharedUserId="android.uid.system">
+
+    <permission android:name="com.qualcomm.permission.ATCMD"
+                android:protectionLevel="signatureOrSystem" />
+
+   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+   <application android:process="com.qualcomm.telephony">
+      <receiver android:name="AtFwdAutoboot">
+         <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+         </intent-filter>
+      </receiver>
+
+      <service android:name="AtFwdService"
+               android:permission="com.qualcomm.permission.ATCMD"
+               android:exported="true"/>
+
+   </application>
+</manifest>

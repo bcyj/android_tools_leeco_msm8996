@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+<!--
+     Copyright (C) 2012-2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- The name of the app -->
+    <string name="app_name">ဖုိင္မန္ေနဂ်ာ</string>
+    <!-- The description of the app -->
+    <string name="app_description">CyanogenMod ဖိုင္မန္ေနဂ်ာ</string>
+
+    <!-- Human readable sizes -->
+    <string name="size_bytes">"B"</string>
+    <string name="size_kilobytes">KB</string>
+    <string name="size_megabytes">"MB"</string>
+    <string name="size_gigabytes">"GB"</string>
+
+    <!-- Date/time format order (%1$s: date; %2$s: time) -->
+    <string name="datetime_format_order">%1$s %2$s</string>
+
+    <!-- Devices types -->
+    <string name="device_blockdevice">ေဒတာမ်ားအစုအလုိက္အျပံဳလုိက္ေပးပုိ႔ဆက္သြယ္ေသာ စက္ကိရိယာ</string>
+    <string name="device_characterdevice">ေဒတာတစ္ခုခ်င္းစီကုိ ေပးပုိ႕ဆက္သြယ္ေသာ စက္ကိရိယာ</string>
+    <string name="device_namedpipe">အမည္ေပးထားေသာ အခ်က္အလက္မ်ားသုိေလွာင္ထားသည့္ လမ္းေၾကာင္းကုိအသံုးျပဳကာ စက္အခ်င္းခ်င္း အခ်က္အလက္မ်ားေပးပုိ႔ေသာ နည္းလမ္း</string>
+    <string name="device_domainsocket">ဒုိမိန္း ေဆာ့ကတ္</string>
+
+    <!-- Mount Point States -->
+    <string name="mount_point_readonly">RO</string>
+    <string name="mount_point_readwrite">RW</string>
+
+    <!-- Default buttons -->
+    <string name="ok" translatable="false">@android:string/ok</string>
+    <string name="cancel" translatable="false">@android:string/cancel</string>
+    <string name="yes">ဟုတ်ကဲ့</string>
+    <string name="no">ဟင့်အင်း</string>
+    <string name="all">အားလုံး</string>
+    <string name="overwrite">အချက်အလက်ဟောင်းများဖျက်ပစ်မည်</string>
+    <string name="select">"ရွေးရန်"</string>
+
+    <!-- The root directory name -->
+    <string name="root_directory_name"><![CDATA[<ပင္မ ဖုိင္တြဲ>]]></string>
+    <!-- The search result name -->
+    <string name="search_result_name">ရွာေဖြရန္- <xliff:g id="terms">%1$s</xliff:g></string>
+
+    <!-- Loading waiting message -->
+    <string name="loading_message">"ဖွင့်နေစဉ်"</string>
+    <!-- Computing message -->
+    <string name="computing_message" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Computing new line message -->
+    <string name="computing_message_ln" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Cancelled message -->
+    <string name="cancelled_message">ပယ္ဖ်က္ၿပီးၿပီ။</string>
+    <!-- Error message -->
+    <string name="error_message">အမွား။</string>
+    <!-- Copy text content description -->
+    <string name="copy_text_cd">စာသားမ်ားကုိ ကလစ္ဘုတ္သုိ႔ ေကာ္ပီလုပ္ရန္ ႏွိပ္ပါ</string>
+    <!-- Copy text content message -->
+    <string name="copy_text_msg">စာသားမ်ားကုိ ကလစ္ဘုတ္သုိ႔ ေကာ္ပီကူးၿပီးပါၿပီ</string>
+
+    <!-- Warning dialog title -->
+    <string name="warning_title">သတိေပးခ်က္</string>
+    <!-- Error dialog title -->
+    <string name="error_title">မွားယြင္းမႈကုိ ရွာေဖြေတြ႕ရွိပါသည္</string>
+    <!-- Confirm operation dialog title -->
+    <string name="confirm_operation">လုပ္ေဆာင္ခ်က္ကုိ အတည္ျပဳပါ</string>
+    <!-- Confirm overwrite dialog title -->
+    <string name="confirm_overwrite">ထပ္ေရးျခင္းကုိ အတည္ျပဳပါ</string>
+    <!-- Confirm deletion dialog title -->
+    <string name="confirm_deletion">ဖ်က္ထားျခင္းမ်ားကုိ အတည္ျပဳပါ</string>
+
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Title -->
+    <string name="msgs_change_to_prompt_access_mode_title">ေျပာင္းလဲမႈကုိ အတည္ျပဳပါ</string>
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Message -->
+    <string name="msgs_change_to_prompt_access_mode_msg">Root Access အေနအထားတြင္ လုပ္ေဆာင္၍ မရႏုိင္ပါ။ လံုျခံဳေသာ အေနအထားသုိ႔ ေျပာင္းေနပါသည္။\n\nဤေျပာင္းလဲမႈကုိ အလုပ္လုပ္ေစမည္လား?</string>
+
+    <!-- A console couldn\'t be created - Without privileges, the app won\'t work -->
+    <string name="msgs_cant_create_console">လုပ္ငန္းေဆာင္တာတစ္ခုအတြက္ လုိအပ္ေသာအခြင့္အေရးမ်ားကုိ ရယူ၍ မရႏုိင္ပါ။</string>
+    <!-- The message shown when an allocation of a privileged console fails, and a non
+         privileged is allocated -->
+    <string name="msgs_privileged_console_alloc_failed">Root Access အေနအထားတြင္ လုပ္ေဆာင္၍ မရႏုိင္ပါ။ လံုျခံဳေသာ အေနအထားသုိ႔ ေျပာင္းေနပါသည္။</string>
+    <!-- The selected setting was not applied or stored -->
+    <string name="msgs_settings_save_failure">ဆက္တင္ကုိ အလုပ္လုပ္ခုိင္း မရႏိုင္ပါ (သုိ႔) သိမ္းဆည္း၍ မရပါ။</string>
+    <!-- The initial directory has an invalid or inaccessible reference -->
+    <string name="msgs_settings_invalid_initial_directory">ကနဦးဖုိင္တြဲျဖစ္သည့္ \'<xliff:g id="initial_dir">%1$s</xliff:g>\' သည္ အက်ံဳးမဝင္ပါ။ ပင္မဖုိင္တြဲသုိ႔ ေျပာင္းေနပါသည္။</string>
+    <!-- Root is not available message -->
+    <string name="root_not_available_msg">ဤကိရိယာတြင္ root လုပ္၍ မရႏုိင္ပါ။ ဤလုပ္ေဆာင္ခ်က္ကုိ ေဆာင္ရြက္၍ မရႏုိင္ပါ။</string>
+
+    <!-- Success -->
+    <string name="msgs_success">လုပ္ေဆာင္ခ်က္ ေအာင္ျမင္စြာ ၿပီးေျမာက္သြားပါၿပီ။</string>
+    <!-- Unknown error -->
+    <string name="msgs_unknown">မွားယြင္းမႈကုိ ရွာေတြ႕ပါသည္။ လုပ္ေဆာင္ခ်က္ မေအာင္ျမင္ပါ။</string>
+    <!-- When an operation requires elevated privileged (normally caused for the use of a
+         non-privileged console) -->
+    <string name="msgs_insufficient_permissions">ဤလုပ္ေဆာင္ခ်က္သည္ ျမႇင့္တင္ေပးထားေသာ ခြင့္ျပဳခ်က္မ်ား လုိအပ္ပါသည္။ Root Access အေနအထားသုိ႔ ေျပာင္းလဲရန္ ၾကိဳးစားပါ။</string>
+    <!-- When an operation fails because the device has run out of storage. -->
+    <string name="msgs_no_disk_space">စက္ထဲတြင္ ေနရာလြတ္မရွိေတာ့သျဖင့္ ဤလုပ္ေဆာင္ခ်က္သည္ မေအာင္ျမင္ပါ</string>
+    <!-- The file or directory was not found -->
+    <string name="msgs_file_not_found">ဖုိင္ (သုိ႔) ဖုိင္တြဲကုိ မေတြ႕ပါ။</string>
+    <!-- The command reference couldn\'t be created (not found or invalid definition)
+         (normally caused by a development error) -->
+    <string name="msgs_command_not_found">လုပ္ေဆာင္ခ်က္၏ အမိန္႔ေပးခ်က္ကုိ ရွာမေတြ႕ပါ (သုိ႕) အက်ံဳးမဝင္ေသာ အဓိပၸါယ္သတ္မွတ္ခ်က္ ရွိေနပါသည္။</string>
+    <!-- I/O exception -->
+    <string name="msgs_io_failed">ဖတ္/ေရး ျခင္းမေအာင္ျမင္ပါ။</string>
+    <!-- Operation timeout detected -->
+    <string name="msgs_operation_timeout">လုပ္ေဆာင္ခ်က္ ရပ္နားသြားပါသည္။</string>
+    <!-- The operation returns an invalid exit code -->
+    <string name="msgs_operation_failure">လုပ္ေဆာင္ခ်က္ မေအာင္ျမင္ပါ။</string>
+    <!-- A console couldn\'t be allocated -->
+    <string name="msgs_console_alloc_failure">စက္တြင္းပုိင္း မွားယြင္းမႈ ျဖစ္ပြားပါသည္။</string>
+    <!-- An operation can\'t be cancelled -->
+    <string name="msgs_operation_can_not_be_cancelled">လုပ္ေဆာင္ခ်က္ကုိ ပယ္ဖ်က္၍ မရႏုိင္ပါ။</string>
+    <!-- The operation requieres mount the file system prior to execute the command -->
+    <string name="msgs_read_only_filesystem">ဖုိင္စနစ္သည္ ဖတ္ရန္-အတြက္သာ ျဖစ္ပါသည္။ လုပ္ေဆာင္ခ်က္ မျပဳလုပ္မီ ဖုိင္စနစ္ကုိ ဖတ္-ေရးအျဖစ္သုိ႔ ေျပာင္းရန္ ၾကိဳးစားပါ။</string>
+    <!-- Illegal argument (normally caused by a development error when calling internal api) -->
+    <string name="msgs_illegal_argument">တရားမဝင္ေသာ ျငင္းဆုိမႈျဖစ္ပါသည္။ တုိင္ၾကားမႈ မေအာင္ျမင္ပါ။</string>
+    <!-- The operation will cause inconsistencies -->
+    <string name="msgs_unresolved_inconsistencies">လုပ္ေဆာင္ခ်က္သည္ ေရွ႕ေနာက္ မကုိက္ညီမႈမ်ား ျဖစ္ပြားေစမည္ျဖစ္ေသာေၾကာင့္ ၎ကုိခြင့္မျပဳပါ။</string>
+    <!-- Operation not permitted in current directory -->
+    <string name="msgs_operation_not_allowed_in_current_directory">လုပ္ေဆာင္ခ်က္ကုိ လက္ရွိဖုိင္တြဲတြင္ ခြင့္မျပဳထားပါ။\n\nသတ္မွတ္ေနရာ ဖုိင္တြဲသည္ မူလရင္းျမစ္ဖုိင္၏ ဖုိင္ခြဲ ျဖစ္၍ မရပါ (သို႕) မူလရင္းျမစ္ႏွင့္ အတူတူ မျဖစ္ရပါ။</string>
+
+    <!-- The advice message prior to exit the app -->
+    <string name="msgs_push_again_to_exit">ထြက္ရန္ ေနာက္ထပ္ ထပ္ႏွိပ္ပါ။</string>
+
+    <!-- There is no registered app that can handle the mime-type -->
+    <string name="msgs_not_registered_app">ေရြးခ်ယ္ထားသည့္ဖုိင္အမ်ိဳးအစားကုိ ကုိင္တြယ္ရန္ မွတ္ပံုတင္ထားေသာ အက္ပ္တစ္ခုမွ မရွိပါ။</string>
+
+    <!-- Overwrite files? -->
+    <string name="msgs_overwrite_files">ဖုိင္အခ်ိဳ႕သည္ သတ္မွတ္ေနရာဖုိင္တြဲထဲတြင္ ရွိေနၿပီးသားျဖစ္ပါသည္။\n\nထပ္ေရးမည္လား?</string>
+
+    <!-- The association of an action to the app failed -->
+    <string name="msgs_action_association_failed">လုပ္ေဆာင္ခ်က္ကုိ အက္ပ္ႏွင့္ ဆက္ႏြယ္ရာ၌ ေအာင္ျမင္မႈ မရရွိပါ။</string>
+
+    <!-- An operation requires elevated privileged. Ask the user. -->
+    <string name="advise_insufficient_permissions">လုပ္ေဆာင္ခ်က္သည္ အဆင့္ႃမႇင့္ထားေသာ အထူးအခြင့္အေရးမ်ား လုိအပ္ပါသည္။\n\nRoot Access အေနအထားသုိ႔ ေျပာင္းလဲလုိပါသလား?</string>
+
+    <!-- The parent directory of the current directory in navigation view -->
+    <string name="parent_dir">ပင္မ ဖုိင္တြဲ</string>
+    <!-- External storage descripton -->
+    <string name="external_storage">ျပင္ပ သိုေလွာင္ခန္း</string>
+    <!-- Usb storage descripton -->
+    <string name="usb_storage">"USBဖြင့် သိမ်းဆည်း"</string>
+
+    <!-- ActionBar Buttons - FileSystem -->
+    <string name="actionbar_button_filesystem_cd">ဖုိင္စနစ္ပုိင္း အခ်က္အလက္</string>
+    <!-- ActionBar Buttons - Sort Mode -->
+    <string name="actionbar_button_sort_mode_cd">အမ်ိဳးအစားခြဲရန္ အေနအထား</string>
+    <!-- ActionBar Buttons - Layout Mode -->
+    <string name="actionbar_button_layout_mode_cd">အခင္းအက်င္း ပံုစံအေနအထား</string>
+    <!-- ActionBar Buttons - Other View Options -->
+    <string name="actionbar_button_other_view_options_cd">အျခားျမင္ကြင္း ေရြးစရာမ်ား</string>
+    <!-- ActionBar Buttons - Done -->
+    <string name="actionbar_button_selection_done_cd">"ပြီးပါပြီ"</string>
+    <!-- ActionBar Buttons - Actions -->
+    <string name="actionbar_button_actions_cd">လုပ္ေဆာင္ခ်က္မ်ား</string>
+    <!-- ActionBar Buttons - Search -->
+    <string name="actionbar_button_search_cd">"ရှာဖွေခြင်း"</string>
+    <!-- ActionBar Buttons - Overflow -->
+    <string name="actionbar_button_overflow_cd">"ပိုမိုရွေးချယ်စရာများ"</string>
+    <!-- ActionBar Buttons - Storage volumes -->
+    <string name="actionbar_button_storage_cd">သိမ္းဆည္းႏိုင္မႈ ပမာဏ</string>
+    <!-- ActionBar Buttons - Save -->
+    <string name="actionbar_button_save_cd">သိမ်းပါ</string>
+    <!-- ActionBar Buttons - Print -->
+    <string name="actionbar_button_print_cd">"ပရင့်ထုတ်ယူရန်"</string>
+
+    <!-- Navigation View - Sort - Sort by name (ascending) -->
+    <string name="sort_by_name_asc">အမည္ အလုိက္ \u25B2</string>
+    <!-- Navigation View - Sort - Sort by name (descending) -->
+    <string name="sort_by_name_desc">အမည္ အလုိက္ \u25BC</string>
+    <!-- Navigation View - Sort - Sort by date (ascending) -->
+    <string name="sort_by_date_asc">ရက္ အလုိက္ \u25B2</string>
+    <!-- Navigation View - Sort - Sort by date (descending) -->
+    <string name="sort_by_date_desc">ရက္ အလုိက္ \u25BC</string>
+    <!-- Navigation View - Sort - Sort by size (ascending) -->
+    <string name="sort_by_size_asc">အရြယ္အစားအလုိက္\u25B2</string>
+    <!-- Navigation View - Sort - Sort by size (descending) -->
+    <string name="sort_by_size_desc">အရြယ္အစားအလုိက္\u25BC</string>
+    <!-- Navigation View - Sort - Sort by type (ascending) -->
+    <string name="sort_by_type_asc">အမ်ိဳးအစားအလုိက္\u25B2</string>
+    <!-- Navigation View - Sort - Sort by type (descending) -->
+    <string name="sort_by_type_desc">အမ်ိဳးအစားအလုိက္\u25BC</string>
+
+    <!-- Navigation View - Layout - Icons -->
+    <string name="layout_icons">အုိင္ကြန္မ်ား</string>
+    <!-- Navigation View - Layout - Simple -->
+    <string name="layout_simple">ရိုးရိုး</string>
+    <!-- Navigation View - Layout - Details -->
+    <string name="layout_details">အသေးစိတ်များ</string>
+
+    <!-- Navigation View - View - Show folders first -->
+    <string name="cm_filemanager_show_dirs_first">ဖုိင္တြဲမ်ားကုိ အရင္ျပပါ</string>
+    <!-- Navigation View - View - Show hidden files option -->
+    <string name="cm_filemanager_show_hidden">ဝွက္ထားေသာ ဖုိင္မ်ား ျပပါ</string>
+    <!-- Navigation View - View - Show system files option -->
+    <string name="cm_filemanager_show_system">စက္စနစ္ပုိင္း ဖုိင္မ်ားကုိ ျပပါ</string>
+    <!-- Navigation View - View - Show symlinks option -->
+    <string name="cm_filemanager_show_symlinks">symlinks မ်ားကုိျပပါ</string>
+
+    <!-- Filesystem Info (no data). Dialog title -->
+    <string name="filesystem_info_warning_title">အခ်က္အလက္မ်ား မရွိပါ</string>
+    <!-- Filesystem Info (no data). Dialog message -->
+    <string name="filesystem_info_warning_msg">ဖုိင္စနစ္အတြက္ ရရွိႏုိင္ေသာ အခ်က္အလက္မ်ား မရွိပါ။</string>
+    <!-- Filesystem Info - Filesystem couldn\'t be mounted -->
+    <string name="filesystem_info_cant_be_mounted_msg">ဖုိင္စနစ္ကုိ တပ္ျခင္း/ျဖဳတ္ျခင္း ျပဳလုပ္၍ မရႏုိင္ပါ။</string>
+    <!-- Filesystem Info - Not allowed message -->
+    <string name="filesystem_info_mount_not_allowed_msg">ဖုိင္စနစ္ တပ္ျခင္းကုိ လံုျခံဳေသာ အေနအထားတြင္ ခြင့္မျပဳပါ။ Root Access အေနအထားသုိ႔ေျပာင္းရန္ ႏွိပ္ပါ။</string>
+    <!-- Filesystem Info - Mount failed -->
+    <string name="filesystem_info_mount_failed_msg">ဖုိင္စနစ္တပ္ဆင္ျခင္း မေအာင္ျမင္ပါ။ SD ကတ္မ်ားကဲ့သုိ႔ အခ်ိဳ႕ဖုိင္စနစ္မ်ားကုိ တပ္ျခင္း/ျဖဳတ္ျခင္း ျပဳလုပ္၍ မရႏုိင္ပါ၊ အဘယ္ေၾကာင့္ဆုိေသာ္ ၎တုိ႔သည္ ဖတ္ရန္-သာ ဖုိင္စနစ္မ်ားအျဖစ္ မူလကတည္းက သတ္မွတ္ပါရွိၿပီးျဖစ္ေသာေၾကာင့္ ျဖစ္သည္။</string>
+    <!-- Filesystem Info Dialog - Title -->
+    <string name="filesystem_info_dialog_title">ဖုိင္စနစ္ အခ်က္အလက္</string>
+    <!-- Filesystem Info Dialog - Tab - Info -->
+    <string name="filesystem_info_dialog_tab_info">"အင်ဖို"</string>
+    <!-- Filesystem Info Dialog - Tab - Disk Usage -->
+    <string name="filesystem_info_dialog_tab_disk_usage">ဒစ္က္ အသုံးျပဳမႈ</string>
+    <!-- Filesystem Info Dialog - Status Label -->
+    <string name="filesystem_info_dialog_status">အေျခအေန-</string>
+    <!-- Filesystem Info Dialog - Mount Point Label -->
+    <string name="filesystem_info_dialog_mount_point">တပ္ဆင္သည့္ ေနရာ-</string>
+    <!-- Filesystem Info Dialog - Device Label -->
+    <string name="filesystem_info_dialog_device">စက္-</string>
+    <!-- Filesystem Info Dialog - Type Label -->
+    <string name="filesystem_info_dialog_type">အမ်ဳိးအစား-</string>
+    <!-- Filesystem Info Dialog - Options Label -->
+    <string name="filesystem_info_dialog_options">ေရြးစရာ-</string>
+    <!-- Filesystem Info Dialog - Dump/Pass Label -->
+    <string name="filesystem_info_dialog_dump_pass">ကူးယူရန္ / ေပးရန္ -</string>
+    <!-- Filesystem Info Dialog - Virtual Label -->
+    <string name="filesystem_info_dialog_virtual">အစစ္နီးပါး-</string>
+    <!-- Filesystem Info Dialog - Total Disk Usage -->
+    <string name="filesystem_info_dialog_total_disk_usage">စုစုေပါင္း -</string>
+    <!-- Filesystem Info Dialog - Used Disk Usage -->
+    <string name="filesystem_info_dialog_used_disk_usage">အသံုးျပဳၿပီး -</string>
+    <!-- Filesystem Info Dialog - Free Disk Usage -->
+    <string name="filesystem_info_dialog_free_disk_usage">အခမဲ့-</string>
+
+    <!-- Fso Properties - Not allowed message -->
+    <string name="fso_properties_permissions_not_allowed_msg">ခြင့္ျပဳခ်က္မ်ားကုိ လုပ္ေဆာင္ျခင္းကုိ လံုျခံဳေသာ အေနအထားတြင္ ခြင့္မျပဳပါ။ Root Access အေနအထားသုိ႔ေျပာင္းရန္ ႏွိပ္ပါ။</string>
+    <!-- Fso Properties - Failed to change owner to fso -->
+    <string name="fso_properties_failed_to_change_owner_msg">ပုိင္ရွင္ေျပာင္းလဲျခင္းကုိ လုပ္ေဆာင္ရာတြင္ မေအာင္ျမင္ပါ။\n\nလံုျခံဳေရးအတြက္ SD ကတ္ကဲ့သုိ႕ အခ်ိဳ႕ဖုိင္စနစ္မ်ားသည္ ပုိင္ဆုိင္မႈ ေျပာင္းလဲျခင္းကုိ ခြင့္မျပဳပါ။</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_group_msg">အုပ္စုေျပာင္းလဲျခင္းကုိ လုပ္ေဆာင္ျခင္း မေအာင္ျမင္ပါ။\n\nလံုျခံဳေရးအတြက္ SD ကတ္ကဲ့သုိ႕ အခ်ိဳ႕ဖုိင္စနစ္မ်ားသည္ အုပ္စု ေျပာင္းလဲျခင္းကုိ ခြင့္မျပဳပါ။</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_permission_msg">ခြင့္ျပဳခ်က္မ်ားေျပာင္းလဲျခင္းကုိ လုပ္ေဆာင္ျခင္း မေအာင္ျမင္ပါ။\n\nလံုျခံဳေရးအတြက္ SD ကတ္ကဲ့သုိ႕ အခ်ိဳ႕ဖုိင္စနစ္မ်ားသည္ ခြင့္ျပဳခ်က္မ်ား ေျပာင္းလဲျခင္းကုိ ခြင့္မျပဳပါ။</string>
+    <!-- Fso Properties Dialog - Title -->
+    <string name="fso_properties_dialog_title">ဂုဏ္သတိၱမ်ား</string>
+    <!-- Fso Properties Dialog - Tab - Info -->
+    <string name="fso_properties_dialog_tab_info">"အင်ဖို"</string>
+    <!-- Fso Properties Dialog - Tab - Permissions -->
+    <string name="fso_properties_dialog_tab_permissions">"ခွင့်ပြုချက်များ"</string>
+    <!-- Fso Properties Dialog - Name Label -->
+    <string name="fso_properties_dialog_name">အမည္ -</string>
+    <!-- Fso Properties Dialog - Parent Folder Label -->
+    <string name="fso_properties_dialog_parent">ပင္မ-</string>
+    <!-- Fso Properties Dialog - Type Label -->
+    <string name="fso_properties_dialog_type">အမ်ဳိးအစား-</string>
+    <!-- Fso Properties Dialog - Category Label -->
+    <string name="fso_properties_dialog_category">အတန္းအစား-</string>
+    <!-- Fso Properties Dialog - Link Label -->
+    <string name="fso_properties_dialog_link">လင့္ခ္-</string>
+    <!-- Fso Properties Dialog - Size Label -->
+    <string name="fso_properties_dialog_size">အရြယ္အစား-</string>
+    <!-- Fso Properties Dialog - Contains Label -->
+    <string name="fso_properties_dialog_contains">ပါဝင္မႈ-</string>
+    <!-- Fso Properties Dialog - Last Accessed Time Label -->
+    <string name="fso_properties_dialog_last_accessed_date">ဝင္ေရာက္သံုးစြဲခြင့္ရွိေသာ-</string>
+    <!-- Fso Properties Dialog - Last Modified Time Label -->
+    <string name="fso_properties_dialog_last_modified_date">ျပဳျပင္ထားေသာ-</string>
+    <!-- Fso Properties Dialog - Last Changed Time -->
+    <string name="fso_properties_dialog_last_changed_date">ေျပာင္းထားၿပီးေသာ-</string>
+    <!-- Fso Properties Dialog - Owner Label -->
+    <string name="fso_properties_dialog_owner">ပုိင္ရွင္-</string>
+    <!-- Fso Properties Dialog - Group Label -->
+    <string name="fso_properties_dialog_group">အုပ္စု-</string>
+    <!-- Fso Properties Dialog - Others Label -->
+    <string name="fso_properties_dialog_others">အျခား-</string>
+    <!-- Fso Properties Dialog - Special Label -->
+    <string name="fso_properties_dialog_special" translatable="false">S</string>
+    <!-- Fso Properties Dialog - Read Label -->
+    <string name="fso_properties_dialog_read" translatable="false">R</string>
+    <!-- Fso Properties Dialog - Write Label -->
+    <string name="fso_properties_dialog_write" translatable="false">W</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_execute" translatable="false">X</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_folder_items" translatable="false"><xliff:g id="folders">%1$s</xliff:g> / <xliff:g id="files">%2$s</xliff:g></string>
+    <!-- Fso Properties Dialog - Skip media scan -->
+    <string name="fso_properties_dialog_include_in_media_scan">မီဒီယာကုိ ျဖန္႔က်က္ရွာမႈကုိ ေက်ာ္သြားပါ-</string>
+    <string name="fso_failed_to_allow_media_scan">မီဒီယာကုိ ျဖန္႔က်က္ရွာေဖြျခင္းကုိ ခြင့္ျပဳျခင္း မေအာင္ျမင္ပါ</string>
+    <string name="fso_failed_to_prevent_media_scan">မီဒီယာ ျဖန္႕က်က္ရွာေဖြျခင္းကုိ တားဆီးျခင္း မေအာင္ျမင္ပါ</string>
+    <string name="fso_delete_nomedia_dir_title">.nomedia လမ္းညႊန္ကုိ ဖ်က္ပါ</string>
+    <string name="fso_delete_nomedia_dir_body">ဤလမ္းညႊန္တြင္ .nomedia လမ္းညႊန္ပါဝင္ပါသည္။\n\n၎ႏွင့္ ပါဝင္ေသာအရာအားလံုးကုိ ဖ်က္လုိပါသလား?</string>
+    <string name="fso_delete_nomedia_non_empty_title">.nomedia ဖုိင္ကုိ ဖ်က္ပါ</string>
+    <string name="fso_delete_nomedia_non_empty_body">ဤလမ္းညႊန္တြင္ အလြတ္မဟုတ္ေသာ .nomedia ဖုိင္တစ္ခု ပါဝင္ေနပါသည္။\n\n၎ကုိဖ်က္ပစ္လုိပါသလား?</string>
+
+    <!-- History - History activity title -->
+    <string name="history">"မှတ်တမ်း"</string>
+    <!-- History - The history is empty -->
+    <string name="msgs_history_empty">မွတ္တမ္း မရွိပါ။</string>
+    <!-- History - The history reference is not in the actual history list -->
+    <string name="msgs_history_unknown">မသိေသာ မွတ္တမ္းပစၥည္းျဖစ္ပါသည္။</string>
+
+    <!-- Search - Search activity title -->
+    <string name="search">ရွာေဖြမႈ ရလဒ္မ်ား</string>
+    <!-- Search - Search hint message -->
+    <string name="search_hint">သင္၏ ရွာေဖြမႈကုိ ရုိက္ထည့္ပါ</string>
+    <!-- Search - Voice search hint message -->
+    <string name="search_voice_hint">သင္၏ ရွာေဖြမႈကုိ ေျပာၾကားပါ</string>
+    <!-- Search - Search error message -->
+    <string name="search_error_msg">ရွာေဖြေနစဥ္ အမွားျဖစ္ပြားပါသည္။ မည္သည့္ရလဒ္မွ ရွာမေတြ႕ပါ။</string>
+    <!-- Search - Search no results message -->
+    <string name="search_no_results_msg">မည္သည့္ရလဒ္မွ မေတြ႕ပါ။</string>
+    <!-- Search - Number of items found in directory -->
+    <string name="search_found_items_in_directory"><xliff:g id="path">%2$s</xliff:g> ထဲရွိ <xliff:g id="items">%1$s</xliff:g></string>
+    <!-- Search - Search query terms -->
+    <string name="search_terms">&lt;b&gt;စည္းကမ္းခ်က္မ်ား:&lt;/b&gt; <xliff:g id="terms">%1$s</xliff:g></string>
+    <!-- Search - Confirm search -->
+    <string name="search_few_characters_title">ရွာေဖြမႈကုိ အတည္ျပဳပါ</string>
+    <!-- Search - Some terms of the search are too small. The operation could be very costly -->
+    <string name="search_few_characters_msg">ရွာေဖြေသာ စကားရပ္အခ်ိဳ႕တြင္ အကၡရာအနည္းငယ္သာ ရွိပါသည္။ လုပ္ေဆာင္ခ်က္သည္ အခိ်န္ကုန္ၿပီး ရင္းျမစ္မ်ားကုိ အမ်ားအျပားအသံုးျပဳပါမည္။\n\n ဆက္လက္လုပ္ေဆာင္လုိပါသလား?</string>
+    <!-- Search - Searching dialog title -->
+    <string name="searching">ကျေးဇူးပြု၍\u2026 စောင့်ပေးပါ</string>
+    <!-- Search - Searching label -->
+    <string name="searching_action_label">ရွာေဖြမႈကုိ လုပ္ေဆာင္ေနဆဲျဖစ္ပါသည္</string>
+
+    <!-- Picker Activity -->
+    <string name="picker" translatable="false">@string/app_name</string>
+    <!-- Picker Activity - Dialog title -->
+    <string name="picker_title">ဖုိင္တစ္ဖုိင္ကုိ ယူပါ</string>
+    <string name="directory_picker_title">လမ္းညႊန္ခ်က္တစ္ခုကုိ ေကာက္ယူပါ</string>
+
+    <!-- Editor - Editor activity title -->
+    <string name="editor">တည္းျဖတ္သည့္ကိရိယာ</string>
+    <!-- Editor - Invalid file message -->
+    <string name="editor_invalid_file_msg">အက်ံဳးမဝင္ေသာဖုိင္ျဖစ္ပါသည္။</string>
+    <!-- Editor - File not found message -->
+    <string name="editor_file_not_found_msg">ဖုိင္မေတြ႔ပါ။</string>
+    <!-- Editor - File size exceed the limit -->
+    <string name="editor_file_exceed_size_msg">ဤစက္တြင္ ဖြင့္ရန္ ဖုိင္သည္ ၾကီးလြန္းပါသည္။</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog title -->
+    <string name="editor_dirty_ask_title">ထြက္ရန္ အတည္ျပဳပါ</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog message -->
+    <string name="editor_dirty_ask_msg">မသိမ္းဆည္းရေသးေသာ ေျပာင္းလဲမႈမ်ားရွိပါသည္။\n\nမသိမ္းဘဲ ထြက္ခြာမည္လား?</string>
+    <!-- Editor - Save operation success -->
+    <string name="editor_successfully_saved">ဖုိင္ကုိ ေအာင္ျမင္စြာသိမ္းၿပီးပါၿပီ။</string>
+    <!-- Editor - Read-only file mode -->
+    <string name="editor_read_only_mode">ဖုိင္ကုိ ဖတ္ရန္-သာ အေနအထားတြင္ ဖြင့္ထားပါသည္။</string>
+    <!-- Editor - Dumping message -->
+    <string name="dumping_message">hex dump ကုိ လုပ္ေဆာင္ေနပါသည္\u2026</string>
+    <!-- Editor - Displaying -->
+    <string name="displaying_message">ျပသေနပါသည္\u2026</string>
+
+    <!-- Bookmarks - Bookmarks activity title -->
+    <string name="bookmarks">အင်တာနက်လိပ်စာမှတ်တမ်းများ</string>
+    <!-- Bookmarks - Bookmark name - Home -->
+    <string name="bookmarks_home">"ပင်မစာမျက်နှာ"</string>
+    <!-- Bookmarks - Bookmark name - Root folder -->
+    <string name="bookmarks_root_folder">ပင္မ ဖုိင္တြဲ</string>
+    <!-- Bookmarks - Bookmark name - System folder -->
+    <string name="bookmarks_system_folder">စနစ္ဖုိင္တြဲ</string>
+    <!-- Bookmarks - Bookmark name - Secure storage -->
+    <string name="bookmarks_secure">လံုျခံဳမႈရွိေသာ သုိေလွာင္ခန္း</string>
+    <!-- Bookmarks - Bookmark name - Remote storage -->
+    <string name="bookmarks_remote">အေဝးမွ ထိန္းခ်ဳပ္ႏုိင္ေသာ သုိေလွာင္ခန္း</string>
+    <!-- Bookmarks - Bookmark name - Button - Initial directory content description -->
+    <string name="bookmarks_button_config_cd">ကနဦးဖုိင္တြဲကုိ သတ္မွတ္ပါ။</string>
+    <!-- Bookmarks - Bookmark name - Button - Remove bookmark content description -->
+    <string name="bookmarks_button_remove_bookmark_cd">မွတ္သားထားသည္မ်ားကုိ ဖယ္ရွားပါ။</string>
+    <!-- Bookmarks - Bookmarks - Actions - Bookmark successfully added -->
+    <string name="bookmarks_msgs_add_success">မွတ္သားထားသည္မ်ားကုိ ေအာင္ျမင္စြာ ထည့္ၿပီးပါၿပီ။</string>
+
+    <!-- Initial directory dialog title -->
+    <string name="initial_directory_dialog_title">ကနဦး ဖုိင္တြဲ</string>
+    <!-- Initial directory label -->
+    <string name="initial_directory_label">ကနဦးဖုိင္တြဲကုိ ေရြးခ်ယ္ပါ-</string>
+    <!-- Initial directory is relative -->
+    <string name="initial_directory_relative_msg">သက္ဆုိင္ရာလမ္းေၾကာင္းမ်ားကုိ ခြင့္မျပဳပါ။</string>
+    <!-- Initial directory error message -->
+    <string name="initial_directory_error_msg">ကနဦးဖုိင္ကုိ သိမ္းေနစဥ္ အမွားျဖစ္ပြားပါသည္။</string>
+
+    <!-- Menu - Navigation - Search -->
+    <string name="menu_search">"ရှာဖွေခြင်း"</string>
+    <!-- Menu - Navigation - Settings -->
+    <string name="menu_settings">"အပြင်အဆင်များ"</string>
+    <!-- Menu - History - Clear history -->
+    <string name="menu_clear_history">သမိုင်း ဖျက်မည်</string>
+    <!-- Menu - Editor - No suggestions -->
+    <string name="menu_no_suggestions">အႀကံျပဳခ်က္မ်ား မရွိပါ</string>
+    <!-- Menu - Editor - Word wrap -->
+    <string name="menu_word_wrap">စာလံုးမ်ား ေပါင္းစပ္ျခင္း</string>
+    <!-- Menu - Editor - Sintax highlight -->
+    <string name="menu_syntax_highlight">Syntax ထင္ရွားေအာင္ ျပသမႈ</string>
+
+    <!-- Regular expression for create copy action -->
+    <string name="create_copy_regexp"><xliff:g id="name">%1$s</xliff:g> - ေကာ္ပီ <xliff:g id="extension">%2$s</xliff:g></string>
+    <!-- Regular expression for new compressed file -->
+    <string name="create_new_compress_file_regexp"><xliff:g id="name">%1$s</xliff:g> - အသစ္ <xliff:g id="extension">%2$s</xliff:g></string>
+
+    <!-- Waiting dialog - Performing operation message -->
+    <string name="waiting_dialog_msg">လုပ္ေဆာင္ခ်က္ကုိ ေဆာင္ရြက္ေနပါသည္\u2026</string>
+    <!-- Waiting dialog - Copying title -->
+    <string name="waiting_dialog_copying_title">ေကာ္ပီကူးေနပါသည္\u2026</string>
+    <!-- Waiting dialog - Copying message -->
+    <string name="waiting_dialog_copying_msg">&lt;b&gt;&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>&lt;br/&gt;&lt;b&gt;မွ&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g>သုိ႕</string>
+    <!-- Waiting dialog - Moving title -->
+    <string name="waiting_dialog_moving_title">ေရႊ႕ေနပါသည္\u2026</string>
+    <!-- Waiting dialog - Moving message -->
+    <string name="waiting_dialog_moving_msg">&lt;b&gt;&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>&lt;br/&gt;&lt;b&gt;မွ&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g>သုိ႕</string>
+    <!-- Waiting dialog - Deleting title -->
+    <string name="waiting_dialog_deleting_title">ဖ်က္ေနသည္\u2026</string>
+    <!-- Waiting dialog - Deleting message -->
+    <string name="waiting_dialog_deleting_msg">&lt;b&gt;ဖုိင္&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_extracting_title">"ထုတ်လုပ်နေစဉ်..."</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_extracting_msg">&lt;b&gt;ဖုိင္&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_compressing_title">ခ်ံဳ႕ေနသည္\u2026</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_compressing_msg">&lt;b&gt;ဖုိင္&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Initializing the dialog -->
+    <string name="waiting_dialog_analizing_msg"><![CDATA[<b>ဆန္းစစ္ေနသည္\u2026</b>]]></string>
+    <!-- Extracting - Success message -->
+    <string name="msgs_extracting_success">ဆြဲထုတ္ယူသည့္လုပ္ေဆာင္ခ်က္ ေအာင္ျမင္စြာၿပီးေျမာက္သြားပါၿပီ။ ေဒတာကုိ <xliff:g id="destination">%1$s</xliff:g> ထဲသုိ႔ ဆြဲထုတ္ထည့္ထားပါသည္။</string>
+    <!-- Compressing - Success message -->
+    <string name="msgs_compressing_success">ခ်ဳံ႕သည့္လုပ္ေဆာင္ခ်က္ ေအာင္ျမင္စြာၿပီးေျမာက္သြားပါၿပီ။ ေဒတာကုိ <xliff:g id="destination">%1$s</xliff:g> ထဲသုိ႔ ခ်ံဳ႕ထည့္ထားပါသည္။</string>
+
+    <!-- Actions Dialog - Title -->
+    <string name="actions_dialog_title">လုပ္ေဆာင္ခ်က္မ်ား</string>
+    <!-- Actions Dialog - Menu - Properties of current folder -->
+    <string name="actions_menu_properties_current_folder">ဂုဏ္သတိၱမ်ား</string>
+    <!-- Actions Dialog - Menu - Refresh -->
+    <string name="actions_menu_refresh">"ပြန်လည်ဆန်းသစ်ရန်"</string>
+    <!-- Actions Dialog - Menu - New directory -->
+    <string name="actions_menu_new_directory">ဖိုင်အသစ်</string>
+    <!-- Actions Dialog - Menu - New file -->
+    <string name="actions_menu_new_file">ဖုိင္အသစ္</string>
+    <!-- Actions Dialog - Menu - Select all -->
+    <string name="actions_menu_select_all">အားလုံးရွေးချယ်ပါ</string>
+    <!-- Actions Dialog - Menu - Deselect all -->
+    <string name="actions_menu_deselect_all">ရွေးချယ်မှုအားလုံး ပြန်ဖြုတ်ပါ</string>
+    <!-- Actions Dialog - Menu - Select -->
+    <string name="actions_menu_select">"ရွေးရန်"</string>
+    <!-- Actions Dialog - Menu - Deselect -->
+    <string name="actions_menu_deselect">ေရြးခ်ယ္ထားျခင္းမွ ျဖဳတ္ပါ</string>
+    <!-- Actions Dialog - Menu - Copy/Paste selection -->
+    <string name="actions_menu_paste_selection">ေရြးခ်ယ္ထားမႈကုိ ဤေနရာတြင္ ေကာ္ပီကူးပါ</string>
+    <!-- Actions Dialog - Menu - Move selection -->
+    <string name="actions_menu_move_selection">ေရြးခ်ယ္ထားမႈကုိ ဤေနရာတြင္ ေရႊ႕ပါ</string>
+    <!-- Actions Dialog - Menu - Delete selection -->
+    <string name="actions_menu_delete_selection">ေရြးခ်ယ္ထားမႈကုိ ဖ်က္ပစ္ပါ</string>
+    <!-- Actions Dialog - Menu - Compress selection -->
+    <string name="actions_menu_compress_selection">ေရြးခ်ယ္ထားမႈကုိ ခ်ံဳ႕ပါ</string>
+    <!-- Actions Dialog - Menu - Create link -->
+    <string name="actions_menu_create_link">လင့္ခ္တစ္ခု ဖန္တီးပါ</string>
+    <!-- Actions Dialog - Menu - Open -->
+    <string name="actions_menu_open">"ဖွင့်ရန်"</string>
+    <!-- Actions Dialog - Menu - Open with -->
+    <string name="actions_menu_open_with">"...ဖြင့် ဖွင့်မည်"</string>
+    <!-- Actions Dialog - Menu - Execute -->
+    <string name="actions_menu_execute">"လုပ်ဆောင်ချက်"</string>
+    <!-- Actions Dialog - Menu - Send -->
+    <string name="actions_menu_send">"ပို့ရန်"</string>
+    <!-- Actions Dialog - Menu - Send selection -->
+    <string name="actions_menu_send_selection">ေရြးခ်ယ္ထားမႈကုိ ပုိ႔ပါ</string>
+    <!-- Actions Dialog - Menu - Compress -->
+    <string name="actions_menu_compress">ခ်ံဳ႕ပါ</string>
+    <!-- Actions Dialog - Menu - Extract -->
+    <string name="actions_menu_extract">ဆြဲထုတ္ယူပါ</string>
+    <!-- Actions Dialog - Menu - Delete -->
+    <string name="actions_menu_delete">"ဖျက်ပစ်ရန်"</string>
+    <!-- Actions Dialog - Menu - Rename -->
+    <string name="actions_menu_rename">"အမည်ပြောင်းရန်"</string>
+    <!-- Actions Dialog - Menu - Create copy -->
+    <string name="actions_menu_create_copy">ေကာ္ပီတစ္ခုဖန္တီးပါ</string>
+    <!-- Actions Dialog - Menu - Properties -->
+    <string name="actions_menu_properties">ဂုဏ္သတိၱမ်ား</string>
+    <!-- Actions Dialog - Menu - Add to bookmarks -->
+    <string name="actions_menu_add_to_bookmarks">မွတ္ထားသည္အရာမ်ားထဲသုိ႔ ထည့္ပါ</string>
+    <!-- Actions Dialog - Menu - Add shortcut -->
+    <string name="actions_menu_add_shortcut">အတုိေကာက္ကုိ ထည့္ပါ</string>
+    <!-- Actions Dialog - Menu - Open parent folder -->
+    <string name="actions_menu_open_parent_folder">ပင္မဖုိင္ကုိ ဖြင့္ပါ</string>
+    <!-- Actions Dialog - Menu - Compute checksum -->
+    <string name="actions_menu_compute_checksum">checksum ကုိတြက္ခ်က္ပါ</string>
+    <!-- Actions Dialog - Menu - Print -->
+    <string name="actions_menu_print">"ပရင့်ထုတ်ယူရန်"</string>
+    <!-- Actions Dialog - Menu - Set as home -->
+    <string name="actions_menu_set_as_home">မူလအျဖစ္ သတ္မွတ္ပါ</string>
+
+    <!-- Actions - Ask user prior to do an undone operation. Dialog message -->
+    <string name="actions_ask_undone_operation_msg">ဤလုပ္ေဆာင္ခ်က္ကုိ ေနာက္ျပန္ဆုတ္၍ မရပါ။ ဆက္လက္လုပ္ေဆာင္လုိပါသလား?</string>
+
+    <!-- Enter Name Dialog - Label -->
+    <string name="input_name_dialog_label">အမည္ -</string>
+    <!-- Enter Name Dialog - Message - Empty name -->
+    <string name="input_name_dialog_message_empty_name">္အမည္ကုိ ကြက္လပ္ထား၍ မရပါ။</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_path_name">အက်ံဳးမဝင္ေသာ အမည္ျဖစ္ေနပါသည္။ \'<xliff:g id="invalid_characters">%1$s</xliff:g>\' အကၡရာမ်ားကုိ ခြင့္မျပဳပါ။</string>
+    <!-- Enter Name Dialog - Message - Invalid name length -->
+    <string name="input_name_dialog_message_invalid_name_length">ဖုိင္အမည္ ရွည္လြန္းေနသည္၊ ေက်းဇူးျပဳ၍ စာလံုး ၂၅၅ လံုး (သုိ႔) ထုိ႔ေအာက္ကုိ စဥ္းစားၾကည့္ပါ</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_name">အက်ံဳးမဝင္ေသာ အမည္ျဖစ္ေနပါသည္။ \'.\' ႏွင့္ \'..\' အမည္မ်ားကုိ ခြင့္မျပဳပါ။</string>
+    <!-- Enter Name Dialog - Message - Name exists -->
+    <string name="input_name_dialog_message_name_exists">ုအမည္ ရွိေနၿပီးသားျဖစ္ပါသည္။</string>
+
+    <!-- Associations Dialog - Title -->
+    <string name="associations_dialog_title">ဆက္ႏြယ္မႈမ်ား</string>
+    <!-- Associations Dialog - Remember the user action -->
+    <string name="associations_dialog_remember">ေရြးထာသည္မ်ားကို မွတ္သားထားပါ</string>
+    <!-- Associations Dialog - Open with Title -->
+    <string name="associations_dialog_openwith_title">"...ဖြင့် ဖွင့်မည်"</string>
+    <!-- Associations Dialog - Open action (button title) -->
+    <string name="associations_dialog_openwith_action">ဖွင့်ပါ</string>
+    <!-- Associations Dialog - Send with Title -->
+    <string name="associations_dialog_sendwith_title">ျဖင့္အတူ ပုိ႔ပါ</string>
+    <!-- Associations Dialog - Send action (button title) -->
+    <string name="associations_dialog_sendwith_action">ပို့ပါ</string>
+
+    <!-- Inline Autocomplete Widget - Tab message nothing to complete -->
+    <string name="inline_autocomplete_tab_nothing_to_complete_msg">ၿပီးေျမာက္ေအာင္ေဆာင္ရြက္ရန္ တစ္ခုမွ မရွိပါ။</string>
+
+    <!-- Execution console - Title -->
+    <string name="execution_console_title">ခလုတ္ခံု</string>
+    <!-- Execution console - The script name label -->
+    <string name="execution_console_script_name_label">မွတ္တမ္းကူးယူထားမႈ-</string>
+    <!-- Execution console - The script execution time label -->
+    <string name="execution_console_script_execution_time_label">အခ်ိန္-</string>
+    <!-- Execution console - The script exit code label -->
+    <string name="execution_console_script_exitcode_label">ကုတ္မွ ထြက္ရန္-</string>
+    <!-- Execution console - The script execution time seconds string -->
+    <string name="execution_console_script_execution_time_text"><xliff:g id="seconds">%1$s</xliff:g> စကၠန္႕</string>
+
+    <!-- Compute checksum - Title -->
+    <string name="compute_checksum_title">checksum ကုိတြက္ခ်က္ပါ</string>
+    <!-- Compute checksum - The file name label -->
+    <string name="compute_checksum_filename_label">ဖုိင္-</string>
+    <!-- Compute checksum - The MD5 label -->
+    <string name="compute_checksum_md5_label" translatable="false">MD5:</string>
+    <!-- Compute checksum - The SHA1 label -->
+    <string name="compute_checksum_sha1_label" translatable="false">SHA-1:</string>
+    <!-- Compute checksum - The computing checksum message-->
+    <string name="compute_checksum_computing_checksum_msg">checksum ကုိတြက္ခ်က္ေနပါသည္။\u2026</string>
+
+    <!-- Mime/Types - Folder -->
+    <string name="mime_folder">ဖုိင္တြဲ</string>
+    <!-- Mime/Types - Symlink -->
+    <string name="mime_symlink">Symlink</string>
+    <!-- Mime/Types - Unknown -->
+    <string name="mime_unknown">"အကြောင်းအရာ မသိရှိ"</string>
+
+    <!--  Filetime formats -->
+    <string name="filetime_format_mode_system">စနစ္-သတ္မွတ္ၿပီး ျဖစ္ပါသည္</string>
+    <string name="filetime_format_mode_locale">မူလနယ္ပယ္-သတ္မွတ္ျပီး ျဖစ္ပါသည္</string>
+    <string name="filetime_format_mode_ddMMyyyy_HHmmss">dd/mm/yyyy hh:mm:ss</string>
+    <string name="filetime_format_mode_MMddyyyy_HHmmss">mm/dd/yyyy hh:mm:ss</string>
+    <string name="filetime_format_mode_yyyyMMdd_HHmmss">yyyy-mm-dd hh:mm:ss</string>
+
+    <!-- Selection -->
+    <!-- For example "2 folders and 1 file selected." -->
+    <string name="selection_folders_and_files"><xliff:g id="folders">%1$s</xliff:g> ႏွင့္ <xliff:g id="files">%2$s</xliff:g> ကုိ ေရြးခ်ယ္ထားၿပီးပါၿပီ။</string>
+
+    <!-- Category descriptions -->
+    <string name="category_system">စနစ်</string>
+    <string name="category_app">အက္ပ္</string>
+    <string name="category_binary">ကိန္းႏွစ္လံုးတြဲ</string>
+    <string name="category_text">စာ</string>
+    <string name="category_document">စာရြက္စာတမ္း</string>
+    <string name="category_ebook">EBOOK</string>
+    <string name="category_mail">ေမးလ္</string>
+    <string name="category_compress">ခ်ံဳ႕ပါ</string>
+    <string name="category_exec">လုပ္ေဆာင္ႏုိင္ေသာ</string>
+    <string name="category_database">ေဒတာေဘ့စ္</string>
+    <string name="category_font">ေဖာင့္</string>
+    <string name="category_image">ပုံ</string>
+    <string name="category_audio">အသံ</string>
+    <string name="category_video">ဗီဒီယို</string>
+    <string name="category_security">လံုျခံဳေရး</string>
+    <string name="category_all">အားလုံး</string>
+
+    <!-- Compression - Compression modes dialog title -->
+    <string name="compression_mode_title">ခ်ံဳ႕မႈ အေနအထား</string>
+    <!-- Compression - Supported archive and compression modes -->
+    <string name="compression_mode_tar" translatable="false">Tar (tar)</string>
+    <string name="compression_mode_tar_gzip" translatable="false">Tar/gzip (tar.gz)</string>
+    <string name="compression_mode_tar_gzip2" translatable="false">Tar/gzip (tgz)</string>
+    <string name="compression_mode_tar_bzip" translatable="false">Tar/bzip (tar.bz2)</string>
+    <string name="compression_mode_gzip" translatable="false">Gzip (gz)</string>
+    <string name="compression_mode_bzip" translatable="false">Bzip (bz2)</string>
+    <string name="compression_mode_zip" translatable="false">Zip (zip)</string>
+
+    <!-- Shortcut. Failed to handle the shortcut -->
+    <string name="shortcut_failed_msg">အတုိေကာက္ကုိ လုပ္ေဆာင္ျခင္း မေအာင္ျမင္ပါ။</string>
+    <!-- Shortcut. The shortcut was created -->
+    <string name="shortcut_creation_success_msg">အတုိေကာက္ကုိ ေအာင္ျမင္စြာ ဖန္တီးၿပီးပါၿပီ။</string>
+    <!-- Shortcut. The shortcut wasn\'t created -->
+    <string name="shortcut_creation_failed_msg">အတုိေကာက္ဖန္တီးျခင္း မေအာင္ျမင္ပါ။</string>
+
+    <!-- Preferences title -->
+    <string name="pref">"ဆက်တင်များ"</string>
+    <!-- Preferences - General title -->
+    <string name="pref_general">"အထွေထွေ ဆက်တင်များ"</string>
+    <!-- Preferences - Search title -->
+    <string name="pref_search">ရွာေဖြမႈအတြက္ ေရြးခ်ယ္စရာမ်ား</string>
+    <!-- Preferences - Storage title -->
+    <string name="pref_storage">သိုေလွာင္ခန္း ေရြးခ်ယ္စရာမ်ား</string>
+    <!-- Preferences - Editor title -->
+    <string name="pref_editor">တည္းျဖတ္ကိရိယာ ေရြးခ်ယ္စရာမ်ား</string>
+    <!-- Preferences - Themes title -->
+    <string name="pref_themes">အခင္းအက်င္းမ်ား</string>
+    <!-- Preferences - About title -->
+    <string name="pref_about">"အကြောင်း"</string>
+    <!-- Preferences - About summary -->
+    <string name="pref_about_summary">ဖုိင္မန္ေနဂ်ာ v<xliff:g id="version">%1$s</xliff:g>\nမူပုိင္ခြင့္ \u00A9 ၂၀၁၂-၂၀၁၄ CyanogenMod ပေရာဂ်က္</string>
+
+    <!-- Preferences - General - Behaviour category -->
+    <string name="pref_general_behaviour_category">ယေဘုယျ</string>
+    <!-- Preferences - General - Case sensitive sort and navigating title -->
+    <string name="pref_case_sensitive_sort">ထိရွလြယ္ေသာ-ကိစၥရပ္</string>
+    <!-- Preferences - General - Case sensitive sort and navigating summary -->
+    <string name="pref_case_sensitive_sort_summary">ရွာေဖြမႈရလဒ္မ်ားကုိ အမ်ိဳးအစားစီသည့္အခါ (သုိ႕) လုိက္ရွာသည့္အခါ ကိစၥရပ္ကုိ စဥ္းစားပါ</string>
+    <!-- Preferences - General - Filetime format mode title -->
+    <string name="pref_filetime_format_mode">ရက္စြဲ/အခ်ိန္ ေဖာမတ္</string>
+    <!-- Preferences - General -Disk usage warning level title -->
+    <string name="pref_disk_usage_warning_level">ဒစ္ခ္အသံုးျပဳမႈ သတိေပးခ်က္</string>
+    <!-- Preferences - General - Disk usage warning level summary -->
+    <!-- FIXME Use "percent" instead of "%" symbol, because it make crash the app on getSummary
+         of ListPreference. This should be fixed in frameworks base prior to be added here. -->
+    <string name="pref_disk_usage_warning_level_summary" formatted="false">ဒစ္ခ္အသံုးျပဳမႈသည္ ေနရာလြတ္မ်ားအနက္ <xliff:g id="level">%1$s</xliff:g> ရာခုိင္ႏႈန္းသုိ႔ အသံုးျပဳထားသည့္အခါ ဒစ္ခ္အသံုးျပဳမႈ ဝစ္ဂ်စ္မ်ားတြင္ မတူညီေသာအေရာင္မ်ားကုိ ျပသပါ</string>
+    <!-- Preferences - General - Compute folder statistics title -->
+    <string name="pref_compute_folder_statistics">ကြန္ပ်ဴတာ ဖုိင္တြဲ ကိန္းဂဏန္းအခ်က္အလက္မ်ား</string>
+    <!-- Preferences - General - Compute folder statistics summary on -->
+    <string name="pref_compute_folder_statistics_on">သတိေပးခ်က္! ဖုိင္တြဲ ကိန္းဂဏန္းအခ်က္အလက္မ်ားကုိ တြက္ခ်က္ျခင္းသည္ အခ်ိန္ကုန္ၿပီး စနစ္ရင္းျမစ္ အမ်ားအျပားကုိ အသံုးျပဳပါမည္။</string>
+    <!-- Preferences - General - Display thumbs -->
+    <string name="pref_display_thumbs">"အစမ်းကြည့်မှု"</string>
+    <!-- Preferences - General - Display thumbs summary -->
+    <string name="pref_display_thumbs_summary">အက္ပ္မ်ား၊ ေတးဂီတဖုိင္မ်ား၊ ရုပ္ပံုမ်ားႏွင့္ဗီဒီယုိမ်ားအတြက္ အစမ္းၾကည့္ပံုကုိ ျပသပါ</string>
+    <!-- Preferences - General - Use flinger detection -->
+    <string name="pref_use_flinger">ပြတ္ဆြဲသည့္အျပဳအမူကုိ အသံုးျပဳပါ</string>
+    <!-- Preferences - General - Use flinger detection summary -->
+    <string name="pref_use_flinger_summary">ဖုိင္မ်ား (သုိ႕) ဖုိင္တြဲမ်ားကုိ ဖ်က္ရန္ ဘယ္မွ ညာသုိ႔ ပြတ္ဆြဲေသာ ရွာေဖြေထာက္လွမ္းမႈကုိ အသံုးျပဳပါ</string>
+    <!-- Preferences - General - Advanced settings category -->
+    <string name="pref_general_advanced_settings_category">"အဆင့်မြင့်"</string>
+    <!-- Preferences - General - Access mode -->
+    <string name="pref_access_mode">ဝင္ေရာက္သံုးစြဲမႈ အေနအထား</string>
+    <!-- Preferences - General - Safe mode -->
+    <string name="pref_access_mode_safe">"အန္တရာယ်ကင်းမှု စနစ်(Safe mode)"</string>
+    <!-- Preferences - General - Safe mode summary -->
+    <string name="pref_access_mode_safe_summary">လံုျခံဳေသာ အေနအထား\n\nအက္ပ္သည္ အထူးအခြင့္အေရးမ်ားမရွိဘဲ လုပ္ေဆာင္ေနျခင္းျဖစ္ၿပီး ဝင္ေရာက္သံုးစြဲခြင့္ရွိသည့္ ဖုိင္စနစ္မ်ားသည္ သုိေလွာင္သိမ္းဆည္းမႈကုိ ျပဳလုပ္ႏုိင္သည့္ အရာမ်ား (SD ကတ္မ်ားႏွင့္ USB) သာ ျဖစ္ပါသည္။</string>
+    <!-- Preferences - General - Prompt user mode -->
+    <string name="pref_access_mode_prompt">Prompt User အေနအထား</string>
+    <!-- Preferences - General - Prompt user mode summary -->
+    <string name="pref_access_mode_prompt_summary">Prompt User အေနအထား\n\nအက္ပ္သည္ ဖုိင္စနစ္ကုိ အျပည့္အဝဝင္ေရာက္သံုးစြဲခြင့္ႏွင့္အတူ အလုပ္လုပ္ေနျခင္းျဖစ္ေသာ္လည္း အထူးအခြင့္အေရးေပးထားေသာ လုပ္ေဆာင္ခ်က္မ်ား မျပဳလုပ္မီ ခြင့္ျပဳခ်က္အတြက္ တုန္႕ျပန္ေဆာင္ရြက္ပါလိမ့္မည္။</string>
+    <!-- Preferences - General - Root access mode -->
+    <string name="pref_access_mode_root">Root Access အေနအထား</string>
+    <!-- Preferences - General - Root access mode summary -->
+    <string name="pref_access_mode_root_summary">Root Access အေနအထား\n\nသတိေပးခ်က္! ဤအေနအထားက သင့္စက္ကုိ ပ်က္စီးေစႏုိင္သည့္လုပ္ေဆာင္ခ်က္မ်ားကုိ ခြင့္ျပဳေပးပါသည္။ လုပ္ေဆာင္ခ်က္သည္ လံုျခံဳမႈရွိေၾကာင္း ေသခ်ာေစေရးသည္ သင့္တာဝန္သာျဖစ္ပါသည္။</string>
+    <!-- Preferences - General - Restrict secondary users access title -->
+    <string name="pref_restrict_secondary_users_access_title">အသံုးျပဳသူမ်ား ဝင္ေရာက္အသံုးျပဳမႈကုိ ကန္႔သတ္ပါ</string>
+    <!-- Preferences - General - Restrict secondary users access summary -->
+    <string name="pref_restrict_secondary_users_access_summary">ဦးစားေပးမဟုတ္ေသာ အသံုးျပဳသူမ်ား စနစ္တစ္ခုလံုးသုိ႔ ဝင္ေရာက္အသံုးျပဳမႈကုိ ကန္႔သတ္ပါ</string>
+    <!-- Preferences - Search - Results category -->
+    <string name="pref_search_results_category">"ရလဒ်များ"</string>
+    <!-- Preferences - Search - Show relevance widget -->
+    <string name="pref_show_relevance_widget">သက္ဆုိင္ရာ ဝစ္ဂ်စ္ကုိ ျပပါ</string>
+    <!-- Preferences - Search - Highlight search terms -->
+    <string name="pref_highlight_terms">ရွာေဖြမႈ စကားရပ္မ်ားကုိ ထင္ရွားေအာင္ျပသပါ</string>
+    <!-- Preferences - Search - Sort results mode -->
+    <string name="pref_sort_search_results_mode">ရလဒ္အေနအထားကုိ အမ်ိဳးအစားစီပါ</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_none">အမ်ိဳးအစားမစီပါႏွင့္</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_name">"အမည်ဖြင့်"</string>
+    <!-- Preferences - Search - Sort results mode. Relevance -->
+    <string name="pref_sort_search_results_mode_relevance">ဆက္စပ္မႈအရ</string>
+    <!-- Preferences - Search - Privacity category -->
+    <string name="pref_search_privacity_category">"လုံခြုံမှု"</string>
+    <!-- Preferences - Search - Save search terms -->
+    <string name="pref_save_search_terms">ရွာေဖြထားေသာ စကားလံုးမ်ားကုိ သိမ္းဆည္းပါ</string>
+    <!-- Preferences - Search - Save search terms summary on -->
+    <string name="pref_save_search_terms_on">ရွာေဖြထားေသာ စကားလံုးမ်ားကုိ သိမ္းထားၿပီး အနာဂတ္တြင္ ရွာေဖြမႈမ်ားျပဳလုပ္ရာ၌ အၾကံျပဳခ်က္မ်ားအျဖစ္ အသံုးျပဳပါလိမ့္မည္</string>
+    <!-- Preferences - Search - Save search terms summary off -->
+    <string name="pref_save_search_terms_off">ရွာေဖြထားေသာ စကားလံုးမ်ားကို သိမ္းဆည္းလိမ့္မည္ မဟုတ္ပါ။</string>
+    <!-- Preferences - Search - Remove saved search terms -->
+    <string name="pref_remove_saved_search_terms">သိမ္းထားေသာ ရွာေဖြထားေသာ စကားလံုးမ်ားကုိ ဖယ္ရွားပါ</string>
+    <!-- Preferences - Search - Remove saved search terms summary -->
+    <string name="pref_remove_saved_search_terms_summary">သိမ္းထားေသာ ရွာေဖြထားေသာ စကားလံုးမ်ားအားလံုးကုိ ဖယ္ရွားရန္ ႏွိပ္ပါ</string>
+    <!-- Preferences - Search - Suggestions were truncated -->
+    <string name="pref_remove_saved_search_terms_msg">သိမ္းထားေသာ ရွာေဖြထားသည့္ စကားလံုးမ်ားအားလံုးကုိ ဖယ္ရွားၿပီးပါၿပီ</string>
+    <!-- Preferences - Storage - Secure Storage category -->
+    <string name="pref_secure_storage_category">လံုျခံဳမႈရွိေသာ သုိေလွာင္ခန္း</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync title -->
+    <string name="pref_secure_storage_delayed_sync_title">ဆင့္ခ္လုပ္ျခင္းကုိ ေႏွာင့္ေႏွးေစၿပီး ျဖစ္ပါသည္</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync summary -->
+    <string name="pref_secure_storage_delayed_sync_summary">လံုျခံဳမႈရွိေသာ ဖုိင္စနစ္မ်ားကုိ ဆင့္ခ္လုပ္ျခင္းသည္ ကုန္က်စရိတ္မ်ားေစေသာလုပ္ေဆာင္ခ်က္ ျဖစ္ပါသည္။ ဤေရြးခ်ယ္ခ်က္ကုိ ဖြင့္ျခင္းသည္ ဖုိင္စနစ္ကုိ အသံုးမျပဳသည့္အခါ ဆင့္ခ္လုပ္ျခင္းျဖင့္ လုပ္ေဆာင္မႈတစ္ခုၿပီးတုိင္း တုန္႔ျပန္မႈမ်ားကုိ ပုိမုိျမန္ဆန္ေစပါမည္။ သုိ႔ေသာ္ အက္ပ္ပ်က္စီးသြားလွ်င္ ဆင့္ခ္မလုပ္ထားေသာ ဆုိင္းငံ့ေနသည့္အခ်က္အလက္မ်ားကုိမူ ဆံုးရံႈးမႈ ျဖစ္ေစႏုိင္ပါသည္။</string>
+    <!-- Preferences - Storage - Secure Storage - Reset password title -->
+    <string name="pref_secure_storage_reset_password_title">စကားဝွက္ ျပန္သတ္မွတ္ပါ</string>
+    <!-- Preferences - Storage - Secure Storage - Delete storage title -->
+    <string name="pref_secure_storage_delete_storage_title">သုိေလွာင္ခန္းကုိ ဖ်က္ပါ</string>
+    <!-- Preferences - Editor - Behaviour category -->
+    <string name="pref_editor_behaviour_category">အျပဳအမူ</string>
+    <!-- Preferences - Editor - No suggestions -->
+    <string name="pref_no_suggestions">အႀကံျပဳခ်က္မ်ား မရွိပါ</string>
+    <!-- Preferences - Editor - No suggestions summary -->
+    <string name="pref_no_suggestions_desc">ဖုိင္ကုိ တည္းျဖတ္ေနစဥ္ အဘိဓါန္မွ အၾကံျပဳခ်က္မ်ားကုိ မျပသပါႏွင့္</string>
+    <!-- Preferences - Editor - Word wrap -->
+    <string name="pref_word_wrap">စာလံုးမ်ား ေပါင္းစပ္ျခင္း</string>
+    <!-- Preferences - Editor - Hex dump -->
+    <string name="pref_hexdump">Hex dump ကိန္းႏွစ္လံုးတြဲ ဖုိင္မ်ား</string>
+    <!-- Preferences - Editor - Hex dump desc -->
+    <string name="pref_hexdump_desc">ကိန္းႏွစ္လံုးတြဲဖုိင္ကို ဖြင့္သည့္အခါ ဖုိင္၏ hex dump ကုိလုပ္ေဆာင္ၿပီး ၎ကုိ hex ၾကည့္ရႈသည့္အရာတြင္ ဖြင့္ပါ။</string>
+    <!-- Preferences - Editor - Syntax highlight category -->
+    <string name="pref_editor_syntax_highlight_category">Syntax ထင္ရွားေအာင္ ျပသမႈ</string>
+    <!-- Preferences - Editor - Syntax highlight -->
+    <string name="pref_syntax_highlight">Syntax ထင္ရွားေအာင္ ျပသမႈ</string>
+    <!-- Preferences - Editor - Syntax highlight summary -->
+    <string name="pref_syntax_highlight_desc">တည္းျဖတ္ကိရိယာတြင္ ျပသထားေသာ ဖုိင္၏ syntax ကုိ ထင္ရွားေအာင္ ျပသပါ (syntax ကုိ ထင္ရွားေအာင္ျပသေသာ အရာသည္ အဆုိပါဖုိင္အမ်ိဳးအစားအတြက္ ရရွိႏုိင္ေသာ အခါမွသာလွ်င္)</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme -->
+    <string name="pref_syntax_highlight_color_scheme">အေရာင္စနစ္</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme summary -->
+    <string name="pref_syntax_highlight_color_scheme_desc">syntax ထင္ရွားေအာင္ျပသမႈ အေရာင္စနစ္ကုိ ေရြးခ်ယ္ပါ</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme -->
+    <string name="pref_syntax_sh_use_theme_default">အခင္းအက်င္း မူလသတ္မွတ္ပံုစံကုိ အသံုးျပဳပါ</string>
+    <!-- Preferences - Editor - Syntax highlight -Color Scheme summary -->
+    <string name="pref_syntax_sh_use_theme_default_desc">လက္ရွိ အခင္းအက်င္း၏ မူလသတ္မွတ္ပံုစံ syntax ကုိထင္ရွားေအာင္ျပသမႈကုိ အသံုးျပဳပါ</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme - Items category -->
+    <string name="pref_editor_sh_item_category">ပစၥည္းမ်ား</string>
+    <!-- Preferences - Themes - Themes selection category -->
+    <string name="pref_themes_selection_category">အခင္းအက်င္းမ်ား</string>
+    <!-- Preferences - Themes - Set theme button -->
+    <string name="pref_themes_set_theme">အခင္းအက်င္းကုိ သတ္မွတ္ပါ</string>
+    <!-- Preferences - Themes - Confirmation message -->
+    <string name="pref_themes_confirmation">အခင္းအက်င္းကုိ ေအာင္ျမင္စြာ သတ္မွတ္ျပီးျဖစ္သည္။</string>
+    <!-- Preferences - Themes - Theme not found message -->
+    <string name="pref_themes_not_found">အခင္းအက်င္းကုိ မေတြ႕ပါ။</string>
+
+    <!-- Preferences - Debug - Capture debug traces -->
+    <string name="pref_debug_traces">ေလာ့ဂ္ အမွားရွာေဖြျခင္း အခ်က္အလက္</string>
+
+    <!-- Themes - Default theme name -->
+    <string name="theme_default_name">လင္းေသာ အခင္းအက်င္း</string>
+    <!-- Themes - Default theme description -->
+    <string name="theme_default_description">CyanogenMod ဖုိင္မန္ေနဂ်ာအတြက္ လင္းေသာ အခင္းအက်င္း</string>
+    <!-- Themes - Default theme author -->
+    <string name="themes_author">CyanogenMod</string>
+
+    <!-- Navigation drawer -->
+    <string name="drawer_open">"လမ်းကြောင်းပြ အံဆွဲကို ဖွင့်ပါ"</string>
+    <string name="drawer_close">"လမ်းကြောင်းပြ အံဆွဲကို ပိတ်ပါ"</string>
+
+    <!-- ColorPickerDialog -->
+    <!-- The text of the alpha slider control -->
+    <string name="color_picker_alpha_slider_text">Alpha</string>
+    <!-- The label of the current color panel -->
+    <string name="color_picker_current_text">လက္ရွိ-</string>
+    <!-- The label of the new color panel -->
+    <string name="color_picker_new_text">အသစ္-</string>
+    <!-- The label of the color input -->
+    <string name="color_picker_color">အေရာင္-</string>
+
+    <!-- Android Syntax Highlight -->
+    <string name="ash_reset_color_scheme">မူလသတ္မွတ္ အခင္းအက်င္းအေရာင္စီမံမႈအတုိင္း ျပန္လည္ထားရွိပါ</string>
+    <string name="ash_text">"စာတို"</string>
+    <string name="ash_assignment">တာဝန္ေပးအပ္မႈ</string>
+    <string name="ash_singleline_comment">လုိင္း-တစ္လုိင္းစာ မွတ္ခ်က္</string>
+    <string name="ash_multiline_comment">လုိင္း-အမ်ားအျပားျဖင့္ မွတ္ခ်က္</string>
+    <string name="ash_keyword">အဓိက စကားလံုး</string>
+    <string name="ash_quoted_string">ကုိးကားထားေသာ စာေၾကာင္း</string>
+    <string name="ash_variable">ေျပာင္းလဲႏုိင္ေသာ</string>
+
+    <!-- Secure Storage -->
+    <!-- Secure Storage dialog title - Unlock -->
+    <string name="secure_storage_unlock_title">သုိေလွာင္ခန္းကုိ ေသာ့ဖြင့္ပါ</string>
+    <!-- Secure Storage dialog title - Create -->
+    <string name="secure_storage_create_title">သုိေလွာင္ခန္းကုိ ဖန္တီးပါ</string>
+    <!-- Secure Storage dialog title - Reset -->
+    <string name="secure_storage_reset_title">စကားဝွက္ ျပန္သတ္မွတ္ပါ</string>
+    <!-- Secure Storage dialog title - Delete -->
+    <string name="secure_storage_delete_title">သုိေလွာင္ခန္းကုိ ဖ်က္ပါ</string>
+    <!-- Secure Storage unlock dialog message (secure storage exists) -->
+    <string name="secure_storage_unlock_key_prompt_msg">လံုျခံဳမႈရွိေသာ သုိေလွာင္ခန္းဖုိင္စနစ္ကုိ ေသာ့ဖြင့္ရန္ စကားဝွက္ရုိက္ထည့္ပါ။</string>
+    <!-- Secure Storage unlock dialog message (new secure storage) -->
+    <string name="secure_storage_unlock_key_new_msg">လံုျခံဳမႈရွိေသာ သုိေလွာင္ခန္းဖုိင္စနစ္ကုိ ကာကြယ္ရန္ စကားဝွက္ရုိက္ထည့္ပါ။</string>
+    <!-- Secure Storage unlock dialog message (reset the current password) -->
+    <string name="secure_storage_unlock_key_reset_msg">လံုျခံဳမႈရွိိေသာ သုိေလွာင္ခန္းဖုိင္စနစ္ကုိ ျပန္သတ္မွတ္ရန္ လက္ရွိစကားဝွက္ႏွင့္ စကားဝွက္အသစ္မ်ားကုိ ရုိက္ထည့္ပါ။</string>
+    <!-- Secure Storage unlock dialog message (delete the secure storage) -->
+    <string name="secure_storage_unlock_key_delete_msg">လံုျခံဳမႈရွိေသာ သုိေလွာင္ခန္းဖုိင္စနစ္ကုိ ဖ်က္ရန္ စကားဝွက္ရုိက္ထည့္ပါ။</string>
+    <!-- Secure Storage unlock dialog old key title -->
+    <string name="secure_storage_unlock_old_key_title">စကားဝွက္ အေဟာင္း-</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_new_key_title">စကားဝွက္ အသစ္-</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_key_title">စကား၀ွက္ -</string>
+    <!-- Secure Storage unlock dialog repeat key title-->
+    <string name="secure_storage_unlock_repeat_title">စကားဝွက္ ျပန္ရုိက္ထည့္ပါ-</string>
+    <!-- Secure Storage create button -->
+    <string name="secure_storage_create_button">"ဖန်တီးရန်"</string>
+    <!-- Secure Storage unlock button -->
+    <string name="secure_storage_unlock_button">"ဆင်းမ်ကဒ် သော့ဖွင့်ပါ"</string>
+    <!-- Secure Storage reset button -->
+    <string name="secure_storage_reset_button">"ပြန်လည်စတင်စေရန်"</string>
+    <!-- Secure Storage delete button -->
+    <string name="secure_storage_delete_button">ဖျက်ပစ်ပါ</string>
+    <!-- Secure Storage unlock failed toast -->
+    <string name="secure_storage_unlock_failed">သုိေလွာင္ခန္းကုိ ဖြင့္၍ မရႏုိင္ပါ</string>
+    <!-- Secure Storage unlock validation, length -->
+    <string name="secure_storage_unlock_validation_length">စကားဝွက္တြင္ အနည္းဆံုး <xliff:g id="characters">%1$d</xliff:g> အကၡရာမ်ား ရွိရမည္။</string>
+    <!-- Secure Storage unlock validation, equal -->
+    <string name="secure_storage_unlock_validation_equals">စကားဝွက္မ်ား မကိုက္ညီပါ။</string>
+
+    <!-- Print messages -->
+    <!-- Unsupported document format -->
+    <string name="print_unsupported_document">ပံ့ပုိးေပးထားျခင္းမရွိေသာ စာရြက္စာတမ္းေဖာမတ္</string>
+    <!-- Unsupported image format -->
+    <string name="print_unsupported_image">ပံ့ပုိးေပးထားျခင္းမရွိေသာ ဓါတ္ပံုေဖာမတ္</string>
+    <!-- Print header -->
+    <string name="print_document_header">စာရြက္စာတမ္း- <xliff:g id="document_name">%1$s</xliff:g></string>
+    <!-- Print footer -->
+    <string name="print_document_footer">စာမ်က္ႏွာ <xliff:g id="page_number">%1$s</xliff:g></string>
+
+    <!-- Security - Extract relative or absolute files -->
+    <string name="security_warning_extract">သတိေပးခ်က္!\n\nသက္ဆုိင္ရာ (သုိ႔) သီးသန္႔ လမ္းေၾကာင္းမ်ားႏွင့္အတူ စုစည္းထည့္ထားေသာဖုိင္ကုိ ဆြဲထုတ္ယူျခင္းေၾကာင့္ သင့္စနစ္ဖုိင္မ်ားကုိ ထပ္ေရးပစ္ျခင္းျဖင့္ သင့္စက္ကုိ ပ်က္စီးေစႏုိင္ပါသည္။ \n\nဆက္လက္လုပ္ေဆာင္လုိပါသလား?</string>
+
+    <!-- ChangeLog - Dialog title -->
+    <string name="changelog_title">Changelog</string>
+
+    <!-- Welcome Dialog - Title -->
+    <string name="welcome_title">ၾကိဳဆိုပါ၏</string>
+    <!-- Welcome Dialog - Message -->
+    <string name="welcome_msg">CyanogenMod ဖုိင္မန္ေနဂ်ာမွ ၾကိဳဆုိပါသည္။\n\nဤအက္ပ္သည္ ဖုိင္စနစ္ကုိ စူးစမ္းရွာေဖြခြင့္ ျပဳၿပီး သင့္စက္ကုိ ပ်က္စီးသြားေစႏုိင္ေသာ လုပ္ေဆာင္ခ်က္မ်ားကုိ လုပ္ေဆာင္ရန္ ခြင့္ျပဳပါသည္။ ပ်က္စီးမႈမွကာကြယ္ရန္ အက္ပ္သည္ လုံျခံဳၿပီး အခြင့္သာမႈ နိမ့္ေသာ အေနအထားတြင္ စတင္ပါလိမ့္မည္။ \n\nသင္သည္ ဆက္တင္မ်ားမွတဆင့္ အဆင့္ျမင့္ အခြင့္ထူးခံအျပည့္ အေနအထားကုိ ဝင္ေရာက္သံုးစြဲႏုိင္ပါသည္။ ထုိလုပ္ေဆာင္ခ်က္သည္ သင့္စနစ္ကုိ ခ်ိဳးေဖာက္မႈမရွိေၾကာင္း ေသခ်ာေစေရးသည္ သင့္တာဝန္ျဖစ္ပါသည္။ \n\nCyanogenMod အဖြဲ႕</string>
+
+    <string name="easy_mode_type_icon">မ်ိဳးစံုရည္ရြယ္ခ်က္ျဖင့္ အင္တာနက္ေမးလ္ အိတ္စတန္းရွင္း အမ်ိဳးအစားအတြက္ အိုင္ကြန္</string>
+    <string name="easy_mode_type_none">ဖုိင္အားလံုး</string>
+    <string name="easy_mode_type_images">ပုံများ</string>
+    <string name="easy_mode_type_videos">ဗွီဒီယိုများ</string>
+    <string name="easy_mode_type_music">တေးဂီတ</string>
+    <string name="easy_mode_type_documents">"စာရွက်စာတန်းများ"</string>
+
+    <string name="activity_not_found_exception">ဤဖုိင္ကုိ ဖြင့္ရန္ အပလီေကးရွင္း မရွာေတြ႔ပါ</string>
+    <string name="no_permission_for_drm">"ဝမ္းနည္းပါတယ္၊ DRM ဖိုင္ကို မွ်ေဝ၍ မရႏုိင္ပါ"</string>
+    <string name="actions_menu_drm_license_info">Drm လိုင္စင္အခ်က္အလက္</string>
+</resources>

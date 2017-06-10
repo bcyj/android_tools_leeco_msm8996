@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2013 Mimer Information Technology AB, info@mimer.com -->
+<MimerSQLReplace>
+<fromSQL id="GOTE231" statement="SELECT transport_type, _id, thread_id, address, body, date, read, type, status, locked, error_code, sub, sub_cs, date, read, m_type, msg_box, d_rpt, rr, err_type, locked FROM (SELECT DISTINCT date * ? AS normalized_date, ? AS transport_type, _id, thread_id, address, body, date, read, type, status, locked, error_code, NULL AS sub, NULL AS sub_cs, date, read, NULL AS m_type, NULL AS msg_box, NULL AS d_rpt, NULL AS rr, NULL AS err_type, locked FROM sms WHERE (thread_id = ? AND (type != ?)) UNION SELECT DISTINCT date * ? AS normalized_date, ? AS transport_type, pdu._id, thread_id, NULL AS address, NULL AS body, date, read, NULL AS type, NULL AS status, locked, NULL AS error_code, sub, sub_cs, date, read, m_type, msg_box, d_rpt, rr, err_type, locked FROM pdu LEFT JOIN pending_msgs ON pdu._id = pending_msgs.msg_id WHERE (thread_id = ? AND msg_box != ? AND (msg_box != ? AND (m_type = ? OR m_type = ? OR m_type = ?))) ORDER BY normalized_date ASC)">
+
+select "transport_type","_id","thread_id","address","body","date","read","type","status","locked","error_code","sub","sub_cs","date","read","m_type","msg_box","d_rpt","rr",
+       "err_type","locked" 
+from (select distinct "date"*? as "normalized_date",cast(? as VARCHAR(10)) as "transport_type","_id","thread_id","address","body","date","read","type","status","locked","error_code",
+                      NULL as "sub",NULL as "sub_cs",NULL as "m_type",NULL as "msg_box",NULL as "d_rpt",NULL as "rr",NULL as "err_type"
+      from "sms" 
+      where (("thread_id" = ?) and (("type" != ?))) 
+      union select distinct "date"*? as "normalized_date",cast(? as VARCHAR(10)) as "transport_type","pdu"."_id","thread_id",NULL as "address",NULL as "body","date","read",NULL as "type",
+                            NULL as "status","locked",NULL as "error_code","sub","sub_cs","m_type","msg_box","d_rpt","rr","err_type"
+            from "pdu" 
+                 left join "pending_msgs" on ("pdu"."_id" = "pending_msgs"."msg_id") 
+            where (("thread_id" = ?) and ("msg_box" != ?) and (("msg_box" != ?) and (("m_type" = ?) or ("m_type" = ?) or ("m_type" = ?)))))
+order by "normalized_date"
+
+</fromSQL>
+
+
+</MimerSQLReplace>

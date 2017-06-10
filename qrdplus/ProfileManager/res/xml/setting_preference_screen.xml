@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!--
+        Copyright (c) 2011-2012, Qualcomm Technologies, Inc.
+        All Rights Reserved.
+        Qualcomm Technologies Proprietary and Confidential.
+        Developed by QRD Engineering team.
+    -->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="profile"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:title="@string/name_settings" />
+    <EditTextPreference
+        android:key="name"
+        android:title="@string/name_title"
+        android:summary="@string/name_summary"
+        android:persistent="true" />
+
+    <PreferenceCategory
+        android:title="@string/sound_settings" />
+    <CheckBoxPreference
+        android:key="silent"
+        android:title="@string/silent_mode_title"
+        android:summary="@string/silent_mode_summary"
+        android:disableDependentsState="true"
+        android:persistent="true" />
+    <CheckBoxPreference
+        android:key="vibrate"
+        android:title="@string/vibrate_title"
+        android:summary="@string/vibrate_summary"
+        android:persistent="true" />
+    <com.android.profile.ProfileRingtonePreference
+        android:key="single_sim_ringtone"
+        android:title="@string/ss_ringtone_title"
+        android:dialogTitle="@string/ss_ringtone_title"
+        android:persistent="false" />
+    <com.android.profile.ProfileRingtonePreference
+        android:key="slot1_ringtone"
+        android:title="@string/slot1_ringtone_title"
+        android:dialogTitle="@string/slot1_ringtone_title"
+        android:persistent="false" />
+    <com.android.profile.ProfileRingtonePreference
+        android:key="slot2_ringtone"
+        android:title="@string/slot2_ringtone_title"
+        android:dialogTitle="@string/slot2_ringtone_title"
+        android:persistent="false" />
+    <PreferenceScreen
+        android:key="ring_tone"
+        android:title="@string/ringtone_title"
+        android:dependency="silent"
+        android:persistent="false">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.profile"
+            android:targetClass="com.android.profile.ProfileRingtoneTab" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="ring_volume"
+        android:dependency="silent"
+        android:title="@string/ringvolume_title"
+        android:summary="@string/ringvolume_summary" />
+
+    <PreferenceCategory
+        android:title="@string/display_settings"
+        android:key="brightness_title" />
+    <PreferenceScreen
+        android:key="brightness"
+        android:title="@string/brightness_title"
+        android:summary="@string/brightness_summary"
+        android:persistent="true" />
+
+    <PreferenceCategory
+        android:title="@string/wireless_settings" />
+    <CheckBoxPreference
+        android:key="data"
+        android:title="@string/data_title"
+        android:summaryOn="@string/data_summaryOn"
+        android:summaryOff="@string/data_summaryOff"
+        android:persistent="true" />
+    <CheckBoxPreference
+        android:key="wifi"
+        android:title="@string/wifi_title"
+        android:summaryOn="@string/wifi_summaryOn"
+        android:summaryOff="@string/wifi_summaryOff"
+        android:persistent="true" />
+    <CheckBoxPreference
+        android:key="bluetooth"
+        android:title="@string/bluetooth_title"
+        android:summaryOn="@string/bluetooth_summaryOn"
+        android:summaryOff="@string/bluetooth_summaryOff"
+        android:persistent="true" />
+
+    <PreferenceCategory
+        android:key="location"
+        android:title="@string/location_settings"/>
+        <CheckBoxPreference
+            android:key="gps_location"
+            android:title="@string/gps_location_title"
+            android:summaryOn="@string/gps_location_summaryOn"
+            android:summaryOff="@string/gps_location_summaryOff" />
+        <CheckBoxPreference
+            android:key="network_location"
+            android:title="@string/network_location_title"
+            android:summaryOn="@string/network_location_summaryOn"
+            android:summaryOff="@string/network_location_summaryOff" />
+
+</PreferenceScreen>

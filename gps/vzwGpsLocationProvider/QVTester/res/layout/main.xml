@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!---/******************************************************************************
+* @file       main.xml
+* @brief      main screen for VZW GPS Location Provider test app
+*  Coppyright (C) 2010 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************-->
+
+<ScrollView android:id="@+id/ScrollView01" xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_height="wrap_content">
+<TableLayout android:id="@+id/TableLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content"><TableRow android:id="@+id/TableRow02" android:layout_height="wrap_content" android:isScrollContainer="true" android:layout_width="fill_parent">
+            <TextView android:id="@+id/TextView03" android:layout_height="wrap_content" android:text="@string/LabelModeSel" android:layout_width="fill_parent"></TextView>
+            <Spinner android:layout_height="wrap_content" android:entries="@array/GpsMode" android:id="@+id/SpinnerMode" android:layout_width="fill_parent"></Spinner>
+        </TableRow>
+
+        <TableRow android:id="@+id/TableRow01" android:layout_height="wrap_content" android:layout_width="fill_parent">
+            <TextView android:text="@string/LabelNumFixSel" android:id="@+id/TextView01" android:layout_height="wrap_content" android:layout_width="fill_parent"></TextView>
+
+        <EditText android:layout_height="wrap_content" android:inputType="number" android:text="@string/DefaultNumFix" android:id="@+id/EditTextNumFix" android:layout_width="fill_parent"></EditText>
+</TableRow>
+
+
+
+<TableRow android:id="@+id/TableRow03" android:layout_height="wrap_content" android:layout_width="fill_parent"><TextView android:id="@+id/TextView05" android:layout_height="wrap_content" android:text="@string/LabelTimeBetweenFix" android:layout_width="fill_parent"></TextView>
+
+<EditText android:layout_height="wrap_content" android:id="@+id/EditTextRateFix" android:inputType="number" android:text="@string/DefaultTimeBetweenFix" android:layout_width="fill_parent"></EditText>
+</TableRow>
+<TableRow android:id="@+id/TableRow04" android:layout_height="wrap_content" android:layout_width="fill_parent"><TextView android:id="@+id/TextView02" android:layout_height="wrap_content" android:text="@string/LabelPdeAddr" android:layout_width="fill_parent"></TextView>
+<EditText android:layout_height="wrap_content" android:inputType="textUri" android:text="@string/DefaultMpcAddr" android:id="@+id/EditTextPdeAddr" android:layout_width="fill_parent"></EditText>
+
+</TableRow><TableRow android:id="@+id/TableRow09" android:layout_width="wrap_content" android:layout_height="wrap_content"><TextView android:layout_height="wrap_content" android:id="@+id/PDE_Port" android:text="@string/labelPdePort" android:layout_width="fill_parent"></TextView>
+<EditText android:layout_height="wrap_content" android:id="@+id/EditTextPdePort" android:text="@string/EditTextPdePort" android:layout_width="fill_parent" android:inputType="number"></EditText>
+</TableRow><TableRow android:id="@+id/TableRow05" android:layout_height="wrap_content" android:layout_width="fill_parent"><TextView android:id="@+id/TextView04" android:layout_height="wrap_content" android:text="@string/LabelAccuracyH" android:layout_width="fill_parent"></TextView>
+<EditText android:layout_height="wrap_content" android:inputType="number" android:id="@+id/EditTextAccuracyH" android:text="@string/DefaultAccuracyH" android:layout_width="fill_parent"></EditText>
+</TableRow>
+<TableRow android:id="@+id/TableRow06" android:layout_height="wrap_content" android:layout_width="fill_parent"><TextView android:id="@+id/TextView06" android:layout_height="wrap_content" android:text="@string/LabelAccuracyV" android:layout_width="fill_parent"></TextView>
+<EditText android:layout_height="wrap_content" android:inputType="number" android:id="@+id/EditTextAccuracyV" android:text="@string/DefaultAccuracyV" android:layout_width="fill_parent"></EditText>
+</TableRow>
+<TableRow android:id="@+id/TableRow07" android:layout_height="wrap_content" android:layout_width="fill_parent"><TextView android:id="@+id/TextView07" android:layout_height="wrap_content" android:text="@string/LabelMaxResponseTime" android:layout_width="fill_parent"></TextView>
+<EditText android:layout_height="wrap_content" android:inputType="number" android:id="@+id/EditTextMaxResponseTime" android:text="@string/DefaultTimeout" android:layout_width="fill_parent"></EditText>
+</TableRow>
+<TableRow android:id="@+id/TableRow10" android:layout_height="wrap_content" android:layout_width="fill_parent"><TextView android:id="@+id/TextView10" android:layout_height="wrap_content" android:text="@string/LabelAppCredential" android:layout_width="fill_parent"></TextView>
+<EditText android:layout_height="wrap_content" android:inputType="text" android:id="@+id/EditTextAppCredential" android:text="@string/DefaultAppCredential" android:layout_width="fill_parent"></EditText>
+</TableRow>
+<TableRow android:id="@+id/TableRow08" android:layout_height="wrap_content" android:layout_width="fill_parent"><Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/ButtonRunTwo" android:text="@string/LabelRunTwo"></Button>
+<Button android:layout_height="wrap_content" android:id="@+id/ButtonRunOne" android:text="@string/LabelRunOne" android:layout_width="fill_parent"></Button>
+</TableRow>
+<TableRow android:id="@+id/TableRow09" android:layout_height="wrap_content" android:layout_width="fill_parent"><Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/ButtonRunState1" android:text="@string/LabelRunState1"></Button>
+<Button android:layout_height="wrap_content" android:id="@+id/ButtonRunState2" android:text="@string/LabelRunState2" android:layout_width="fill_parent"></Button>
+</TableRow>
+
+</TableLayout>
+</ScrollView>

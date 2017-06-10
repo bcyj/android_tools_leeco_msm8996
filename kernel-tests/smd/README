@@ -1,0 +1,59 @@
+smd_tty_loopback_test
+=====================
+Usage: smd_tty_loopback_test [OPTIONS] [PARAMS]...
+
+Runs the loopback test with parameters specified
+over a SMD TTY loopback device (/dev/smd36).
+If neither size or pattern is specified,
+then the default tests are run.
+
+OPTIONS can be:
+  -v, --verbose         run with debug messages on
+  -h, --help            print this help message and exit
+  -n, --nocheck         Donot check the integrity of data
+
+PARAMS can be:
+  -s, --size            write/read buffer size (default 2 bytes)
+  -p, --pattern         pattern to be written (default 0xfa)
+  -a, --attempts        max number of attempts (default 2000)
+
+
+smd_pkt_loopback_test
+=====================
+Usage: smd_pkt_loopback_test [OPTIONS] [PARAMS] [TEST_TYPE]...
+Runs the loopback test with parameters specified
+over a SMD PKT device.  /dev/smd_pkt_loopback will be
+used if a device is not specified
+
+OPTIONS can be:
+  -v, --verbose         run with debug messages on (NOTE:
+                           currently has no effect).
+  -h, --help            print this help message and exit
+  -c, --nocheck         donot check the integrity of data
+  -w, --blocking_write  use blocking writes
+
+PARAMS can be:
+  -b, --bytes           write/read buffer size (default 2 bytes)
+  -i, --iterations      number of test iterations (default 1)
+  -p, --pattern         pattern to be written (default 0xfa)
+  -d, --delay TIME      delay after iterations/2 by TIME seconds
+  -f, --file            The character device to use (default
+                           /dev/smd_pkt_loopback)
+
+TEST_TYPE can be:
+  -n, --nominal         run standard functionality tests
+  -a, --adversarial     run tests that try to break the
+                          driver, not supported currently
+  -s, --stress          run tests that try to maximize the
+                          capacity of the driver,
+                          not supported currently
+  -r, --repeatability   run 10 iterations of both the
+                          nominal and adversarial tests,
+                          not supported currently
+
+smem_log_test
+=============
+Usage: smem_log_test
+
+Tests the functionality of SMEM logging from user-space.
+No parameters to pass to this test. Returns PASS or FAIL.

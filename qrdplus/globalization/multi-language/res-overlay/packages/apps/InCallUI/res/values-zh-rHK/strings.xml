@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2014-2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!--Copyright (C) 2013 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Official label of the phone app, as seen in "Manage Applications"
+         and other settings UIs. -->
+    <string name="phoneAppLabel" product="default">"手機"</string>
+
+    <!-- Official label for the in-call UI. DO NOT TRANSLATE. -->
+    <string name="inCallLabel" translate="false">InCallUI</string>
+
+    <!-- Call status -->
+
+    <!-- In-call screen: status label for a call that\'s on hold -->
+    <string name="onHold">"保留通話"</string>
+
+    <!-- Incoming call screen, name of "unknown" caller -->
+    <string name="unknown">"未知"</string>
+    <!-- Incoming call screen, string when number hidden -->
+    <string name="private_num">"私人號碼"</string>
+    <!-- Incoming call screen, string when called from a pay phone -->
+    <string name="payphone">"公共電話"</string>
+
+    <!-- In-call screen: status label for a conference call -->
+    <string name="confCall">"視訊會議"</string>
+    <!-- In-call screen: call lost dialog text -->
+    <string name="call_lost">"電話已斷線。"</string>
+
+    <!-- Positive button label ("OK") used in several dialogs in the phone UI [CHAR LIMIT=10] -->
+    <string name="ok">"確定"</string>
+
+    <!-- MMI dialog strings -->
+    <!-- Dialog label when an MMI code starts running -->
+
+    <!-- "Audio mode" popup menu: Item label to select the speakerphone [CHAR LIMIT=25] -->
+    <string name="audio_mode_speaker">"揚聲器"</string>
+    <!-- "Audio mode" popup menu: Item label to select the handset earpiece [CHAR LIMIT=25] -->
+    <string name="audio_mode_earpiece">"免提聽筒"</string>
+    <!-- "Audio mode" popup menu: Item label to select the wired headset [CHAR LIMIT=25] -->
+    <string name="audio_mode_wired_headset">"有線頭戴式耳機"</string>
+    <!-- "Audio mode" popup menu: Item label to select the bluetooth headset [CHAR LIMIT=25] -->
+    <string name="audio_mode_bluetooth">"藍牙"</string>
+
+    <!-- post dial -->
+    <!-- In-call screen: body text of the dialog that appears when we encounter
+         the "wait" character in a phone number to be dialed; this dialog asks the
+         user if it\'s OK to send the numbers following the "wait". -->
+    <string name="wait_prompt_str">"傳送下列鈴聲？ \n"</string>
+    <!-- In-call screen: body text of the dialog that appears when we encounter
+         the "PAUSE" character in a phone number to be dialed; this dialog gives
+         informative message to the user to show the sending numbers following the "Pause". -->
+    <string name="pause_prompt_str">"正在傳送訊號音\n"</string>
+    <!-- In-call screen: button label on the "wait" prompt dialog -->
+    <string name="send_button">"發送"</string>
+    <!-- In-call screen: button label on the "wait" prompt dialog in CDMA Mode-->
+    <string name="pause_prompt_yes">"是"</string>
+    <!-- In-call screen: button label on the "wait" prompt dialog in CDMA Mode-->
+    <string name="pause_prompt_no">"否"</string>
+    <!-- In-call screen: on the "wild" character dialog, this is the label
+         for a text widget that lets the user enter the digits that should
+         replace the "wild" character. -->
+    <string name="wild_prompt_str">"將萬用字元改成"</string>
+
+    <!-- In-call screen: status label for a conference call -->
+    <string name="caller_manage_header">"電話會議 <xliff:g id="CONF_CALL_TIME">%s</xliff:g>"</string>
+
+    <!-- Used in FakePhoneActivity test code.  DO NOT TRANSLATE. -->
+    <string name="fake_phone_activity_phoneNumber_text" translatable="false">(650) 555-1234</string>
+    <!-- Used in FakePhoneActivity test code.  DO NOT TRANSLATE. -->
+    <string name="fake_phone_activity_infoText_text" translatable="false">Incoming phone number</string>
+    <!-- Used in FakePhoneActivity test code.  DO NOT TRANSLATE. -->
+    <string name="fake_phone_activity_placeCall_text" translatable="false">Fake Incoming Call</string>
+
+    <!-- Call settings screen, Set voicemail dialog title -->
+    <string name="voicemail_settings_number_label">"留言信箱號碼"</string>
+
+    <!-- Card titles -->
+    <!-- In-call screen: status label for a call in the "dialing" state -->
+    <string name="card_title_dialing">"撥號中"</string>
+    <!-- In-call screen: status label for a re-dialing call -->
+    <string name="card_title_redialing">"重試中"</string>
+    <!-- In-call screen: status label for a conference call -->
+    <string name="card_title_conf_call">"視訊會議"</string>
+    <!-- In-call screen: status label for an incoming call -->
+    <string name="card_title_incoming_call">"來電"</string>
+    <!-- In-call screen: status label displayed briefly after a call ends -->
+    <string name="card_title_call_ended">"通話已結束"</string>
+    <!-- In-call screen: status label for call that\'s on hold -->
+    <string name="card_title_on_hold">"保留通話"</string>
+    <!-- In-call screen: status label for a call that\'s in the process of hanging up -->
+    <string name="card_title_hanging_up">"結束通話"</string>
+    <!-- In-call screen: status label for a call that\'s in CDMA flash mode -->
+    <string name="card_title_in_call">"通話中"</string>
+    <!-- In-call screen: special status label that shows your own phone
+         number during emergency callback mode (ECM) [CHAR LIMIT=30] -->
+    <string name="card_title_my_phone_number">"我的電話號碼：<xliff:g id="MY_PHONE_NUMBER">%s</xliff:g>"</string>
+    <!-- In-call screen: status label when connecting video. -->
+    <string name="card_title_video_call_connecting">"連結視像"</string>
+    <!-- In-call screen: status label when in a video call. -->
+    <string name="card_title_video_call">"視像通話"</string>
+    <!-- In-call screen: status label when requesting video. -->
+    <string name="card_title_video_call_requesting">"提出視像要求"</string>
+    <!-- In-call screen: status label when there is a problem connecting a video call. -->
+    <string name="card_title_video_call_error">"無法連結視像通話"</string>
+    <!-- In-call screen: status label when in a paused video call. -->
+    <string name="card_title_video_call_paused">視訊通話（暫停）</string>
+
+    <!-- In-call screen: string shown to the user when their outgoing number is different than the
+         number reported by TelephonyManager#getLine1Number() -->
+    <string name="card_title_callback_number">"您的回撥號碼如下：\n<xliff:g id="DARK_NUMBER">%1$s</xliff:g>"</string>
+
+    <!-- In-call screen: string shown to the user when their outgoing number is different than the
+         number reported by TelephonyManager#getLine1Number() and they\'re calling emergency
+         services. -->
+    <string name="card_title_callback_number_emergency">"您的緊急回撥號碼如下：\n<xliff:g id="DARK_NUMBER">%1$s</xliff:g>"</string>
+
+    <!-- Notification strings -->
+    <!-- The "label" of the in-call Notification for a dialing call, used
+         as the format string for a Chronometer widget. [CHAR LIMIT=60] -->
+    <string name="notification_dialing">"撥號中"</string>
+    <string name="notification_dialing_video">撥打視訊通話</string>
+    <!-- Missed call notification label, used when there\'s exactly one missed call -->
+    <string name="notification_missedCallTitle">"未接來電"</string>
+    <!-- Missed call notification label, used when there are two or more missed calls -->
+    <string name="notification_missedCallsTitle">"未接來電"</string>
+    <!-- Missed call notification message used when there are multiple missed calls -->
+    <string name="notification_missedCallsMsg">"<xliff:g id="NUM_MISSED_CALLS">%s</xliff:g> 未接電話"</string>
+    <!-- Missed call notification message used for a single missed call, including
+         the caller-id info from the missed call -->
+    <string name="notification_missedCallTicker">"<xliff:g id="MISSED_CALL_FROM">%s</xliff:g>打來的未接來電"</string>
+    <!-- The "label" of the in-call Notification for an ongoing call, used
+         as the format string for a Chronometer widget. [CHAR LIMIT=60] -->
+    <string name="notification_ongoing_call">"通話中"</string>
+    <string name="notification_ongoing_video_call">視訊通話進行中</string>
+    <!-- The "label" of the in-call Notification for a call that\'s on hold -->
+    <string name="notification_on_hold">"保留通話"</string>
+    <!-- The "label" of the in-call Notification for an incoming ringing call -->
+    <string name="notification_incoming_call">"來電"</string>
+    <!-- The "label" of the in-call Notification for an incoming ringing video call. -->
+    <string name="notification_incoming_video_call">"視像通話來電"</string>
+    <!-- The "label" of the in-call Notification for upgrading an existing call to a video call. -->
+    <string name="notification_requesting_video_call">"收到視像要求"</string>
+    <!-- Label for the "Voicemail" notification item, when expanded. -->
+    <string name="notification_voicemail_title">"新留言"</string>
+    <!-- Label for the expanded "Voicemail" notification item,
+         including a count of messages. -->
+    <string name="notification_voicemail_title_count">"新留言 (<xliff:g id="COUNT">%d</xliff:g> 個)"</string>
+    <!-- Message displayed in the "Voicemail" notification item, allowing the user
+         to dial the indicated number. -->
+    <string name="notification_voicemail_text_format">"撥號 <xliff:g id="VOICEMAIL_NUMBER">%s</xliff:g>"</string>
+    <!-- Message displayed in the "Voicemail" notification item,
+         indicating that there\'s no voicemail number available -->
+    <string name="notification_voicemail_no_vm_number">"沒有可用的留言信箱號碼"</string>
+    <!-- Label for the "No service" notification item, when expanded. -->
+    <string name="notification_network_selection_title">"沒有服務"</string>
+    <!-- Label for the expanded "No service" notification item, including the
+         operator name set by user -->
+    <string name="notification_network_selection_text">"您所選取的網絡 (<xliff:g id="OPERATOR_NAME">%s</xliff:g>) 無法使用"</string>
+    <!-- Label for "end call" Action.
+         It is displayed in the "Ongoing call" notification, which is shown
+         when the user is outside the in-call screen while the phone call is still
+         active. [CHAR LIMIT=12] -->
+    <string name="notification_action_end_call">"掛斷"</string>
+    <!-- Label for "Video Call" notification action. This is a displayed on the notification for an
+         incoming video call, and answers the call as a video call. [CHAR LIMIT=12] -->
+    <string name="notification_action_answer_video">"影片"</string>
+    <!-- Label for "More" notification action. This is a displayed on the notification for an
+         incoming call, and brings the phone application to foreground and displays multiple options
+         for accepting (or declining) the call. [CHAR LIMIT=12] -->
+    <string name="notification_action_answer_more">"更多"</string>
+    <!-- Label for "Voice" notification action. This is a displayed on the notification for an
+         incoming video call, and answers the call as an audio call. [CHAR LIMIT=12] -->
+    <string name="notification_action_answer_voice">"語音"</string>
+    <!-- Label for "Accept" notification action. This is somewhat generic, and may refer to
+         scenarios such as accepting an incoming call or accepting a video call request.
+         [CHAR LIMIT=12] -->
+    <string name="notification_action_accept">"接受"</string>
+    <!-- Label for "Dismiss" notification action. This is somewhat generic, and may refer to
+         scenarios such as declining an incoming call or declining a video call request.
+         [CHAR LIMIT=12] -->
+    <string name="notification_action_dismiss">"關閉"</string>
+
+    <!-- Message for "call back" Action, which is displayed in the missed call notificaiton.
+         The user will be able to call back to the person or the phone number.
+         [CHAR LIMIT=60] -->
+    <string name="notification_missedCall_call_back">"回撥"</string>
+    <!-- Message for "reply via sms" action, which is displayed in the missed call notification.
+         The user will be able to send text messages using the phone number.
+         [CHAR LIMIT=60] -->
+    <string name="notification_missedCall_message">"短訊"</string>
+
+    <!-- In-call screen: call failure message displayed in an error dialog -->
+    <string name="incall_error_power_off">"請先關閉飛行模式後再撥打電話。"</string>
+    <!-- In-call screen: call failure message displayed in an error dialog.
+         This string is currently unused (see comments in InCallActivity.java.) -->
+    <string name="incall_error_emergency_only">"未在網絡上完成註冊。"</string>
+    <!-- In-call screen: call failure message displayed in an error dialog -->
+    <string name="incall_error_out_of_service">"無法使用流動網絡。"</string>
+    <!-- In-call screen: call failure message displayed in an error dialog -->
+    <string name="incall_error_no_phone_number_supplied">"無法傳送，輸入的號碼無效。"</string>
+    <!-- In-call screen: call failure message displayed in an error dialog -->
+    <string name="incall_error_call_failed">"無法傳送通話。"</string>
+    <!-- In-call screen: status message displayed in a dialog when starting an MMI -->
+    <string name="incall_status_dialed_mmi">"開始 MMI 序列..."</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_unknown">"不支援的服務。"</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_switch">"無法切換通話。"</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_separate">"無法區分來電。"</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_transfer">"無法傳接電話。"</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_conference">"無法進行會議通話"</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_reject">"無法拒接來電。"</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_hangup">"無法結束通話。"</string>
+
+    <!-- In-call screen: "call type" indication for a SIP call [CHAR LIMIT=30]  -->
+    <string name="incall_call_type_label_sip">"SIP 通話"</string>
+
+    <!-- Dialog title for the "radio enable" UI for emergency calls -->
+    <string name="emergency_enable_radio_dialog_title">"緊急電話"</string>
+    <!-- Status message for the "radio enable" UI for emergency calls -->
+    <string name="emergency_enable_radio_dialog_message">"正在開啟無線電..."</string>
+    <!-- Status message for the "radio enable" UI for emergency calls -->
+    <string name="emergency_enable_radio_dialog_retry">"超出服務範圍，正在重試..."</string>
+
+    <!-- Dialer text on Emergency Dialer -->
+    <!-- Emergency dialer: message displayed in an error dialog -->
+    <string name="dial_emergency_error">"無法撥號，<xliff:g id="NON_EMERGENCY_NUMBER">%s</xliff:g> 不是緊急電話號碼！"</string>
+    <!-- Emergency dialer: message displayed in an error dialog -->
+    <string name="dial_emergency_empty_error">"無法撥號，請撥打緊急電話號碼！"</string>
+
+    <!-- Displayed in the text entry box in the dialer when in landscape mode to guide the user
+         to dial using the physical keyboard -->
+    <string name="dialerKeyboardHintText">"使用鍵盤撥號"</string>
+
+    <!-- Text for the overflow "Hold call" menu item. -->
+    <string name="overflowHoldMenuItemText">"保留通話"</string>
+    <!-- Text for the overflow "Resume call" menu item. -->
+    <string name="overflowResumeMenuItemText">"恢復通話"</string>
+    <!-- Text for the overflow "Add call" menu item. -->
+    <string name="overflowAddMenuItemText">"新增通話"</string>
+    <!-- Text for the onscreen "Merge calls" menu item. -->
+    <string name="overflowMergeMenuItemText">"合併通話"</string>
+    <!-- Text for the onscreen "Swap calls" menu item. -->
+    <string name="overflowSwapMenuItemText">"切換通話"</string>
+    <!-- Text for the overflow "Add participant" menu item. -->
+    <string name="overflowAddParticipantMenuItemText">新增參加者</string>
+    <!-- Text for the overflow "Manage Conference Video Call" menu item. -->
+    <string name="overflowManageConferenceMenuItemText">管理會議</string>
+
+    <!-- Text for the onscreen "Hold" button -->
+    <string name="onscreenHoldText">"按住"</string>
+    <!-- Text for the onscreen "End call" button -->
+    <string name="onscreenEndCallText">"結束"</string>
+    <!-- Text for the onscreen "Show Dialpad" button -->
+    <string name="onscreenShowDialpadText">"撥號鍵盤"</string>
+    <!-- Text for the onscreen "Mute" button -->
+    <string name="onscreenMuteText">"靜音"</string>
+    <!-- Text for the onscreen "Add call" button -->
+    <string name="onscreenAddCallText">"新增通話"</string>
+    <!-- Text for the onscreen "Merge calls" button -->
+    <string name="onscreenMergeCallsText">"合併通話"</string>
+    <!-- Text for the onscreen "Swap calls" button -->
+    <string name="onscreenSwapCallsText">"切換"</string>
+    <!-- Text for the onscreen "Manage calls" button -->
+    <string name="onscreenManageCallsText">"管理通話"</string>
+    <!-- Text for the onscreen "Manage conference" button [CHAR LIMIT=30] -->
+    <string name="onscreenManageConferenceText">"管理會議通話"</string>
+    <!-- Text for the onscreen "Audio" button that lets you switch
+         between speaker / bluetooth / earpiece [CHAR LIMIT=10] -->
+    <string name="onscreenAudioText">"音頻裝置"</string>
+    <!-- Text for the onscreen "Video call" button used to change a voice call
+         to a video call. [CHAR LIMIT=10] -->
+    <string name="onscreenVideoCallText">"視像通話"</string>
+    <!-- Text for the onscreen "Change to voice" button. When clicked, this downgrades a video call
+         to a voice call. -->
+    <string name="onscreenChangeToVoiceText">"變更為語音通話"</string>
+    <!-- Text for the onscreen "Switch camera" button. When clicked, this switches the user\'s camera
+         for video calling between the front-facing camera and the back-facing camera. -->
+    <string name="onscreenSwitchCameraText">"切換相機"</string>
+    <!-- Text for the onscreen "Pause video" button. -->
+    <string name="onscreenPauseVideoText">"暫停視像"</string>
+    <!-- Text for the onscreen overflow button, to see additional actions which can be done. -->
+    <string name="onscreenOverflowText">"更多選項"</string>
+    <!-- Text for the onscreen "Add Participant" button -->
+    <string name="onscreenAddParticipant">新增參與者</string>
+
+    <!-- In-call screen: Modify Call Options for IMS call -->
+    <string name="modify_call_option_title">哪個通話類型？</string>
+    <string name="modify_call_option_vt">VT</string>
+    <string name="modify_call_option_vt_tx">影片傳輸</string>
+    <string name="modify_call_option_vt_rx">影片接收</string>
+    <string name="modify_call_option_voice">僅限語音</string>
+
+    <!-- Message indicating video calls not allowed if user enabled TTY Mode -->
+    <string name="video_call_not_allowed_if_tty_enabled">請停用 TTY 模式以升級至視訊通話。</string>
+
+    <!-- Message indicating that Video Started flowing for IMS-VT calls -->
+    <string name="player_started">播放器已開始</string>
+    <!-- Message indicating that Video Stopped flowing for IMS-VT calls -->
+    <string name="player_stopped">播放器已停止</string>
+    <!-- Message indicating that camera failure has occurred for the selected camera and
+         as result camera is not ready -->
+    <string name="camera_not_ready">相機尚未就緒</string>
+    <!-- Message indicating that camera is ready/available -->
+    <string name="camera_ready">相機就緒</string>
+    <!-- Message indicating unknown call session event -->
+    <string name="unknown_call_session_event">「未知通話環節活動」</string>
+
+    <!-- For incoming calls, this is a string we can get from a CDMA network instead of
+         the actual phone number, to indicate there\'s no number present.  DO NOT TRANSLATE. -->
+    <string-array name="absent_num" translatable="false">
+        <item>ABSENT NUMBER</item>
+        <item>ABSENTNUMBER</item>
+    </string-array>
+
+    <!-- Preference for Voicemail service provider under "Voicemail" settings.
+         [CHAR LIMIT=40] -->
+    <string name="voicemail_provider">"服務"</string>
+
+    <!-- Preference for Voicemail setting of each provider.
+         [CHAR LIMIT=40] -->
+    <string name="voicemail_settings">"設定"</string>
+
+    <!-- String to display in voicemail number summary when no voicemail num is set -->
+    <string name="voicemail_number_not_set">"&lt;未設定&gt;"</string>
+
+    <!-- Title displayed above settings coming after voicemail in the call features screen -->
+    <string name="other_settings">"其他通話設定"</string>
+
+    <!-- Title displayed in the overlay for outgoing calls which include the name of the provider.
+         [CHAR LIMIT=40] -->
+    <string name="calling_via_template">"正在透過 <xliff:g id="PROVIDER_NAME">%s</xliff:g> 撥號"</string>
+    <!-- Title displayed in the overlay for incoming calls which include the name of the provider.
+         [CHAR LIMIT=40] -->
+    <string name="incoming_via_template">"有人透過 <xliff:g id="PROVIDER_NAME">%s</xliff:g> 來電"</string>
+
+    <!-- Use this as a default to describe the contact photo; currently for screen readers through accessibility. -->
+    <string name="contactPhoto">"聯絡人相片"</string>
+    <!-- Use this to describe the separate conference call button; currently for screen readers through accessibility. -->
+    <string name="goPrivate">"私人通話"</string>
+    <!--  Use this to describe the select contact button in EditPhoneNumberPreference; currently for screen readers through accessibility. -->
+    <string name="selectContact">"選取聯絡人"</string>
+
+    <!-- "Respond via SMS" option that lets you compose a custom response. [CHAR LIMIT=30] -->
+    <string name="respond_via_sms_custom_message">"自行撰寫回覆…"</string>
+    <!-- "Custom Message" Cancel alert dialog button -->
+    <string name="custom_message_cancel">"取消"</string>
+    <!-- "Custom Message" Send alert dialog button -->
+    <string name="custom_message_send">"傳送"</string>
+
+    <!-- String describing the image on ImageButton one
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_one">"一"</string>
+
+    <!-- String describing the image on ImageButton two
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_two">"二"</string>
+
+    <!-- String describing the image on ImageButton three
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_three">"三"</string>
+
+    <!-- String describing the image on ImageButton four
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_four">"四"</string>
+
+    <!-- String describing the image on ImageButton five
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_five">"五"</string>
+
+    <!-- String describing the image on ImageButton six
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_six">"六"</string>
+
+    <!-- String describing the image on ImageButton seven
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_seven">"七"</string>
+
+    <!-- String describing the image on ImageButton eight
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_eight">"八"</string>
+
+    <!-- String describing the image on ImageButton nine
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_nine">"九"</string>
+
+    <!-- String describing the image on ImageButton star
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_star">"星號"</string>
+
+    <!-- String describing the image on ImageButton zero
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_zero">"零"</string>
+
+    <!-- String describing the image on ImageButton pound
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_pound">"井字鍵"</string>
+
+    <!-- String describing the Dial ImageButton
+
+         Used by AccessibilityService to announce the purpose of the button.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_dial_button">"撥號"</string>
+
+    <!-- String describing the Delete/Backspace ImageButton
+
+         Used by AccessibilityService to announce the purpose of the button.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_delete_button">"退格鍵"</string>
+
+    <!-- String used by AccessibilityService to announce that the speakerphone has been selected for audio output [CHAR LIMIT=NONE]-->
+    <string name="accessibility_speakerphone_selected">"已選取免持聽筒"</string>
+
+    <!-- String used by AccessibilityService to announce that the phone\'s earpiece has been selected for audio output [CHAR LIMIT=NONE]-->
+    <string name="accessibility_earpiece_selected">"已選取聽筒"</string>
+
+    <!-- String used by AccessibilityService to announce that the wired headset has been selected for audio output [CHAR LIMIT=NONE]-->
+    <string name="accessibility_wired_headset_selected">"已選取有線耳機"</string>
+
+    <!-- String used by AccessibilityService to announce that the bluetooth headset has been selected for audio output [CHAR LIMIT=NONE]-->
+    <string name="accessibility_bluetooth_headset_selected">"已選取藍牙耳機"</string>
+
+    <!-- String used by AccessibilityService to announce that the call has been muted [CHAR LIMIT=NONE]-->
+    <string name="accessibility_call_muted">"通話已靜音。"</string>
+
+    <!-- String used by AccessibilityService to announce that the call has been unmuted [CHAR LIMIT=NONE]-->
+    <string name="accessibility_call_unmuted">"通話已取消靜音。"</string>
+
+    <!-- String used by AccessibilityService to announce that the call has been put on hold [CHAR LIMIT=NONE]-->
+    <string name="accessibility_call_put_on_hold">"通話保留中。"</string>
+
+    <!-- String used by AccessibilityService to announce that the call has been removed from hold [CHAR LIMIT=NONE]-->
+    <string name="accessibility_call_removed_from_hold">"已移除保留的通話。"</string>
+
+    <!-- Description of the answer target in the Slide unlock screen of Phone. [CHAR LIMIT=12] -->
+    <string name="description_target_answer">"接聽"</string>
+    <!-- Description of the send_sms target in the Slide unlock screen of Phone. [CHAR LIMIT=NONE] -->
+    <string name="description_target_send_sms">"發送短訊"</string>
+    <!-- Description of the decline target in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_target_decline">"拒絕"</string>
+    <!-- Description of the target to answer a call as a video call in the Slide unlock screen.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_answer_video_call">"接聽視像通話"</string>
+    <!-- Description of the target to answer a call as an audio call in the Slide unlock screen.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_answer_audio_call">"接聽語音通話"</string>
+    <!-- Description of the target to accept a request to upgrade from an audio call to a video call.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_accept_upgrade_to_video_request">"接受視像通話要求"</string>
+    <!-- Description of the target to decline a request to upgrade from an audio call to a video call.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_decline_upgrade_to_video_request">"拒絕視像通話要求"</string>
+    <!-- Description of the target to accept a request to upgrade from any call to a video transmit call.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_accept_upgrade_to_video_transmit_request">接受影片傳輸要求</string>
+    <!-- Description of the target to decline a request to upgrade from any call to a video transmit call.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_decline_upgrade_to_video_transmit_request">拒絕影片傳輸要求</string>
+        <!-- Description of the target to accept a request to upgrade from any call to a video receive call.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_accept_upgrade_to_video_receive_request">接受影片接收要求</string>
+    <!-- Description of the target to decline a request to upgrade from any call to a video receive call.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_decline_upgrade_to_video_receive_request">拒絕影片接收要求</string>
+
+    <!-- Description of the up direction in which one can to slide the handle in the phone answer screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_up">"向上滑動即可<xliff:g id="TARGET_DESCRIPTION">%s</xliff:g>。"</string>
+    <!-- Description of the left direction in which one can to slide the handle in the phone answer screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_left">"向左滑動即可<xliff:g id="TARGET_DESCRIPTION">%s</xliff:g>。"</string>
+    <!-- Description of the right direction in which one can to slide the handle in the phone answer screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_right">"向右滑動即可<xliff:g id="TARGET_DESCRIPTION">%s</xliff:g>。"</string>
+    <!-- Description of the down direction in which one can to slide the handle in the phone answer screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_down">"向下滑動即可<xliff:g id="TARGET_DESCRIPTION">%s</xliff:g>。"</string>
+
+    <!-- Dialog title for the vibration settings for voicemail notifications [CHAR LIMIT=40] -->
+    <string name="voicemail_notification_vibrate_when_title" msgid="8731372580674292759">"震動"</string>
+    <!-- Dialog title for the vibration settings for voice mail notifications [CHAR LIMIT=40]-->
+    <string name="voicemail_notification_vibarte_when_dialog_title" msgid="8995274609647451109">"震動"</string>
+
+    <!-- Voicemail ringtone title. The user clicks on this preference to select
+         which sound to play when a voicemail notification is received.
+         [CHAR LIMIT=30] -->
+    <string name="voicemail_notification_ringtone_title">"音效"</string>
+
+    <!--  The string used to describe a notification if it is the default one in the system. For
+          example, if the user selects the default notification, it will appear as something like
+          Default sound(Capella) in the notification summary.
+          [CHAR LIMIT=40] -->
+    <string name="default_notification_description">"預設音效 (<xliff:g id="DEFAULT_SOUND_TITLE">%1$s</xliff:g>)"</string>
+
+    <!-- The default value value for voicemail notification. -->
+    <string name="voicemail_notification_vibrate_when_default" translatable="false">never</string>
+
+    <!-- Actual values used in our code for voicemail notifications. DO NOT TRANSLATE -->
+    <string-array name="voicemail_notification_vibrate_when_values" translatable="false">
+        <item>always</item>
+        <item>silent</item>
+        <item>never</item>
+    </string-array>
+
+    <string name="volume_boost_notify_enabled">"音量加強已開啟。"</string>
+    <string name="volume_boost_notify_disabled">"音量加強已關閉。"</string>
+    <string name="volume_boost_notify_unavailable">"使用有線/藍牙耳機時不提供額外音量功能。"</string>
+    <string name="volume_boost_toast_position" translate="false">600</string>
+    <string name="onscreenMoreMenuText">更多功能表</string>
+    <string name="menu_start_record">錄製通話</string>
+    <string name="menu_stop_record">停止錄音</string>
+    <string name="recording_time_text">"錄音中"</string>
+
+    <!-- Setting option name to pick ringtone (a list dialog comes up). [CHAR LIMIT=30] -->
+    <string name="ringtone_title" msgid="5379026328015343686">"手機鈴聲"</string>
+
+    <!-- Setting option name to enable or disable vibration when ringing
+         the phone.
+         [CHAR LIMIT=30] -->
+    <string name="vibrate_on_ring_title">"鈴響時震動"</string>
+
+    <!--  Setting option name to enable or disable dialpad autocomplete functionality
+         [CHAR LIMIT=30] -->
+    <string name="dial_pad_autocomplete">"撥號鍵盤自動完成"</string>
+
+    <!-- Title for the category "ringtone", which is shown above ringtone and vibration
+         related settings.
+         [CHAR LIMIT=30] -->
+    <string name="preference_category_ringtone">"鈴聲與震動"</string>
+
+    <!-- Label for "Manage conference call" panel [CHAR LIMIT=40] -->
+    <string name="manageConferenceLabel">"管理會議通話"</string>
+
+    <!-- This can be used in any application wanting to disable the text "Emergency number" -->
+    <string name="emergency_call_dialog_number_for_display">"緊急電話號碼"</string>
+
+    <!-- message displayed when missing voicemail number -->
+    <string name="incall_error_missing_voicemail_number">尚未設定留言信箱號碼，要現在設定嗎？</string>
+
+    <!-- Title for Select Account Dialog [CHAR LIMIT=30] -->
+    <string name="select_account_dialog_title">"選取帳戶"</string>
+    <!-- Set Subscription screen: label sub 1 -->
+    <string name="sub_1">SUB 1</string>
+    <!-- Set Subscription screen: label sub 2 -->
+    <string name="sub_2">SUB 2</string>
+	<string name="change_video_status">更改視訊狀態</string>
+	<string name="change_video_message">希望將通話更改至視訊通話。您要傳送和接收視訊嗎？</string>
+	<string name="change_voice_message">將通話更改至視訊通話。</string>
+	<string name="modify_call_prompt_yes">"是"</string>
+	<string name="modify_call_prompt_no">"否"</string>
+	<string name="connecting_for_modify">"正在連線…"</string>
+
+    <!-- Call substate label -->
+    <string name="call_substate_label">通話子狀態 - \u000a</string>
+    <!-- Call substate label for call resumed -->
+    <string name="call_substate_call_resumed">已恢復 \u000a</string>
+    <!-- Call substate label for call connected suspended (audio) -->
+    <string name="call_substate_connected_suspended_audio">已連接暫停的（音訊）\u000a</string>
+    <!-- Call substate label for call connected suspended (video) -->
+    <string name="call_substate_connected_suspended_video">已連接暫停的（視訊）\u000a</string>
+    <!-- Call substate label for avp retry -->
+    <string name="call_substate_avp_retry">重試 Avp \u000a</string>
+    <!-- Video quality changed message -->
+    <string name="video_quality_changed">影片質素變更至 \u0020</string>
+    <!-- Video quality High -->
+    <string name="video_quality_high">"高"</string>
+    <!-- Video quality Medium -->
+    <string name="video_quality_medium">"中"</string>
+    <!-- Video quality Low -->
+    <string name="video_quality_low">"低"</string>
+    <!-- Video quality Unknown -->
+    <string name="video_quality_unknown">"未知"</string>
+    <string name="display_rich_screen">顯示色彩豐富的畫面？</string>
+    <string name="rcs_missdnaddress_string">遺失地址：</string>
+    <string name="rcs_greeting_string">Gretting:</string>
+    <string name="call_state_dialing">"撥號中"</string>
+    <string name="call_state_holding">保留</string>
+    <string name="call_state_active">已啟用</string>
+    <string name="call_state_unknown">"未知"</string>
+    <string name="call_state_disconnecting">"正在中斷連線"</string>
+    <string name="call_state_disconnected">"已中斷連線"</string>
+    <string name="dial_conference_call_error">由於未能使用 4G 網絡，無法建立 4G 會議通話。</string>
+
+    <string name="apm_turn_on_confirmation">"已啟用飛行模式。您是否想關閉飛行模式？"</string>
+    <string name="cancel">"取消"</string>
+    <!--Multiparty call-->
+    <string name="end_active_accept_mt_call">啟動結束，接受來電</string>
+    <!-- Normal call UI will be shown for the emergency call
+        for the numbers which is mentioned in mask_emergency_number-->
+    <string name="mask_emergency_number"/>
+</resources>

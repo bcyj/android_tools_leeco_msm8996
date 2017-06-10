@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:VTScreen="http://schemas.android.com/apk/res/com.borqs.videocall"
+        android:id="@+id/vtapp" android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="#161719">
+
+        <LinearLayout android:id="@+id/vt_plate"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <!-- Call card hold call related information -->
+            <com.borqs.videocall.VTPanel
+                android:id="@+id/vt_panel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                VTScreen:panelHeightKeypad="320dp"
+                VTScreen:panelHeightUnlockConnecting="320dp"
+                VTScreen:panelHeightLockConnecting="320dp"
+                VTScreen:panelHeightInCall="320dp"
+                VTScreen:panelWidthInCall ="320dp"
+                VTScreen:panelWidthKeypad ="320dp"
+                VTScreen:panelWidthConnecting = "320dp"
+                android:background="@null"
+                >
+                <include layout="@layout/vtpanel_fallback_panel"
+                        android:id="@+id/vtpanel_fallback_panel"/>
+                <include layout="@layout/vtpanel_remote_win"
+                        android:id="@+id/vtpanel_remote_win" />
+                <include layout="@layout/vtpanel_local_win"
+                        android:id="@+id/vtpanel_local_win" />
+                <include layout="@layout/vtpanel_call_card"
+                        android:id="@+id/vtpanel_call_card" />
+            </com.borqs.videocall.VTPanel>
+
+	            <!-- sliding card panel -->
+	        <fragment android:name="com.borqs.videocall.AnswerFragment"
+                android:id="@+id/answerFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="top"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="@dimen/glowpadview_margin_bottom"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/vt_bottom_connecting"
+                android:layout_width="fill_parent"
+                android:layout_height="150dp"
+                android:orientation="vertical"
+                android:background="@null"
+                android:visibility="gone">
+                <LinearLayout
+                    android:id="@+id/tab_selector_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="80dp"
+                    android:background="@null">
+                    <com.android.internal.widget.SlidingTab
+                        android:id="@+id/tab_selector"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+			    </LinearLayout>
+                <include layout="@layout/sms_refuse_control_panel"
+                    android:id="@+id/sms_refuse_group"/>
+		    </LinearLayout>
+
+
+        <include layout="@layout/vtpanel_control_buttons"
+                android:id="@+id/vtpanel_control_buttons" />
+        <include layout="@layout/action_buttons"
+                android:id="@+id/action_buttons" />
+
+        <com.borqs.videocall.VideoCallKeyPad
+            android:id="@+id/touch_keypad"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@null"
+            android:visibility="gone" />
+
+        <include layout="@layout/vtpanel_middle_buttons"
+            android:id="@+id/vtpanel_middle_buttons" />
+
+    </LinearLayout>
+    <!-- place keypad -->
+</LinearLayout>

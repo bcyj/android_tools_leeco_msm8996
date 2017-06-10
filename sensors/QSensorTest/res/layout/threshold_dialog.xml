@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--========================================================================
+@file threshold_dialog.xml
+
+@brief
+Specifies how the threshold dialog will look.
+
+Copyright (c) 2012-2013 Qualcomm Technologies, Inc.  All Rights Reserved.
+Qualcomm Technologies Proprietary and Confidential.
+=========================================================================-->
+<LinearLayout android:id="@+id/LinearLayout1"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+  <TextView android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/thresh_prompt" android:layout_width="match_parent" android:gravity="center_horizontal" android:id="@+id/thresh_prompt"></TextView>
+    <LinearLayout android:layout_height="wrap_content" android:layout_gravity="center" android:layout_width="match_parent" android:id="@+id/linearLayout1" android:gravity="center" android:weightSum="1">
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/thresh_x_prompt" android:gravity="right" android:layout_weight="0.5"></TextView>
+        <EditText android:layout_height="wrap_content" android:layout_width="wrap_content" android:inputType="numberDecimal" android:id="@+id/thresh_x_field" android:layout_weight="0.5"></EditText>
+    </LinearLayout>
+    <LinearLayout android:layout_height="wrap_content" android:layout_gravity="center" android:layout_width="match_parent" android:id="@+id/linearLayout2" android:gravity="center" android:weightSum="1">
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/thresh_y_prompt" android:gravity="right" android:layout_weight="0.5"></TextView>
+        <EditText android:layout_height="wrap_content" android:layout_width="wrap_content" android:inputType="numberDecimal" android:id="@+id/thresh_y_field" android:layout_weight="0.5"></EditText>
+    </LinearLayout>
+    <LinearLayout android:layout_height="wrap_content" android:layout_gravity="center" android:layout_width="match_parent" android:id="@+id/linearLayout3" android:gravity="center" android:weightSum="1">
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/thresh_z_prompt" android:gravity="right" android:layout_weight="0.5"></TextView>
+        <EditText android:layout_height="wrap_content" android:layout_width="wrap_content" android:inputType="numberDecimal" android:id="@+id/thresh_z_field" android:layout_weight="0.5"></EditText>
+    </LinearLayout>
+    <TextView android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/thresh_delay_prompt" android:layout_width="match_parent" android:gravity="center_horizontal" android:id="@+id/thresh_delay_prompt"></TextView>
+    <EditText android:layout_height="wrap_content" android:inputType="number" android:layout_width="match_parent" android:id="@+id/thresh_delay_field"></EditText>
+    <LinearLayout android:layout_height="wrap_content" android:layout_gravity="center" android:layout_width="match_parent" android:id="@+id/linearLayout4" android:gravity="center" android:weightSum="1">
+        <Button android:layout_height="wrap_content" android:text="@string/delay_submit" android:id="@+id/thresh_button_submit" android:layout_width="wrap_content" android:gravity="center" android:layout_weight="0.21"></Button>
+        <Button android:layout_height="wrap_content" android:text="@string/delay_cancel" android:id="@+id/thresh_button_cancel" android:layout_width="wrap_content" android:gravity="center" android:layout_weight="0.21"></Button>
+    </LinearLayout>
+</LinearLayout>

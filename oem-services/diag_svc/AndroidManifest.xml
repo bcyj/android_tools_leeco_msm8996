@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---/******************************************************************************
+* @file    AndrooidManifest.xml
+* @brief   Gets generated when creating any activity using android sdk
+           Provides the permissions required by the activity and activity name
+*  Coppyright (C) 2009,2014 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   package="com.qti.diagservices"
+   android:sharedUserId="android.uid.system">
+
+   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+   <application>
+      <receiver android:name=".Diag_OnBoot"
+         android:enabled="true"
+         android:exported="false"
+         android:label="Diag_OnBoot">
+         <intent-filter android:priority="100">
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+         </intent-filter>
+      </receiver>
+
+      <service android:name="QTIDiagServices" />
+   </application>
+</manifest>

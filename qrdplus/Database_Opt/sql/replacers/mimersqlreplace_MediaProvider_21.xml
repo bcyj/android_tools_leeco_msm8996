@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2013 Mimer Information Technology AB, info@mimer.com -->
+<!-- Mimer SQL replacement for Media provider runtime queries in Android 2.1 -->
+<MimerSQLReplace>
+
+  <fromSQL id="GOME211" statement="SELECT audio.album_id AS _id, album, count(*) AS numsongs, count(CASE WHEN artist_id==? THEN ? ELSE NULL END) AS numsongs_by_artist, album_art._data AS album_art FROM audio LEFT OUTER JOIN album_art ON audio.album_id=album_art.album_id WHERE (is_music=? AND audio.album_id IN (SELECT album_id FROM artists_albums_map WHERE artist_id = ?)) GROUP BY audio.album_id ORDER BY album_key">
+    select "audio"."album_id" as "_id", "album",count(*) as "numsongs",count(case when "artist_id" = ? then ''||? else NULL end) as "numsongs_by_artist", "album_art"."_data" as "album_art" from "audio" left join "album_art" on "audio"."album_id" = "album_art"."album_id" where ("is_music" = ? and exists(select 1 from "audio_meta" where "artist_id" = ? and "album_id" = "audio"."album_id")) group by "audio"."album_id"
+  </fromSQL>
+
+  <fromSQL id="GOME212" statement="UPDATE artists SET artist=? WHERE rowid=?">
+	UPDATE artists SET artist=? WHERE artist_id=?
+  </fromSQL>
+
+<!--
+  <fromSQL id="GOME213" statement="SELECT bucket_id, MAX(date_added), COUNT(*) FROM images WHERE (bucket_id!=?) GROUP BY (bucket_id )">
+	"SELECT bucket_id, MAX(date_added), COUNT(*) FROM images WHERE bucket_id &lt;&gt; ? GROUP BY bucket_id"
+  </fromSQL>
+ 
+  <fromSQL id="GOME214" statement="SELECT bucket_id, MAX(date_added), COUNT(*) FROM video WHERE (bucket_id!=?) GROUP BY (bucket_id )">
+  	"SELECT bucket_id, MAX(date_added), COUNT(*) FROM video WHERE bucket_id &lt;&gt; ? GROUP BY bucket_id"
+  </fromSQL>
+-->
+
+
+ <fromSQL id="GOME215" statement="SELECT DISTINCT bucket_id, bucket_display_name FROM images ORDER BY upper(bucket_display_name) ASC">
+    select distinct "bucket_id","bucket_display_name"  collate current_collation_2 from "images" order by "bucket_display_name" collate current_collation_2 asc
+ </fromSQL>
+
+
+ <fromSQL id="GOME216" statement="SELECT DISTINCT bucket_id, bucket_display_name FROM video ORDER BY upper(bucket_display_name) ASC">
+    select distinct "bucket_id","bucket_display_name"  collate current_collation_2 from "video" order by "bucket_display_name" collate current_collation_2 asc
+ </fromSQL>
+</MimerSQLReplace>
+
+

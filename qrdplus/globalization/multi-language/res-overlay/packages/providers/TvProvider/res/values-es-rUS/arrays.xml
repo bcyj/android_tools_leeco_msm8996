@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Category mapping from ATSC to canonical genre -->
+    <string-array name="genre_mapping_atsc">
+        <item>Educación|EDUCACIÓN</item>
+        <item>Entretenimiento|ENTRETENIMIENTO</item>
+        <item>Cine|CINE</item>
+        <item>Noticias|NOTICIAS</item>
+        <item>Religión|ESTILOS</item>
+        <item>Deportes|DEPORTES</item>
+        <item>Otro|OTROS</item>
+        <item>Acción|CINE</item>
+        <item>Publicidad|OTROS</item>
+        <item>Animación|FAMILIA_INFANTIL</item>
+        <item>Antología|SERIES</item>
+        <item>Automóviles|OTROS</item>
+        <item>Premios|ENTRETENIMIENTO</item>
+        <item>Béisbol|DEPORTES</item>
+        <item>Baloncesto|DEPORTES</item>
+        <item>Boletines|OTROS</item>
+        <item>Negocios|OTROS</item>
+        <item>Clásica|MÚSICA</item>
+        <item>Universitaria|EDUCACIÓN</item>
+        <item>Lucha|OTROS</item>
+        <item>Comedia|COMEDIA</item>
+        <item>Opinión|OTROS</item>
+        <item>Conciertos|MÚSICA</item>
+        <item>Consumidor|OTROS</item>
+        <item>Contemporánea|OTROS</item>
+        <item>Crimen|CINE</item>
+        <item>Baile|ENTRETENIMIENTO</item>
+        <item>Documentales|NOTICIAS</item>
+        <item>Drama|SERIES</item>
+        <item>Elemental|EDUCACIÓN</item>
+        <item>Erótico|CINE</item>
+        <item>Ejercicio físico|DEPORTES</item>
+        <item>Fantasía|CINE</item>
+        <item>Ganadería|OTROS</item>
+        <item>Moda|ESTILOS</item>
+        <item>Ficción|ARTE</item>
+        <item>Alimentación|ESTILOS</item>
+        <item>Fútbol americano|DEPORTES</item>
+        <item>Extranjero|CINE</item>
+        <item>Recaudación de fondos|OTROS</item>
+        <item>Preguntas y respuestas|JUEGOS</item>
+        <item>Jardinería|ESTILOS</item>
+        <item>Golf|DEPORTES</item>
+        <item>Gobierno|OTROS</item>
+        <item>Salud|ESTILOS</item>
+        <item>Secundaria|EDUCACIÓN</item>
+        <item>Historia|EDUCACIÓN</item>
+        <item>Aficiones|ESTILOS</item>
+        <item>Hockey|DEPORTES</item>
+        <item>Hogar|ESTILOS</item>
+        <item>Terror|CINE</item>
+        <item>Información|NOTICIAS</item>
+        <item>Instrucción|OTROS</item>
+        <item>Internacional|OTROS</item>
+        <item>Entrevistas|OTROS</item>
+        <item>Idiomas|EDUCACIÓN</item>
+        <item>Legal|OTROS</item>
+        <item>En directo|OTROS</item>
+        <item>Local|OTROS</item>
+        <item>Matemáticas|EDUCACIÓN</item>
+        <item>Medicina|OTROS</item>
+        <item>Reunión|OTROS</item>
+        <item>Militar|OTROS</item>
+        <item>Miniseries|SERIES</item>
+        <item>Músic|MÚSICA</item>
+        <item>Misterio|CINE</item>
+        <item>Nacional|OTROS</item>
+        <item>Naturaleza|VIDA_SILVESTRE</item>
+        <item>Policía|OTROS</item>
+        <item>Política|OTROS</item>
+        <item>Estrenos|ESTRENOS</item>
+        <item>Pregrabado|OTROS</item>
+        <item>Productos|OTROS</item>
+        <item>Profesional|OTROS</item>
+        <item>Público|OTROS</item>
+        <item>Carreras|DEPORTES</item>
+        <item>Lectura|ARTE</item>
+        <item>Reparaciones|OTROS</item>
+        <item>Repeticiones|OTROS</item>
+        <item>Reseñas|OTROS</item>
+        <item>Romance|CINE</item>
+        <item>Ciencia|TECNOLOGÍA_CIENCIA</item>
+        <item>Series|SERIES</item>
+        <item>Servicio|OTROS</item>
+        <item>Compras|COMPRAS</item>
+        <item>Telenovelas|SERIES</item>
+        <item>Especiales|OTROS</item>
+        <item>Suspense|CINE</item>
+        <item>Charlas|ENTRETENIMIENTO</item>
+        <item>Técnico|TECNOLOGÍA_CIENCIA</item>
+        <item>Tenis|DEPORTES</item>
+        <item>Viajes|VIAJES</item>
+        <item>Variedades|ENTRETENIMIENTO</item>
+        <item>Vídeo|ARTE</item>
+        <item>Meteorológica|NOTICIAS</item>
+        <item>Western|OTROS</item>
+        <item>Arte|ARTE</item>
+        <item>Motor|DEPORTES</item>
+        <item>Aviación|DEPORTES</item>
+        <item>Biografías|NOTICIAS</item>
+        <item>Acuáticos|DEPORTES</item>
+        <item>Bolos|DEPORTES</item>
+        <item>Boxeo|DEPORTES</item>
+        <item>Dibujos animados|FAMILIA_INFANTIL</item>
+        <item>Infantil|FAMILIA_INFANTIL</item>
+        <item>Clásico|CINE</item>
+        <item>Comunidad|OTROS</item>
+        <item>Informática|TECNOLOGÍA_CIENCIA</item>
+        <item>Country|MÚSICA</item>
+        <item>Judicial|OTROS</item>
+        <item>Deportes extremos|DEPORTES</item>
+        <item>Familia|FAMILIA_INFANTIL</item>
+        <item>Finanzas|NOTICIAS</item>
+        <item>Gimnasia|DEPORTES</item>
+        <item>Titulares|NOTICIAS</item>
+        <item>Carreras de caballos|DEPORTES</item>
+        <item>Caza/Pesca/Aire libre|VIDA_SILVESTRE</item>
+        <item>Independiente|OTROS</item>
+        <item>Jazz|MÚSICA</item>
+        <item>Reportajes|NOTICIAS</item>
+        <item>Motociclismo|DEPORTES</item>
+        <item>Música/Cine/Libros|OTROS</item>
+        <item>Noticias internationales|NOTICIAS</item>
+        <item>Noticias locales|NOTICIAS</item>
+        <item>Noticias nacionales|NOTICIAS</item>
+        <item>Noticias regionales|NOTICIAS</item>
+        <item>Juegos Olímpicos|DEPORTES</item>
+        <item>Versión Original|CINE</item>
+        <item>Artes escénicas|ARTE</item>
+        <item>Mascotas|VIDA_SILVESTRE</item>
+        <item>Pop|MÚSICA</item>
+        <item>Rock &amp; Roll|MÚSICA</item>
+        <item>Ciencia-ficción|CINE</item>
+        <item>Auto aprendizaje|EDUCACIÓN</item>
+        <item>Comedias de situación|SERIES</item>
+        <item>Patinaje|DEPORTES</item>
+        <item>Esquí|DEPORTES</item>
+        <item>Fútbol|DEPORTES</item>
+        <item>Atletismo (pista y campo)|DEPORTES</item>
+        <item>Realidad|OTROS</item>
+        <item>Voleibol|DEPORTES</item>
+        <item>Lucha libre|DEPORTES</item>
+    </string-array>
+
+    <!-- Category mapping from DVB to canonical genre -->
+    <string-array name="genre_mapping_dvb">
+        <item>película/serie|CINE</item>
+        <item>detectives/thriller|CINE</item>
+        <item>aventuras/western/bélico|CINE</item>
+        <item>ciencia-ficción/fantasía/terror|CINE</item>
+        <item>comedia|COMEDIA</item>
+        <item>telenovela/melodrama/folclórico|SERIES</item>
+        <item>romance|CINE</item>
+        <item>película/serie seria/clásica/religiosa/histórica|CINE</item>
+        <item>película/serie para adultos|CINE</item>
+        <item>noticias/asuntos de actualidad|NOTICIAS</item>
+        <item>noticias/información meteorológica|NOTICIAS</item>
+        <item>reportajes|NOTICIAS</item>
+        <item>documentales|NOTICIAS</item>
+        <item>tertulias/debates/entrevistas|NOTICIAS</item>
+        <item>concursos|ENTRETENIMIENTO</item>
+        <item>concursos de preguntas y respuestas|JUEGOS</item>
+        <item>variedades|ENTRETENIMIENTO</item>
+        <item>entrevistas con invitados|ENTRETENIMIENTO</item>
+        <item>deportes|DEPORTES</item>
+        <item>eventos especiales (Olimpiadas, Mundial, etc.)|DEPORTES</item>
+        <item>reportajes de deportes|DEPORTES</item>
+        <item>fútbol/fútbol americano|DEPORTES</item>
+        <item>tenis/squash|DEPORTES</item>
+        <item>deportes de equipo (excepto fútbol americano)|DEPORTES</item>
+        <item>atletismo|DEPORTES</item>
+        <item>automovilismo|DEPORTES</item>
+        <item>acuáticos|DEPORTES</item>
+        <item>de invierno|DEPORTES</item>
+        <item>hípica|DEPORTES</item>
+        <item>artes marciales|DEPORTES</item>
+        <item>programas para niños y jóvenes|FAMILIA_INFANTIL</item>
+        <item>programas para pre-escolares|FAMILIA_INFANTIL</item>
+        <item>programas de entretenimiento de 6 a 14 años|FAMILIA_INFANTIL</item>
+        <item>programas de entretenimiento de 10 a 16 años|FAMILIA_INFANTIL</item>
+        <item>programas educativos y escolares|FAMILIA_INFANTIL</item>
+        <item>dibujos animados/marionetas|FAMILIA_INFANTIL</item>
+        <item>música/ballet/baile|MÚSICA</item>
+        <item>rock/pop|MÚSICA</item>
+        <item>música seria/clásica|MÚSICA</item>
+        <item>música folk/tradicional|MÚSICA</item>
+        <item>jazz|MÚSICA</item>
+        <item>musicales/ópera|MÚSICA</item>
+        <item>ballet|ENTRETENIMIENTO</item>
+        <item>arte/cultura|ARTE</item>
+        <item>artes escénicas|ARTE</item>
+        <item>bellas artes|ARTE</item>
+        <item>religión|ESTILOS</item>
+        <item>cultura popular/arte tradicional|ESTILOS</item>
+        <item>literatura|ARTE</item>
+        <item>cine|ARTE</item>
+        <item>cine/vídeo experimental|ARTE</item>
+        <item>prensa y radiodifusión|ARTE</item>
+        <item>nuevos medios|ARTE</item>
+        <item>arte/reportajes culturales|ARTE</item>
+        <item>moda|ESTILOS</item>
+        <item>asuntos sociales/política/economía|OTROS</item>
+        <item>reportajes/documentales|NOTICIAS</item>
+        <item>asesoría económica/social|OTROS</item>
+        <item>gente extraordinaria|OTHERS</item>
+        <item>temas educativos/ciencia/hechos|EDUCACIÓN</item>
+        <item>naturaleza/animales/medio ambiente|VIDA_SILVESTRE</item>
+        <item>tecnología/ciencias naturales|TECNOLOGÍA_CIENCIA</item>
+        <item>medicina/fisiología/psicología|TECNOLOGÍA_CIENCIA</item>
+        <item>países extranjeros/expediciones|EDUCACIÓN</item>
+        <item>ciencias sociales/espirituales|TECNOLOGÍA_CIENCIA</item>
+        <item>educación avanzada|EDUCACIÓN</item>
+        <item>idiomas|EDUCACIÓN</item>
+        <item>ocio|ESTILOS</item>
+        <item>turismo/viajes|VIAJES</item>
+        <item>artesanía|ESTILOS</item>
+        <item>motor|ESTILOS</item>
+        <item>fitness y salud|ESTILOS</item>
+        <item>cocina|ESTILOS</item>
+        <item>anuncios/compras|COMPRAS</item>
+        <item>jardinería|ESTILOS</item>
+        <item>idioma original|OTROS</item>
+        <item>blanco y negro|OTROS</item>
+        <item>sin publicar|OTROS</item>
+        <item>retransmisiones en directo|OTROS</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB to canonical genre -->
+    <string-array name="genre_mapping_isdb">
+        <item>Animación|CINE</item>
+        <item>Béisbol|DEPORTES</item>
+        <item>Canciones para niños|MÚSICA</item>
+        <item>Clásica y ópera|MÚSICA</item>
+        <item>Variedades de cocina |ENTRETENIMIENTO</item>
+        <item>Programas de comedia|ENTRETENIMIENTO</item>
+        <item>Historias cómicas, entretenimiento|ENTRETENIMIENTO</item>
+        <item>Juegos de ordenador y TV|TECNOLOGÍA_CIENCIA</item>
+        <item>Conversación, idiomas|EDUCACIÓN</item>
+        <item>Danza, Ballet|ENTRETENIMIENTO</item>
+        <item>Debates y conferencias|NOTICIAS</item>
+        <item>Reportajes de economía y mercados|NOTICIAS</item>
+        <item>Problemas educacionales|EDUCACIÓN</item>
+        <item>Eventos|ENTRETENIMIENTO</item>
+        <item>Moda|ESTILOS</item>
+        <item>Música folk y músicas del mundo|MÚSICA</item>
+        <item>Juegos|JUEGOS</item>
+        <item>Jardinería, mascotas, artesanía|ESTILOS</item>
+        <item>Golf|DEPORTES</item>
+        <item>Programas de prensa rosa|ENTRETENIMIENTO</item>
+        <item>Gastronomía|ESTILOS</item>
+        <item>Salud y medicina|ESTILOS</item>
+        <item>Aficiones/Educación|ESTILOS</item>
+        <item>Carreras de caballos|DEPORTES</item>
+        <item>Animación japonesa|FAMILIA_INFANTIL</item>
+        <item>Música tradicional japonesa|MÚSICA</item>
+        <item>Ajedrez japonés (shogi) y "go"|JUEGOS</item>
+        <item>Series japonesas|SERIES</item>
+        <item>Cine japonés|CINE</item>
+        <item>Música rock y pop japonesa|MÚSICA</item>
+        <item>Jazz, fusión|MÚSICA</item>
+        <item>Estudiantes de secundaria|EDUCACIÓN</item>
+        <item>Kabuki, drama clásico|SERIES</item>
+        <item>Karaoke, concursos de canción amateur|MÚSICA</item>
+        <item>Educación permanente, títulos|EDUCACIÓN</item>
+        <item>Escolares, niños pequeños|EDUCACIÓN</item>
+        <item>Conciertos en directo|MÚSICA</item>
+        <item>Vida y hogar|ESTILOS</item>
+        <item>Programas locales|NOTICIAS</item>
+        <item>Juegos de Mah-jong y pinball|JUEGOS</item>
+        <item>Maratones, atletismo, natación|DEPORTES</item>
+        <item>Deportes acuáticos y de invierno|DEPORTES</item>
+        <item>Drama moderno y de estilo occidental|SERIES</item>
+        <item>Automovilismo|DEPORTES</item>
+        <item>Musicales|MÚSICA</item>
+        <item>Música, arte, arte industrial|ARTE</item>
+        <item>Variedades musicales|ENTRETENIMIENTO</item>
+        <item>Análisis de noticias|NOTICIAS</item>
+        <item>Olimpiadas, competiciones internacionales|DEPORTES</item>
+        <item>Otros deportes con balón|DEPORTES</item>
+        <item>Animación extranjera|FAMILIA_INFANTIL</item>
+        <item>Series extranjeras|SERIES</item>
+        <item>Reportajes internacionales|NOTICIAS</item>
+        <item>Cine extranjero|CINE</item>
+        <item>Música rock y pop extranjera|MÚSICA</item>
+        <item>Series históricas|SERIES</item>
+        <item>Política y asamblea nacional|NOTICIAS</item>
+        <item>Canciones populares y canciones populares japonesas (enka)|MÚSICA</item>
+        <item>Preguntas y respuestas|GAMING</item>
+        <item>Listas top|MÚSICA</item>
+        <item>Noticias generales|NOTICIAS</item>
+        <item>Compra por correo|COMPRAS</item>
+        <item>Fútbol|DEPORTES</item>
+        <item>Efectos especiales|FAMILIA_INFANTIL</item>
+        <item>Programas y documentales especiales|NOTICIAS</item>
+        <item>Reportajes especiales|NOTICIAS</item>
+        <item>Noticias deportivas|DEPORTES</item>
+        <item>Sumo, deportes de lucha|DEPORTES</item>
+        <item>Variedades de entrevistas|ENTRETENIMIENTO</item>
+        <item>Variedades de turismo|ENTRETENIMIENTO</item>
+        <item>Información sobre el tráfico|NOTICIAS</item>
+        <item>Excursiones, pesca, entretenimiento al aire libre |VIDA_SILVESTRE</item>
+        <item>Estudiantes universitarios, examenes|EDUCACIÓN</item>
+        <item>Información meteorológica|NOTICIAS</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB in Brazil to canonical genre -->
+    <string-array name="genre_mapping_isdb_br">
+        <item>Biografia|NOTICIAS</item>
+        <item>Culinária|ESTILOS</item>
+        <item>Documentário|NOTICIAS</item>
+        <item>Educativo|EDUCACIÓN</item>
+        <item>Erótico|CINE</item>
+        <item>Esporte|DEPORTES</item>
+        <item>Filme|CINE</item>
+        <item>Concursos|JUEGOS</item>
+        <item>Humorístico|COMEDIA</item>
+        <item>Infantil|FAMILIA_INFANTIL</item>
+        <item>Informação|ESTILOS</item>
+        <item>Jornalismo Investigativo|NOTICIAS</item>
+        <item>Minissérie|SERIES</item>
+        <item>Moda|ESTILOS</item>
+        <item>Musicales|MÚSICA</item>
+        <item>Premiação|ENTRETENIMIENTO</item>
+        <item>Programa de telerrealidad|ENTRETENIMIENTO</item>
+        <item>Religioso|ESTILOS</item>
+        <item>Reportagem|NOTICIAS</item>
+        <item>Rural|ESTILOS</item>
+        <item>Saúde|ESTILOs</item>
+        <item>Série|SERIES</item>
+        <item>Série/seriado|SERIES</item>
+        <item>Show|ENTRETENIMIENTO</item>
+        <item>Telejornais|NOTICIAS</item>
+        <item>Televendas|COMPRAS</item>
+        <item>Turismo|VIAJES</item>
+        <item>Variedade|ENTRETENIMIENTO</item>
+        <item>Auditorium|ENTRETENIMIENTO</item>
+        <item>Premios|ENTRETENIMIENTO</item>
+        <item>Biografías|NOTICIAS</item>
+        <item>Infantil|FAMILIA_INFANTIL</item>
+        <item>Infantil|FAMILIA_INFANTIL</item>
+        <item>Cómico|COMEDIA</item>
+        <item>Cocina|ESTILOS</item>
+        <item>País| ESTILOS</item>
+        <item>Debates/entrevistas|NOTICIAS</item>
+        <item>Debates|NOTICIAS</item>
+        <item>Documentales|NOTICIAS</item>
+        <item>Educación|EDUCACIÓN</item>
+        <item>Educativo|EDUCACIÓN</item>
+        <item>Servicios de ingeniería|TECNOLOGÍA_CIENCIA</item>
+        <item>Erótico|CINE</item>
+        <item>Moda|ESTILOS</item>
+        <item>Femenino|ENTRETENIMIENTO</item>
+        <item>Concursos|JUEGOS</item>
+        <item>Salud|ESTILOS</item>
+        <item>Humor|COMEDIA</item>
+        <item>Información|ESTILOS</item>
+        <item>Entrevistas|NOTICIAS</item>
+        <item>Periodismo|NOTICIAS</item>
+        <item>Producción de|ENTRETENIMIENTO</item>
+        <item>Miniseries|SERIES</item>
+        <item>Miniseries|SERIES</item>
+        <item>Cine (películas) |CINE</item>
+        <item>Cine|CINE</item>
+        <item>Musicales|ENTRETENIMIENTO</item>
+        <item>Noticias|NOTICIAS</item>
+        <item>Premios|COMPRAS</item>
+        <item>Sorteo|COMPRAS</item>
+        <item>Sorteo, ventas por televisión, premios|COMPRAS</item>
+        <item>Programa de telerrealidad|ENTRETENIMIENTO</item>
+        <item>Religión|ESTILOS</item>
+        <item>Informes|NOTICIAS</item>
+        <item>Informe|NOTICIAS</item>
+        <item>Rural|ESTILOS</item>
+        <item>Series|SERIES</item>
+        <item>Series / programas de TV |SERIES</item>
+        <item>Show|ENTRETENIMIENTO</item>
+        <item>Telenovela|SERIES</item>
+        <item>Deportes|DEPORTES</item>
+        <item>Deportes|DEPORTES</item>
+        <item>Televentas|COMPRAS</item>
+        <item>Ventas por televisión|COMPRAS</item>
+        <item>Turismo|VIAJES</item>
+        <item>Viajes|VIAJES</item>
+        <item>Noticias de TV|NOTICIAS</item>
+        <item>Variedades|ENTRETENIMIENTO</item>
+        <item>Variedades|ENTRETENIMIENTO</item>
+    </string-array>
+</resources>

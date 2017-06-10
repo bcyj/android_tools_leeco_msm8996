@@ -1,0 +1,32 @@
+#! /bin/sh
+# Copyright (c) 2013 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Qualcomm Technologies Confidential and Proprietary
+
+set -e
+
+# Specify QShrink4 database directory
+QS4DIR="-q /data/qshrink4"
+
+case "$1" in
+  start)
+    echo -n "Starting diag_qshrink4_daemon: "
+    start-stop-daemon -S -b -a /usr/bin/diag_qshrink4_daemon -- $QS4DIR
+    echo "done"
+    ;;
+  stop)
+    echo -n "Stopping diag_qshrink4_daemon: "
+    start-stop-daemon -K -n diag_qshrink4_daemon
+    echo "done"
+    ;;
+  restart)
+    $0 stop
+    $0 start
+    ;;
+  *)
+    echo "Usage diag_qshrink4_daemon { start | stop | restart }" >&2
+    exit 1
+    ;;
+esac
+
+exit 0

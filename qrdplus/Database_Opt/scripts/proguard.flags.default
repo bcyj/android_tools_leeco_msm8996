@@ -1,0 +1,20 @@
+#Mimer proguard options
+-keep class **MimerSQLReplace {
+    public *;
+} 
+
+-keepclassmembers class com.mimer.jdbc.Statement {
+    *** getSqlText();
+}
+-keepclassmembers class com.mimer.jdbc.Statement {
+    *** executeQuery();
+}
+
+-keepclassmembers class android.database.mimer.MimerCursorWindow {
+   public *;
+}
+
+-keepclassmembers class *ProgressIndicator {
+   public *;
+   ** *;
+}

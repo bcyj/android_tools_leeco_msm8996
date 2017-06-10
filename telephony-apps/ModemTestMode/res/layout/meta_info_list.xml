@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ Copyright (c) 2014-2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<com.qualcomm.qti.modemtestmode.MetaInfoCheckableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:padding="6dip" >
+
+    <!-- Item Name -->
+
+    <TextView
+        android:id="@+id/meta_info"
+        android:layout_width="wrap_content"
+        android:layout_height="26dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:textStyle="bold" />
+
+    <!-- This is the actual description -->
+
+    <TextView
+        android:id="@+id/mbn_source"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/meta_info"
+        android:singleLine="false" />
+
+    <com.qualcomm.qti.modemtestmode.MetaInfoCheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:focusable="false" />
+
+</com.qualcomm.qti.modemtestmode.MetaInfoCheckableLayout>

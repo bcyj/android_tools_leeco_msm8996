@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+   Qualcomm Technologies Proprietary and Confidential.
+-->
+
+<resources>
+    <string-array name="fallback_setting_items">
+        <item>Rediscar manualmente </item>
+        <item>Rediscar automáticamente</item>
+        <item>Não rediscar</item>
+    </string-array>
+
+    <!-- "Target" resources for the GlowPadView widget used for incoming calls;
+         see InCallTouchUi.showIncomingCallWidget() and incall_touch_ui.xml.  -->
+
+    <!-- For most incoming calls the GlowPadView widget provides 3 choices:
+         - Answer (drag right)
+         - Reject (drag left)
+         - Respond via SMS (drag up) -->
+    <array name="incoming_call_widget_3way_targets">
+        <item>@drawable/ic_lockscreen_answer</item>
+        <item>@drawable/ic_lockscreen_text</item>
+        <item>@drawable/ic_lockscreen_decline</item>
+        <item>@null</item>"
+    </array>
+    <array name="incoming_call_widget_3way_target_descriptions">
+        <item>@string/description_target_answer</item>
+        <item>@string/description_target_send_sms</item>
+        <item>@string/description_target_decline</item>
+        <item>@null</item>"
+    </array>
+    <array name="incoming_call_widget_3way_direction_descriptions">
+        <item>@string/description_direction_right</item>
+        <item>@string/description_direction_up</item>
+        <item>@string/description_direction_left</item>
+        <item>@null</item>
+    </array>
+
+    <!-- But in some cases "Respond via SMS" isn\'t available, so there are
+         only 2 choices:
+         - Answer (drag right)
+         - Reject (drag left) -->
+    <array name="incoming_call_widget_2way_targets">
+        <item>@drawable/ic_lockscreen_answer</item>
+        <item>@null</item>
+        <item>@drawable/ic_lockscreen_decline</item>
+        <item>@null</item>"
+    </array>
+    <array name="incoming_call_widget_2way_target_descriptions">
+        <item>@string/description_target_answer</item>
+        <item>@null</item>
+        <item>@string/description_target_decline</item>
+        <item>@null</item>"
+    </array>
+    <array name="incoming_call_widget_2way_direction_descriptions">
+        <item>@string/description_direction_right</item>
+        <item>@null</item>
+        <item>@string/description_direction_left</item>
+        <item>@null</item>
+    </array>
+
+    <!-- But in some cases where incoming call is VT there
+         are 6 choices:
+         - Answer with voice (drag right)
+         - Respond via SMS (drag up right)
+         - Reject (drag up left)
+         - Answer as VT (drag left)
+         - Answer as VT-TX (drag down left)
+         - Answer as VT-RX (drag down right)-->
+
+    <array name="incoming_call_widget_6way_ims_targets">
+        <item>@drawable/ic_lockscreen_answer</item>
+        <item>@drawable/ic_lockscreen_text</item>
+        <item>@drawable/ic_lockscreen_decline</item>
+        <item>@drawable/ic_lockscreen_answer_video</item>
+        <item>@drawable/ic_lockscreen_answer_tx_video</item>
+        <item>@drawable/ic_lockscreen_answer_rx_video</item>
+    </array>
+
+    <array name="incoming_call_widget_6way_ims_target_descriptions">
+        <item>@string/description_target_answer</item>
+        <item>@string/description_target_send_sms</item>
+        <item>@string/description_target_decline</item>
+        <item>@string/description_target_answer_video</item>
+        <item>@string/description_target_answer_tx_video</item>
+        <item>@string/description_target_answer_rx_video</item>
+    </array>
+
+    <array name="incoming_call_widget_6way_ims_direction_descriptions">
+        <item>@*android:string/description_direction_right</item>
+        <item>@string/description_direction_up_right</item>
+        <item>@string/description_direction_up_left</item>
+        <item>@*android:string/description_direction_left</item>
+        <item>@string/description_direction_down_left</item>
+        <item>@string/description_direction_down_right</item>
+    </array>
+
+</resources>

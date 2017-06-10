@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (c) 2014-2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.qti.modemtestmode"
+    android:sharedUserId="android.uid.system" >
+
+    <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name="com.qualcomm.qti.modemtestmode.MbnAppGlobals"
+        android:allowBackup="true"
+        android:icon="@drawable/mbn"
+        android:label="@string/app_name" >
+        <uses-library
+            android:name="com.qualcomm.qcrilhook"
+            android:required="true" />
+
+        <activity
+            android:name=".MbnFileActivate"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MbnTestValidate"
+            android:label="@string/mbn_validate"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.qualcomm.qti.modemtestmode.MbnTestValidate">
+        </activity>
+
+        <activity
+            android:name=".MbnFileLoad"
+            android:label="@string/mbn_file_load"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.qualcomm.qti.modemtestmode.MbnFileLoad" >
+        </activity>
+
+        <!-- Run in phone process to set MultiMode and Network mode and others -->
+        <service
+            android:name=".MbnTestService"
+            android:exported="true"
+            android:process="com.android.phone" >
+        </service>
+
+        <service android:name=".MbnSystemService"/>
+
+        <receiver android:name=".DefaultReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+
+                <data
+                    android:host="6266344"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="36266344"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="76266344"
+                    android:scheme="android_secret_code" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

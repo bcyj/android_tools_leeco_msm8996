@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2013 Mimer Information Technology AB, info@mimer.com -->
+<MimerSQLReplace>
+    <!-- When opening an SMS -->
+    <fromSQL id="GOTE411" statement="SELECT transport_type, _id, thread_id, address, body, date, date_sent, read, type, status, locked, error_code, sub, sub_cs, date, date_sent, read, m_type, msg_box, d_rpt, rr, err_type, locked, st FROM (SELECT DISTINCT date * 1000 AS normalized_date, 4 AS transport_type, _id, thread_id, address, body, date, date_sent, read, type, status, locked, error_code, NULL AS sub, NULL AS sub_cs, date, date_sent, read, NULL AS m_type, NULL AS msg_box, NULL AS d_rpt, NULL AS rr, NULL AS err_type, locked, NULL AS st FROM sms WHERE (thread_id = 111 AND (type != 4)) UNION SELECT DISTINCT date * 100 AS normalized_date, 5 AS transport_type, pdu._id, thread_id, NULL AS address, NULL AS body, date, date_sent, read, NULL AS type, NULL AS status, locked, NULL AS error_code, sub, sub_cs, date, date_sent, read, m_type, msg_box, d_rpt, rr, err_type, locked, st FROM pdu LEFT JOIN pending_msgs ON pdu._id = pending_msgs.msg_id WHERE (thread_id = 111 AND msg_box != 4 AND (msg_box != 5 AND (m_type = 6 OR m_type = 7 OR m_type = 8))) ORDER BY normalized_date ASC)">
+SELECT "transport_type",
+    "_id",
+    "thread_id",
+    "address",
+    "body",
+    "date",
+    "date_sent",
+    "read",
+    "type",
+    "status",
+    "locked",
+    "error_code",
+    "sub",
+    "sub_cs",
+    "date",
+    "date_sent",
+    "read",
+    "m_type",
+    "msg_box",
+    "d_rpt",
+    "rr",
+    "err_type",
+    "locked",
+    "st"
+FROM(SELECT DISTINCT "date" * ? AS "normalized_date",
+            ?                  AS "transport_type",
+            "_id",
+            "thread_id",
+            "address",
+            "body",
+            "date",
+            "date_sent",
+            "read",
+            "type",
+            "status",
+            "locked",
+            "error_code",
+            NULL AS "sub",
+            NULL AS "sub_cs",
+            "date",
+            "date_sent",
+            "read",
+            NULL AS "m_type",
+            NULL AS "msg_box",
+            NULL AS "d_rpt",
+            NULL AS "rr",
+            NULL AS "err_type",
+            "locked",
+            NULL AS "st"
+        FROM "sms"
+        WHERE(("thread_id" = ?)
+            AND(("type" &lt;&gt; ?)))
+        UNION
+        SELECT DISTINCT "date" * ? AS "normalized_date",
+            ?                      AS "transport_type",
+            "pdu"."_id",
+            "thread_id",
+            NULL AS "address",
+            NULL AS "body",
+            "date",
+            "date_sent",
+            "read",
+            NULL AS "type",
+            NULL AS "status",
+            "locked",
+            NULL AS "error_code",
+            "sub",
+            "sub_cs",
+            "date",
+            "date_sent",
+            "read",
+            "m_type",
+            "msg_box",
+            "d_rpt",
+            "rr",
+            "err_type",
+            "locked",
+            "st"
+        FROM "pdu"
+        LEFT JOIN "pending_msgs"
+        ON ("pdu"."_id" = "pending_msgs"."msg_id")
+        WHERE(("thread_id" = ?)
+            AND("msg_box" &lt;&gt; ?)
+            AND(("msg_box" &lt;&gt; ?)
+                AND(("m_type" = ?)
+                    OR ("m_type" = ?)
+                    OR ("m_type" = ?))))
+        ) ORDER BY "normalized_date"
+    </fromSQL>
+    
+    <!-- For Android 4.2 -->
+    <fromSQL id="GOTE412" statement="SELECT transport_type, _id, thread_id, address, body, date, date_sent, read, type, status, locked, error_code, sub, sub_cs, date, date_sent, read, m_type, msg_box, d_rpt, rr, err_type, locked, st, text_only FROM (SELECT DISTINCT date * 1000 AS normalized_date, 4 AS transport_type, _id, thread_id, address, body, date, date_sent, read, type, status, locked, error_code, NULL AS sub, NULL AS sub_cs, date, date_sent, read, NULL AS m_type, NULL AS msg_box, NULL AS d_rpt, NULL AS rr, NULL AS err_type, locked, NULL AS st, NULL AS text_only FROM sms WHERE (thread_id = 111 AND (type != 4)) UNION SELECT DISTINCT date * 100 AS normalized_date, 5 AS transport_type, pdu._id, thread_id, NULL AS address, NULL AS body, date, date_sent, read, NULL AS type, NULL AS status, locked, NULL AS error_code, sub, sub_cs, date, date_sent, read, m_type, msg_box, d_rpt, rr, err_type, locked, st, text_only FROM pdu LEFT JOIN pending_msgs ON pdu._id = pending_msgs.msg_id WHERE (thread_id = 111 AND msg_box != 5 AND (msg_box != 5 AND (m_type = 6 OR m_type = 7 OR m_type = 8))) ORDER BY normalized_date ASC)">
+SELECT "transport_type",
+    "_id",
+    "thread_id",
+    "address",
+    "body",
+    "date",
+    "date_sent",
+    "read",
+    "type",
+    "status",
+    "locked",
+    "error_code",
+    "sub",
+    "sub_cs",
+    "date",
+    "date_sent",
+    "read",
+    "m_type",
+    "msg_box",
+    "d_rpt",
+    "rr",
+    "err_type",
+    "locked",
+    "st",
+    "text_only"
+FROM(SELECT DISTINCT "date" * ? AS "normalized_date",
+            ?                   AS "transport_type",
+            "_id",
+            "thread_id",
+            "address",
+            "body",
+            "date",
+            "date_sent",
+            "read",
+            "type",
+            "status",
+            "locked",
+            "error_code",
+            NULL AS "sub",
+            NULL AS "sub_cs",
+            "date",
+            "date_sent",
+            "read",
+            NULL AS "m_type",
+            NULL AS "msg_box",
+            NULL AS "d_rpt",
+            NULL AS "rr",
+            NULL AS "err_type",
+            "locked",
+            NULL AS "st",
+            NULL AS "text_only"
+        FROM "sms"
+        WHERE(("thread_id" = ?)
+            AND(("type" &lt;&gt; ?)))
+        UNION
+        SELECT DISTINCT "date" * ? AS "normalized_date",
+            ?                      AS "transport_type",
+            "pdu"."_id",
+            "thread_id",
+            NULL AS "address",
+            NULL AS "body",
+            "date",
+            "date_sent",
+            "read",
+            NULL AS "type",
+            NULL AS "status",
+            "locked",
+            NULL AS "error_code",
+            "sub",
+            "sub_cs",
+            "date",
+            "date_sent",
+            "read",
+            "m_type",
+            "msg_box",
+            "d_rpt",
+            "rr",
+            "err_type",
+            "locked",
+            "st",
+            "text_only"
+        FROM "pdu"
+        LEFT JOIN "pending_msgs"
+        ON ("pdu"."_id" = "pending_msgs"."msg_id")
+        WHERE(("thread_id" = ?)
+            AND("msg_box" &lt;&gt; ?)
+            AND(("msg_box" &lt;&gt; ?)
+                AND(("m_type" = ?)
+                    OR ("m_type" = ?)
+                    OR ("m_type" = ?))))
+        ) ORDER BY "normalized_date"
+    </fromSQL>
+    <!-- For Android 4.2. We need to move the order by to the outer select -->
+    <fromSQL id="GOTE413" statement="SELECT _id, read FROM (SELECT DISTINCT date * 1000 AS normalized_date, _id, read FROM sms WHERE ((read=1 OR seen=0) AND thread_id = 123 AND (type != 11)) UNION SELECT DISTINCT date * 100 AS normalized_date, pdu._id, read FROM pdu LEFT JOIN pending_msgs ON pdu._id = pending_msgs.msg_id WHERE ((read=1 OR seen=0) AND thread_id = 111 AND msg_box != 2 AND (msg_box != 3 AND (m_type = 5 OR m_type = 6 OR m_type = 7))) ORDER BY normalized_date ASC)">
+	SELECT "_id", read
+	FROM(SELECT DISTINCT "date" * ? AS normalized_date,
+		    "_id",
+		    read
+		FROM sms
+		WHERE(((read = ?)
+		        OR (seen = ?))
+		    AND(thread_id = ?)
+		    AND((type &lt;&gt; ?)))
+		UNION
+		SELECT DISTINCT "date" * ? AS normalized_date,
+		    pdu."_id",
+		    read
+		FROM pdu
+		LEFT JOIN pending_msgs
+		ON (pdu."_id" = pending_msgs.msg_id)
+		WHERE(((read = ?)
+		        OR (seen = ?))
+		    AND(thread_id = ?)
+		    AND(msg_box &lt;&gt; ?)
+		    AND((msg_box &lt;&gt; ?)
+		        AND((m_type = ?)
+		            OR (m_type = ?)
+		            OR (m_type = ?)))))
+	ORDER BY normalized_date
+        </fromSQL>
+
+<!-- Error because of parenthesis in group by -->
+<fromSQL id="GOTE416" statement="SELECT address, COUNT(*) as total FROM sms WHERE (date&gt; ?) Group By (address) ORDER BY date DESC">
+select address,COUNT(*) as total from sms where ((date &gt; :1:i1)) group by address order by date desc
+</fromSQL>
+
+<!-- Android 4.3 -->
+<!-- Messaging search - type any search text and press search button 
+	similar one in generic, using MATCH instead of LIKE    -->
+<fromSQL id="GOTE417"
+statement = "SELECT sms._id AS _id,thread_id,address,body,date,date_sent,index_text,words._id FROM sms,words WHERE (index_text LIKE ? AND sms._id=words.source_id AND words.table_to_use=1) UNION SELECT pdu._id,thread_id,addr.address,part.text AS body,pdu.date,pdu.date_sent,index_text,words._id FROM pdu,part,addr,words WHERE ((part.mid=pdu._id) AND (addr.msg_id=pdu._id) AND (addr.type=151) AND (part.ct='text/plain') AND (index_text LIKE ?) AND (part._id = words.source_id) AND (words.table_to_use=2)) GROUP BY thread_id ORDER BY thread_id ASC, date DESC">
+	SELECT sms."_id" AS "_id",thread_id,address,body,date,date_sent,body, null
+	FROM sms
+	WHERE (SUBSTRING(:1 FROM CHARACTER_LENGTH(:1) FOR 1)='*'
+			AND body collate current_collation_2 LIKE SUBSTRING(:1 FROM 1 FOR CHARACTER_LENGTH(:1)-1)
+		OR body collate current_collation_2 LIKE :1 OR -1=:3)
+	UNION
+	SELECT pdu."_id",thread_id,addr.address,substring(part.text from 1 for 1000) AS body,pdu.date,pdu.date_sent,substring(part.text from 1 for 1000), null
+	FROM pdu,part,addr
+	WHERE (part.mid=pdu."_id") AND (addr.msg_id=pdu."_id") AND (addr.type=:4) AND (part.ct=:5) AND
+		(SUBSTRING(:2 FROM CHARACTER_LENGTH(:2) FOR 1)='*'
+			AND part.text collate current_collation_2 LIKE SUBSTRING(:2 FROM 1 FOR CHARACTER_LENGTH(:2)-1) 
+		OR part.text collate current_collation_2 LIKE :2 OR -1=:6)
+	GROUP BY thread_id
+	ORDER BY thread_id ASC, date DESC
+</fromSQL>
+
+<!-- End Android 4.3 -->
+
+<!-- Qualcomm Technologies JB replaceser -->
+
+<fromSQL id="QUTE411" statement="SELECT index_text as snippet FROM words WHERE index_text like ? ORDER BY snippet LIMIT ?;">
+SELECT body as snippet
+        FROM sms
+        WHERE body collate current_collation_2 LIKE :1 
+    UNION
+    SELECT substring(part.text from 1 for 70) as snippet
+        FROM part
+        WHERE part.ct = 'text/plain' and text collate current_collation_2 LIKE :1
+
+    ORDER BY snippet fetch :2
+</fromSQL>
+
+
+</MimerSQLReplace>

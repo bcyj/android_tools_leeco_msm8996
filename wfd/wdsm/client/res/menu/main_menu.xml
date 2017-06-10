@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2012 Qualcomm Technologies, Inc.  All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+ -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<item 
+        android:id="@+id/menu_advanced_settings"
+      	android:title="Advanced Settings"
+        android:icon="@android:drawable/ic_menu_search"
+        android:showAsAction="ifRoom|withText" /> -->
+    <item
+        android:id="@+id/menu_select_source_or_sink"
+        android:title="Source Or Sink"
+        android:icon="@android:drawable/ic_menu_set_as"
+        android:showAsAction="ifRoom" >
+        <menu>
+            <item
+                android:id="@+id/menu_select_source"
+                android:title="@string/menu_source_selected"
+                android:onClick="onOptionSelectSourceOrSink" />
+            <item
+                android:id="@+id/menu_select_sink"
+                android:title="@string/menu_sink"
+                android:onClick="onOptionSelectSourceOrSink" />
+        </menu>
+    </item>
+    <item 
+        android:id="@+id/menu_find"
+        android:title="Find"
+        android:icon="@android:drawable/ic_menu_search"
+        android:showAsAction="ifRoom|withText"
+        android:onClick="onOptionFind" />
+    <item 
+        android:id="@+id/menu_create_group"
+        android:title="@string/menu_create_group"
+        android:icon="@android:drawable/ic_menu_add"
+        android:showAsAction="never"
+        android:onClick="onOptionCreateGroup" />
+    <item 
+        android:id="@+id/menu_remove_group"
+        android:title="@string/menu_remove_group"
+        android:showAsAction="never"
+        android:onClick="onOptionRemoveGroup" />
+    <item 
+        android:id="@+id/menu_preferences"
+        android:title="@string/menu_preferences"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:showAsAction="never"
+        android:onClick="onOptionPreferences" />
+    <item 
+        android:id="@+id/menu_version"
+        android:title="@string/menu_version"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:showAsAction="never"
+        android:onClick="onOptionVersion" />    
+    <item 
+        android:id="@+id/menu_show_hide_wfd_operation_buttons"
+        android:title="@string/menu_show_hide_wfd_operation_buttons"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:showAsAction="never"
+        android:onClick="onOptionShowHideWfdOperationButtons" />
+</menu>

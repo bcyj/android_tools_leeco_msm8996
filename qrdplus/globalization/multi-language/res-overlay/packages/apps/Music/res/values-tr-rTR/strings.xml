@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution.
+ * Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- used in various places to indicate there is one song for a given artist or album -->
+    <string name="onesong">"1 şarkı"</string>
+    <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
+    <plurals name="Nsongs">
+        <item quantity="other">"<xliff:g id="COUNT">%d</xliff:g> şarkı"</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other">"<xliff:g id="COUNT_FOR_ARTIST">%2$d</xliff:g> / <xliff:g id="TOTAL_COUNT">%1$d</xliff:g> şarkı"</item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+        <!-- number of albums is one -->
+        <item quantity="one">"1 albüm"</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other">"<xliff:g id="COUNT">%d</xliff:g> albüm"</item>
+    </plurals>
+
+    <!--
+    This string is used as the format string in a String.format call,
+    and 5 additional arguments are available for printing:
+    1 - hours
+    2 - minutes
+    3 - minutes%60
+    4 - seconds
+    5 - second%60
+    -->
+    <skip/>
+    <!-- Do not translate. Duration format for duration < 1 hour -->
+    <string translatable="false" name="durationformatshort"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    <!-- Do not translate. Duration format for duration >= 1 hour -->
+    <string translatable="false" name="durationformatlong"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    <!-- Menu item that takes the user back to the top level screen of the music player -->
+    <string name="goto_start">"Kitaplık"</string>
+    <!-- Menu item that switches the music player in to party shuffle mode -->
+    <string name="party_shuffle">"Karışık albüm oluştur"</string>
+    <!-- Menu item that switches the music player out of party shuffle mode -->
+    <string name="party_shuffle_off">"Karışık albüm oluşturma kapalı"</string>
+    <!-- Menu item that clear all playlists mode -->
+    <string name="clear_all_playlists">Tüm şarkı listelerini temizle</string>
+    <!-- Menu item that deletes the currently selected item, which might be a single song, or a collection of songs.
+         The user will be prompted to confirm before deletion actually takes place -->
+    <string name="delete_item">"Sil"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in shuffle mode -->
+    <string name="shuffle_all">"Tümünü karıştır"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in list order -->
+    <string name="play_all">"Tümünü çal"</string>
+    <!-- Menu item to play song in music -->
+    <string name="open_in_music">Müzikte aç</string>
+    <!-- Menu item to share audio or video -->
+    <string name="share">"Paylaş"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc">"<xliff:g id="ARTIST">%s</xliff:g> adlı sanatçının tüm şarkıları SD karttan kalıcı olarak silinsin mi?"</string>
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc_nosdcard">"<xliff:g id="ARTIST">%s</xliff:g> adlı sanatçının bütün şarkıları USB bellekten kalıcı olarak silinsin mi?"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc">"\"<xliff:g id="ALBUM">%s</xliff:g>\" albümünün tamamı SD karttan kalıcı olarak silinsin mi?"</string>
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc_nosdcard">"<xliff:g id="ALBUM">%s</xliff:g> albümünün tamamı USB bellekten kalıcı olarak silinsin mi?"</string>
+
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc">"\"<xliff:g id="SONG">%s</xliff:g>\" şarkısını SD karttan kalıcı olarak silmek istiyor musunuz?"</string>
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc_nosdcard">"\"<xliff:g id="SONG">%s</xliff:g>\" şarkısını USB bellekten kalıcı olarak silmek istiyor musunuz?"</string>
+
+    <!-- Delete confirmation dialog, confirmation button text -->
+    <string name="delete_confirm_button_text">"Tamam"</string>
+    <!-- Toast confirming that song(s) was/were deleted. -->
+    <plurals name="NNNtracksdeleted">
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">"1 şarkı silindi."</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other">"<xliff:g id="SONGS_TO_DELETE">%d</xliff:g> şarkı silindi."</item>
+    </plurals>
+
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning">"SD kart taranıyor..."</string>
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning_nosdcard">"USB bellek taranıyor…"</string>
+
+    <!-- title of the "current playlist" screen when not in party shuffle mode -->
+    <string name="nowplaying_title">"Şimdi yürütülüyor"</string>
+    <!-- title of the "current playlist" screen when in party shuffle mode-->
+    <string name="partyshuffle_title">"Karışık albüm oluşturma"</string>
+    <!-- Artist screen title -->
+    <string name="artists_title">"Sanatçılar"</string>
+    <!-- Category label on Library screen -->
+    <string name="albums_menu">"Albümler"</string>
+    <!-- Albums screen title -->
+    <string name="albums_title">"Albümler"</string>
+    <!-- Category label on Library screen -->
+    <string name="tracks_menu">"Şarkılar"</string>
+    <!-- Songs screen title -->
+    <string name="tracks_title">"Şarkılar"</string>
+    <!-- Category label on Library screen -->
+    <string name="folder_menu">Klasör</string>
+    <!-- Folder screen title -->
+    <string name="folders_title">Klasör</string>
+    <!-- Category label on Library screen -->
+    <string name="playlists_menu">"Şarkı listeleri"</string>
+    <!-- Playlists screen title -->
+    <string name="playlists_title">"Şarkı listeleri"</string>
+    <!-- Videos screen title -->
+    <string name="videos_title">"Videolar"</string>
+    <!-- All media screen title -->
+    <string name="all_title">"Tüm medya"</string>
+    <!-- Category label on Library screen -->
+    <string name="browse_menu">"Sanatçılar"</string>
+    <!-- Library screen, menu item -->
+    <string name="search_title">"Ara"</string>
+    <!-- Title of screen when there are no songs, or if the SD card is busy -->
+    <string name="no_tracks_title">"Şarkı yok"</string>
+    <!-- Title of screen when there are no videos, or if the SD card is busy -->
+    <string name="no_videos_title">"Video yok"</string>
+    <!-- Title of screen when there are no playlists, or if the SD card is busy -->
+    <string name="no_playlists_title">"Şarkı listesi yok"</string>
+    <!-- Playlist context menu item to delete the selected playlist. -->
+    <string name="delete_playlist_menu">"Sil"</string>
+    <!-- Playlist context menu item to edit the selected playlist -->
+    <string name="edit_playlist_menu">"Düzenle"</string>
+    <!-- Playlist context menu item to rename the selected playlist-->
+    <string name="rename_playlist_menu">"Yeniden adlandır"</string>
+    <!-- Dialog box message shown when clearing all playlists-->
+    <string name="clear_all_playlists_message">Tüm parça listelerini temizlemek istiyor musunuz?</string>
+    <!-- Dialog box message shown when deleting a playlist-->
+    <string name="delete_playlist_message">\"<xliff:g id="name">%s</xliff:g>\" silinsin mi?</string>
+    <!-- Dialog box button -->
+    <string name="delete_playlist_button_ok">Tamam</string>
+    <string name="delete_playlist_button_cancel">İptal</string>
+    <!-- Transient popup message shown after deleting a playlist -->
+    <string name="playlist_deleted_message">"Şarkı listesi silindi."</string>
+    <!-- Transient popup message shown after renaming a playlist -->
+    <string name="playlist_renamed_message">"Şarkı listesi yeniden adlandırıldı."</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in list view -->
+    <string name="recentlyadded">"En son eklenen"</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in title bar of songs list -->
+    <string name="recentlyadded_title">"En son eklenen"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in list view -->
+    <string name="podcasts_listitem">"Podcast\'ler"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in title bar of songs list -->
+    <string name="podcasts_title">"Podcast\'ler"</string>
+    <!-- all recordings will show up in the media database in a playlist with thiis name -->
+    <string name="audio_db_playlist_name">"Kayıtlarım"</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title">"SD kart yok"</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title_nosdcard">"USB bellek yok"</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message">"Telefonunuza takılı SD kart yok."</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message_nosdcard">"Telefonunuzda USB bellek yok."</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title">"SD kart kullanılamıyor"</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title_nosdcard">"USB bellek kullanılamıyor"</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message">"SD kartınız meşgul."</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message_nosdcard">"USB belleğiniz meşgul."</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title">"SD kart hatası"</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title_nosdcard">"USB bellek hatası"</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message">"SD kartınızda bir hatayla karşılaşıldı."</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message_nosdcard">"USB belleğinizde bir hatayla karşılaşıldı."</string>
+    <!-- Default name of artist that doesn\'t have a name in the metadata -->
+    <string name="unknown_artist_name">"Bilinmeyen sanatçı"</string>
+    <!-- Default name of album that doesn\'t have a name in the metadata -->
+    <string name="unknown_album_name">"Bilinmeyen albüm"</string>
+    <!-- Default name of folder that doesn\'t have a path in the metadata -->
+    <string name="unknown_folder_name">Bilinmeyen yol</string>
+    <!-- Default name of folder that doesn\'t have a count in the metadata -->
+    <string name="unknown_folder_count">Bilinmeyen sayı</string>
+    <!-- Toast after turning shuffle on -->
+    <string name="shuffle_on_notif">"Karıştırma açık."</string>
+    <!-- Toast after turning shuffle off -->
+    <string name="shuffle_off_notif">"Karıştırma kapalı."</string>
+    <!-- Toast after turning repeat off -->
+    <string name="repeat_off_notif">"Tekrarlama kapalı."</string>
+    <!-- Toast after turning single repeat on -->
+    <string name="repeat_current_notif">"Geçerli şarkı tekrarlanıyor."</string>
+    <!-- Toast after turning repeat all on -->
+    <string name="repeat_all_notif">"Tüm şarkılar tekrarlanıyor."</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu">"Telefon zil sesi olarak kullan"</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short">"Zil sesi olarak kullan"</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set">"<xliff:g id="NAME">%s</xliff:g> telefon zil sesi olarak ayarlandı."</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu_1">Yuva 1 zil sesi olarak kullan</string>
+    <string name="ringtone_menu_2">Yuva 2 zil sesi olarak kullan</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short_1">Zil sesi 1 olarak kullan</string>
+    <string name="ringtone_menu_short_2">Zil sesi 2 olarak kullan</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_1">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" yuva 1 zil sesi olarak ayarlandı.</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_2">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" yuva 2 zil sesi olarak ayarlandı.</string>
+    <!-- Context menu item -->
+    <string name="play_selection">"Çal"</string>
+    <!-- Context menu item -->
+    <string name="add_to_playlist">"Şarkı listesine ekle"</string>
+    <!-- Context menu item -->
+    <string name="queue">"Geçerli şarkı listesi"</string>
+    <!-- Context menu item -->
+    <string name="new_playlist">"Yeni"</string>
+    <!-- Template for newly created playlist name -->
+    <string name="new_playlist_name_template">"Yeni şarkı listesi <xliff:g id="NUMBER">%d</xliff:g>"</string>
+    <!-- Toasts after adding song(s) to playlists -->
+    <plurals name="NNNtrackstoplaylist">
+        <!-- message shown when one song was added -->
+        <item quantity="one">"Şarkı listesine 1 şarkı eklendi."</item>
+        <!-- message shown when zero or more than one song was added -->
+        <item quantity="other">"Şarkı listesine <xliff:g id="NUMBER">%d</xliff:g> şarkı eklendi."</item>
+    </plurals>
+    <!-- Toast after selecting an empty playlist -->
+    <string name="emptyplaylist">"Seçilen şarkı listesi boş."</string>
+    <!-- Button name when saving a playlist -->
+    <string name="create_playlist_create_text">"Kaydet"</string>
+    <!-- Button name when saving a playlist and the new playlist will overwrite an existing one -->
+    <string name="create_playlist_overwrite_text">"Üzerine yaz"</string>
+    <!-- Dialog box title -->
+    <string name="service_start_error_title">"Yürütme sorunu"</string>
+    <!-- Dialog box message -->
+    <string name="service_start_error_msg">"Şarkı çalınamadı."</string>
+    <!-- Dialog box button -->
+    <string name="service_start_error_button">"Tamam"</string>
+    <!-- Time span edit options that appear when editing system playlist "Recently added" -->
+    <!-- Used to indicate the number of weeks the "recently added" playlist covers in a selector widget -->
+    <string-array name="weeklist">
+        <item>"1 hafta"</item>
+        <item>"2 hafta"</item>
+        <item>"3 hafta"</item>
+        <item>"4 hafta"</item>
+        <item>"5 hafta"</item>
+        <item>"6 hafta"</item>
+        <item>"7 hafta"</item>
+        <item>"8 hafta"</item>
+        <item>"9 hafta"</item>
+        <item>"10 hafta"</item>
+        <item>"11 hafta"</item>
+        <item>"12 hafta"</item>
+    </string-array>
+    <!-- Button name in time span picker -->
+    <string name="weekpicker_set">"Bitti"</string>
+    <!-- Title of time span picker -->
+    <string name="weekpicker_title">"Saati ayarlayın"</string>
+    <!-- Do not translate. Background color for currently dragged item in playlist edit mode. -->
+    <color name="dragndrop_background">#e0103010</color>
+    <!-- Do not translate. Background color for albums in the artists list view. -->
+    <color name="expanding_child_background">#ff404040</color>
+
+    <!-- menu item to save the current list as a new playlist -->
+    <string name="save_as_playlist">"Şarkı listesi olarak kaydet"</string>
+    <!-- menu item to clear the current playlist -->
+    <string name="clear_playlist">"Şarkı listesini temizle"</string>
+
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicbrowserlabel">"Müzik"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicshortcutlabel">"Müzik şarkı listesi"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediaplaybacklabel">"Müzik"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="videobrowserlabel">"Videolar"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediapickerlabel">"Müzik"</string>
+
+    <!-- Shown as a transient message whenever a file fails to play -->
+    <string name="playback_failed">"Müzik çalar bu ses dosyası türünü desteklemiyor."</string>
+    <!-- Shown as a transient message whenever a file fails to open -->
+    <string name="open_failed">Maalesef dosya açılamıyor.</string>
+
+    <!-- Text for the "cancel" button in the "delete" and "create playlist" confirmation dialogs -->
+    <string name="cancel">"İptal"</string>
+
+    <!-- context menu item to remove the selected item from the playlist -->
+    <string name="remove_from_playlist">"Şarkı listesinden kaldır"</string>
+
+    <!-- shown when connecting to a music stream, before it starts playing -->
+    <string name="streamloadingtext">"Bağlanılıyor: <xliff:g id="HOST">%s</xliff:g>"</string>
+
+    <!-- title of contextual music search menu -->
+    <string name="mediasearch">"Şunu kullanarak <xliff:g id="TERM">%s</xliff:g> için arama yapın:"</string>
+
+    <!-- Shown in the title bar while the list of artists is being retrieved in the background -->
+    <string name="working_artists">"Sanatçılar..."</string>
+    <!-- Shown in the title bar while the list of albums is being retrieved in the background -->
+    <string name="working_albums">"Albümler..."</string>
+    <!-- Shown in the title bar while the list of songs is being retrieved in the background -->
+    <string name="working_songs">"Şarkılar..."</string>
+    <!-- Shown in the title bar while the list of folders is being retrieved in the background -->
+    <string name="working_folders">Klasörler\u2026</string>
+    <!-- Shown in the title bar while the list of playlists is being retrieved in the background -->
+    <string name="working_playlists">"Şarkı listeleri..."</string>
+
+    <!-- Shown in the music picker while loading the music database. -->
+    <string name="loading">"Yükleniyor..."</string>
+    <!-- Menu in music picker to sort the list by track/song name. -->
+    <string name="sort_by_track">"Parçalar"</string>
+    <!-- Menu in music picker to sort the list by album name. -->
+    <string name="sort_by_album">"Albümler"</string>
+    <!-- Menu in music picker to sort the list by artist name. -->
+    <string name="sort_by_artist">"Sanatçılar"</string>
+    <!--  Title of the music picker activity. -->
+    <string name="music_picker_title">"Müzik parçası seçin"</string>
+
+    <!-- The string used to describe Music as a searchable item within system search settings. -->
+    <string name="search_settings_description">"Sanatçı, albüm ve parçalar"</string>
+
+    <!-- Shown in the search box as a hint -->
+    <string name="search_hint">"Müzik Ara"</string>
+    <string name="search_hint_video">Video Ara</string>
+
+    <!--The fast scroll thumb will show one character from this string depending on the position in the list -->
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+
+    <!-- Text shown on widget when first loaded -->
+    <string name="widget_initial_text">"Müzik seçmek için dokunun."</string>
+
+    <!-- Menu text for the item controlling the audio effects panel [CHAR LIMIT=15] -->
+    <string name="effectspanel">"Ses efektleri"</string>
+
+    <string name="duplicate_playlist_name_alert">\"<xliff:g id="name">%s</xliff:g>\". adında bir şarkı listesi zaten var. Lütfen farklı bir ad girin.</string>
+    <string name="same_playlist_name_alert">\"<xliff:g id="name">%s</xliff:g>\" çalma listesinin adı değiştirilmedi. Lütfen farklı bir ad seçin.</string>
+    <string name="button_ok">Tamam</string>
+    <string name="list_empty">Oynatma listesinde müzik bulunmuyor.</string>
+
+    <!-- Shown when video is played after disable Gallery app from Settings -->
+    <string name="enable_gallery_app">Video oynatılamıyor, lütfen Ayarlar\'dan Galeri uygulamasını etkinleştirin.</string>
+    <string name="close_music">"Son"</string>
+    <string name="delete_video_item_message">\"<xliff:g id="name">%s</xliff:g>\" silinsin mi?</string>
+    <string name="video_deleted_message">Video dosyası silindi.</string>
+
+    <!-- Menu item that takes the user link to net to see more music -->
+    <string name="more_music">Daha Fazla Müzik</string>
+    <!-- Menu item that takes the user link to net to see more video -->
+    <string name="more_video">Daha Fazla Video</string>
+    <!--gesture control playback status-->
+    <string name="music_gesture_play">"Sesi çal/duraklat"</string>
+    <string name="music_gesture_prev">"Önceki parçayı çal"</string>
+    <string name="music_gesture_next">"Sonraki parçayı çal"</string>
+
+    <!-- DRM Related Strings -->
+    <string name="no_permission_for_drm">"Üzgünüz, Drm dosyası paylaşılamaz"</string>
+    <string name="drm_license_info">Drm lisans bilgisi</string>
+    <string name="drm_ringtone_error">CD/SD dosyaları zil sesi olarak ayarlanamıyor</string>
+
+</resources>

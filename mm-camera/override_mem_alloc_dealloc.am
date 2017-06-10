@@ -1,0 +1,19 @@
+
+%_override_mem_alloc_dealloc.lo: %.lo
+	@echo "Overriding memory allocation and deallocation functions of $*.lo's object files..."
+	@test ! -e $*.o       || (echo " Overriding malloc, calloc, realloc, and free in '$*.o'"; \
+		$(OBJCOPY) --redefine-sym malloc=__override_malloc   \
+			   --redefine-sym calloc=__override_calloc   \
+			   --redefine-sym realloc=__override_realloc \
+			   --redefine-sym free=__override_free       \
+			   $*.o);
+	@test ! -e .libs/$*.o || (echo " Overriding malloc, calloc, realloc, and free in '.libs/$*.o'"; \
+		$(OBJCOPY) --redefine-sym malloc=__override_malloc   \
+			   --redefine-sym calloc=__override_calloc   \
+			   --redefine-sym realloc=__override_realloc \
+			   --redefine-sym free=__override_free       \
+			   .libs/$*.o);
+	@touch $@
+
+override_mem_alloc_dealloc = $(append _override_mem_alloc_dealloc.lo,$1)
+

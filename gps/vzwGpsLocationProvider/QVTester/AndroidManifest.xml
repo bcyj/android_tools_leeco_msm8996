@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!---/******************************************************************************
+* @file    AndrooidManifest.xml
+* @brief   test app for VZW GPS Location Provider
+*  Coppyright (C) 2010 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************-->
+
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.qualcomm.location.qvtester"
+      android:versionCode="4"
+      android:versionName="4.0"
+      >
+           
+    <uses-permission android:name="com.qualcomm.permission.IZAT"/>
+    
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+      
+    <application android:icon="@drawable/icon" 
+        android:label="@string/app_name" 
+        android:debuggable="true">
+    
+        <uses-library android:name="com.qualcomm.location.vzw_library" />
+    
+        <activity android:name=".InputCriteria"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".Tracking" android:label="@string/app_name">
+        	<intent-filter>
+        		<action android:name="com.qualcomm.location.qvtester.TRACKING"/>
+        		<category android:name="android.intent.category.DEFAULT"/>
+        	</intent-filter>
+        </activity>
+        
+        <activity android:label="Select Aiding Data" android:name="AidingDataActivity">
+        	<intent-filter>
+        		<action android:name="com.qualcomm.location.qvtester.Aiding"/>
+        		<category android:name="android.intent.category.DEFAULT"/>
+        	</intent-filter>
+        </activity>
+        
+        <activity android:label="Select Aiding Data" android:name="DeleteAidingDataActivity">
+        	<intent-filter>
+        		<action android:name="com.qualcomm.location.qvtester.Aiding"/>
+        		<category android:name="android.intent.category.DEFAULT"/>
+        	</intent-filter>
+        </activity>
+    </application>
+    <uses-sdk android:minSdkVersion="4" />
+    <uses-sdk android:targetSdkVersion="9" />
+
+</manifest> 
+

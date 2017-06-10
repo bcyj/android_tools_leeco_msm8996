@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!--
+  ~ Copyright (C) 2012 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Application name used in Settings/Apps. Default label for activities
+         that don\'t specify a label. -->
+    <string name="applicationLabel">"ഡയലർ"</string>
+
+    <!-- Title for the activity that dials the phone.  This is the name
+         used in the Launcher icon. -->
+    <string name="launcherActivityLabel">ഫോൺ</string>
+
+    <!-- The description text for the dialer tab.
+
+    Note: AccessibilityServices use this attribute to announce what the view represents.
+    This is especially valuable for views without textual representation like ImageView.
+
+    [CHAR LIMIT=NONE] -->
+    <string name="dialerIconLabel">ഫോൺ</string>
+
+    <!-- The description text for the call log tab.
+
+    Note: AccessibilityServices use this attribute to announce what the view represents.
+    This is especially valuable for views without textual representation like ImageView.
+
+    [CHAR LIMIT=NONE] -->
+    <string name="recentCallsIconLabel">"കോൾ ലോഗ്"</string>
+
+    <!-- Menu item used to send an SMS or MMS message to a phone number  -->
+    <string name="menu_sendTextMessage">"വാചകസന്ദേശമയയ്‌ക്കുക"</string>
+
+    <!-- Menu item used to call a contact from the call log -->
+    <string name="recentCalls_callNumber">"<xliff:g id="NAME">%s</xliff:g> എന്നതിൽ വിളിക്കുക"</string>
+
+    <!-- Menu item used to copy a number from the call log to the dialer so it can be edited before calling it -->
+    <string name="recentCalls_editNumberBeforeCall">കോളിന് മുമ്പ് നമ്പർ എഡിറ്റ് ചെയ്യുക</string>
+
+    <!-- Menu item used to add a number from the call log to contacts -->
+    <string name="recentCalls_addToContact">"കോൺടാക്റ്റുകളിൽ ചേർക്കുക"</string>
+
+    <!-- Menu item used to remove a single call from the call log -->
+    <string name="recentCalls_removeFromRecentList">"കോൾ ലോഗിൽ നിന്ന് നീക്കംചെയ്യുക"</string>
+
+    <!-- Menu item used to remove all calls from the call log -->
+    <string name="recentCalls_deleteAll">"കോൾ ലോഗ് മായ്‌ക്കുക"</string>
+
+    <!-- Menu item used to delete a voicemail. [CHAR LIMIT=30] -->
+    <string name="recentCalls_trashVoicemail">"വോയ്‌സ്മെയിൽ ഇല്ലാതാക്കുക"</string>
+
+    <!-- Menu item used to share a voicemail. [CHAR LIMIT=30] -->
+    <string name="recentCalls_shareVoicemail">"വോയ്‌സ്‌മെയിൽ പങ്കിടുക"</string>
+
+    <!-- Text displayed when the call log is empty. -->
+    <string name="recentCalls_empty">"നിങ്ങളുടെ കോൾ ലോഗ് ശൂന്യമാണ്."</string>
+
+    <!-- Title of the confirmation dialog for clearing the call log. [CHAR LIMIT=37]  -->
+    <string name="clearCallLogConfirmation_title">"കോൾ ലോഗ് മായ്‌ക്കണോ?"</string>
+
+    <!-- Confirmation dialog for clearing the call log. [CHAR LIMIT=NONE]  -->
+    <string name="clearCallLogConfirmation">"നിങ്ങളുടെ എല്ലാ കോൾ റെക്കോർഡുകളും ഇല്ലാതാക്കും."</string>
+
+    <!-- Title of the "Clearing call log" progress-dialog [CHAR LIMIT=35] -->
+    <string name="clearCallLogProgress_title">"കോൾ ലോഗ് മായ്‌ക്കുന്നു..."</string>
+
+    <!-- Title of the notification of new voicemails. [CHAR LIMIT=30] -->
+    <plurals name="notification_voicemail_title">
+        <item quantity="one">വോയ്‌സ് മെയിൽ</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> വോയ്‌സ്മെയിലുകൾ"</item>
+    </plurals>
+
+    <!-- Used in the notification of a new voicemail for the action to play the voicemail. -->
+    <string name="notification_action_voicemail_play">"പ്ലേ ചെയ്യുക"</string>
+
+    <!-- Used to build a list of names or phone numbers, to indicate the callers who left
+         voicemails.
+         The first argument may be one or more callers, the most recent ones.
+         The second argument is an additional callers.
+         This string is used to build a list of callers.
+
+         [CHAR LIMIT=10]
+     -->
+    <string name="notification_voicemail_callers_list"><xliff:g id="newer_callers">%1$s</xliff:g>,
+        <xliff:g id="older_caller">%2$s</xliff:g>
+    </string>
+
+    <!-- Text used in the ticker to notify the user of the latest voicemail. [CHAR LIMIT=30] -->
+    <string name="notification_new_voicemail_ticker">"<xliff:g id="CALLER">%1$s</xliff:g> എന്നയാളിൽ നിന്നുള്ള പുതിയ വോയ്‌സ്‌മെയിൽ"</string>
+
+    <!-- Message to show when there is an error playing back the voicemail. [CHAR LIMIT=40] -->
+    <string name="voicemail_playback_error">"വോയ്‌സ്‌മെയിൽ പ്ലേ ചെയ്യാനായില്ല."</string>
+
+    <!-- Message to display before we have prepared the media player, i.e. before we know duration. [CHAR LIMIT=40] -->
+    <string name="voicemail_buffering">"ബഫർ ചെയ്യുന്നു…"</string>
+
+    <!-- Message to display whilst we are waiting for the content to be fetched. [CHAR LIMIT=40] -->
+    <string name="voicemail_fetching_content">"വോയ്‌സ്‌മെയിൽ ലഭ്യമാക്കുന്നു…"</string>
+
+    <!-- Message to display if we fail to get content within a suitable time period. [CHAR LIMIT=40] -->
+    <string name="voicemail_fetching_timout">"വോയ്‌സ്‌മെയിൽ ലഭ്യമാക്കാനായില്ല."</string>
+
+    <!-- The header to show that call log is only showing voicemail calls. [CHAR LIMIT=40] -->
+    <string name="call_log_voicemail_header">"വോയ്‌സ്മെയിൽ ഉള്ള കോളുകൾ മാത്രം"</string>
+
+    <!-- The header to show that call log is only showing incoming calls. [CHAR LIMIT=40] -->
+    <string name="call_log_incoming_header">"ഇൻകമിംഗ് കോളുകൾ മാത്രം"</string>
+
+    <!-- The header to show that call log is only showing outgoing calls. [CHAR LIMIT=40] -->
+    <string name="call_log_outgoing_header">"ഔട്ട്‌ഗോയിംഗ് കോളുകൾ മാത്രം"</string>
+
+    <!-- The header to show that call log is only showing missed calls. [CHAR LIMIT=40] -->
+    <string name="call_log_missed_header">"മിസ്‌ഡ് കോളുകൾ മാത്രം"</string>
+
+    <!-- The header to show that call log is only showing missed calls. [CHAR LIMIT=40] -->
+    <string name="call_log_blacklist_header">ബ്ലാക്ക്‌ലിസ്റ്റ് കോളുകൾ മാത്രം</string>
+
+    <!--  Voicemail status message shown at the top of call log to notify the user that no new
+    voicemails are currently available. This can happen when both notification as well as data
+    connection to the voicemail server is lost. [CHAR LIMIT=64] -->
+    <string name="voicemail_status_voicemail_not_available">"വോയ്‌സ്‌മെയിൽ സെർവറിൽ കണക്റ്റുചെയ്യാനായില്ല."</string>
+    <!--  Voicemail status message shown at the top of call log to notify the user that there is no
+      data connection to the voicemail server, but there are new voicemails waiting on the server.
+      [CHAR LIMIT=64] -->
+    <string name="voicemail_status_messages_waiting">"വോയ്‌സ്‌മെയിൽ സെർവറിൽ കണക്റ്റുചെയ്യാനായില്ല. പുതിയ വോയ്‌സ്‌മെയിലുകൾ കാത്തിരിക്കുന്നു."</string>
+    <!--  Voicemail status message shown at the top of call log to invite the user to configure
+    visual voicemail. [CHAR LIMIT=64] -->
+    <string name="voicemail_status_configure_voicemail">"നിങ്ങളുടെ വോയ്‌സ്‌മെയിൽ സജ്ജീകരിക്കുക."</string>
+    <!--  Voicemail status message shown at the top of call details screen to notify the user that
+    the audio of this voicemail is not available. [CHAR LIMIT=64] -->
+    <string name="voicemail_status_audio_not_available">"ഓഡിയോ ലഭ്യമല്ല."</string>
+
+    <!--  User action prompt shown next to a voicemail status message to let the user configure
+    visual voicemail. [CHAR LIMIT=20] -->
+    <string name="voicemail_status_action_configure">"സജ്ജമാക്കുക"</string>
+    <!--  User action prompt shown next to a voicemail status message to let the user call voicemail
+    server directly to listen to the voicemails. [CHAR LIMIT=20] -->
+    <string name="voicemail_status_action_call_server">"വോയ്‌സ്‌മെയിൽ വിളിക്കുക"</string>
+
+    <!-- The slowest voicemail playback speed. [CHAR LIMIT=30] -->
+    <string name="voicemail_speed_slowest">"വളരെ കുറഞ്ഞ വേഗത"</string>
+    <!-- Slower than normal voicemail playback speed. [CHAR LIMIT=30] -->
+    <string name="voicemail_speed_slower">"കുറഞ്ഞ വേഗത"</string>
+    <!--  Normal voicemail playback speed. [CHAR LIMIT=30] -->
+    <string name="voicemail_speed_normal">"സാധാരണ വേഗത"</string>
+    <!--  Faster than normal pvoicemail playback speed. [CHAR LIMIT=30] -->
+    <string name="voicemail_speed_faster">"കൂടിയ വേഗത"</string>
+    <!--  Fastest voicemail playback speed. [CHAR LIMIT=30] -->
+    <string name="voicemail_speed_fastest">"വളരെ കൂടിയ വേഗത"</string>
+
+    <!-- The counter for calls in a group and the date of the latest call as shown in the call log [CHAR LIMIT=15] -->
+    <string name="call_log_item_count_and_date">(<xliff:g id="count">%1$d</xliff:g>)
+        <xliff:g id="date">%2$s</xliff:g>
+    </string>
+
+    <!-- Title for the sms disambiguation dialog -->
+    <string name="sms_disambig_title">"നമ്പർ തിരഞ്ഞെടുക്കുക"</string>
+
+    <!-- Title for the call disambiguation dialog -->
+    <string name="call_disambig_title">"നമ്പർ തിരഞ്ഞെടുക്കുക"</string>
+
+    <!-- Message next to disamgiguation dialog check box -->
+    <string name="make_primary">"ഈ തിരഞ്ഞെടുക്കൽ ഓർക്കുക"</string>
+
+    <!-- String describing the image on ImageButton one
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_one">"ഒന്ന്"</string>
+
+    <!-- String describing the image on ImageButton two
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_two">"രണ്ട്"</string>
+
+    <!-- String describing the image on ImageButton three
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_three">"മൂന്ന്"</string>
+
+    <!-- String describing the image on ImageButton four
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_four">"നാല്"</string>
+
+    <!-- String describing the image on ImageButton five
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_five">"അഞ്ച്"</string>
+
+    <!-- String describing the image on ImageButton six
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_six">"ആറ്"</string>
+
+    <!-- String describing the image on ImageButton seven
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_seven">"ഏഴ്"</string>
+
+    <!-- String describing the image on ImageButton eight
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_eight">"എട്ട്"</string>
+
+    <!-- String describing the image on ImageButton nine
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_nine">"ഒമ്പത്"</string>
+
+    <!-- String describing the image on ImageButton star
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_star">"സ്റ്റാർ"</string>
+
+    <!-- String describing the image on ImageButton zero
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_zero">"പൂജ്യം"</string>
+
+    <!-- String describing the image on ImageButton pound
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_pound">"പൗണ്ട്"</string>
+
+    <!-- String describing the image on ImageButton plus
+
+         Used by AccessibilityService to announce the purpose of the button.
+    -->
+
+    <!-- String describing the Search ImageButton
+
+         Used by AccessibilityService to announce the purpose of the button.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_search_button">"തിരയുക"</string>
+
+    <!-- String describing the Dial ImageButton
+
+         Used by AccessibilityService to announce the purpose of the button.
+    -->
+    <string name="description_dial_button">"ഡയൽ ചെയ്യുക"</string>
+
+    <!-- String describing the digits text box containing the number to dial.
+
+         Used by AccessibilityService to announce the purpose of the view.
+    -->
+    <string name="description_digits_edittext">"ഡയൽ ചെയ്യാനുള്ള നമ്പർ"</string>
+
+    <!-- String describing the button in the voicemail playback to start/stop playback.
+
+         Used by AccessibilityService to announce the purpose of the view.
+    -->
+    <string name="description_playback_start_stop">"പ്ലേബാക്ക് പ്ലേ ചെയ്യുക അല്ലെങ്കിൽ നിർത്തുക"</string>
+
+    <!-- String describing the button in the voicemail playback to switch on/off speakerphone.
+
+         Used by AccessibilityService to announce the purpose of the view.
+    -->
+    <string name="description_playback_speakerphone">"സ്‌പീക്കർ ഫോൺ ഓണാക്കുക അല്ലെങ്കിൽ ഓഫാക്കുക"</string>
+
+    <!-- String describing the seekbar in the voicemail playback to seek playback position.
+
+         Used by AccessibilityService to announce the purpose of the view.
+    -->
+    <string name="description_playback_seek">"പ്ലേബാക്ക് സ്ഥാനം തിരയുക"</string>
+
+    <!-- String describing the button in the voicemail playback to decrease playback rate.
+
+         Used by AccessibilityService to announce the purpose of the view.
+    -->
+    <string name="description_rate_decrease">"പ്ലേബാക്ക് നിരക്ക് കുറയ്‌ക്കുക"</string>
+
+    <!-- String describing the button in the voicemail playback to increase playback rate.
+
+         Used by AccessibilityService to announce the purpose of the view.
+    -->
+    <string name="description_rate_increase">"പ്ലേബാക്ക് നിരക്ക് വർദ്ധിപ്പിക്കുക"</string>
+
+    <!-- Content description for the fake action menu button that brings up the call history
+         activity -->
+    <string name="action_menu_call_history_description">കോൾ ചരിത്രം</string>
+
+    <!-- Content description for the fake action menu overflow button.
+         This should be same as the description for the real action menu
+         overflow button available in ActionBar.
+         [CHAR LIMIT=NONE] -->
+    <string name="action_menu_overflow_description" msgid="2295659037509008453">"കൂടുതല്‍ ഓപ്‌ഷനുകള്‍"</string>
+
+    <!-- Content description for the button that displays the dialpad
+         [CHAR LIMIT=NONE] -->
+    <string name="action_menu_dialpad_button">"ഡയൽ പാഡ്"</string>
+
+    <!-- Menu item to copy something [CHAR_LIMIT=10] -->
+    <string name="menu_copy">"പകര്‍ത്തുക"</string>
+
+    <!-- Menu item used to show only outgoing in the call log. [CHAR LIMIT=30] -->
+    <string name="menu_show_outgoing_only">"ഔട്ട്‌ഗോയിംഗ് മാത്രം കാണിക്കുക"</string>
+
+    <!-- Menu item used to show only incoming in the call log. [CHAR LIMIT=30] -->
+    <string name="menu_show_incoming_only">"ഇൻ‌കമിംഗ് മാത്രം കാണിക്കുക"</string>
+
+    <!-- Menu item used to show only missed in the call log. [CHAR LIMIT=30] -->
+    <string name="menu_show_missed_only">"മിസ്‌ഡ് മാത്രം കാണിക്കുക"</string>
+
+    <!-- Menu item used to show only voicemails in the call log. [CHAR LIMIT=30] -->
+    <string name="menu_show_voicemails_only">"വോയ്‌സ്‌മെയിലുകൾ മാത്രം കാണിക്കുക"</string>
+
+    <!-- Menu item used to show all calls in the call log. [CHAR LIMIT=30] -->
+    <string name="menu_show_all_calls">"എല്ലാ കോളുകളും കാണിക്കുക"</string>
+
+    <!-- Menu items for dialpad options as part of Pause and Wait ftr [CHAR LIMIT=30] -->
+    <string name="video_call">"വീഡിയോ കോള്‍"</string>
+    <string name="menu_add_to_4g_conference_call">4G കോൺഫറൻസ് കോളിൽ ചേർക്കുക</string>
+    <string name="menu_4g_conference_call">4G കോൺഫറൻസ് കോൾ</string>
+    <string name="add_contact">"കോൺടാക്‌റ്റുകളിൽ ചേർക്കുക"</string>
+    <string name="add_2sec_pause">"2 സെക്കൻഡ് താൽക്കാലികമായി നിർത്തൽ ചേർക്കുക"</string>
+    <string name="add_wait">"കാത്തിരിക്കൽ ചേർക്കുക"</string>
+
+    <!-- Menu item to select account used to make phone calls [CHAR LIMIT=30] -->
+    <string name="menu_select_account">"അക്കൗണ്ട് തിരഞ്ഞെടുക്കുക"</string>
+
+    <!-- Label for the dialer app setting page [CHAR LIMIT=30]-->
+    <string name="dialer_settings_label">"ക്രമീകരണങ്ങൾ"</string>
+
+    <!-- Menu item to create a new contact [CHAR LIMIT=30] -->
+    <string name="menu_newContact">പുതിയ കോൺടാക്റ്റ്</string>
+
+    <!-- Menu item to display all contacts [CHAR LIMIT=30] -->
+    <string name="menu_allContacts">"എല്ലാ കോൺടാക്റ്റുകളും"</string>
+
+    <!-- Title bar for call detail screen -->
+    <string name="callDetailTitle">"കോൾ വിശദാംശങ്ങൾ"</string>
+
+    <!-- Toast for call detail screen when couldn\'t read the requested details -->
+    <string name="toast_call_detail_error">"അഭ്യർത്ഥിച്ച കോളിനായി വിശദാംശങ്ങൾ വായിക്കാനായില്ല."</string>
+
+    <!-- Item label: jump to the in-call DTMF dialpad.
+         (Part of a list of options shown in the dialer when another call
+         is already in progress.) -->
+    <string name="dialer_useDtmfDialpad">"ടച്ച് ടോൺ കീപാഡ് ഉപയോഗിക്കുക"</string>
+
+    <!-- Item label: jump to the in-call UI.
+         (Part of a list of options shown in the dialer when another call
+         is already in progress.) -->
+    <string name="dialer_returnToInCallScreen">"വിളിച്ചുകൊണ്ടിരിക്കുന്ന കോളിലേക്ക് മടങ്ങുക"</string>
+
+    <!-- Item label: use the Dialer\'s dialpad to add another call.
+         (Part of a list of options shown in the dialer when another call
+         is already in progress.) -->
+    <string name="dialer_addAnotherCall">"കോൾ ചേർക്കുക"</string>
+
+    <!-- Title for incoming call details screen -->
+    <string name="type_incoming">"ഇന്‍കമിംഗ് കോള്‍"</string>
+
+    <!-- Title for outgoing call details screen -->
+    <string name="type_outgoing">ഔട്ട്‌ഗോയിംഗ് കോൾ</string>
+
+    <!-- Title for missed call details screen -->
+    <string name="type_missed">"മിസ്‌ഡ് കോൾ"</string>
+
+    <!-- Title for incoming video call in call details screen [CHAR LIMIT=60] -->
+    <string name="type_incoming_video">"ഇൻകമിംഗ് വീഡിയോ കോൾ"</string>
+
+    <!-- Title for outgoing video call in call details screen [CHAR LIMIT=60] -->
+    <string name="type_outgoing_video">"ഔട്ട്ഗോയിംഗ് വീഡിയോ കോൾ"</string>
+
+    <!-- Title for missed video call in call details screen [CHAR LIMIT=60] -->
+    <string name="type_missed_video">"വീഡിയോ കോൾ നഷ്‌ടമായി"</string>
+
+    <!-- Title for incoming 4G voice call in call details screen [CHAR LIMIT=60] -->
+    <string name="type_incoming_volte">ഇന്‍‌കമിംഗ് 4G ശബ്ദ കോള്‍</string>
+
+    <!-- Title for outgoing 4G voice call in call details screen [CHAR LIMIT=60] -->
+    <string name="type_outgoing_volte">ഔട്ട്ഗോയിംഗ് 4G ശബ്ദ കോള്‍</string>
+
+    <!-- Title for missed 4G voice call in call details screen [CHAR LIMIT=60] -->
+    <string name="type_missed_volte">മിസ്ഡ് 4G ശബ്ദ കോള്‍</string>
+
+    <!-- Title for voicemail details screen -->
+    <string name="type_voicemail">വോയ്‌സ് മെയിൽ</string>
+
+    <!-- Description for incoming calls going to voice mail vs. not -->
+    <string name="actionIncomingCall">"ഇൻകമിംഗ് കോളുകൾ"</string>
+
+    <!-- String describing the icon in the call log used to play a voicemail.
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_call_log_play_button">"വോയ്‌സ്‌മെയിൽ പ്ലേ ചെയ്യുക"</string>
+
+    <!-- String describing the button to view the contact for the current number.
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_view_contact">"<xliff:g id="NAME">%1$s</xliff:g> എന്ന കോൺടാക്റ്റ് കാണുക"</string>
+
+    <!-- String describing the button to call a number or contact.
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_call">"<xliff:g id="NAME">%1$s</xliff:g> എന്നതിൽ വിളിക്കുക"</string>
+
+    <!-- String describing the button to access the contact details for a name or number.
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_contact_details">"<xliff:g id="NAMEORNUMBER">%1$s</xliff:g> എന്നതിന്റെ കോൺ‌ടാക്റ്റ് വിശദാംശങ്ങൾ"</string>
+
+    <!-- String indicating a call log entry has an associated voicemail.
+
+    Note: AccessibilityServices use this attribute to announce what the view represents.
+          This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_new_voicemail">"പുതിയ വോയ്‌സ്‌മെയിൽ."</string>
+
+    <!-- String indicating the number of calls to/from a caller in the call log.
+
+    Note: AccessibilityServices use this attribute to announce what the view represents.
+          This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_num_calls">"<xliff:g id="NUMBEROFCALLS">%1$s</xliff:g> കോളുകൾ."</string>
+
+    <!-- String indicating a call log entry had video capabilities.
+
+    Note: AccessibilityServices use this attribute to announce what the view represents.
+          This is especially valuable for views without textual representation like ImageView.
+          [CHAR LIMIT=NONE]
+    -->
+    <string name="description_video_call">"വീഡിയോ കോൾ."</string>
+
+    <!-- String describing the button to SMS a number or contact.
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+              [CHAR LIMIT=NONE]
+    -->
+    <string name="description_send_text_message">"<xliff:g id="NAME">%1$s</xliff:g> എന്നതിലേക്ക് വാചക സന്ദേശം അയയ്‌ക്കുക"</string>
+
+    <!-- String describing the icon in the call log used to represent an unheard voicemail left to
+         the user.
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+              [CHAR LIMIT=NONE]
+    -->
+    <string name="description_call_log_unheard_voicemail">"കേൾക്കാത്ത വോയ്‌സ്‌മെയിൽ"</string>
+
+    <!-- String describing the icon used to start a voice search -->
+    <string name="description_start_voice_search">"ശബ്ദ തിരയൽ ആരംഭിക്കുക"</string>
+
+    <!-- Menu item used to call a contact, containing the number of the contact to call -->
+    <string name="menu_callNumber">"<xliff:g id="NUMBER">%s</xliff:g> എന്നതിൽ വിളിക്കുക"</string>
+
+    <!-- String used to display calls from unknown numbers in the call log -->
+    <string name="unknown">"അജ്ഞാതം"</string>
+
+    <!-- String used for displaying calls to the voicemail number in the call log -->
+    <string name="voicemail">വോയ്‌സ് മെയിൽ</string>
+
+    <!-- String used to display calls from private numbers in the call log -->
+    <string name="private_num">"സ്വകാര്യ നമ്പർ"</string>
+
+    <!-- String used to display calls from pay phone in the call log -->
+    <string name="payphone">"പണം നൽകി ഉപയോഗിക്കുന്ന ഫോൺ"</string>
+
+    <!-- Displayed in the text entry box in the dialer when in landscape mode to guide the user
+         to dial using the physical keyboard -->
+    <string name="dialerKeyboardHintText">"ഡയൽ ചെയ്യാൽ കീബോർഡ് ഉപയോഗിക്കുക"</string>
+
+    <!-- Hint text displayed in the "digits" field above the dialer\'s
+         dialpad, if there\'s already a call in progress.  (This hint
+         reminds the user that the dialer will add a new call, as opposed
+         to sending DTMF tones over the current call.)
+         [CHAR LIMIT=40] -->
+    <string name="dialerDialpadHintText">"ഒരു കോൾ ചേർക്കാൻ ഡയൽ ചെയ്യുക"</string>
+
+    <!-- A nicely formatted call duration displayed when viewing call details. For example "42 mins 28 secs" -->
+    <string name="callDetailsDurationFormat">"<xliff:g id="MINUTES">%s</xliff:g> മിനിറ്റ് <xliff:g id="SECONDS">%s</xliff:g> സെക്കൻഡ്"</string>
+
+    <string name="call_duration_active">സജീവ ദൈർഘ്യം:</string>
+    <string name="call_duration_call_out">കോൾ ദൈർഘ്യം:</string>
+
+    <!-- Dialog message which is shown when the user tries to make a phone call
+         to prohibited phone numbers [CHAR LIMIT=NONE] -->
+    <string name="dialog_phone_call_prohibited_message" msgid="4313552620858880999">"കോൾ ചെയ്യാനായില്ല"</string>
+
+    <!-- Dialog message which is shown when the user tries to check voicemail
+         while the system isn\'t ready for the access. [CHAR LIMIT=NONE] -->
+    <string name="dialog_voicemail_not_ready_message">"വോയ്‌സ്‌മെയിൽ സജ്ജീകരിക്കുന്നതിന്, മെനു &gt; ക്രമീകരണങ്ങൾ എന്നതിലേക്ക് പോകുക."</string>
+
+    <string name="is_set_voicemail_number">ശബ്ദമെയിൽ നമ്പർ ഒന്നും സജ്ജീകരിച്ചിട്ടില്ല, ഇപ്പോൾ ക്രമീകരിക്കട്ടെ?</string>
+
+    <!-- Dialog message which is shown when the user tries to check voicemail
+         while the system is in airplane mode. The user cannot access to
+         voicemail service in Airplane mode. [CHAR LIMI=NONE] -->
+    <string name="dialog_voicemail_airplane_mode_message">"വോയ്‌സ്‌മെയിൽ വിളിക്കാൻ ആദ്യം ഫ്ലൈറ്റ് മോഡ് ഓഫാക്കുക."</string>
+
+    <!-- Message that appears in the favorites tab of the Phone app when the contact list has not fully loaded yet (below the favorite and frequent contacts) [CHAR LIMIT=20] -->
+    <string name="contact_list_loading">"ലോഡുചെയ്യുന്നു..."</string>
+
+    <!-- The title of a dialog that displays the IMEI of the phone -->
+    <string name="imei">"IMEI"</string>
+
+    <!-- The title of a dialog that displays the MEID of the CDMA phone -->
+    <string name="meid">"MEID"</string>
+
+    <!-- Dialog text displayed when loading a phone number from the SIM card for speed dial -->
+    <string name="simContacts_emptyLoading">"സിം കാർഡിൽ നിന്നും ലോഡുചെയ്യുന്നു…"</string>
+
+    <!-- Dialog title displayed when loading a phone number from the SIM card for speed dial -->
+    <string name="simContacts_title">"സിം കാർഡ് കോൺടാക്റ്റുകൾ"</string>
+
+    <!-- Message displayed when there is no application available to handle the add contact menu option. [CHAR LIMIT=NONE] -->
+    <string name="add_contact_not_available">"ഈ സവിശേഷത ഉപയോഗിക്കാൻ കോൺടാക്‌റ്റുകളുടെ അപ്ലിക്കേഷൻ വീണ്ടും പ്രവർത്തനക്ഷമമാക്കുക."</string>
+
+    <!-- Message displayed when there is no application available to handle voice search. [CHAR LIMIT=NONE] -->
+    <string name="voice_search_not_available">"ശബ്ദ തിരയൽ ലഭ്യമല്ല."</string>
+
+    <!-- Message displayed when the Phone application has been disabled and a phone call cannot
+         be made. [CHAR LIMIT=NONE] -->
+    <string name="call_not_available">"ഫോൺ അപ്ലിക്കേഷൻ പ്രവർത്തനരഹിതമാക്കിയിരിക്കുന്നതിനാൽ ഫോൺ കോൾ ചെയ്യാനാകില്ല."</string>
+
+    <!-- Message displayed when there is no application available to handle a particular action.
+         [CHAR LIMIT=NONE] -->
+    <string name="activity_not_available">"തിരഞ്ഞെടുത്ത പ്രവർത്തനം കൈകാര്യം ചെയ്യാൻ ഇൻസ്‌റ്റാളുചെയ്‌ത പ്രവർത്തനമൊന്നും ലഭ്യമല്ല."</string>
+
+    <!-- Hint displayed in dialer search box when there is no query that is currently typed.
+         [CHAR LIMIT=30] -->
+    <string name="dialer_hint_find_contact">"ഒരു പേരോ ഫോൺ നമ്പറോ ടൈപ്പുചെയ്യുക"</string>
+
+    <!-- String resource for the font-family to use for the call log activity\'s title
+         Do not translate. -->
+    <string name="call_log_activity_title_font_family">sans-serif-light</string>
+
+    <!-- String resource for the font-family to use for the full call history footer
+         Do not translate. -->
+    <string name="view_full_call_history_font_family">sans-serif</string>
+
+    <!-- Text displayed when the list of missed calls is empty -->
+    <string name="recentMissed_empty">"നിങ്ങൾക്ക് അടുത്തിടെയുള്ള മിസ്‌ഡ് കോളുകളൊന്നുമില്ല."</string>
+
+    <!-- Text displayed when the list of voicemails is empty -->
+    <string name="recentVoicemails_empty">"നിങ്ങൾക്ക് അടുത്തിടെയുള്ള വോയ്‌സ്‌മെയിലുകളൊന്നുമില്ല."</string>
+
+    <!--  Menu option to show favorite contacts only -->
+    <string name="show_favorites_only">"പ്രിയപ്പെട്ടവ മാത്രം കാണിക്കുക"</string>
+
+    <!--  Title of activity that displays a list of all calls -->
+    <string name="call_log_activity_title">"ചരിത്രം"</string>
+
+    <!-- Title for the call log tab containing the list of all voicemails and calls
+         [CHAR LIMIT=30] -->
+    <string name="call_log_all_title">"എല്ലാം"</string>
+
+    <!-- Title for the call log tab containing the list of all missed calls only
+         [CHAR LIMIT=30] -->
+    <string name="call_log_missed_title">"മിസ്‌ഡ്"</string>
+
+    <!-- Title for the call log tab containing the list of all voicemail calls only
+         [CHAR LIMIT=30] -->
+    <string name="call_log_voicemail_title">വോയ്‌സ് മെയിൽ</string>
+
+    <string name="select_account_dialog_title">"അക്കൗണ്ട് തിരഞ്ഞെടുക്കുക"</string>
+
+    <string name="tab_speed_dial">"സ്‌പീഡ് ഡയൽ"</string>
+
+    <string name="tab_recents">"പുതിയവ"</string>
+
+    <string name="tab_all_contacts">കോൺടാക്റ്റുകൾ</string>
+
+    <!--  Text displayed when user swipes out a favorite contact -->
+    <string name="favorite_hidden">"പ്രിയപ്പെട്ടവയിൽ നിന്നും നീക്കംചെയ്‌തു"</string>
+    <!--  Text displayed for the undo button to undo removing a favorite contact -->
+    <string name="favorite_hidden_undo">"പഴയപടിയാക്കുക"</string>
+
+    <!-- Shortcut item used to call a number directly from search -->
+    <string name="search_shortcut_call_number">"<xliff:g id="NUMBER">%s</xliff:g> എന്നതിൽ വിളിക്കുക"</string>
+
+    <!-- Shortcut item used to add a number directly from search -->
+    <string name="search_shortcut_add_to_contacts">"കോൺടാക്റ്റുകളിൽ ചേർക്കുക"</string>
+
+    <!-- Shortcut item used to make a video call directly from search. -->
+    <string name="search_shortcut_make_video_call">"വീഡിയോ കോൾ ചെയ്യുക"</string>
+
+    <!-- Title for the recent calls footer that brings users to the full call history when clicked -->
+    <string name="recents_footer_text">"മുഴുവൻ കോൾ ചരിത്രവും കാണുക"</string>
+
+    <!-- Number of missed calls shown on call card [CHAR LIMIT=40] -->
+    <string name="num_missed_calls">"<xliff:g id="NUMBER">%s</xliff:g> പുതിയ മിസ്‌ഡ് കോളുകൾ"</string>
+
+    <!-- Shown when there are no speed dial favorites. -->
+    <string name="speed_dial_empty">"നിങ്ങൾ പതിവായി വിളിക്കുന്ന \nനമ്പറുകൾക്കുള്ള\n വൺ ടച്ച് ഡയലിംഗാണ് സ്‌പീഡ് ഡയൽ."</string>
+
+    <!-- Shown when there are no contacts in the all contacts list. -->
+    <string name="all_contacts_empty">"നിങ്ങൾക്ക് കോൺടാക്‌റ്റുകളൊന്നുമില്ല."</string>
+
+    <!-- Shows up as a tooltip to provide a hint to the user that the profile pic in a contact
+         card can be tapped to bring up a list of all numbers, or long pressed to start reordering
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="contact_tooltip">"എല്ലാ നമ്പറുകളും കാണാൻ ചിത്രം ടാപ്പുചെയ്യുക അല്ലെങ്കിൽ പുനഃക്രമീകരിക്കാൻ അമർത്തിപ്പിടിക്കുക"</string>
+
+    <!-- Content description for dismiss button on badge. [CHAR LIMIT=NONE] -->
+    <string name="description_dismiss">"നിരസിക്കുക"</string>
+
+    <!-- Remove button that shows up when contact is long-pressed. [CHAR LIMIT=NONE] -->
+    <string name="remove_contact">"നീക്കംചെയ്യുക"</string>
+
+    <!-- Button text for the "all contacts" button displayed on the main dialer screen above the
+         list of favorite phone numbers.  Navigates the user to the "All Contacts" list.
+         This text represents the same action as the text in string "menu_allContacts".
+         [CHAR LIMIT=21] -->
+    <string name="favorites_menu_all_contacts">"എല്ലാ കോൺ‌ടാക്റ്റുകളും"</string>
+
+    <!-- Button text for the "call back" button displayed underneath an entry in the call log.
+         Tapping causes a call to be placed to the caller represented by the call log entry.
+         [CHAR LIMIT=30] -->
+    <string name="call_log_action_call_back">"തിരിച്ചുവിളിക്കുക"</string>
+
+    <!-- Button text for the "video call" button displayed underneath an entry in the call log.
+         Tapping causes a video call to be placed to the caller represented by the call log entry.
+         [CHAR LIMIT=30] -->
+    <string name="call_log_action_video_call">"വീഡിയോ കോൾ"</string>
+
+    <!-- Button text for the "LISTEN" button displayed underneath an entry in the call log.
+         Tapping navigates the user to the call details screen where the user can listen to the
+         voicemail represented by the call log entry.
+         [CHAR LIMIT=30] -->
+    <string name="call_log_action_voicemail">"കേൾക്കുക"</string>
+
+    <!-- Button text for the "DETAILS" button displayed underneath an entry in the call log.
+         Tapping navigates the user to the call details screen where the user can view details for
+         the call log entry.
+         [CHAR LIMIT=30] -->
+    <string name="call_log_action_details">"വിശദാംശങ്ങൾ"</string>
+
+    <!-- String describing an incoming missed call entry in the call log.
+         Note: AccessibilityServices uses this attribute to announce what the view represents.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_incoming_missed_call">"<xliff:g id="NAMEORNUMBER">%1$s</xliff:g> എന്നയാളിൽ നിന്നുള്ള മിസ്‌ഡ് കോൾ, <xliff:g id="TYPEORLOCATION">%2$s</xliff:g>, <xliff:g id="TIMEOFCALL">%3$s</xliff:g>."</string>
+
+    <!-- String describing an incoming answered call entry in the call log.
+         Note: AccessibilityServices uses this attribute to announce what the view represents.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_incoming_answered_call">"<xliff:g id="NAMEORNUMBER">%1$s</xliff:g> എന്നയാളിൽ നിന്നുള്ള കോളിന് മറുപടി നൽകി, <xliff:g id="TYPEORLOCATION">%2$s</xliff:g>, <xliff:g id="TIMEOFCALL">%3$s</xliff:g>."</string>
+
+    <!-- String describing an outgoing call entry in the call log.
+         Note: AccessibilityServices uses this attribute to announce what the view represents.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_outgoing_call">"<xliff:g id="NAMEORNUMBER">%1$s</xliff:g> എന്നയാൾക്കുള്ള കോൾ, <xliff:g id="TYPEORLOCATION">%2$s</xliff:g>, <xliff:g id="TIMEOFCALL">%3$s</xliff:g>."</string>
+
+    <!-- String describing the "call back" action for an entry in the call log.  The call back
+         action triggers a return call to the named user.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_call_back_action">"<xliff:g id="NAMEORNUMBER">%1$s</xliff:g> എന്നയാളെ തിരിച്ചുവിളിക്കുക"</string>
+
+    <!-- String describing the "video call" action for an entry in the call log.  The video call
+         action triggers a return video call to the named person/number.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_video_call_action">"<xliff:g id="NAMEORNUMBER">%1$s</xliff:g> എന്നയാൾക്കുള്ള വീഡിയോ കോൾ."</string>
+
+    <!-- String describing the "listen" action for an entry in the call log.  The listen
+         action is shown for call log entries representing a voicemail message and this button
+         triggers playing back the voicemail.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_voicemail_action">"<xliff:g id="NAMEORNUMBER">%1$s</xliff:g> എന്നയാളിൽ നിന്നുള്ള വോയ്‌സ്മെയിൽ കേൾക്കുക"</string>
+
+    <!-- String describing the "details" action for an entry in the call log.  The details action
+         displays the call details screen for an entry in the call log.  This shows the calls to
+         and from the specified number associated with the call log entry.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_details_action">"<xliff:g id="NAMEORNUMBER">%1$s</xliff:g> എന്നയാളുടെ കോൾ വിശദാംശങ്ങൾ"</string>
+
+    <!-- Toast message which appears when a call log entry is deleted.
+         [CHAR LIMIT=NONE] -->
+    <string name="toast_entry_removed">"കോൾ ലോഗ് എൻട്രി ഇല്ലാതാക്കി."</string>
+
+    <!-- Toast message which appears when a call log contact is reported.
+         [CHAR LIMIT=NONE] -->
+    <string name="toast_caller_id_reported">"കോൺടാക്‌റ്റ് റിപ്പോർട്ടുചെയ്തു."</string>
+
+    <!-- Button text for the "report" button displayed underneath an entry in the call log.
+         Tapping causes the call log entry to be reported to Google as a bad id.
+         [CHAR LIMIT=30] -->
+    <string name="call_log_action_report">"റിപ്പോർട്ടുചെയ്യുക"</string>
+
+    <!-- String used as a header in the call log above calls which occurred today.
+         [CHAR LIMIT=65] -->
+    <string name="call_log_header_today">"ഇന്ന്"</string>
+
+    <!-- String used as a header in the call log above calls which occurred yesterday.
+         [CHAR LIMIT=65] -->
+    <string name="call_log_header_yesterday">"ഇന്നലെ"</string>
+
+    <!-- String used as a header in the call log above calls which occurred two days or more ago.
+         [CHAR LIMIT=65] -->
+    <string name="call_log_header_other">"പഴയത്"</string>
+
+    <!-- String a header on the call details screen.  Appears above the list calls to or from a
+         particular number.
+         [CHAR LIMIT=65] -->
+    <string name="call_detail_list_header">"കോൾ ലിസ്‌റ്റ്"</string>
+
+    <!-- String describing the "speaker on" button on the playback control used to listen to a
+         voicemail message.  When speaker is on, playback of the voicemail will occur through the
+         phone speaker.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="voicemail_speaker_on">"സ്‌പീക്കർ ഓണാക്കുക."</string>
+
+    <!-- String describing the "speaker off" button on the playback control used to listen to a
+         voicemail message.  When speaker is off, playback of the voicemail will occur through the
+         phone earpiece.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="voicemail_speaker_off">"സ്‌പീക്കർ ഓഫാക്കുക."</string>
+
+    <!-- String describing the "play faster" button in the playback control used to listen to a
+         voicemail message.  Speeds up playback of the voicemail message.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="voicemail_play_faster">"വേഗത്തിൽ പ്ലേചെയ്യുക."</string>
+
+    <!-- String describing the "play slower" button in the playback control used to listen to a
+         voicemail message.  Slows down playback of the voicemail message.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="voicemail_play_slower">"കുറഞ്ഞവേഗതയിൽ പ്ലേചെയ്യുക."</string>
+
+    <!-- String describing the "play/pause" button in the playback control used to listen to a
+         voicemail message.  Starts playback or pauses ongoing playback.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="voicemail_play_start_pause">"പ്ലേബാക്ക് ആരംഭിക്കുകയോ താൽക്കാലികമായി നിർത്തുകയോ ചെയ്യുക."</string>
+
+    <!-- Delimeter used between each item in a textual list; for example "Alpha, Beta".
+         [CHAR LIMIT=3] -->
+    <string name="list_delimeter">", "</string>
+
+    <!-- Dialer settings related strings-->
+
+    <!-- Label for the general dialer settings section [CHAR LIMIT=30]-->
+    <string name="general_settings_label">"പൊതു ക്രമീകരണങ്ങൾ"</string>
+
+    <!-- Label for the general dialer settings section description [CHAR LIMIT=80]-->
+    <string name="general_settings_description">"കോൺടാക്‌റ്റ് ഡിസ്‌പ്ലേ, ശബ്‌ദങ്ങൾ, ദ്രുത പ്രതികരണങ്ങൾ എന്നിവ"</string>
+
+    <!-- Title for "Contact display options" category, which is shown above options which
+         manipulate how contacts are shown. [CHAR LIMIT=40] -->
+    <string name="contact_display_options_category_title">"കോൺടാക്‌റ്റ് ഡിസ്പ്ലേ ഓപ്ഷനുകൾ"</string>
+
+    <!-- Title for the category "sounds", which is shown above sounds and vibration related
+         settings. [CHAR LIMIT=30] -->
+    <string name="sounds_and_vibrate_category_title">"ശബ്‌ദങ്ങളും വൈബ്രേറ്റുചെയ്യലും"</string>
+
+    <!-- Setting option name to pick ringtone (a list dialog comes up). [CHAR LIMIT=30] -->
+    <string name="ringtone_title">ഫോൺ റിംഗ്‌ടോൺ</string>
+
+    <!-- Setting option name to enable or disable vibration when ringing the phone.
+         [CHAR LIMIT=30] -->
+    <string name="vibrate_on_ring_title">"കോളുകൾക്കായും വൈബ്രേറ്റ് ചെയ്യും"</string>
+
+    <!-- Setting option name to enable or disable DTMF tone sound [CHAR LIMIT=30] -->
+    <string name="dtmf_tone_enable_title">"ഡയൽപാഡ് ടോണുകൾ"</string>
+
+    <!-- Label for section of general call settings where miscellaneous settings are listed. -->
+    <string name="other_settings_title">"മറ്റുള്ളവ"</string>
+
+    <!-- Title of settings screen for managing the "Respond via SMS" feature. [CHAR LIMIT=30] -->
+    <string name="respond_via_sms_setting_title">"ദ്രുത പ്രതികരണങ്ങൾ"</string>
+
+    <!-- Label for the call settings section [CHAR LIMIT=30]-->
+    <string name="call_settings_label">"കോൾ ക്രമീകരണങ്ങൾ"</string>
+
+    <!-- Label for the call settings section description [CHAR LIMIT=80]-->
+    <string name="call_settings_description">"വോയ്‌സ്മെയിൽ, കോൾ വെയ്‌റ്റിംഗ് എന്നിവയും മറ്റുള്ളവയും"</string>
+
+    <string name="device_id">ഉപകരണ ഐഡന്റിഫയർ</string>
+
+    <string name="call_log_show_all_slots">എല്ലാ SIMs</string>
+    <string name="call_log_all_calls_header">കോളുകൾ എല്ലാം</string>
+    <string name="calllog_search_hint">"കോൾ ലോഗ് തിരയുക"</string>
+
+    <string name="add_to_white_list">വൈറ്റ് ലിസ്റ്റിൽ ചേർക്കുക</string>
+    <string name="add_to_black_list">കരിമ്പട്ടികയിൽ ചേർക്കുക</string>
+    <string name="dialog_title">സൂചന</string>
+    <string name="firewall_number_len_not_valid">നമ്പർ തെറ്റാണ്</string>
+    <string name="firewall_number_in_black">"നമ്പർ നേരത്തേതന്നെ ബ്ലാക്ക്‌ലിസ്റ്റിലുണ്ട്"</string>
+    <string name="firewall_number_in_white">"നമ്പർ നേരത്തേതന്നെ വൈറ്റ്ലിസ്റ്റിലുണ്ട്"</string>
+    <string name="firewall_save_success">വിജയകരമായി സംരക്ഷിച്ചു</string>
+    <string name="firewall_add_blacklist_warning">ഈ നമ്പർ നിങ്ങൾ ബ്ലാക്ക്‌ലിസ്റ്റിൽ ചേർക്കുകയാണെങ്കിൽ, നിങ്ങൾക്കതിൽ നിന്ന് സന്ദേശങ്ങളും കോളുകളും ലഭിക്കില്ല</string>
+
+    <string name="set_speed_dial">സ്‌പീഡ് ഡയൽ ക്രമീകരണങ്ങൾ</string>
+    <string name="input_number">നമ്പർ നൽകുക</string>
+    <string name="speed_dial_cancel">റദ്ദാക്കുക</string>
+    <string name="speed_dial_ok">ശരി</string>
+</resources>

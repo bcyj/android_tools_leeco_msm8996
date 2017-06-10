@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2014 pci-suntektech Technologies, Inc.  All Rights Reserved.
+     pci-suntektech Technologies Proprietary and Confidential.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rcs_public_account_btn_bg"
+    android:descendantFocusability="blocksDescendants"
+    android:padding="10dp" >
+
+    <ImageView
+        android:id="@+id/receive_head_icon"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignParentLeft="true"
+        android:background="@color/transparent" />
+
+    <TextView
+        android:id="@+id/receive_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/receive_head_icon"
+        android:padding="5dp"
+        android:text="@string/message_click_download"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/receive_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/receive_time"
+        android:padding="5dp"
+        android:text="@string/message_click_download"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/redownload_button"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/receive_state"
+        android:background="@drawable/btn_message_retry"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/download_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/redownload_button"
+        android:padding="5dp"
+        android:text="@string/downloading"
+        android:textColor="@color/gray"
+        android:visibility="gone"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/receive_text_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/receive_time"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/receive_head_icon"
+        android:padding="5dp"
+        android:textColor="@color/black1"
+        android:autoLink="all"
+        android:linksClickable="false"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/receive_image_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/receive_time"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/receive_head_icon"
+        android:background="@drawable/rcs_emotion_true"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/receive_audio_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/receive_time"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/receive_head_icon"
+        android:background="@drawable/rcs_audio"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/receive_video_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/receive_time"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/receive_head_icon"
+        android:background="@drawable/rcs_emotion_true"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/receive_map_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/receive_time"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/receive_head_icon"
+        android:background="@drawable/rcs_map"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/receive_vcrad_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/receive_time"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/receive_head_icon"
+        android:background="@drawable/rcs_vcard"
+        android:visibility="gone" />
+
+</RelativeLayout>

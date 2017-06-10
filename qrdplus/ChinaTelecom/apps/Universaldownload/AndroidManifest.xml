@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2013 Qualcomm Technologies, Inc. All rights reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ */
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.universaldownload"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
+    <permission android:name="com.qualcomm.universaldownload.permission.AutoUpdateReceiver" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:name=".UniversalDownloadApplication">
+        <uses-library
+            android:name="com.qualcomm.qcrilhook"></uses-library>
+        <activity android:name=".SettingsActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ManualUpdateActivity"/>
+
+        <activity android:name=".UpdateListActivity"/>
+
+        <service
+            android:name=".DownloadService"
+            android:exported="false" >
+        </service>
+
+        <receiver android:name=".WapPushSLReceiver"
+                android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.intent.action.DATA_SMS_RECEIVED" />
+                <data android:scheme="sms" />
+                <data android:host="localhost" />
+                <data android:port="7955" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".AutoUpdateReceiver"
+            android:permission="com.qualcomm.universaldownload.permission.AutoUpdateReceiver" >
+            <intent-filter>
+                <action android:name="com.qualcomm.universaldownload.UPDATE" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".BootcompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.qualcomm.com/secimage"
+    xmlns:tns="http://www.qualcomm.com/secimage">
+
+    <element name="secimage">
+        <complexType>
+            <all>
+                <element name="metadata" type="tns:complex_metadata" />
+                <element name="general_properties" type="tns:complex_general_properties" />
+                <element name="parsegen" type="tns:complex_parsegen" />
+                <element name="signing" type="tns:complex_signing" />
+                <element name="encryption" type="tns:complex_encryption" />
+                <element name="post_process" type="tns:complex_post_process" />
+                <element name="images_list" type="tns:complex_images_list" />
+            </all>
+        </complexType>
+    </element>
+
+    <complexType name="complex_metadata">
+        <all>
+            <element name="chipset" type="string" />
+            <element name="version" type="string" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_general_properties">
+        <all>
+            <element name="max_cert_size" type="int" />
+            <element name="key_size" type="int" />
+            <element name="num_certs_in_certchain" type="int" />
+            <element name="num_root_certs" type="int" />
+            <element name="testsig_serialnum" type="string" maxOccurs="1" minOccurs="0" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_parsegen">
+        <all>
+            <element name="image_types_list" type="tns:complex_image_types_list" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_image_types_list">
+        <sequence>
+            <element name="image_type" type="tns:complex_image_type"
+                maxOccurs="unbounded" minOccurs="1" />
+        </sequence>
+    </complexType>
+
+    <complexType name="complex_image_type">
+        <all>
+            <element name="file_type" type="string"/>
+            <element name="mbn_properties" type="tns:complex_mbn_properties" maxOccurs="1"
+                minOccurs="0" />
+            <element name="elf_properties" type="tns:complex_elf_properties" maxOccurs="1"
+                minOccurs="0" />
+            <element name="ewm_properties" type="tns:complex_ewm_properties" maxOccurs="1"
+                minOccurs="0" />
+        </all>
+        <attribute name="id" type="string" use="required" />
+    </complexType>
+
+    <complexType name="complex_mbn_properties">
+        <all>
+            <element name="header_size" type="int" />
+            <element name="preamble_size" type="int" maxOccurs="1"
+                minOccurs="0" />
+            <element name="has_magic_num" type="boolean" />
+            <element name="ota_enabled" type="boolean" />
+            <element name="page_size" type="int" maxOccurs="1" minOccurs="0" />
+            <element name="num_of_pages" type="int" maxOccurs="1"
+                minOccurs="0" />
+            <element name="min_size_with_pad" type="int" maxOccurs="1"
+                minOccurs="0" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_elf_properties">
+        <all>
+            <element name="image_type" type="int" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_ewm_properties">
+        <all>
+            <element name="image_entry" type="string" />
+            <element name="relocatable" type="boolean" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_signing">
+        <all>
+            <element name="default_attributes" type="tns:complex_default_attributes" />
+            <element name="signer_attributes" type="tns:complex_signer_attributes"/>
+            <element name="selected_signer">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="local"></enumeration>
+                        <enumeration value="csms"></enumeration>
+                        <enumeration value="cass"></enumeration>
+                    </restriction>
+                </simpleType>
+            </element>
+        </all>
+    </complexType>
+
+    <complexType name="complex_default_attributes">
+        <all>
+            <element name="msm_part" type="string" />
+            <element name="oem_id" type="string" />
+            <element name="model_id" type="string" />
+            <element name="sw_id" type="string" maxOccurs="1" minOccurs="0" />
+            <element name="app_id" type="string" maxOccurs="1"
+                minOccurs="0" />
+            <element name="crash_dump" type="string" maxOccurs="1"
+                minOccurs="0" />
+            <element name="rot_en" type="string" maxOccurs="1"
+                minOccurs="0" />
+            <element name="debug" type="string" maxOccurs="1"
+                minOccurs="0" />
+            <element name="exponent" type="int" />
+            <element name="tcg_min" type="string" maxOccurs="1"
+                minOccurs="0" />
+            <element name="tcg_max" type="string" maxOccurs="1"
+                minOccurs="0" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_signer_attributes">
+        <all>
+            <element name="local_signer_attributes" type="tns:complex_local_signer_attributes" />
+            <element name="cass_signer_attributes" type="tns:complex_cass_signer_attributes" maxOccurs="1" minOccurs="0" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_local_signer_attributes">
+        <all>
+            <element name="openssl_config_inputs" type="tns:complex_openssl_config_inputs" />
+            <element name="cert_configs_list" type="tns:complex_cert_configs_list" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_openssl_config_inputs">
+        <all>
+            <element name="openssl_configfile_path" type="string" />
+            <element name="ca_certificate_extensions_path" type="string" />
+            <element name="attestation_certificate_extensions_path" type="string" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_cert_configs_list">
+        <sequence>
+            <element name="selected_cert_config" type="string" />
+            <element name="cert_config" type="tns:complex_cert_config"
+                maxOccurs="unbounded" minOccurs="1" />
+        </sequence>
+    </complexType>
+
+    <complexType name="complex_cert_config">
+        <sequence>
+            <choice>
+                <element name="multirootcert" type="tns:complex_multirootcert" />
+                <element name="root_cert" type="tns:complex_root_cert" />
+            </choice>
+            <element name="attest_ca_cert" type="tns:complex_attest_ca_cert"
+                maxOccurs="1" minOccurs="0" />
+            <element name="attest_cert" type="tns:complex_attest_cert" />
+        </sequence>
+        <attribute name="id" type="string" use="required" />
+    </complexType>
+
+    <complexType name="complex_multirootcert">
+        <all>
+            <element name="directory" type="string" />
+            <element name="index" type="int" />
+            <element name="root_cert_name" type="string" />
+            <element name="root_key_name" type="string" />
+            <element name="attest_ca_cert_name" type="string"
+                maxOccurs="1" minOccurs="0" />
+            <element name="attest_ca_key_name" type="string"
+                maxOccurs="1" minOccurs="0" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_root_cert">
+        <all>
+            <element name="use_preexisting_cert" type="boolean" />
+            <element name="params_list" type="tns:complex_params_list"
+                maxOccurs="1" minOccurs="0" />
+            <element name="preexisting_cert" type="tns:complex_preexisting_cert"
+                maxOccurs="1" minOccurs="0" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_attest_ca_cert">
+        <all>
+            <element name="use_preexisting_cert" type="boolean" />
+            <element name="params_list" type="tns:complex_params_list"
+                maxOccurs="1" minOccurs="0" />
+            <element name="preexisting_cert" type="tns:complex_preexisting_cert"
+                maxOccurs="1" minOccurs="0" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_attest_cert">
+        <all>
+            <element name="use_preexisting_cert" type="boolean" />
+            <element name="params_list" type="tns:complex_params_list"
+                maxOccurs="1" minOccurs="0" />
+            <element name="preexisting_cert" type="tns:complex_preexisting_cert"
+                maxOccurs="1" minOccurs="0" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_params_list">
+        <sequence>
+            <element name="cert_param" type="string" maxOccurs="unbounded"
+                minOccurs="1" />
+        </sequence>
+    </complexType>
+
+    <complexType name="complex_preexisting_cert">
+        <all>
+            <element name="cert_path" type="string" />
+            <element name="private_key_path" type="string" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_cass_signer_attributes">
+        <all>
+            <element name="server" type="tns:complex_server" maxOccurs="1" minOccurs="0"/>
+            <element name="user_identity" type="tns:complex_user_identity" />
+            <element name="capability" type="string" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_server">
+        <all>
+            <element name="host" type="string" />
+            <element name="port" type="int" />
+            <element name="trust_keystore" type="string" />
+            <element name="trust_keystore_password" type="string" maxOccurs="1" minOccurs="0"/>
+            <element name="trust_keystore_type">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="JKS"/>
+                        <enumeration value="PKCS12"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="host_validation_mode" maxOccurs="1" minOccurs="0">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="TEST"/>
+                        <enumeration value="STAGE_PROD"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </all>
+    </complexType>
+
+    <complexType name="complex_user_identity">
+        <all>
+            <element name="token_identity_slot" type="int" maxOccurs="1" minOccurs="0"/>
+            <element name="token_password" type="string" maxOccurs="1" minOccurs="0"/>
+            <element name="keystore_file" type="string" maxOccurs="1" minOccurs="0"/>
+            <element name="token_driver_home" type="tns:complex_token_driver_home"/>
+            <element name="keystore_type">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="PKCS11"/>
+                        <enumeration value="PKCS12"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </all>
+    </complexType>
+
+    <complexType name="complex_token_driver_home">
+        <all>
+            <element name="windows" type="string" />
+            <element name="linux" type="string" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_post_process">
+        <all>
+            <element name="pil_splitter" type="string" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_images_list">
+        <sequence>
+            <element name="image" type="tns:complex_image" maxOccurs="unbounded"
+                minOccurs="1" />
+        </sequence>
+    </complexType>
+
+    <complexType name="complex_image">
+        <all>
+            <element name="pil_split" type="boolean" maxOccurs="1"
+                minOccurs="0" />
+            <element name="general_properties_overrides" type="tns:complex_general_properties_overrides" />
+            <element name="signing_attributes_overrides" type="tns:complex_signing_attributes_overrides" />
+            <element name="meta_build_location" type="string" />
+            <element name="post_process_commands" type="string" />
+        </all>
+        <attribute name="sign_id" type="string" use="required" />
+        <attribute name="name" type="string" use="optional" />
+        <attribute name="image_type" type="string" use="required" />
+        <attribute name="cert_config" type="string" use="optional" />
+        <attribute name="output_file_name" type="string" use="optional" />
+    </complexType>
+
+    <complexType name="complex_general_properties_overrides">
+        <all>
+            <element name="max_cert_size" type="int" maxOccurs="1"
+                minOccurs="0" />
+            <element name="key_size" type="int" maxOccurs="1" minOccurs="0" />
+            <element name="num_certs_in_certchain" type="int" maxOccurs="1"
+                minOccurs="0" />
+            <element name="num_root_certs" type="int" maxOccurs="1"
+                minOccurs="0" />
+            <element name="testsig_serialnum" type="string"
+                maxOccurs="1" minOccurs="0" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_signing_attributes_overrides">
+        <all>
+            <element name="msm_part" type="string" maxOccurs="1"
+                minOccurs="0" />
+            <element name="oem_id" type="string" maxOccurs="1" minOccurs="0" />
+            <element name="model_id" type="string" maxOccurs="1"
+                minOccurs="0" />
+            <element name="sw_id" type="string" maxOccurs="1" minOccurs="0" />
+            <element name="app_id" type="string" maxOccurs="1"
+                minOccurs="0" />
+            <element name="crash_dump" type="string" maxOccurs="1"
+                minOccurs="0" />
+            <element name="rot_en" type="string" maxOccurs="1"
+                minOccurs="0" />
+            <element name="debug" type="string" maxOccurs="1" minOccurs="0" />
+            <element name="exponent" type="int" maxOccurs="1" minOccurs="0" />
+            <element name="tcg_min" type="string" maxOccurs="1"
+                minOccurs="0" />
+            <element name="tcg_max" type="string" maxOccurs="1"
+                minOccurs="0" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_encryption">
+        <all>
+            <element name="selected_encryptor" type="string"/>
+            <element name="unified_encryption" type="tns:complex_unified_encryption" minOccurs="0" maxOccurs="1" />
+        </all>
+    </complexType>
+
+    <complexType name="complex_unified_encryption">
+    <all>
+        <element name="use_file_interface" type="boolean" minOccurs="1" maxOccurs="1"/>
+        <element name="L1_encryption_key" type="string" minOccurs="0" maxOccurs="1" />
+        <element name="L2_encryption_key" type="string" minOccurs="0" maxOccurs="1" />
+        <element name="L3_encryption_key" type="string" minOccurs="0" maxOccurs="1" />
+    </all>
+    </complexType>
+
+</schema>

@@ -1,0 +1,76 @@
+<!/* =========================================================================*
+           Copyright (c) 2012 Qualcomm Technologies, Inc. All Rights Reserved.
+           Qualcomm Technologies Proprietary and Confidential
+* =========================================================================/>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<test name="HAL_test" output_trace_file="HAL_trace.txt" qfast_data_gen_type="RANDOM">
+<library name="libFuzzQCamera2HALFuzzLib.so" />
+
+<logic-loop loop_count="1" type="SEQUENTIAL" sleep="100">
+
+    <function name="camera_device_open"  arg0="1"/> 
+	<function name="set_callbacks"  arg0="0" />
+	
+<!--Start/Stop preview-->
+	<function name="enable_msg_type" arg0="1024" /> 
+	<function name="start_preview" /> 
+	<pause time_in_ms="1000"/>
+	<function name="stop_preview" /> 
+	<function name="disable_msg_type" arg0="1024" />
+	<pause time_in_ms="500"/>
+	
+<!--Take a snapshot-->   
+	<function name="enable_msg_type" arg0="1024" /> 
+	<function name="start_preview" /> 
+	<function name="enable_msg_type" arg0="2" /> 
+	<function name="enable_msg_type" arg0="256" />
+    <function name="get_parameters" />
+	<!--function name="set_parameters" arg0="NULL" /> -->
+	<function name="take_picture" /> 
+	<pause time_in_ms="1000"/>
+	<function name="disable_msg_type" arg0="2" /> 
+	<function name="disable_msg_type" arg0="256" /> 
+		<function name="stop_preview" /> 
+	<function name="disable_msg_type" arg0="1024" />
+	<pause time_in_ms="500"/>
+
+<!--Start/Stop Recording-->
+	<function name="enable_msg_type" arg0="1024" /> 
+	<function name="start_preview" /> 
+	<function name="enable_msg_type" arg0="32" /> 
+	<pause time_in_ms="100"/>
+	<function name="set_parameters" arg0="NULL" arg1="3" />
+	<function name="start_recording" /> 
+	<pause time_in_ms="1000"/>
+	<function name="stop_recording" /> 
+	<function name="disable_msg_type" arg0="32" /> 
+	<function name="stop_preview" /> 
+	<function name="msg_type_enabled" arg0="1024" />
+	<function name="disable_msg_type" arg0="1024" />
+
+<!--Get/Set Parameters-->
+	<function name="get_parameters" />
+	<function name="set_parameters" arg0="NULL" arg1="0" />
+	<function name="get_parameters" />
+	<function name="put_parameters" arg0="NULL" />
+	<function name="store_meta_data_in_buffers" arg0="1" />
+	
+	<function name="recording_enabled" />
+	<function name="preview_enabled" />
+	<function name="set_preview_window" />
+	
+	<function name="auto_focus" />        
+	<function name="cancel_auto_focus" />        
+	<function name="cancel_picture" />        
+	
+	<function name="send_command" arg0="3" arg1="90" arg2="2" />
+	<function name="send_command" arg0="8" arg1="0" arg2="0" />
+	<function name="send_command" arg0="9" arg1="0" arg2="0" />
+<!--Close camera device-->
+    <function name="release" />        
+    <function name="close_camera_device" />        
+   
+</logic-loop>
+
+</test>

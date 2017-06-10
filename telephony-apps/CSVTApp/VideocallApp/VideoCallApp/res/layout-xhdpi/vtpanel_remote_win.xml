@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<com.borqs.videocall.VTPanelRemoteWindow
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:VTScreen="http://schemas.android.com/apk/res/com.borqs.videocall"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+
+    VTScreen:left_local="240dp"
+    VTScreen:top_local="271dp"
+    VTScreen:height_local="95dp"
+    VTScreen:width_local="116dp"
+
+    VTScreen:left_remote="0dp"
+    VTScreen:top_remote="75dp"
+    VTScreen:height_remote="295dp"
+    VTScreen:width_remote="360dp"
+
+    VTScreen:left_keypad_local="240dp"
+    VTScreen:top_keypad_local="271dp"
+    VTScreen:height_keypad_local="95dp"
+    VTScreen:width_keypad_local="116dp"
+
+    VTScreen:left_keypad_remote="0dp"
+    VTScreen:top_keypad_remote="75dp"
+    VTScreen:height_keypad_remote="295dp"
+    VTScreen:width_keypad_remote="360dp"
+
+    VTScreen:left_remote_only="39dp"
+    VTScreen:top_remote_only="35dp"
+    VTScreen:height_remote_only="650dp"
+    VTScreen:width_remote_only="650dp"
+
+    VTScreen:left_keypad_remote_only="150dp"
+    VTScreen:top_keypad_remote_only="10dp"
+    VTScreen:height_keypad_remote_only="330dp"
+    VTScreen:width_keypad_remote_only="450dp">
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/frame_layout_remote_win"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:background="#000000">
+        <TextureView android:id="@+id/_remote_surface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+</com.borqs.videocall.VTPanelRemoteWindow>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- application name and title of error dialogs-->
+    <string name="app_name">"เครื่องบันทึกเสียง"</string>
+    <string name="folder_name">"กำลังบันทึก"</string>
+    <!-- Screen title before and during recording -->
+    <string name="record_your_message">"บันทึกข้อความของคุณ"</string>
+    <!-- Screen title after recording -->
+    <string name="message_recorded">"บันทึกข้อความแล้ว"</string>
+    <!-- Screen title while playing back a recording -->
+    <string name="review_message">"ตรวจสอบข้อความ"</string>
+    <!-- Label shown during recording -->
+    <string name="recording">"กำลังบันทึก"</string>
+    <!-- Label shown when recording is paused -->
+    <string name="recording_paused">หยุดชั่วคราว</string>
+    <!-- Label shown when the recording is stopped for a reason other than the user stopping it (e.g. the sd card was removed) -->
+    <string name="recording_stopped">"หยุดบันทึกแล้ว"</string>
+    <!-- label shown when there is not enough space to record something -->
+    <string name="storage_is_full">"ที่เก็บข้อมูลเต็ม"</string>
+    <!-- label shown when the recording has reached maximum allowed file size -->
+    <string name="max_length_reached">"ถึงความยาวสูงสุดแล้ว"</string>
+    <!-- label shown when there is no sd card available to record to [CHAR LIMIT=30] -->
+    <string name="insert_sd_card" product="nosdcard">"ต่อเชื่อมที่จัดเก็บข้อมูล USB"</string>
+    <!-- label shown when there is no sd card available to record to -->
+    <string name="insert_sd_card" product="default">"ใส่การ์ด SD"</string>
+    <!-- label shown when there is more than 1 minute but less than 9 minutes of space left to record -->
+    <string name="min_available">"บันทึกได้อีก <xliff:g id="MINUTES">%d</xliff:g> นาที"</string>
+    <!-- label shown when there is less than 1 minute of space left to record -->
+    <string name="sec_available">"บันทึกได้อีก <xliff:g id="SECONDS">%d</xliff:g> วินาที"</string>
+
+    <!-- button to accept the current recording and return it to the caller -->
+    <string name="accept">"เสร็จสิ้น"</string>
+    <!-- button to discard the current recording and return to the caller -->
+    <string name="discard">"ยกเลิก"</string>
+    <!-- acknowlegement button in a number of dialogs -->
+    <string name="button_ok">"ตกลง"</string>
+    <!-- Do not translate. Format of the timer that shows how much has been recorded so far -->
+    <string name="timer_format" translatable="false"><xliff:g id="format">%02d:%02d</xliff:g></string>
+    <!-- label shown before the user has recorded anything -->
+    <string name="press_record">กด: 0-MIC 1-Rx 2-Tx+Rx 3-AMR 4-EVRC 5-QCELP
+6-AAC_MP4 9-AMR-WB A-AMR-WB-3GPP และกดบันทึก</string>
+    <string name="press_record2">กดบันทึก</string>
+    <!-- label shown before the user has recorded anything -SSR support added-->
+    <string name="press_record_ssr">กด: 0-MIC 1-Rx 2-Tx+Rx 3-AMR 4-EVRC 5-QCELP
+6-AAC_MP4 7-AAC_SSR 8-LPCM_SSR 9-AMR-WB A-AMR-WB-3GPP และกดบันทึก</string>
+   
+    <!-- the name under which recordings will be visible in the media database is formatted like this --> 
+    <string name="audio_db_title_format"><xliff:g id="format">HH:mm:ss dd/MM/yyyy</xliff:g></string>
+    <!-- all recordings will show up in the media database with this \'artist\' name -->
+    <string name="audio_db_artist_name">"การบันทึกของคุณ"</string>
+    <!-- all recordings will show up in the media database with this \'album\' name -->
+    <string name="audio_db_album_name">"การบันทึกเสียง"</string>
+    <!-- all recordings will show up in the media database in a playlist with this name -->
+    <string name="audio_db_playlist_name">"การบันทึกของฉัน"</string>
+   
+    <!-- shown as the message in a dialog when an error occured because of an error accessing the sd card [CHAR LIMIT=NONE] -->
+    <string name="error_sdcard_access" product="nosdcard">"ไม่สามารถเข้าถึงที่จัดเก็บข้อมูล USB"</string>
+    <!-- shown as the message in a dialog when an error occured because of an error accessing the sd card -->
+    <string name="error_sdcard_access" product="default">"ไม่สามารถเข้าถึงการ์ด SD"</string>
+    <!-- shown as the message in a dialog when the app encountered an unspecified internal error -->
+    <string name="error_app_internal">"ข้อผิดพลาดของแอปพลิเคชันภายใน"</string>
+    <!-- shown as the message in a dialog when the app encountered and unsupported format -->
+    <string name="error_app_unsupported">"รูปแบบไม่ได้รับการสนับสนุน"</string>
+    <!-- shown as the message in a dialog when the recording could not be added to the media database -->
+    <string name="error_mediadb_new_record">"บันทึกเสียงที่บันทึกไว้ไม่ได้"</string>
+    <!-- shown as the message in a dialog when the recording cannot be started while in call -->
+    <string name="error_mediadb_incall">"ตัวเลือกนี้ได้รับการสนับสนุน เฉพาะระหว่างโทร"</string>
+    <!-- shown as the message in a dialog when voice call recording is started for AAC format -->
+    <string name="error_mediadb_aacincall">"การบันทึกเสียงเรียก AAC ไม่ได้รับการสนับสนุน"</string>
+    <!-- Label shown during recording -->
+    <string name="recording_now">กำลังบันทึกอยู่ ...</string>
+    <!-- shown as the message in a dialog when the recording file is saved successfully -->
+    <string name="file_saved">บันทึกไฟล์แล้ว</string>
+    <!-- shown as the message in a dialog when the recording file is discarded -->
+    <string name="file_discard">ละทิ้งไฟล์แล้ว</string>
+    <!-- shown as the dialog title when user selects recording format -->
+    <string name="format_setting">ประเภทไฟล์</string>
+    <string name="format_setting_aac_item">AAC</string>
+    <string name="format_setting_amr_item">AMR</string>
+    <string name="format_setting_3gpp_item">3GPP</string>
+    <string name="format_setting_wav_item">WAV</string>
+    <string name="storage_setting">ตำแหน่งที่เก็บข้อมูล</string>
+    <string name="storage_setting_sdcard_item">การ์ด SD</string>
+    <string name="storage_setting_local_item">ที่เก็บข้อมูลในโทรศัพท์</string>
+    <string name="no_phonestorage">ถอดที่เก็บข้อมูลในโทรศัพท์ออกแล้ว</string>
+    <string name="keyboard">คีย์บอร์ด</string>
+    <string name="file_deleted">ลบไฟล์แล้ว!</string>
+    <string name="in_call_record_error">ข้อผิดพลาดในการบันทึกการโทร</string>
+</resources>

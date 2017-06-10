@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2014 pci-suntektech Technologies, Inc.  All Rights Reserved.
+     pci-suntektech Technologies Proprietary and Confidential.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:swipe="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="60dip"
+    android:background="@drawable/rcs_bg_list_item_s" >
+
+    <RelativeLayout
+        android:id="@+id/saiun_file_item"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip" >
+
+        <ImageView
+            android:id="@+id/file_image"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:scaleType="centerCrop"
+            android:src="@drawable/rcs_contact_default_photo" />
+
+        <TextView
+            android:id="@+id/fileName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dip"
+            android:layout_alignTop="@+id/file_image"
+            android:layout_toRightOf="@+id/file_image"
+            android:maxWidth="150dp"
+            android:singleLine="true"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/file_create_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/fileName"
+            android:textSize="14sp"
+            android:textColor="#ffbbbbbb"
+            android:layout_below="@+id/fileName"/>
+
+        <TextView
+            android:id="@+id/file_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/fileName"
+            android:textSize="14sp"
+            android:textColor="#ffbbbbbb"
+            android:layout_below="@+id/fileName"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* ====================================================================
+ * Copyright (c) 2014 Qualcomm Technologies, Inc. All Rights Reserved.
+ * QTI Proprietary and Confidential.
+ * =====================================================================
+ * @file cb_sample.xml
+ *
+ */
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/svi"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/surfaceimage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/image_picker_desc"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/ab_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/refresh_button"
+        android:layout_toRightOf="@+id/refresh_button"
+        android:background="@color/translucentgrey"
+        android:paddingBottom="10dp"
+        android:text="@string/ab_mode"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/ab_radioGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/refresh_button"
+        android:layout_alignParentLeft="true"
+        android:background="@color/translucentgrey"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/ab_high_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ab_high" />
+
+        <RadioButton
+            android:id="@+id/ab_medium_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ab_medium" />
+
+        <RadioButton
+            android:id="@+id/ab_low_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ab_low" />
+
+        <RadioButton
+            android:id="@+id/ab_auto_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ab_auto" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/ab_checkbox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ab_radioGroup"
+        android:layout_alignParentLeft="true"
+        android:background="@color/translucentgrey"
+        android:text="@string/ab_enable" />
+
+    <Button
+        android:id="@+id/refresh_button"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/refresh_b" />
+
+</RelativeLayout>

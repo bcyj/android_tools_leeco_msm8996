@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2013 Mimer Information Technology AB, info@mimer.com -->
+<!--Android 4.0 replacements -->
+<MimerSQLReplace>
+
+  <!-- search_index is used for full text search (FTS), mimer implements this with word_search indexes -->
+  <fromSQL id="GOCO405" translateOnLoad="False" statement="CREATE VIRTUAL TABLE search_index USING FTS4 (contact_id INTEGER REFERENCES contacts(_id) NOT NULL,content TEXT, name TEXT, tokens TEXT)"/>
+
+
+<!-- END CONTACTS_1 -->
+
+
+
+<!-- Sort: First name -->
+<!-- Display: First name first -->
+<!-- Performance -->
+<fromSQL id="GOCO4012" statement="SELECT _id, data2, data3, data1, contact_id, lookup, photo_id, display_name FROM view_data data WHERE (? AND mimetype_id=?) GROUP BY contact_id, data1 ORDER BY sort_key">
+SElect	data."_id" AS "_id",
+    data.data2,
+    data.data3,
+    data.data1,
+    raw_contacts.contact_id AS contact_id,
+    contacts.lookup,
+    contacts.photo_id,
+    raw_contacts.display_name AS display_name,
+    raw_contacts.sort_key AS sort_key
+      FROM data, raw_contacts {INDEX raw_contact_sort_key1_index }, contacts
+      WHERE data.raw_contact_id = raw_contacts."_id"
+      AND   raw_contacts.contact_id = contacts."_id"
+      AND ? &lt;&gt; 0
+      AND   data.mimetype_id = ?
+ORDER BY sort_key for preview
+</fromSQL>
+
+
+<!-- Sort: First name -->
+<!-- Display: Last name first -->
+<!-- Performance -->
+<fromSQL id="GOCO4014" statement="SELECT _id, data2, data3, data1, contact_id, lookup, photo_id, display_name_alt FROM view_data data WHERE (? AND mimetype_id=?) GROUP BY contact_id, data1 ORDER BY sort_key">
+SElect	data."_id" AS "_id",
+    data.data2,
+    data.data3,
+    data.data1,
+    raw_contacts.contact_id AS contact_id,
+    contacts.lookup,
+    contacts.photo_id,
+    raw_contacts.display_name_alt AS display_name_alt,
+    raw_contacts.sort_key AS sort_key
+      FROM data, raw_contacts, contacts
+      WHERE data.raw_contact_id = raw_contacts."_id"
+      AND   raw_contacts.contact_id = contacts."_id"
+      AND ? &lt;&gt; 0
+      AND   data.mimetype_id = ?
+ORDER BY sort_key for preview
+</fromSQL>
+
+
+<!-- Sort: Last name -->
+<!-- Display: First name first -->
+<!-- Performance -->
+<fromSQL id="GOCO4017" statement="SELECT _id, data2, data3, data1, contact_id, lookup, photo_id, display_name FROM view_data data WHERE (? AND mimetype_id=?) GROUP BY contact_id, data1 ORDER BY sort_key_alt">
+SElect	data."_id" AS "_id",
+    data.data2,
+    data.data3,
+    data.data1,
+    raw_contacts.contact_id AS contact_id,
+    contacts.lookup,
+    contacts.photo_id,
+    raw_contacts.display_name AS display_name,
+    raw_contacts.sort_key_alt AS sort_key_alt
+      FROM data, raw_contacts, contacts
+      WHERE data.raw_contact_id = raw_contacts."_id"
+      AND   raw_contacts.contact_id = contacts."_id"
+      AND ? &lt;&gt; 0
+      AND   data.mimetype_id = ?
+ORDER BY sort_key_alt for preview
+</fromSQL>
+
+<!-- Sort: Last name -->
+<!-- Display: Last name first -->
+<!-- Performance -->
+<fromSQL id="GOCO4019" statement="SELECT _id, data2, data3, data1, contact_id, lookup, photo_id, display_name_alt FROM view_data data WHERE (? AND mimetype_id=?) GROUP BY contact_id, data1 ORDER BY sort_key_alt">
+SElect	data."_id" AS "_id",
+    data.data2,
+    data.data3,
+    data.data1,
+    raw_contacts.contact_id AS contact_id,
+    contacts.lookup,
+    contacts.photo_id,
+    raw_contacts.display_name_alt AS display_name_alt,
+    raw_contacts.sort_key_alt AS sort_key_alt
+      FROM data, raw_contacts, contacts
+      WHERE data.raw_contact_id = raw_contacts."_id"
+      AND   raw_contacts.contact_id = contacts."_id"
+      AND ? &lt;&gt; 0
+      AND   data.mimetype_id = ?
+ORDER BY sort_key_alt for preview
+</fromSQL>
+
+<!-- END CONTACTS_PHONE_1 -->
+
+
+
+
+
+
+
+
+<!-- END SEARCH FROM PHONE APP -->
+  
+ 
+ <!-- To avoid using Grant select permission on different tables to SYSADM. We need to add only one replacer which queries information schema.-->
+ <fromSQL id="GOCO4057" translateOnLoad="False"
+	    statement="PRAGMA table_info(?)">
+	    
+	    select 1, column_name, 1, 1, COLUMN_DEFAULT from INFORMATION_SCHEMA.COLUMNS
+		where TABLE_SCHEMA = 'contacts'
+		AND (column_default is null or upper(column_default) not like ('%WITH CHECK OPTION%'))
+		AND TABLE_NAME = ?	
+	    
+ </fromSQL>
+ 
+
+
+ <!--  Change locale -->
+<fromSQL id="GOCO4062" statement="DELETE FROM mimer_stat1" />
+<fromSQL id="GOCO4063" statement="DELETE FROM mimer_stat1 WHERE tbl=? AND idx=?" />
+<fromSQL id="GOCO4064" statement="INSERT INTO mimer_stat1 (tbl,idx,stat) VALUES (?,?,?)" />
+<fromSQL id="GOCO4065" statement="DELETE FROM mimer_stat1 WHERE tbl=? AND idx IS NULL" />
+
+
+<!--Low performance when opening contact list in Handcent -->
+<fromSQL id="GOCO4066" statement="SELECT _id, display_name, data1, data2, starred, contact_id, sort_key FROM view_data data WHERE (? AND mimetype_id=?) AND (contact_id is not null AND _id in (select _id from view_data where mimetype = ? group by contact_id)) ORDER BY sort_key">
+SELECT "_id",
+    display_name,
+    data1,
+    data2,
+    starred,
+    contact_id,
+    sort_key
+FROM view_data data
+WHERE(? &lt;&gt; 0 AND mimetype_id = ? )
+AND(contact_id IS NOT NULL and mimetype = ?)
+group by contact_id            
+ORDER BY sort_key
+</fromSQL>
+
+<!--Low performance when selecting a contact in Handcent -->
+  <fromSQL id="GOCO4070" statement="SELECT DISTINCT data1, data2 FROM view_data data WHERE (? AND mimetype_id=?) AND (contact_id=? AND _id in (select _id from view_data group by data1,data2))">
+select distinct data1,data2 
+from view_data data 
+where (? &lt;&gt; 0 and (mimetype_id = ?)) 
+        and ((contact_id = ?))
+  </fromSQL>
+
+
+
+
+<!-- Qualcomm Technologies replacers -->
+
+</MimerSQLReplace>

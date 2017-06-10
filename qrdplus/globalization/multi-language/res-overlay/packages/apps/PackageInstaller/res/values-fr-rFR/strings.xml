@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"Programme d\'installation du kit"</string>
+    <string name="next">"Suivant"</string>
+    <string name="install">"Installer"</string>
+    <string name="done">"OK"</string>
+    <!-- TODO REMOVE LATER -->
+    <string name="security_settings_desc">"Autoriser cette application à :"</string>
+    <string name="cancel">"Annuler"</string>
+    <string name="unknown">"Inconnu"</string>
+    <string name="installing">"Installation..."</string>
+    <string name="install_done">"Application installée."</string>
+    <!-- Message for installing a new app that requires some permissions [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question">"Voulez-vous installer cette application ? Elle pourra :"</string>
+    <!-- Message for installing a new app that does not require permissions [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_no_perms">"Voulez-vous installer cette application ? Elle n\'exige aucun accès particulier."</string>
+    <!-- Message for updating an existing app [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_update">"Voulez-vous installer une mise à jour pour cette application ? Vos données existantes seront conservées. L\'application mise à jour pourra :"</string>
+    <!-- Message for updating an existing system app [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_update_system">"Voulez-vous installer une mise à jour pour cette application intégrée ? Vos données existantes seront conservées. L\'application mise à jour pourra :"</string>
+    <!-- Message for updating an existing app, no permissions [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_update_no_perms">"Voulez-vous installer une mise à jour pour cette application ? Vos données ne seront pas perdues. Aucun droit d\'accès spécial n\'est requis."</string>
+    <!-- Message for updating an existing system app, no permissions [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_update_system_no_perms">"Voulez-vous installer une mise à jour pour cette application intégrée ? Vos données existantes ne seront pas perdues. Aucun droit d\'accès spécial n\'est requis."</string>
+    <string name="install_failed">"Application non installée."</string>
+    <!-- Reason displayed when installation fails because the installation package itself is invalid
+        in some way (e.g., corrupt) [CHAR LIMIT=100] -->
+    <string name="install_failed_invalid_apk">"Le package semble corrompu."</string>
+    <!-- Reason displayed when installation fails because the package an existing package is
+        installed with a conflicting package author signature [CHAR LIMIT=100] -->
+    <string name="install_failed_inconsistent_certificates">"Un package portant le même nom accompagné d\'une signature différente est déjà installé."</string>
+    <!-- Reason displayed when installation fails because the package specifies a minimum compatible
+        OS version that is newer than our current OS version. [CHAR LIMIT=100] -->
+    <string name="install_failed_older_sdk">"Le package est uniquement compatible avec les dernières versions d\'Android."</string>
+    <!-- Reason displayed when installation fails because the package specifies it is compatible
+        only with a CPU that the current tablet doesn\'t have. [CHAR LIMIT=100] -->
+    <string name="install_failed_cpu_abi_incompatible" product="tablet">"Cette application n\'est pas compatible avec votre tablette."</string>
+    <!-- Reason displayed when installation fails because the package specifies it is compatible
+        only with a CPU that the current TV doesn\'t have. [CHAR LIMIT=100] -->
+    <string name="install_failed_cpu_abi_incompatible" product="tv">Cette application n\'est
+pas compatible avec votre téléviseur.</string>
+    <!-- Reason displayed when installation fails because the package specifies it is compatible
+        only with a CPU that the current phone doesn\'t have. [CHAR LIMIT=100] -->
+    <string name="install_failed_cpu_abi_incompatible" product="default">"Cette application n\'est pas compatible avec votre téléphone."</string>
+    <!-- Reason displayed when installation fails because the package was deleted during the
+        installation process. [CHAR LIMIT=100] -->
+    <string name="install_failed_file_not_found">"Le package spécifié a été supprimé avant la finalisation de l\'installation."</string>
+    <!-- Reason displayed when installation fails because the package could not be verified
+        because the package verifier rejected it. [CHAR LIMIT=100] -->
+    <string name="install_failed_verify_failed">"Impossible d\'installer le package, car il ne répond pas aux critères de validation."</string>
+    <!-- Reason displayed when installation fails because the package could not be verified
+        before the internal system timer expired. [CHAR LIMIT=100] -->
+    <string name="install_failed_verify_timeout">"Expiration du délai lors de la tentative de validation de ce package. Veuillez le réinstaller ultérieurement."</string>
+    <!-- Message presented when an application could not be installed on the tablet for some reason. [CHAR LIMIT=100] -->
+    <string name="install_failed_msg" product="tablet">"Impossible d\'installer <xliff:g id="APP_NAME">%1$s</xliff:g> sur cette tablette."</string>
+    <!-- Message presented when an application could not be installed on the TV for some reason. [CHAR LIMIT=100] -->
+    <string name="install_failed_msg" product="tv">Impossible d\'installer <xliff:g id="app_name">%1$s</xliff:g> sur votre téléviseur.</string>
+    <!-- Message presented when an application could not be installed on the phone for some reason. [CHAR LIMIT=100] -->
+    <string name="install_failed_msg" product="default">"Impossible d\'installer <xliff:g id="APP_NAME">%1$s</xliff:g> sur ce téléphone."</string>
+    <string name="launch">"Ouvrir"</string>
+    <string name="unknown_apps_dlg_title">"Installation bloquée"</string>
+    <!-- Message presented in a dialog box when a package is requested to be installed, but the "Allow unknown applications" checkbox is not enabled. [CHAR LIMIT=100] -->
+    <string name="unknown_apps_dlg_text" product="tablet">"Pour plus de sécurité, votre tablette bloque l\'installation d\'applications de sources inconnues."</string>
+    <!-- Message presented in a dialog box when a package is requested to be installed, but the "Allow unknown applications" checkbox is not enabled. [CHAR LIMIT=100] -->
+    <string name="unknown_apps_dlg_text" product="tv">Pour plus de sécurité, votre téléviseur bloque l\'installation d\'applications provenant de sources inconnues.</string>
+    <!-- Message presented in a dialog box when a package is requested to be installed, but the "Allow unknown applications" checkbox is not enabled. [CHAR LIMIT=100] -->
+    <string name="unknown_apps_dlg_text" product="default">"Pour plus de sécurité, votre téléphone bloque l\'installation d\'applications de sources inconnues."</string>
+    <!-- Message presented in a dialog box when the device administrator restricts the installation of apps from unknown sources. [CHAR LIMIT=none] -->
+    <string name="unknown_apps_admin_dlg_text">Votre administrateur interdit l\'installation d\'applications provenant de sources inconnues.</string>
+
+    <string name="ok">"OK"</string>
+    <string name="settings">"Paramètres"</string>
+    <!-- Title of dialog asking user if they would allow an application to be an install source. -->
+    <string name="allow_source_dlg_title">"Nouvelle source pour les applications"</string>
+    <!-- Message of dialog asking user if they would allow an application to be an install source. -->
+    <string name="allow_source_dlg_text">"Une demande d\'installation d\'autres applications a été initiée à partir de l\'application <xliff:g id="APP_NAME">%1$s</xliff:g>.\n\nVoulez-vous autoriser cette installation, ainsi que d\'autres à l\'avenir ?"</string>
+    <string name="manage_applications">"Gérer les applications"</string>
+    <string name="dlg_app_replacement_title">"Remplacer l\'application ?"</string>
+    <string name="dlg_app_replacement_statement">"L\'application que vous installez va en remplacer une autre.\n\nToutes vos données d\'utilisateur précédentes vont être enregistrées."</string>
+    <!-- Dialog attributes when replacing system app -->
+    <string name="dlg_sys_app_replacement_statement">"Il s\'agit d\'une application système.\n\nToutes vos données d\'utilisateur précédentes vont être enregistrées."</string>
+    <string name="out_of_space_dlg_title">"Mémoire insuffisante"</string>
+    <string name="out_of_space_dlg_text">"Impossible d\'installer <xliff:g id="APP_NAME">%1$s</xliff:g>. Veuillez libérer de l\'espace, puis réessayer."</string>
+    <!-- strings related to uninstall activity -->
+    <string name="dlg_ok">"OK"</string>
+    <string name="app_not_found_dlg_title">"Application non trouvée"</string>
+    <string name="app_not_found_dlg_text">"L\'application ne figure pas dans la liste des applications installées."</string>
+    <string name="uninstall_application_title">"Désinstaller l\'application"</string>
+    <string name="uninstall_update_title">"Désinstaller la mise à jour"</string>
+    <string name="uninstall_activity_text">"<xliff:g id="ACTIVITY_NAME">%1$s</xliff:g> fait partie de l\'application suivante :"</string>
+    <string name="uninstall_application_text">"Voulez-vous désinstaller cette application ?"</string>
+    <string name="uninstall_application_text_all_users">"Voulez-vous désinstaller cette application pour "<b>"tous"</b>" les utilisateurs ? L\'application et ses données seront supprimées pour "<b>"tous"</b>" les utilisateurs de l\'appareil."</string>
+    <string name="uninstall_application_text_user">"Voulez-vous désinstaller cette application pour l\'utilisateur <xliff:g id="USERNAME">%1$s</xliff:g> ?"</string>
+    <string name="uninstall_update_text">"Voulez-vous rétablir la configuration d\'usine de cette application ?"</string>
+    <string name="uninstalling">"Désinstallation..."</string>
+    <string name="uninstall_done">"Désinstallation terminée."</string>
+    <string name="uninstall_failed">"Échec de la désinstallation."</string>
+    <!-- String presented to the user when uninstalling a package failed because the target package
+        is a current device administrator [CHAR LIMIT=80] -->
+    <string name="uninstall_failed_device_policy_manager">"Impossible de désinstaller ce package, car il s\'agit d\'un administrateur actif."</string>
+    <!-- String presented to the user when uninstalling a package failed because a profile owner
+         has marked the the target package as not able to be uninstalled [CHAR LIMIT=80] -->
+    <string name="uninstall_blocked_profile_owner">"Impossible de désinstaller appli, car elle est nécessaire pour votre profil \"<xliff:g id="USERNAME">%1$s</xliff:g>\"."</string>
+    <!-- String presented to the user when uninstalling a package failed because a device owner
+         has marked the the target package as not able to be uninstalled [CHAR LIMIT=80] -->
+    <string name="uninstall_blocked_device_owner">"Impossible désinstaller appli, car elle est requise par administrateur appareil."</string>
+    <!-- String on a button that leads to the "device administrator" configuration setting where a
+        user will be able to disable the device administrator in order to uninstall
+        it. [CHAR LIMIT=50] -->
+    <string name="manage_device_administrators">"Gérer les administrateurs de l\'appareil"</string>
+    <string name="uninstall_failed_msg">"Impossible de désinstaller <xliff:g id="APP_NAME">%1$s</xliff:g>."</string>
+
+    <!-- Dialog attributes to indicate parse errors -->
+    <string name="Parse_error_dlg_title">"Erreur d\'analyse"</string>
+    <string name="Parse_error_dlg_text">"Un problème est survenu lors de l\'analyse du package."</string>
+
+    <!-- Tab label for new permissions being added to an existing app [CHAR LIMIT=20] -->
+    <string name="newPerms">"Nouveautés"</string>
+    <!-- Tab label for all permissions of an app being installed [CHAR LIMIT=20] -->
+    <string name="allPerms">"Toutes"</string>
+    <!-- Tab label for permissions related to user privacy [CHAR LIMIT=20] -->
+    <string name="privacyPerms">"Confidentialité"</string>
+    <!-- Tab label for permissions related to device behavior [CHAR LIMIT=20] -->
+    <string name="devicePerms">"Accès à l\'appareil"</string>
+
+    <!-- Body text for new tab when there are no new permissions [CHAR LIMIT=NONE] -->
+    <string name="no_new_perms">"Cette mise à jour n\'exige pas de nouvelles autorisations."</string>
+
+    <string name="grant_confirm_question">"Voulez-vous accorder les autorisations suivantes ? L\'utilisateur aura accès aux éléments suivants :"</string>
+    <string name="app_install_location_title">Emplacement d\'installation souhaité</string>
+    <!-- Apps on SD installation location options in ApplicationSettings -->
+    <string-array name="app_install_location_entries">
+        <item>Laisser le système décider</item>
+        <item>Mémoire interne du mobile</item>
+        <item>Carte SD amovible</item>
+    </string-array>
+</resources>

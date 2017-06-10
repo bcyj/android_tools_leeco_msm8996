@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--========================================================================
+@file event_sensor_list_item.xml
+
+@brief
+Specifies how each event sensor and items such as its current data
+should be displayed on the screen.
+
+Copyright (c) 2013 Qualcomm Technologies, Inc. All Rights Reserved.
+Qualcomm Technologies Proprietary and Confidential.
+=========================================================================-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reg_item_id" android:id="@+id/text_view_reg_id"></TextView>
+    <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/edit_field_item_id" android:numeric="integer" android:inputType="number">
+        <requestFocus></requestFocus>
+    </EditText>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reg_item_len" android:id="@+id/text_view_item_len"></TextView>
+    <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/edit_field_item_len" android:numeric="integer" android:inputType="number"></EditText>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reg_item_val" android:id="@+id/text_view_item_value"></TextView>
+    <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/edit_field_item_val"></EditText>
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/read_reg_val" android:id="@+id/button_read"></Button>
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/write_reg_value" android:id="@+id/button_write"></Button>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/scroll_view_log">
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/text_view_log"></TextView>
+    </ScrollView>
+</LinearLayout>

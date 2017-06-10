@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+<!--
+     Copyright (C) 2012-2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- The name of the app -->
+    <string name="app_name">File Manager</string>
+    <!-- The description of the app -->
+    <string name="app_description">Isang CyanogenMod file manager</string>
+
+    <!-- Human readable sizes -->
+    <string name="size_bytes">"B"</string>
+    <string name="size_kilobytes">kB</string>
+    <string name="size_megabytes">"MB"</string>
+    <string name="size_gigabytes">"GB"</string>
+
+    <!-- Date/time format order (%1$s: date; %2$s: time) -->
+    <string name="datetime_format_order">%1$s %2$s</string>
+
+    <!-- Devices types -->
+    <string name="device_blockdevice">Block device</string>
+    <string name="device_characterdevice">Character device</string>
+    <string name="device_namedpipe">Named pipe</string>
+    <string name="device_domainsocket">Domain socket</string>
+
+    <!-- Mount Point States -->
+    <string name="mount_point_readonly">RO</string>
+    <string name="mount_point_readwrite">RW</string>
+
+    <!-- Default buttons -->
+    <string name="ok" translatable="false">@android:string/ok</string>
+    <string name="cancel" translatable="false">@android:string/cancel</string>
+    <string name="yes">Oo</string>
+    <string name="no">Hindi</string>
+    <string name="all">"Lahat"</string>
+    <string name="overwrite">"I-overwrite"</string>
+    <string name="select">"Piliin"</string>
+
+    <!-- The root directory name -->
+    <string name="root_directory_name"><![CDATA[<Root folder>]]></string>
+    <!-- The search result name -->
+    <string name="search_result_name">Hanapin: <xliff:g id="terms">%1$s</xliff:g></string>
+
+    <!-- Loading waiting message -->
+    <string name="loading_message">"Naglo-load…"</string>
+    <!-- Computing message -->
+    <string name="computing_message" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Computing new line message -->
+    <string name="computing_message_ln" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Cancelled message -->
+    <string name="cancelled_message">Nakansela.</string>
+    <!-- Error message -->
+    <string name="error_message">Error.</string>
+    <!-- Copy text content description -->
+    <string name="copy_text_cd">I-tap upang kopyahin ang text sa clipboard</string>
+    <!-- Copy text content message -->
+    <string name="copy_text_msg">Nakopya ang text sa clipboard</string>
+
+    <!-- Warning dialog title -->
+    <string name="warning_title">Babala</string>
+    <!-- Error dialog title -->
+    <string name="error_title">Nakakita ng error</string>
+    <!-- Confirm operation dialog title -->
+    <string name="confirm_operation">Kumpirmahin ang pagpapatakbo</string>
+    <!-- Confirm overwrite dialog title -->
+    <string name="confirm_overwrite">Kumpirmahin ang pag-overwrite</string>
+    <!-- Confirm deletion dialog title -->
+    <string name="confirm_deletion">Kumpirmahin ang pagtanggal</string>
+
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Title -->
+    <string name="msgs_change_to_prompt_access_mode_title">Kumpirmahin ang paglipat</string>
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Message -->
+    <string name="msgs_change_to_prompt_access_mode_msg">Hindi makatakbo sa Root Access mode. Lilipat sa Safe mode.\n\nIlapat ang pagbabagong ito?</string>
+
+    <!-- A console couldn\'t be created - Without privileges, the app won\'t work -->
+    <string name="msgs_cant_create_console">Hindi makuha ang mga kinakailangang pribilehiyo upang gumana.</string>
+    <!-- The message shown when an allocation of a privileged console fails, and a non
+         privileged is allocated -->
+    <string name="msgs_privileged_console_alloc_failed">Hindi makatakbo sa Root Access mode. Lilipat sa Safe mode.</string>
+    <!-- The selected setting was not applied or stored -->
+    <string name="msgs_settings_save_failure">Hindi malapat o maimbak ang setting.</string>
+    <!-- The initial directory has an invalid or inaccessible reference -->
+    <string name="msgs_settings_invalid_initial_directory">Di-wasto ang pangunang folder na \'<xliff:g id="initial_dir">%1$s</xliff:g>\'. Lilipat sa root folder.</string>
+    <!-- Root is not available message -->
+    <string name="root_not_available_msg">Hindi available ang root sa device na ito. Hindi maisasagawa ang pagpapatakbong ito.</string>
+
+    <!-- Success -->
+    <string name="msgs_success">Matagumpay na natapos ang pagpapatakbo.</string>
+    <!-- Unknown error -->
+    <string name="msgs_unknown">Nakakita ng error. Hindi nagawa ang pagpapatakbo.</string>
+    <!-- When an operation requires elevated privileged (normally caused for the use of a
+         non-privileged console) -->
+    <string name="msgs_insufficient_permissions">Nangangailangan ang pagpapatakbong ito ng matataas na pahintulot. Subukang lumipat sa Root Access mode.</string>
+    <!-- When an operation fails because the device has run out of storage. -->
+    <string name="msgs_no_disk_space">Nabigo ang operation na ito dahil wala nang espasyong natitira sa device.</string>
+    <!-- The file or directory was not found -->
+    <string name="msgs_file_not_found">Hindi nakita ang file o folder.</string>
+    <!-- The command reference couldn\'t be created (not found or invalid definition)
+         (normally caused by a development error) -->
+    <string name="msgs_command_not_found">Hindi nakita ang command sa pagpapatakbo o mayroon itong di-wastong kahulugan.</string>
+    <!-- I/O exception -->
+    <string name="msgs_io_failed">Hindi pagbasa/pag-write.</string>
+    <!-- Operation timeout detected -->
+    <string name="msgs_operation_timeout">Nag-time out ang pagpapatakbo.</string>
+    <!-- The operation returns an invalid exit code -->
+    <string name="msgs_operation_failure">Hindi nagawa ang pagpapatakbo.</string>
+    <!-- A console couldn\'t be allocated -->
+    <string name="msgs_console_alloc_failure">Nagkaroon ng internal na error.</string>
+    <!-- An operation can\'t be cancelled -->
+    <string name="msgs_operation_can_not_be_cancelled">Hindi makakansela ang pagpapatakbo.</string>
+    <!-- The operation requieres mount the file system prior to execute the command -->
+    <string name="msgs_read_only_filesystem">Read-only ang file system. Subukang i-mount ang file system bilang read-write bago subukan ang pagpapatakbo.</string>
+    <!-- Illegal argument (normally caused by a development error when calling internal api) -->
+    <string name="msgs_illegal_argument">Ilegal na argumento. Hindi nakapag-invoke.</string>
+    <!-- The operation will cause inconsistencies -->
+    <string name="msgs_unresolved_inconsistencies">Hindi pinahintulutan ang pagpapatakbo dahil magdudulot ito ng mga pagbabagu-bago.</string>
+    <!-- Operation not permitted in current directory -->
+    <string name="msgs_operation_not_allowed_in_current_directory">Hindi pinahintulutan ang pagpapatakbo sa kasalukuyang folder.\n\nHindi maaaring subfolder ng pinagmulan o kapareho ng pinagmulan ang patutunguhang folder.</string>
+
+    <!-- The advice message prior to exit the app -->
+    <string name="msgs_push_again_to_exit">Pinduting muli upang umalis.</string>
+
+    <!-- There is no registered app that can handle the mime-type -->
+    <string name="msgs_not_registered_app">Walang app na nakarehistro upang pangasiwaan ang uri ng file na pinili.</string>
+
+    <!-- Overwrite files? -->
+    <string name="msgs_overwrite_files">Nasa patutunguhang folder na ang ilan sa mga file.\n\nI-overwrite?</string>
+
+    <!-- The association of an action to the app failed -->
+    <string name="msgs_action_association_failed">Hindi nagawa ang pag-uugnay sa pagkilos sa app.</string>
+
+    <!-- An operation requires elevated privileged. Ask the user. -->
+    <string name="advise_insufficient_permissions">Nangangailangan ang pagpapatakbo ng matataas na pribilehiyo.\n\nGusto mo bang lumipat sa Root Access mode?</string>
+
+    <!-- The parent directory of the current directory in navigation view -->
+    <string name="parent_dir">Parent folder</string>
+    <!-- External storage descripton -->
+    <string name="external_storage">External na storage</string>
+    <!-- Usb storage descripton -->
+    <string name="usb_storage">"USB storage"</string>
+
+    <!-- ActionBar Buttons - FileSystem -->
+    <string name="actionbar_button_filesystem_cd">Impormasyon ng file system</string>
+    <!-- ActionBar Buttons - Sort Mode -->
+    <string name="actionbar_button_sort_mode_cd">Sort mode</string>
+    <!-- ActionBar Buttons - Layout Mode -->
+    <string name="actionbar_button_layout_mode_cd">Layout mode</string>
+    <!-- ActionBar Buttons - Other View Options -->
+    <string name="actionbar_button_other_view_options_cd">Iba pang mga opsyon sa view</string>
+    <!-- ActionBar Buttons - Done -->
+    <string name="actionbar_button_selection_done_cd">"Tapos na"</string>
+    <!-- ActionBar Buttons - Actions -->
+    <string name="actionbar_button_actions_cd">Mga pagkilos</string>
+    <!-- ActionBar Buttons - Search -->
+    <string name="actionbar_button_search_cd">Maghanap</string>
+    <!-- ActionBar Buttons - Overflow -->
+    <string name="actionbar_button_overflow_cd">"Higit pang mga pagpipilian"</string>
+    <!-- ActionBar Buttons - Storage volumes -->
+    <string name="actionbar_button_storage_cd">Mga storage volume</string>
+    <!-- ActionBar Buttons - Save -->
+    <string name="actionbar_button_save_cd">"I-save"</string>
+    <!-- ActionBar Buttons - Print -->
+    <string name="actionbar_button_print_cd">"I-print"</string>
+
+    <!-- Navigation View - Sort - Sort by name (ascending) -->
+    <string name="sort_by_name_asc">Ayon sa pangalan \u25B2</string>
+    <!-- Navigation View - Sort - Sort by name (descending) -->
+    <string name="sort_by_name_desc">Ayon sa pangalan \u25BC</string>
+    <!-- Navigation View - Sort - Sort by date (ascending) -->
+    <string name="sort_by_date_asc">Ayon sa petsa \u25B2</string>
+    <!-- Navigation View - Sort - Sort by date (descending) -->
+    <string name="sort_by_date_desc">Ayon sa petsa \u25BC</string>
+    <!-- Navigation View - Sort - Sort by size (ascending) -->
+    <string name="sort_by_size_asc">Ayon sa laki \u25B2</string>
+    <!-- Navigation View - Sort - Sort by size (descending) -->
+    <string name="sort_by_size_desc">Ayon sa laki \u25BC</string>
+    <!-- Navigation View - Sort - Sort by type (ascending) -->
+    <string name="sort_by_type_asc">Ayon sa uri \u25B2</string>
+    <!-- Navigation View - Sort - Sort by type (descending) -->
+    <string name="sort_by_type_desc">Ayon sa uri \u25BC</string>
+
+    <!-- Navigation View - Layout - Icons -->
+    <string name="layout_icons">Mga Icon</string>
+    <!-- Navigation View - Layout - Simple -->
+    <string name="layout_simple">Simple</string>
+    <!-- Navigation View - Layout - Details -->
+    <string name="layout_details">Mga detalye</string>
+
+    <!-- Navigation View - View - Show folders first -->
+    <string name="cm_filemanager_show_dirs_first">Folder muna</string>
+    <!-- Navigation View - View - Show hidden files option -->
+    <string name="cm_filemanager_show_hidden">Ipakita ang mga nakatagong file</string>
+    <!-- Navigation View - View - Show system files option -->
+    <string name="cm_filemanager_show_system">Ipakita ang mga system file</string>
+    <!-- Navigation View - View - Show symlinks option -->
+    <string name="cm_filemanager_show_symlinks">Ipakita ang mga symlink</string>
+
+    <!-- Filesystem Info (no data). Dialog title -->
+    <string name="filesystem_info_warning_title">Walang impormasyon</string>
+    <!-- Filesystem Info (no data). Dialog message -->
+    <string name="filesystem_info_warning_msg">Walang impormasyon na available para sa file system.</string>
+    <!-- Filesystem Info - Filesystem couldn\'t be mounted -->
+    <string name="filesystem_info_cant_be_mounted_msg">Hindi ma-mount/ma-unmount ang file system.</string>
+    <!-- Filesystem Info - Not allowed message -->
+    <string name="filesystem_info_mount_not_allowed_msg">Hindi pinapayagan ang mga pagpapatakbong pag-mount ng file system sa Safe mode. I-tap upang lumipat sa Root Access mode.</string>
+    <!-- Filesystem Info - Mount failed -->
+    <string name="filesystem_info_mount_failed_msg">Hindi nagawa ang pagpapatakbong pag-mount ng file system. Hindi maaaring i-mount/i-unmount ang ilang file system, tulad ng mga SD card, dahil built-in bilang mga read-only na file system ang mga ito.</string>
+    <!-- Filesystem Info Dialog - Title -->
+    <string name="filesystem_info_dialog_title">Impormasyon ng file system</string>
+    <!-- Filesystem Info Dialog - Tab - Info -->
+    <string name="filesystem_info_dialog_tab_info">"Impormasyon"</string>
+    <!-- Filesystem Info Dialog - Tab - Disk Usage -->
+    <string name="filesystem_info_dialog_tab_disk_usage">Paggamit ng disk</string>
+    <!-- Filesystem Info Dialog - Status Label -->
+    <string name="filesystem_info_dialog_status">Status:</string>
+    <!-- Filesystem Info Dialog - Mount Point Label -->
+    <string name="filesystem_info_dialog_mount_point">Mount point:</string>
+    <!-- Filesystem Info Dialog - Device Label -->
+    <string name="filesystem_info_dialog_device">Device:</string>
+    <!-- Filesystem Info Dialog - Type Label -->
+    <string name="filesystem_info_dialog_type">Uri:</string>
+    <!-- Filesystem Info Dialog - Options Label -->
+    <string name="filesystem_info_dialog_options">Mga opsyon:</string>
+    <!-- Filesystem Info Dialog - Dump/Pass Label -->
+    <string name="filesystem_info_dialog_dump_pass">Dump / Pass:</string>
+    <!-- Filesystem Info Dialog - Virtual Label -->
+    <string name="filesystem_info_dialog_virtual">Virtual:</string>
+    <!-- Filesystem Info Dialog - Total Disk Usage -->
+    <string name="filesystem_info_dialog_total_disk_usage">Kabuuan:</string>
+    <!-- Filesystem Info Dialog - Used Disk Usage -->
+    <string name="filesystem_info_dialog_used_disk_usage">Ginagamit:</string>
+    <!-- Filesystem Info Dialog - Free Disk Usage -->
+    <string name="filesystem_info_dialog_free_disk_usage">Bakante:</string>
+
+    <!-- Fso Properties - Not allowed message -->
+    <string name="fso_properties_permissions_not_allowed_msg">Hindi pinapayagan ang mga pagpapatakbong pagpapahintulot sa Safe mode. I-tap upang lumipat sa Root Access mode.</string>
+    <!-- Fso Properties - Failed to change owner to fso -->
+    <string name="fso_properties_failed_to_change_owner_msg">Hindi nagawa ang pagpapatakbong pagpapalit ng may-ari.\n\nPara sa mga dahilang panseguridad, hindi pinapayagan ng ilang file system, tulad ng mga SD card, ang pagbabago ng pagmamay-ari.</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_group_msg">Hindi nagawa ang pagpapatakbong pagbabago ng pangkat.\n\nPara sa mga dahilang panseguridad, hindi pinapayagan ng ilang file system, tulad ng mga SD card, ang pagbabago ng mga pangkat.</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_permission_msg">Hindi nagawa ang pagpapatakbong pagbabago ng mga pahintulot.\n\nPara sa mga dahilang panseguridad, hindi pinapayagan ng ilang file system, tulad ng mga SD card, ang pagbabago ng mga pahintulot.</string>
+    <!-- Fso Properties Dialog - Title -->
+    <string name="fso_properties_dialog_title">Mga katangian</string>
+    <!-- Fso Properties Dialog - Tab - Info -->
+    <string name="fso_properties_dialog_tab_info">"Impormasyon"</string>
+    <!-- Fso Properties Dialog - Tab - Permissions -->
+    <string name="fso_properties_dialog_tab_permissions">"Mga Pahintulot"</string>
+    <!-- Fso Properties Dialog - Name Label -->
+    <string name="fso_properties_dialog_name">Pangalan:</string>
+    <!-- Fso Properties Dialog - Parent Folder Label -->
+    <string name="fso_properties_dialog_parent">Parent:</string>
+    <!-- Fso Properties Dialog - Type Label -->
+    <string name="fso_properties_dialog_type">Uri:</string>
+    <!-- Fso Properties Dialog - Category Label -->
+    <string name="fso_properties_dialog_category">Kategorya:</string>
+    <!-- Fso Properties Dialog - Link Label -->
+    <string name="fso_properties_dialog_link">Link:</string>
+    <!-- Fso Properties Dialog - Size Label -->
+    <string name="fso_properties_dialog_size">Laki:</string>
+    <!-- Fso Properties Dialog - Contains Label -->
+    <string name="fso_properties_dialog_contains">Nilalaman:</string>
+    <!-- Fso Properties Dialog - Last Accessed Time Label -->
+    <string name="fso_properties_dialog_last_accessed_date">Na-access:</string>
+    <!-- Fso Properties Dialog - Last Modified Time Label -->
+    <string name="fso_properties_dialog_last_modified_date">Binago:</string>
+    <!-- Fso Properties Dialog - Last Changed Time -->
+    <string name="fso_properties_dialog_last_changed_date">Pinalitan:</string>
+    <!-- Fso Properties Dialog - Owner Label -->
+    <string name="fso_properties_dialog_owner">May-ari:</string>
+    <!-- Fso Properties Dialog - Group Label -->
+    <string name="fso_properties_dialog_group">Pangkat:</string>
+    <!-- Fso Properties Dialog - Others Label -->
+    <string name="fso_properties_dialog_others">Iba pa:</string>
+    <!-- Fso Properties Dialog - Special Label -->
+    <string name="fso_properties_dialog_special" translatable="false">S</string>
+    <!-- Fso Properties Dialog - Read Label -->
+    <string name="fso_properties_dialog_read" translatable="false">R</string>
+    <!-- Fso Properties Dialog - Write Label -->
+    <string name="fso_properties_dialog_write" translatable="false">W</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_execute" translatable="false">X</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_folder_items" translatable="false"><xliff:g id="folders">%1$s</xliff:g> / <xliff:g id="files">%2$s</xliff:g></string>
+    <!-- Fso Properties Dialog - Skip media scan -->
+    <string name="fso_properties_dialog_include_in_media_scan">Laktawan ang pag-scan ng media:</string>
+    <string name="fso_failed_to_allow_media_scan">Hindi napayagan ang pag-scan ng media</string>
+    <string name="fso_failed_to_prevent_media_scan">Hindi napigilan ang pag-scan ng media</string>
+    <string name="fso_delete_nomedia_dir_title">Tanggalin ang direktoryong .nomedia</string>
+    <string name="fso_delete_nomedia_dir_body">Naglalaman ang direktoryong ito ng direktoryong .nomedia.\n\nGusto mo bang tanggalin ito at lahat ng nilalaman nito?</string>
+    <string name="fso_delete_nomedia_non_empty_title">Tanggalin ang .nomedia file</string>
+    <string name="fso_delete_nomedia_non_empty_body">Naglalaman ang direktoryong ito ng hindi blangkong .nomedia file.\n\nGusto mo ba itong tanggalin?</string>
+
+    <!-- History - History activity title -->
+    <string name="history">"Kasaysayan"</string>
+    <!-- History - The history is empty -->
+    <string name="msgs_history_empty">Walang laman ang kasaysayan.</string>
+    <!-- History - The history reference is not in the actual history list -->
+    <string name="msgs_history_unknown">Hindi nalalamang item sa kasaysayan.</string>
+
+    <!-- Search - Search activity title -->
+    <string name="search">Mga resulta ng paghahanap</string>
+    <!-- Search - Search hint message -->
+    <string name="search_hint">I-type ang iyong paghahanap</string>
+    <!-- Search - Voice search hint message -->
+    <string name="search_voice_hint">Bigkasin ang iyong paghahanap</string>
+    <!-- Search - Search error message -->
+    <string name="search_error_msg">Nagkaroon ng error habang naghahanap. Walang nakitang mga resulta.</string>
+    <!-- Search - Search no results message -->
+    <string name="search_no_results_msg">Walang nakitang mga resulta.</string>
+    <!-- Search - Number of items found in directory -->
+    <string name="search_found_items_in_directory"><xliff:g id="items">%1$s</xliff:g> sa <xliff:g id="path">%2$s</xliff:g></string>
+    <!-- Search - Search query terms -->
+    <string name="search_terms">&lt;b&gt;Mga termino:&lt;/b&gt; <xliff:g id="terms">%1$s</xliff:g></string>
+    <!-- Search - Confirm search -->
+    <string name="search_few_characters_title">Kumpirmahin ang paghahanap</string>
+    <!-- Search - Some terms of the search are too small. The operation could be very costly -->
+    <string name="search_few_characters_msg">May maliit na bilang ng mga character ang ilan sa mga termino para sa paghahanap. Maaaring lubos na magastos sa oras at mga mapagkukunan ng system ang pagpapatakbo.\n\nGusto mo bang magpatuloy?</string>
+    <!-- Search - Searching dialog title -->
+    <string name="searching">"Pakihintay…"</string>
+    <!-- Search - Searching label -->
+    <string name="searching_action_label">Naghahanap</string>
+
+    <!-- Picker Activity -->
+    <string name="picker" translatable="false">@string/app_name</string>
+    <!-- Picker Activity - Dialog title -->
+    <string name="picker_title">Pumili ng file</string>
+    <string name="directory_picker_title">Pumili ng direktoryo</string>
+
+    <!-- Editor - Editor activity title -->
+    <string name="editor">Editor</string>
+    <!-- Editor - Invalid file message -->
+    <string name="editor_invalid_file_msg">Di-wastong file.</string>
+    <!-- Editor - File not found message -->
+    <string name="editor_file_not_found_msg">Hindi nakita ang file.</string>
+    <!-- Editor - File size exceed the limit -->
+    <string name="editor_file_exceed_size_msg">Masyadong malaki ang file upang buksan sa device na ito.</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog title -->
+    <string name="editor_dirty_ask_title">Kumpirmahin ang pag-alis</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog message -->
+    <string name="editor_dirty_ask_msg">May mga hindi na-save na pagbabago.\n\nUmalis nang hindi nagse-save?</string>
+    <!-- Editor - Save operation success -->
+    <string name="editor_successfully_saved">Matagumpay na na-save ang file.</string>
+    <!-- Editor - Read-only file mode -->
+    <string name="editor_read_only_mode">Binuksan ang file sa read-only mode.</string>
+    <!-- Editor - Dumping message -->
+    <string name="dumping_message">Bumubuo ng hex dump\u2026</string>
+    <!-- Editor - Displaying -->
+    <string name="displaying_message">Ipinapakita\u2026</string>
+
+    <!-- Bookmarks - Bookmarks activity title -->
+    <string name="bookmarks">Mga bookmark</string>
+    <!-- Bookmarks - Bookmark name - Home -->
+    <string name="bookmarks_home">"Home"</string>
+    <!-- Bookmarks - Bookmark name - Root folder -->
+    <string name="bookmarks_root_folder">Root folder</string>
+    <!-- Bookmarks - Bookmark name - System folder -->
+    <string name="bookmarks_system_folder">System folder</string>
+    <!-- Bookmarks - Bookmark name - Secure storage -->
+    <string name="bookmarks_secure">Secure na storage</string>
+    <!-- Bookmarks - Bookmark name - Remote storage -->
+    <string name="bookmarks_remote">Remote na storage</string>
+    <!-- Bookmarks - Bookmark name - Button - Initial directory content description -->
+    <string name="bookmarks_button_config_cd">Itakda ang pangunang folder.</string>
+    <!-- Bookmarks - Bookmark name - Button - Remove bookmark content description -->
+    <string name="bookmarks_button_remove_bookmark_cd">Alisin ang bookmark.</string>
+    <!-- Bookmarks - Bookmarks - Actions - Bookmark successfully added -->
+    <string name="bookmarks_msgs_add_success">Matagumpay na naidagdag ang bookmark.</string>
+
+    <!-- Initial directory dialog title -->
+    <string name="initial_directory_dialog_title">Pangunang folder</string>
+    <!-- Initial directory label -->
+    <string name="initial_directory_label">Piliin ang pangunang folder:</string>
+    <!-- Initial directory is relative -->
+    <string name="initial_directory_relative_msg">Hindi pinapayagan ang mga relative path.</string>
+    <!-- Initial directory error message -->
+    <string name="initial_directory_error_msg">Nagkaroon ng error habang sine-save ang pangunang folder.</string>
+
+    <!-- Menu - Navigation - Search -->
+    <string name="menu_search">Maghanap</string>
+    <!-- Menu - Navigation - Settings -->
+    <string name="menu_settings">Mga setting</string>
+    <!-- Menu - History - Clear history -->
+    <string name="menu_clear_history">"I-clear ang kasaysayan"</string>
+    <!-- Menu - Editor - No suggestions -->
+    <string name="menu_no_suggestions">Walang mga suhestyon</string>
+    <!-- Menu - Editor - Word wrap -->
+    <string name="menu_word_wrap">Word wrap</string>
+    <!-- Menu - Editor - Sintax highlight -->
+    <string name="menu_syntax_highlight">Pag-highlight ng syntax</string>
+
+    <!-- Regular expression for create copy action -->
+    <string name="create_copy_regexp"><xliff:g id="name">%1$s</xliff:g> - kopya<xliff:g id="extension">%2$s</xliff:g></string>
+    <!-- Regular expression for new compressed file -->
+    <string name="create_new_compress_file_regexp"><xliff:g id="name">%1$s</xliff:g> - bago<xliff:g id="extension">%2$s</xliff:g></string>
+
+    <!-- Waiting dialog - Performing operation message -->
+    <string name="waiting_dialog_msg">Isinasagawa ang pagpapatakbo\u2026</string>
+    <!-- Waiting dialog - Copying title -->
+    <string name="waiting_dialog_copying_title">Kinokopya\u2026</string>
+    <!-- Waiting dialog - Copying message -->
+    <string name="waiting_dialog_copying_msg">&lt;b&gt;Mula sa&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>&lt;br/&gt;&lt;b&gt;To&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g></string>
+    <!-- Waiting dialog - Moving title -->
+    <string name="waiting_dialog_moving_title">Inililipat\u2026</string>
+    <!-- Waiting dialog - Moving message -->
+    <string name="waiting_dialog_moving_msg">&lt;b&gt;Mula sa&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>&lt;br/&gt;&lt;b&gt;To&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g></string>
+    <!-- Waiting dialog - Deleting title -->
+    <string name="waiting_dialog_deleting_title">Tinatanggal\u2026</string>
+    <!-- Waiting dialog - Deleting message -->
+    <string name="waiting_dialog_deleting_msg">&lt;b&gt;File&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_extracting_title">"Ine-extract…"</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_extracting_msg">&lt;b&gt;File&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_compressing_title">Kino-compress\u2026</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_compressing_msg">&lt;b&gt;File&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Initializing the dialog -->
+    <string name="waiting_dialog_analizing_msg"><![CDATA[<b>Sinusuri\u2026</b>]]></string>
+    <!-- Extracting - Success message -->
+    <string name="msgs_extracting_success">Matagumpay na natapos ang pagpapatakbong pag-extract. Na-extract ang data sa <xliff:g id="destination">%1$s</xliff:g>.</string>
+    <!-- Compressing - Success message -->
+    <string name="msgs_compressing_success">Matagumpay na natapos ang pagpapatakbong pag-compress. Na-compress ang data sa <xliff:g id="destination">%1$s</xliff:g>.</string>
+
+    <!-- Actions Dialog - Title -->
+    <string name="actions_dialog_title">Mga pagkilos</string>
+    <!-- Actions Dialog - Menu - Properties of current folder -->
+    <string name="actions_menu_properties_current_folder">Mga katangian</string>
+    <!-- Actions Dialog - Menu - Refresh -->
+    <string name="actions_menu_refresh">"I-refresh"</string>
+    <!-- Actions Dialog - Menu - New directory -->
+    <string name="actions_menu_new_directory">Bagong folder</string>
+    <!-- Actions Dialog - Menu - New file -->
+    <string name="actions_menu_new_file">Bagong file</string>
+    <!-- Actions Dialog - Menu - Select all -->
+    <string name="actions_menu_select_all">Piliin lahat</string>
+    <!-- Actions Dialog - Menu - Deselect all -->
+    <string name="actions_menu_deselect_all">I-deselect lahat</string>
+    <!-- Actions Dialog - Menu - Select -->
+    <string name="actions_menu_select">"Piliin"</string>
+    <!-- Actions Dialog - Menu - Deselect -->
+    <string name="actions_menu_deselect">Alisin sa pagkakapili</string>
+    <!-- Actions Dialog - Menu - Copy/Paste selection -->
+    <string name="actions_menu_paste_selection">Kopyahin dito</string>
+    <!-- Actions Dialog - Menu - Move selection -->
+    <string name="actions_menu_move_selection">Ilipat dito ang pinili</string>
+    <!-- Actions Dialog - Menu - Delete selection -->
+    <string name="actions_menu_delete_selection">Tanggalin ang pinili</string>
+    <!-- Actions Dialog - Menu - Compress selection -->
+    <string name="actions_menu_compress_selection">I-compress ang pinili</string>
+    <!-- Actions Dialog - Menu - Create link -->
+    <string name="actions_menu_create_link">Gumawa ng link</string>
+    <!-- Actions Dialog - Menu - Open -->
+    <string name="actions_menu_open">"Buksan"</string>
+    <!-- Actions Dialog - Menu - Open with -->
+    <string name="actions_menu_open_with">"Buksan gamit ang"</string>
+    <!-- Actions Dialog - Menu - Execute -->
+    <string name="actions_menu_execute">"Isakatuparan"</string>
+    <!-- Actions Dialog - Menu - Send -->
+    <string name="actions_menu_send">"Ipadala"</string>
+    <!-- Actions Dialog - Menu - Send selection -->
+    <string name="actions_menu_send_selection">Ipadala ang pinili</string>
+    <!-- Actions Dialog - Menu - Compress -->
+    <string name="actions_menu_compress">I-compress</string>
+    <!-- Actions Dialog - Menu - Extract -->
+    <string name="actions_menu_extract">I-extract</string>
+    <!-- Actions Dialog - Menu - Delete -->
+    <string name="actions_menu_delete">"Tanggalin"</string>
+    <!-- Actions Dialog - Menu - Rename -->
+    <string name="actions_menu_rename">I-rename</string>
+    <!-- Actions Dialog - Menu - Create copy -->
+    <string name="actions_menu_create_copy">Gumawa ng kopya</string>
+    <!-- Actions Dialog - Menu - Properties -->
+    <string name="actions_menu_properties">Mga katangian</string>
+    <!-- Actions Dialog - Menu - Add to bookmarks -->
+    <string name="actions_menu_add_to_bookmarks">I-bookmark</string>
+    <!-- Actions Dialog - Menu - Add shortcut -->
+    <string name="actions_menu_add_shortcut">Gawan ng shortcut</string>
+    <!-- Actions Dialog - Menu - Open parent folder -->
+    <string name="actions_menu_open_parent_folder">Buksan ang parent</string>
+    <!-- Actions Dialog - Menu - Compute checksum -->
+    <string name="actions_menu_compute_checksum">Kalkulahin checksum</string>
+    <!-- Actions Dialog - Menu - Print -->
+    <string name="actions_menu_print">"I-print"</string>
+    <!-- Actions Dialog - Menu - Set as home -->
+    <string name="actions_menu_set_as_home">Itakda bilang home</string>
+
+    <!-- Actions - Ask user prior to do an undone operation. Dialog message -->
+    <string name="actions_ask_undone_operation_msg">Hindi mababawi ang pagkilos na ito. Gusto mo bang magpatuloy?</string>
+
+    <!-- Enter Name Dialog - Label -->
+    <string name="input_name_dialog_label">Pangalan:</string>
+    <!-- Enter Name Dialog - Message - Empty name -->
+    <string name="input_name_dialog_message_empty_name">Hindi maaaring blangko ang pangalan.</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_path_name">Di-wastong pangalan. Hindi pinapayagan ang mga character na \'<xliff:g id="invalid_characters">%1$s</xliff:g>\'.</string>
+    <!-- Enter Name Dialog - Message - Invalid name length -->
+    <string name="input_name_dialog_message_invalid_name_length">Masyadong mahaba ang file name, mangyaring pag-isipang maglagay ng 255 character o mas maikli.</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_name">Di-wastong pangalan. Hindi pinapayagan ang mga pangalang \'.\' at \'..\'.</string>
+    <!-- Enter Name Dialog - Message - Name exists -->
+    <string name="input_name_dialog_message_name_exists">May ganito nang pangalan.</string>
+
+    <!-- Associations Dialog - Title -->
+    <string name="associations_dialog_title">Mga kaugnayan</string>
+    <!-- Associations Dialog - Remember the user action -->
+    <string name="associations_dialog_remember">Tandaan ang pinili</string>
+    <!-- Associations Dialog - Open with Title -->
+    <string name="associations_dialog_openwith_title">"Buksan gamit ang"</string>
+    <!-- Associations Dialog - Open action (button title) -->
+    <string name="associations_dialog_openwith_action">"Buksan"</string>
+    <!-- Associations Dialog - Send with Title -->
+    <string name="associations_dialog_sendwith_title">Ipadala gamit ang</string>
+    <!-- Associations Dialog - Send action (button title) -->
+    <string name="associations_dialog_sendwith_action">"Ipadala"</string>
+
+    <!-- Inline Autocomplete Widget - Tab message nothing to complete -->
+    <string name="inline_autocomplete_tab_nothing_to_complete_msg">Walang tatapusin.</string>
+
+    <!-- Execution console - Title -->
+    <string name="execution_console_title">Console</string>
+    <!-- Execution console - The script name label -->
+    <string name="execution_console_script_name_label">Script:</string>
+    <!-- Execution console - The script execution time label -->
+    <string name="execution_console_script_execution_time_label">Oras:</string>
+    <!-- Execution console - The script exit code label -->
+    <string name="execution_console_script_exitcode_label">Code sa pag-alis:</string>
+    <!-- Execution console - The script execution time seconds string -->
+    <string name="execution_console_script_execution_time_text"><xliff:g id="seconds">%1$s</xliff:g> (na) seg.</string>
+
+    <!-- Compute checksum - Title -->
+    <string name="compute_checksum_title">Kalkulahin checksum</string>
+    <!-- Compute checksum - The file name label -->
+    <string name="compute_checksum_filename_label">File:</string>
+    <!-- Compute checksum - The MD5 label -->
+    <string name="compute_checksum_md5_label" translatable="false">MD5:</string>
+    <!-- Compute checksum - The SHA1 label -->
+    <string name="compute_checksum_sha1_label" translatable="false">SHA-1:</string>
+    <!-- Compute checksum - The computing checksum message-->
+    <string name="compute_checksum_computing_checksum_msg">Kinakalkula ang checksum\u2026</string>
+
+    <!-- Mime/Types - Folder -->
+    <string name="mime_folder">Folder</string>
+    <!-- Mime/Types - Symlink -->
+    <string name="mime_symlink">Symlink</string>
+    <!-- Mime/Types - Unknown -->
+    <string name="mime_unknown">"Hindi Kilala"</string>
+
+    <!--  Filetime formats -->
+    <string name="filetime_format_mode_system">System-defined</string>
+    <string name="filetime_format_mode_locale">Locale-defined</string>
+    <string name="filetime_format_mode_ddMMyyyy_HHmmss">dd/mm/yyyy hh:mm:ss</string>
+    <string name="filetime_format_mode_MMddyyyy_HHmmss">mm/dd/yyyy hh:mm:ss</string>
+    <string name="filetime_format_mode_yyyyMMdd_HHmmss">yyyy-mm-dd hh:mm:ss</string>
+
+    <!-- Selection -->
+    <!-- For example "2 folders and 1 file selected." -->
+    <string name="selection_folders_and_files">Pinili ang <xliff:g id="folders">%1$s</xliff:g> at <xliff:g id="files">%2$s</xliff:g>.</string>
+
+    <!-- Category descriptions -->
+    <string name="category_system">"SYSTEM"</string>
+    <string name="category_app">APP</string>
+    <string name="category_binary">BINARY</string>
+    <string name="category_text">TEXT</string>
+    <string name="category_document">DOKUMENTO</string>
+    <string name="category_ebook">EBOOK</string>
+    <string name="category_mail">MAIL</string>
+    <string name="category_compress">COMPRESS</string>
+    <string name="category_exec">NA-E-EXECUTE</string>
+    <string name="category_database">DATABASE</string>
+    <string name="category_font">FONT</string>
+    <string name="category_image">LARAWAN</string>
+    <string name="category_audio">AUDIO</string>
+    <string name="category_video">VIDEO</string>
+    <string name="category_security">SEGURIDAD</string>
+    <string name="category_all">LAHAT</string>
+
+    <!-- Compression - Compression modes dialog title -->
+    <string name="compression_mode_title">Compression mode</string>
+    <!-- Compression - Supported archive and compression modes -->
+    <string name="compression_mode_tar" translatable="false">Tar (tar)</string>
+    <string name="compression_mode_tar_gzip" translatable="false">Tar/gzip (tar.gz)</string>
+    <string name="compression_mode_tar_gzip2" translatable="false">Tar/gzip (tgz)</string>
+    <string name="compression_mode_tar_bzip" translatable="false">Tar/bzip (tar.bz2)</string>
+    <string name="compression_mode_gzip" translatable="false">Gzip (gz)</string>
+    <string name="compression_mode_bzip" translatable="false">Bzip (bz2)</string>
+    <string name="compression_mode_zip" translatable="false">Zip (zip)</string>
+
+    <!-- Shortcut. Failed to handle the shortcut -->
+    <string name="shortcut_failed_msg">Hindi napangasiwaan ang shortcut.</string>
+    <!-- Shortcut. The shortcut was created -->
+    <string name="shortcut_creation_success_msg">Matagumpay na nagawa ang shortcut.</string>
+    <!-- Shortcut. The shortcut wasn\'t created -->
+    <string name="shortcut_creation_failed_msg">Hindi nagawa ang shortcut.</string>
+
+    <!-- Preferences title -->
+    <string name="pref">Mga setting</string>
+    <!-- Preferences - General title -->
+    <string name="pref_general">Panlahat ng setting</string>
+    <!-- Preferences - Search title -->
+    <string name="pref_search">Mga opsyon sa paghahanap</string>
+    <!-- Preferences - Storage title -->
+    <string name="pref_storage">Mga opsyon sa storage</string>
+    <!-- Preferences - Editor title -->
+    <string name="pref_editor">Mga opsyon sa editor</string>
+    <!-- Preferences - Themes title -->
+    <string name="pref_themes">Mga tema</string>
+    <!-- Preferences - About title -->
+    <string name="pref_about">"Tungkol sa"</string>
+    <!-- Preferences - About summary -->
+    <string name="pref_about_summary">File Manager v<xliff:g id="version">%1$s</xliff:g>\nCopyright \u00A9 2012–2014 Ang CyanogenMod Project</string>
+
+    <!-- Preferences - General - Behaviour category -->
+    <string name="pref_general_behaviour_category">"Pangkalahatan"</string>
+    <!-- Preferences - General - Case sensitive sort and navigating title -->
+    <string name="pref_case_sensitive_sort">Case-sensitive</string>
+    <!-- Preferences - General - Case sensitive sort and navigating summary -->
+    <string name="pref_case_sensitive_sort_summary">Isaalang-alang ang case kapag nina-navigate o pinag-uuri-uri ang mga resulta ng paghahanap</string>
+    <!-- Preferences - General - Filetime format mode title -->
+    <string name="pref_filetime_format_mode">Format ng petsa/oras</string>
+    <!-- Preferences - General -Disk usage warning level title -->
+    <string name="pref_disk_usage_warning_level">Babala sa paggamit ng disk</string>
+    <!-- Preferences - General - Disk usage warning level summary -->
+    <!-- FIXME Use "percent" instead of "%" symbol, because it make crash the app on getSummary
+         of ListPreference. This should be fixed in frameworks base prior to be added here. -->
+    <string name="pref_disk_usage_warning_level_summary" formatted="false">Magpakita ng ibang kulay sa mga widget para sa paggamit ng disk kapag naabot na ng mga ito ang <xliff:g id="level">%1$s</xliff:g> (na) porsyento ng bakanteng espasyo sa disk</string>
+    <!-- Preferences - General - Compute folder statistics title -->
+    <string name="pref_compute_folder_statistics">Kalkulahin folder statistics</string>
+    <!-- Preferences - General - Compute folder statistics summary on -->
+    <string name="pref_compute_folder_statistics_on">Babala! Magastos sa oras at mga mapagkukunan ng system ang pagkalkula ng mga istatistika ng folder</string>
+    <!-- Preferences - General - Display thumbs -->
+    <string name="pref_display_thumbs">"I-preview"</string>
+    <!-- Preferences - General - Display thumbs summary -->
+    <string name="pref_display_thumbs_summary">Magpakita ng preview na larawan para sa mga app, file ng musika, larawan at video</string>
+    <!-- Preferences - General - Use flinger detection -->
+    <string name="pref_use_flinger">Gumamit ng swipe gestures</string>
+    <!-- Preferences - General - Use flinger detection summary -->
+    <string name="pref_use_flinger_summary">Gamitin ang pagtukoy sa gesture na mag-swipe pakanan upang magtanggal ng mga file o folder</string>
+    <!-- Preferences - General - Advanced settings category -->
+    <string name="pref_general_advanced_settings_category">"Advanced"</string>
+    <!-- Preferences - General - Access mode -->
+    <string name="pref_access_mode">Access mode</string>
+    <!-- Preferences - General - Safe mode -->
+    <string name="pref_access_mode_safe">"Safe mode"</string>
+    <!-- Preferences - General - Safe mode summary -->
+    <string name="pref_access_mode_safe_summary">Safe mode\n\nTumatakbo ang app nang walang mga pribilehiyo at ang mga tanging naa-access na file system ay ang mga storage volume (mga SD card at USB)</string>
+    <!-- Preferences - General - Prompt user mode -->
+    <string name="pref_access_mode_prompt">Prompt User mode</string>
+    <!-- Preferences - General - Prompt user mode summary -->
+    <string name="pref_access_mode_prompt_summary">Prompt User mode\n\nTumatakbo ang app nang may ganap na access sa file system ngunit magpa-prompt para sa pahintulot bago magsagawa ng anumang mga may pribilehiyong pagkilos</string>
+    <!-- Preferences - General - Root access mode -->
+    <string name="pref_access_mode_root">Root Access mode</string>
+    <!-- Preferences - General - Root access mode summary -->
+    <string name="pref_access_mode_root_summary">Root Access mode\n\nBabala! Pinapayagan ng mode na ito ang mga pagpapatakbo na maaaring makasira sa device mo. Responsibilidad mong tiyaking ligtas ang isang pagpapatakbo</string>
+    <!-- Preferences - General - Restrict secondary users access title -->
+    <string name="pref_restrict_secondary_users_access_title">Paghigpitan ang access ng mga user</string>
+    <!-- Preferences - General - Restrict secondary users access summary -->
+    <string name="pref_restrict_secondary_users_access_summary">Paghigpitan ang access sa buong system sa mga sekundaryong user</string>
+    <!-- Preferences - Search - Results category -->
+    <string name="pref_search_results_category">"Mga resulta"</string>
+    <!-- Preferences - Search - Show relevance widget -->
+    <string name="pref_show_relevance_widget">Ipakita ang relevance widget</string>
+    <!-- Preferences - Search - Highlight search terms -->
+    <string name="pref_highlight_terms">I-highlight ang search terms</string>
+    <!-- Preferences - Search - Sort results mode -->
+    <string name="pref_sort_search_results_mode">Sort results mode</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_none">Walang pag-uuri-uri</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_name">"Ayon sa pangalan"</string>
+    <!-- Preferences - Search - Sort results mode. Relevance -->
+    <string name="pref_sort_search_results_mode_relevance">Ayon sa kaugnayan</string>
+    <!-- Preferences - Search - Privacity category -->
+    <string name="pref_search_privacity_category">"Privacy"</string>
+    <!-- Preferences - Search - Save search terms -->
+    <string name="pref_save_search_terms">I-save ang search terms</string>
+    <!-- Preferences - Search - Save search terms summary on -->
+    <string name="pref_save_search_terms_on">Ise-save ang mga termino para sa paghahanap at gagamitin ang mga ito bilang mga suhestyon sa mga paghahanap sa hinaharap</string>
+    <!-- Preferences - Search - Save search terms summary off -->
+    <string name="pref_save_search_terms_off">Hindi ise-save ang mga termino para sa paghahanap</string>
+    <!-- Preferences - Search - Remove saved search terms -->
+    <string name="pref_remove_saved_search_terms">Alisin ang na-save na search terms</string>
+    <!-- Preferences - Search - Remove saved search terms summary -->
+    <string name="pref_remove_saved_search_terms_summary">I-tap upang alisin ang lahat ng naka-save na termino para sa paghahanap</string>
+    <!-- Preferences - Search - Suggestions were truncated -->
+    <string name="pref_remove_saved_search_terms_msg">Inalis ang lahat ng naka-save na termino para sa paghahanap</string>
+    <!-- Preferences - Storage - Secure Storage category -->
+    <string name="pref_secure_storage_category">Secure na storage</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync title -->
+    <string name="pref_secure_storage_delayed_sync_title">Naantalang pag-synchronize</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync summary -->
+    <string name="pref_secure_storage_delayed_sync_summary">Magastos na pagpapatakbo ang pag-synchronize ng mga secure na file system. I-enable ang opsyong ito upang magbigay-daan sa mas mabibilis na tugon pagkatapos ng bawat pagpapatakbo, at isasagawa ang pag-synchronize kapag hindi ginagamit ang filesystem, ngunit maaaring mawala ang nakabinbing impormasyon na hindi naka-sync kung mag-crash ang app.</string>
+    <!-- Preferences - Storage - Secure Storage - Reset password title -->
+    <string name="pref_secure_storage_reset_password_title">I-reset ang password</string>
+    <!-- Preferences - Storage - Secure Storage - Delete storage title -->
+    <string name="pref_secure_storage_delete_storage_title">Tanggalin ang storage</string>
+    <!-- Preferences - Editor - Behaviour category -->
+    <string name="pref_editor_behaviour_category">Pagkilos</string>
+    <!-- Preferences - Editor - No suggestions -->
+    <string name="pref_no_suggestions">Walang mga suhestyon</string>
+    <!-- Preferences - Editor - No suggestions summary -->
+    <string name="pref_no_suggestions_desc">Huwag magpakita ng mga suhestyon ng diksyunaryo habang ine-edit ang file</string>
+    <!-- Preferences - Editor - Word wrap -->
+    <string name="pref_word_wrap">Word wrap</string>
+    <!-- Preferences - Editor - Hex dump -->
+    <string name="pref_hexdump">Mga hex dump binary file</string>
+    <!-- Preferences - Editor - Hex dump desc -->
+    <string name="pref_hexdump_desc">Kapag nagbubukas ng binary file, bumuo ng hex dump ng file at buksan iyon sa hex viewer</string>
+    <!-- Preferences - Editor - Syntax highlight category -->
+    <string name="pref_editor_syntax_highlight_category">Pag-highlight ng syntax</string>
+    <!-- Preferences - Editor - Syntax highlight -->
+    <string name="pref_syntax_highlight">Pag-highlight ng syntax</string>
+    <!-- Preferences - Editor - Syntax highlight summary -->
+    <string name="pref_syntax_highlight_desc">I-highlight ang syntax ng file na ipinapakita sa editor (kapag mayroon lang processor sa pag-highlight ng syntax para sa uri ng file)</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme -->
+    <string name="pref_syntax_highlight_color_scheme">Scheme ng kulay</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme summary -->
+    <string name="pref_syntax_highlight_color_scheme_desc">Piliin ang scheme ng kulay ng highlight ng syntax</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme -->
+    <string name="pref_syntax_sh_use_theme_default">Gamitin ang default sa tema</string>
+    <!-- Preferences - Editor - Syntax highlight -Color Scheme summary -->
+    <string name="pref_syntax_sh_use_theme_default_desc">Gamitin ang default na highlight ng syntax ng kasalukuyang tema</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme - Items category -->
+    <string name="pref_editor_sh_item_category">Mga item</string>
+    <!-- Preferences - Themes - Themes selection category -->
+    <string name="pref_themes_selection_category">Mga tema</string>
+    <!-- Preferences - Themes - Set theme button -->
+    <string name="pref_themes_set_theme">Itakda ang tema</string>
+    <!-- Preferences - Themes - Confirmation message -->
+    <string name="pref_themes_confirmation">Matagumpay na nalapat ang tema.</string>
+    <!-- Preferences - Themes - Theme not found message -->
+    <string name="pref_themes_not_found">Hindi nakita ang tema.</string>
+
+    <!-- Preferences - Debug - Capture debug traces -->
+    <string name="pref_debug_traces">Impormasyon sa pag-debug ng log</string>
+
+    <!-- Themes - Default theme name -->
+    <string name="theme_default_name">Maliwanag na Tema</string>
+    <!-- Themes - Default theme description -->
+    <string name="theme_default_description">Isang maliwanag na tema para sa CyanogenMod File Manager.</string>
+    <!-- Themes - Default theme author -->
+    <string name="themes_author">CyanogenMod</string>
+
+    <!-- Navigation drawer -->
+    <string name="drawer_open">"Buksan ang drawer ng nabigasyon"</string>
+    <string name="drawer_close">"Isara ang drawer ng nabigasyon"</string>
+
+    <!-- ColorPickerDialog -->
+    <!-- The text of the alpha slider control -->
+    <string name="color_picker_alpha_slider_text">Alpha</string>
+    <!-- The label of the current color panel -->
+    <string name="color_picker_current_text">Kasalukuyan:</string>
+    <!-- The label of the new color panel -->
+    <string name="color_picker_new_text">Bago:</string>
+    <!-- The label of the color input -->
+    <string name="color_picker_color">Kulay:</string>
+
+    <!-- Android Syntax Highlight -->
+    <string name="ash_reset_color_scheme">Ibalik ang default na scheme ng kulay ng tema</string>
+    <string name="ash_text">Text</string>
+    <string name="ash_assignment">Pagtatalaga</string>
+    <string name="ash_singleline_comment">Single-line na komento</string>
+    <string name="ash_multiline_comment">Multi-line na komento</string>
+    <string name="ash_keyword">Keyword</string>
+    <string name="ash_quoted_string">May siping string</string>
+    <string name="ash_variable">Variable</string>
+
+    <!-- Secure Storage -->
+    <!-- Secure Storage dialog title - Unlock -->
+    <string name="secure_storage_unlock_title">I-unlock ang storage</string>
+    <!-- Secure Storage dialog title - Create -->
+    <string name="secure_storage_create_title">Gumawa ng storage</string>
+    <!-- Secure Storage dialog title - Reset -->
+    <string name="secure_storage_reset_title">I-reset ang password</string>
+    <!-- Secure Storage dialog title - Delete -->
+    <string name="secure_storage_delete_title">Tanggalin ang storage</string>
+    <!-- Secure Storage unlock dialog message (secure storage exists) -->
+    <string name="secure_storage_unlock_key_prompt_msg">I-type ang password upang i-unlock ang filesystem ng secure na storage.</string>
+    <!-- Secure Storage unlock dialog message (new secure storage) -->
+    <string name="secure_storage_unlock_key_new_msg">Mag-type ng password upang protektahan ang filesystem ng secure na storage.</string>
+    <!-- Secure Storage unlock dialog message (reset the current password) -->
+    <string name="secure_storage_unlock_key_reset_msg">I-type ang kasalukuyang password at bagong password upang i-reset ang filesystem ng secure na storage.</string>
+    <!-- Secure Storage unlock dialog message (delete the secure storage) -->
+    <string name="secure_storage_unlock_key_delete_msg">I-type ang kasalukuyang password upang tanggalin ang filesystem ng secure na storage.</string>
+    <!-- Secure Storage unlock dialog old key title -->
+    <string name="secure_storage_unlock_old_key_title">Lumang password:</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_new_key_title">Bagong Password:</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_key_title">Password:</string>
+    <!-- Secure Storage unlock dialog repeat key title-->
+    <string name="secure_storage_unlock_repeat_title">Ulitin ang password:</string>
+    <!-- Secure Storage create button -->
+    <string name="secure_storage_create_button">"Likhain"</string>
+    <!-- Secure Storage unlock button -->
+    <string name="secure_storage_unlock_button">"I-unlock"</string>
+    <!-- Secure Storage reset button -->
+    <string name="secure_storage_reset_button">"I-reset"</string>
+    <!-- Secure Storage delete button -->
+    <string name="secure_storage_delete_button">"Tanggalin"</string>
+    <!-- Secure Storage unlock failed toast -->
+    <string name="secure_storage_unlock_failed">Hindi ma-unlock ang storage</string>
+    <!-- Secure Storage unlock validation, length -->
+    <string name="secure_storage_unlock_validation_length">May hindi dapat bababa sa <xliff:g id="characters">%1$d</xliff:g> (na) character ang password.</string>
+    <!-- Secure Storage unlock validation, equal -->
+    <string name="secure_storage_unlock_validation_equals">Hindi tugma ang mga password.</string>
+
+    <!-- Print messages -->
+    <!-- Unsupported document format -->
+    <string name="print_unsupported_document">Hindi sinusuportahang format ng dokumento</string>
+    <!-- Unsupported image format -->
+    <string name="print_unsupported_image">Hindi sinusuportahang format ng larawan</string>
+    <!-- Print header -->
+    <string name="print_document_header">Dokumento: <xliff:g id="document_name">%1$s</xliff:g></string>
+    <!-- Print footer -->
+    <string name="print_document_footer">Pahina <xliff:g id="page_number">%1$s</xliff:g></string>
+
+    <!-- Security - Extract relative or absolute files -->
+    <string name="security_warning_extract">Babala!\n\nKapag nag-extract ng archive file na may mga relative o absolute path, maaaring mapinsala ang device mo sa pamamagitan ng pag-o-overwrite ng mga system file.\n\nGusto mo bang magpatuloy?</string>
+
+    <!-- ChangeLog - Dialog title -->
+    <string name="changelog_title">Changelog</string>
+
+    <!-- Welcome Dialog - Title -->
+    <string name="welcome_title">Welcome</string>
+    <!-- Welcome Dialog - Message -->
+    <string name="welcome_msg">Welcome sa CyanogenMod file manager.\n\nPinapayagan ka ng app na ito na i-explore ang file system at gumawa ng mga pagpapatakbo na maaaring makasira sa device mo. Upang maiwasan ang pinsala, magsisimula ang app sa mode na ligtas at kaunti ang pribilehiyo.\n\nMaa-access mo ang mode na advanced at kumpleto ang pribilehiyo sa pamamagitan ng Mga Setting. Responsibilidad mong tiyakin na hindi masisira ng isang pagpapatakbo ang system mo.\n\nAng CyanogenMod Team</string>
+
+    <string name="easy_mode_type_icon">Icon para sa mime type</string>
+    <string name="easy_mode_type_none">Lahat ng File</string>
+    <string name="easy_mode_type_images">"Mga Larawan"</string>
+    <string name="easy_mode_type_videos">"Mga Video"</string>
+    <string name="easy_mode_type_music">"Musika"</string>
+    <string name="easy_mode_type_documents">"Mga Dokumento"</string>
+
+    <string name="activity_not_found_exception">Hindi makahanap ng app na makakapagbukas sa file na ito</string>
+    <string name="no_permission_for_drm">"Paumanhin, hindi maibahagi ang DRM file"</string>
+    <string name="actions_menu_drm_license_info">Impormasyon ng Drm license</string>
+</resources>

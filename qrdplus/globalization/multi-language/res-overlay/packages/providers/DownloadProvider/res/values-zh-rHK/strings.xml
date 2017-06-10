@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2013-2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- This is the name of the Download Manager application. -->
+    <string name="app_label">"下載管理員"</string>
+
+    <!-- This is the short description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission controls access to the Download Manager by
+        applications that initiate downloads. -->
+    <string name="permlab_downloadManager">"存取下載管理員。"</string>
+    <!-- This is the long description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission controls access to the Download Manager by
+        applications that initiate downloads. -->
+    <string name="permdesc_downloadManager">"允許應用程式存取下載管理員，並用以下載檔案。惡意應用程式可藉此干擾檔案下載並存取私人資訊。"</string>
+
+    <!-- This is the short description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission controls access to some advanced (and
+        dangerous) features from the Download Manager that are needed by
+        system applications but aren\'t necessary for regular applications
+        that just initiate plain downloads. -->
+    <string name="permlab_downloadManagerAdvanced">"進階下載管理員功能。"</string>
+    <!-- This is the long description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission controls access to some advanced (and
+        dangerous) features from the Download Manager that are needed by
+        system applications but aren\'t necessary for regular applications
+        that just initiate plain downloads. -->
+    <string name="permdesc_downloadManagerAdvanced">"允許應用程式存取下載管理員的進階功能。惡意應用程式可藉此干擾檔案下載並存取私人資訊。"</string>
+
+    <string name="permlab_downloadCompletedIntent">"傳送下載通知。"</string>
+    <!-- This is the long description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission allows an application to tell other
+        applications that their downloads have completed. -->
+    <string name="permdesc_downloadCompletedIntent">"允許應用程式在完成下載時送出通知。惡意應用程式可藉此擾亂其他下載檔案的應用程式。"</string>
+
+    <!-- Title for permission to see all downloads to EXTERNAL [CHAR LIMIT=25] -->
+    <string name="permlab_seeAllExternal" product="nosdcard">"查看所有下載到 USB 儲存裝置的檔案"</string>
+    <!-- Title for permission to see all downloads to EXTERNAL -->
+    <string name="permlab_seeAllExternal" product="default">"查看 SD 卡中的所有下載項目"</string>
+    <!-- Description for the permission to see all downloads to EXTERNAL -->
+    <string name="permdesc_seeAllExternal">"允許應用程式查看 SD 記憶卡中所有下載項目，不論是透過何種應用程式下載。"</string>
+
+    <!-- The label for the permission to download files to the download cache
+    that can\'t be automatically deleted by the download manager to free up
+    space [CHAR LIMIT=50] -->
+    <string name="permlab_downloadCacheNonPurgeable">"在下載快取預留空間"</string>
+    <!-- The full sentence description for the permission to download files to
+    the download cache that can\'t be automatically deleted by the download
+    manager to free up space [CHAR LIMIT=160] -->
+    <string name="permdesc_downloadCacheNonPurgeable">"允許應用程式將檔案下載至下載快取空間，確保檔案不會因為下載管理員需要更多空間而自動遭到刪除。"</string>
+
+    <!-- The label for the permission to download files through the download
+    manager without any notification being shown to the user [CHAR LIMIT=50] -->
+    <string name="permlab_downloadWithoutNotification">"不顯示通知，直接下載檔案"</string>
+
+    <!-- The full sentence description for the permission to download files
+    through the download manager without any notification being shown to the
+    user [CHAR LIMIT=160] -->
+    <string name="permdesc_downloadWithoutNotification">"允許應用程式不需通知使用者，即可透過下載管理員下載檔案。"</string>
+
+    <!-- The label for the permission to access all downloads in the download
+    manager, not just those owned by the calling user [CHAR LIMIT=50] -->
+    <string name="permlab_accessAllDownloads">"存取所有系統下載檔案"</string>
+
+    <!-- The full sentence description for the permission to access all
+    downloads in the download manager, not just those owned by the calling user
+    [CHAR LIMIT=160] -->
+    <string name="permdesc_accessAllDownloads">"允許應用程式查看及修改系統上任何應用程式下載的所有內容。"</string>
+
+
+    <!-- This is the title that is used when displaying the notification
+    for a download that doesn\'t have a title associated with it. -->
+    <string name="download_unknown_title">"&lt;未命名&gt;"</string>
+
+    <!-- When a download completes, a notification is displayed, and this
+        string is used to indicate that the download successfully completed.
+        Note that such a download could have been initiated by a variety of
+        applications, including (but not limited to) the browser, an email
+        application, a content marketplace. -->
+    <string name="notification_download_complete">"下載完成。"</string>
+
+    <!-- When a download completes, a notification is displayed, and this
+        string is used to indicate that the download failed.
+        Note that such a download could have been initiated by a variety of
+        applications, including (but not limited to) the browser, an email
+        application, a content marketplace. -->
+    <string name="notification_download_failed">"下載失敗。"</string>
+
+    <!-- When a download is paused because it\'s too large to download over a
+        mobile connection, and Wi-Fi is unavailable, this string is displayed in
+        the system notification for the running download, beneath the download
+        title and description.  Note that such a download could have been
+        initiated by a variety of applications, including (but not limited to)
+        the browser, an email application, a content marketplace.
+        [CHAR LIMIT=24] -->
+    <string name="notification_need_wifi_for_size">"這個檔案較大，需要 Wi-Fi 才能下載。"</string>
+
+    <!-- Notification shown when a download has been paused because a user policy
+        has blocked network access to applications running in background. [CHAR LIMIT=24] -->
+    <string name="notification_paused_in_background">"已在背景中暫停。"</string>
+
+    <!-- Title for dialog when a download exceeds the carrier-specified maximum size of downloads
+        over the mobile network and Wi-Fi is required.  The user has the choice to either queue the
+        download to start next time Wi-Fi is available or cancel the download altogether. [CHAR
+        LIMIT=50] -->
+    <string name="wifi_required_title">"檔案過大，無法透過網絡供應商的網絡下載"</string>
+
+    <!-- Text for dialog when a download exceeds the carrier-specified maximum size of downloads
+        over the mobile network and Wi-Fi is required.  The user has the choice to either queue the
+        download to start next time Wi-Fi is available or cancel the download altogether. [CHAR
+        LIMIT=200] -->
+    <string name="wifi_required_body">"您必須使用 Wi-Fi，才能完成下載這個 <xliff:g id="SIZE">%s </xliff:g> 的檔案。\n\n請在下次連接 Wi-Fi 網絡時，再輕觸 [<xliff:g id="QUEUE_TEXT">%s </xliff:g>] 開始下載。"</string>
+
+    <!-- Title for dialog when a download exceeds the carrier-specified recommended maximum size of
+        downloads over the mobile network, and the user may choose to start the download over mobile
+        anyway or to queue for download to start next time a Wi-Fi connection is available [CHAR
+        LIMIT=50] -->
+    <string name="wifi_recommended_title">"加入佇列供稍後下載？"</string>
+
+    <!-- Text for dialog when a download exceeds the carrier-specified recommended maximum size of
+        downloads over the mobile network, and the user may choose to start the download over mobile
+        anyway or to queue for download to start next time a Wi-Fi connection is available [CHAR
+        LIMIT=200] -->
+    <string name="wifi_recommended_body">"現在下載這個 <xliff:g id="SIZE">%s </xliff:g> 的檔案，可能會縮短電池的壽命，並 (或) 超出流動數據連線的用量上限，導致流動網絡供應商根據數據計劃向您收費。\n\n請在下次連接 Wi-Fi 網絡時，再輕觸 [<xliff:g id="QUEUE_TEXT">%s</xliff:g>] 開始下載。"</string>
+
+
+    <!-- Text for button to queue a download to start next time Wi-Fi is available [CHAR LIMIT=25]
+        -->
+    <string name="button_queue_for_wifi">"加入下載佇列"</string>
+
+    <!-- Text for button to cancel a download because it\'s too large to proceed over the mobile
+         network and the user does not want to queue it for Wi-Fi [CHAR LIMIT=25] -->
+    <string name="button_cancel_download">"取消"</string>
+
+    <!-- Text for button to start a download over the mobile connection now, even though it\'s over
+         the carrier-specified recommended maximum size for downloads over the mobile connection
+         [CHAR LIMIT=25] -->
+    <string name="button_start_now">"立即開始"</string>
+
+    <!-- Short representation of download progress percentage. [CHAR LIMIT=8] -->
+    <string name="download_percent"><xliff:g id="number">%d</xliff:g><xliff:g id="percent">%%</xliff:g></string>
+
+    <!-- Title summarizing active downloads. [CHAR LIMIT=32] -->
+    <plurals name="notif_summary_active">
+        <item quantity="one">"正在下載 1 個檔案"</item>
+        <item quantity="other">"正在下載 <xliff:g id="NUMBER">%d</xliff:g> 個檔案"</item>
+    </plurals>
+
+    <!-- Title summarizing waiting downloads. [CHAR LIMIT=32] -->
+    <plurals name="notif_summary_waiting">
+        <item quantity="one">"正在等待下載 1 個檔案"</item>
+        <item quantity="other">"正在等待下載 <xliff:g id="NUMBER">%d</xliff:g> 個檔案"</item>
+    </plurals>
+
+    <!-- Time remaining until download is complete. [CHAR LIMIT=32] -->
+    <string name="download_remaining">"剩餘 <xliff:g id="DURATION">%s</xliff:g>"</string>
+
+    <!-- Text for a toast appearing when a user clicks on a completed download, informing the user
+         that there is no application on the device that can open the file that was downloaded
+         [CHAR LIMIT=200] -->
+    <string name="download_no_application_title">"無法開啟檔案"</string>
+
+    <!-- Label describing Downloads as a storage root [CHAR LIMIT=32] -->
+    <string name="root_downloads">"下載內容"</string>
+
+    <!-- Status indicating that the download has been queued to start in the future.  Appears for an
+         individual item in the download list.  [CHAR LIMIT=24] -->
+    <string name="download_queued">"已加入序列"</string>
+    <!-- Status indicating that the system is currently downloading the file.  Appears for an
+         individual item in the download list.  [CHAR LIMIT=24] -->
+    <string name="download_running">"進行中"</string>
+    <!-- Status indicating that the download has ended without completing successfully.  Appears for
+         an individual item in the download list.  [CHAR LIMIT=24] -->
+    <string name="download_error">"不成功"</string>
+
+    <!-- Representation of download progress percentage when running. [CHAR LIMIT=24] -->
+    <string name="download_running_percent">進行中， <xliff:g id="percentage" example="50%">%s</xliff:g></string>
+
+    <string name="download_paused">已暫停</string>
+    <plurals name="notif_summary_paused">
+        <item quantity="one">1 個檔案已暫停</item>
+        <item quantity="other"><xliff:g id="number">%d</xliff:g> 個檔案已暫停</item>
+    </plurals>
+    <string name="download_paused_percent">已暫停， <xliff:g id="number">%d</xliff:g><xliff:g id="percent">%%</xliff:g></string>
+
+    <plurals name="notif_summary_queued">
+        <item quantity="one">1 個檔案已輪候</item>
+        <item quantity="other"><xliff:g id="number">%d</xliff:g> 個檔案已輪候</item>
+    </plurals>
+    <string name="download_queued_percent">已排隊， <xliff:g id="number">%d</xliff:g><xliff:g id="percent">%%</xliff:g></string>
+
+    <string name="action_consumes_rights">播放此媒體會使用版權。</string>
+</resources>

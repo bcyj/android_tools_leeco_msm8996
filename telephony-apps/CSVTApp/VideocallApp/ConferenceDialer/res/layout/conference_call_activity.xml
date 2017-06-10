@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2014 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/conference_call_frame">
+
+    <RelativeLayout
+        android:id="@+id/conference_call"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f9f9f9" >
+        <!-- input area -->
+        <RelativeLayout
+            android:id="@+id/input_area"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginLeft="28dp"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="#E2E2E2"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:weightSum="1" >
+            <TextView
+                android:id="@+id/contacts_number_left"
+                android:layout_marginLeft="10dp"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:text="@string/number_of_recipients"
+                android:textSize="12sp"
+                android:textColor="#626262"
+            />
+            <com.qualcomm.qti.confdialer.conference.RecipientsEditor
+                android:id="@+id/recipients_editor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="40dp"
+                android:layout_alignParentBottom="true"
+                android:hint="@string/add_up_five_numbers"
+                android:textColorHint="#c1c1c1"
+                android:minWidth="40dp"
+            />
+            <ImageButton
+                android:id="@+id/contacts"
+                android:src="@drawable/ic_launcher_contacts"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:background="@null"
+            />
+       </RelativeLayout>
+
+       <Button
+            android:id="@+id/start_conference_call"
+            android:layout_below="@+id/input_area"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="28dp"
+            android:text="@string/button_start_conference_call"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/start_call"
+        />
+
+    </RelativeLayout>
+</FrameLayout>

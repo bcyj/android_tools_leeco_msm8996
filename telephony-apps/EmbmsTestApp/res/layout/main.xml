@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2012 Qualcomm Technologies, Inc.  All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <TextView
+        android:id="@+id/Callback"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/Row1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Callback">
+        <Button
+            android:id="@+id/bind"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/bind_service">
+            <requestFocus />
+        </Button>
+        <Button
+            android:id="@+id/unbind"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/unbind_service">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Row2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Row1">
+        <Button
+            android:id="@+id/register"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/register">
+        </Button>
+        <Button
+            android:id="@+id/deregister"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/deregister">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Row3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Row2">
+        <Button
+            android:id="@+id/enable"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/enable">
+        </Button>
+        <Button
+            android:id="@+id/disable"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/disable">
+        </Button>
+    </LinearLayout>
+
+    <EditText
+	    android:id="@+id/tmgi"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/Row3"
+	    android:hint="@string/enter_Tmgi"
+        android:inputType="number"/>
+
+    <LinearLayout
+        android:id="@+id/Row4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tmgi">
+        <Button
+            android:id="@+id/activate"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/activate">
+        </Button>
+        <Button
+            android:id="@+id/deactivate"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/deactivate">
+        </Button>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Row5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Row4">
+        <Button
+            android:id="@+id/get_active"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/get_active">
+        </Button>
+        <Button
+            android:id="@+id/get_available"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/get_available">
+        </Button>
+        <Button
+            android:id="@+id/get_coverage"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/get_coverage">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Row6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Row5">
+
+        <Button
+            android:id="@+id/get_log_packet_id"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/get_log_packet_id">
+        </Button>
+        <Button
+            android:id="@+id/deliver_log_packet"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/deliver_log_packet">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Row7"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Row6">
+
+        <Button
+            android:id="@+id/get_e911_state"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/get_e911_state">
+        </Button>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/Logs"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Row7"
+        android:lines="4"
+        android:layout_weight="1"/>
+
+</RelativeLayout>

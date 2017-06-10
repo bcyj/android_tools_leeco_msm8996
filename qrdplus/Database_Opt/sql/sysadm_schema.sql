@@ -1,0 +1,363 @@
+-- Copyright (C) 2013 Mimer Information Technology AB, info@mimer.com
+
+whenever error exit;
+set sqlite on;
+-- Not used anymore
+-- @
+-- create function compatibility.isCountryCallingCode(ccc_candidate int)
+-- returns boolean
+--     return ccc_candidate in
+--            ( 0, 1, 7,20,27,28,30,31,32,33,
+--             34,36,39,43,44,45,46,47,48,49,
+--             51,52,53,54,55,56,57,58,60,61,
+--             62,63,64,65,66,81,82,83,84,86,
+--             89,90,91,92,93,94,95,98);
+-- @
+-- grant execute on function compatibility.isCountryCallingCode to public;
+
+-- Not used anymore
+-- @
+-- create function compatibility.tryGetISODigit(ch nchar)
+-- returns integer
+--     return case when ch between n'0' and n'9' then unicode_code(ch) - ascii_code('0') 
+--                else -1 
+-- 		end;
+-- @
+-- grant execute on function compatibility.tryGetISODigit to public;
+
+-- Not used anymore
+-- @
+-- create function compatibility.isDialable(ch nchar)
+-- returns boolean
+-- begin
+--     return ch between n'0' and n'9' or ch in (n'*',n'#',n'+');
+-- end
+-- @
+-- grant execute on function compatibility.isDialable to public;
+
+-- Not used anymore
+-- @
+-- create function compatibility.isAlpha(ch nchar)
+-- returns boolean
+--     return ch between n'a' and n'z'
+--         or ch between n'A' and n'Z';
+-- @
+-- grant execute on function compatibility.isAlpha to public;
+
+-- Not used anymore
+-- @
+-- create function compatibility.isSeparator(ch nchar)
+-- returns boolean
+--     return not compatibility.isDialable(ch) and not isAlpha(ch);
+-- @
+-- grant execute on function compatibility.isSeparator to public;
+
+-- Not used anymore
+-- @
+-- create function compatibility.tryGetTrunkPrefixOmittedStr(str nchar varying(129))
+-- returns integer
+-- begin
+--      declare i int default 1;
+--      while i <= char_length(str) do
+--          if  compatibility.tryGetISODigit(substring(str from i for 1)) <> -1 then
+--              return i;
+--          end if;
+--          set i = i + 1;
+--      end while;
+--      return -1;
+-- end
+-- @
+-- grant execute on function compatibility.tryGetTrunkPrefixOmittedStr to public;
+
+-- Not used anymore
+-- @
+-- create procedure compatibility.tryGetCountryCallingCode(str nchar varying(129),
+--                                           accept_thailand_case boolean,
+--                                           out cccOut int,
+--                                           out indexOut int)
+-- begin
+--     declare state,ret integer default 0;
+--     declare ch nchar;
+--     declare index integer;
+--     declare ccc integer;
+--     set index = 1;
+--     set ccc = 0;
+--     L1:
+--     while index <= char_length(str) do
+--         set ch = substring(str from index for 1);
+--         case 
+--         when state = 0 then 
+--             case ch 
+--             when n'+' then 
+--                 set state = 1;
+--             when n'0' then 
+--                 set state = 2;
+--             when n'1' then 
+--                 if  accept_thailand_case then 
+--                     set state = 8;
+--                 else
+--                     set index = -1;
+--                 end if;
+--             else
+--                 if  compatibility.isDialable(ch) then
+--                     set index = -1;
+--                 end if;
+--             end case;
+--         when state = 2 then
+--             case ch
+--             when n'0' then
+--                 set state = 3;
+--             when n'1' then 
+--                 set state = 4;
+--             else
+--                 if  compatibility.isDialable(ch) then
+--                     set index = -1;
+--                 end if;
+--             end case;
+--         when state = 4 then
+--             if  ch = n'1' then 
+--                 set state = 5;
+--             elseif compatibility.isDialable(ch) then
+--                 set index = -1;
+--             end if;
+--         when state in (1,3,5,6,7) then
+--             set ret = compatibility.tryGetISODigit(ch);
+--             if  ret > 0 then
+--                 set ccc = ccc * 10 + ret;
+--                 if  ccc >= 100 
+--                 or  compatibility.isCountryCallingCode(ccc) then
+--                     if  compatibility.tryGetISODigit(ch) <> -1 then
+--                         set index = index + 1;
+--                         leave l1;
+--                     end if;
+--                 end if;
+--                 set state = case when state in (1,3,5) then 6 else state + 1 end;
+--             end if;
+--         when state = 8 then
+--             if  ch = n'6' then
+--                 set state = 9;
+--             end if;
+--         when state = 9 then
+--             if  ch = n'6' then 
+--                 set ccc = 66;
+--                 leave l1;
+--             end if;
+-- 	else
+-- 	   set index = -1;
+--         end case;
+--         if  index < 0 then
+--             leave l1;
+--         end if;
+--         set index = index + 1;
+--     end while;
+--     set cccOut = case when index < 0 then -1 else ccc end;
+--     set indexOut = index;
+-- end
+-- @
+-- grant execute on procedure compatibility.tryGetCountryCallingCode to public;
+
+-- Not used anymore
+-- @
+-- create function compatibility.checkPrefixIsIgnorable(str nchar varying(129),
+--     strstart int, strend int)
+-- returns boolean
+-- begin
+--     declare trunk_prefix_was_read boolean default false; 
+--     declare i int;
+--     declare c nchar;
+--     set i = strend;
+--     while i >= strstart do
+--         set c = substring(str from i for 1);
+--         if  compatibility.tryGetISODigit(c) >= 0 then
+--             if  trunk_prefix_was_read then
+--                 return false;
+--             else
+--                 set trunk_prefix_was_read = true;
+--             end if;
+--         elseif isDialable(c) then
+--             return false;
+--         end if;
+--         set i = i - 1;
+--     end while;
+--     return true;
+-- end
+-- @
+-- grant execute on function compatibility.checkPrefixIsIgnorable to public;
+ 
+-- Replaced with external procedure
+-- @
+-- create function compatibility.phone_number_compare_inter(org_a nchar varying(129),
+--                                            org_b nchar varying(129),
+--                                            accept_thailand_case boolean)
+-- returns boolean
+-- begin
+--     declare ccc_a,              -- calling country code
+--             ccc_b,
+--             start_a,            -- start of string
+--             start_b,
+--             index_a,            -- current position in string
+--             index_b int;
+--     declare both_have_ccc,
+--             ok_to_ignore_prefix,
+--             skip_compare,
+--             trunk_prefix_is_omitted_a,
+--             trunk_prefix_is_omitted_b boolean;
+--     declare ch_a,
+--             ch_b nchar;
+--     if  (org_a is null
+--     and org_b is null)
+--     or  (char_length(org_a) = 0
+--     and char_length(org_b) = 0) then
+--         return true;
+--     end if;
+--     call compatibility.tryGetCountryCallingCode(org_a,accept_thailand_case,ccc_a,start_a);
+--     call compatibility.tryGetCountryCallingCode(org_b,accept_thailand_case,ccc_b,start_b);
+--     
+--     set both_have_ccc = false;
+--     set ok_to_ignore_prefix = true;
+--     set trunk_prefix_is_omitted_a = false;
+--     set trunk_prefix_is_omitted_b = false;
+--     if  ccc_a >= 0 
+--     and ccc_b >= 0 then 
+-- --
+-- -- both have country code
+-- --
+--         if  ccc_a <> ccc_b then
+--             return false;
+--         end if;
+--         set ok_to_ignore_prefix = false;
+--         set both_have_ccc = true;
+--     elseif ccc_a < 0 
+--     and ccc_b < 0 then
+-- --
+-- -- none have country code
+-- --
+--         set ok_to_ignore_prefix = false;
+--     else
+-- --
+-- -- either have country code
+-- --
+--         if  ccc_a < 0 then
+--             set start_a = compatibility.tryGetTrunkPrefixOmittedStr(org_a);
+--             set trunk_prefix_is_omitted_a = true;
+--         end if;
+--         if  ccc_b < 0 then 
+--             set start_b = compatibility.tryGetTrunkPrefixOmittedStr(org_b);
+--             set trunk_prefix_is_omitted_b = true;
+--         end if;
+--     end if;
+--     if  start_a < 0 then
+--         set start_a = 1;
+--     elseif start_a > char_length(org_a) then
+--         set start_a = char_length(org_a);
+--     end if;
+--     if  start_b < 0 then
+--         set start_b = 1;
+--     elseif start_b > char_length(org_b) then
+--         set start_b = char_length(org_b);
+--     end if;
+--     set index_a = char_length(org_a);
+--     set index_b = char_length(org_b);
+-- --
+-- -- compare character bt character
+-- --
+--     while index_a >= start_a 
+--     and index_b >= start_b do
+--         set skip_compare = false;
+--         set ch_a = substring(org_a from index_a for 1);
+--         set ch_b = substring(org_b from index_b for 1);
+--       
+--         if  compatibility.isSeparator(ch_a) then
+--             set index_a = index_a - 1;
+--             set skip_compare = true;
+--         end if;
+--         if  compatibility.isSeparator(ch_b) then
+--             set index_b = index_b - 1;
+--             set skip_compare = true;
+--         end if;
+-- 
+--         if  not skip_compare then 
+--             if  ch_a <> ch_b then 
+--                 return false;
+--             end if;
+--             set index_a = index_a - 1;
+--             set index_b = index_b - 1;
+--         end if;
+--     end while;
+--     --insert into sysadm.x values(1,start_a,index_a,start_b,index_b);
+-- 
+--     if  ok_to_ignore_prefix then
+--         --insert into sysadm.x values(2,start_a,index_a,start_b,index_b);
+--         if  (trunk_prefix_is_omitted_a 
+--         and index_a >= start_a)
+--         or  not compatibility.checkPrefixIsIgnorable(org_a,start_a,index_a) then
+--             --insert into sysadm.x values(3,start_a,index_a,start_b,index_b);
+--             return case when accept_thailand_case then
+--                 compatibility.phone_number_compare_inter(org_a, org_b, false)
+--                 else false end;
+--         end if;
+--         if  (trunk_prefix_is_omitted_b
+--         and index_b >= start_b)
+--         or  not compatibility.checkPrefixIsIgnorable(org_b,start_b,index_b) then
+--             --insert into sysadm.x values(4,start_a,index_a,start_b,index_b);
+--             return case when accept_thailand_case then      
+--                 compatibility.phone_number_compare_inter(org_a, org_b, false)
+--                 else false end;
+--         end if;
+--     else
+--         --insert into sysadm.x values(5,start_a,index_a,start_b,index_b);
+--         begin
+--             declare ch nchar;
+--             declare may_be_namp boolean; 
+--             set may_be_namp = not both_have_ccc;
+--             while index_a >= start_a do
+--                 set ch = substring(org_a from index_a for 1);
+--                 if  compatibility.isDialable(ch) then
+--                     if  may_be_namp and compatibility.tryGetISODigit(ch) = 1 then
+--                         set may_be_namp = false;
+--                     else
+--                         return false;
+--                     end if;
+--                 end if;
+--                 set index_a = index_a - 1;
+--             end while;
+-- 
+--             while index_b >= start_b do
+--                 set ch = substring(org_b from index_b for 1);
+--                 if  compatibility.isDialable(ch) then
+--                     if  may_be_namp and compatibility.tryGetISODigit(ch) = 1 then
+--                         set may_be_namp = false;
+--                     else
+--                         return false;
+--                     end if;
+--                 end if;
+--                 set index_b = index_b - 1;
+--             end while;
+--         end;
+--     end if;
+--     return true;
+-- end
+-- @
+-- grant execute on function compatibility.phone_number_compare_inter to public;
+
+whenever error continue;
+drop function sysadm.phone_number_compare_inter cascade;
+drop function sysadm.delete_file cascade;
+drop function sysadm.CALLBACK_FUNC cascade;
+whenever error exit;
+@
+create function sysadm.phone_number_compare_inter(org_a nvarchar(128),org_b nvarchar(128),accept_thailand_case boolean)
+returns boolean external name "_PHONE_NUMBER_EQUAL" 
+@
+grant execute on function sysadm.phone_number_compare_inter to public with grant option;
+
+
+@
+create function sysadm.delete_file(path nvarchar(512))
+returns integer external name "_DELETE_FILE" 
+@
+grant execute on function sysadm.delete_file to public with grant option;
+
+
+create function sysadm.CALLBACK_FUNC(id nchar(128),val bigint) returns integer external name "_SERVER_OUTPUT";
+grant execute on function sysadm.CALLBACK_FUNC to public with grant option;

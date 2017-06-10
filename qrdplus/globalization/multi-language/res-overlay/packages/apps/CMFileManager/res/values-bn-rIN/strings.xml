@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+<!--
+     Copyright (C) 2012-2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- The name of the app -->
+    <string name="app_name">ফাইল পরিচালক</string>
+    <!-- The description of the app -->
+    <string name="app_description">একটি CyanogenMod ফাইল পরিচালক</string>
+
+    <!-- Human readable sizes -->
+    <string name="size_bytes">B</string>
+    <string name="size_kilobytes">kB</string>
+    <string name="size_megabytes">MB</string>
+    <string name="size_gigabytes">GB</string>
+
+    <!-- Date/time format order (%1$s: date; %2$s: time) -->
+    <string name="datetime_format_order">%1$s %2$s</string>
+
+    <!-- Devices types -->
+    <string name="device_blockdevice">অবরোধ ডিভাইস</string>
+    <string name="device_characterdevice">ক্যারেক্টার ডিভাইস</string>
+    <string name="device_namedpipe">নাম দেওয়া পাইপ</string>
+    <string name="device_domainsocket">ডোমেন সকেট</string>
+
+    <!-- Mount Point States -->
+    <string name="mount_point_readonly">RO</string>
+    <string name="mount_point_readwrite">RW</string>
+
+    <!-- Default buttons -->
+    <string name="ok" translatable="false">@android:string/ok</string>
+    <string name="cancel" translatable="false">@android:string/cancel</string>
+    <string name="yes">হ্যাঁ</string>
+    <string name="no">না</string>
+    <string name="all">সমস্ত</string>
+    <string name="overwrite">ওভাররাইট</string>
+    <string name="select">নির্বাচন করুন</string>
+
+    <!-- The root directory name -->
+    <string name="root_directory_name"><![CDATA[<রুট ফোল্ডার>]]></string>
+    <!-- The search result name -->
+    <string name="search_result_name">সন্ধান করুন: <xliff:g id="terms">%1$s</xliff:g></string>
+
+    <!-- Loading waiting message -->
+    <string name="loading_message">লোড করা হচ্ছে\u2026</string>
+    <!-- Computing message -->
+    <string name="computing_message" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Computing new line message -->
+    <string name="computing_message_ln" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Cancelled message -->
+    <string name="cancelled_message">বাতিল হয়েছে।</string>
+    <!-- Error message -->
+    <string name="error_message">ত্রুটি।</string>
+    <!-- Copy text content description -->
+    <string name="copy_text_cd">ক্লিপবোর্ডে পাঠ্য অনুলিপি করতে ট্যাপ করুন।</string>
+    <!-- Copy text content message -->
+    <string name="copy_text_msg">ক্লিপবোর্ডে পাঠ্যের অনুলিপি করা হয়েছে</string>
+
+    <!-- Warning dialog title -->
+    <string name="warning_title">সতর্কীকরণ</string>
+    <!-- Error dialog title -->
+    <string name="error_title">ত্রুটি শনাক্ত হয়েছে</string>
+    <!-- Confirm operation dialog title -->
+    <string name="confirm_operation">অপারেশন নিশ্চিত করুন</string>
+    <!-- Confirm overwrite dialog title -->
+    <string name="confirm_overwrite">ওভাররাইট নিশ্চিত করুন</string>
+    <!-- Confirm deletion dialog title -->
+    <string name="confirm_deletion">মোছা নিশ্চিত করুন</string>
+
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Title -->
+    <string name="msgs_change_to_prompt_access_mode_title">স্যুইচ নিশ্চিত করুন</string>
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Message -->
+    <string name="msgs_change_to_prompt_access_mode_msg">একটি রুট অ্যাক্সেস মোড চালাতে অক্ষম। নিরাপদ মোডে পরিবর্তন হচ্ছে।\n\nএই পরিবর্তন প্রয়োগ করবেন?</string>
+
+    <!-- A console couldn\'t be created - Without privileges, the app won\'t work -->
+    <string name="msgs_cant_create_console">কার্যকারিতায় আবশ্যক সুবিধা অর্জন করতে অক্ষম।</string>
+    <!-- The message shown when an allocation of a privileged console fails, and a non
+         privileged is allocated -->
+    <string name="msgs_privileged_console_alloc_failed">একটি রুট অ্যাক্সেস মোড চালাতে অক্ষম। নিরাপদ মোডে পরিবর্তন হচ্ছে।</string>
+    <!-- The selected setting was not applied or stored -->
+    <string name="msgs_settings_save_failure">সেটিং প্রয়োগ করা বা সঞ্চয় করা যাবে না।</string>
+    <!-- The initial directory has an invalid or inaccessible reference -->
+    <string name="msgs_settings_invalid_initial_directory">প্রারম্ভিক ফোল্ডার \'<xliff:g id="initial_dir">%1$s</xliff:g>\' অবৈধ। রুট ফোল্ডারে পরিবর্তন হচ্ছে।</string>
+    <!-- Root is not available message -->
+    <string name="root_not_available_msg">এই ডিভাইসে রুট সুলভ নেই। এই অপারেশনটি সম্পাদনা করা যাবে না।</string>
+
+    <!-- Success -->
+    <string name="msgs_success">অপারেশনটি সফলভাবে সম্পূর্ন হয়েছে।</string>
+    <!-- Unknown error -->
+    <string name="msgs_unknown">একটি ত্রুটি শনাক্ত হয়েছে। অপারেশনটি অসফল হয়েছে।</string>
+    <!-- When an operation requires elevated privileged (normally caused for the use of a
+         non-privileged console) -->
+    <string name="msgs_insufficient_permissions">এই অপারেশনটির বর্ধিত অনুমতিগুলি প্রয়োজন হয়। রুট অ্যাক্সেস মোডে পরিবর্তন করার চেষ্টা করুন।</string>
+    <!-- When an operation fails because the device has run out of storage. -->
+    <string name="msgs_no_disk_space">ডিভাইসে কোনো স্থান পড়ে না থাকার কারণে এই কাজটি করা সম্ভব হয়নি।</string>
+    <!-- The file or directory was not found -->
+    <string name="msgs_file_not_found">ফাইল বা ফোল্ডারটি পাওয়া যায়নি।</string>
+    <!-- The command reference couldn\'t be created (not found or invalid definition)
+         (normally caused by a development error) -->
+    <string name="msgs_command_not_found">অপারেশনটির কম্যান্ড পাওয়া যায়নি বা একটি অবৈধ বর্ণনা আছে।</string>
+    <!-- I/O exception -->
+    <string name="msgs_io_failed">পঠন/লিখন ব্যর্থ।</string>
+    <!-- Operation timeout detected -->
+    <string name="msgs_operation_timeout">অপারেশনটির সময় সমাপ্ত।</string>
+    <!-- The operation returns an invalid exit code -->
+    <string name="msgs_operation_failure">অপারেশনটি ব্যর্থ হয়েছে।</string>
+    <!-- A console couldn\'t be allocated -->
+    <string name="msgs_console_alloc_failure">একটি আভ্যন্তরীণ ত্রুটি ঘটেছে।</string>
+    <!-- An operation can\'t be cancelled -->
+    <string name="msgs_operation_can_not_be_cancelled">অপারেশনটি বাতিল করা যাবে না।</string>
+    <!-- The operation requieres mount the file system prior to execute the command -->
+    <string name="msgs_read_only_filesystem">ফাইল সিস্টেমটি কেবলমাত্র-পঠনযোগ্য। অপারেশনটির প্রয়াস করার আগে ফাইল সিস্টেমটি পঠন-লিখন হিসাবে মাউন্ট করার চেষ্টা করুন।</string>
+    <!-- Illegal argument (normally caused by a development error when calling internal api) -->
+    <string name="msgs_illegal_argument">অবৈধ আর্গ্যুমেন্ট। আহ্বান ব্যর্থ হয়েছে।</string>
+    <!-- The operation will cause inconsistencies -->
+    <string name="msgs_unresolved_inconsistencies">অপারেশনটি অনুমোদিত নয় কারণ এটি অসঙ্গতি তৈরি করতে পারে।</string>
+    <!-- Operation not permitted in current directory -->
+    <string name="msgs_operation_not_allowed_in_current_directory">অপারেশনটি বর্তমান ফোল্ডারে অনুমোদিত নয়।\n\nগন্তব্য ফোল্ডারটি উৎসের উপফোল্ডার বা উৎসের মত একই হতে পারে না।</string>
+
+    <!-- The advice message prior to exit the app -->
+    <string name="msgs_push_again_to_exit">প্রস্থান করার জন্য আবার টিপুন।</string>
+
+    <!-- There is no registered app that can handle the mime-type -->
+    <string name="msgs_not_registered_app">নির্বাচিত ধরণের ফাইল পরিচালনা করার জন্য কোনও অ্যাপ নিবন্ধিত নেই।</string>
+
+    <!-- Overwrite files? -->
+    <string name="msgs_overwrite_files">কিছু ফাইল ইতিমধ্যে গন্তব্য ফোল্ডারে বিদ্যমান আছে।\n\nওভাররাইট করবেন?</string>
+
+    <!-- The association of an action to the app failed -->
+    <string name="msgs_action_association_failed">ব্যর্থ হওয়া অ্যাপে ক্রিয়াকলাপ যুক্ত হচ্ছে।</string>
+
+    <!-- An operation requires elevated privileged. Ask the user. -->
+    <string name="advise_insufficient_permissions">অপারেশনটির বর্ধিত সুবিধাগুলি প্রয়োজন।\n\nআপনি কি রুট অ্যাক্সেস মোডে পরিবর্তন করতে চান?</string>
+
+    <!-- The parent directory of the current directory in navigation view -->
+    <string name="parent_dir">পেরেন্ট ফোল্ডার</string>
+    <!-- External storage descripton -->
+    <string name="external_storage">বাইরের সঞ্চয়স্থান</string>
+    <!-- Usb storage descripton -->
+    <string name="usb_storage">USB স্টোরেজ</string>
+
+    <!-- ActionBar Buttons - FileSystem -->
+    <string name="actionbar_button_filesystem_cd">ফাইল সিস্টেম তথ্য</string>
+    <!-- ActionBar Buttons - Sort Mode -->
+    <string name="actionbar_button_sort_mode_cd">বাছাই মোড</string>
+    <!-- ActionBar Buttons - Layout Mode -->
+    <string name="actionbar_button_layout_mode_cd">বিন্যাস মোড</string>
+    <!-- ActionBar Buttons - Other View Options -->
+    <string name="actionbar_button_other_view_options_cd">অন্যান্য দৃশ্য বিকল্পগুলি</string>
+    <!-- ActionBar Buttons - Done -->
+    <string name="actionbar_button_selection_done_cd">হয়ে গেছে</string>
+    <!-- ActionBar Buttons - Actions -->
+    <string name="actionbar_button_actions_cd">ক্রিয়াকলাপগুলি</string>
+    <!-- ActionBar Buttons - Search -->
+    <string name="actionbar_button_search_cd">অনুসন্ধান</string>
+    <!-- ActionBar Buttons - Overflow -->
+    <string name="actionbar_button_overflow_cd">আরও বিকল্প</string>
+    <!-- ActionBar Buttons - Storage volumes -->
+    <string name="actionbar_button_storage_cd">সঞ্চয়স্থানের পরিমান</string>
+    <!-- ActionBar Buttons - Save -->
+    <string name="actionbar_button_save_cd">সংরক্ষণ করুন</string>
+    <!-- ActionBar Buttons - Print -->
+    <string name="actionbar_button_print_cd">মুদ্রণ করুন</string>
+
+    <!-- Navigation View - Sort - Sort by name (ascending) -->
+    <string name="sort_by_name_asc">নাম অনুসারে \u25B2</string>
+    <!-- Navigation View - Sort - Sort by name (descending) -->
+    <string name="sort_by_name_desc">নাম অনুসারে \u25BC</string>
+    <!-- Navigation View - Sort - Sort by date (ascending) -->
+    <string name="sort_by_date_asc">তারিখ অনুসারে \u25B2</string>
+    <!-- Navigation View - Sort - Sort by date (descending) -->
+    <string name="sort_by_date_desc">তারিখ অনুসারে \u25BC</string>
+    <!-- Navigation View - Sort - Sort by size (ascending) -->
+    <string name="sort_by_size_asc">আকার অনুসারে \u25B2</string>
+    <!-- Navigation View - Sort - Sort by size (descending) -->
+    <string name="sort_by_size_desc">আকার অনুসারে \u25BC</string>
+    <!-- Navigation View - Sort - Sort by type (ascending) -->
+    <string name="sort_by_type_asc">প্রকার অনুসারে \u25B2</string>
+    <!-- Navigation View - Sort - Sort by type (descending) -->
+    <string name="sort_by_type_desc">প্রকার অনুসারে \u25BC</string>
+
+    <!-- Navigation View - Layout - Icons -->
+    <string name="layout_icons">আইকন</string>
+    <!-- Navigation View - Layout - Simple -->
+    <string name="layout_simple">সরল</string>
+    <!-- Navigation View - Layout - Details -->
+    <string name="layout_details">বিশদসমূহ</string>
+
+    <!-- Navigation View - View - Show folders first -->
+    <string name="cm_filemanager_show_dirs_first">প্রথমে ফোল্ডারগুলি দেখান</string>
+    <!-- Navigation View - View - Show hidden files option -->
+    <string name="cm_filemanager_show_hidden">লুকানো ফাইলগুলি দেখান</string>
+    <!-- Navigation View - View - Show system files option -->
+    <string name="cm_filemanager_show_system">সিস্টেম ফাইলগুলি দেখান</string>
+    <!-- Navigation View - View - Show symlinks option -->
+    <string name="cm_filemanager_show_symlinks">সিমলিঙ্কগুলি দেখান</string>
+
+    <!-- Filesystem Info (no data). Dialog title -->
+    <string name="filesystem_info_warning_title">কোনও তথ্য নেই</string>
+    <!-- Filesystem Info (no data). Dialog message -->
+    <string name="filesystem_info_warning_msg">ফাইল সিস্টেমের জন্য কোনও তথ্য সুলভ নেই।</string>
+    <!-- Filesystem Info - Filesystem couldn\'t be mounted -->
+    <string name="filesystem_info_cant_be_mounted_msg">ফাইল সিস্টেমটি মাউন্ট/আনমাউন্ট করা যাবে না।</string>
+    <!-- Filesystem Info - Not allowed message -->
+    <string name="filesystem_info_mount_not_allowed_msg">নিরাপদ মোডে ফাইল সিস্টেম মাউন্টিং অপারেশনগুলি অনুমোদিত নয়। রুট অ্যাক্সেস মোডে পরিবর্তন করতে ট্যাপ করুন।</string>
+    <!-- Filesystem Info - Mount failed -->
+    <string name="filesystem_info_mount_failed_msg">ফাইল সিস্টেম মাউন্টিং অপারেশন ব্যর্থ হয়েছে। কিছু ফাইল সিস্টেম যেমন SD কার্ডগুলি মাউন্ট/আনমাউন্ট করা যাবে না কারণ সেগুলি কেবলমাত্র-পঠনযোগ্য ফাইল সিস্টেম হিসাবে বিল্ট-ইন রয়েছে।</string>
+    <!-- Filesystem Info Dialog - Title -->
+    <string name="filesystem_info_dialog_title">ফাইল সিস্টেম তথ্য</string>
+    <!-- Filesystem Info Dialog - Tab - Info -->
+    <string name="filesystem_info_dialog_tab_info">তথ্য</string>
+    <!-- Filesystem Info Dialog - Tab - Disk Usage -->
+    <string name="filesystem_info_dialog_tab_disk_usage">ডিস্ক ব্যবহার</string>
+    <!-- Filesystem Info Dialog - Status Label -->
+    <string name="filesystem_info_dialog_status">স্থিতি:</string>
+    <!-- Filesystem Info Dialog - Mount Point Label -->
+    <string name="filesystem_info_dialog_mount_point">মাউন্ট পয়েন্ট:</string>
+    <!-- Filesystem Info Dialog - Device Label -->
+    <string name="filesystem_info_dialog_device">ডিভাইস:</string>
+    <!-- Filesystem Info Dialog - Type Label -->
+    <string name="filesystem_info_dialog_type">ধরণ:</string>
+    <!-- Filesystem Info Dialog - Options Label -->
+    <string name="filesystem_info_dialog_options">বিকল্পগুলি:</string>
+    <!-- Filesystem Info Dialog - Dump/Pass Label -->
+    <string name="filesystem_info_dialog_dump_pass">ডাম্প / পাস:</string>
+    <!-- Filesystem Info Dialog - Virtual Label -->
+    <string name="filesystem_info_dialog_virtual">ভার্চুয়াল:</string>
+    <!-- Filesystem Info Dialog - Total Disk Usage -->
+    <string name="filesystem_info_dialog_total_disk_usage">মোট:</string>
+    <!-- Filesystem Info Dialog - Used Disk Usage -->
+    <string name="filesystem_info_dialog_used_disk_usage">ব্যবহৃত:</string>
+    <!-- Filesystem Info Dialog - Free Disk Usage -->
+    <string name="filesystem_info_dialog_free_disk_usage">মুক্ত:</string>
+
+    <!-- Fso Properties - Not allowed message -->
+    <string name="fso_properties_permissions_not_allowed_msg">নিরাপদ মোডে অনুমতির অপারেশনগুলি অনুমোদিত নয়। রুট অ্যাক্সেস মোডে পরিবর্তন করতে ট্যাপ করুন।</string>
+    <!-- Fso Properties - Failed to change owner to fso -->
+    <string name="fso_properties_failed_to_change_owner_msg">মালিক পরিবর্তনের অপারেশন ব্যর্থ হয়েছে।\n\nনিরাপত্তার কারণে, কিছু ফাইল সিস্টেম যেমন SD কার্ডগুলি মালিকানা পরিবর্তনের অনুমতি দেয় না।</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_group_msg">গোষ্ঠী পরিবর্তনের অপারেশন ব্যর্থ হয়েছে।\n\nনিরাপত্তার কারণে, কিছু ফাইল সিস্টেম যেমন SD কার্ডগুলি গোষ্ঠীগুলি পরিবর্তনের অনুমতি দেয় না।</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_permission_msg">অনুমতি পরিবর্তনের অপারেশন ব্যর্থ হয়েছে।\n\nনিরাপত্তার কারণে, কিছু ফাইল সিস্টেম যেমন SD কার্ডগুলি অনুমতিগুলি পরিবর্তনের অনুমতি দেয় না।</string>
+    <!-- Fso Properties Dialog - Title -->
+    <string name="fso_properties_dialog_title">বৈশিষ্ট্যগুলি</string>
+    <!-- Fso Properties Dialog - Tab - Info -->
+    <string name="fso_properties_dialog_tab_info">তথ্য</string>
+    <!-- Fso Properties Dialog - Tab - Permissions -->
+    <string name="fso_properties_dialog_tab_permissions">অনুমতি</string>
+    <!-- Fso Properties Dialog - Name Label -->
+    <string name="fso_properties_dialog_name">নাম:</string>
+    <!-- Fso Properties Dialog - Parent Folder Label -->
+    <string name="fso_properties_dialog_parent">পেরেন্ট:</string>
+    <!-- Fso Properties Dialog - Type Label -->
+    <string name="fso_properties_dialog_type">ধরণ:</string>
+    <!-- Fso Properties Dialog - Category Label -->
+    <string name="fso_properties_dialog_category">বিভাগ:</string>
+    <!-- Fso Properties Dialog - Link Label -->
+    <string name="fso_properties_dialog_link">লিঙ্ক:</string>
+    <!-- Fso Properties Dialog - Size Label -->
+    <string name="fso_properties_dialog_size">আকার:</string>
+    <!-- Fso Properties Dialog - Contains Label -->
+    <string name="fso_properties_dialog_contains">সমন্বিত:</string>
+    <!-- Fso Properties Dialog - Last Accessed Time Label -->
+    <string name="fso_properties_dialog_last_accessed_date">অ্যাক্সেস করা হয়েছে:</string>
+    <!-- Fso Properties Dialog - Last Modified Time Label -->
+    <string name="fso_properties_dialog_last_modified_date">সংশোধিত:</string>
+    <!-- Fso Properties Dialog - Last Changed Time -->
+    <string name="fso_properties_dialog_last_changed_date">পরিবর্তিত:</string>
+    <!-- Fso Properties Dialog - Owner Label -->
+    <string name="fso_properties_dialog_owner">মালিক:</string>
+    <!-- Fso Properties Dialog - Group Label -->
+    <string name="fso_properties_dialog_group">গোষ্ঠী:</string>
+    <!-- Fso Properties Dialog - Others Label -->
+    <string name="fso_properties_dialog_others">অন্যান্য:</string>
+    <!-- Fso Properties Dialog - Special Label -->
+    <string name="fso_properties_dialog_special" translatable="false">S</string>
+    <!-- Fso Properties Dialog - Read Label -->
+    <string name="fso_properties_dialog_read" translatable="false">R</string>
+    <!-- Fso Properties Dialog - Write Label -->
+    <string name="fso_properties_dialog_write" translatable="false">W</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_execute" translatable="false">X</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_folder_items" translatable="false"><xliff:g id="folders">%1$s</xliff:g> / <xliff:g id="files">%2$s</xliff:g></string>
+    <!-- Fso Properties Dialog - Skip media scan -->
+    <string name="fso_properties_dialog_include_in_media_scan">মিডিয়া স্ক্যান স্কিপ করুন:</string>
+    <string name="fso_failed_to_allow_media_scan">মিডিয়া স্ক্যানিংয়ের অনুমতি দিতে ব্যর্থ হয়েছে</string>
+    <string name="fso_failed_to_prevent_media_scan">মিডিয়া স্ক্যানিং আটকাতে ব্যর্থ হয়েছে</string>
+    <string name="fso_delete_nomedia_dir_title">.nomedia ডিরেক্টরি মুছুন</string>
+    <string name="fso_delete_nomedia_dir_body">এই ডিরেক্টরিতে একটি .nomedia ডিরেক্টরি আছে।\n\nআপনি এটিকে ও এর সমস্ত সামগ্রী মুছতে চান?</string>
+    <string name="fso_delete_nomedia_non_empty_title">.nomedia ফাইল মুছুন</string>
+    <string name="fso_delete_nomedia_non_empty_body">এই ডিরেক্টরিতে একটি খালি নয় এমন .nomedia ফাইল আছে।\n\nআপনি কি এটিকে মুছতে চান?</string>
+
+    <!-- History - History activity title -->
+    <string name="history">ইতিহাস</string>
+    <!-- History - The history is empty -->
+    <string name="msgs_history_empty">ইতিহাস খালি আছে।</string>
+    <!-- History - The history reference is not in the actual history list -->
+    <string name="msgs_history_unknown">আজানা ইতিহাস আইটেম।</string>
+
+    <!-- Search - Search activity title -->
+    <string name="search">অনুসন্ধানের ফলাফল</string>
+    <!-- Search - Search hint message -->
+    <string name="search_hint">আপনার অনুসন্ধান টাইপ করুন</string>
+    <!-- Search - Voice search hint message -->
+    <string name="search_voice_hint">আপনার অনুসন্ধান বলুন</string>
+    <!-- Search - Search error message -->
+    <string name="search_error_msg">অনুসন্ধানের সময় একটি ত্রুটি ঘটেছে। কোনও ফলাফল পাওয়া যায়নি।</string>
+    <!-- Search - Search no results message -->
+    <string name="search_no_results_msg">কোনও ফলাফল খুঁজে পাওয়া যায়নি।</string>
+    <!-- Search - Number of items found in directory -->
+    <string name="search_found_items_in_directory"><xliff:g id="path">%2$s</xliff:g>-এ <xliff:g id="items">%1$s</xliff:g></string>
+    <!-- Search - Search query terms -->
+    <string name="search_terms">&lt;b&gt;বিধি:&lt;/b&gt; <xliff:g id="terms">%1$s</xliff:g></string>
+    <!-- Search - Confirm search -->
+    <string name="search_few_characters_title">অনুসন্ধান নিশ্চিত করুন</string>
+    <!-- Search - Some terms of the search are too small. The operation could be very costly -->
+    <string name="search_few_characters_msg">অনুসন্ধান বিধিগুলির কয়েকটিতে অল্প সংখ্যক অক্ষর আছে। অপারেশনটি সময় ও সিস্টেম সংস্থানে খুবই ব্যয়বহুল হতে পারে।\n\nআপনি কি অবিরত রাখতে চান?</string>
+    <!-- Search - Searching dialog title -->
+    <string name="searching">অনুগ্রহ করে অপেক্ষা করুন\u2026</string>
+    <!-- Search - Searching label -->
+    <string name="searching_action_label">অনুসন্ধান চলছে</string>
+
+    <!-- Picker Activity -->
+    <string name="picker" translatable="false">@string/app_name</string>
+    <!-- Picker Activity - Dialog title -->
+    <string name="picker_title">একটি ফাইল বাছুন</string>
+    <string name="directory_picker_title">একটি ডিরেক্টরি বাছুন</string>
+
+    <!-- Editor - Editor activity title -->
+    <string name="editor">সম্পাদক</string>
+    <!-- Editor - Invalid file message -->
+    <string name="editor_invalid_file_msg">অবৈধ ফাইল।</string>
+    <!-- Editor - File not found message -->
+    <string name="editor_file_not_found_msg">ফাইল খুঁজে পাওয়া যায়নি।</string>
+    <!-- Editor - File size exceed the limit -->
+    <string name="editor_file_exceed_size_msg">এই ডিভাইসের মধ্যে খোলার পক্ষে ফাইলটি খুবই বড়।</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog title -->
+    <string name="editor_dirty_ask_title">প্রস্থান নিশ্চিত করুন</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog message -->
+    <string name="editor_dirty_ask_msg">অসংরক্ষিত পরিবর্তনগুলি আছে।\n\nসংরক্ষণ না করেই প্রস্থান করবেন?</string>
+    <!-- Editor - Save operation success -->
+    <string name="editor_successfully_saved">ফাইলটি সফলভাবে সংরক্ষিত হয়েছে।</string>
+    <!-- Editor - Read-only file mode -->
+    <string name="editor_read_only_mode">ফাইলটি কেবলমাত্র-পঠনযোগ্য মোডে খোলা হয়েছে।</string>
+    <!-- Editor - Dumping message -->
+    <string name="dumping_message">হেক্স ডাম্প তৈরি হচ্ছে\u2026</string>
+    <!-- Editor - Displaying -->
+    <string name="displaying_message">প্রদর্শন হচ্ছে\u2026</string>
+
+    <!-- Bookmarks - Bookmarks activity title -->
+    <string name="bookmarks">বুকমার্কগুলি</string>
+    <!-- Bookmarks - Bookmark name - Home -->
+    <string name="bookmarks_home">বাড়ি</string>
+    <!-- Bookmarks - Bookmark name - Root folder -->
+    <string name="bookmarks_root_folder">রুট ফোল্ডার</string>
+    <!-- Bookmarks - Bookmark name - System folder -->
+    <string name="bookmarks_system_folder">সিস্টেম ফোল্ডার</string>
+    <!-- Bookmarks - Bookmark name - Secure storage -->
+    <string name="bookmarks_secure">নিরাপদ সঞ্চয়স্থান</string>
+    <!-- Bookmarks - Bookmark name - Remote storage -->
+    <string name="bookmarks_remote">রিমোট সঞ্চয়স্থান</string>
+    <!-- Bookmarks - Bookmark name - Button - Initial directory content description -->
+    <string name="bookmarks_button_config_cd">প্রারম্ভিক ফোল্ডারটি সেট করুন।</string>
+    <!-- Bookmarks - Bookmark name - Button - Remove bookmark content description -->
+    <string name="bookmarks_button_remove_bookmark_cd">বুকমার্কটি অপসারণ করুন।</string>
+    <!-- Bookmarks - Bookmarks - Actions - Bookmark successfully added -->
+    <string name="bookmarks_msgs_add_success">বুকমার্কটি সফলভাবে যুক্ত হয়েছে।</string>
+
+    <!-- Initial directory dialog title -->
+    <string name="initial_directory_dialog_title">প্রারম্ভিক ফোল্ডার</string>
+    <!-- Initial directory label -->
+    <string name="initial_directory_label">প্রারম্ভিক ফোল্ডারটি বাছুন:</string>
+    <!-- Initial directory is relative -->
+    <string name="initial_directory_relative_msg">সম্পর্কীয় পথগুলি অনুমোদিত নয়।</string>
+    <!-- Initial directory error message -->
+    <string name="initial_directory_error_msg">প্রারম্ভিক ফোল্ডারটি সংরক্ষণ করার সময় একটি ত্রুটি ঘটেছে।</string>
+
+    <!-- Menu - Navigation - Search -->
+    <string name="menu_search">অনুসন্ধান</string>
+    <!-- Menu - Navigation - Settings -->
+    <string name="menu_settings">সেটিংস</string>
+    <!-- Menu - History - Clear history -->
+    <string name="menu_clear_history">ইতিহাস পরিষ্কার করুন</string>
+    <!-- Menu - Editor - No suggestions -->
+    <string name="menu_no_suggestions">কোনও পরামর্শ নেই</string>
+    <!-- Menu - Editor - Word wrap -->
+    <string name="menu_word_wrap">শব্দ র‌্যাপ</string>
+    <!-- Menu - Editor - Sintax highlight -->
+    <string name="menu_syntax_highlight">বাক্য গঠন হাইলাইট</string>
+
+    <!-- Regular expression for create copy action -->
+    <string name="create_copy_regexp"><xliff:g id="name">%1$s</xliff:g> - অনুলিপি<xliff:g id="extension">%2$s</xliff:g></string>
+    <!-- Regular expression for new compressed file -->
+    <string name="create_new_compress_file_regexp"><xliff:g id="name">%1$s</xliff:g> - নতুন<xliff:g id="extension">%2$s</xliff:g></string>
+
+    <!-- Waiting dialog - Performing operation message -->
+    <string name="waiting_dialog_msg">অপারেশন চলছে\u2026</string>
+    <!-- Waiting dialog - Copying title -->
+    <string name="waiting_dialog_copying_title">অনুলিপি হচ্ছে\u2026</string>
+    <!-- Waiting dialog - Copying message -->
+    <string name="waiting_dialog_copying_msg">&lt;b&gt;থেকে&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>&lt;br/&gt;&lt;b&gt;প্রতি&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g></string>
+    <!-- Waiting dialog - Moving title -->
+    <string name="waiting_dialog_moving_title">সরানো হচ্ছে\u2026</string>
+    <!-- Waiting dialog - Moving message -->
+    <string name="waiting_dialog_moving_msg">&lt;b&gt;থেকে&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>&lt;br/&gt;&lt;b&gt;প্রতি&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g></string>
+    <!-- Waiting dialog - Deleting title -->
+    <string name="waiting_dialog_deleting_title">মোছা হচ্ছে\u2026</string>
+    <!-- Waiting dialog - Deleting message -->
+    <string name="waiting_dialog_deleting_msg">&lt;b&gt;ফাইল&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_extracting_title">নিষ্কাশন চলছে\u2026</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_extracting_msg">&lt;b&gt;ফাইল&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_compressing_title">সঙ্কুচিত হচ্ছে\u2026</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_compressing_msg">&lt;b&gt;ফাইল&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Initializing the dialog -->
+    <string name="waiting_dialog_analizing_msg"><![CDATA[<b>বিশ্লেষণ হচ্ছে\u2026</b>]]></string>
+    <!-- Extracting - Success message -->
+    <string name="msgs_extracting_success">নিষ্কাশন অপারেশনটি সফলভাবে সম্পূর্ণ হয়েছে। ডেটা <xliff:g id="destination">%1$s</xliff:g>-এ নিষ্কাশন হয়েছে।</string>
+    <!-- Compressing - Success message -->
+    <string name="msgs_compressing_success">সঙ্কুচন অপারেশনটি সফলভাবে সম্পূর্ণ হয়েছে। ডেটা <xliff:g id="destination">%1$s</xliff:g>-এ সঙ্কুচিত হয়েছে।</string>
+
+    <!-- Actions Dialog - Title -->
+    <string name="actions_dialog_title">ক্রিয়াকলাপগুলি</string>
+    <!-- Actions Dialog - Menu - Properties of current folder -->
+    <string name="actions_menu_properties_current_folder">বৈশিষ্ট্যগুলি</string>
+    <!-- Actions Dialog - Menu - Refresh -->
+    <string name="actions_menu_refresh">সতেজ করুন</string>
+    <!-- Actions Dialog - Menu - New directory -->
+    <string name="actions_menu_new_directory">নতুন ফোল্ডার</string>
+    <!-- Actions Dialog - Menu - New file -->
+    <string name="actions_menu_new_file">নতুন ফাইল</string>
+    <!-- Actions Dialog - Menu - Select all -->
+    <string name="actions_menu_select_all">সমস্ত নির্বাচন করুন</string>
+    <!-- Actions Dialog - Menu - Deselect all -->
+    <string name="actions_menu_deselect_all">সব নির্বাচনমুক্ত করুন</string>
+    <!-- Actions Dialog - Menu - Select -->
+    <string name="actions_menu_select">নির্বাচন করুন</string>
+    <!-- Actions Dialog - Menu - Deselect -->
+    <string name="actions_menu_deselect">নির্বাচনমুক্ত করুন</string>
+    <!-- Actions Dialog - Menu - Copy/Paste selection -->
+    <string name="actions_menu_paste_selection">নির্বাচন এখানে অনুলিপি করুন</string>
+    <!-- Actions Dialog - Menu - Move selection -->
+    <string name="actions_menu_move_selection">নির্বাচন এখানে সরান</string>
+    <!-- Actions Dialog - Menu - Delete selection -->
+    <string name="actions_menu_delete_selection">নির্বাচন মুছুন</string>
+    <!-- Actions Dialog - Menu - Compress selection -->
+    <string name="actions_menu_compress_selection">নির্বাচন সঙ্কুচিত করুন</string>
+    <!-- Actions Dialog - Menu - Create link -->
+    <string name="actions_menu_create_link">লিঙ্ক তৈরি করুন</string>
+    <!-- Actions Dialog - Menu - Open -->
+    <string name="actions_menu_open">খুলুন</string>
+    <!-- Actions Dialog - Menu - Open with -->
+    <string name="actions_menu_open_with">এটি ব্যবহার করে খুলুন</string>
+    <!-- Actions Dialog - Menu - Execute -->
+    <string name="actions_menu_execute">সম্পাদনা</string>
+    <!-- Actions Dialog - Menu - Send -->
+    <string name="actions_menu_send">পাঠান</string>
+    <!-- Actions Dialog - Menu - Send selection -->
+    <string name="actions_menu_send_selection">নির্বাচন পাঠান</string>
+    <!-- Actions Dialog - Menu - Compress -->
+    <string name="actions_menu_compress">সঙ্কুচিত করুন</string>
+    <!-- Actions Dialog - Menu - Extract -->
+    <string name="actions_menu_extract">নিষ্কাশন করুন</string>
+    <!-- Actions Dialog - Menu - Delete -->
+    <string name="actions_menu_delete">মুছুন</string>
+    <!-- Actions Dialog - Menu - Rename -->
+    <string name="actions_menu_rename">পুনরায় নামকরণ</string>
+    <!-- Actions Dialog - Menu - Create copy -->
+    <string name="actions_menu_create_copy">অনুলিপি তৈরি করুন</string>
+    <!-- Actions Dialog - Menu - Properties -->
+    <string name="actions_menu_properties">বৈশিষ্ট্যগুলি</string>
+    <!-- Actions Dialog - Menu - Add to bookmarks -->
+    <string name="actions_menu_add_to_bookmarks">বুকমার্কগুলিতে যোগ করুন</string>
+    <!-- Actions Dialog - Menu - Add shortcut -->
+    <string name="actions_menu_add_shortcut">শর্টকাট যোগ করুন</string>
+    <!-- Actions Dialog - Menu - Open parent folder -->
+    <string name="actions_menu_open_parent_folder">অভিভাবক খুলুন</string>
+    <!-- Actions Dialog - Menu - Compute checksum -->
+    <string name="actions_menu_compute_checksum">checksum গণনা করুন</string>
+    <!-- Actions Dialog - Menu - Print -->
+    <string name="actions_menu_print">মুদ্রণ করুন</string>
+    <!-- Actions Dialog - Menu - Set as home -->
+    <string name="actions_menu_set_as_home">হোম হিসাবে সেট করুন</string>
+
+    <!-- Actions - Ask user prior to do an undone operation. Dialog message -->
+    <string name="actions_ask_undone_operation_msg">এই ক্রিয়াটি পূর্বাবস্থায় ফেরানো যাবে না। আপনি কি অবিরত রাখতে চান?</string>
+
+    <!-- Enter Name Dialog - Label -->
+    <string name="input_name_dialog_label">নাম:</string>
+    <!-- Enter Name Dialog - Message - Empty name -->
+    <string name="input_name_dialog_message_empty_name">নাম ফাঁকা রাখা যাবে না।</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_path_name">অবৈধ নাম। \'<xliff:g id="invalid_characters">%1$s</xliff:g>\' অক্ষরগুলি অনুমোদিত নয়।</string>
+    <!-- Enter Name Dialog - Message - Invalid name length -->
+    <string name="input_name_dialog_message_invalid_name_length">ফাইলের নাম খুব বড়, দয়া করে এমন কিছুর বিবেচনা করুন যা 255 অক্ষরের বা তার কম।</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_name">অবৈধ নাম। \'.\' এবং \'..\' নামগুলি অনুমোদিত নয়।</string>
+    <!-- Enter Name Dialog - Message - Name exists -->
+    <string name="input_name_dialog_message_name_exists">নাম ইতিমধ্যে বিদ্যমান আছে।</string>
+
+    <!-- Associations Dialog - Title -->
+    <string name="associations_dialog_title">অ্যাসোসিয়েশানগুলি</string>
+    <!-- Associations Dialog - Remember the user action -->
+    <string name="associations_dialog_remember">নির্বাচন মনে রাখুন</string>
+    <!-- Associations Dialog - Open with Title -->
+    <string name="associations_dialog_openwith_title">এটি ব্যবহার করে খুলুন</string>
+    <!-- Associations Dialog - Open action (button title) -->
+    <string name="associations_dialog_openwith_action">খুলুন</string>
+    <!-- Associations Dialog - Send with Title -->
+    <string name="associations_dialog_sendwith_title">এর মাধ্যমে পাঠান</string>
+    <!-- Associations Dialog - Send action (button title) -->
+    <string name="associations_dialog_sendwith_action">পাঠান</string>
+
+    <!-- Inline Autocomplete Widget - Tab message nothing to complete -->
+    <string name="inline_autocomplete_tab_nothing_to_complete_msg">সম্পূর্ণ করার জন্য কিছু নেই।</string>
+
+    <!-- Execution console - Title -->
+    <string name="execution_console_title">S Console</string>
+    <!-- Execution console - The script name label -->
+    <string name="execution_console_script_name_label">স্ক্রিপ্ট:</string>
+    <!-- Execution console - The script execution time label -->
+    <string name="execution_console_script_execution_time_label">সময়:</string>
+    <!-- Execution console - The script exit code label -->
+    <string name="execution_console_script_exitcode_label">প্রস্থানের কোড:</string>
+    <!-- Execution console - The script execution time seconds string -->
+    <string name="execution_console_script_execution_time_text"><xliff:g id="seconds">%1$s</xliff:g> সেকেন্ড।</string>
+
+    <!-- Compute checksum - Title -->
+    <string name="compute_checksum_title">checksum গণনা করুন</string>
+    <!-- Compute checksum - The file name label -->
+    <string name="compute_checksum_filename_label">ফাইল:</string>
+    <!-- Compute checksum - The MD5 label -->
+    <string name="compute_checksum_md5_label" translatable="false">MD5:</string>
+    <!-- Compute checksum - The SHA1 label -->
+    <string name="compute_checksum_sha1_label" translatable="false">SHA-1:</string>
+    <!-- Compute checksum - The computing checksum message-->
+    <string name="compute_checksum_computing_checksum_msg">checksum গণনা হচ্ছে\u2026</string>
+
+    <!-- Mime/Types - Folder -->
+    <string name="mime_folder">ফোল্ডার</string>
+    <!-- Mime/Types - Symlink -->
+    <string name="mime_symlink">সিমলিঙ্ক</string>
+    <!-- Mime/Types - Unknown -->
+    <string name="mime_unknown">অজানা</string>
+
+    <!--  Filetime formats -->
+    <string name="filetime_format_mode_system">সিস্টেম-বর্ণিত</string>
+    <string name="filetime_format_mode_locale">লোকেল-বর্ণিত</string>
+    <string name="filetime_format_mode_ddMMyyyy_HHmmss">dd/mm/yyyy hh:mm:ss</string>
+    <string name="filetime_format_mode_MMddyyyy_HHmmss">mm/dd/yyyy hh:mm:ss</string>
+    <string name="filetime_format_mode_yyyyMMdd_HHmmss">yyyy-mm-dd hh:mm:ss</string>
+
+    <!-- Selection -->
+    <!-- For example "2 folders and 1 file selected." -->
+    <string name="selection_folders_and_files"><xliff:g id="folders">%1$s</xliff:g> এবং <xliff:g id="files">%2$s</xliff:g> নির্বাচিত।</string>
+
+    <!-- Category descriptions -->
+    <string name="category_system">সিস্টেম</string>
+    <string name="category_app">অ্যাপ</string>
+    <string name="category_binary">বাইনারি</string>
+    <string name="category_text">পাঠ্য</string>
+    <string name="category_document">নথি</string>
+    <string name="category_ebook">ই-বই</string>
+    <string name="category_mail">মেল</string>
+    <string name="category_compress">সঙ্কুচিত করুন</string>
+    <string name="category_exec">সম্পাদনযোগ্য</string>
+    <string name="category_database">ডেটাবেস</string>
+    <string name="category_font">হরফ</string>
+    <string name="category_image">চিত্র</string>
+    <string name="category_audio">অডিও</string>
+    <string name="category_video">ভিডিও</string>
+    <string name="category_security">নিরাপত্তা</string>
+    <string name="category_all">সমস্ত</string>
+
+    <!-- Compression - Compression modes dialog title -->
+    <string name="compression_mode_title">সঙ্কোচন মোড</string>
+    <!-- Compression - Supported archive and compression modes -->
+    <string name="compression_mode_tar" translatable="false">Tar (tar)</string>
+    <string name="compression_mode_tar_gzip" translatable="false">Tar/gzip (tar.gz)</string>
+    <string name="compression_mode_tar_gzip2" translatable="false">Tar/gzip (tgz)</string>
+    <string name="compression_mode_tar_bzip" translatable="false">Tar/bzip (tar.bz2)</string>
+    <string name="compression_mode_gzip" translatable="false">Gzip (gz)</string>
+    <string name="compression_mode_bzip" translatable="false">Bzip (bz2)</string>
+    <string name="compression_mode_zip" translatable="false">Zip (zip)</string>
+
+    <!-- Shortcut. Failed to handle the shortcut -->
+    <string name="shortcut_failed_msg">শর্টকাট পরিচালনা করতে ব্যর্থ হয়েছে।</string>
+    <!-- Shortcut. The shortcut was created -->
+    <string name="shortcut_creation_success_msg">শর্টকাট সফলভাবে তৈরি হয়েছে।</string>
+    <!-- Shortcut. The shortcut wasn\'t created -->
+    <string name="shortcut_creation_failed_msg">শর্টকাট তৈরি ব্যর্থ হয়েছে।</string>
+
+    <!-- Preferences title -->
+    <string name="pref">সেটিংস</string>
+    <!-- Preferences - General title -->
+    <string name="pref_general">সাধারণ সেটিংস</string>
+    <!-- Preferences - Search title -->
+    <string name="pref_search">অনুসন্ধান বিকল্পগুলি</string>
+    <!-- Preferences - Storage title -->
+    <string name="pref_storage">সঞ্চয়স্থান বিকল্পগুলি</string>
+    <!-- Preferences - Editor title -->
+    <string name="pref_editor">সম্পাদক বিকল্পগুলি</string>
+    <!-- Preferences - Themes title -->
+    <string name="pref_themes">থিমসমূহ</string>
+    <!-- Preferences - About title -->
+    <string name="pref_about">বিষয়ে</string>
+    <!-- Preferences - About summary -->
+    <string name="pref_about_summary">ফাইল পরিচালক সঃ<xliff:g id="version">%1$s</xliff:g>\nকপিরাইট \u00A9 2012–2014 The CyanogenMod Project</string>
+
+    <!-- Preferences - General - Behaviour category -->
+    <string name="pref_general_behaviour_category">সাধারণ</string>
+    <!-- Preferences - General - Case sensitive sort and navigating title -->
+    <string name="pref_case_sensitive_sort">কেস-সংবেদী</string>
+    <!-- Preferences - General - Case sensitive sort and navigating summary -->
+    <string name="pref_case_sensitive_sort_summary">অনুসন্ধান ফলাফল নেভিগেট বা বাছাই করার সময় কেস বিবেচনা করুন</string>
+    <!-- Preferences - General - Filetime format mode title -->
+    <string name="pref_filetime_format_mode">সময়/তারিখের ফর্ম্যাট</string>
+    <!-- Preferences - General -Disk usage warning level title -->
+    <string name="pref_disk_usage_warning_level">ডিস্ক ব্যবহারের সতর্কতা</string>
+    <!-- Preferences - General - Disk usage warning level summary -->
+    <!-- FIXME Use "percent" instead of "%" symbol, because it make crash the app on getSummary
+         of ListPreference. This should be fixed in frameworks base prior to be added here. -->
+    <string name="pref_disk_usage_warning_level_summary" formatted="false">যখন তারা মুক্ত ডিস্ক স্থানের <xliff:g id="level">%1$s</xliff:g> শতাংশে পৌঁছাবে তখন ডিস্ক ব্যবহারের উইজেটে একটি পৃথক রঙ প্রদর্শন করুন</string>
+    <!-- Preferences - General - Compute folder statistics title -->
+    <string name="pref_compute_folder_statistics">ফোল্ডার পরিসংখ্যান গণনা করুন</string>
+    <!-- Preferences - General - Compute folder statistics summary on -->
+    <string name="pref_compute_folder_statistics_on">সতর্কতা! ফোল্ডার পরিসংখ্যানের গণনা সময় এবং সিস্টেম সংস্থানগুলির পক্ষে মূল্যবান</string>
+    <!-- Preferences - General - Display thumbs -->
+    <string name="pref_display_thumbs">পূর্বরূপ দেখুন</string>
+    <!-- Preferences - General - Display thumbs summary -->
+    <string name="pref_display_thumbs_summary">অ্যাপস, সঙ্গীতের ফাইলগুলি, ছবিগুলি এবং ভিডিওগুলির জন্য একটি প্রিভিউ চিত্র প্রদর্শন করুন</string>
+    <!-- Preferences - General - Use flinger detection -->
+    <string name="pref_use_flinger">জেশ্চারগুলি সোয়াইপ করুন ব্যবহার করুন</string>
+    <!-- Preferences - General - Use flinger detection summary -->
+    <string name="pref_use_flinger_summary">ফাইলগুলি বা ফোল্ডারগুলি মুছে দিতে জেশ্চারগুলি শনাক্ত করুন বাম থেকে ডানে সোয়াইপ করুন ব্যবহার করুন</string>
+    <!-- Preferences - General - Advanced settings category -->
+    <string name="pref_general_advanced_settings_category">উন্নত</string>
+    <!-- Preferences - General - Access mode -->
+    <string name="pref_access_mode">অ্যাক্সেস মোড</string>
+    <!-- Preferences - General - Safe mode -->
+    <string name="pref_access_mode_safe">সুরক্ষিত অবস্থা</string>
+    <!-- Preferences - General - Safe mode summary -->
+    <string name="pref_access_mode_safe_summary">নিরাপদ মোড\n\nঅ্যাপটি কোনও সুবিধা ছাড়াই চলছে এবং কেবলমাত্র অ্যাক্সেসযোগ্য ফাইল সিস্টেমগুলি হল সঞ্চয়স্থানের পরিমাণগুলি (SD কার্ডগুলি এবং USB)</string>
+    <!-- Preferences - General - Prompt user mode -->
+    <string name="pref_access_mode_prompt">ব্যবহারকারীকে প্রম্পট করুন মোড</string>
+    <!-- Preferences - General - Prompt user mode summary -->
+    <string name="pref_access_mode_prompt_summary">ব্যবহারকারীকে প্রম্পট করুন মোড\n\nঅ্যাপটি ফাইল সিস্টেমে সম্পূর্ণ অ্যাক্সেস সহ চলমান তবে কোনও সুবিধাযুক্ত ক্রিয়াকলাপগুলি কার্যকর করতে অনুমতির জন্য প্রম্পট করবে।</string>
+    <!-- Preferences - General - Root access mode -->
+    <string name="pref_access_mode_root">রুট অ্যাক্সেস মোড</string>
+    <!-- Preferences - General - Root access mode summary -->
+    <string name="pref_access_mode_root_summary">রুট অ্যাক্সেস মোড\n\nসতর্কতা! এই মোডটি আপনার ডিভাইসটিকে ভঙ্গ করতে পারে এমন ক্রিয়াকলাপগুলির অনুমতি দেয়। কোনও ক্রিয়াকলাপের নিরাপত্তা সুনিশ্চিত করা হল আপনার দায়িত্ব</string>
+    <!-- Preferences - General - Restrict secondary users access title -->
+    <string name="pref_restrict_secondary_users_access_title">ব্যবহারকারীর অ্যাক্সেস সীমাবদ্ধ করুন</string>
+    <!-- Preferences - General - Restrict secondary users access summary -->
+    <string name="pref_restrict_secondary_users_access_summary">সমগ্র সিস্টেম থেকে সেকেন্ডারি ব্যবহারগুলিতে অ্যাক্সেস সীমাবদ্ধ করুন</string>
+    <!-- Preferences - Search - Results category -->
+    <string name="pref_search_results_category">ফলাফল</string>
+    <!-- Preferences - Search - Show relevance widget -->
+    <string name="pref_show_relevance_widget">সম্পর্কিত উইজেট দেখান</string>
+    <!-- Preferences - Search - Highlight search terms -->
+    <string name="pref_highlight_terms">অনুসন্ধানের পদগুলি হাইলাইট করুন</string>
+    <!-- Preferences - Search - Sort results mode -->
+    <string name="pref_sort_search_results_mode">ফলাফলগুলি বাছাইয়ের মোড</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_none">কোনও বাছাই নয়</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_name">নাম অনুসারে</string>
+    <!-- Preferences - Search - Sort results mode. Relevance -->
+    <string name="pref_sort_search_results_mode_relevance">সম্পর্কিত অনুসারে</string>
+    <!-- Preferences - Search - Privacity category -->
+    <string name="pref_search_privacity_category">গোপনীয়তা</string>
+    <!-- Preferences - Search - Save search terms -->
+    <string name="pref_save_search_terms">অনুসন্ধানের পদগুলি সংরক্ষণ করুন</string>
+    <!-- Preferences - Search - Save search terms summary on -->
+    <string name="pref_save_search_terms_on">অনুসন্ধানের পদগুলি সংরক্ষিত হবে এবং ভবিষ্যতের অনুসন্ধানগুলিতে পরামর্শ হিসাবে ব্যবহার করা হবে</string>
+    <!-- Preferences - Search - Save search terms summary off -->
+    <string name="pref_save_search_terms_off">অনুসন্ধানের পদগুলি সংরক্ষিত হবে না</string>
+    <!-- Preferences - Search - Remove saved search terms -->
+    <string name="pref_remove_saved_search_terms">সংরক্ষিত অনুসন্ধানের পদগুলি অপসারণ করুন</string>
+    <!-- Preferences - Search - Remove saved search terms summary -->
+    <string name="pref_remove_saved_search_terms_summary">সমস্ত সংরক্ষিত অনুসন্ধানের পদ অপসারণ করতে ট্যাপ করুন</string>
+    <!-- Preferences - Search - Suggestions were truncated -->
+    <string name="pref_remove_saved_search_terms_msg">সমস্ত সংরক্ষিত অনুসন্ধানের পদ অপসারিত হয়েছে</string>
+    <!-- Preferences - Storage - Secure Storage category -->
+    <string name="pref_secure_storage_category">নিরাপদ সঞ্চয়স্থান</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync title -->
+    <string name="pref_secure_storage_delayed_sync_title">বিলম্বিত সিঙ্ক্রোনাইজেশন</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync summary -->
+    <string name="pref_secure_storage_delayed_sync_summary">সুরক্ষিত ফাইল সিস্টেমগুলি সিঙ্ক্রোনাইজ করা হল একটি খরচবহুল পরিচালনা। প্রতিটি ক্রিয়াকলাপের শেষে আরও দ্রুত প্রতিক্রিয়ার অনুমতি দিতে যখন ফাইলসিস্টেমটি অব্যবহৃত অবস্থায় থাকে তখন সিঙ্ক্রোনাইজেশন সম্পাদন করে এই বিকল্পটি সক্ষম করুন তবে যদি অ্যাপটি ক্র্যাশ করে তবে মুলতুবি থাকা তথ্যটি সিঙ্ক না হওয়ায় হারনোর মূল্যে নয়।</string>
+    <!-- Preferences - Storage - Secure Storage - Reset password title -->
+    <string name="pref_secure_storage_reset_password_title">পাসওয়ার্ড পুনরায় সেট করুন</string>
+    <!-- Preferences - Storage - Secure Storage - Delete storage title -->
+    <string name="pref_secure_storage_delete_storage_title">সঞ্চয়স্থান মুছুন</string>
+    <!-- Preferences - Editor - Behaviour category -->
+    <string name="pref_editor_behaviour_category">আচরণ</string>
+    <!-- Preferences - Editor - No suggestions -->
+    <string name="pref_no_suggestions">কোনও পরামর্শ নেই</string>
+    <!-- Preferences - Editor - No suggestions summary -->
+    <string name="pref_no_suggestions_desc">ফাইলটি সম্পাদনা করার সময় অভিধানের পরামর্শগুলি প্রদর্শন করবেন না</string>
+    <!-- Preferences - Editor - Word wrap -->
+    <string name="pref_word_wrap">শব্দ র‌্যাপ</string>
+    <!-- Preferences - Editor - Hex dump -->
+    <string name="pref_hexdump">হেক্স ডাম্প বাইনারি ফাইলগুলি</string>
+    <!-- Preferences - Editor - Hex dump desc -->
+    <string name="pref_hexdump_desc">কোনও বাইনারি ফাইল খোলার সময় ফাইলের একটি হেক্স ডাম্প তৈরি করুন এবং এটিকে হেক্স ভিউয়ারে খুলুন</string>
+    <!-- Preferences - Editor - Syntax highlight category -->
+    <string name="pref_editor_syntax_highlight_category">বাক্য গঠন হাইলাইট</string>
+    <!-- Preferences - Editor - Syntax highlight -->
+    <string name="pref_syntax_highlight">বাক্য গঠন হাইলাইট</string>
+    <!-- Preferences - Editor - Syntax highlight summary -->
+    <string name="pref_syntax_highlight_desc">সম্পাদকে প্রদর্শিত ফাইলের বাক্যগঠন হাইলাইট করুন (কেবল যখন কোনও বাক্যগঠন হাইলাইট প্রক্রিয়াকারী ফাইলটির প্রকারের জন্য উপলব্ধ থাকে)</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme -->
+    <string name="pref_syntax_highlight_color_scheme">রঙের স্কিম</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme summary -->
+    <string name="pref_syntax_highlight_color_scheme_desc">বাক্যগঠন হাইলাইট রঙের স্কিমটি নির্বাচন করুন</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme -->
+    <string name="pref_syntax_sh_use_theme_default">থিম ডিফল্ট ব্যবহার করুন</string>
+    <!-- Preferences - Editor - Syntax highlight -Color Scheme summary -->
+    <string name="pref_syntax_sh_use_theme_default_desc">বর্তমান থিমের ডিফল্ট বাক্যগঠন হাইলাইটটি ব্যবহার করুন</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme - Items category -->
+    <string name="pref_editor_sh_item_category">আইটেমগুলি</string>
+    <!-- Preferences - Themes - Themes selection category -->
+    <string name="pref_themes_selection_category">থিমসমূহ</string>
+    <!-- Preferences - Themes - Set theme button -->
+    <string name="pref_themes_set_theme">থিম সেট করুন</string>
+    <!-- Preferences - Themes - Confirmation message -->
+    <string name="pref_themes_confirmation">থিমটি সফল ভাবে প্রয়োগ করা হয়েছিল।</string>
+    <!-- Preferences - Themes - Theme not found message -->
+    <string name="pref_themes_not_found">থিম খুঁজে পাওয়া যায়নি।</string>
+
+    <!-- Preferences - Debug - Capture debug traces -->
+    <string name="pref_debug_traces">লগ ডিবাগিং তথ্য</string>
+
+    <!-- Themes - Default theme name -->
+    <string name="theme_default_name">হালকা থিম</string>
+    <!-- Themes - Default theme description -->
+    <string name="theme_default_description">CyanogenMod ফাইল পরিচালকের জন্য একটি হালকা থিম</string>
+    <!-- Themes - Default theme author -->
+    <string name="themes_author">CyanogenMod</string>
+
+    <!-- Navigation drawer -->
+    <string name="drawer_open">নেভিগেশন ড্রয়ার চালু করুন</string>
+    <string name="drawer_close">নেভিগেশন ড্রয়ার বন্ধ করুন</string>
+
+    <!-- ColorPickerDialog -->
+    <!-- The text of the alpha slider control -->
+    <string name="color_picker_alpha_slider_text">আলফা</string>
+    <!-- The label of the current color panel -->
+    <string name="color_picker_current_text">বর্তমান:</string>
+    <!-- The label of the new color panel -->
+    <string name="color_picker_new_text">নতুন:</string>
+    <!-- The label of the color input -->
+    <string name="color_picker_color">রঙ:</string>
+
+    <!-- Android Syntax Highlight -->
+    <string name="ash_reset_color_scheme">ডিফল্ট থিম রঙয়ের স্কিমটি পুনরুদ্ধার করুন</string>
+    <string name="ash_text">পাঠ্য</string>
+    <string name="ash_assignment">নিযুক্তি</string>
+    <string name="ash_singleline_comment">একটি পংক্তির মতামত</string>
+    <string name="ash_multiline_comment">একাধিক পংক্তির মতামত</string>
+    <string name="ash_keyword">মূল শব্দ</string>
+    <string name="ash_quoted_string">উদ্ধৃত স্ট্রিং</string>
+    <string name="ash_variable">পরিবর্তনীয়</string>
+
+    <!-- Secure Storage -->
+    <!-- Secure Storage dialog title - Unlock -->
+    <string name="secure_storage_unlock_title">সঞ্চয়স্থান আনলক করুন</string>
+    <!-- Secure Storage dialog title - Create -->
+    <string name="secure_storage_create_title">সঞ্চয়স্থান তৈরি করুন</string>
+    <!-- Secure Storage dialog title - Reset -->
+    <string name="secure_storage_reset_title">পাসওয়ার্ড পুনরায় সেট করুন</string>
+    <!-- Secure Storage dialog title - Delete -->
+    <string name="secure_storage_delete_title">সঞ্চয়স্থান মুছুন</string>
+    <!-- Secure Storage unlock dialog message (secure storage exists) -->
+    <string name="secure_storage_unlock_key_prompt_msg">সুরক্ষিত সঞ্চয়স্থানের ফাইল সিস্টেমটি আনলক করতে পাসওয়ার্ডটি টাইপ করুন।</string>
+    <!-- Secure Storage unlock dialog message (new secure storage) -->
+    <string name="secure_storage_unlock_key_new_msg">সুরক্ষিত সঞ্চয়স্থানের ফাইল সিস্টেমটি সুরক্ষিত করতে একটি পাসওয়ার্ড টাইপ করুন।</string>
+    <!-- Secure Storage unlock dialog message (reset the current password) -->
+    <string name="secure_storage_unlock_key_reset_msg">সুরক্ষিত সঞ্চয়স্থানের ফাইল সিস্টেমটি পুনরায় সেট করতে বর্তমান এবং নতুন পাসওয়ার্ডগুলি টাইপ করুন।</string>
+    <!-- Secure Storage unlock dialog message (delete the secure storage) -->
+    <string name="secure_storage_unlock_key_delete_msg">সুরক্ষিত সঞ্চয়স্থানের ফাইল সিস্টেমটি মুছে দিতে বর্তমান পাসওয়ার্ডটি টাইপ করুন।</string>
+    <!-- Secure Storage unlock dialog old key title -->
+    <string name="secure_storage_unlock_old_key_title">পুরানো পাসওয়ার্ড:</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_new_key_title">নতুন পাসওয়ার্ড:</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_key_title">পাসওয়ার্ড:</string>
+    <!-- Secure Storage unlock dialog repeat key title-->
+    <string name="secure_storage_unlock_repeat_title">পাসওয়ার্ড পুনরাবৃত্তি করুন:</string>
+    <!-- Secure Storage create button -->
+    <string name="secure_storage_create_button">তৈরি করুন</string>
+    <!-- Secure Storage unlock button -->
+    <string name="secure_storage_unlock_button">আনলক</string>
+    <!-- Secure Storage reset button -->
+    <string name="secure_storage_reset_button">রিসেট</string>
+    <!-- Secure Storage delete button -->
+    <string name="secure_storage_delete_button">মুছুন</string>
+    <!-- Secure Storage unlock failed toast -->
+    <string name="secure_storage_unlock_failed">সঞ্চয়স্থান আনলক করতে পারে না</string>
+    <!-- Secure Storage unlock validation, length -->
+    <string name="secure_storage_unlock_validation_length">পাসওয়ার্ডে কমপক্ষে অবশ্যই <xliff:g id="characters">%1$d</xliff:g>টি অক্ষর থাকতে হবে।</string>
+    <!-- Secure Storage unlock validation, equal -->
+    <string name="secure_storage_unlock_validation_equals">পাসওয়ার্ডগুলি মেলে না</string>
+
+    <!-- Print messages -->
+    <!-- Unsupported document format -->
+    <string name="print_unsupported_document">অসমর্থিত সামগ্রী বিন্যাস</string>
+    <!-- Unsupported image format -->
+    <string name="print_unsupported_image">অসমর্থিত চিত্রের বিন্যাস</string>
+    <!-- Print header -->
+    <string name="print_document_header">নথি: <xliff:g id="document_name">%1$s</xliff:g></string>
+    <!-- Print footer -->
+    <string name="print_document_footer">পৃষ্ঠা <xliff:g id="page_number">%1$s</xliff:g></string>
+
+    <!-- Security - Extract relative or absolute files -->
+    <string name="security_warning_extract">সতর্কতা!\n\nসম্পর্কিত বা পরম পাথ সহ একটি সংরক্ষণাগারের ফাইল নিষ্কাশন করা সিস্টেম ফাইলগুলি অধিলিখন করে আপনার ডিভাইসের ক্ষতি করতে পারে।\n\nআপনি কি অবিরত রাখতে চান?</string>
+
+    <!-- ChangeLog - Dialog title -->
+    <string name="changelog_title">Changelog</string>
+
+    <!-- Welcome Dialog - Title -->
+    <string name="welcome_title">স্বাগতম</string>
+    <!-- Welcome Dialog - Message -->
+    <string name="welcome_msg">CyanogenMod ফাইল পরিচালকে স্বাগত।\n\nএই অ্যাপটি আপনাকে ফাইল সিস্টেমটি এক্সপ্লোর করতে এবং আপনার ডিভাইসটি ভঙ্গ করতে পারে এমন ক্রিয়াকলাপগুলি করার অনুমতি দেয়। ক্ষতিকে বাধা দিতে অ্যাপটি একটি নিরাপদ, স্বল্প-সুবিধাযুক্ত মোডে চালু হবে।\n\nআপনি সেটিংসের মাধ্যমে অগ্রণী, পূর্ণ-সুবিধাযুক্ত মোডটি অ্যাক্সেস করতে পারেন। একটি ক্রিয়াকলাপ আপনার সিস্টেমটি ভঙ্গ করবে না তা নিশ্চিত করা আপনার দায়িত্ব।\n\nCyanogenMod টিম</string>
+
+    <string name="easy_mode_type_icon">মাইম ধরনের জন্য আইকন</string>
+    <string name="easy_mode_type_none">সমস্ত ফাইল</string>
+    <string name="easy_mode_type_images">চিত্রসমূহ</string>
+    <string name="easy_mode_type_videos">ভিডিওসমূহ</string>
+    <string name="easy_mode_type_music">সঙ্গীত</string>
+    <string name="easy_mode_type_documents">নথিসমূহ</string>
+
+    <string name="activity_not_found_exception">এই ফাইলটি খোলার জন্য কোনও অ্যাপ পাওয়া যায়নি</string>
+    <string name="no_permission_for_drm">"দুঃখিত, DRM ফাইল শেয়ার করতে পারবেন না"</string>
+    <string name="actions_menu_drm_license_info">Drm লাইসেন্স তথ্য</string>
+</resources>

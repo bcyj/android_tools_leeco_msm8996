@@ -1,0 +1,265 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+commonSources  :=
+commonIncludes := $(TARGET_OUT_HEADERS)common/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/qmi/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/sensors/inc
+
+LOCAL_C_INCLUDES := $(commonIncludes)
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/inc
+
+LOCAL_MODULE:=sns_dsps_tc0001
+LOCAL_MODULE_OWNER := qcom
+
+LOCAL_SHARED_LIBRARIES += \
+    libc \
+    liblog \
+    libsensor1
+
+LOCAL_SRC_FILES += \
+  src/sns_dsps_tc0001.c
+
+LOCAL_CFLAGS += -D_GNU_SOURCE
+
+LOCAL_PRELINK_MODULE := false
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_EXECUTABLE)
+
+
+include $(CLEAR_VARS)
+commonSources  :=
+commonIncludes := $(TARGET_OUT_HEADERS)common/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/qmi/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/sensors/inc
+
+LOCAL_C_INCLUDES := $(commonIncludes)
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/inc
+
+LOCAL_MODULE:=sns_cm_conc_test
+LOCAL_MODULE_OWNER := qcom
+
+LOCAL_SHARED_LIBRARIES += \
+    libc \
+    liblog \
+    libsensor1
+
+LOCAL_SRC_FILES += \
+  src/sns_cm_conc_test.c
+
+LOCAL_CFLAGS += -D_GNU_SOURCE -DSNS_LA
+
+LOCAL_PRELINK_MODULE := false
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_EXECUTABLE)
+
+
+include $(CLEAR_VARS)
+commonSources  :=
+commonIncludes := $(TARGET_OUT_HEADERS)common/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/qmi/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/sensors/inc
+
+LOCAL_C_INCLUDES := $(commonIncludes)
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/inc
+
+# Figure out if this build system is a QCOM build. If so, include
+# the path to the sanitized headers in the target "out" dir.
+ifeq ($(call is-vendor-board-platform,QCOM),true)
+LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+endif
+
+LOCAL_MODULE:=sns_cm_test
+LOCAL_MODULE_OWNER := qcom
+
+LOCAL_SHARED_LIBRARIES += \
+    libc \
+    liblog \
+    libutils \
+    libsensor1
+
+LOCAL_SRC_FILES += \
+  src/sns_cm_test.cpp
+
+LOCAL_CFLAGS += -D_GNU_SOURCE -DSNS_LA
+
+LOCAL_PRELINK_MODULE := false
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_EXECUTABLE)
+
+
+include $(CLEAR_VARS)
+commonSources  :=
+commonIncludes := $(TARGET_OUT_HEADERS)common/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/qmi/inc
+
+LOCAL_C_INCLUDES := $(commonIncludes)
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/inc
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../api
+
+LOCAL_MODULE:=sns_smr_loopback_test
+LOCAL_MODULE_OWNER := qcom
+
+LOCAL_SHARED_LIBRARIES += \
+    libc \
+    liblog \
+    libsensor1
+
+LOCAL_SRC_FILES += \
+  src/sns_smr_loopback_test.c
+
+LOCAL_CFLAGS += -D_GNU_SOURCE -DSNS_LA
+
+LOCAL_PRELINK_MODULE := false
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_EXECUTABLE)
+
+include $(CLEAR_VARS)
+commonSources  :=
+commonIncludes := $(TARGET_OUT_HEADERS)common/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/qmi/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/sensors/inc
+
+LOCAL_C_INCLUDES := $(commonIncludes)
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/inc
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../sensordaemon/common/idl/inc
+
+LOCAL_MODULE:=sns_file_test
+LOCAL_MODULE_OWNER := qcom
+
+LOCAL_SHARED_LIBRARIES += \
+    libc \
+    liblog \
+    libsensor1
+
+#include IDL files
+LOCAL_SRC_FILES += \
+  src/sns_file_test.c
+
+LOCAL_CFLAGS += -D_GNU_SOURCE
+
+LOCAL_PRELINK_MODULE := false
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_EXECUTABLE)
+
+
+include $(CLEAR_VARS)
+commonSources  :=
+commonIncludes := $(TARGET_OUT_HEADERS)/common/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/qmi/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/sensors/inc
+
+LOCAL_C_INCLUDES := $(commonIncludes)
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/inc
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../sensordaemon/common/inc
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../sensordaemon/common/util/mathtools/inc
+LOCAL_MODULE:=sns_regedit_ssi
+LOCAL_MODULE_OWNER := qcom
+
+LOCAL_SHARED_LIBRARIES += \
+    libc \
+    libcutils \
+    liblog \
+    libsensor1
+
+LOCAL_SRC_FILES += \
+	src/sns_regedit_ssi.c
+
+LOCAL_CFLAGS += -D_GNU_SOURCE -DSNS_LA
+
+LOCAL_PRELINK_MODULE := false
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_EXECUTABLE)
+
+#include $(CLEAR_VARS)
+#LOCAL_MODULE:=sns_hal_test
+#LOCAL_MODULE_OWNER:=qcom
+#
+#LOCAL_SHARED_LIBRARIES += \
+#	libdl
+#
+#LOCAL_SRC_FILES += \
+#	src/sns_hal_test.c
+#
+#LOCAL_CFLAGS += -D_GNU_SOURCE
+#
+#LOCAL_PRELINK_MODULE := false
+#LOCAL_MODULE_TAGS := optional
+#include $(BUILD_EXECUTABLE)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE:=sns_hal_batch
+LOCAL_MODULE_OWNER:=qcom
+
+LOCAL_SHARED_LIBRARIES += \
+  libdl
+
+LOCAL_SRC_FILES += \
+  src/sns_espplus_testapp.c
+
+LOCAL_CFLAGS += -D_GNU_SOURCE
+LOCAL_CFLAGS += -DBOARD_PLATFORM=\"$(TARGET_BOARD_PLATFORM)\"
+
+LOCAL_PRELINK_MODULE := false
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_EXECUTABLE)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE:=sns_ar_testapp
+LOCAL_MODULE_OWNER:=qti
+
+LOCAL_SHARED_LIBRARIES += \
+  libdl
+
+LOCAL_SRC_FILES += \
+  src/sns_ar_testapp.c
+
+LOCAL_CFLAGS += -D_GNU_SOURCE
+LOCAL_CFLAGS += -DBOARD_PLATFORM=\"$(TARGET_BOARD_PLATFORM)\"
+
+LOCAL_PRELINK_MODULE := false
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_EXECUTABLE)
+
+include $(CLEAR_VARS)
+commonSources  :=
+commonIncludes := $(TARGET_OUT_HEADERS)/common/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/qmi/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/sensors/inc
+LOCAL_C_INCLUDES := $(commonIncludes)
+
+LOCAL_MODULE:=sns_ping_test
+LOCAL_MODULE_OWNER := qcom
+
+LOCAL_SHARED_LIBRARIES += \
+    libsensor1
+
+LOCAL_SRC_FILES += \
+	src/sns_ping_test.c
+
+LOCAL_CFLAGS += -D_GNU_SOURCE -DSNS_LA
+
+LOCAL_PRELINK_MODULE := false
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_EXECUTABLE)
+
+include $(CLEAR_VARS)
+commonSources  :=
+commonIncludes := $(TARGET_OUT_HEADERS)/common/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/qmi/inc
+commonIncludes += $(TARGET_OUT_HEADERS)/sensors/inc
+LOCAL_C_INCLUDES := $(commonIncludes)
+
+LOCAL_MODULE:=sns_sam_test
+LOCAL_MODULE_OWNER := qti
+
+LOCAL_SHARED_LIBRARIES += \
+    libsensor1
+
+LOCAL_SRC_FILES += \
+	src/sns_sam_test.c
+
+LOCAL_PRELINK_MODULE := false
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_EXECUTABLE)

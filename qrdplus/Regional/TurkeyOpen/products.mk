@@ -1,0 +1,3 @@
+PRODUCT_PACKAGES += \
+    TurkeyOpenFrameworksRes
+

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<com.borqs.videocall.VTPanelFallBackPanel
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:VTScreen="http://schemas.android.com/apk/res/com.borqs.videocall"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+
+	VTScreen:left_lock_connecting="0dp"
+	VTScreen:top_lock_connecting="0dp"
+	VTScreen:height_lock_connecting="60dp"
+	VTScreen:width_lock_connecting="450dp"
+
+	VTScreen:left_unlock_connecting="0dp"
+	VTScreen:top_unlock_connecting="0dp"
+	VTScreen:height_unlock_connecting="60dp"
+	VTScreen:width_unlock_connecting="450dp" >
+
+
+<LinearLayout
+	android:orientation="horizontal"
+	android:layout_width="fill_parent"
+	android:layout_height="60dp"
+	android:layout_gravity="center_vertical"
+	android:background="@null">
+
+	<LinearLayout android:layout_width="80dp"
+		android:layout_height="60dp"
+		android:background="@drawable/cmcc_phone_voicecall_switch_video">
+	    <ImageView  android:id="@+id/call_card_picture"
+		    android:layout_width="80dp"
+		    android:layout_height="60dp"
+		    android:src="@drawable/picture_unknown"/>
+	</LinearLayout>
+	<!-- Caller Info -->
+	<LinearLayout android:layout_width="120dp"
+		android:layout_height="60dp"
+		android:orientation="vertical"
+		android:layout_marginLeft="5dp">
+	    <TextView android:id="@+id/popup_caller_number"
+			android:layout_width="120dp"
+			android:layout_height="wrap_content"
+			android:textColor="#ffffff"
+			android:singleLine="true"
+			android:gravity="center_vertical|left"
+			android:textSize="15dp"/>
+	    <TextView android:id="@+id/popup_caller_location"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
+                        android:singleLine="true"
+                        android:gravity="center_vertical|left"
+                        android:textSize="15dp"/>
+	    <TextView android:id="@+id/popup_caller_name"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
+                        android:singleLine="true"
+                        android:gravity="center_vertical|left"
+                        android:textSize="15dp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="115dp"
+        android:layout_height="60dp"
+		android:orientation="vertical">
+		<TextView android:id="@+id/popup_call_title"
+			android:layout_width="115dp"
+			android:layout_height="60dp"
+			android:textColor="#ffffff"
+			android:singleLine="true"
+			android:gravity="center"
+			android:textSize="15dp"/>
+	</LinearLayout>
+</LinearLayout>
+<!--ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/callcard_divider"
+        android:layout_marginTop="3dp">
+    </ImageView-->
+</com.borqs.videocall.VTPanelFallBackPanel>

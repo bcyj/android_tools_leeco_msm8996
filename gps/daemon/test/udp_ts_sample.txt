@@ -1,0 +1,32 @@
+# '#' or ';' starts a comment line
+# Command line formats as <TS_ID> <expected result>; <ARG1> <ARG2> ...<ARGn>
+#
+# TS_LOOP_START & TS_LOOP_END
+# Only one loop is supported and the loop count is a 4 bytes integer 127.0.0.1
+#
+# For TS_BIT_SEND/RECEIVE/CONNECT/DISCONNECT/IOCTL, the ARG1 is the connection index
+#
+TS_BIT_OPEN          0;
+TS_BIT_WAIT_NOTIFY   0;
+# is_udp is_ip_addr ip_addr ip_port
+TS_BIT_CONNECT       0; 1 0 127.0.0.1 9008
+TS_BIT_WAIT_NOTIFY   0;
+#
+TS_COUNT_RESET       0;
+TS_LOOP_START        0; 100
+#TS_TIME              0;
+TS_COUNT             0;
+TS_TIME_MARKER       0;
+TS_BIT_DATA_READY_WAIT_NOTIFY   0; 0
+TS_BIT_RECEIVE       0; 0
+#TS_SLEEP             0; 1
+#TS_TIME_SINCE_MARKER 0;
+TS_LOOP_END          0;
+#
+TS_BIT_DISCONNECT    0; 0
+TS_BIT_WAIT_NOTIFY   0;
+#
+TS_BIT_CLOSE         0;
+TS_BIT_WAIT_NOTIFY   0;
+#
+TS_CLIENT_EXIT       0;

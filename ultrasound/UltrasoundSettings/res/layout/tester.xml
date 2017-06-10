@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---/**************************************************************************
+* @file       tester.xml
+* @brief      Has layout specs for tester activity
+*
+*  Copyright (C) 2011-2013 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  **************************************************************************-->
+
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content">
+<TableLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:stretchColumns="1"
+  android:title="@string/TesterSettings">
+  <!-- Enable/Disable and start_on_reboot -->
+  <TableRow>
+    <CheckBox android:id="@+id/status"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/tester_Status_title" />
+  </TableRow>
+  <TableRow>
+    <CheckBox android:id="@+id/start_on_boot"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/start_on_boot_title" />
+  </TableRow>
+  <TableRow>
+    <TextView
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="10dip"
+       android:text="@string/choose_file_title"
+    />
+    <Spinner
+       android:id="@+id/choose_file_spinner"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:prompt="@string/choose_file_title"
+    />
+  </TableRow>
+  <!-- Debug Params -->
+  <TableRow>
+    <CheckBox android:id="@+id/debug"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/debug_title" />
+  </TableRow>
+  <TableRow>
+    <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/txtfile"
+       android:text="@string/frame_file_title">
+    </TextView>
+    <EditText
+       android:layout_height="wrap_content"
+       android:id="@+id/edtfile"
+       android:inputType="text"
+       android:layout_width="fill_parent">
+    </EditText>
+  </TableRow>
+  <TableRow>
+    <CheckBox android:id="@+id/timestamp"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      android:text="@string/timestamp_title" />
+  </TableRow>
+  <TableRow>
+    <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/txtcount"
+       android:text="@string/frame_count_title">
+    </TextView>
+    <EditText
+       android:layout_height="wrap_content"
+       android:id="@+id/edtcount"
+       android:inputType="number|numberDecimal|numberSigned"
+       android:layout_width="fill_parent">
+    </EditText>
+  </TableRow>
+    <!-- Common Params -->
+  <TableRow>
+    <TextView
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="10dip"
+       android:text="@string/frame_file_format_title"
+    />
+    <Spinner
+       android:id="@+id/spinnerformat"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:prompt="@string/frame_file_format_title"
+    />
+  </TableRow>
+</TableLayout>
+</ScrollView>
+

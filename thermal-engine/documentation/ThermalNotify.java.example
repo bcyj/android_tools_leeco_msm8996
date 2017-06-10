@@ -1,0 +1,81 @@
+/* THERMAL-ENGINE DOCUMENTATION
+ *
+ *  Example java code to listen on THERMAL-ENGINE UI abstract local socket for
+ *  "report" action UI notification.
+ *
+ * Copyright (c) 2012 Qualcomm Technologies, Inc.  All Rights Reserved.
+ *  Qualcomm Technologies Proprietary and Confidential.
+ * */
+
+package com.systemapp.thermal-engine;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+import android.app.IntentService;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.net.LocalServerSocket;
+import android.net.LocalSocket;
+
+public class ThermalNotify extends IntentService {
+    private NotificationManager mNotificationManager;
+
+    public ThermalNotify() {
+        super("ThermalNotifyIntentService");
+    }
+
+    /** Called when the activity is first created. */
+    @Override
+    public void onHandleIntent(Intent intent) {
+        final String THERMALD_UI_SOCKNAME = "THERMALD_UI";
+        final String THERMAL_NOTIFICATION_FORMAT =
+            "Got threshold notification on Sensor %s, Temp %s, " +
+	    "CurrLevel %s, IsTrigger %s";
+
+        /* Get notification manager */
+        mNotificationManager =
+            (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+        LocalServerSocket serverSock;
+        LocalSocket currSocket = null;
+        try {
+            serverSock = new LocalServerSocket(THERMALD_UI_SOCKNAME);
+            String sensorname, sensortemp, threshold_level, is_trigger;
+            String notificationText;
+            while (true) {
+                currSocket = serverSock.accept();
+                BufferedReader in = new BufferedReader(
+                        new InputStreamReader(currSocket.getInputStream()));
+                /* Parse notification in
+                 * "sensorname\ntemperature\n"
+		 * "curr_threshold_level\nis_trigger" format */
+                sensorname = in.readLine();
+                sensortemp = in.readLine();
+                threshold_level = in.readLine();
+                is_trigger = in.readLine();
+
+                /* Format notification string */
+                notificationText = String.format(THERMAL_NOTIFICATION_FORMAT,
+                        sensorname, sensortemp, threshold_level, is_trigger);
+
+                /* Send a notification with received text */
+                Notification notification = new Notification(R.drawable.icon,
+                        notificationText, System.currentTimeMillis());
+
+                /* Use null intent for now */
+                PendingIntent pi = PendingIntent.getActivity(
+                        getApplicationContext(), 0, null, 0);
+                notification.setLatestEventInfo(getApplicationContext(),
+                                                "Thermal notification",
+                                                notificationText, pi);
+                mNotificationManager.notify(0, notification);
+            }
+
+        } catch (Exception e) {
+                e.printStackTrace();
+        }
+    }
+}

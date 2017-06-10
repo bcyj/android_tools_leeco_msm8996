@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2013 Qualcomm Technologies, Inc.
+     All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="oms.drmservice"
+    android:versionCode="1"
+    android:versionName="1.0.0" >
+
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.ACCESS_ALL_DOWNLOADS" />
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+    <uses-permission android:name="oms.drmservice.permission.DRM_SERVICE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".DrmActivity"
+            android:label="@string/drm_activity"
+            android:theme="@android:style/Theme.Dialog" >
+            <intent-filter>
+                <action android:name="android.drmservice.intent.action.BUY_LICENSE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.drmservice.intent.action.SHOW_PROPERTIES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".DrmReceiver"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="android.drmservice.intent.action.SHOW_PROPERTIES" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.drmservice.intent.action.BUY_LICENSE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED" />
+                <data android:mimeType="application/vnd.oma.drm.rights+xml" />
+                <data android:mimeType="application/vnd.oma.drm.rights+wbxml" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

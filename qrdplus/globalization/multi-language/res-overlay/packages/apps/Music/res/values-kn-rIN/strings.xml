@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- used in various places to indicate there is one song for a given artist or album -->
+    <string name="onesong">1 ಹಾಡು</string>
+    <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
+    <plurals name="Nsongs">
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಹಾಡುಗಳು</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other"><xliff:g id="count_for_artist">%2$d</xliff:g> of <xliff:g id="total_count">%1$d</xliff:g> ಹಾಡುಗಳು</item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+        <!-- number of albums is one -->
+        <item quantity="one">1 ಆಲ್ಬಮ್</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಆಲ್ಬಮ್‌ಗಳು</item>
+    </plurals>
+
+    <!--
+    This string is used as the format string in a String.format call,
+    and 5 additional arguments are available for printing:
+    1 - hours
+    2 - minutes
+    3 - minutes%60
+    4 - seconds
+    5 - second%60
+    -->
+    <skip/>
+    <!-- Do not translate. Duration format for duration < 1 hour -->
+    <string translatable="false" name="durationformatshort"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    <!-- Do not translate. Duration format for duration >= 1 hour -->
+    <string translatable="false" name="durationformatlong"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    <!-- Menu item that takes the user back to the top level screen of the music player -->
+    <string name="goto_start">ಲೈಬ್ರರಿ</string>
+    <!-- Menu item that switches the music player in to party shuffle mode -->
+    <string name="party_shuffle">ಪಾರ್ಟಿ ಷಫಲ್</string>
+    <!-- Menu item that switches the music player out of party shuffle mode -->
+    <string name="party_shuffle_off">ಪಾರ್ಟಿ ಷಫಲ್ ಆಫ್</string>
+    <!-- Menu item that clear all playlists mode -->
+    <string name="clear_all_playlists">ಎಲ್ಲ ಪ್ಲೇಪಟ್ಟಿಗಳನ್ನು ತೆರವುಗೊಳಿಸಿ</string>
+    <!-- Menu item that deletes the currently selected item, which might be a single song, or a collection of songs.
+         The user will be prompted to confirm before deletion actually takes place -->
+    <string name="delete_item">ಅಳಿಸಿ</string>
+    <!-- Menu item to play back all the songs in the currently showing list in shuffle mode -->
+    <string name="shuffle_all">ಎಲ್ಲ ಷಫಲ್ ಮಾಡಿ</string>
+    <!-- Menu item to play back all the songs in the currently showing list in list order -->
+    <string name="play_all">ಎಲ್ಲ ಪ್ಲೇ ಮಾಡಿ</string>
+    <!-- Menu item to play song in music -->
+    <string name="open_in_music">ಸಂಗೀತದಲ್ಲಿ ತೆರೆಯಿರಿ</string>
+    <!-- Menu item to share audio or video -->
+    <string name="share">ಹಂಚಿಕೊಳ್ಳಿ</string>
+
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc"><xliff:g id="artist">%s</xliff:g> ಅವರ ಎಲ್ಲ ಹಾಡುಗಳನ್ನು SD ಕಾರ್ಡ್‌ನಿಂದ ಶಾಶ್ವತವಾಗಿ ಅಳಿಸುವುದೇ?</string>
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc_nosdcard"><xliff:g id="artist">%s</xliff:g> ಅವರ ಎಲ್ಲ ಹಾಡುಗಳನ್ನು USB ಸಂಗ್ರಹಣೆಯಿಂದ ಶಾಶ್ವತವಾಗಿ ಅಳಿಸುವುದೇ?</string>
+
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc">\"<xliff:g id="album">%s</xliff:g>\"ರ ಸಂಪೂರ್ಣ ಆಲ್ಬಮ್ ಅನ್ನು SD ಕಾರ್ಡ್‌ನಿಂದ ಶಾಶ್ವತವಾಗಿ ಅಳಿಸುವುದೇ?</string>
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc_nosdcard">\"<xliff:g id="album">%s</xliff:g>\"ರ ಸಂಪೂರ್ಣ ಆಲ್ಬಮ್ ಅನ್ನು USB ಸಂಗ್ರಹಣೆಯಿಂದ ಶಾಶ್ವತವಾಗಿ ಅಳಿಸುವುದೇ?</string>
+
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc">\"<xliff:g id="song">%s</xliff:g>\" ಅನ್ನು SD ಕಾರ್ಡ್‌ನಿಂದ ಶಾಶ್ವತವಾಗಿ ಅಳಿಸುವುದೇ?</string>
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc_nosdcard">\"<xliff:g id="song">%s</xliff:g>\" ಅನ್ನು USB ಸಂಗ್ರಹಣೆಯಿಂದ ಶಾಶ್ವತವಾಗಿ ಅಳಿಸುವುದೇ?</string>
+
+    <!-- Delete confirmation dialog, confirmation button text -->
+    <string name="delete_confirm_button_text">ಸರಿ</string>
+    <!-- Toast confirming that song(s) was/were deleted. -->
+    <plurals name="NNNtracksdeleted">
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">1 ಹಾಡನ್ನು ಅಳಿಸಲಾಗಿದೆ.</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> ಹಾಡುಗಳನ್ನು ಅಳಿಸಲಾಗಿದೆ.</item>
+    </plurals>
+
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning">SD ಕಾರ್ಡ್ ಸ್ಕ್ಯಾನ್ ಮಾಡಲಾಗುತ್ತಿದೆ\u2026</string>
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning_nosdcard">USB ಸಂಗ್ರಹಣೆಯನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಲಾಗುತ್ತಿದೆ\u2026</string>
+
+    <!-- title of the "current playlist" screen when not in party shuffle mode -->
+    <string name="nowplaying_title">ಇದೀಗ ಪ್ಲೇ ಆಗುತ್ತಿರುವುದು</string>
+    <!-- title of the "current playlist" screen when in party shuffle mode-->
+    <string name="partyshuffle_title">ಪಾರ್ಟಿ ಷಫಲ್</string>
+    <!-- Artist screen title -->
+    <string name="artists_title">ಕಲಾವಿದರು</string>
+    <!-- Category label on Library screen -->
+    <string name="albums_menu">ಆಲ್ಬಮ್‌ಗಳು</string>
+    <!-- Albums screen title -->
+    <string name="albums_title">ಆಲ್ಬಮ್‌ಗಳು</string>
+    <!-- Category label on Library screen -->
+    <string name="tracks_menu">ಹಾಡುಗಳು</string>
+    <!-- Songs screen title -->
+    <string name="tracks_title">ಹಾಡುಗಳು</string>
+    <!-- Category label on Library screen -->
+    <string name="folder_menu">ಫೋಲ್ಡರ್</string>
+    <!-- Folder screen title -->
+    <string name="folders_title">ಫೋಲ್ಡರ್</string>
+    <!-- Category label on Library screen -->
+    <string name="playlists_menu">ಪ್ಲೇಪಟ್ಟಿಗಳು</string>
+    <!-- Playlists screen title -->
+    <string name="playlists_title">ಪ್ಲೇಪಟ್ಟಿಗಳು</string>
+    <!-- Videos screen title -->
+    <string name="videos_title">ವೀಡಿಯೊಗಳು</string>
+    <!-- All media screen title -->
+    <string name="all_title">ಎಲ್ಲಾ ಮೀಡಿಯಾ</string>
+    <!-- Category label on Library screen -->
+    <string name="browse_menu">ಕಲಾವಿದರು</string>
+    <!-- Library screen, menu item -->
+    <string name="search_title">ಹುಡುಕಿ</string>
+    <!-- Title of screen when there are no songs, or if the SD card is busy -->
+    <string name="no_tracks_title">ಯಾವುದೇ ಹಾಡುಗಳಿಲ್ಲ</string>
+    <!-- Title of screen when there are no videos, or if the SD card is busy -->
+    <string name="no_videos_title">ಯಾವುದೇ ವೀಡಿಯೋಗಳಿಲ್ಲ</string>
+    <!-- Title of screen when there are no playlists, or if the SD card is busy -->
+    <string name="no_playlists_title">ಯಾವುದೇ ಪ್ಲೇಪಟ್ಟಿಗಳಿಲ್ಲ</string>
+    <!-- Playlist context menu item to delete the selected playlist. -->
+    <string name="delete_playlist_menu">ಅಳಿಸಿ</string>
+    <!-- Playlist context menu item to edit the selected playlist -->
+    <string name="edit_playlist_menu">ಸಂಪಾದಿಸಿ</string>
+    <!-- Playlist context menu item to rename the selected playlist-->
+    <string name="rename_playlist_menu">ಮರುಹೆಸರಿಸಿ</string>
+    <!-- Dialog box message shown when clearing all playlists-->
+    <string name="clear_all_playlists_message">ನೀವು ಎಲ್ಲಾ ಪ್ಲೇಪಟ್ಟಿಗಳನ್ನು ತೆರವುಗೊಳಿಸಲು ಬಯಸುವಿರಾ?</string>
+    <!-- Dialog box message shown when deleting a playlist-->
+    <string name="delete_playlist_message">ನೀವು \"<xliff:g id="name">%s</xliff:g>\" ಅನ್ನು ಅಳಿಸಲು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?</string>
+    <!-- Dialog box button -->
+    <string name="delete_playlist_button_ok">ಸರಿ</string>
+    <string name="delete_playlist_button_cancel">ರದ್ದುಮಾಡಿ</string>
+    <!-- Transient popup message shown after deleting a playlist -->
+    <string name="playlist_deleted_message">ಪ್ಲೇಪಟ್ಟಿಯನ್ನು ಅಳಿಸಲಾಗಿದೆ.</string>
+    <!-- Transient popup message shown after renaming a playlist -->
+    <string name="playlist_renamed_message">ಪ್ಲೇಪಟ್ಟಿಗೆ ಮರುಹೆಸರಿಸಲಾಗಿದೆ.</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in list view -->
+    <string name="recentlyadded">ಇತ್ತೀಚೆಗೆ ಸೇರಿಸಿರುವುದು</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in title bar of songs list -->
+    <string name="recentlyadded_title">ಇತ್ತೀಚೆಗೆ ಸೇರಿಸಿರುವುದು</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in list view -->
+    <string name="podcasts_listitem">ಪೋಡ್‌ಕಾಸ್ಟ್‌ಗಳು</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in title bar of songs list -->
+    <string name="podcasts_title">ಪೋಡ್‌ಕಾಸ್ಟ್‌ಗಳು</string>
+    <!-- all recordings will show up in the media database in a playlist with thiis name -->
+    <string name="audio_db_playlist_name">ನನ್ನ ರೆಕಾರ್ಡಿಂಗ್‌ಗಳು</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title">ಯಾವುದೇ SD ಕಾರ್ಡ್ ಇಲ್ಲ</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title_nosdcard">ಯಾವುದೇ USB ಸಂಗ್ರಹಣೆಯಿಲ್ಲ</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message">ನಿಮ್ಮ ಫೋನ್‌ನಲ್ಲಿ SD ಕಾರ್ಡ್ ಸೇರಿಸಲಾಗಿಲ್ಲ.</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message_nosdcard">ನಿಮ್ಮ ಫೋನ್‌ನಲ್ಲಿ USB ಸಂಗ್ರಹಣೆಯನ್ನು ಸೇರಿಸಲಾಗಿಲ್ಲ.</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title">SD ಕಾರ್ಡ್ ಲಭ್ಯವಿಲ್ಲ</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title_nosdcard">USB ಸಂಗ್ರಹಣೆ ಲಭ್ಯವಿಲ್ಲ</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message">ನಿಮ್ಮ SD ಕಾರ್ಡ್ ಕಾರ್ಯನಿರತವಾಗಿದೆ.</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message_nosdcard">ನಿಮ್ಮ USB ಸಂಗ್ರಹಣೆ ಕಾರ್ಯನಿರತವಾಗಿದೆ.</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title">SD ಕಾರ್ಡ್ ದೋಷ</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title_nosdcard">USB ಸಂಗ್ರಹಣೆ ದೋಷ</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message">ನಿಮ್ಮ SD ಕಾರ್ಡ್‌ನಲ್ಲಿ ದೋಷ ಎದುರಾಗಿದೆ.</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message_nosdcard">ನಿಮ್ಮ USB ಸಂಗ್ರಹಣೆಯಲ್ಲಿ ದೋಷ ಎದುರಾಗಿದೆ.</string>
+    <!-- Default name of artist that doesn\'t have a name in the metadata -->
+    <string name="unknown_artist_name">ತಿಳಿದಿಲ್ಲದ ಕಲಾವಿದ</string>
+    <!-- Default name of album that doesn\'t have a name in the metadata -->
+    <string name="unknown_album_name">ತಿಳಿದಿಲ್ಲದ ಆಲ್ಬಮ್</string>
+    <!-- Default name of folder that doesn\'t have a path in the metadata -->
+    <string name="unknown_folder_name">ತಿಳಿದಿಲ್ಲದ ಹಾದಿ</string>
+    <!-- Default name of folder that doesn\'t have a count in the metadata -->
+    <string name="unknown_folder_count">ತಿಳಿದಿಲ್ಲದ ಎಣಿಕೆ</string>
+    <!-- Toast after turning shuffle on -->
+    <string name="shuffle_on_notif">ಷಪಲ್ ಆನ್ ಆಗಿದೆ.</string>
+    <!-- Toast after turning shuffle off -->
+    <string name="shuffle_off_notif">ಷಪಲ್ ಆಫ್ ಆಗಿದೆ.</string>
+    <!-- Toast after turning repeat off -->
+    <string name="repeat_off_notif">ಪುನರಾವರ್ತನೆ ಆಫ್ ಆಗಿದೆ.</string>
+    <!-- Toast after turning single repeat on -->
+    <string name="repeat_current_notif">ಸದ್ಯದ ಹಾಡನ್ನು ಪುನರಾವರ್ತಿಸಲಾಗುತ್ತಿದೆ.</string>
+    <!-- Toast after turning repeat all on -->
+    <string name="repeat_all_notif">ಎಲ್ಲ ಹಾಡುಗಳನ್ನು ಪುನರಾವರ್ತಿಸಲಾಗುತ್ತಿದೆ.</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu">ಪೋನ್ ರಿಂಗ್‌ಟೋನ್‌ನಂತೆ ಬಳಸಿ</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short">ರಿಂಗ್‌ಟೋನ್‌ನಂತೆ ಬಳಸಿ</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" ಫೋನ್ ರಿಂಗ್‌ಟೋನ್‌ನಂತೆ ಹೊಂದಿಸಿ.</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu_1">ಸ್ಲಾಟ್ 1 ರಿಂಗ್‌ನಂತೆ ಬಳಸಿ</string>
+    <string name="ringtone_menu_2">ಸ್ಲಾಟ್ 2 ರಿಂಗ್‌ನಂತೆ ಬಳಸಿ</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short_1">ರಿಂಗ್‌ಟೋನ್ 1ನಂತೆ ಬಳಸಿ</string>
+    <string name="ringtone_menu_short_2">ರಿಂಗ್‌ಟೋನ್ 2ನಂತೆ ಬಳಸಿ</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_1">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" ಸ್ಲಾಟ್ 1 ರಿಂಗ್‌ಟೋನ್‌ನಂತೆ ಹೊಂದಿಸಿ.</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_2">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" ಸ್ಲಾಟ್ 2 ರಿಂಗ್‌ಟೋನ್‌ನಂತೆ ಹೊಂದಿಸಿ.</string>
+    <!-- Context menu item -->
+    <string name="play_selection">ಪ್ಲೇ ಮಾಡಿ</string>
+    <!-- Context menu item -->
+    <string name="add_to_playlist">ಪ್ಲೇಪಟ್ಟಿಗೆ ಸೇರಿಸಿ</string>
+    <!-- Context menu item -->
+    <string name="queue">ಪ್ರಸ್ತುತ ಪ್ಲೇಪಟ್ಟಿ</string>
+    <!-- Context menu item -->
+    <string name="new_playlist">ಹೊಸ</string>
+    <!-- Template for newly created playlist name -->
+    <string name="new_playlist_name_template">ಹೊಸ ಪ್ಲೇಪಟ್ಟಿ <xliff:g id="number">%d</xliff:g></string>
+    <!-- Toasts after adding song(s) to playlists -->
+    <plurals name="NNNtrackstoplaylist">
+        <!-- message shown when one song was added -->
+        <item quantity="one">ಪ್ಲೇಪಟ್ಟಿಗೆ 1 ಹಾಡನ್ನು ಸೇರಿಸಲಾಗಿದೆ.</item>
+        <!-- message shown when zero or more than one song was added -->
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> ಹಾಡುಗಳನ್ನು ಪ್ಲೇಪಟ್ಟಿಗೆ ಸೇರಿಸಲಾಗಿದೆ.</item>
+    </plurals>
+    <!-- Toast after selecting an empty playlist -->
+    <string name="emptyplaylist">ಆಯ್ಕೆಮಾಡಿದ ಪ್ಲೇಪಟ್ಟಿ ಖಾಲಿಯಿದೆ.</string>
+    <!-- Button name when saving a playlist -->
+    <string name="create_playlist_create_text">ಉಳಿಸಿ</string>
+    <!-- Button name when saving a playlist and the new playlist will overwrite an existing one -->
+    <string name="create_playlist_overwrite_text">ಅತಿಕ್ರಮಿಸಿ</string>
+    <!-- Dialog box title -->
+    <string name="service_start_error_title">ಪ್ಲೇಬ್ಯಾಕ್ ಸಮಸ್ಯೆ</string>
+    <!-- Dialog box message -->
+    <string name="service_start_error_msg">ಹಾಡನ್ನು ಪ್ಲೇ ಮಾಡಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ.</string>
+    <!-- Dialog box button -->
+    <string name="service_start_error_button">ಸರಿ</string>
+    <!-- Time span edit options that appear when editing system playlist "Recently added" -->
+    <!-- Used to indicate the number of weeks the "recently added" playlist covers in a selector widget -->
+    <string-array name="weeklist">
+        <item>"1 ವಾರ "</item>
+        <item>"2 ವಾರಗಳು"</item>
+        <item>"3 ವಾರಗಳು"</item>
+        <item>"4 ವಾರಗಳು"</item>
+        <item>"5 ವಾರಗಳು"</item>
+        <item>"6 ವಾರಗಳು"</item>
+        <item>"7 ವಾರಗಳು"</item>
+        <item>"8 ವಾರಗಳು"</item>
+        <item>"9 ವಾರಗಳು"</item>
+        <item>"10 ವಾರಗಳು"</item>
+        <item>"11 ವಾರಗಳು"</item>
+        <item>"12 ವಾರಗಳು"</item>
+    </string-array>
+    <!-- Button name in time span picker -->
+    <string name="weekpicker_set">ಮುಗಿದಿದೆ</string>
+    <!-- Title of time span picker -->
+    <string name="weekpicker_title">ಸಮಯ ಹೊಂದಿಸಿ</string>
+    <!-- Do not translate. Background color for currently dragged item in playlist edit mode. -->
+    <color name="dragndrop_background">#e0103010</color>
+    <!-- Do not translate. Background color for albums in the artists list view. -->
+    <color name="expanding_child_background">#ff404040</color>
+
+    <!-- menu item to save the current list as a new playlist -->
+    <string name="save_as_playlist">ಪ್ಲೇಪಟ್ಟಿ ಎಂದು ಉಳಿಸಿ</string>
+    <!-- menu item to clear the current playlist -->
+    <string name="clear_playlist">ಪ್ಲೇಪಟ್ಟಿ ತೆರವುಗೊಳಿಸಿ</string>
+
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicbrowserlabel">ಸಂಗೀತ</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicshortcutlabel">ಸಂಗೀತದ ಪ್ಲೇಪಟ್ಟಿ</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediaplaybacklabel">ಸಂಗೀತ</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="videobrowserlabel">ವೀಡಿಯೊಗಳು</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediapickerlabel">ಸಂಗೀತ</string>
+
+    <!-- Shown as a transient message whenever a file fails to play -->
+    <string name="playback_failed">ಈ ಆಡಿಯೊ ಫೈಲ್ ಪ್ರಕಾರವನ್ನು ಪ್ಲೇಯರ್ ಬೆಂಬಲಿಸುವುದಿಲ್ಲ.</string>
+    <!-- Shown as a transient message whenever a file fails to open -->
+    <string name="open_failed">ಕ್ಷಮಿಸಿ, ಫೈಲ್ ತೆರೆಯಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ.</string>
+
+    <!-- Text for the "cancel" button in the "delete" and "create playlist" confirmation dialogs -->
+    <string name="cancel">ರದ್ದುಮಾಡಿ</string>
+
+    <!-- context menu item to remove the selected item from the playlist -->
+    <string name="remove_from_playlist">ಪ್ಲೇಪಟ್ಟಿಯಿಂದ ತೆಗೆದುಹಾಕಿ</string>
+
+    <!-- shown when connecting to a music stream, before it starts playing -->
+    <string name="streamloadingtext"><xliff:g id="host">%s</xliff:g> ಸಂಪರ್ಕಿಸಲಾಗುತ್ತಿದೆ\u2026</string>
+
+    <!-- title of contextual music search menu -->
+    <string name="mediasearch"><xliff:g id="term" example="Beethoven">%s</xliff:g> ಹುಡುಕಿ, ಇದನ್ನು ಬಳಸಿಕೊಂಡು:</string>
+
+    <!-- Shown in the title bar while the list of artists is being retrieved in the background -->
+    <string name="working_artists">ಕಲಾವಿದರು\u2026</string>
+    <!-- Shown in the title bar while the list of albums is being retrieved in the background -->
+    <string name="working_albums">ಆಲ್ಬಮ್‌ಗಳು\u2026</string>
+    <!-- Shown in the title bar while the list of songs is being retrieved in the background -->
+    <string name="working_songs">ಹಾಡುಗಳು\u2026</string>
+    <!-- Shown in the title bar while the list of folders is being retrieved in the background -->
+    <string name="working_folders">ಫೋಲ್ಡರ್‌ಗಳು\u2026</string>
+    <!-- Shown in the title bar while the list of playlists is being retrieved in the background -->
+    <string name="working_playlists">ಪ್ಲೇಪಟ್ಟಿಗಳು\u2026</string>
+
+    <!-- Shown in the music picker while loading the music database. -->
+    <string name="loading">ಲೋಡ್ ಆಗುತ್ತಿದೆ\u2026</string>
+    <!-- Menu in music picker to sort the list by track/song name. -->
+    <string name="sort_by_track">ಟ್ರ್ಯಾಕ್‌ಗಳು</string>
+    <!-- Menu in music picker to sort the list by album name. -->
+    <string name="sort_by_album">ಆಲ್ಬಮ್‌ಗಳು</string>
+    <!-- Menu in music picker to sort the list by artist name. -->
+    <string name="sort_by_artist">ಕಲಾವಿದರು</string>
+    <!--  Title of the music picker activity. -->
+    <string name="music_picker_title">ಸಂಗೀತದ ಟ್ರ್ಯಾಕ್ ಆಯ್ಕೆಮಾಡಿ</string>
+
+    <!-- The string used to describe Music as a searchable item within system search settings. -->
+    <string name="search_settings_description">ಕಲಾವಿದರು, ಆಲ್ಬಮ್‌ಗಳು ಮತ್ತು ಟ್ರ್ಯಾಕ್‌ಗಳು</string>
+
+    <!-- Shown in the search box as a hint -->
+    <string name="search_hint">ಸಂಗೀತವನ್ನು ಹುಡುಕಿ</string>
+    <string name="search_hint_video">ವೀಡಿಯೊ ಹುಡುಕಿ</string>
+
+    <!--The fast scroll thumb will show one character from this string depending on the position in the list -->
+    <string name="fast_scroll_alphabet">\u0020ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+
+    <!-- Text shown on widget when first loaded -->
+    <string name="widget_initial_text">ಸಂಗೀತವನ್ನು ಆಯ್ಕೆ ಮಾಡಲು ಸ್ಪರ್ಶಿಸಿ.</string>
+
+    <!-- Menu text for the item controlling the audio effects panel [CHAR LIMIT=15] -->
+    <string name="effectspanel">ಸೌಂಡ್ ಎಫೆಕ್ಟ್‌ಗಳು</string>
+
+    <string name="duplicate_playlist_name_alert">\"<xliff:g id="name">%s</xliff:g>\" ಹೆಸರಿನ ಪ್ಲೇಪಟ್ಟಿ ಈಗಾಗಲೇ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ. ದಯವಿಟ್ಟು ಬೇರೆ ಹೆಸರನ್ನು ಆಯ್ಕೆಮಾಡಿ.</string>
+    <string name="same_playlist_name_alert">ಪ್ಲೇಪಟ್ಟಿ \"<xliff:g id="name">%s</xliff:g>\" ಹೆಸರು ಬದಲಾಗಿಲ್ಲ. ದಯವಿಟ್ಟು ಬೇರೆ ಹೆಸರನ್ನು ಆಯ್ಕೆಮಾಡಿ.</string>
+    <string name="button_ok">ಸರಿ</string>
+    <string name="list_empty">ಪ್ಲೇಪಟ್ಟಿಯಲ್ಲಿ ಯಾವುದೇ ಸಂಗೀತವಿಲ್ಲ.</string>
+
+    <!-- Shown when video is played after disable Gallery app from Settings -->
+    <string name="enable_gallery_app">ವೀಡಿಯೊ ಪ್ಲೇ ಮಾಡಲಾಗುತ್ತಿಲ್ಲ, ದಯವಿಟ್ಟು ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಂದ ಗ್ಯಾಲರಿ ಅಪ್ಲಿಕೇಶನ್ ಸಕ್ರಿಯಗೊಳಿಸಿ.</string>
+    <string name="close_music">"ಮುಕ್ತಾಯ"</string>
+    <string name="delete_video_item_message">ನೀವು \"<xliff:g id="name">%s</xliff:g>\" ಅನ್ನು ಅಳಿಸಲು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?</string>
+    <string name="video_deleted_message">ವೀಡಿಯೊ ಫೈಲ್ ಅಳಿಸಲಾಗಿದೆ.</string>
+
+    <!-- Menu item that takes the user link to net to see more music -->
+    <string name="more_music">ಮತ್ತಷ್ಟು ಸಂಗೀತ</string>
+    <!-- Menu item that takes the user link to net to see more video -->
+    <string name="more_video">ಮತ್ತಷ್ಟು ವೀಡಿಯೊ</string>
+    <!--gesture control playback status-->
+    <string name="music_gesture_play">"ಆಡಿಯೋ ಪ್ಲೇ/ವಿರಾಮಗೊಳಿಸಿ"</string>
+    <string name="music_gesture_prev">"ಹಿಂದಿನ ಟ್ರ್ಯಾಕ್ ಅನ್ನು ಪ್ಲೇ ಮಾಡಿ"</string>
+    <string name="music_gesture_next">"ಮುಂದಿನ ಟ್ರ್ಯಾಕ್ ಅನ್ನು ಪ್ಲೇ ಮಾಡಿ"</string>
+
+    <!-- DRM Related Strings -->
+    <string name="no_permission_for_drm">"ಕ್ಷಮಿಸಿ, DRM ಫೈಲ್ ಅನ್ನು ಹಂಚಲಾಗುವುದಿಲ್ಲ"</string>
+    <string name="drm_license_info">Drm ಪರವಾನಗಿ ಮಾಹಿತಿ</string>
+    <string name="drm_ringtone_error">CD/SD ಫೈಲ್‌ಗಳನ್ನು ರಿಂಗ್‌ಟೋನ್‌ನಂತೆ ಹೊಂದಿಸಲಾಗಲಿಲ್ಲ</string>
+
+</resources>

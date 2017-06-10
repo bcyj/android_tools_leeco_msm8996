@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Category mapping from ATSC to canonical genre -->
+    <string-array name="genre_mapping_atsc">
+        <item>การศึกษา|การศึกษา</item>
+        <item>บันเทิง|บันเทิง</item>
+        <item>ภาพยนตร์|ภาพยนตร์</item>
+        <item>ข่าว|ข่าว</item>
+        <item>ศาสนา|ไลฟ์สไตล์</item>
+        <item>กีฬา|กีฬา</item>
+        <item>อื่นๆ|อื่นๆ</item>
+        <item>แอ็คชัน|ภาพยนตร์</item>
+        <item>โฆษณา|อื่นๆ</item>
+        <item>แอนิเมชัน|เด็กและครอบครัว</item>
+        <item>รวมบทนิพนธ์|ละคร</item>
+        <item>ยานยนต์|อื่นๆ</item>
+        <item>รางวัล|บันเทิง</item>
+        <item>เบสบอล|กีฬา</item>
+        <item>บาสเก็ตบอล|กีฬา</item>
+        <item>ประกาศ|อื่นๆ</item>
+        <item>ธุรกิจ|อื่นๆ</item>
+        <item>คลาสสิก|เพลง</item>
+        <item>วิทยาลัย|การศึกษา</item>
+        <item>การต่อสู้|อื่นๆ</item>
+        <item>ตลก|ตลก</item>
+        <item>บทวิจารณ์|อื่นๆ</item>
+        <item>คอนเสิร์ต|เพลง</item>
+        <item>ผู้บริโภค|อื่นๆ</item>
+        <item>ร่วมสมัย|อื่นๆ</item>
+        <item>อาชญากรรม|ภาพยนตร์</item>
+        <item>การเต้น|บันเทิง</item>
+        <item>สารคดี|ข่าว</item>
+        <item>ละคร|ละคร</item>
+        <item>ประถมศึกษา|การศึกษา</item>
+        <item>อิโรติก|ภาพยนตร์</item>
+        <item>การออกกำลังกาย|กีฬา</item>
+        <item>แฟนตาซี|ภาพยนตร์</item>
+        <item>ฟาร์ม|อื่นๆ</item>
+        <item>แฟชั่น|ไลฟ์สไตล์</item>
+        <item>นวนิยาย|ศิลปะ</item>
+        <item>อาหาร|ไลฟ์สไตล์</item>
+        <item>ฟุตบอล|กีฬา</item>
+        <item>ต่างประเทศ|อื่นๆ</item>
+        <item>ผู้ระดมทุน|อื่นๆ</item>
+        <item>เกม/ปริศนา|เกม</item>
+        <item>สวน|ไลฟ์สไตล์</item>
+        <item>กอล์ฟ|กีฬา</item>
+        <item>การปกครอง|อื่นๆ</item>
+        <item>สุขภาพ|ไลฟ์สไตล์</item>
+        <item>มัธยมศึกษา|การศึกษา</item>
+        <item>ประวัติศาสตร์|การศึกษา</item>
+        <item>งานอดิเรก|ไลฟ์สไตล์</item>
+        <item>ฮอกกี้|กีฬา</item>
+        <item>บ้าน|ไลฟ์สไตล์</item>
+        <item>สยองขวัญ|ภาพยนตร์</item>
+        <item>ข้อมูล|ข่าว</item>
+        <item>คำแนะนำ|อื่นๆ</item>
+        <item>นานาชาติ|อื่นๆ</item>
+        <item>การสัมภาษณ์|อื่นๆ</item>
+        <item>ภาษา|การศึกษา</item>
+        <item>กฏหมาย|อื่นๆ</item>
+        <item>รายการสด|อื่นๆ</item>
+        <item>ในประเทศ|อื่นๆ</item>
+        <item>คณิตศาสตร์|การศึกษา</item>
+        <item>การแพทย์|อื่นๆ</item>
+        <item>การประชุม|อื่นๆ</item>
+        <item>ทหาร|อื่นๆ</item>
+        <item>ละครชุด|ละคร</item>
+        <item>เพลง|เพลง</item>
+        <item>ลึกลับ|ภาพยนตร์</item>
+        <item>ประจำชาติ|อื่นๆ</item>
+        <item>ธรรมชาติ|สัตว์ป่า</item>
+        <item>ตำรวจ|อื่นๆ</item>
+        <item>การเมือง|อื่นๆ</item>
+        <item>พรีเมียร์|พรีเมียร์</item>
+        <item>บันทึกล่วงหน้า|อื่นๆ</item>
+        <item>ผลิตภัณฑ์|อื่นๆ</item>
+        <item>วิชาชีพ|อื่นๆ</item>
+        <item>สาธารณะ|อื่นๆ</item>
+        <item>การแข่งความเร็ว|กีฬา</item>
+        <item>การอ่าน|ศิลปะ</item>
+        <item>การซ่อมแซม|อื่นๆ</item>
+        <item>การทำซ้ำ|อื่นๆ</item>
+        <item>การรีวิว|อื่นๆ</item>
+        <item>โรมานซ์|ภาพยนตร์</item>
+        <item>วิทยาศาสตร์/วิทยาศาสตร์และเทคโนโลยี</item>
+        <item>ซีรี่ส์|ละคร</item>
+        <item>การบริการ|อื่นๆ</item>
+        <item>ช้อปปิ้ง|ช้อปปิ้ง</item>
+        <item>ละครโทรทัศน์|ละคร</item>
+        <item>พิเศษ|อื่นๆ</item>
+        <item>สืบสวน|ภาพยนตร์</item>
+        <item>ทอล์ค|บันเทิง</item>
+        <item>เทคนิค|วิทยาศาสตร์และเทคโนโลยี</item>
+        <item>เทนนิส|กีฬา</item>
+        <item>ท่องเที่ยว|ท่องเที่ยว</item>
+        <item>วาไรตี้|บันเทิง</item>
+        <item>วิดีโอ|ศิลปะ</item>
+        <item>สภาพอากาศ|ข่าว</item>
+        <item>ตะวันตก|อื่นๆ</item>
+        <item>ศิลปะ|ศิลปะ</item>
+        <item>การแข่งรถ|กีฬา</item>
+        <item>การบิน|กีฬา</item>
+        <item>ชีวประวัติ|ข่าว</item>
+        <item>การแล่นเรือ|กีฬา</item>
+        <item>การเล่นโบว์ลิง|กีฬา</item>
+        <item>การชกมวย|กีฬา</item>
+        <item>การ์ตูน|เด็กและครอบครัว</item>
+        <item>เด็ก|เด็กและครอบครัว</item>
+        <item>ภาพยนตร์คลาสสิก|ภาพยนตร์</item>
+        <item>ชุมชน|อื่นๆ</item>
+        <item>คอมพิวเตอร์|วิทยาศาสตร์และเทคโนโลยี</item>
+        <item>เพลงคันทรี่|เพลง</item>
+        <item>ศาล|อื่นๆ</item>
+        <item>กีฬาเอ็กซ์ตรีม|กีฬา</item>
+        <item>ครอบครัว|เด็กและครอบครัว</item>
+        <item>การเงิน|ข่าว</item>
+        <item>ยิมนาสติก|กีฬา</item>
+        <item>พาดหัว|ข่าว</item>
+        <item>การแข่งม้า|กีฬา</item>
+        <item>การล่าสัตว์/การตกปลา/กิจกรรมกลางแจ้ง|สัตว์ป่า</item>
+        <item>อิสระ|อื่นๆ</item>
+        <item>แจ๊ส|เพลง</item>
+        <item>นิตยสาร|ข่าว</item>
+        <item>การแข่งรถจักรยานยนต์|กีฬา</item>
+        <item>เพลง/ภาพยนตร์/หนังสือ|อื่นๆ</item>
+        <item>ข่าว-นานาชาติ|ข่าว</item>
+        <item>ข่าว-ในประเทศ|ข่าว</item>
+        <item>ข่าว-ประจำชาติ|ข่าว</item>
+        <item>ข่าว-ภูมิภาค|ข่าว</item>
+        <item>โอลิมปิก|กีฬา</item>
+        <item>ต้นฉบับ|ภาพยนตร์</item>
+        <item>ศิลปะการแสดง|ศิลปะ</item>
+        <item>สัตว์/สัตว์เลี้ยง|สัตว์ป่า</item>
+        <item>ป๊อป|เพลง</item>
+        <item>ร็อคแอนด์โรลล์|เพลง</item>
+        <item>ไซไฟ|ภาพยนตร์</item>
+        <item>การพัฒนาตนเอง|การศึกษา</item>
+        <item>ซิทคอม|ละคร</item>
+        <item>การเล่นสเก็ต|กีฬา</item>
+        <item>การเล่นสกี|กีฬา</item>
+        <item>ซอคเกอร์|กีฬา</item>
+        <item>ลู่/สนาม|กีฬา</item>
+        <item>จริง|อื่นๆ</item>
+        <item>วอลเลย์บอล|กีฬา</item>
+        <item>มวยปล้ำ|กีฬา</item>
+    </string-array>
+
+    <!-- Category mapping from DVB to canonical genre -->
+    <string-array name="genre_mapping_dvb">
+        <item>ภาพยนตร์/ละคร|ภาพยนตร์</item>
+        <item>สืบสวน/สยองขวัญ|ภาพยนตร์</item>
+        <item>ผจญภัย/ตะวันตก/สงคราม|ภาพยนตร์</item>
+        <item>นิยายวิทยาศาสตร์/แฟนตาซี/สยองขวัญ|ภาพยนตร์</item>
+        <item>ตลก|ตลก</item>
+        <item>ละครโทรทัศน์/เมโลดรามา/ฟอลคลอริก|ละคร</item>
+        <item>โรมานซ์|ภาพยนตร์</item>
+        <item>ชีวิต/คลาสสิก/ศาสนา/ภาพยนตร์ประวัติศาสตร์/ดรามา|ภาพยนตร์</item>
+        <item>ภาพยนตร์ผู้ใหญ่/ดรามา|ภาพยนตร์</item>
+        <item>ข่าว/เหตุการณ์ปัจจุบัน|ข่าว</item>
+        <item>ข่าว/รายงานสภาพอากาศ|ข่าว</item>
+        <item>นิตยสารข่าว|ข่าว</item>
+        <item>สารคดี|ข่าว</item>
+        <item>การอภิปราย/การสัมภาษณ์/การโต้วาที|ข่าว</item>
+        <item>โชว์/เกมโชว์|บันเทิง</item>
+        <item>เกมโชว์/ปริศนา/ประกวด|การเล่นเกม</item>
+        <item>วาไรตี้โชว์|บันเทิง</item>
+        <item>ทอล์คโชว์|บันเทิง</item>
+        <item>กีฬา|กีฬา</item>
+        <item>กิจกรรมพิเศษ (การแข่งโอลิมปิก, ฟุตบอลโลก ฯลฯ)|กีฬา</item>
+        <item>นิตยสารกีฬา|กีฬา</item>
+        <item>ฟุตบอล/ฟุตบอล|กีฬา</item>
+        <item>เทนนิส/สควอช|กีฬา</item>
+        <item>กีฬาประเภททีม (ไม่รวมฟุตบอล)|กีฬา</item>
+        <item>กรีฑา|กีฬา</item>
+        <item>มอเตอร์สปอร์ต|กีฬา</item>
+        <item>กีฬาทางน้ำ|กีฬา</item>
+        <item>กีฬาในฤดูหนาว|กีฬา</item>
+        <item>ขี่ม้า|กีฬา</item>
+        <item>กีฬาการต่อสู้|กีฬา</item>
+        <item>รายการสำหรับเด็กและเยาวชน|เด็กและครอบครัว</item>
+        <item>รายการสำหรับเด็กก่อนวัยเรียน|เด็กและครอบครัว</item>
+        <item>รายการบันเทิงสำหรับเด็กวัย 6 ถึง 14 ปี|เด็กและครอบครัว</item>
+        <item>รายการบันเทิงสำหรับเด็กวัย 10 ถึง 16 ปี|เด็กและครอบครัว</item>
+        <item>รายการให้ข้อมูล/การศึกษา/โรงเรียน|เด็กและครอบครัว</item>
+        <item>การ์ตูน/หุ่นเชิด|เด็กและครอบครัว</item>
+        <item>เพลง/บัลเลต์/เต้น|เพลง</item>
+        <item>ร็อค/ป๊อป|เพลง</item>
+        <item>เพลงเสียงดนตรีหนักๆ/เพลงคลาสสิก|เพลง</item>
+        <item>โฟล์ค/เพลงพื้นบ้าน|เพลง</item>
+        <item>แจ๊ส|เพลง</item>
+        <item>ดนตรี/โอเปร่า|เพลง</item>
+        <item>บัลเลต์|บันเทิง</item>
+        <item>ศิลปะ/วัฒนธรรม|ศิลปะ</item>
+        <item>ศิลปะการแสดง|ศิลปะ</item>
+        <item>วิจิตรศิลป์|ศิลปะ</item>
+        <item>ศาสนา|ไลฟ์สไตล์</item>
+        <item>วัฒนธรรมยอดนิยม/ศิลปะแบบดั้งเดิม|ไลฟ์สไตล์</item>
+        <item>วรรณคดี|ศิลปะ</item>
+        <item>ภาพยนตร์/โรงหนัง|ศิลปะ</item>
+        <item>ภาพยนตร์ทดลอง/วิดีโอ|ศิลปะ</item>
+        <item>การกระจายเสียง/ข่าวประชาสัมพันธ์|ศิลปะ</item>
+        <item>สื่อใหม่|ศิลปะ</item>
+        <item>นิตยสารศิลปะ/วัฒนธรรม|ศิลปะ</item>
+        <item>แฟชั่น|ไลฟ์สไตล์</item>
+        <item>สังคม/การเมือง/เศรษฐกิจ|อื่นๆ</item>
+        <item>นิตยสาร/รายงาน/สารคดี|ข่าว</item>
+        <item>การให้คำปรึกษาด้านเศรษฐศาสตร์/สังคม|อื่นๆ</item>
+        <item>บุคคลน่าสนใจ|อื่นๆ</item>
+        <item>การศึกษา/วิทยาศาสตร์/ประเด็นข้อเท็จจริง|การศึกษา</item>
+        <item>ธรรมชาติ/สัตว์/สภาพแวดล้อม|สัตว์ป่า</item>
+        <item>เทคโนโลยี/วิทยาศาสตร์ธรรมชาติ|วิทยาศาสตร์และเทคโนโลยี</item>
+        <item>ยา/สรีรวิทยา/จิตวิทยา|วิทยาศาสตร์และเทคโนโลยี</item>
+        <item>ต่างประเทศ/การเดินทาง|การศึกษา</item>
+        <item>สังคมศึกษา/จิตวิทยา|วิทยาศาสตร์และเทคโนโลยี</item>
+        <item>การศึกษาเพิ่มเติม|การศึกษา</item>
+        <item>ภาษา|การศึกษา</item>
+        <item>งานอดิเรกยามว่าง|ไลฟ์สไตล์</item>
+        <item>การท่องเที่ยว/การเดินทาง|ท่องเที่ยว</item>
+        <item>หัตถกรรม|ไลฟ์สไตล์</item>
+        <item>ยานยนต์|ไลฟ์สไตล์</item>
+        <item>การออกกำลังกายและสุขภาพ|ไลฟ์สไตล์</item>
+        <item>การทำอาหาร|ไลฟ์สไตล์</item>
+        <item>โฆษณา/ช้อปปิ้ง|ช้อปปิ้ง</item>
+        <item>การทำสวน|ไลฟ์สไตล์</item>
+        <item>ภาษาดั้งเดิม|อื่นๆ</item>
+        <item>ขาวดำ|อื่นๆ</item>
+        <item>ไม่ได้เผยแพร่|อื่นๆ</item>
+        <item>การออกอากาศสด|อื่นๆ</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB to canonical genre -->
+    <string-array name="genre_mapping_isdb">
+        <item>แอนิเมชัน|ภาพยนตร์</item>
+        <item>เบสบอล|กีฬา</item>
+        <item>เพลงสำหรับเด็ก|เพลง</item>
+        <item>คลาสสิก, โอเปร่า|เพลง</item>
+        <item>วาไรตี้การทำอาหาร|บันเทิง</item>
+        <item>รายการตลก|บันเทิง</item>
+        <item>เรื่องการ์ตูน, บันเทิง|บันเทิง</item>
+        <item>คอมพิวเตอร์, เกมโทรทัศน์|วิทยาศาสตร์และเทคโนโลยี</item>
+        <item>การสนทนา, ภาษา|การศึกษา</item>
+        <item>การเต้น, บัลเล่ต์|บันเทิง</item>
+        <item>การอภิปราย, การประชุม|ข่าว</item>
+        <item>เศรษฐศาสตร์, รายงานตลาด|ข่าว</item>
+        <item>ปัญหาการศึกษา|การศึกษา</item>
+        <item>กิจกรรมงาน|ความบันเทิง</item>
+        <item>แฟชั่น|ไลฟ์สไตล์</item>
+        <item>เพลงโฟล์ค, เวิลด์มิวสิก|เพลง</item>
+        <item>เกม|การเล่นเกม</item>
+        <item>การทำสวน, สัตว์เลี้ยง, งานฝีมือ|ไลฟ์สไตล์</item>
+        <item>กอล์ฟ|กีฬา</item>
+        <item>ซุบซิบ/แท็บลอยด์|บันเทิง</item>
+        <item>นักชิม, การทำอาหาร|ไลฟ์สไตล์</item>
+        <item>สุขภาพ, การรักษาพยาบาล|ไลฟ์สไตล์</item>
+        <item>งานอดิเรก/การศึกษา|ไลฟ์สไตล์</item>
+        <item>การแข่งม้า, การแข่งสาธารณะ|กีฬา</item>
+        <item>แอนิเมชันญี่ปุ่น|เด็กและครอบครัว</item>
+        <item>บัลลาดญี่ปุ่น, เพลงพื้นบ้านของญี่ปุ่น|เพลง</item>
+        <item>หมากรุกญี่ปุ่น (Shogi) และ "โกะ"|การเล่นเกม</item>
+        <item>ละครญี่ปุ่น|ละคร</item>
+        <item>ภาพยนตร์ญี่ปุ่น|ภาพยนตร์</item>
+        <item>ร็อกญี่ปุ่น, เพลงป็อป|เพลง</item>
+        <item>แจ๊ส, ฟิวชั่น|เพลง</item>
+        <item>นักเรียนระดับมัธยมศึกษาตอนต้นและมัธยมศึกษา|การศึกษา</item>
+        <item>คาบูกิ, ละครคลาสสิก|ละคร</item>
+        <item>คาราโอเกะ, ประกวดร้องเพลงมือสมัครเล่น|เพลง</item>
+        <item>การศึกษาตลอดชีวิต, คุณวุฒิ|การศึกษา</item>
+        <item>เด็กเล็ก, นักเรียนประถมศึกษา|การศึกษา</item>
+        <item>คอนเสิร์ตแสดงสด|เพลง</item>
+        <item>ความเป็นอยู่, บ้าน|ไลฟ์สไตล์</item>
+        <item>รายการท้องถิ่น|ข่าว</item>
+        <item>ไพ่นกกระจอก, เกมพินบอล|การเล่นเกม</item>
+        <item>มาราธอน, กีฬากรีฑา, ว่ายน้ำ|กีฬา</item>
+        <item>กีฬาทางน้ำ, กีฬาในฤดูหนาว|กีฬา</item>
+        <item>ละครสมัยใหม่, ละครแนวตะวันตก|ละคร</item>
+        <item>มอเตอร์สปอร์ต|กีฬา</item>
+        <item>เพลง|เพลง</item>
+        <item>ดนตรี, ศิลปะ, ศิลปะอุตสาหกรรม|ศิลปะ</item>
+        <item>วาไรตี้เพลง|บันเทิง</item>
+        <item>การวิเคราะห์ข่าว|ข่าว</item>
+        <item>โอลิมปิก, เกมส์นานาชาติ|กีฬา</item>
+        <item>เกมบอลอื่นๆ|กีฬา</item>
+        <item>แอนิเมชันต่างประเทศ|เด็กและครอบครัว</item>
+        <item>ละครต่างประเทศ|ละคร</item>
+        <item>ต่างประเทศ, รายงานนานาชาติ|ข่าว</item>
+        <item>ภาพยนตร์ต่างประเทศ|หนัง</item>
+        <item>ร็อกต่างประเทศ, เพลงป็อป|เพลง</item>
+        <item>ละครย้อนยุค|ละคร</item>
+        <item>การเมือง, การชุมนุมแห่งชาติ|ข่าว</item>
+        <item>เพลงยอดนิยม, เพลงยอดนิยมญี่ปุ่น (เพลง Enka)|เพลง</item>
+        <item>ปริศนา|การเล่นเกม</item>
+        <item>การจัดอันดับ, เพลงตามคำขอ|เพลง</item>
+        <item>ปกติ, ทั่วไป|ข่าว</item>
+        <item>ช้อปปิ้ง, ธุรกิจสั่งซื้อทางไปรษณีย์|ช้อปปิ้ง</item>
+        <item>ซอคเกอร์|กีฬา</item>
+        <item>เทคนิคพิเศษ|เด็กและครอบครัว</item>
+        <item>รายการพิเศษ, สารคดี|ข่าว</item>
+        <item>รายงานพิเศษ|ข่าว</item>
+        <item>ข่าวกีฬา|กีฬา</item>
+        <item>ซูโม่, กีฬาต่อสู้|กีฬา</item>
+        <item>วาไรตี้ทอล์ค|บันเทิง</item>
+        <item>วาไรตี้ท่องเที่ยว|บันเทิง</item>
+        <item>รายงานสภาพการจราจร|ข่าว</item>
+        <item>การเดินทาง, การตกปลา, ความบันเทิงกลางแจ้ง|สัตว์ป่า</item>
+        <item>นักศึกษามหาวิทยาลัย, การสอบ|การศึกษา</item>
+        <item>รายงานสภาพอากาศ|ข่าว</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB in Brazil to canonical genre -->
+    <string-array name="genre_mapping_isdb_br">
+        <item>Biografia|NEWS</item>
+        <item>Culinária|LIFE_STYLE</item>
+        <item>Documentário|NEWS</item>
+        <item>Educativo|EDUCATION</item>
+        <item>Erótico|MOVIES</item>
+        <item>Esporte|SPORTS</item>
+        <item>Filme|MOVIES</item>
+        <item>Game show|GAMING</item>
+        <item>Humorístico|COMEDY</item>
+        <item>Infantil|FAMILY_KIDS</item>
+        <item>Informação|LIFE_STYLE</item>
+        <item>Jornalismo|NEWS</item>
+        <item>Minissérie|DRAMA</item>
+        <item>Moda|LIFE_STYLE</item>
+        <item>เพลง|เพลง</item>
+        <item>Premiação|ENTERTAINMENT</item>
+        <item>วาไรตี้โชว์|บันเทิง</item>
+        <item>Religioso|LIFE_STYLE</item>
+        <item>Reportagem|NEWS</item>
+        <item>ชนบท|ไลฟ์สไตล์</item>
+        <item>Saúde|LIFE_STYLE</item>
+        <item>Série|DRAMA</item>
+        <item>Série/seriado|DRAMA</item>
+        <item>โชว์|บันเทิง</item>
+        <item>Telejornais|NEWS</item>
+        <item>Televendas|SHOPPING</item>
+        <item>Turismo|TRAVEL</item>
+        <item>Variedade|ENTERTAINMENT</item>
+        <item>ประชุม|บันเทิง</item>
+        <item>รางวัล|บันเทิง</item>
+        <item>ชีวประวัติ|ข่าว</item>
+        <item>เด็ก|ครอบครัวและเด็ก</item>
+        <item>เด็ก|เด็กและครอบครัว</item>
+        <item>ตลก|ตลก</item>
+        <item>การทำอาหาร|ไลฟ์สไตล์</item>
+        <item>ชนบท|ไลฟ์สไตล์</item>
+        <item>การอภิปราย/การสัมภาษณ์/การโต้วาที|ข่าว</item>
+        <item>การอภิปราย|ข่าว</item>
+        <item>สารคดี|ข่าว</item>
+        <item>การศึกษา|การศึกษา</item>
+        <item>การศึกษา|การศึกษา</item>
+        <item>บริการวิศวกรรม|วิทยาศาสตร์และเทคโนโลยี</item>
+        <item>อิโรติก|ภาพยนตร์</item>
+        <item>แฟชั่น|ไลฟ์สไตล์</item>
+        <item>ผู้หญิง|บันเทิง</item>
+        <item>Game show|GAMING</item>
+        <item>สุขภาพ|ไลฟ์สไตล์</item>
+        <item>ตลก|ตลก</item>
+        <item>ข้อมูลข่าววาร|ไลฟ์สไตล์</item>
+        <item>การสัมภาษณ์|ข่าว</item>
+        <item>วารสาร|ข่าว</item>
+        <item>เบื้องหลัง|บันเทิง</item>
+        <item>ละครชุด|ละคร</item>
+        <item>ละครชุด|ละคร</item>
+        <item>ภาพยนตร์|ภาพยนตร์</item>
+        <item>ภาพยนตร์|ภาพยนตร์</item>
+        <item>เพลง|บันเทิง</item>
+        <item>ข่าว|ข่าว</item>
+        <item>ชิงรางวัล|ช้อปปิ้ง</item>
+        <item>จับรางวัล|ช้อปปิ้ง</item>
+        <item>จับรางวัล ขายทางทีวี ชิงรางวัล|ช้อปปิ้ง</item>
+        <item>วาไรตี้โชว์|บันเทิง</item>
+        <item>ศาสนา|ไลฟ์สไตล์</item>
+        <item>รายงาน|ข่าว</item>
+        <item>รายงาน|ข่าว</item>
+        <item>ชนบท|ไลฟ์สไตล์</item>
+        <item>ซีรี่ส์|ละคร</item>
+        <item>Series / ทีวีโชว์|ละคร</item>
+        <item>โชว์|บันเทิง</item>
+        <item>ละครโทรทัศน์|ละคร</item>
+        <item>กีฬา|กีฬา</item>
+        <item>กีฬา|กีฬา</item>
+        <item>เทเลเซล|ช้อปปิ้ง</item>
+        <item>ขายทางทีวี|ช้อปปิ้ง</item>
+        <item>ท่องเที่ยว|ท่องเที่ยว</item>
+        <item>ท่องเที่ยว|ท่องเที่ยว</item>
+        <item>ข่าวทีวี|ข่าว</item>
+        <item>วาไรตี้|บันเทิง</item>
+        <item>วาไรตี้โชว์|บันเทิง</item>
+    </string-array>
+</resources>

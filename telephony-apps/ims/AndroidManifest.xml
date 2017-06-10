@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      coreApp="true"
+      package="org.codeaurora.ims"
+      android:sharedUserId="android.uid.phone"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+
+    <permission android:name="com.qti.permission.DIAG"
+                android:protectionLevel="signatureOrSystem" />
+
+    <permission android:name="org.codeaurora.permission.ACCESS_CSVT_SERVICE"
+                android:protectionLevel="signatureOrSystem"/>
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="com.qti.permission.DIAG"/>
+
+    <application android:process="com.qualcomm.telephony">
+
+      <service android:name=".ImsService"
+               android:exported="true"
+               android:enabled="true"
+               android:process="com.android.phone"/>
+
+       <receiver android:name="com.qualcomm.ims.csvt.CsvtServiceAutoboot">
+          <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+          </intent-filter>
+       </receiver>
+
+       <service android:exported="true"
+            android:name="com.qualcomm.ims.csvt.CsvtService"
+            android:enabled="true"
+            android:process="com.android.phone"
+            android:permission="org.codeaurora.permission.ACCESS_CSVT_SERVICE">
+            <intent-filter>
+                <action android:name="org.codeaurora.ims.csvt.ICsvtService"/>
+            </intent-filter>
+       </service>
+    </application>
+</manifest>

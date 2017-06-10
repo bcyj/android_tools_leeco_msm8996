@@ -1,0 +1,64 @@
+Test cases for the Linux clock driver.
+
+Usage: sh clk_test.sh [-d|--debugfs debugfs_path] [-v|--verbose [level]]
+  [-t|--tolerance hz] [-p|--platform platform] [-s|--soc soc]
+  [-a|--adversarial] [-r|--repeat times] [-q|--quick]
+  [-c|--clocks list_of_clocks]
+  where,
+    -d  Path to debugfs (default is auto-detect)
+    -v  Verbosity level (default is 0)
+    -t  Tolerance level (default is 40000 Hz between set and measured rates)
+    -p  Platform (Ex. "ANDROID", "CHROMIUM", "LE"; default is auto-detect)
+    -s  SoC (Ex. "7X27", "7X30", "8650", "8650A", "8660"; default is auto-detect)
+    -a  Adversarial mode. Perform the standard test and throw some junk at the APIs.
+    -r  Run the test multiple times (default is 1)
+    -q  Quick. Be less thorough with the testing of rate-switching to save time.
+    -c  List of clocks to test in quotes, delimited by spaces (default is all)
+
+The test checks various properties of clocks in debugfs to determine an
+approprite test to run.  It takes care to only adjust the rates of clocks
+that are disabled to start, and to leave all clocks in the same state at
+the end of the test as they were at the start.
+
+An SoC with rate measurement support is needed for the more thorough tests.
+Some SoC-specific data must also be tracked within the script itself, including
+blacklisted clocks that should not be tested and parent-child relationships,
+and clocks that are voteable by multiple processors.
+
+The test attempts to run the most aggressive of the following tests on a
+given clock:
+
+'allrate' Test:
+  The parent clock is rate-settable and disabled.
+  Test clocks at all supported rates. On the first run through, just
+  enable the clock at the beginning and disable it at the end.  On the
+  second run, enable and disable the clock before and after each rate.
+  When adverarial mode is enabled, an attempt is also made to set the
+  parent clock to an invalid rate to ensure it's properly rejected.
+
+'onerate' Test:
+  The parent clock has a settable rate, but it's already on. Test to make
+  sure the set rate matches the measured rate and that all its children,
+  when enabled, match the rate of the parent. This test only supports
+  child clocks which run at the same rate as their parent.
+
+'vote' Test:
+  The parent clock is voteable and not settable, so even when it's voted off
+  locally, it may stay enabled. Test to make sure, if the clock is voted on,
+  the clock really is on.
+
+'stateonly' Test:
+  The clock is not rate-settable and not voteable.  If the clock is
+  off, test to make sure, when we turn it on, the enable and measure
+  nodes (if supported) confirm the state change. When we turn it off
+  off again, confirm the change back. If the clock is already on,
+  confirm the enable and measure nodes (if supported) agree with this.
+
+Additionally, if parent-child relationships are known, an additional test
+is performed on all child clocks:
+
+'parent' Test:
+  Test to make sure measurable child clocks correctly enable their
+  parents. If the parent and children are off and we enable a child,
+  the child rate will only measure non-zero if the parent has been
+  implicitly enabled.

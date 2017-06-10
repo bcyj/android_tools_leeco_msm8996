@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Category mapping from ATSC to canonical genre -->
+    <string-array name="genre_mapping_atsc">
+        <item>Pendidikan|PENDIDIKAN</item>
+        <item>Hiburan|HIBURAN</item>
+        <item>Film|FILM</item>
+        <item>Berita|BERITA</item>
+        <item>Religi|GAYA_HIDUP</item>
+        <item>OLahraga|OLAHRAGA</item>
+        <item>Lainnya|LAINNYA</item>
+        <item>Tindakan|FILM</item>
+        <item>Iklan|LAINNYA</item>
+        <item>Animasi|KELUARGA_ANAK-ANAK</item>
+        <item>Antologi|DRAMA</item>
+        <item>Otomotif|LAINNYA</item>
+        <item>Penghargaan|HIBURAN</item>
+        <item>Baseball|OLAHRAGA</item>
+        <item>Basket|OLAHRAGA</item>
+        <item>Buletin|LAINNYA</item>
+        <item>Bisnis|LAINNYA</item>
+        <item>Klasik|MUSIK</item>
+        <item>Perguruan tinggi|PENDIDIKAN</item>
+        <item>Pertempuran|LAINNYA</item>
+        <item>Komedi|KOMEDI</item>
+        <item>Komentar|LAINNYA</item>
+        <item>Konser|MUSIK</item>
+        <item>Konsumen|LAINNYA</item>
+        <item>Kontemporer|LAINNYA</item>
+        <item>Kriminal|FiLM</item>
+        <item>Tari|HIBURAN</item>
+        <item>Dokumenter|BERITA</item>
+        <item>Drama|DRAMA</item>
+        <item>Sekolah Dasar|PENDIDIKAN</item>
+        <item>Erotis|FILM</item>
+        <item>Latihan|OLAHRAGA</item>
+        <item>Fantasi|FILM</item>
+        <item>Pertanian|LAINNYA</item>
+        <item>Fashion|GAYA_HIDUP</item>
+        <item>Fiksi|SENI</item>
+        <item>Makanan|GAYA_HIDUP</item>
+        <item>Sepak Bola|OLAHRAGA</item>
+        <item>Asing|LAINNYA</item>
+        <item>Penggalangan Dana|LAINNYA</item>
+        <item>Game/Kuis|GAME</item>
+        <item>Taman|GAYA_HIDUP</item>
+        <item>Golf|OLAHRAGA</item>
+        <item>Pemerintah|LAINNYA</item>
+        <item>Kesehatan|GAYA_HIDUP</item>
+        <item>Sekolah Tinggi|PENDIDIKAN</item>
+        <item>Sejarah|PENDIDIKAN</item>
+        <item>Hobi|GAYA_HIDUP</item>
+        <item>Hoki|OLAHRAGA</item>
+        <item>Rumah|GAYA_HIDUP</item>
+        <item>Horor|FILM</item>
+        <item>Informasi|BERITA</item>
+        <item>Instruksi|LAINNYA</item>
+        <item>Internasional|LAINNYA</item>
+        <item>Wawancara|LAINNYA</item>
+        <item>Bahasa|PENDIDIKAN</item>
+        <item>Hukum|LAINNYA</item>
+        <item>Hidup|LAINNYA</item>
+        <item>Lokal|LAINNYA</item>
+        <item>Matematika|PENDIDIKAN</item>
+        <item>Medis|LAINNYA</item>
+        <item>Rapat|LAINNYA</item>
+        <item>Militer|LAINNYA</item>
+        <item>Miniseri|DRAMA</item>
+        <item>Musik|MUSIK</item>
+        <item>Misteri|FILM</item>
+        <item>Nasional|LAINNYA</item>
+        <item>Alam|HEWAN_SATWA LIAR</item>
+        <item>Polisi|LAINNYA</item>
+        <item>Politik|LAINNYA</item>
+        <item>Premier|PREMIER</item>
+        <item>Prarekaman|LAINNYA</item>
+        <item>Produk|LAINNYA</item>
+        <item>Profesional|LAINNYA</item>
+        <item>Publik|LAINNYA</item>
+        <item>Balap|OLAHRAGA</item>
+        <item>Membaca|SENI</item>
+        <item>Perbaikan|LAINNYA</item>
+        <item>Pengulangan|LAINNYA</item>
+        <item>Tinjauan|LAINNYA</item>
+        <item>Roman|FILM</item>
+        <item>Sains|TEKNOLOGI_SAINS</item>
+        <item>Seri|Drama</item>
+        <item>Layanan|LAINNYA</item>
+        <item>Belanja|BELANJA</item>
+        <item>Opera Sabun|DRAMA</item>
+        <item>Spesial|LAINNYA</item>
+        <item>Suspense|FILM</item>
+        <item>Obrolan|HIBURAN</item>
+        <item>Teknis|TEKNOLOGI_SAINS</item>
+        <item>Tenis|OLAHRAGA</item>
+        <item>Perjalanan|PERJALANAN</item>
+        <item>Variasi|HIBURAN</item>
+        <item>Video|SENI</item>
+        <item>Cuaca|BERITA</item>
+        <item>Barat|LAINNYA</item>
+        <item>Seni|SENI</item>
+        <item>Balap Mobil|OLAHRAGA</item>
+        <item>Penerbangan|OLAHRAGA</item>
+        <item>Biografi|BERITA</item>
+        <item>Berperahu|OLAHRAGA</item>
+        <item>Bowling|OLAHRAGA</item>
+        <item>Tinju|OLAHRAGA</item>
+        <item>Kartun|KELUARGA_ANAK-ANAK</item>
+        <item>Anak-anak|KELUARGA_ANAK-ANAK</item>
+        <item>Film Klasik|FILM</item>
+        <item>Komunitas|LAINNYA</item>
+        <item>Komputer|TEKNOLOGI_SAINS</item>
+        <item>Musik Country|MUSIK</item>
+        <item>Pengadilan|LAINNYA</item>
+        <item>Olahraga Ekstrem|OLAHRAGA</item>
+        <item>Keluarga|KELUARGA_ANAK-ANAK</item>
+        <item>Finansial|BERITA</item>
+        <item>Senam|OLAHRAGA</item>
+        <item>Berita Utama|BERITA</item>
+        <item>Balap Kuda|OLAHRAGA</item>
+        <item>Berburu/Memancing/Outdoor|HEWAN_SATWA LIAR</item>
+        <item>Independen|LAINNYA</item>
+        <item>Jazz|MUSIK</item>
+        <item>Majalah|BERITA</item>
+        <item>Balap Motor|OLAHRAGA</item>
+        <item>Musik/Film/Buku|LAINNYA</item>
+        <item>Berita-Internasional|BERITA</item>
+        <item>Berita-Lokal|BERITA</item>
+        <item>Berita-Nasional|BERITA</item>
+        <item>Berita-Regional|BERITA</item>
+        <item>Olimpiade|OLAHRAGA</item>
+        <item>Orisinil|FILM</item>
+        <item>Seni Pertunjukan|SENI</item>
+        <item>Hewan Peliharaan/Hewan|HEWAN_SATWA LIAR</item>
+        <item>Pop|MUSIK</item>
+        <item>Rock &amp; Roll|MUSIK</item>
+        <item>Fiksi Sains|FILM</item>
+        <item>Pengembangan Diri|PENDIDIKAN</item>
+        <item>Sitkom|DRAMA</item>
+        <item>Seluncur|OLAHRAGA</item>
+        <item>Ski|OLAHRAGA</item>
+        <item>Sepak Bola|OLAHRAGA</item>
+        <item>Trek/Lapangan|OLAHRAGA</item>
+        <item>Kisah nyata|LAINNYA</item>
+        <item>Voli|OLAHRAGA</item>
+        <item>Gulat|OLAHRAGA</item>
+    </string-array>
+
+    <!-- Category mapping from DVB to canonical genre -->
+    <string-array name="genre_mapping_dvb">
+        <item>film/drama|FILM</item>
+        <item>detektif/thriller|FILM</item>
+        <item>petualangan/barat/perang|FILM</item>
+        <item>fiksi sains/fantasi/horor|FILM</item>
+        <item>komedi|KOMEDI</item>
+        <item>opera sabun/melodrama/cerita rakyat|DRAMA</item>
+        <item>roman|FILM</item>
+        <item>serius/klasik/religi/film sejarah/drama|FILM</item>
+        <item>film dewasa/drama|FILM</item>
+        <item>berita/topik hangat|BERITA</item>
+        <item>berita/laporan cuaca|BERITA</item>
+        <item>majalah berita|BERITA</item>
+        <item>dokumenter|BERITA</item>
+        <item>diskusi/wawancara/debat|BERITA</item>
+        <item>acara/acara game|HIBURAN</item>
+        <item>acara game/kuis/kontes|GAME</item>
+        <item>variety show|HIBURAN</item>
+        <item>talk show|HIBURAN</item>
+        <item>oLahraga|OLAHRAGA</item>
+        <item>acara spesial (Olimpiade, Piala Dunia, dsb.)|OLAHRAGA</item>
+        <item>majalah olahraga|OLAHRAGA</item>
+        <item>sepak bola|OLAHRAGA</item>
+        <item>tenis/squash|OLAHRAGA</item>
+        <item>olahraga tim (kecuali sepakbola)|OLAHRAGA</item>
+        <item>atletik|OLAHRAGA</item>
+        <item>olahraga otomotif|OLAHRAGA</item>
+        <item>olahraga air|OLAHRAGA</item>
+        <item>olahraga musim dingin|OLAHRAGA</item>
+        <item>menunggang kuda|OLAHRAGA</item>
+        <item>olahraga bela diri|OLAHRAGA</item>
+        <item>program remaja muda|KELUARGA_ANAK-ANAK</item>
+        <item>program anak-anak pra sekolah|KELUARGA_ANAK-ANAK</item>
+        <item>program hiburan untuk usia 6 hingga 14 tahun|KELUARGA_ANAK-ANAK</item>
+        <item>program hiburan untuk usia 10 hingga 16 tahun|KELUARGA_ANAK-ANAK</item>
+        <item>program informasi/pendidikan/sekolah|KELUARGA_ANAK-ANAK</item>
+        <item>kartun/boneka|KELUARGA_ANAK-ANAK</item>
+        <item>musik/balet/tari|MUSIK</item>
+        <item>rock/pop|MUSIK</item>
+        <item>musik klasik/serius|MUSIK</item>
+        <item>musik tradisional/kesenian rakyat|MUSIK</item>
+        <item>jazz|MUSIK</item>
+        <item>musikal/opera|MUSIK</item>
+        <item>balet|HIBURAN</item>
+        <item>seni/budaya|SENI</item>
+        <item>seni pertunjukan|SENI</item>
+        <item>seni rupa|SENI</item>
+        <item>agama|GAYA_HIDUP</item>
+        <item>seni tradisional/budaya populer|GAYA_HIDUP</item>
+        <item>literatur|SENI</item>
+        <item>film/sinema|SENI</item>
+        <item>film/video eksperimental|SENI</item>
+        <item>penyiaran/pers|SENI</item>
+        <item>media baru|SENI</item>
+        <item>majalah seni/budaya|SENI</item>
+        <item>fashion|GAYA_HIDUP</item>
+        <item>sosial/isu politik/ekonomi|LAINNYA</item>
+        <item>majalah/laporan/dokumenter|BERITA</item>
+        <item>penasihat sosial/ekonomi|LAINNYA</item>
+        <item>orang terkenal|LAINNYA</item>
+        <item>topik faktual/sains/pendidikan|PENDIDIKAN</item>
+        <item>alam/hewan/lingkungan|HEWAN_SATWA LIAR</item>
+        <item>teknologi/sains alam|TEKNOLOGI_SAINS</item>
+        <item>alam/fisiologi/psikologi|TEKNOLOGI_SAINS</item>
+        <item>mancanegara/ekspedisi|PENDIDIKAN</item>
+        <item>sains spiritual/sosial|TEKNOLOGI_SAINS</item>
+        <item>pendidikan tinggi|PENDIDIKAN</item>
+        <item>bahasa|PENDIDIKAN</item>
+        <item>hobi santai|GAYA_HIDUP</item>
+        <item>pariwisata/perjalanan|PERJALANAN</item>
+        <item>kerajinan tangan|GAYA_HIDUP</item>
+        <item>otomotif|GAYA_HIDUP</item>
+        <item>kebugaran &amp; kesehatan|GAYA_HIDUP</item>
+        <item>memasak|GAYA_HIDUP</item>
+        <item>iklan/belanja|SHOPPING</item>
+        <item>berkebun|GAYA_HIDUP</item>
+        <item>bahasa asli|LAINNYA</item>
+        <item>hitam &amp; putih|LAINNYA</item>
+        <item>sisi lain|LAINNYA</item>
+        <item>siaran langsung|LAINNYA</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB to canonical genre -->
+    <string-array name="genre_mapping_isdb">
+        <item>Animasi|FILM</item>
+        <item>Baseball|OLAHRAGA</item>
+        <item>Lagu anak-anak|MUSIK</item>
+        <item>Klasik, opera|MUSIK</item>
+        <item>Acara memasak|HIBURAN</item>
+        <item>Program komedi|HIBURAN</item>
+        <item>Cerita komik, Hiburan|HIBURAN</item>
+        <item>Game TV, komputer|TEKNOLOGI_SAINS</item>
+        <item>Percakapan, bahasa|PENDIDIKAN</item>
+        <item>Tari, Balet|HIBURAN</item>
+        <item>Diskusi, konferensi|BERITA</item>
+        <item>Laporan pasar, ekonomi|BERITA</item>
+        <item>Masalah pendidikan|PENDIDIKAN</item>
+        <item>Peristiwa|HIBURAN</item>
+        <item>Fashion|GAYA_HIDUP</item>
+        <item>Musik rakyat, musik dunia|MUSIK</item>
+        <item>Game|GAMING</item>
+        <item>Berkebun, peliharaan, kerajinan|GAYA_HIDUP</item>
+        <item>Golf|OLAHRAGA</item>
+        <item>Acara tabloid/gosip|HIBURAN</item>
+        <item>Gourmet, memasak|GAYA_HIDUP</item>
+        <item>Kesehatan, pengobatan|GAYA_HIDUP</item>
+        <item>Hobi/Pendidikan|GAYA_HIDUP</item>
+        <item>Balap kuda, balap umum|OLAHRAGA</item>
+        <item>Animasi Jepang|KELUARGA_ANAK-ANAK</item>
+        <item>Musik tradisional Jepang, balada Jepang|MUSIK</item>
+        <item>Catur Jepang (shogi) dan "go"|GAMING</item>
+        <item>Drama Jepang|DRAMA</item>
+        <item>Film Jepang|FILM</item>
+        <item>Musik pop, rock Jepang|MUSIK</item>
+        <item>Jazz, fusion|MUSIK</item>
+        <item>Pelajar SMP dan SMA|PENDIDIKAN</item>
+        <item>Drama klasik, Kabuki|DRAMA</item>
+        <item>Kontes menyanyi amatir, karaoke|MUSIK</item>
+        <item>Kualifikasi, pendidikan seumur hidup|PENDIDIKAN</item>
+        <item>Anak kecil, anak sekolah|PENDIDIKAN</item>
+        <item>Konser langsung|MUSIK</item>
+        <item>Tempat tinggal, rumah|GAYA_HIDUP</item>
+        <item>Program lokal|BERITA</item>
+        <item>Game mah-jong, pinball|GAMING</item>
+        <item>Maraton, olahraga atletik, renang|OLAHRAGA</item>
+        <item>Olahraga laut, olahraga musim dingin|OLAHRAGA</item>
+        <item>Drama modern, drama gaya Barat|DRAMA</item>
+        <item>Olahraga otomotif|OLAHRAGA</item>
+        <item>Musikal|MUSIK</item>
+        <item>Musik, seni, seni industri|SENI</item>
+        <item>Acara musik|HIBURAN</item>
+        <item>Analisis berita|BERITA</item>
+        <item>Game internasional, olimpiade|OLAHRAGA</item>
+        <item>Olahraga bola lainnya|OLAHRAGA</item>
+        <item>Animasi luar negeri|KELUARGA_ANAK-ANAK</item>
+        <item>Drama luar negeri|DRAMA</item>
+        <item>Laporan internasional, luar negeri|BERITA</item>
+        <item>Film luar negeri|FILM</item>
+        <item>Musik pop, rock luar negeri|MUSIK</item>
+        <item>Drama sejarah|DRAMA</item>
+        <item>Majelis nasional, politik|BERITA</item>
+        <item>Lagu populer, lagu populer Jepang (lagu enka)|MUSIK</item>
+        <item>Kuis|GAMING</item>
+        <item>Musik peringkat, permintaan|MUSIK</item>
+        <item>Reguler, umum|BERITA</item>
+        <item>Bisnis online, Belanja|BELANJA</item>
+        <item>Sepak Bola|OLAHRAGA</item>
+        <item>Efek khusus|KELUARGA_ANAK-ANAK</item>
+        <item>Dokumenter, program khusus|BERITA</item>
+        <item>Laporan khusus|BERITA</item>
+        <item>Berita olahraga|OLAHRAGA</item>
+        <item>Olahraga pertarungan, Sumo|OLAHRAGA</item>
+        <item>Acara obrolan|HIBURAN</item>
+        <item>Acara tur|HIBURAN</item>
+        <item>Laporan lalu lintas|BERITA</item>
+        <item>Hiburan luar ruangan, memancing,  perjalanan|HEWAN_SATWA LIAR</item>
+        <item>Mahasiswa, ujian|PENDIDIKAN</item>
+        <item>Laporan cuaca|BERITA</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB in Brazil to canonical genre -->
+    <string-array name="genre_mapping_isdb_br">
+        <item>Biografia|NEWS</item>
+        <item>Culinária|LIFE_STYLE</item>
+        <item>Documentário|NEWS</item>
+        <item>Educativo|EDUCATION</item>
+        <item>Erótico|MOVIES</item>
+        <item>Esporte|SPORTS</item>
+        <item>Filme|MOVIES</item>
+        <item>Acara game|GAMING</item>
+        <item>Humorístico|COMEDY</item>
+        <item>Infantil|FAMILY_KIDS</item>
+        <item>Informação|LIFE_STYLE</item>
+        <item>Jornalismo|NEWS</item>
+        <item>Minissérie|DRAMA</item>
+        <item>Moda|LIFE_STYLE</item>
+        <item>Musikal|MUSIK</item>
+        <item>Premiação|ENTERTAINMENT</item>
+        <item>Reality show|HIBURAN</item>
+        <item>Religioso|LIFE_STYLE</item>
+        <item>Reportagem|NEWS</item>
+        <item>Rural|GAYA_HIDUP</item>
+        <item>Saúde|LIFE_STYLE</item>
+        <item>Série|DRAMA</item>
+        <item>Série/seriado|DRAMA</item>
+        <item>Pertunjukan|HIBURAN</item>
+        <item>Telejornais|NEWS</item>
+        <item>Televendas|SHOPPING</item>
+        <item>Turismo|TRAVEL</item>
+        <item>Variedade|ENTERTAINMENT</item>
+        <item>Auditorium|HIBURAN</item>
+        <item>Penghargaan|HIBURAN</item>
+        <item>Biografi|BERITA</item>
+        <item>Anak-anak|KELUARGA_ANAK-ANAK</item>
+        <item>Anak-anak|KELUARGA_ANAK-ANAK</item>
+        <item>Komik|KOMEDI</item>
+        <item>Memasak|GAYA_HIDUP</item>
+        <item>Pedesaan|GAYA_HIDUP</item>
+        <item>Diskusi/wawancara|BERITA</item>
+        <item>Diskusi|BERITA</item>
+        <item>Dokumenter|BERITA</item>
+        <item>Pendidikan|PENDIDIKAN</item>
+        <item>Pendidikan|PENDIDIKAN</item>
+        <item>Layanan teknis|TEK_SAINS</item>
+        <item>Erotis|FILM</item>
+        <item>Fashion|GAYA_HIDUP</item>
+        <item>Feminin|HIBURAN</item>
+        <item>Acara game|GAMING</item>
+        <item>Kesehatan|GAYA_HIDUP</item>
+        <item>Humor|KOMEDI</item>
+        <item>Informasi|GAYA_HIDUP</item>
+        <item>Wawancara|BERITA</item>
+        <item>Jurnalistik|BERITA</item>
+        <item>Pembuatan|HIBURAN</item>
+        <item>Miniseri|DRAMA</item>
+        <item>Miniseri|DRAMA</item>
+        <item>Film (Film)|FILM</item>
+        <item>Film|FILM</item>
+        <item>Acara musik|HIBURAN</item>
+        <item>Berita|BERITA</item>
+        <item>Hadiah|BELANJA</item>
+        <item>Undian|BELANJA</item>
+        <item>Undian, diskon televisi, hadiah|BELANJA</item>
+        <item>Reality show|HIBURAN</item>
+        <item>Religi|GAYA_HIDUP</item>
+        <item>Reportase|BERITA</item>
+        <item>Laporan|BERITA</item>
+        <item>Rural|GAYA_HIDUP</item>
+        <item>Seri|Drama</item>
+        <item>Seri / pertunjukan TV|DRAMA</item>
+        <item>Pertunjukan|HIBURAN</item>
+        <item>Opera sabun|DRAMA</item>
+        <item>Olahraga|OLAHRAGA</item>
+        <item>OLahraga|OLAHRAGA</item>
+        <item>TV belanja|BELANJA</item>
+        <item>Diskon televisi|BELANJA</item>
+        <item>Pariwisata|PERJALANAN</item>
+        <item>Perjalanan|PERJALANAN</item>
+        <item>Berita TV|BERITA</item>
+        <item>Variasi|HIBURAN</item>
+        <item>Variety show|HIBURAN</item>
+    </string-array>
+</resources>

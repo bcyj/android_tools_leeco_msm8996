@@ -1,0 +1,294 @@
+/*****************************************************************************
+  @FILE     sns_sam_sensor_thresh.idl
+
+  @BRIEF    Message definition for Sensor Threshold service.
+
+  @DESCRIPTION
+  This file defines messages used by Sensor Threshold algo service.
+
+  As prerequisite, the sensor algorithm must use the common Interface
+  defined in the Sensor Algorithms framework.
+
+  The messages defined herein will be passed to the Sensor framework using
+  the sensor1_write() API.
+
+  @COPYRIGHT
+  Copyright (c) 2011-2014 Qualcomm Technologies, Inc.  All Rights Reserved
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+include "sns_sam_common_v01.idl";
+
+revision 6;
+
+const SNS_SAM_THRESHOLD_SUID = 0x2c4c22743f921c6b;
+
+//============================================================================
+/** @COMMAND SNS_SAM_SENSOR_THRESH_ENABLE
+    @BRIEF This command enables a sensor-threshold algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_SENSOR_THRESH_ENABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+enum {
+    SNS_SAM_SENSOR_ABSOLUTE_THRESHOLD = 0,  /**< Absolute threshold. */
+    SNS_SAM_SENSOR_RELATIVE_THRESHOLD = 1   /**< Relative threshold. */
+} threshold_type_e;
+
+message {
+  mandatory uint8  sensor_id;
+  /**< Sensor ID, defined as SNS_SMGR_ID_XXXX style.
+       SNS_SMGR_ID_PROX_LIGHT_V01, SNS_SMGR_ID_ACCEL_V01,SNS_SMGR_ID_GYRO_V01,
+       SNS_SMGR_ID_MAG_V01 and SNS_SMGR_ID_PRESSURE_V01 are supported.
+       Unsupported sensor IDs will result in SENSOR1_EBAD_PARAM error in response.
+  */
+
+  mandatory uint8  data_type;
+  /**< Defines the sensor data type:
+       - 00 -- SNS_SMGR_DATA_TYPE_PRIMARY
+       - 01 -- SNS_SMGR_DATA_TYPE_SECONDARY
+  */
+
+  mandatory uint32 sample_rate;
+  /**< Sample rate in Hz; Q16 format. */
+
+ 
+  mandatory uint32 threshold[3];
+  /**< Threshold for the sensor data output, in Q16 format.
+       For 3-axis items, such as accelerometer, gyroscope, and magnetometer,
+       words [0] to [2] are XYZ. For other items, fewer words may be used.
+
+       If, for any of the valid axis, the current and last reported samples
+       have an absolute difference that is bigger than or equal to the threshold,
+       the current samples on all valid axis are reported to the client.
+
+       For a proximity sensor that gives binary (NEAR or FAR) values, setting
+       threshold[0] to 0x10000 will effectively only output proximity data
+       on a change (from NEAR to FAR, or FAR to NEAR).
+
+       For accelerometer, the threshold is set in units of m/s^2, in Q16 format.
+       For gyroscope, the threshold is set in units of rad/s, in Q16 format.
+
+       The meaning of this field can be changed based on the value of threshold_type, i.e.,
+       when threshold_type = SNS_SAM_SENSOR_RELATIVE_THRESHOLD, the threshold's value
+       is a percent value (between 0.0 and 1.0) in Q16 format.
+       For example, if the relative threshold = 100% (= 1.0), the threshold = 0x00010000.
+  */
+
+  optional uint32 report_period;
+  /**< Current report interval, in milliseconds.
+
+       If report_period is not specified OR it is specified as zero, the
+       behavior described for the threshold parameter above will take effect.
+
+       If report_period is specified, the following behavior will take effect:
+       If the sensor sample value of any axis exceeds the threshold for a time
+       period equal to or greater than the time threshold, report new value to client.
+
+       Note that a single axis must be outside the range for the entire
+       report period.
+  */
+
+  //! @VERSION 1.3
+  optional sns_suspend_notification_s notify_suspend;
+  /**< Identifies whether indications for this request are to be sent
+       when the processor is in the Suspend state.
+
+       If this field is not specified, the default value is set to:
+       notify_suspend->proc_type                  = SNS_PROC_APPS
+       notify_suspend->send_indications_during_suspend  = FALSE
+
+       This field does not have any bearing on error indication
+       messages, which are sent even during Suspend.
+    */
+
+  optional uint8 threshold_type;
+  /**< Threshold type, as specified by threshold_type_e. */
+
+} sns_sam_sensor_thresh_enable_req_msg;
+
+//! @MSG     SNS_SAM_SENSOR_THRESH_ENABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s resp = 2;
+  /**< Common response message. */
+  optional  uint8             instance_id;
+  /**< Instance ID, which is assigned by the SAM.
+       The client must use this instance ID for future messages associated with
+       the current algorithm instance.
+  */
+} sns_sam_sensor_thresh_enable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_SENSOR_THRESH_DISABLE
+    @BRIEF This command disables a sensor-threshold algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_SENSOR_THRESH_DISABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8             instance_id;
+  /**< Identifies the algorithm instance. */
+} sns_sam_sensor_thresh_disable_req_msg;
+
+//! @MSG     SNS_SAM_SENSOR_THRESH_DISABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s  resp = 2;
+  /**< Common response message. */
+  optional uint8               instance_id;
+  /**< Identifies the algorithm instance. */
+} sns_sam_sensor_thresh_disable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_SENSOR_THRESH_REPORT
+    @BRIEF Output report from a sensor threshold algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_SENSOR_THRESH_REPORT_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8              instance_id;
+  /**< Identifies the algorithm instance. */
+  mandatory uint32             timestamp;
+  /**< Timestamp of the input used to generate the algorithm output. */
+  mandatory uint32             sample_value[3];
+  /**< Output of the sensor threshold algorithm:
+       For 3-axis items, such as accelerometer, gyroscope, and magnetometer,
+       words [0] to [2] are XYZ. For other items, less words may be used.
+       This report indication is generated if any of the current samples
+       exceeds the respective threshold from the last reported samples.
+       The current sample values are reported in Q16 format.
+  */
+} sns_sam_sensor_thresh_report_ind_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_SENSOR_THRESH_GET_REPORT
+    @BRIEF This command fetches latest report output from a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_SENSOR_THRESH_GET_REPORT_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8              instance_id;
+  /**< Identifies the algorithm instance. */
+} sns_sam_sensor_thresh_get_report_req_msg;
+
+//! @MSG     SNS_SAM_SENSOR_THRESH_GET_REPORT_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s  resp = 2;
+  /**< Common response message. */
+  optional uint8               instance_id;
+  /**< Identifies the algorithm instance. */
+  optional uint32              timestamp;
+  /**< Timestamp of the input used to generate the algorithm output. */
+  optional uint32              sample_value[3];
+  /**< Latest output of the sensor threshold algorithm instance.
+       For 3-axis items, such as accelerometer, gyroscope, and magnetometer,
+       words [0] to [2] are XYZ. For other items, less words may be used.
+       These output sample values are reported in Q16 format.
+  */
+} sns_sam_sensor_thresh_get_report_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_SENSOR_THRESH_ERROR
+    @BRIEF Asynchronous error indication from a sensor-threshold algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_SENSOR_THRESH_ERROR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//============================================================================
+
+message {
+  mandatory uint8              error;
+  /**< Sensor1 error code. */
+  mandatory uint8              instance_id;
+  /**< Identifies the algorithm instance. */
+} sns_sam_sensor_thresh_error_ind_msg;
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_SAM_SENSOR_THRESH_SVC {
+  //! @ID SNS_COMMON_CANCEL
+  sns_common_cancel_req_msg        SNS_SAM_SENSOR_THRESH_CANCEL_REQ,
+  sns_common_cancel_resp_msg       SNS_SAM_SENSOR_THRESH_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_COMMON_VERSION
+  sns_common_version_req_msg       SNS_SAM_SENSOR_THRESH_VERSION_REQ,
+  sns_common_version_resp_msg      SNS_SAM_SENSOR_THRESH_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SAM_SENSOR_THRESH_ENABLE
+  sns_sam_sensor_thresh_enable_req_msg       SNS_SAM_SENSOR_THRESH_ENABLE_REQ,
+  sns_sam_sensor_thresh_enable_resp_msg      SNS_SAM_SENSOR_THRESH_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_SAM_SENSOR_THRESH_DISABLE
+  sns_sam_sensor_thresh_disable_req_msg      SNS_SAM_SENSOR_THRESH_DISABLE_REQ,
+  sns_sam_sensor_thresh_disable_resp_msg     SNS_SAM_SENSOR_THRESH_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_SAM_SENSOR_THRESH_GET_REPORT
+  sns_sam_sensor_thresh_get_report_req_msg   SNS_SAM_SENSOR_THRESH_GET_REPORT_REQ,
+  sns_sam_sensor_thresh_get_report_resp_msg  SNS_SAM_SENSOR_THRESH_GET_REPORT_RESP
+    = 0x04;
+
+  //! @ID SNS_SAM_SENSOR_THRESH_REPORT
+  sns_sam_sensor_thresh_report_ind_msg       SNS_SAM_SENSOR_THRESH_REPORT_IND
+    = 0x05;
+
+  //! @ID SNS_SAM_SENSOR_THRESH_ERROR
+  sns_sam_sensor_thresh_error_ind_msg        SNS_SAM_SENSOR_THRESH_ERROR_IND
+    = 0x06;
+
+  //! @ID SNS_SAM_GET_ALGO_ATTRIBUTES
+  sns_sam_get_algo_attrib_req_msg            SNS_SAM_SENSOR_THRESH_GET_ATTRIBUTES_REQ,
+  sns_sam_get_algo_attrib_resp_msg           SNS_SAM_SENSOR_THRESH_GET_ATTRIBUTES_RESP
+    = 0x24;
+
+} = SNS_QMI_SVC_ID_21;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+*/
+
+//============================================================================
+// End of Module
+//============================================================================
+

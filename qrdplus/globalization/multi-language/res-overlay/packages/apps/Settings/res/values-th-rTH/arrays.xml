@@ -1,0 +1,1458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution.
+ * Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+
+<!--
+/*
+**
+** Copyright 2007 The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Choices for timezone picker first level.
+         These values will be used as search terms for TimeZone displayName
+         strings. --> <skip/>
+    <!-- The time zone picker screen has two levels.  The first level allows the user to choose a region. -->
+    <string-array name="timezone_filters">
+    <!-- The next level of the time zoner picker should show time zones from the Americas. -->
+        <item>"อเมริกา"</item>
+    <!-- The next level of the time zoner picker should show time zones from Europe. -->
+        <item>"ยุโรป"</item>
+    <!-- The next level of the time zoner picker should show time zones from Africa. -->
+        <item>"แอฟริกา"</item>
+    <!-- The next level of the time zoner picker should show time zones from Asia. -->
+        <item>"เอเชีย"</item>
+    <!-- The next level of the time zoner picker should show time zones from Australia. -->
+        <item>"ออสเตรเลีย"</item>
+    <!-- The next level of the time zoner picker should show time zones from Pacific. -->
+        <item>"แปซิฟิก"</item>
+    <!-- The next level of the time zoner picker should show time zones from ALL regions. -->
+        <item>"ทั้งหมด"</item>
+    </string-array>
+
+     <!-- There is a setting to control the format of dates displayed throughout the system.  This is in the Date & Time Settings screen.  These will be adjusted to use punctuation appropriate to the user\'s locale. -->
+    <string-array name="date_format_values" translatable="false">
+        <!-- The blank item means to use whatever the locale calls for. -->
+        <item/>
+        <item>MM-dd-yyyy</item>
+        <item>dd-MM-yyyy</item>
+        <item>yyyy-MM-dd</item>
+    </string-array>
+
+    <!-- Display settings.  The delay in inactivity before the screen is turned off. These are shown in a list dialog. -->
+    <string-array name="screen_timeout_entries">
+        <item>"15 วินาที"</item>
+        <item>"30 วินาที"</item>
+        <item>"1 นาที"</item>
+        <item>"2 นาที"</item>
+        <item>"5 นาที"</item>
+        <item>"10 นาที"</item>
+        <item>"30 นาที"</item>
+        <item>ไม่ใช้</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="screen_timeout_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>15000</item>
+        <!-- Do not translate. -->
+        <item>30000</item>
+        <!-- Do not translate. -->
+        <item>60000</item>
+        <!-- Do not translate. -->
+        <item>120000</item>
+        <!-- Do not translate. -->
+        <item>300000</item>
+        <!-- Do not translate. -->
+        <item>600000</item>
+        <!-- Do not translate. -->
+        <item>1800000</item>
+        <!-- Do not translate. -->
+        <item>-1</item>
+    </string-array>
+
+    <!-- Display settings.  The delay in inactivity before the dream is shown. These are shown in a list dialog. -->
+    <string-array name="dream_timeout_entries">
+        <item>"ไม่เลย"</item>
+        <item>"15 วินาที"</item>
+        <item>"30 วินาที"</item>
+        <item>"1 นาที"</item>
+        <item>"2 นาที"</item>
+        <item>"5 นาที"</item>
+        <item>"10 นาที"</item>
+        <item>"30 นาที"</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="dream_timeout_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>15000</item>
+        <!-- Do not translate. -->
+        <item>30000</item>
+        <!-- Do not translate. -->
+        <item>60000</item>
+        <!-- Do not translate. -->
+        <item>120000</item>
+        <!-- Do not translate. -->
+        <item>300000</item>
+        <!-- Do not translate. -->
+        <item>600000</item>
+        <!-- Do not translate. -->
+        <item>1800000</item>
+    </string-array>
+
+    <!-- Security settings.  The delay after screen is turned off until device locks.
+         These are shown in a list dialog. -->
+    <string-array name="lock_after_timeout_entries">
+        <item>"ทันที"</item>
+        <item>"5 วินาที"</item>
+        <item>"15 วินาที"</item>
+        <item>"30 วินาที"</item>
+        <item>"1 นาที"</item>
+        <item>"2 นาที"</item>
+        <item>"5 นาที"</item>
+        <item>"10 นาที"</item>
+        <item>"30 นาที"</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="lock_after_timeout_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>5000</item>
+        <!-- Do not translate. -->
+        <item>15000</item>
+        <!-- Do not translate. -->
+        <item>30000</item>
+        <!-- Do not translate. -->
+        <item>60000</item>
+        <!-- Do not translate. -->
+        <item>120000</item>
+        <!-- Do not translate. -->
+        <item>300000</item>
+        <!-- Do not translate. -->
+        <item>600000</item>
+        <!-- Do not translate. -->
+        <item>1800000</item>
+    </string-array>
+
+    <string-array name="entries_font_size">
+        <item msgid="6490061470416867723">"เล็ก"</item>
+        <item msgid="3579015730662088893">"ปกติ"</item>
+        <item msgid="1678068858001018666">"ใหญ่"</item>
+        <item msgid="490158884605093126">"ใหญ่มาก"</item>
+    </string-array>
+
+    <string-array name="entryvalues_font_size" translatable="false">
+        <item>0.85</item>
+        <item>1.0</item>
+        <item>1.15</item>
+        <item>1.30</item>
+    </string-array>
+
+    <!-- TTS settings -->
+
+    <!-- Default speech rate choices -->
+    <string-array name="tts_rate_entries">
+        <item>"ช้ามาก"</item>
+        <item>"ช้า"</item>
+        <item>"ปกติ"</item>
+        <item>"เร็ว"</item>
+        <item>"เร็วขึ้น"</item>
+        <item>"เร็วมาก"</item>
+        <item>"เร็ว"</item>
+        <item>"เร็วมาก"</item>
+        <item>"เร็วที่สุด"</item>
+    </string-array>
+    <!-- Do not translate. -->
+    <string-array name="tts_rate_values">
+        <item>60</item>
+        <item>80</item>
+        <item>100</item>
+        <item>150</item>
+        <item>200</item>
+        <item>250</item>
+        <item>300</item>
+        <item>350</item>
+        <item>400</item>
+    </string-array>
+
+    <!-- Default pitch choices -->
+    <string-array name="tts_pitch_entries">
+        <item>"ต่ำมาก"</item>
+        <item>"ต่ำ"</item>
+        <item>"ปกติ"</item>
+        <item>"สูง"</item>
+        <item>"สูงมาก"</item>
+    </string-array>
+    <!-- Do not translate. -->
+    <string-array name="tts_pitch_values">
+        <item>50</item>
+        <item>80</item>
+        <item>100</item>
+        <item>120</item>
+        <item>150</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="tts_demo_strings" translatable="false">
+        <item>This is an example of speech synthesis in English.</item>
+        <item>Voici un échantillon de synthèse vocale en français.</item>
+        <item>Dies ist ein Beispiel für Sprachsynthese in Deutsch.</item>
+        <item>Questo è un esempio di sintesi vocale in italiano.</item>
+        <item>Este es un ejemplo de síntesis de voz en español.</item>
+        <item>이것은 한국어 음성 합성의 예입니다.</item>
+    </string-array>
+    <string-array name="tts_demo_string_langs" translatable="false">
+        <item>eng</item>
+        <item>fra</item>
+        <item>deu</item>
+        <item>ita</item>
+        <item>spa</item>
+        <item>kor</item>
+    </string-array>
+
+    <!-- AGPS settings -->
+
+    <!-- agps network -->
+    <string-array name="agps_network_values">
+     <item>0</item>
+     <item>1</item>
+    </string-array>
+    <string-array name="agps_network_entries">
+     <item>เครือข่ายบ้าน</item>
+     <item>เครือข่ายทั้งหมด</item>
+   </string-array>
+   <!-- agps si mode type -->
+    <string-array name="agps_si_mode_values" translatable="false">
+     <item>0</item>
+     <item>1</item>
+    </string-array>
+    <string-array name="agps_si_mode_entries">
+     <item>"MSB"</item>
+     <item>"MSA"</item>
+    </string-array>
+    <!-- agps apn type -->
+    <string-array name="agps_apn_values">
+     <item>0</item>
+     <item>1</item>
+    </string-array>
+    <string-array name="agps_apn_entries">
+     <item>"CMWAP"</item>
+     <item>"CMNET"</item>
+    </string-array>
+    <!-- agps reset type -->
+    <string-array name="agps_reset_type_values">
+     <item>0</item>
+     <item>1</item>
+     <item>2</item>
+    </string-array>
+    <string-array name="agps_reset_type_entries">
+     <item>"HOT"</item>
+     <item>"WARM"</item>
+     <item>"COLD"</item>
+    </string-array>
+
+    <!-- Wi-Fi settings -->
+
+    <!-- Match this with the order of NetworkInfo.DetailedState. --> <skip/>
+    <!-- Wi-Fi settings. The status messages when the network is unknown. -->
+    <string-array name="wifi_status">
+        <!-- Status message of Wi-Fi when it is idle. -->
+        <item/>
+        <!-- Status message of Wi-Fi when it is scanning. -->
+        <item>"กำลังสแกน..."</item>
+        <!-- Status message of Wi-Fi when it is connecting. -->
+        <item>"กำลังเชื่อมต่อ…"</item>
+        <!-- Status message of Wi-Fi when it is authenticating. -->
+        <item>"กำลังตรวจสอบความถูกต้อง…"</item>
+        <!-- Status message of Wi-Fi when it is obtaining IP address. -->
+        <item>"กำลังรับที่อยู่ IP…"</item>
+        <!-- Status message of Wi-Fi when it is connected. -->
+        <item>"เชื่อมต่อแล้ว"</item>
+        <!-- Status message of Wi-Fi when it is suspended. -->
+        <item>"ระงับไว้"</item>
+        <!-- Status message of Wi-Fi when it is disconnecting. -->
+        <item>"กำลังตัดการเชื่อมต่อ..."</item>
+        <!-- Status message of Wi-Fi when it is disconnected. -->
+        <item>"ตัดการเชื่อมต่อ"</item>
+        <!-- Status message of Wi-Fi when it is a failure. -->
+        <item>"ไม่สำเร็จ"</item>
+        <!-- Status message of Wi-Fi when it is blocked. -->
+        <item>"ถูกบล็อก"</item>
+        <!-- Status message of Wi-Fi when connectiong is being verified. -->
+        <item>"หลีกเลี่ยงการเชื่อมต่อกับสัญญาณที่ไม่แรงพอชั่วคราว"</item>
+    </string-array>
+
+    <!-- Match this with the order of NetworkInfo.DetailedState. --> <skip/>
+    <!-- Wi-Fi settings. The status messages when the network is known. -->
+    <string-array name="wifi_status_with_ssid">
+        <!-- Status message of Wi-Fi when it is idle. -->
+        <item/>
+        <!-- Status message of Wi-Fi when it is scanning. -->
+        <item>"กำลังสแกน..."</item>
+        <!-- Status message of Wi-Fi when it is connecting to a network. -->
+        <item>"กำลังเชื่อมต่อไปยัง <xliff:g id="NETWORK_NAME">%1$s</xliff:g>..."</item>
+        <!-- Status message of Wi-Fi when it is authenticating with a network. -->
+        <item>"กำลังตรวจสอบสิทธิ์กับ<xliff:g id="NETWORK_NAME">%1$s</xliff:g>..."</item>
+        <!-- Status message of Wi-Fi when it is obtaining IP address from a network. -->
+        <item>"กำลังรับที่อยู่ IP จาก <xliff:g id="NETWORK_NAME">%1$s</xliff:g>…"</item>
+        <!-- Status message of Wi-Fi when it is connected to a network. -->
+        <item>"เชื่อมต่อกับ <xliff:g id="NETWORK_NAME">%1$s</xliff:g> แล้ว"</item>
+        <!-- Status message of Wi-Fi when it is suspended. -->
+        <item>"ระงับไว้"</item>
+        <!-- Status message of Wi-Fi when it is disconnecting from a network. -->
+        <item>"กำลังตัดการเชื่อมต่อจาก <xliff:g id="NETWORK_NAME">%1$s</xliff:g>"</item>
+        <!-- Status message of Wi-Fi when it is disconnected. -->
+        <item>"ตัดการเชื่อมต่อ"</item>
+        <!-- Status message of Wi-Fi when it is a failure. -->
+        <item>"ไม่สำเร็จ"</item>
+        <!-- Status message of Wi-Fi when it is blocked. -->
+        <item>"ถูกบล็อก"</item>
+        <!-- Status message of Wi-Fi when connectiong is being verified. -->
+        <item>"หลีกเลี่ยงการเชื่อมต่อกับสัญญาณที่ไม่แรงพอชั่วคราว"</item>
+    </string-array>
+
+    <!-- Match this with the constants in AccessPoint. --> <skip/>
+    <!-- Wi-Fi security choices used when manually added a Wi-Fi network -->
+    <string-array name="wifi_security">
+        <!-- The Wi-Fi network does not have any security. -->
+        <item>@string/wifi_security_none</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_wep</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_psk_generic</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_eap</item>
+
+    </string-array>
+
+    <!-- Match this with the constants in AccessPoint. --> <skip/>
+    <!-- Wi-Fi security types for New User Dialog. EAP is not configurable. -->
+    <string-array name="wifi_security_no_eap">
+        <!-- The Wi-Fi network does not have any security. -->
+        <item>@string/wifi_security_none</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_wep</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_psk_generic</item>
+    </string-array>
+
+   <!-- Wi-Fi AP settings.  The type of security a Wi-Fi AP supports. -->
+   <!-- Note that adding/removing/moving the items will need wifi settings code change. -->
+    <string-array name="wifi_ap_security">
+        <item>@string/wifi_security_none</item>
+        <item>@string/wifi_security_wpa2</item>
+    </string-array>
+
+    <!-- Match this with the constants in WifiDialog. --> <skip/>
+    <!-- Wi-Fi settings.  The type of EAP method a Wi-Fi network has. -->
+    <string-array name="wifi_eap_method">
+        <!-- Do not translate. -->
+        <item>"PEAP"</item>
+        <!-- Do not translate. -->
+        <item>"TLS"</item>
+        <!-- Do not translate. -->
+        <item>"TTLS"</item>
+        <!-- Do not translate. -->
+        <item>"PWD"</item>
+    </string-array>
+
+   <!-- Wi-Fi WPS setup for p2p connections.  -->
+   <!-- Note that adding/removing/moving the items will need wifi settings code change. -->
+    <string-array name="wifi_p2p_wps_setup">
+        <!-- Push button based configuration involves pushing a button on two connecting devices [CHAR LIMIT=30]-->
+        <item>"ปุ่มกด"</item>
+        <!-- This involves entering a pin obtained from a peer device [CHAR LIMIT=30] -->
+        <item>"PIN จากอุปกรณ์เพียร์"</item>
+        <!-- This involves generating a pin from this device [CHAR LIMIT=20] -->
+        <item>"PIN จากอุปกรณ์นี้"</item>
+    </string-array>
+
+    <!-- Match this with the order of WifiP2pDevice.Status -->
+    <!-- Wi-Fi p2p settings device status message -->
+    <string-array name="wifi_p2p_status">
+        <item>"เชื่อมต่อแล้ว"</item>
+        <item>"เชิญแล้ว"</item>
+        <item>"ไม่สำเร็จ"</item>
+        <item>"พร้อมใช้งาน"</item>
+        <item>"อยู่นอกระยะสัญญาณ"</item>
+   </string-array>
+
+
+    <!-- Bluetooth Settings -->
+
+    <!-- Discoverable mode timeout options -->
+    <string-array name="bluetooth_visibility_timeout_entries">
+        <item>"2 นาที"</item>
+        <item>"5 นาที"</item>
+        <item>"1 ชั่วโมง"</item>
+        <item>"ไม่มีระยะหมดเวลา"</item>
+    </string-array>
+
+    <!-- Match this with drawable.wifi_signal. --> <skip/>
+    <!-- Wi-Fi settings. The signal strength a Wi-Fi network has. -->
+    <string-array name="wifi_signal">
+        <item>"แย่"</item>
+        <item>"พอใช้"</item>
+        <item>"ดี"</item>
+        <item>"ยอดเยี่ยม"</item>
+    </string-array>
+
+    <!-- Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi sleep policy. -->
+    <string-array name="wifi_sleep_policy_entries">
+        <!-- Always keep Wi-Fi on when screen turns off. -->
+        <item>"ทุกครั้ง"</item>
+        <!-- Keep Wi-Fi on when screen turns off and plugged in.  When on battery, go to sleep when screen turns off. -->
+        <item>"เมื่อเสียบปลั๊กเท่านั้น"</item>
+        <!-- Do not keep Wi-Fi on when screen turns off.  [CHAR LIMIT=40] -->
+        <item>"ไม่ต้องเลย"</item>
+    </string-array>
+
+    <!-- Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi sleep policy. Used when
+         the device is Wi-Fi-only. [CHAR LIMIT=30] -->
+    <string-array name="wifi_sleep_policy_entries_wifi_only">
+        <!-- Always keep Wi-Fi on when screen turns off. -->
+        <item>"ทุกครั้ง"</item>
+        <!-- Keep Wi-Fi on when screen turns off and plugged in.  When on battery, go to sleep when screen turns off. -->
+        <item>"เมื่อเสียบปลั๊กเท่านั้น"</item>
+        <!-- Do not keep Wi-Fi on when screen turns off, for Wi-Fi-only devices, no other data connection -->
+        <item>"ไม่เลย"</item>
+    </string-array>
+
+    <!-- Match with wifi_sleep_policy_entries and the values of the settings in Settings class. --> <skip/>
+    <!-- Do not translate. -->
+    <string-array name="wifi_sleep_policy_values">
+        <!-- Do not translate. -->
+        <item>2</item>
+        <!-- Do not translate. -->
+        <item>1</item>
+        <!-- Do not translate. -->
+        <item>0</item>
+    </string-array>
+
+    <!-- Data Usage settings. Range of data usage. -->
+    <string-array name="data_usage_data_range">
+        <!-- Last 30 days [CHAR LIMIT=25]-->
+        <item>"30 วันที่ผ่านมา"</item>
+        <!-- Set usage cycle [CHAR LIMIT=25]-->
+        <item>"ตั้งรอบการใช้..."</item>
+    </string-array>
+
+    <!-- Sim Cards display numbers. Range of data usage. -->
+    <string-array name="sim_card_data_range">
+        <!-- Last 4 digits [CHAR LIMIT=40]-->
+        <item>"หมายเลข 4 หลักสุดท้าย"</item>
+        <!-- First 4 digits [CHAR LIMIT=40]-->
+        <item>"หมายเลข 4 หลักแรก"</item>
+    </string-array>
+
+    <!-- Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi frequency band. -->
+    <string-array name="wifi_frequency_band_entries">
+        <!-- Operation on both 2.4 GHz and 5 GHz [CHAR LIMIT=25]-->
+        <item>"อัตโนมัติ"</item>
+        <!-- Operation on 5 GHz alone [CHAR LIMIT=25]-->
+        <item>"5 GHz เท่านั้น"</item>
+        <!-- Operation on 2.4 GHz alone [CHAR LIMIT=25]-->
+        <item>"2.4 GHz เท่านั้น"</item>
+    </string-array>
+
+    <!-- Match with wifi_frequency_band_entries and the values of the settings in WifiManager. -->
+    <!-- Do not translate. -->
+    <string-array name="wifi_frequency_band_values">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>1</item>
+        <!-- Do not translate. -->
+        <item>2</item>
+    </string-array>
+
+
+    <!-- Display options for UsageStats class -->
+    <string-array name="usage_stats_display_order_types">
+        <item>"เวลาในการใช้งาน"</item>
+        <item>"ครั้งสุดท้ายที่ใช้"</item>
+        <item>"ชื่อแอปพลิเคชัน"</item>
+    </string-array>
+
+    <!-- EAP method -->
+    <string-array name="wifi_eap_entries">
+        <item>"PEAP"</item>
+        <item>"TLS"</item>
+        <item>"TTLS"</item>
+        <item>"PWD"</item>
+    </string-array>
+
+    <!-- Phase 2 options for PEAP -->
+    <string-array name="wifi_peap_phase2_entries">
+        <item>"ไม่มี"</item>
+        <item>"MSCHAPV2"</item>
+        <item>"GTC"</item>
+    </string-array>
+
+    <!-- Phase 2 options for rest of EAP methods -->
+    <string-array name="wifi_phase2_entries">
+        <item>"ไม่มี"</item>
+        <item>"PAP"</item>
+        <item>"MSCHAP"</item>
+        <item>"MSCHAPV2"</item>
+        <item>"GTC"</item>
+    </string-array>
+
+    <!-- Wi-Fi IP settings. -->
+   <!-- Note that adding/removing/moving the items will need wifi settings code change. -->
+    <string-array name="wifi_ip_settings">
+        <!-- Use DHCP (Dynamic Host Configuration Protocol) for obtaining IP settings [CHAR LIMIT=25] -->
+        <item>"DHCP"</item>
+        <!-- Use statically defined IP settings [CHAR LIMIT=25]-->
+        <item>"คงที่"</item>
+    </string-array>
+
+    <!-- Wi-Fi proxy settings. -->
+    <!-- Note that adding/removing/moving the items will need wifi settings code change. -->
+    <string-array name="wifi_proxy_settings">
+        <!-- No HTTP proxy is used for the current wifi network [CHAR LIMIT=25] -->
+        <item>"ไม่มี"</item>
+        <!-- Manual HTTP proxy settings are used for the current wifi network [CHAR LIMIT=25] -->
+        <item>"ด้วยตนเอง"</item>
+        <!-- Proxy Auto-Config URL that is used for the current wifi network [CHAR LIMIT=25] -->
+        <item>"กำหนดค่าพร็อกซีอัตโนมัติ"</item>
+    </string-array>
+
+    <!-- Authentication Types used in APN editor -->
+    <string-array name="apn_auth_entries">
+        <item>"ไม่มี"</item>
+        <item>"PAP"</item>
+        <item>"CHAP"</item>
+        <item>"PAP หรือ CHAP"</item>
+    </string-array>
+
+    <string-array translatable="false" name="apn_auth_values">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>1</item>
+        <!-- Do not translate. -->
+        <item>2</item>
+        <!-- Do not translate. -->
+        <item>3</item>
+    </string-array>
+
+    <!-- Authentication Types used in APN editor -->
+    <string-array name="apn_protocol_entries">
+        <item>"IPv4"</item>
+        <item>"IPv6"</item>
+        <item>"IPv4/IPv6"</item>
+    </string-array>
+
+    <string-array translatable="false" name="apn_protocol_values">
+        <!-- Do not translate. -->
+        <item>IP</item>
+        <!-- Do not translate. -->
+        <item>IPV6</item>
+        <!-- Do not translate. -->
+        <item>IPV4V6</item>
+    </string-array>
+
+    <!-- Bearer Info used in APN editor -->
+    <string-array name="bearer_entries">
+        <item>"LTE"</item>
+        <item>"eHRPD"</item>
+        <item>"ไม่ระบุ"</item>
+    </string-array>
+
+    <string-array translatable="false" name="bearer_values">
+        <!-- Do not translate. -->
+        <item>14</item>
+        <!-- Do not translate. -->
+        <item>13</item>
+        <!-- Do not translate. -->
+        <item>0</item>
+    </string-array>
+
+    <!-- MVNO Info used in APN editor -->
+    <string-array name="mvno_type_entries">
+        <!-- Do not translate. -->
+        <item>"ไม่มี"</item>
+        <!-- Do not translate. -->
+        <item>"SPN"</item>
+        <!-- Do not translate. -->
+        <item>"IMSI"</item>
+        <!-- Do not translate. -->
+        <item>"GID"</item>
+    </string-array>
+
+    <string-array translatable="false" name="mvno_type_values">
+        <!-- Do not translate. -->
+        <item/>
+        <!-- Do not translate. -->
+        <item>spn</item>
+        <!-- Do not translate. -->
+        <item>imsi</item>
+        <!-- Do not translate. -->
+        <item>gid</item>
+    </string-array>
+
+    <!-- Apps on SD installation location options in ApplicationSettings -->
+    <string-array name="app_install_location_entries">
+        <item>"ที่จัดเก็บข้อมูลอุปกรณ์ภายใน"</item>
+        <item>"การ์ด SD แบบนำออกได้"</item>
+        <item>"ให้ระบบเลือก"</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="app_install_location_values" translatable="false">
+        <item>device</item>
+        <item>sdcard</item>
+        <item>auto</item>
+    </string-array>
+
+    <!-- App ops permissions -->
+    <string-array name="app_ops_permissions">
+        <item>อนุญาต</item>
+        <item>ละเว้น</item>
+        <item>ถามเสมอ</item>
+    </string-array>
+
+    <!-- Names of categories of app ops tabs -->
+    <string-array name="app_ops_categories">
+        <item>ตำแหน่ง</item>
+        <item>"ส่วนตัว"</item>
+        <item>"การรับส่งข้อความ"</item>
+        <item>"สื่อ"</item>
+        <item>"อุปกรณ์"</item>
+        <item>เริ่มต้นการทำงาน</item>
+    </string-array>
+
+    <!-- User display names for app ops codes -->
+    <string-array name="app_ops_summaries">
+        <item>"ตำแหน่งคร่าวๆ"</item>
+        <item>"ตำแหน่งโดยละเอียด"</item>
+        <item>"GPS"</item>
+        <item>"สั่น"</item>
+        <item>"อ่านรายชื่อติดต่อ"</item>
+        <item>"แก้ไขรายชื่อติดต่อ"</item>
+        <item>"อ่านประวัติการโทร"</item>
+        <item>"แก้ไขประวัติการโทร"</item>
+        <item>"อ่านปฏิทิน"</item>
+        <item>"แก้ไขปฏิทิน"</item>
+        <item>"ค้นหา WiFi"</item>
+        <item>"การแจ้งเตือน"</item>
+        <item>"ค้นหาเซลล์"</item>
+        <item>"โทรเข้าโทรศัพท์"</item>
+        <item>"อ่าน SMS"</item>
+        <item>"เขียน SMS"</item>
+        <item>"รับ SMS"</item>
+        <item>"รับ SMS ฉุกเฉิน"</item>
+        <item>"รับ MMS"</item>
+        <item>"รับ WAP Push"</item>
+        <item>"ส่ง SMS"</item>
+        <item>"อ่าน ICC SMS"</item>
+        <item>"เขียน ICC SMS"</item>
+        <item>"แก้ไขการตั้งค่า"</item>
+        <item>"วาดด้านบน"</item>
+        <item>"เข้าถึงการแจ้งเตือน"</item>
+        <item>"กล้อง"</item>
+        <item>"บันทึกเสียง"</item>
+        <item>"เล่นเสียง"</item>
+        <item>"อ่านคลิปบอร์ด"</item>
+        <item>"แก้ไขคลิปบอร์ด"</item>
+        <item>"ปุ่มสื่อ"</item>
+        <item>"โฟกัสอัตโนมัติ"</item>
+        <item>"ระดับเสียงหลัก"</item>
+        <item>"ระดับเสียงสนทนา"</item>
+        <item>"ระดับเสียงเรียกเข้า"</item>
+        <item>"ระดับเสียงของสื่อ"</item>
+        <item>"ระดับเสียงปลุก"</item>
+        <item>"ระดับเสียงการแจ้งเตือน"</item>
+        <item>"ระดับเสียงบลูทูธ"</item>
+        <item>"ทำงานตลอดเวลา"</item>
+        <item>"ตำแหน่งจอภาพ"</item>
+        <item>"ติดตามตำแหน่งโดยใช้พลังงานมาก"</item>
+        <item>"ดูสถิติการใช้งาน"</item>
+        <item>"ปิด/เปิดเสียงไมโครโฟน"</item>
+        <item>"สื่อของโครงการ"</item>
+        <item>"เปิดใช้งาน VPN"</item>
+        <item>เปิดใช้งาน VPN</item>
+        <item>การเปลี่ยน WLAN</item>
+        <item>การเปลี่ยนแปลงบลูทูธ</item>
+        <item>ส่ง MMS</item>
+        <item>อ่าน MMS</item>
+        <item>เขียน MMS</item>
+        <item>เริ่มอัตโนมัติ</item>
+        <item>การเปลี่ยน NFC</item>
+        <item>ลบ SMS</item>
+        <item>ลบ MMS</item>
+        <item>ลบรายชื่อติดต่อ</item>
+        <item>ลบบันทึกการโทร</item>
+        <item>การเปลี่ยนแปลงข้อมูล</item>
+    </string-array>
+
+    <!-- User display names for app ops codes -->
+    <string-array name="app_ops_labels">
+        <item>"ตำแหน่ง"</item>
+        <item>"ตำแหน่ง"</item>
+        <item>"ตำแหน่ง"</item>
+        <item>"สั่น"</item>
+        <item>"อ่านรายชื่อติดต่อ"</item>
+        <item>"แก้ไขรายชื่อติดต่อ"</item>
+        <item>"อ่านประวัติการโทร"</item>
+        <item>"แก้ไขประวัติการโทร"</item>
+        <item>"อ่านปฏิทิน"</item>
+        <item>"แก้ไขปฏิทิน"</item>
+        <item>"ตำแหน่ง"</item>
+        <item>"การแจ้งเตือนโพสต์"</item>
+        <item>"ตำแหน่ง"</item>
+        <item>"โทรเข้าโทรศัพท์"</item>
+        <item>"อ่าน SMS/MMS"</item>
+        <item>"เขียน SMS/MMS"</item>
+        <item>"รับ SMS/MMS"</item>
+        <item>"รับ SMS/MMS"</item>
+        <item>"รับ SMS/MMS"</item>
+        <item>"รับ SMS/MMS"</item>
+        <item>"ส่ง SMS/MMS"</item>
+        <item>"อ่าน SMS/MMS"</item>
+        <item>"เขียน SMS/MMS"</item>
+        <item>"แก้ไขการตั้งค่า"</item>
+        <item>"วาดด้านบน"</item>
+        <item>"เข้าถึงการแจ้งเตือน"</item>
+        <item>"กล้อง"</item>
+        <item>"บันทึกเสียง"</item>
+        <item>"เล่นเสียง"</item>
+        <item>"อ่านคลิปบอร์ด"</item>
+        <item>"แก้ไขคลิปบอร์ด"</item>
+        <item>"ปุ่มสื่อ"</item>
+        <item>"โฟกัสอัตโนมัติ"</item>
+        <item>"ระดับเสียงหลัก"</item>
+        <item>"ระดับเสียงสนทนา"</item>
+        <item>"ระดับเสียงเรียกเข้า"</item>
+        <item>"ระดับเสียงของสื่อ"</item>
+        <item>"ระดับเสียงปลุก"</item>
+        <item>"ระดับเสียงของการแจ้งเตือน"</item>
+        <item>"ระดับบลูทูธ"</item>
+        <item>"ทำงานตลอดเวลา"</item>
+        <item>"ตำแหน่ง"</item>
+        <item>"ตำแหน่ง"</item>
+        <item>"ดูสถิติการใช้งาน"</item>
+        <item>"ปิด/เปิดเสียงไมโครโฟน"</item>
+        <item>"สื่อของโครงการ"</item>
+        <item>"เปิดใช้งาน VPN"</item>
+        <item>เปิดใช้งาน VPN</item>
+        <item>การเปลี่ยน WLAN</item>
+        <item>การเปลี่ยนแปลงบลูทูธ</item>
+        <item>ส่ง MMS</item>
+        <item>อ่าน MMS</item>
+        <item>เขียน MMS</item>
+        <item>เริ่มอัตโนมัติ</item>
+        <item>การเปลี่ยน NFC</item>
+        <item>ลบ SMS</item>
+        <item>ลบ MMS</item>
+        <item>ลบรายชื่อติดต่อ</item>
+        <item>ลบบันทึกการโทร</item>
+        <item>การเปลี่ยนแปลงข้อมูล</item>
+    </string-array>
+
+    <!-- Titles for the list of long press timeout options. -->
+    <string-array name="long_press_timeout_selector_titles">
+        <!-- A title for the option for short long-press timeout [CHAR LIMIT=25] -->
+        <item>"สั้น"</item>
+        <!-- A title for the option for medium long-press timeout [CHAR LIMIT=25] -->
+        <item>"ปานกลาง"</item>
+        <!-- A title for the option for long long-press timeout [CHAR LIMIT=25] -->
+        <item>"ยาว"</item>
+    </string-array>
+
+    <!-- Values for the list of long press timeout options. -->
+    <string-array name="long_press_timeout_selector_values" translatable="false">
+        <item>500</item>
+        <item>1000</item>
+        <item>1500</item>
+    </string-array>
+
+    <!-- Titles for captioning typeface preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_typeface_selector_titles">
+        <item>"ค่าเริ่มต้น"</item>
+        <item>"Sans Serif"</item>
+        <item>"Sans-serif แบบย่อ"</item>
+        <item>"Sans-serif ความกว้างคงที่"</item>
+        <item>"Serif"</item>
+        <item>"Serif ความกว้างคงที่"</item>
+        <item>"แบบไม่เป็นทางการ"</item>
+        <item>"คัดลายมือ"</item>
+        <item>"อักษรตัวพิมพ์ใหญ่ขนาดเล็ก"</item>
+    </string-array>
+
+    <!-- Values for captioning typeface preference. -->
+    <string-array name="captioning_typeface_selector_values" translatable="false">
+        <item/>
+        <item>sans-serif</item>
+        <item>sans-serif-condensed</item>
+        <item>sans-serif-monospace</item>
+        <item>serif</item>
+        <item>serif-monospace</item>
+        <item>casual</item>
+        <item>cursive</item>
+        <item>sans-serif-smallcaps</item>
+    </string-array>
+
+    <!-- Titles for captioning font size preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_font_size_selector_titles">
+        <item>"เล็กมาก"</item>
+        <item>"เล็ก"</item>
+        <item>"ปกติ"</item>
+        <item>"ใหญ่"</item>
+        <item>"ใหญ่มาก"</item>
+    </string-array>
+
+    <!-- Values for captioning font size preference. -->
+    <string-array name="captioning_font_size_selector_values" translatable="false">
+        <item>0.25</item>
+        <item>0.5</item>
+        <item>1.0</item>
+        <item>1.5</item>
+        <item>2.0</item>
+    </string-array>
+
+    <!-- Titles for captioning character edge type preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_edge_type_selector_titles">
+        <item>"ค่าเริ่มต้น"</item>
+        <item>"ไม่มี"</item>
+        <item>"ตีกรอบ"</item>
+        <item>"เงาตกกระทบ"</item>
+        <item>"ยกขึ้น"</item>
+        <item>"ลดต่ำ"</item>
+    </string-array>
+
+    <!-- Values for captioning character edge type preference. -->
+    <integer-array name="captioning_edge_type_selector_values" translatable="false">
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </integer-array>
+
+    <!-- Titles for captioning color preference. -->
+    <string-array name="captioning_color_selector_titles" translatable="false">
+        <item>@string/color_unspecified</item>
+        <item>@string/color_white</item>
+        <item>@string/color_black</item>
+        <item>@string/color_red</item>
+        <item>@string/color_yellow</item>
+        <item>@string/color_green</item>
+        <item>@string/color_cyan</item>
+        <item>@string/color_blue</item>
+        <item>@string/color_magenta</item>
+    </string-array>
+
+    <!-- Values for captioning color preference. -->
+    <integer-array name="captioning_color_selector_values" translatable="false">
+        <item>0x00000100</item>
+        <item>0xFFFFFFFF</item>
+        <item>0xFF000000</item>
+        <item>0xFFFF0000</item>
+        <item>0xFFFFFF00</item>
+        <item>0xFF00FF00</item>
+        <item>0xFF00FFFF</item>
+        <item>0xFF0000FF</item>
+        <item>0xFFFF00FF</item>
+        <item>0xFF000055</item>
+        <item>0xFF0000AA</item>
+        <item>0xFF005500</item>
+        <item>0xFF005555</item>
+        <item>0xFF0055AA</item>
+        <item>0xFF0055FF</item>
+        <item>0xFF00AA00</item>
+        <item>0xFF00AA55</item>
+        <item>0xFF00AAAA</item>
+        <item>0xFF00AAFF</item>
+        <item>0xFF00FF55</item>
+        <item>0xFF00FFAA</item>
+        <item>0xFF550000</item>
+        <item>0xFF550055</item>
+        <item>0xFF5500AA</item>
+        <item>0xFF5500FF</item>
+        <item>0xFF555500</item>
+        <item>0xFF555555</item>
+        <item>0xFF5555AA</item>
+        <item>0xFF5555FF</item>
+        <item>0xFF55AA00</item>
+        <item>0xFF55AA55</item>
+        <item>0xFF55AAAA</item>
+        <item>0xFF55AAFF</item>
+        <item>0xFF55FF00</item>
+        <item>0xFF55FF55</item>
+        <item>0xFF55FFAA</item>
+        <item>0xFF55FFFF</item>
+        <item>0xFFAA0000</item>
+        <item>0xFFAA0055</item>
+        <item>0xFFAA00AA</item>
+        <item>0xFFAA00FF</item>
+        <item>0xFFAA5500</item>
+        <item>0xFFAA5555</item>
+        <item>0xFFAA55AA</item>
+        <item>0xFFAA55FF</item>
+        <item>0xFFAAAA00</item>
+        <item>0xFFAAAA55</item>
+        <item>0xFFAAAAAA</item>
+        <item>0xFFAAAAFF</item>
+        <item>0xFFAAFF00</item>
+        <item>0xFFAAFF55</item>
+        <item>0xFFAAFFAA</item>
+        <item>0xFFAAFFFF</item>
+        <item>0xFFFF0055</item>
+        <item>0xFFFF00AA</item>
+        <item>0xFFFF5500</item>
+        <item>0xFFFF5555</item>
+        <item>0xFFFF55AA</item>
+        <item>0xFFFF55FF</item>
+        <item>0xFFFFAA00</item>
+        <item>0xFFFFAA55</item>
+        <item>0xFFFFAAAA</item>
+        <item>0xFFFFAAFF</item>
+        <item>0xFFFFFF55</item>
+        <item>0xFFFFFFAA</item>
+    </integer-array>
+
+    <!-- Titles for captioning opacity preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_opacity_selector_titles">
+        <item>"25%"</item>
+        <item>"50%"</item>
+        <item>"75%"</item>
+        <item>"100%"</item>
+    </string-array>
+
+    <!-- Values for captioning opacity preference. -->
+    <integer-array name="captioning_opacity_selector_values" translatable="false">
+        <item>0x40FFFFFF</item>
+        <item>0x80FFFFFF</item>
+        <item>0xC0FFFFFF</item>
+        <item>0xFFFFFFFF</item>
+    </integer-array>
+
+    <!-- Titles for captioning text style preset preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_preset_selector_titles">
+        <item>"ใช้ค่าเริ่มต้นของแอป"</item>
+        <item>"สีขาวบนพื้นสีดำ"</item>
+        <item>"สีดำบนพื้นสีขาว"</item>
+        <item>"สีเหลืองบนพื้นสีดำ"</item>
+        <item>"สีเหลืองบนพื้นสีน้ำเงิน"</item>
+        <item>"กำหนดเอง"</item>
+    </string-array>
+
+    <!-- Values for captioning text style preset preference. -->
+    <integer-array name="captioning_preset_selector_values" translatable="false">
+        <item>4</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>-1</item>
+    </integer-array>
+
+    <!-- Titles for logd limit size selection preference. [CHAR LIMIT=14] -->
+    <string-array name="select_logd_size_titles">
+        <item>"64 K"</item>
+        <item>"256 K"</item>
+        <item>"1 M"</item>
+        <item>"4 M"</item>
+        <item>"16 M"</item>
+    </string-array>
+
+    <!-- Titles for logd limit size lowram selection preference. [CHAR LIMIT=14] -->
+    <string-array name="select_logd_size_lowram_titles">
+        <item>"64 K"</item>
+        <item>"256 K"</item>
+        <item>"1 M"</item>
+    </string-array>
+
+    <!-- Values for logd limit size selection preference. -->
+    <string-array name="select_logd_size_values" translatable="false">
+        <item>65536</item>
+        <item>262144</item>
+        <item>1048576</item>
+        <item>4194304</item>
+        <item>16777216</item>
+    </string-array>
+
+    <!-- Summaries for logd limit size selection preference. [CHAR LIMIT=30]-->
+    <string-array name="select_logd_size_summaries">
+        <item>"64 K ต่อบัฟเฟอร์ไฟล์บันทึก"</item>
+        <item>"256 K ต่อบัฟเฟอร์ไฟล์บันทึก"</item>
+        <item>"1 M ต่อบัฟเฟอร์ไฟล์บันทึก"</item>
+        <item>"4 M ต่อบัฟเฟอร์ไฟล์บันทึก"</item>
+        <item>"16 M ต่อบัฟเฟอร์ไฟล์บันทึก"</item>
+    </string-array>
+
+    <!-- Titles for HDCP checking preference. [CHAR LIMIT=35] -->
+    <string-array name="hdcp_checking_titles">
+        <item>"ไม่ต้องตรวจสอบ"</item>
+        <item>"ตรวจสอบเนื้อหา DRM เท่านั้น"</item>
+        <item>"ตรวจสอบทุกครั้ง"</item>
+    </string-array>
+
+    <!-- Values for HDCP checking preference. -->
+    <string-array name="hdcp_checking_values" translatable="false">
+        <item>never</item>
+        <item>drm-only</item>
+        <item>always</item>
+    </string-array>
+
+    <!-- Summaries for HDCP checking preference. [CHAR LIMIT=100]-->
+    <string-array name="hdcp_checking_summaries">
+        <item>"ห้ามใช้การตรวจสอบ HDCP"</item>
+        <item>"ใช้การตรวจสอบ HDCP สำหรับเนื้อหา DRM เท่านั้น"</item>
+        <item>"ใช้การตรวจสอบ HDCP เสมอ"</item>
+    </string-array>
+
+    <!-- Titles for window animation scale preference. [CHAR LIMIT=35] -->
+    <string-array name="window_animation_scale_entries">
+        <item>"ปิดภาพเคลื่อนไหว"</item>
+        <item>"ภาพเคลื่อนไหวขนาด .5 เท่า"</item>
+        <item>"ภาพเคลื่อนไหวขนาด 1 เท่า"</item>
+        <item>"ภาพเคลื่อนไหวขนาด 1.5 เท่า"</item>
+        <item>"ภาพเคลื่อนไหวขนาด 2 เท่า"</item>
+        <item>"ภาพเคลื่อนไหวขนาด 5 เท่า"</item>
+        <item>"ภาพเคลื่อนไหวขนาด 10 เท่า"</item>
+    </string-array>
+
+    <!-- Values for window animation scale preference. -->
+    <string-array name="window_animation_scale_values" translatable="false">
+        <item>0</item>
+        <item>.5</item>
+        <item>1</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+
+    <!-- Titles for transition animation scale preference. [CHAR LIMIT=35] -->
+    <string-array name="transition_animation_scale_entries">
+        <item>"ปิดภาพเคลื่อนไหว"</item>
+        <item>"ภาพเคลื่อนไหวขนาด .5 เท่า"</item>
+        <item>"ภาพเคลื่อนไหวขนาด 1 เท่า"</item>
+        <item>"ภาพเคลื่อนไหวขนาด 1.5 เท่า"</item>
+        <item>"ภาพเคลื่อนไหวขนาด 2 เท่า"</item>
+        <item>"ภาพเคลื่อนไหวขนาด 5 เท่า"</item>
+        <item>"ภาพเคลื่อนไหวขนาด 10 เท่า"</item>
+    </string-array>
+
+    <!-- Values for transition animation scale preference. -->
+    <string-array name="transition_animation_scale_values" translatable="false">
+        <item>0</item>
+        <item>.5</item>
+        <item>1</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+
+    <!-- Titles for animator duration scale preference. [CHAR LIMIT=35] -->
+    <string-array name="animator_duration_scale_entries">
+        <item>"ปิดภาพเคลื่อนไหว"</item>
+        <item>"ความเร็วภาพเคลื่อนไหว .5 เท่า"</item>
+        <item>"ความเร็วภาพเคลื่อนไหว 1 เท่า"</item>
+        <item>"ความเร็วภาพเคลื่อนไหว 1.5 เท่า"</item>
+        <item>"ความเร็วภาพเคลื่อนไหว 2 เท่า"</item>
+        <item>"ความเร็วภาพเคลื่อนไหว 5 เท่า"</item>
+        <item>"ความเร็วภาพเคลื่อนไหว 10 เท่า"</item>
+    </string-array>
+
+    <!-- Values for animator duration scale preference. -->
+    <string-array name="animator_duration_scale_values" translatable="false">
+        <item>0</item>
+        <item>.5</item>
+        <item>1</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+
+    <!-- Titles for overlay display devices preference. [CHAR LIMIT=35] -->
+    <string-array name="overlay_display_devices_entries">
+        <item>"ไม่มี"</item>
+        <item>"720x480 mdpi"</item>
+        <item>"720x480 mdpi (ปลอดภัย)"</item>
+        <item>"1280x720 tvdpi"</item>
+        <item>"1280x720 tvdpi (ปลอดภัย)"</item>
+        <item>"1920x1080 xhdpi"</item>
+        <item>"1920x1080 xhdpi (ปลอดภัย)"</item>
+        <item>"1280x720 tvdpi และ 1920x1080 xhdpi"</item>
+    </string-array>
+
+    <!-- Values for overlay display devices preference. -->
+    <string-array name="overlay_display_devices_values" translatable="false">
+        <item/>
+        <item>720x480/160</item>
+        <item>720x480/160,secure</item>
+        <item>1280x720/213</item>
+        <item>1280x720/213,secure</item>
+        <item>1920x1080/320</item>
+        <item>1920x1080/320,secure</item>
+        <item>1280x720/213;1920x1080/320</item>
+    </string-array>
+
+    <!-- Titles for OpenGL traces preference. [CHAR LIMIT=35] -->
+    <string-array name="enable_opengl_traces_entries">
+        <item>"ไม่มี"</item>
+        <item>"Logcat"</item>
+        <item>"Systrace (กราฟิก)"</item>
+        <item>"ชุดรายการเรียกใน glGetError"</item>
+    </string-array>
+
+    <!-- Values for OpenGL traces preference. -->
+    <string-array name="enable_opengl_traces_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>systrace</item>
+        <item>error</item>
+    </string-array>
+
+    <!-- Titles for non-rectangular clipping preference. [CHAR LIMIT=35] -->
+    <string-array name="show_non_rect_clip_entries">
+        <item>"ปิด"</item>
+        <item>"วาดคลิปที่ไม่ใช่สี่เหลี่ยมด้วยสีฟ้า"</item>
+        <item>"ไฮไลต์คำสั่งวาดที่ทดสอบด้วยสีเขียว"</item>
+    </string-array>
+
+    <!-- Values for non-rectangular clipping preference. -->
+    <string-array name="show_non_rect_clip_values" translatable="false">
+        <item>hide</item>
+        <item>region</item>
+        <item>highlight</item>
+    </string-array>
+
+    <!-- Titles for frame time tracking preference. [CHAR LIMIT=35] -->
+    <string-array name="track_frame_time_entries">
+        <item>"ปิด"</item>
+        <item>"เป็นแถบบนหน้าจอ"</item>
+        <item>"ใน adb shell dumpsys gfxinfo"</item>
+    </string-array>
+
+    <!-- Values for frame time tracking preference. -->
+    <string-array name="track_frame_time_values" translatable="false">
+        <item>false</item>
+        <item>visual_bars</item>
+        <item>true</item>
+    </string-array>
+
+    <!-- Titles for debug overdraw preference. [CHAR LIMIT=50] -->
+    <string-array name="debug_hw_overdraw_entries">
+        <item>"ปิด"</item>
+        <item>"แสดงพื้นที่การวาดทับ"</item>
+        <item>"แสดงพื้นที่สำหรับคนตาบอดสีเขียว"</item>
+    </string-array>
+
+    <!-- Values for debug overdraw preference. -->
+    <string-array name="debug_hw_overdraw_values" translatable="false">
+        <item>false</item>
+        <item>show</item>
+        <item>show_deuteranomaly</item>
+    </string-array>
+
+    <!-- Titles for app process limit preference. [CHAR LIMIT=35] -->
+    <string-array name="app_process_limit_entries">
+        <item>"ขีดจำกัดมาตรฐาน"</item>
+        <item>"ไม่มีกระบวนการพื้นหลัง"</item>
+        <item>"มากที่สุด 1 กระบวนการ"</item>
+        <item>"มากที่สุด 2 กระบวนการ"</item>
+        <item>"มากที่สุด 3 กระบวนการ"</item>
+        <item>"มากที่สุด 4 กระบวนการ"</item>
+    </string-array>
+
+    <!-- Values for app process limit preference. -->
+    <string-array name="app_process_limit_values" translatable="false">
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <!-- Match this with the constants in VpnProfile. --> <skip/>
+    <!-- Short names for each VPN type, not really translatable. [CHAR LIMIT=20] -->
+    <string-array name="vpn_types" translatable="false">
+        <item>PPTP</item>
+        <item>L2TP/IPSec PSK</item>
+        <item>L2TP/IPSec RSA</item>
+        <item>IPSec Xauth PSK</item>
+        <item>IPSec Xauth RSA</item>
+        <item>IPSec Hybrid RSA</item>
+    </string-array>
+
+    <!-- Match this with the constants in VpnProfile. --> <skip/>
+    <!-- Longer descriptions for each VPN type. [CHAR LIMIT=100] -->
+    <string-array name="vpn_types_long">
+        <item>"PPTP VPN"</item>
+        <item>"L2TP/IPSec VPN พร้อมด้วยคีย์ที่แชร์ไว้ล่วงหน้า"</item>
+        <item>"L2TP/IPSec VPN พร้อมด้วยใบรับรอง"</item>
+        <item>"IPSec VPN พร้อมด้วยคีย์ที่แชร์ไว้ล่วงหน้าและการตรวจสอบสิทธิ์ Xauth"</item>
+        <item>"IPSec VPN พร้อมด้วยใบรับรองและการตรวจสอบสิทธิ์ Xauth"</item>
+        <item>"IPSec VPN พร้อมด้วยใบรับรองและการตรวจสอบสิทธิ์แบบผสม"</item>
+    </string-array>
+
+    <!-- Match this with the constants in LegacyVpnInfo. --> <skip/>
+    <!-- Status for a VPN network. [CHAR LIMIT=100] -->
+    <string-array name="vpn_states">
+        <!-- Status message when VPN is disconnected. -->
+        <item>"ไม่ได้เชื่อมต่อ"</item>
+        <!-- Status message when VPN is initializing. -->
+        <item>"กำลังเริ่มต้น..."</item>
+        <!-- Status message when VPN is connecting. -->
+        <item>"กำลังเชื่อมต่อ…"</item>
+        <!-- Status message when VPN is connected. -->
+        <item>"เชื่อมต่อแล้ว"</item>
+        <!-- Status message when VPN is timeout. -->
+        <item>"ระยะหมดเวลา"</item>
+        <!-- Status message when VPN is failed. -->
+        <item>"ไม่สำเร็จ"</item>
+    </string-array>
+
+    <!-- User content ratings for restricted users [CHAR LIMIT=30] -->
+    <string-array name="user_content_ratings_entries" translatable="false">
+        <item>Ascended being</item>
+        <item>Human</item>
+        <item>Neanderthal</item>
+        <item>Chimp</item>
+        <item>Monkey</item>
+    </string-array>
+
+    <!-- Values for user content ratings for restricted users -->
+    <string-array name="user_content_ratings_values" translatable="false">
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+
+    <!-- Values for premium SMS permission selector [CHAR LIMIT=30] -->
+    <string-array name="security_settings_premium_sms_values">
+        <!-- Ask user before sending to premium SMS short code. -->
+        <item>"ถาม"</item>
+        <!-- Never allow app to send to premium SMS short code. -->
+        <item>"ไม่อนุญาตเลย"</item>
+        <!-- Always allow app to send to premium SMS short code. -->
+        <item>"อนุญาตเสมอ"</item>
+    </string-array>
+
+    <!-- [CHAR LIMIT=30] Labels for memory states -->
+    <string-array name="ram_states">
+        <!-- Normal desired memory state. -->
+        <item>"ปกติ"</item>
+        <!-- Moderate memory state, not as good as normal. -->
+        <item>"ปานกลาง"</item>
+        <!-- Memory is running low. -->
+        <item>"ต่ำ"</item>
+        <!-- Memory is critical. -->
+        <item>"วิกฤต"</item>
+    </string-array>
+
+    <!-- Display color space adjustment modes for accessibility -->
+    <string-array name="daltonizer_type_entries" translatable="false">
+        <item>@string/daltonizer_mode_deuteranomaly</item>
+        <item>@string/daltonizer_mode_protanomaly</item>
+        <item>@string/daltonizer_mode_tritanomaly</item>
+    </string-array>
+
+    <!-- Values for display color space adjustment modes for accessibility -->
+    <string-array name="daltonizer_type_values" translatable="false">
+        <item>12</item>
+        <item>11</item>
+        <item>13</item>
+    </string-array>
+
+    <!-- values for screen color adjusting -->
+    <string-array name="screen_color_setting">
+        <item>มาตรฐาน</item>
+        <item>สว่าง</item>
+        <item>กำหนดเอง</item>
+    </string-array>
+
+    <!-- Display color space adjustment modes for developers -->
+    <string-array name="simulate_color_space_entries" translatable="false">
+        <item>@string/daltonizer_mode_disabled</item>
+        <item>@string/daltonizer_mode_monochromacy</item>
+        <item>@string/daltonizer_mode_deuteranomaly</item>
+        <item>@string/daltonizer_mode_protanomaly</item>
+        <item>@string/daltonizer_mode_tritanomaly</item>
+    </string-array>
+
+    <!-- Values for display color space adjustment modes for developers -->
+    <string-array name="simulate_color_space_values" translatable="false">
+        <item>-1</item>
+        <item>0</item>
+        <item>2</item>
+        <item>1</item>
+        <item>3</item>
+    </string-array>
+
+    <!-- Setting display values for zen mode -->
+    <string-array name="entries_zen_mode">
+        <item>"ปิด"</item>
+        <item>"การรบกวนที่จำกัด"</item>
+        <item>"การรบกวนเป็นศูนย์"</item>
+    </string-array>
+
+    <!-- Setting values for zen mode, must match the Settings.Global.ZEN_MODE_ constants -->
+    <string-array name="entryvalues_zen_mode" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- Battery saver mode: allowable trigger threshold levels. -->
+    <integer-array name="battery_saver_trigger_values" translatable="false">
+        <item>0</item>
+        <item>5</item>
+        <item>15</item>
+    </integer-array>
+
+    <!-- Process stats memory use details: labels for memory states -->
+    <string-array name="proc_stats_memory_states">
+        <item>"ปกติ"</item>
+        <item>"ปานกลาง"</item>
+        <item>"ต่ำ"</item>
+        <item>"วิกฤต"</item>
+    </string-array>
+
+    <!-- Process stats memory use details: labels for process -->
+    <string-array name="proc_stats_process_states">
+        <item>"ต่อเนื่อง"</item>
+        <item>"กิจกรรมแรก"</item>
+        <item>"สำคัญ (พื้นหน้า)"</item>
+        <item>"สำคัญ (พื้นหลัง)"</item>
+        <item>"การสำรองข้อมูล"</item>
+        <item>"ใช้หน่วยความจำมาก"</item>
+        <item>"บริการ (กำลังทำงาน)"</item>
+        <item>"บริการ (กำลังรีสตาร์ท)"</item>
+        <item>"ผู้รับ"</item>
+        <item>"หน้าแรก"</item>
+        <item>"กิจกรรมสุดท้าย"</item>
+        <item>"แคชไว้ (กิจกรรม)"</item>
+        <item>"แคชไว้ (ไคลเอ็นต์กิจกรรม)"</item>
+        <item>"แคชไว้ (ว่างเปล่า)"</item>
+    </string-array>
+
+    <!-- Defined the hide accounts\' type -->
+    <string-array name="hide_account_list">
+        <item>com.qualcomm.qti.calendarlocalaccount</item>
+        <item>com.android.localphone</item>
+        <item>com.android.sim</item>
+    </string-array>
+
+
+    <string-array name="cellcular2wifi_entries">
+        <item>เชื่อมต่อโดยอัตโนมัติ</item>
+        <item>เชื่อต่อด้วยตัวเอง</item>
+        <item>ถามเสมอ</item>
+    </string-array>
+
+    <string-array name="cellcular2wifi_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="hidesupl_plmn_list">
+        <item>46001</item>
+    </string-array>
+
+    <string-array name="origin_carrier_names" translateable="false">
+        <item>CMCC</item>
+        <item>CHINA\u0020\u0020MOBILE</item>
+        <item>CHN-UNICOM</item>
+        <item>China Mobile</item>
+        <item>China Unicom</item>
+        <item>China Telecom</item>
+        <item>中国移动</item>
+        <item>中国联通</item>
+        <item>中国电信</item>
+        <item>Searching for Service</item>
+    </string-array>
+    <string-array name="locale_carrier_names" translatable="false">
+        <item>China_Mobile</item>
+        <item>China_Mobile</item>
+        <item>China_Unicom</item>
+        <item>China_Mobile</item>
+        <item>China_Unicom</item>
+        <item>China_Telecom</item>
+        <item>China_Mobile</item>
+        <item>China_Unicom</item>
+        <item>China_Telecom</item>
+        <item>roamingTextSearching</item>
+    </string-array>
+
+    <string-array name="wifi_hotsopt_mode_entries">
+        <item>"ทุกครั้ง"</item>
+        <item>ปิดเมื่อไม่ได้ใช้งาน 5 นาที</item>
+        <item>ปิดเมื่อไม่ได้ใช้งาน 10 นาที</item>
+    </string-array>
+
+    <string-array name="wifi_hotsopt_mode_entryValues">
+        <item>Always</item>
+        <item>Turn_off_5min</item>
+        <item>Turn_off_10min</item>
+    </string-array>
+
+    <string-array name="wifi_hotsopt_mode_summaries">
+        <item>"ทุกครั้ง"</item>
+        <item>ปิดเมื่อไม่ได้ใช้งาน 5 นาที</item>
+        <item>ปิดเมื่อไม่ได้ใช้งาน 10 นาที</item>
+    </string-array>
+
+    <string-array name="default_sim_name">
+        <item>"การสมัคร 1"</item>
+        <item>"การสมัคร 2"</item>
+        <item>"การสมัคร 3"</item>
+    </string-array>
+    <string-array name="hidedm_plmn_list">
+        <item>46000</item>
+        <item>46002</item>
+        <item>46003</item>
+        <item>46007</item>
+    </string-array>
+    <string-array name="plmn_list_for_apn_disable">
+        <item>46001</item>
+        <item>46009</item>
+    </string-array>
+
+    <!-- Array of titles for sim color for multi-sim -->
+    <string-array name="color_picker">
+        <item>สีน้ำเงินอมเขียว</item>
+        <item>"น้ำเงิน"</item>
+        <item>สีคราม</item>
+        <item>"ม่วง"</item>
+        <item>สีชมพู</item>
+        <item>"แดง"</item>
+    </string-array>
+</resources>

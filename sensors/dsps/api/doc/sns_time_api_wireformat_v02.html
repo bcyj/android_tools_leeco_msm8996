@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+<title>Sensors Time APIs</title>
+<link rel="stylesheet" type="text/css" href="qmi_idl_wiredoc.css" />
+</head>
+
+<body>
+<h1>Sensors Time APIs
+</h1>
+ This file describes the messages which defines the Sensors Time APIs.<br> These APIs allow clients to request timestamps from different<br> processors through the Sensors Time Sevice.<br><br> The messages defined herin will be passed to the Sensor framework using<br> the sensor1_write() API.
+
+<h1>Service Type</h1>
+<ul>
+<li>QMI service type <b>SNS_QMI_SVC_ID_24</b>
+<li>Version <b>02</b>
+</ul>
+<h1><a name='Messages'>Messages</a></h1>
+<table class = 'tlv'><tr class='head'><th>Command</th><th>ID</th><th>Messages</th><th>Description</th></tr>
+<tr><td class='l'><a href='#SNS_COMMON_CANCEL'>SNS_COMMON_CANCEL</a></td><td>0x0000</td><td class='l'><a href="#SNS_COMMON_CANCEL_REQ">SNS_COMMON_CANCEL_REQ</a></br><a href="#SNS_SMGR_CANCEL_RESP">SNS_SMGR_CANCEL_RESP</a></br></td><td class='l'>This command cancel all requests from a client to any sensor service This shall be the first message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_COMMON_VERSION'>SNS_COMMON_VERSION</a></td><td>0x0001</td><td class='l'><a href="#SNS_COMMON_VERSION_REQ">SNS_COMMON_VERSION_REQ</a></br><a href="#SNS_COMMON_VERSION_RESP">SNS_COMMON_VERSION_RESP</a></br></td><td class='l'>This command requests the version of the sensor service This shall be the second message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_TIME_TIMESTAMP'>SNS_TIME_TIMESTAMP</a></td><td>0x0002</td><td class='l'><a href="#SNS_TIME_TIMESTAMP_REQ">SNS_TIME_TIMESTAMP_REQ</a></br><a href="#SNS_TIME_TIMESTAMP_RESP">SNS_TIME_TIMESTAMP_RESP</a></br></td><td class='l'>This command generates equivalent timestamps for multiple sources. </td></tr>
+<tr><td class='l'><a href='#SNS_TIME_TIMESTAMP_REPORT'>SNS_TIME_TIMESTAMP_REPORT</a></td><td>0x0003</td><td class='l'><a href="#SNS_TIME_TIMESTAMP_IND">SNS_TIME_TIMESTAMP_IND</a></br></td><td class='l'>Report containing equivalent apps and SSC timestamps. </td></tr>
+</table>
+<br><br>
+<h4>Description of  REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_COMMON_CANCEL'></a><a href='#Messages'>SNS_COMMON_CANCEL</a></h2>
+This command cancel all requests from a client to any sensor service<br><br> This shall be the first message of any sensor service.
+<h4>Message ID</h4>
+0x0000
+<h3><a name="SNS_COMMON_CANCEL_REQ"></a><a href='#Messages'>SNS_COMMON_CANCEL_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SMGR_CANCEL_RESP"></a><a href='#Messages'>SNS_SMGR_CANCEL_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_COMMON_CANCEL REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_COMMON_VERSION'></a><a href='#Messages'>SNS_COMMON_VERSION</a></h2>
+This command requests the version of the sensor service<br><br> This shall be the second message of any sensor service.
+<h4>Message ID</h4>
+0x0001
+<h3><a name="SNS_COMMON_VERSION_REQ"></a><a href='#Messages'>SNS_COMMON_VERSION_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_COMMON_VERSION_RESP"></a><a href='#Messages'>SNS_COMMON_VERSION_RESP</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>interface_version_number</td><td>4</td><td class='l'>The version number of the interface supported by the service </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_message_id</td><td>2</td><td class='l'>The maximum message ID supported by this service </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_COMMON_VERSION REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_TIME_TIMESTAMP'></a><a href='#Messages'>SNS_TIME_TIMESTAMP</a></h2>
+This command generates equivalent timestamps for multiple sources.
+<h4>Message ID</h4>
+0x0002
+<h3><a name="SNS_TIME_TIMESTAMP_REQ"></a><a href='#Messages'>SNS_TIME_TIMESTAMP_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>reg_report</td><td>1</td><td class='l'>Register for periodic timestamp offset reports </td></tr>
+
+</table>
+<h3><a name="SNS_TIME_TIMESTAMP_RESP"></a><a href='#Messages'>SNS_TIME_TIMESTAMP_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp_dsps</td><td>4</td><td class='l'>Timestamp from the DSPS in clock ticks </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>8</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp_apps</td><td>8</td><td class='l'>Timestamp from the Apps processor in nanoseconds since last epoch </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x12</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>error_code</td><td>4</td><td class='l'>Error code which may indicate the invalidity of the included timestamp values </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x13</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>dsps_rollover_cnt</td><td>4</td><td class='l'>Number of times the DSPS clock has "rolled over" and restarted at 0 </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x14</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>8</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp_apps_boottime</td><td>8</td><td class='l'>Timestamp from the Apps processor in nanoseconds since boot </td></tr>
+
+</table>
+<h4>Description of SNS_TIME_TIMESTAMP REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_TIME_TIMESTAMP_REPORT'></a><a href='#Messages'>SNS_TIME_TIMESTAMP_REPORT</a></h2>
+Report containing equivalent apps and SSC timestamps.
+<h4>Message ID</h4>
+0x0003
+<h4>Version introduced</h4>
+Major - 2, Minor - 3
+<h3><a name="SNS_TIME_TIMESTAMP_IND"></a><a href='#Messages'>SNS_TIME_TIMESTAMP_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp_dsps</td><td>4</td><td class='l'>Timestamp from the DSPS in clock ticks </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>8</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp_apps</td><td>8</td><td class='l'>Timestamp from the Apps processor in nanoseconds since last epoch </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>dsps_rollover_cnt</td><td>4</td><td class='l'>Number of times the DSPS clock has "rolled over" and restarted at 0 </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>8</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp_apps_boottime</td><td>8</td><td class='l'>Timestamp from the Apps processor in nanoseconds since boot </td></tr>
+
+</table>
+<h4>Description of SNS_TIME_TIMESTAMP_REPORT</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>

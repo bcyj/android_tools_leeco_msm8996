@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2013-2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Deprecated strings - Move the identifiers to this section, mark as
+        DO NOT TRANSLATE, and remove the actual text. These will be removed in a
+        bulk operation. -->
+    <!-- Do Not Translate. Unused string. -->
+
+    <!-- Short name of Microsoft Exchange account type; used by AccountManager -->
+    <string name="exchange_eas_name" translatable="false">Exchange</string>
+    <!-- Long name of Microsoft Exchange account type; used by AccountManager -->
+    <string name="exchange_name_alternate">"Microsoft Exchange ActiveSync"</string>
+
+    <!-- Message subject for meeting accepted response. This will be followed
+        by a colon and the title of the meeting (i.e. the title of the meeting becomes
+        part of the subject of the message that\'s sent) -->
+    <string name="meeting_accepted">"已接受：<xliff:g id="SUBJECT">%s</xliff:g>"</string>
+    <!-- Message subject for meeting declined response. This is followed by
+        a colon and the title of the meeting (i.e. the title of the meeting becomes
+        part of the subject of the message that\'s sent) -->
+    <string name="meeting_declined">"已拒絕：<xliff:g id="SUBJECT">%s</xliff:g>"</string>
+    <!-- Message subject for meeting tentative response. This is followed by
+        a colon and the title of the meeting (i.e. the title of the meeting becomes
+        part of the subject of the message that\'s sent) -->
+    <string name="meeting_tentative">"未定：<xliff:g id="SUBJECT">%s</xliff:g>"</string>
+    <!-- Message subject for a canceled meeting email. This is followed by a
+        colon and the title of the meeting (i.e. the title of the meeting becomes
+        part of the subject of the message that\'s sent) -->
+    <string name="meeting_canceled">"已取消：<xliff:g id="SUBJECT">%s</xliff:g>"</string>
+    <!-- Message subject for an updated meeting email. This is followed by a
+        colon and the title of the meeting (i.e. the title of the meeting becomes
+        part of the subject of the message that\'s sent) -->
+    <string name="meeting_updated">"已更新：<xliff:g id="SUBJECT">%s</xliff:g>"</string>
+
+    <!-- Indicate when a meeting takes place. This is presented in in bullet
+        form, as in, "When: xxx" followed by "Where: xxx" -->
+    <string name="meeting_when">"時間：<xliff:g id="WHEN">%s</xliff:g>"</string>
+    <!-- Indicate where a meeting takes place. This is presented in in bullet
+        form, as in, "When: xxx" followed by "Where: xxx" -->
+    <string name="meeting_where">"地點：<xliff:g id="WHERE">%s</xliff:g>"</string>
+    <!-- Indicate that a meeting is recurring. This would normally be presented
+        after "When: xxx", e.g. "When: Tue, Mar 10, 2010 at 2:30pm (recurring)" -->
+    <string name="meeting_recurring">"時間：<xliff:g id="EVENTDATE">%s</xliff:g> (週期性)"</string>
+    <!-- Indicate that a meeting lasts all day. This would normally be presented
+        after "When: xxx", e.g. "When: Tue, Mar 10, 2010 (all day)" -->
+    <string name="meeting_allday">"時間：<xliff:g id="EVENTDATE">%s</xliff:g> (全日)"</string>
+    <!-- Indicate that a meeting lasts all day and is recurring. This would normally be presented
+        after "When: xxx", e.g. "When: Tue, Mar 10, 2010 (all day, recurring)" -->
+    <string name="meeting_allday_recurring">"時間：<xliff:g id="EVENTDATE">%s</xliff:g> (全日，週期性)"</string>
+
+    <!-- The name of this APK as shown in manage applications settings. [CHAR LIMIT=30] -->
+    <string name="app_name">"Exchange 服務"</string>
+
+    <!-- Used as the body text of a message reporting to an attendee that a
+        specific instance of a recurring meeting has been canceled -->
+    <string name="exception_cancel">"已將以下日期的這項活動取消：<xliff:g id="DATE">%s</xliff:g>"</string>
+    <!-- Used as the body text of a message reporting to an attendee that a
+        specific instance of a recurring meeting has been changed -->
+    <string name="exception_updated">"已變更此活動於 <xliff:g id="DATE">%s</xliff:g> 時的詳細資料"</string>
+
+    <!-- The following are a list of policies that the user\'s server might require, but that can\'t
+        be enforced by our device.  We will list them separated by commas, as required -->
+    <!-- A policy in which the device may not have a storage card [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_storage_cards">"不允許儲存卡"</string>
+    <!-- A policy in which the device may not have unsigned applications installed
+        [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_unsigned_apps">"不允許未簽署的應用程式"</string>
+    <!-- A policy in which the device may not allow application installation via an unsigned
+        installer [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_unsigned_installers">"不允許未簽署的應用程式安裝程式"</string>
+    <!-- A policy in which the device may not allow wifi communications [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_wifi">"不允許 Wi-Fi"</string>
+    <!-- A policy in which the device may not allow text messaging [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_text_messaging">"不允許發送短訊"</string>
+    <!-- A policy in which the device may not allow POP3 or IMAP email accounts [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_pop_imap">"不允許 POP3 或 IMAP 帳戶"</string>
+    <!-- A policy in which the device may allow infrared communications [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_irda">"不允許紅外線通訊"</string>
+    <!-- A policy in which the device may allow HTML email to be received [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_html">"不允許接收 HTML 電郵"</string>
+    <!-- A policy in which the device may not allow the user of web browsers [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_browser">"不允許瀏覽器"</string>
+    <!-- A policy in which the device may not allow the receipt of consumer email
+        [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_consumer_email">"不允許接收消費者電郵"</string>
+    <!-- A policy in which the device may not allow internet connection sharing
+        [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_internet_sharing">"不允許互聯網共用功能"</string>
+    <!-- A policy in which messages must be in SMIME format [CHAR LIMIT=50] -->
+    <string name="policy_require_smime">"需要 SMIME 郵件"</string>
+    <!-- A policy in which the device\'s bluetooth capabilities are restricted [CHAR LIMIT=50] -->
+    <string name="policy_bluetooth_restricted">"限制藍牙使用量"</string>
+    <!-- A policy in which the device blocks specified applications [CHAR LIMIT=50]-->
+    <string name="policy_app_blacklist">"不允許指定的應用程式"</string>
+    <!-- A policy in which the device allows only specified applications [CHAR LIMIT=50] -->
+    <string name="policy_app_whitelist">"只允許指定的應用程式"</string>
+    <!-- A policy in which the device limits the amount of text that can be displayed for a
+        given message [CHAR LIMIT=50] -->
+    <string name="policy_text_truncation">"限制文字電郵大小"</string>
+    <!-- A policy in which the device limits the amount of HTML text that can be displayed for a
+        given message [CHAR LIMIT=50] -->
+    <string name="policy_html_truncation">"限制 HTML 電郵大小"</string>
+    <!-- A policy in which the device requires device or sd card encryption [CHAR LIMIT=50] -->
+    <string name="policy_require_sd_encryption">"需要 SD 記憶卡加密"</string>
+
+    <!-- The following are a list of policies that the user\'s server requires and that are
+         in force.  We will list them separated by commas, as required -->
+    <!-- A policy in which attachments aren\'t allowed to be downloaded [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_attachments">"不允許附件"</string>
+    <!-- A policy in which the device restricts the size of attachments that can be downloaded
+        [CHAR LIMIT=50] -->
+    <string name="policy_max_attachment_size">"限制附件大小"</string>
+    <!-- A policy in which the device may only sync manually while roaming [CHAR LIMIT=50] -->
+    <string name="policy_require_manual_sync_roaming">"漫遊時只允許手動同步"</string>
+
+    <!-- The following is a policy that may or not be supported on a particular device -->
+    <!-- A policy in which the device requires device or sd card encryption [CHAR LIMIT=50] -->
+    <string name="policy_require_encryption">"需要裝置加密"</string>
+
+
+    <!--  The window length strings below MUST remain in sync with those in com.android.email -->
+    <!-- In account setup options & account settings screens (exchange), sync window length; this
+        implies loading a \'reasonable\' number of messages [CHAR LIMIT=25] -->
+    <string name="account_setup_options_mail_window_auto">"自動"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1day">"1 天"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_3days">"3 天"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1week">"1 星期"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_2weeks">"兩星期"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1month">"1 個月"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_all">"全部"</string>
+
+    <string name="account_manager_type_exchange" translatable="false">com.android.exchange</string>
+    <string name="authority_email_provider" translatable="false">com.android.email.provider</string>
+
+    <!-- Title for notification warning about an authentication error [CHAR LIMIT=40]  -->
+    <string name="auth_error_notification_title">"認證錯誤"</string>
+
+    <!-- text for notification warning about an authentication error [CHAR LIMIT=60]  -->
+    <string name="auth_error_notification_text">"輕觸即可編輯 <xliff:g id="ACCOUNT">%s</xliff:g> 的帳戶設定"</string>
+
+    <!-- Message displayed when there is no application to handle the settings option. [CHAR LIMIT=NONE] -->
+    <string name="email_settings_not_available">"重新啟用電子郵件應用程式，即可查看設定。"</string>
+
+</resources>

@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+<title>Interface to the diag module on the DSPS processor</title>
+<link rel="stylesheet" type="text/css" href="qmi_idl_wiredoc.css" />
+</head>
+
+<body>
+<h1>Interface to the diag module on the DSPS processor
+</h1>
+ Diag module on DSPS processor receives log and debug masks and controls<br> log and debug message processing accordingly 
+
+<h1>Service Type</h1>
+<ul>
+<li>QMI service type <b>SNS_QMI_SVC_ID_8</b>
+<li>Version <b>01</b>
+</ul>
+<h1><a name='Messages'>Messages</a></h1>
+<table class = 'tlv'><tr class='head'><th>Command</th><th>ID</th><th>Messages</th><th>Description</th></tr>
+<tr><td class='l'><a href='#SNS_COMMON_CANCEL'>SNS_COMMON_CANCEL</a></td><td>0x0000</td><td class='l'><a href="#SNS_COMMON_CANCEL_REQ">SNS_COMMON_CANCEL_REQ</a></br><a href="#SNS_SMGR_CANCEL_RESP">SNS_SMGR_CANCEL_RESP</a></br></td><td class='l'>This command cancel all requests from a client to any sensor service This shall be the first message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_COMMON_VERSION'>SNS_COMMON_VERSION</a></td><td>0x0001</td><td class='l'><a href="#SNS_COMMON_VERSION_REQ">SNS_COMMON_VERSION_REQ</a></br><a href="#SNS_COMMON_VERSION_RESP">SNS_COMMON_VERSION_RESP</a></br></td><td class='l'>This command requests the version of the sensor service This shall be the second message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_DIAG_SET_LOG_MASK'>SNS_DIAG_SET_LOG_MASK</a></td><td>0x0002</td><td class='l'><a href="#SNS_DIAG_SET_LOG_MASK_REQ">SNS_DIAG_SET_LOG_MASK_REQ</a></br><a href="#SNS_DIAG_SET_LOG_MASK_RESP">SNS_DIAG_SET_LOG_MASK_RESP</a></br></td><td class='l'>This command sets the log mask for sensors diag module on DSPS </td></tr>
+<tr><td class='l'><a href='#SNS_DIAG_SET_DEBUG_MASK'>SNS_DIAG_SET_DEBUG_MASK</a></td><td>0x0003</td><td class='l'><a href="#SNS_DIAG_SET_DEBUG_MASK_REQ">SNS_DIAG_SET_DEBUG_MASK_REQ</a></br><a href="#SNS_DIAG_SET_DEBUG_MASK_RESP">SNS_DIAG_SET_DEBUG_MASK_RESP</a></br></td><td class='l'>This command sets the debug mask for sensors diag module on DSPS </td></tr>
+</table>
+<br><br>
+<h4>Description of  REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_COMMON_CANCEL'></a><a href='#Messages'>SNS_COMMON_CANCEL</a></h2>
+This command cancel all requests from a client to any sensor service<br><br> This shall be the first message of any sensor service.
+<h4>Message ID</h4>
+0x0000
+<h3><a name="SNS_COMMON_CANCEL_REQ"></a><a href='#Messages'>SNS_COMMON_CANCEL_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SMGR_CANCEL_RESP"></a><a href='#Messages'>SNS_SMGR_CANCEL_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_COMMON_CANCEL REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_COMMON_VERSION'></a><a href='#Messages'>SNS_COMMON_VERSION</a></h2>
+This command requests the version of the sensor service<br><br> This shall be the second message of any sensor service.
+<h4>Message ID</h4>
+0x0001
+<h3><a name="SNS_COMMON_VERSION_REQ"></a><a href='#Messages'>SNS_COMMON_VERSION_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_COMMON_VERSION_RESP"></a><a href='#Messages'>SNS_COMMON_VERSION_RESP</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>interface_version_number</td><td>4</td><td class='l'>The version number of the interface supported by the service </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_message_id</td><td>2</td><td class='l'>The maximum message ID supported by this service </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_COMMON_VERSION REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_DIAG_SET_LOG_MASK'></a><a href='#Messages'>SNS_DIAG_SET_LOG_MASK</a></h2>
+This command sets the log mask for sensors diag module on DSPS
+<h4>Message ID</h4>
+0x0002
+<h3><a name="SNS_DIAG_SET_LOG_MASK_REQ"></a><a href='#Messages'>SNS_DIAG_SET_LOG_MASK_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>8</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>mask</td><td>8</td><td class='l'>64 bit mask indicating which diag elements are enabled </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>8</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>mask</td><td>8</td><td class='l'>64 bit mask indicating which diag elements are enabled </td></tr>
+
+</table>
+<h3><a name="SNS_DIAG_SET_LOG_MASK_RESP"></a><a href='#Messages'>SNS_DIAG_SET_LOG_MASK_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_DIAG_SET_LOG_MASK REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_DIAG_SET_DEBUG_MASK'></a><a href='#Messages'>SNS_DIAG_SET_DEBUG_MASK</a></h2>
+This command sets the debug mask for sensors diag module on DSPS
+<h4>Message ID</h4>
+0x0003
+<h3><a name="SNS_DIAG_SET_DEBUG_MASK_REQ"></a><a href='#Messages'>SNS_DIAG_SET_DEBUG_MASK_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>8</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>mask</td><td>8</td><td class='l'>64 bit mask indicating which diag elements are enabled </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_DIAG_SET_DEBUG_MASK_RESP"></a><a href='#Messages'>SNS_DIAG_SET_DEBUG_MASK_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_DIAG_SET_DEBUG_MASK REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>

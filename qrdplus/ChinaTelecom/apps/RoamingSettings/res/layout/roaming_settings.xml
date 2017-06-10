@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2013 Qualcomm Technologies, Inc. All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ */
+ -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f8f8f8"
+    android:paddingBottom="12dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="12dp" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp" >
+
+        <Button
+            android:id="@+id/bt_active_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:drawableRight="@drawable/btn_check_off_roaming"
+            android:text="@string/open_card_title" />
+
+        <Button
+            android:id="@+id/bt_data_roaming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/button_sharp"
+            android:drawableRight="@drawable/btn_check_off_roaming"
+            android:text="@string/data_roaming_title"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/bt_network_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/button_sharp"
+            android:text="@string/pref_network_info_title" />
+
+        <Button
+            android:id="@+id/bt_manual_network_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/button_sharp"
+            android:text="@string/manual_select_network" />
+
+        <TextView
+            android:id="@+id/tv_intro_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="@string/roaming_card_info" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_hotline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_sharp"
+        android:text="@string/roaming_hotline"
+        android:textSize="16sp" />
+
+</RelativeLayout>

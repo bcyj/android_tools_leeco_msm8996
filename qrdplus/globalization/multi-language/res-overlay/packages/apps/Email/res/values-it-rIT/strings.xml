@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Names of packages and authorities that are common to all apps
+    and read from resources -->
+
+    <!-- Permissions label for reading attachments -->
+    <string name="permission_read_attachment_label">"Lettura allegati email"</string>
+    <!-- Permissions description for reading attachments -->
+    <string name="permission_read_attachment_desc">"Consente all\'applicazione di leggere gli allegati email."</string>
+    <!-- Permissions label for accessing the main provider -->
+    <string name="permission_access_provider_label">"Accesso ai dati del provider di posta"</string>
+    <!-- Permissions description for accessing the main provider -->
+    <string name="permission_access_provider_desc">"Consente all\'applicazione di accedere al database della tua posta, inclusi i messaggi ricevuti e inviati, i nomi utente e le password."</string>
+
+    <!-- Name of application on Home screen -->
+    <string name="app_name">"Email"</string>
+
+    <!-- Actions will be used as buttons and in menu items -->
+    <skip/>
+
+    <!--  Menu item used to create a new quick response [CHAR_LIMIT=16] -->
+    <string name="create_action">"Crea nuova"</string>
+
+    <!-- Message informing user when a list that would contain quick responses
+            is empty [CHAR_LIMIT=80] -->
+    <string name="quick_responses_empty_view">"Nessuna risposta rapida."</string>
+    <!-- Menu item -->
+    <string name="account_settings_action">"Impostazioni account"</string>
+    <!-- The next set of strings are used in local display and may be localized. -->
+    <!-- In the UI, the inbox will be displayed with this name -->
+    <string name="mailbox_name_display_inbox">"Posta in arrivo"</string>
+    <!-- In the UI, the outbox will be displayed with this name -->
+    <string name="mailbox_name_display_outbox">"Posta in uscita"</string>
+    <!-- In the UI, the drafts will be displayed with this name -->
+    <string name="mailbox_name_display_drafts">"Bozze"</string>
+    <!-- In the UI, the trash will be displayed with this name -->
+    <string name="mailbox_name_display_trash">"Cestino"</string>
+    <!-- In the UI, the sent will be displayed with this name -->
+    <string name="mailbox_name_display_sent">"Posta inviata"</string>
+    <!-- In the UI, the junk will be displayed with this name -->
+    <string name="mailbox_name_display_junk">"Posta indesiderata"</string>
+    <!-- In the UI, the starred will be displayed with this name -->
+    <string name="mailbox_name_display_starred">"Speciali"</string>
+    <!-- In the UI, the unread will be displayed with this name [CHAR LIMIT=15] -->
+    <string name="mailbox_name_display_unread">"Da leggere"</string>
+
+    <!-- Title of debug screen -->
+    <string name="debug_title">"Debug"</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_debug_logging_label" translatable="false">
+        Enable extra debug logging?</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_verbose_logging_label" translatable="false">
+        Enable exchange logging?</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_file_logging_label" translatable="false">
+        Enable sd card logging?</string>
+    <!-- Do Not Translate.  Button label, shown only on debug screen -->
+    <string name="debug_clear_webview_cache" translatable="false">
+        Clear WebView cache</string>
+    <!-- Do Not Translate. Button label. Shown only on debug screen -->
+    <string name="debug_clear_migration_state" translatable="false">Clear migration state</string>
+    <!-- Do Not Translate.  Checkbox label, shown on debug screen. -->
+    <string name="debug_force_one_minute_refresh_label" translatable="false">
+        Force 1-minute refresh for POP/IMAP</string>
+    <!-- Do Not Translate.  Checkbox label, shown on debug screen. -->
+    <string name="debug_enable_strict_mode_label" translatable="false">
+        Enable strict mode (with logging)</string>
+
+
+    <!-- Label shown in the account selector to select "Combined view", which contains
+         Combined Inbox, Combined Outbox, etc. [CHAR LIMIT=30] -->
+    <string name="mailbox_list_account_selector_combined_view">"Visualizzazione combinata"</string>
+
+    <!-- Header for forwarded original messages -->
+    <string name="message_compose_fwd_header_fmt">\n\n"-------- Messaggio originale --------\nOggetto: <xliff:g id="SUBJECT">%1$s</xliff:g>\nDa: <xliff:g id="SENDER">%2$s</xliff:g>\nA: <xliff:g id="TO">%3$s</xliff:g>\nCC: <xliff:g id="CC_0">%4$s</xliff:g>\n\n"</string>
+    <!-- Title for dialog containing list of quick responses that user may insert
+            into message body. [CHAR_LIMIT=30] -->
+    <string name="message_compose_insert_quick_response_list_title">"Inserisci risposta rapida"</string>
+    <!-- Menu item for inserting quick responses into email compose activity. [CHAR_LIMIT=30] -->
+    <string name="message_compose_insert_quick_response_menu_title">"Inserisci risposta rapida"</string>
+    <!-- Toast upon using "send" when one or more attachments will need to be background loaded
+      [CHAR LIMIT=none]-->
+    <string name="message_view_attachment_background_load">"Prima dell\'invio verranno scaricati uno o più allegati del messaggio inoltrato."</string>
+
+    <!-- String used in place of a message that could not be properly decoded (e.g. bad base64
+         data was received.) [CHAR LIMIT=none] -->
+    <string name="message_decode_error">"Si è verificato un errore durante la decodifica del messaggio."</string>
+
+    <!-- Notification ticker when a forwarded attachment couldn\'t be sent [CHAR LIMIT=none] -->
+    <string name="forward_download_failed_ticker">"Impossibile inoltrare uno o più allegati."</string>
+    <!-- Notification title when a forwarded attachment couldn\'t be sent [CHAR LIMIT=30]-->
+    <string name="forward_download_failed_title">"Allegato non inoltrato"</string>
+
+    <!-- Notification ticker when email account authentication fails [CHAR LIMIT=none] -->
+    <string name="login_failed_ticker">"Accesso a <xliff:g id="ACCOUNT_NAME">%s</xliff:g> non riuscito."</string>
+    <!-- Notification title when email account authentication fails [CHAR LIMIT=30]-->
+    <string name="login_failed_title">"Accesso non riuscito"</string>
+
+    <!-- Title of screen when setting up new email account [CHAR LIMIT=45] -->
+    <string name="account_setup_basics_title">"Impostazione account"</string>
+    <!-- Title of screen when trying to get oauth authentication -->
+    <string name="oauth_authentication_title">"Richiesta di autorizzazione"</string>
+    <!-- Title of screen to choose with authentication to use -->
+    <string name="sign_in_title">"Accedi"</string>
+
+    <!-- Warning if there is a problem authenticating with oauth -->
+    <string name="oauth_error_description">"Impossibile eseguire l\'autenticazione"</string>
+    <!-- Warning label displayed when the email address or password are incorrect -->
+    <string name="password_warning_label">"La password o l\'indirizzo email non sono corretti"</string>
+    <!-- Label displayed to confirm what email address we are trying to validate -->
+    <string name="email_confirmation_label">"Indirizzo email:"</string>
+    <!-- Headline of screen when setting up new email account (large text over divider)
+        [CHAR LIMIT=none] -->
+    <string name="account_setup_basics_headline">"Account email"</string>
+    <!-- On "Set up email" screen, enthusiastic welcome message. -->
+    <string name="accounts_welcome">"Puoi configurare il tuo account in pochi passaggi."</string>
+    <!-- On "Set up email" screen, hint for account email address text field -->
+    <string name="account_setup_basics_email_label">"Indirizzo email"</string>
+
+    <!-- Label between OAuth and password authentication, indicating the user must do one or the other [CHAR LIMIT=40] -->
+    <string name="or_label">"O"</string>
+    <!-- Label for signing in with Google using OAuth -->
+    <string name="sign_in_with_google">"Accedi con Google"</string>
+    <!-- On "Set up email" screen, hint for account email password text field, should be uppercase where applicable -->
+    <string name="account_setup_basics_password_label">"PASSWORD"</string>
+    <!-- hint for account email password text field -->
+    <string name="password_hint">"Password"</string>
+    <!--  On the "Setup up email" screen, label indicating what service we are signed in with [CHAR LIMIT=40] -->
+    <string name="signed_in_with_service_label">"Accesso eseguito con %s"</string>
+    <!-- Label for the authentication section, should be uppercase where applicable [CHAR LIMIT=20] -->
+    <string name="authentication_label">"AUTENTICAZIONE"</string>
+    <!-- Label for the add authentication icon [CHAR LIMIT=40] -->
+    <string name="add_authentication_label">"Aggiungi autenticazione"</string>
+    <!-- Label for the add authentication icon [CHAR LIMIT=40] -->
+    <string name="clear_authentication_label">"Cancella autenticazione"</string>
+    <!-- Button name on "Set up email" screen, with action underlined using html [CHAR LIMIT=20] -->
+    <string name="account_setup_basics_manual_setup_action">"Config. manuale"</string>
+    <!-- Toast when we can\'t build a URI from the given email & password -->
+    <!-- Note, the error message in the toast is purposefully vague, because I *don\'t* know
+        exactly what\'s wrong. -->
+    <string name="account_setup_username_password_toast">"Digita un indirizzo email e una password validi."</string>
+    <!-- Title of dialog shown when a duplicate account is created -->
+    <string name="account_duplicate_dlg_title">"Account duplicato"</string>
+    <!-- Message of dialog shown when a duplicate account is created.  The display name of
+         the duplicate account is displayed. -->
+    <string name="account_duplicate_dlg_message_fmt">"Utilizzi già questo nome utente per l\'account \"<xliff:g id="DUPLICATE">%s</xliff:g>\"."</string>
+
+    <!-- On check-settings screen, this is the initially-displayed message. -->
+    <string name="account_setup_check_settings_retr_info_msg">"Recupero informazioni sull\'account…"</string>
+    <!-- Appears on screen while system is checking incoming server settings -->
+    <string name="account_setup_check_settings_check_incoming_msg">"Convalida impostazioni del server…"</string>
+    <!-- Appears on screen while system is checking outgoing server settings -->
+    <string name="account_setup_check_settings_check_outgoing_msg">"Convalida delle impostazioni SMTP…"</string>
+        <!-- Appears on screen while system is creating the account -->
+    <string name="account_setup_creating_account_msg">"Creazione account…"</string>
+
+    <!-- Headline text that appears on "Confirm account type" screen [CHAR LIMIT=none] -->
+    <string name="account_setup_ab_headline">"Conferma tipo di account"</string>
+    <!-- Explanatory text that appears on the "Confirm account type" screen [CHAR LIMIT=none] -->
+    <string name="account_setup_ab_instructions_format">"Hai indicato che <xliff:g id="EMAIL">%1$s</xliff:g> utilizza <xliff:g id="USERPROTOCOL">%2$s</xliff:g>, ma l\'account potrebbe utilizzare <xliff:g id="PROVIDERPROTOCOL">%3$s</xliff:g>"</string>
+
+    <!-- Text that appears on "Set up email" screen after successfully setting up an account
+        [CHAR LIMIT=none] -->
+    <string name="account_setup_names_headline">"Il tuo account è stato impostato e l\'email sarà presto disponibile."</string>
+    <!-- On "Set up email" screen, label of text field -->
+    <string name="account_setup_names_account_name_label">"Assegna un nome all\'account (facoltativo)"</string>
+    <!-- On "Set up email" screen, label of text field -->
+    <string name="account_setup_names_user_name_label">"Il tuo nome (nei messaggi in uscita)"</string>
+
+    <!-- Headline for the the account type selector (IMAP or POP3 or EAS) [CHAR LIMIT=none] -->
+    <string name="account_setup_account_type_headline">"Tipo di account"</string>
+    <!-- "Add new email account" screen, text that appears on screen -->
+    <string name="account_setup_account_type_instructions">"Di quale tipo di account si tratta?"</string>
+
+    <!-- "Incoming server settings" screen, headline (text over divider) [CHAR LIMIT=none] -->
+    <string name="account_setup_incoming_headline">"Impostazioni server Posta in arrivo"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_username_label">"NOME UTENTE"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_password_label">"PASSWORD"</string>
+    <!-- "Incoming server settings" screen, label for text field -->
+    <string name="account_setup_password_subheading">"Password"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_server_label">"SERVER"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_port_label">"PORTA"</string>
+    <!-- "Incoming server settings" screen, label for pop-up menu, should be uppercase where applicable -->
+    <string name="account_setup_incoming_security_label">"TIPO DI SICUREZZA"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an unencrypted session -->
+    <string name="account_setup_incoming_security_none_label">"Nessuna"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session on the selected port, accepting all SSL certificates -->
+    <string name="account_setup_incoming_security_ssl_trust_certificates_label">"SSL/TLS (Accetta tutti i certificati)"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session on the selected port, including SSL certificate
+        checks -->
+    <string name="account_setup_incoming_security_ssl_label">"SSL/TLS"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session overlaid on a plain text session using the selected
+        port, accepting all SSL certificates -->
+    <string name="account_setup_incoming_security_tls_trust_certificates_label">"STARTTLS (accetta tutti i certificati)"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session overlaid on a plain text session on the selected
+        port, including SSL certificate checks -->
+    <string name="account_setup_incoming_security_tls_label">"STARTTLS"</string>
+    <!-- "Incoming server settings" screen, label for pop-up menu -->
+    <string name="account_setup_incoming_delete_policy_label">"Elimina email da server"</string>
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <string name="account_setup_incoming_delete_policy_never_label">"Mai"</string>
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <string name="account_setup_incoming_delete_policy_delete_label">"Quando elimino da Posta in arrivo"</string>
+    <!-- "Incoming server settings" screen, label for setting IMAP path prefix: -->
+    <string name="account_setup_incoming_imap_path_prefix_label">"Prefisso percorso IMAP"</string>
+    <!-- "Incoming server settings" screen, hint for setting IMAP path prefix: -->
+    <string name="account_setup_incoming_imap_path_prefix_hint">"Facoltativo"</string>
+
+    <!-- "Outgoing server settings" screen, headline (text over divider) [CHAR LIMIT=none] -->
+    <string name="account_setup_outgoing_headline">"Impostazioni server Posta in uscita"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_smtp_server_label">"SERVER SMTP"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_port_label">"PORTA"</string>
+    <!-- On "Outgoing server settings" screen, label for pop-up menu, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_security_label">"TIPO DI SICUREZZA"</string>
+    <!-- On "Outgoing server settings" screen, label for check box, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_require_login_label">"Richiedi accesso"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable-->
+    <string name="account_setup_outgoing_username_label">"NOME UTENTE"</string>
+
+    <!-- On "Exchange" setup screen, a heading title for the current client certificate, should be uppercase where applicable [CHAR LIMIT=50] -->
+    <string name="account_setup_exchange_certificate_title">"CERTIFICATO CLIENT"</string>
+    <!-- On "Exchange" setup screen, a button label to include a client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_select_certificate">"Seleziona"</string>
+    <!-- On "Exchange" setup screen, a button label to include a client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_use_certificate">"Usa certificato client"</string>
+    <!-- On "Exchange" setup screen, a button label to remove the currently used client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_remove_certificate">"Rimuovi"</string>
+    <!-- On "Exchange" setup screen, placeholder text to indicate no client
+         certificate is used [CHAR LIMIT=50] -->
+    <string name="account_setup_exchange_no_certificate">"Nessuno"</string>
+    <!-- On "Exchange" setup screen, the exchange device-id label, should be uppercase where applicable [CHAR LIMIT=30] -->
+    <string name="account_setup_exchange_device_id_label">"ID DISPOSITIVO MOBILE"</string>
+
+    <!-- In Account setup options screen, Activity headline [CHAR LIMIT=none] -->
+    <string name="account_setup_options_headline">"Opzioni account"</string>
+    <!-- In Account setup options screen, label for email check frequency selector -->
+    <string name="account_setup_options_mail_check_frequency_label">"Frequenza sincronizzazione:"</string>
+    <!-- In Account setup options & Account Settings screens, label for email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_never">"Mai"</string>
+    <!-- In Account setup options & Account Settings screens, label for email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_push">"Automatica (push)"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_5min">"Ogni 5 minuti"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_10min">"Ogni 10 minuti"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_15min">"Ogni 15 minuti"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_30min">"Ogni 30 minuti"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_1hour">"Ogni ora"</string>
+    <!-- In Account setup options & Account Settings screens, check box for new-mail notification -->
+    <string name="account_setup_options_notify_label">"Avvisami all\'arrivo di email"</string>
+    <!-- In Account setup options screen, optional check box to also sync contacts -->
+    <string name="account_setup_options_sync_contacts_label">"Sincronizza contatti di questo account"</string>
+    <!-- In Account setup options screen, optional check box to also sync contacts -->
+    <string name="account_setup_options_sync_calendar_label">"Sincronizza calendario di questo account"</string>
+    <!-- In Account setup options screen, check box to sync email -->
+    <string name="account_setup_options_sync_email_label">"Sincronizza email di questo account"</string>
+    <!-- In Account setup options screen, check box to auto-download attachments  [CHAR LIMIT=none] -->
+    <string name="account_setup_options_background_attachments_label">"Scarica allegati automaticamente quando connesso a Wi-Fi"</string>
+    <!-- Dialog title when "setup" could not finish -->
+    <string name="account_setup_failed_dlg_title">"Impossibile completare"</string>
+    <!-- In Account setup options screen, label for email lookback selector -->
+    <string name="account_setup_options_mail_window_label">"Sincronizza email da:"</string>
+    <!-- In account setup options & account settings screens (exchange), sync window length; this
+        implies loading a \'reasonable\' number of messages [CHAR LIMIT=25] -->
+    <string name="account_setup_options_mail_window_auto">"Automatico"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1day">"Ultimo giorno"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_3days">"Ultimi tre giorni"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1week">"Ultima settimana"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_2weeks">"Ultime due settimane"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1month">"Ultimo mese"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_all">"Tutto"</string>
+    <!-- Per-mailbox sync window setting.  This means "use the account\'s sync window setting" [CHAR LIMIT=40] -->
+    <string name="account_setup_options_mail_window_default">"Usa imp. predef. account"</string>
+
+    <!-- "Setup could not finish" dialog text; e.g., Username or password incorrect -->
+    <string name="account_setup_failed_dlg_auth_message">"Password o nome utente errato."</string>
+
+    <!-- Account setup autodiscover auth failure dialog title. This is shown when autodiscover hits
+        an "access denied" server error, which could imply incorrect username/password or that no
+        autodiscover service has been configured for the domain [CHAR LIMIT=40] -->
+    <string name="account_setup_autodiscover_dlg_authfail_title">"Problema di configurazione dell\'account"</string>
+    <!-- Account setup autodiscover auth failure dialog message. This is shown when autodiscover hits
+        an "access denied" server error, which could imply incorrect username/password or that no
+        autodiscover service has been configured for the domain [CHAR LIMIT=NONE] -->
+    <string name="account_setup_autodiscover_dlg_authfail_message">"Conferma se nome utente, password e impostazioni account sono corretti."</string>
+
+    <!-- An error message presented to the user when the server\'s identity
+         cannot be established or trusted [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_dlg_certificate_message">"Impossibile connettersi in modo sicuro al server."</string>
+    <!-- An error message presented to the user when the server\'s identity
+         cannot be established or trusted [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Impossibile connettersi in modo sicuro al server.\n(<xliff:g id="ERROR">%s</xliff:g>)"</string>
+    <!-- An error message presented to the user when the server requires a
+         client certificate to connect [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_certificate_required">"È necessario un certificato client. Vuoi connetterti al server con un certificato client?"</string>
+    <!-- An error message presented to the user when the certificate they
+         specified for connecting to a server is inaccessible [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_certificate_inaccessible">"Certificato non valido o non accessibile."</string>
+
+    <!-- Dialog text for ambiguous setup failure; server error/bad credentials [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_check_credentials_message">"Il server ha risposto con un errore. Controlla nome utente e password e riprova."</string>
+
+    <!-- "Setup could not finish" dialog text; e.g., Cannot connect to server -->
+    <string name="account_setup_failed_dlg_server_message">"Impossibile connettersi al server."</string>
+    <!-- "Setup could not finish" dialog text; e.g., Cannot connect to server\n(Connection timed out) -->
+    <string name="account_setup_failed_dlg_server_message_fmt">"Impossibile connettersi al server.\n(<xliff:g id="ERROR">%s</xliff:g>)"</string>
+
+    <!-- Additional diagnostic text when TLS was required but the server doesn\'t support it -->
+    <string name="account_setup_failed_tls_required">"TLS richiesto ma non supportato dal server."</string>
+    <!-- Additional diagnostic text when server does not support any of our authentication methods -->
+    <string name="account_setup_failed_auth_required">"I metodi di autenticazione non sono supportati dal server."</string>
+    <!-- Additional diagnostic text when server connection failed due to security error -->
+    <string name="account_setup_failed_security">"Impossibile stabilire la connessione al server a causa di un errore di sicurezza."</string>
+    <!-- Additional diagnostic text when server connection failed due to io error (connection) -->
+    <string name="account_setup_failed_ioerror">"Impossibile stabilire la connessione al server."</string>
+    <!-- Additional diagnostic text when server connection failed due to our inability to support a
+         required EAS protocol version [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_protocol_unsupported">"Hai digitato l\'indirizzo di un server sbagliato o il server richiede una versione di protocollo non supportata da Email."</string>
+    <!-- Additional diagnostic text when server access was denied; the user should contact the
+         administrator of the server for more information [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_access_denied">"Non sei autorizzato a effettuare la sincronizzazione con questo server. Contatta l\'amministratore del server per ulteriori informazioni."</string>
+
+    <!-- Dialog title when validation requires security provisioning (e.g. support
+         for device lock PIN, or remote wipe.) and we ask the user permission before continuing -->
+    <string name="account_setup_security_required_title">"Amministrazione sicurezza da remoto"</string>
+    <!-- Additional diagnostic text when validation requires security provisioning (e.g. support
+         for device lock PIN, or remote wipe.) and we ask the user permission before continuing.
+         [CHAR LIMIT=none] -->
+    <string name="account_setup_security_policies_required_fmt">"Il server <xliff:g id="SERVER">%s</xliff:g> richiede che tu consenta il controllo remoto di alcune funzionalità di sicurezza del tuo dispositivo Android. Completare la configurazione dell\'account?"</string>
+    <!-- Additional diagnostic text when validation failed due to required provisioning not
+         being supported [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_security_policies_unsupported">"Il server richiede funzioni di sicurezza non supportate dal tuo dispositivo Android, fra cui: <xliff:g id="ERROR">%s</xliff:g>"</string>
+    <!-- Warning given to users when they request disabling device administration (i.e. that their
+         administered accounts will be deleted) [CHAR LIMIT=none] -->
+    <string name="disable_admin_warning">"AVVISO. La disattivazione dell\'autorità dell\'applicazione Email per l\'amministrazione del dispositivo comporterà l\'eliminazione di tutti gli account email che la richiedono, compresi i relativi messaggi email, contatti, eventi di calendario e altri dati."</string>
+
+    <!-- Dialog shown when the account requires some amount of device security provisioning,
+         just before jumping into system settings such as Device Policy grant, PIN/password,
+         or encryption setup.  [CHAR_LIMIT=40] -->
+    <string name="account_security_dialog_title">"Aggiornamento sicurezza"</string>
+    <!-- Additional diagnostic text when the account requires some amount of device security
+         provisioning, just before jumping into system settings such as Device Policy grant,
+         PIN/password, or encryption setup.  [CHAR LIMIT=none] -->
+    <string name="account_security_dialog_content_fmt">"<xliff:g id="ACCOUNT">%s</xliff:g> richiede l\'aggiornamento delle impostazioni di sicurezza."</string>
+
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_unsupported_ticker_fmt">"L\'account \"<xliff:g id="ACCOUNT">%s</xliff:g>\" non può essere sincronizzato a causa di requisiti di sicurezza."</string>
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_needed_ticker_fmt">"È richiesto l\'aggiornamento delle impostazioni di sicurezza per l\'account \"<xliff:g id="ACCOUNT">%s</xliff:g>\"."</string>
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_changed_ticker_fmt">"Impostazioni di sicurezza dell\'account \"<xliff:g id="ACCOUNT">%s</xliff:g>\" modificate; nessun intervento richiesto."</string>
+    <!-- Notification content title when device security required [CHAR_LIMIT=30] -->
+    <string name="security_notification_content_update_title">"Aggiornam. sicurezza richiesto"</string>
+    <!-- Notification content title when device security policies have changed [CHAR_LIMIT=36] -->
+    <string name="security_notification_content_change_title">"Criteri di sicurezza modificati"</string>
+    <!-- Notification content title when device security policies cannot be met [CHAR_LIMIT=30] -->
+    <string name="security_notification_content_unsupported_title">"Criteri sicurezza non rispettab."</string>
+    <!-- Title of the activity that dispatches changes to device security.  Not normally seen. -->
+    <string name="account_security_title">"Sicurezza dispositivo"</string>
+    <!-- Additional diagnostic text when the email app asserts control of the phone.
+        [CHAR LIMIT=none] -->
+    <string name="account_security_policy_explanation_fmt">"Il server <xliff:g id="SERVER">%s</xliff:g> richiede che tu consenta il controllo remoto di alcune funzionalità di sicurezza del tuo dispositivo Android."</string>
+
+    <!-- "Setup could not finish" dialog action button -->
+    <string name="account_setup_failed_dlg_edit_details_action">"Modifica dettagli"</string>
+
+    <!-- Notification ticker when device password is getting ready to expire [CHAR_LIMIT=80] -->
+    <string name="password_expire_warning_ticker_fmt">"\"<xliff:g id="ACCOUNT">%s</xliff:g>\" richiede la modifica del PIN o della password di blocco dello schermo."</string>
+    <!-- Notification content title when device password is getting ready to expire
+            [CHAR_LIMIT=30] -->
+    <string name="password_expire_warning_content_title">"Password blocco schermo in scadenza"</string>
+
+    <!-- Notification ticker when device password has expired [CHAR_LIMIT=80] -->
+    <string name="password_expired_ticker">"Il PIN o la password di blocco dello schermo sono scaduti."</string>
+    <!-- Notification content title when device password has expired [CHAR_LIMIT=28] -->
+    <string name="password_expired_content_title">"Password blocco schermo scaduta"</string>
+
+    <!-- Dialog title if device pin/password is going to expire soon. [CHAR_LIMIT=40] -->
+    <string name="password_expire_warning_dialog_title">"Password blocco schermo in scadenza"</string>
+    <!-- Dialog content device pin/password is going to expire soon. [CHAR_LIMIT=none] -->
+    <string name="password_expire_warning_dialog_content_fmt">"Appena possibile devi cambiare il PIN o la password di blocco dello schermo; in caso contrario i dati di <xliff:g id="ACCOUNT">%s</xliff:g> verranno cancellati. Vuoi apportare la modifica ora?"</string>
+
+    <!-- Dialog title if device pin/password has already expired. [CHAR_LIMIT=40] -->
+    <string name="password_expired_dialog_title">"Password blocco schermo scaduta"</string>
+    <!-- Dialog content device pin/password has already expired. [CHAR_LIMIT=none] -->
+    <string name="password_expired_dialog_content_fmt">"I dati relativi a <xliff:g id="ACCOUNT">%s</xliff:g> stanno per essere cancellati dal dispositivo. È possibile ripristinarli modificando il PIN o la password di blocco dello schermo. Vuoi apportare la modifica ora?"</string>
+
+    <!-- On AccountSettingsXL, dialog text if you try to exit in/out/eas fragment (server settings)
+         without checking/saving [CHAR LIMIT=none]-->
+    <string name="account_settings_exit_server_settings">"Ignorare le modifiche non salvate?"</string>
+
+    <!-- On Settings screen, setting option name -->
+    <!-- Title of account preference for downloading attachments in background [CHAR LIMIT=32] -->
+    <string name="account_settings_background_attachments_label">"Scarica allegati"</string>
+    <!-- Summary of account preference for downloading attachments in background [CHAR LIMIT=64] -->
+    <string name="account_settings_background_attachments_summary">"Scarica automaticamente allegati messaggi recenti tramite Wi-Fi"</string>
+    <string name="account_settings_notify_label">"Notifiche email"</string>
+    <!-- On Settings screen, summary line when called via AccountManager for Exchange accounts
+        [CHAR LIMIT=50] -->
+    <string name="account_settings_summary">"Frequenza sincronizzazione, notifiche e altro."</string>
+    <!-- On Settings screen, setting summary text -->
+    <string name="account_settings_notify_summary">"Invia notifica all\'arrivo di email"</string>
+    <!-- On Settings screen, setting option name and title of dialog box that opens -->
+    <string name="account_settings_mail_check_frequency_label">"Frequenza sincronizzazione"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_incoming_label">"Impostazioni posta in arrivo"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_incoming_summary">"Nome utente, password e altre impostazioni server in entrata"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_outgoing_label">"Impostazioni posta in uscita"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_outgoing_summary">"Nome utente, password e altre impostazioni server in uscita"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_enforced_label">"Criteri applicati"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_enforced_summary">"Nessuna"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_unsupported_label">"Criteri non supportati"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_unsupported_summary">"Nessuna"</string>
+    <!-- On Settings screen, label for button that attempts to sync the account -->
+    <string name="account_settings_retry_label">"Tentativo di sincronizzazione"</string>
+    <!-- On Settings screen, summmary for button that attempts to sync an account [CHAR LIMIT=64] -->
+    <string name="account_settings_retry_summary">"Tocca qui per sincronizzare l\'account"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_description_label">"Nome account"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_name_label">"Nome"</string>
+    <!-- On Settings screen, setting option name. Allows user to modify saved quick responses
+        for insertion in message body. [CHAR_LIMIT=24]-->
+    <string name="account_settings_edit_quick_responses_label">"Risposte rapide"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_edit_quick_responses_summary">"Modifica il testo che inserisci spesso quando scrivi email"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_notifications">"Impostazioni notifiche"</string>
+    <!-- On Settings screen, section heading for data usage [CHAR LIMIT=70] -->
+    <string name="account_settings_data_usage">"Utilizzo dati"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_policies">"Criteri di sicurezza"</string>
+
+    <string name="system_folders_title">"Cartelle di sistema"</string>
+    <string name="system_folders_trash_title">"Cartella Cestino"</string>
+    <string name="system_folders_trash_summary">"Seleziona la cartella Cestino del server"</string>
+    <string name="system_folders_trash_dlg">"Seleziona cartella Cestino del server"</string>
+    <string name="system_folders_sent_title">"Cartella posta inviata"</string>
+    <string name="system_folders_sent_summary">"Seleziona la cartella della posta inviata del server"</string>
+    <string name="system_folders_sent_dlg">"Seleziona cartella posta inviata del server"</string>
+
+    <!-- On settings screen, dialog heading informing user to create or edit a quick response -->
+    <string name="edit_quick_response_dialog">"Risposta rapida"</string>
+    <!-- On settings screen, edit quick response dialog\'s "save" button -->
+    <string name="save_action">"Salva"</string>
+
+    <!-- On settings screen, sync contacts check box label [CHAR LIMIT=20]-->
+    <string name="account_settings_sync_contacts_enable">"Sincronizza contatti"</string>
+    <!-- On settings screen, sync contacts summary text [CHAR LIMIT=35] -->
+    <string name="account_settings_sync_contacts_summary">"Sincronizza i contatti per questo account"</string>
+    <!-- On settings screen, sync calendar check box label [CHAR LIMIT=20]-->
+        <string name="account_settings_sync_calendar_enable">"Sincronizza calendario"</string>
+    <!-- On settings screen, sync calendar summary text [CHAR LIMIT=50] -->
+    <string name="account_settings_sync_calendar_summary">"Sincron. evento calendario account"</string>
+    <!-- On settings screen, sync email check box label [CHAR LIMIT=20]-->
+    <string name="account_settings_sync_email_enable">"Sincronizza email"</string>
+    <!-- On settings screen, sync email summary text [CHAR LIMIT=35] -->
+    <string name="account_settings_sync_email_summary">"Sincronizza le email per questo account"</string>
+
+    <!-- On Settings screen, vibrate pop-up menu label -->
+    <string name="label_notification_vibrate_title">"Vibrazione"</string>
+
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_ringtone">"Scegli suoneria"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_servers">"Impostazioni server"</string>
+
+    <!-- Mailbox settings activity title [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_activity_title">"Opzioni di sincronizzazione"</string>
+    <!-- Mailbox settings activity title, with the target folder name [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_activity_title_with_mailbox">"Opzioni di sincronizzazione (<xliff:g id="MAILBOXX_NAME">%s</xliff:g>)"</string>
+    <!-- On mailbox settings screen: Whether to sync this mailbox when the account syncs. -->
+    <string name="mailbox_settings_sync_enabled_label">"Sincronizza questa cartella"</string>
+    <!-- On mailbox settings screen: Explanatory text for what it means to "sync this folder". -->
+    <string name="mailbox_settings_sync_enabled_summary">"I messaggi verranno scaricati dopo la connessione"</string>
+    <!-- On mailbox settings screen: Mailbox sync window (the number of days to synchronize email for) setting label [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_mailbox_sync_window_label">"Numero di giorni da sincronizzare"</string>
+
+    <!-- Message that appears when adding a T-Online account -->
+    <string name="provider_note_t_online">"Prima di configurare questo account email, visita il sito web T-Online e crea una password per l\'accesso email POP3."</string>
+
+    <!-- Short name of Microsoft Exchange account type; used by AccountManager -->
+    <string name="exchange_eas_name" translatable="false">Exchange</string>
+    <!-- Long name of Microsoft Exchange account type; used by AccountManager -->
+    <string name="exchange_name_alternate">"Microsoft Exchange ActiveSync"</string>
+
+    <!-- Message that appears if the AccountManager cannot create the system Account -->
+    <string name="system_account_create_failed">"Impossibile creare l\'account. Riprova."</string>
+
+    <!-- Strings that support the DeviceAdmin / DevicePolicyManager API -->
+    <!-- Name of the DeviceAdmin (seen in settings & in user confirmation screen) -->
+    <string name="device_admin_label">"Posta"</string>
+    <!-- Long-form description of the DeviceAdmin (2nd line in settings & in user conf. screen) -->
+    <string name="device_admin_description">"Abilita norme di sicurezza specificate dal server"</string>
+
+    <!-- A policy disallowing the user of the device\'s camera [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_camera">"Non consentire uso fotocamera dispositivo"</string>
+    <!-- A policy requiring a device lock screen password [CHAR LIMIT=50] -->
+    <string name="policy_require_password">"Richiedi password dispositivo"</string>
+    <!-- A policy disallowing the reuse of recent passwords [CHAR LIMIT=50] -->
+    <string name="policy_password_history">"Limita riutilizzo password recenti"</string>
+    <!-- A policy that forces a password to expire after a set period of time [CHAR LIMIT=50] -->
+    <string name="policy_password_expiration">"Richiedi scadenza password"</string>
+    <!-- A policy requiring a maximum amount of time the device can sit idle before the lock screen
+        is activated [CHAR LIMIT=50] -->
+    <string name="policy_screen_timeout">"Richiedi dispos. inattivo per blocco schermo"</string>
+    <!-- A policy limiting the number of old calendar events synced [CHAR LIMIT=50] -->
+    <string name="policy_calendar_age">"Limita numero di eventi calendario sincronizzati"</string>
+    <!-- A policy limiting the number of emails synced [CHAR LIMIT=50] -->
+    <string name="policy_email_age">"Limita numero di email sincronizzate"</string>
+
+    <!-- The four strings below represent "quick responses" which the user can insert into a
+        message being composed with just a couple of taps.  These four responses MUST be defined,
+        but need not include a string (i.e. they are optional).  Further, the responses can be
+        customized as necessary by the translator, in case one or more of these is inappropriate in
+        a particular locale or if there are better options available. -->
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_1">"Grazie."</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_2">"Per me va bene."</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_3">"Lo leggerò più tardi e ti farò sapere."</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_4">"Organizziamo una riunione per discuterne."</string>
+
+    <!-- This is shown when a user responds to a meeting invitation [CHAR LIMIT=none]-->
+    <string name="confirm_response">"Invio risposta..."</string>
+
+    <!-- Used by AccountManager -->
+    <!-- Account type name as used by AccountManager UI (IMAP is not translatable) [CHAR LIMIT=30] -->
+    <string name="imap_name">Personale (IMAP)</string>
+    <!-- Account type name as used by AccountManager UI (POP3 is not translatable) [CHAR LIMIT=30] -->
+    <string name="pop3_name">Personale (POP3)</string>
+
+    <!-- Displayed when the user must pick his server\'s trash folder from a list [CHAR LIMIT 30]-->
+    <string name="trash_folder_selection_title">"Selez. cartella Cestino server per <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
+    <!-- Displayed when the user must pick his server\'s sent items folder from a list [CHAR LIMIT 30]-->
+    <string name="sent_folder_selection_title">"Selez. cartella posta inviata server (<xliff:g id="ACCOUNT">%s</xliff:g>)"</string>
+    <string name="account_waiting_for_folders_msg">"Caricamento elenco cartelle…"</string>
+
+    <!-- Feedback uri to be used when feedback is enabled -->
+    <string name="email_feedback_uri" translatable="false"/>
+
+    <string name="account_manager_type_exchange" translatable="false">com.android.exchange</string>
+    <string name="account_manager_type_pop3" translatable="false">com.android.email.pop3</string>
+    <string name="account_manager_type_imap" translatable="false">com.android.email.imap</string>
+    <string name="account_manager_type_legacy_imap" translatable="false">com.android.email.imap</string>
+    <string name="intent_exchange_action" translatable="false">com.android.email.EXCHANGE_INTENT</string>
+    <string name="intent_exchange_cert_action" translatable="false">com.android.email.EXCHANGE_REQUEST_CERT</string>
+    <string name="intent_exchange_package" translatable="false">com.android.exchange</string>
+    <string name="intent_account_manager_entry" translatable="false">com.android.email.activity.setup.ACCOUNT_MANAGER_ENTRY</string>
+    <string name="intent_force_create_email_account" translatable="false">com.android.email.FORCE_CREATE_ACCOUNT</string>
+    <string name="intent_create_email_account" translatable="false">com.android.email.CREATE_NEW_ACCOUNT</string>
+    <string name="authority_email_provider" translatable="false">com.android.email.provider</string>
+    <string name="authority_conversation_provider" translatable="false">com.android.email.conversation.provider</string>
+    <string name="authority_account_cache_provider" translatable="false">com.android.email.accountcache</string>
+    <string name="protocol_legacy_imap" translatable="false">imap</string>
+    <string name="protocol_imap" translatable="false">imap</string>
+    <string name="protocol_pop3" translatable="false">pop3</string>
+    <string name="protocol_eas" translatable="false">eas</string>
+
+    <!-- Content Provider Authority for Eml Attachments -->
+    
+
+    <!-- Provider name for widgets -->
+    <string name="widget_provider" translatable="false">com.android.email.provider.WidgetProvider</string>
+
+    <string name="print_job_name" translatable="false">Email - <xliff:g id="subject">%1$s</xliff:g></string>
+
+    <!-- This message indicates no quick responses exist to choose from -->
+    <string name="no_quick_responses">"Nessuna disponibile"</string>
+
+    <!-- Activity name of the compose activity that should be reconciled -->
+    <!-- Do not disable the compose activity even there isn\'t any account.
+    <string name="reconciliation_compose_activity_name" translatable="false">com.android.email.activity.ComposeActivityEmail</string>
+    -->
+    <string name="reconciliation_compose_activity_name" translatable="false"/>
+
+    <!-- Gmail name for redirecting during account setup -->
+    <string name="gmail_name">"Gmail"</string>
+
+    <!-- Name for preference entry which leads to the per-folder sync settings activity -->
+    <string name="folder_sync_settings_pref_title">"Impostazioni di sincronizzazione cartella"</string>
+
+    <!-- In Account setup options & Account Settings screens, Email sync size option. -->
+    <string name="account_settings_sync_size_enable">Configura dimensioni sinc. per e-mail</string>
+    <string name="account_settings_sync_size_enable_summary">Per salvare i dati, è possibile configurare le dimensioni di sincronizzazione per ogni e-mail dell\'account</string>
+    <string name="account_settings_sync_size_label">Scegli dimensioni sinc.</string>
+    <string name="account_settings_sync_size_category_label">Impostazioni dimensioni sinc.</string>
+
+    <string name="account_setup_options_mail_sync_size_all">Intero</string>
+    <string name="account_setup_options_mail_sync_size_20k">20 KB</string>
+    <string name="account_setup_options_mail_sync_size_100k">100 KB</string>
+    <string name="account_setup_options_mail_sync_size_200k">200 KB</string>
+    <string name="account_setup_options_mail_sync_size_500k">500 KB</string>
+    <string name="account_setup_options_mail_sync_size_1M">1 MB</string>
+
+    <!-- Customize Email account\'s signature -->
+    <string name="default_email_signature"/>
+
+    <!--Delete email account -->
+    <string name="remove_email_account">"Rimuovi account"</string>
+    <string name="remove_email_account_continue">"CONTINUA"</string>
+    <string name="remove_email_account_message">Si sta per accedere all\'applicazione Impostazioni, da cui è possibile rimuovere gli account</string>
+</resources>

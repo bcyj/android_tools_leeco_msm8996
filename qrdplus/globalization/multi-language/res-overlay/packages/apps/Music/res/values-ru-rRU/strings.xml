@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution.
+ * Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- used in various places to indicate there is one song for a given artist or album -->
+    <string name="onesong">"1 трек"</string>
+    <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
+    <plurals name="Nsongs">
+        <item quantity="other">"Треков: <xliff:g id="COUNT">%d</xliff:g>"</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other">"<xliff:g id="COUNT_FOR_ARTIST">%2$d</xliff:g> из <xliff:g id="TOTAL_COUNT">%1$d</xliff:g> треков"</item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+        <!-- number of albums is one -->
+        <item quantity="one">"1 альбом"</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other">"Альбомов: <xliff:g id="COUNT">%d</xliff:g>"</item>
+    </plurals>
+
+    <!--
+    This string is used as the format string in a String.format call,
+    and 5 additional arguments are available for printing:
+    1 - hours
+    2 - minutes
+    3 - minutes%60
+    4 - seconds
+    5 - second%60
+    -->
+    <skip/>
+    <!-- Do not translate. Duration format for duration < 1 hour -->
+    <string translatable="false" name="durationformatshort"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    <!-- Do not translate. Duration format for duration >= 1 hour -->
+    <string translatable="false" name="durationformatlong"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    <!-- Menu item that takes the user back to the top level screen of the music player -->
+    <string name="goto_start">"Библиотека"</string>
+    <!-- Menu item that switches the music player in to party shuffle mode -->
+    <string name="party_shuffle">"Создать микс"</string>
+    <!-- Menu item that switches the music player out of party shuffle mode -->
+    <string name="party_shuffle_off">"Отключить микс"</string>
+    <!-- Menu item that clear all playlists mode -->
+    <string name="clear_all_playlists">Очистить все списки воспроизведения</string>
+    <!-- Menu item that deletes the currently selected item, which might be a single song, or a collection of songs.
+         The user will be prompted to confirm before deletion actually takes place -->
+    <string name="delete_item">"Удалить"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in shuffle mode -->
+    <string name="shuffle_all">"Перемешать"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in list order -->
+    <string name="play_all">"Слушать все"</string>
+    <!-- Menu item to play song in music -->
+    <string name="open_in_music">Открыть в разделе "Музыка"</string>
+    <!-- Menu item to share audio or video -->
+    <string name="share">"Отправить"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc">"Удалить все треки исполнителя <xliff:g id="ARTIST">%s</xliff:g> с SD-карты?"</string>
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc_nosdcard">"Удалить все треки исполнителя <xliff:g id="ARTIST">%s</xliff:g> с USB-накопителя?"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc">"Удалить альбом \"<xliff:g id="ALBUM">%s</xliff:g>\" с SD-карты?"</string>
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc_nosdcard">"Удалить альбом \"<xliff:g id="ALBUM">%s</xliff:g>\" с USB-накопителя?"</string>
+
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc">"Удалить трек \"<xliff:g id="SONG">%s</xliff:g>\" с SD-карты?"</string>
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc_nosdcard">"Удалить трек \"<xliff:g id="SONG">%s</xliff:g>\" с USB-накопителя?"</string>
+
+    <!-- Delete confirmation dialog, confirmation button text -->
+    <string name="delete_confirm_button_text">"ОК"</string>
+    <!-- Toast confirming that song(s) was/were deleted. -->
+    <plurals name="NNNtracksdeleted">
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">"1 трек удален"</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other">"Удалено треков: <xliff:g id="SONGS_TO_DELETE">%d</xliff:g>."</item>
+    </plurals>
+
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning">"Сканирование SD-карты…"</string>
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning_nosdcard">"Сканирование USB-накопителя..."</string>
+
+    <!-- title of the "current playlist" screen when not in party shuffle mode -->
+    <string name="nowplaying_title">"Что играет"</string>
+    <!-- title of the "current playlist" screen when in party shuffle mode-->
+    <string name="partyshuffle_title">"Создать микс"</string>
+    <!-- Artist screen title -->
+    <string name="artists_title">Артисты</string>
+    <!-- Category label on Library screen -->
+    <string name="albums_menu">"Альбомы"</string>
+    <!-- Albums screen title -->
+    <string name="albums_title">"Альбомы"</string>
+    <!-- Category label on Library screen -->
+    <string name="tracks_menu">"Треки"</string>
+    <!-- Songs screen title -->
+    <string name="tracks_title">"Треки"</string>
+    <!-- Category label on Library screen -->
+    <string name="folder_menu">Папка</string>
+    <!-- Folder screen title -->
+    <string name="folders_title">Папка</string>
+    <!-- Category label on Library screen -->
+    <string name="playlists_menu">"Плейлисты"</string>
+    <!-- Playlists screen title -->
+    <string name="playlists_title">"Плейлисты"</string>
+    <!-- Videos screen title -->
+    <string name="videos_title">"Видео"</string>
+    <!-- All media screen title -->
+    <string name="all_title">"Все типы"</string>
+    <!-- Category label on Library screen -->
+    <string name="browse_menu">Артисты</string>
+    <!-- Library screen, menu item -->
+    <string name="search_title">"Поиск"</string>
+    <!-- Title of screen when there are no songs, or if the SD card is busy -->
+    <string name="no_tracks_title">"Нет треков"</string>
+    <!-- Title of screen when there are no videos, or if the SD card is busy -->
+    <string name="no_videos_title">"Видео отсутствует"</string>
+    <!-- Title of screen when there are no playlists, or if the SD card is busy -->
+    <string name="no_playlists_title">"Нет плейлистов."</string>
+    <!-- Playlist context menu item to delete the selected playlist. -->
+    <string name="delete_playlist_menu">"Удалить"</string>
+    <!-- Playlist context menu item to edit the selected playlist -->
+    <string name="edit_playlist_menu">"Изменить"</string>
+    <!-- Playlist context menu item to rename the selected playlist-->
+    <string name="rename_playlist_menu">"Переименовать"</string>
+    <!-- Dialog box message shown when clearing all playlists-->
+    <string name="clear_all_playlists_message">Хотите очистить все списки воспроизведения?</string>
+    <!-- Dialog box message shown when deleting a playlist-->
+    <string name="delete_playlist_message">Хотите удалить \"<xliff:g id="name">%s</xliff:g>\"?</string>
+    <!-- Dialog box button -->
+    <string name="delete_playlist_button_ok">ОК</string>
+    <string name="delete_playlist_button_cancel">Отмена</string>
+    <!-- Transient popup message shown after deleting a playlist -->
+    <string name="playlist_deleted_message">"Плейлист удален."</string>
+    <!-- Transient popup message shown after renaming a playlist -->
+    <string name="playlist_renamed_message">"Плейлист переименован."</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in list view -->
+    <string name="recentlyadded">"Добавили недавно"</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in title bar of songs list -->
+    <string name="recentlyadded_title">"Добавили недавно"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in list view -->
+    <string name="podcasts_listitem">"Подкасты"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in title bar of songs list -->
+    <string name="podcasts_title">"Подкасты"</string>
+    <!-- all recordings will show up in the media database in a playlist with thiis name -->
+    <string name="audio_db_playlist_name">"Мои записи"</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title">"SD-карта отсутствует."</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title_nosdcard">"USB-накопитель не найден"</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message">"Не удалось найти SD-карту."</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message_nosdcard">"USB-накопителем здесь не предусмотрен."</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title">"SD-карта недоступна"</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title_nosdcard">"USB-накопитель недоступен"</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message">"SD-карта занята."</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message_nosdcard">"USB-накопитель занят."</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title">"Ошибка SD-карты"</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title_nosdcard">"Ошибка USB-накопителя"</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message">"Ошибка SD-карты."</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message_nosdcard">"Ошибка USB-накопителя."</string>
+    <!-- Default name of artist that doesn\'t have a name in the metadata -->
+    <string name="unknown_artist_name">"Неизвестный исполнитель"</string>
+    <!-- Default name of album that doesn\'t have a name in the metadata -->
+    <string name="unknown_album_name">"Неизвестный альбом"</string>
+    <!-- Default name of folder that doesn\'t have a path in the metadata -->
+    <string name="unknown_folder_name">Неизвестный путь</string>
+    <!-- Default name of folder that doesn\'t have a count in the metadata -->
+    <string name="unknown_folder_count">Неизвестное количество</string>
+    <!-- Toast after turning shuffle on -->
+    <string name="shuffle_on_notif">"Режим случайного воспроизведения включен."</string>
+    <!-- Toast after turning shuffle off -->
+    <string name="shuffle_off_notif">"Режим случайного воспроизведения отключен."</string>
+    <!-- Toast after turning repeat off -->
+    <string name="repeat_off_notif">"Режим повторного воспроизведения отключен."</string>
+    <!-- Toast after turning single repeat on -->
+    <string name="repeat_current_notif">"Включен повтор текущего трека"</string>
+    <!-- Toast after turning repeat all on -->
+    <string name="repeat_all_notif">"Включен повтор всех треков"</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu">"Поставить на звонок"</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short">"Поставить на звонок"</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set">"Трек \"<xliff:g id="NAME">%s</xliff:g>\" поставлен на звонок."</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu_1">Как рингтон для слота 1</string>
+    <string name="ringtone_menu_2">Как рингтон для слота 2</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short_1">Исп. как рингтон 1</string>
+    <string name="ringtone_menu_short_2">Исп. как рингтон 2</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_1">Файл \"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" установлен в качестве мелодии для гнезда 1.</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_2">Файл \"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" установлен в качестве мелодии для гнезда 2.</string>
+    <!-- Context menu item -->
+    <string name="play_selection">"Воспроизвести"</string>
+    <!-- Context menu item -->
+    <string name="add_to_playlist">"Добавить в плейлист"</string>
+    <!-- Context menu item -->
+    <string name="queue">"Текущий плейлист"</string>
+    <!-- Context menu item -->
+    <string name="new_playlist">"Создать"</string>
+    <!-- Template for newly created playlist name -->
+    <string name="new_playlist_name_template">"Новый плейлист <xliff:g id="NUMBER">%d</xliff:g>"</string>
+    <!-- Toasts after adding song(s) to playlists -->
+    <plurals name="NNNtrackstoplaylist">
+        <!-- message shown when one song was added -->
+        <item quantity="one">"1 трек добавлен в плейлист."</item>
+        <!-- message shown when zero or more than one song was added -->
+        <item quantity="other">"Треков, добавленных в плейлист: <xliff:g id="NUMBER">%d</xliff:g>"</item>
+    </plurals>
+    <!-- Toast after selecting an empty playlist -->
+    <string name="emptyplaylist">"Выбранный плейлист пуст."</string>
+    <!-- Button name when saving a playlist -->
+    <string name="create_playlist_create_text">"Сохранить"</string>
+    <!-- Button name when saving a playlist and the new playlist will overwrite an existing one -->
+    <string name="create_playlist_overwrite_text">"Перезаписать"</string>
+    <!-- Dialog box title -->
+    <string name="service_start_error_title">"Сбой при воспроизведении"</string>
+    <!-- Dialog box message -->
+    <string name="service_start_error_msg">"Не удалось воспроизвести трек."</string>
+    <!-- Dialog box button -->
+    <string name="service_start_error_button">"ОК"</string>
+    <!-- Time span edit options that appear when editing system playlist "Recently added" -->
+    <!-- Used to indicate the number of weeks the "recently added" playlist covers in a selector widget -->
+    <string-array name="weeklist">
+        <item>"1 неделя"</item>
+        <item>"2 недели"</item>
+        <item>"3 недели"</item>
+        <item>"4 недели"</item>
+        <item>"5 недель"</item>
+        <item>"6 недель"</item>
+        <item>"7 недель"</item>
+        <item>"8 недель"</item>
+        <item>"9 недель"</item>
+        <item>"10 нед."</item>
+        <item>"11 нед."</item>
+        <item>"12 нед."</item>
+    </string-array>
+    <!-- Button name in time span picker -->
+    <string name="weekpicker_set">"Готово"</string>
+    <!-- Title of time span picker -->
+    <string name="weekpicker_title">"Установить время"</string>
+    <!-- Do not translate. Background color for currently dragged item in playlist edit mode. -->
+    <color name="dragndrop_background">#e0103010</color>
+    <!-- Do not translate. Background color for albums in the artists list view. -->
+    <color name="expanding_child_background">#ff404040</color>
+
+    <!-- menu item to save the current list as a new playlist -->
+    <string name="save_as_playlist">"Сохранить как плейлист"</string>
+    <!-- menu item to clear the current playlist -->
+    <string name="clear_playlist">"Очистить плейлист"</string>
+
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicbrowserlabel">"Музыка"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicshortcutlabel">"Плейлист"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediaplaybacklabel">"Музыка"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="videobrowserlabel">"Видео"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediapickerlabel">"Музыка"</string>
+
+    <!-- Shown as a transient message whenever a file fails to play -->
+    <string name="playback_failed">"Неподдерживаемый тип файла."</string>
+    <!-- Shown as a transient message whenever a file fails to open -->
+    <string name="open_failed">Не удается открыть файл.</string>
+
+    <!-- Text for the "cancel" button in the "delete" and "create playlist" confirmation dialogs -->
+    <string name="cancel">"Отмена"</string>
+
+    <!-- context menu item to remove the selected item from the playlist -->
+    <string name="remove_from_playlist">"Удалить из плейлиста"</string>
+
+    <!-- shown when connecting to a music stream, before it starts playing -->
+    <string name="streamloadingtext">"Подключение к <xliff:g id="HOST">%s</xliff:g>"</string>
+
+    <!-- title of contextual music search menu -->
+    <string name="mediasearch">"Искать \"<xliff:g id="TERM">%s</xliff:g>\", используя:"</string>
+
+    <!-- Shown in the title bar while the list of artists is being retrieved in the background -->
+    <string name="working_artists">"Артисты..."</string>
+    <!-- Shown in the title bar while the list of albums is being retrieved in the background -->
+    <string name="working_albums">"Альбомы…"</string>
+    <!-- Shown in the title bar while the list of songs is being retrieved in the background -->
+    <string name="working_songs">"Треки..."</string>
+    <!-- Shown in the title bar while the list of folders is being retrieved in the background -->
+    <string name="working_folders">Папки\u2026</string>
+    <!-- Shown in the title bar while the list of playlists is being retrieved in the background -->
+    <string name="working_playlists">"Плейлисты..."</string>
+
+    <!-- Shown in the music picker while loading the music database. -->
+    <string name="loading">"Загрузка…"</string>
+    <!-- Menu in music picker to sort the list by track/song name. -->
+    <string name="sort_by_track">"Треки"</string>
+    <!-- Menu in music picker to sort the list by album name. -->
+    <string name="sort_by_album">"Альбомы"</string>
+    <!-- Menu in music picker to sort the list by artist name. -->
+    <string name="sort_by_artist">"Артисты"</string>
+    <!--  Title of the music picker activity. -->
+    <string name="music_picker_title">"Выберите трек"</string>
+
+    <!-- The string used to describe Music as a searchable item within system search settings. -->
+    <string name="search_settings_description">"Артисты, альбомы и треки"</string>
+
+    <!-- Shown in the search box as a hint -->
+    <string name="search_hint">"Поиск музыки"</string>
+    <string name="search_hint_video">Поиск видео</string>
+
+    <!--The fast scroll thumb will show one character from this string depending on the position in the list -->
+    <string name="fast_scroll_alphabet">" АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"</string>
+
+    <!-- Text shown on widget when first loaded -->
+    <string name="widget_initial_text">"Нажмите, чтобы выбрать музыку."</string>
+
+    <!-- Menu text for the item controlling the audio effects panel [CHAR LIMIT=15] -->
+    <string name="effectspanel">"Звуковые эффекты"</string>
+
+    <string name="duplicate_playlist_name_alert">Список воспроизведения с таким именем уже существует \"<xliff:g id="name">%s</xliff:g>\". Выберите другое имя.</string>
+    <string name="same_playlist_name_alert">Имя списка воспроизведения \"<xliff:g id="name">%s</xliff:g>\" не изменено. Выберите другое имя.</string>
+    <string name="button_ok">ОК</string>
+    <string name="list_empty">Список воспроизведения пуст.</string>
+
+    <!-- Shown when video is played after disable Gallery app from Settings -->
+    <string name="enable_gallery_app">Невозможно воспроизвести видео. Откройте пункт "Галерея" в меню "Настройки".</string>
+    <string name="close_music">"Завершить"</string>
+    <string name="delete_video_item_message">Хотите удалить \"<xliff:g id="name">%s</xliff:g>\"?</string>
+    <string name="video_deleted_message">Видеофайл удален.</string>
+
+    <!-- Menu item that takes the user link to net to see more music -->
+    <string name="more_music">Другая музыка</string>
+    <!-- Menu item that takes the user link to net to see more video -->
+    <string name="more_video">Другое видео</string>
+    <!--gesture control playback status-->
+    <string name="music_gesture_play">"Воспроизвести/приостановить аудио"</string>
+    <string name="music_gesture_prev">"Воспроизвести предыдущую композицию"</string>
+    <string name="music_gesture_next">"Воспроизвести следующую композицию"</string>
+
+    <!-- DRM Related Strings -->
+    <string name="no_permission_for_drm">"Предоставить доступ к файлу DRM невозможно"</string>
+    <string name="drm_license_info">Информация о лицензии DRM</string>
+    <string name="drm_ringtone_error">Невозможно указать CD/SD-файлы как рингтон</string>
+
+</resources>

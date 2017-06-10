@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:VTScreen="http://schemas.android.com/apk/res/com.borqs.videocall"
+	android:id="@+id/vtapp" android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+	android:background="@drawable/videocall_background">
+
+	<LinearLayout android:id="@+id/vt_plate"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical">
+
+		<!-- Call card hold call related information -->
+		<com.borqs.videocall.VTPanel android:id="@+id/vt_panel"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			VTScreen:panelHeightKeypad="123dp"
+			VTScreen:panelHeightUnlockConnecting="233dp"
+			VTScreen:panelHeightLockConnecting="220dp"
+			VTScreen:panelHeightInCall="290dp"
+            VTScreen:panelWidthInCall ="240dp"
+            VTScreen:panelWidthKeypad ="240dp"
+            VTScreen:panelWidthConnecting = "240dp"
+            android:background="@drawable/cmcc_phone_shadow"
+            >
+			<include layout="@layout/vtpanel_fallback_panel"
+				android:id="@+id/vtpanel_fallback_panel"/>
+			<include layout="@layout/vtpanel_call_card"
+				android:id="@+id/vtpanel_call_card" />
+			<include layout="@layout/vtpanel_control_buttons"
+				android:id="@+id/vtpanel_control_buttons" />
+			<include layout="@layout/vtpanel_local_win"
+				android:id="@+id/vtpanel_local_win" />
+			<include layout="@layout/vtpanel_remote_win"
+				android:id="@+id/vtpanel_remote_win" />
+
+				<include layout="@layout/action_buttons"
+		android:id="@+id/action_buttons" />
+
+<include layout="@layout/vtpanel_swap_button"
+                    android:id="@+id/vtpanel_swapbutton"/>
+		</com.borqs.videocall.VTPanel>
+
+		<!-- sliding card panel -->
+
+		<LinearLayout android:id="@+id/sliding_group"
+			android:layout_width="fill_parent"
+			android:layout_height="33dp"
+			android:orientation="vertical"
+			android:background="@drawable/cmcc_phone_vtcall_bg"
+			android:visibility="gone">
+
+			<include layout="@layout/vt_popup_card"
+				android:id="@+id/vt_connecting_card"/>
+		</LinearLayout>
+		<LinearLayout android:id="@+id/vt_bottom_connecting"
+		android:layout_width="fill_parent"
+		android:layout_height="100dp"
+		android:orientation="vertical"
+		android:background="@drawable/cmcc_phone_bottom_bg"
+		android:visibility="gone">
+			<LinearLayout android:id="@+id/tab_selector_container"
+				 android:layout_width="fill_parent"
+				 android:layout_height="53dp"
+				 android:background="@drawable/cmcc_phone_plate_phone_portrait">
+				<com.android.internal.widget.SlidingTab
+				 android:id="@+id/tab_selector"
+				 android:layout_width="fill_parent"
+				 android:layout_height="wrap_content"
+				 android:layout_gravity="center"
+				 android:gravity="center"
+			 />
+			</LinearLayout>
+				<include layout="@layout/sms_refuse_control_panel"
+			android:id="@+id/sms_refuse_group"/>
+		</LinearLayout>
+		<LinearLayout android:id="@+id/black_space"
+			 android:layout_width="fill_parent"
+			 android:layout_height="17dp"
+			 android:background="@drawable/cmcc_phone_vtcall_bg">
+		</LinearLayout>
+
+		<com.borqs.videocall.VideoCallKeyPad
+		    android:id="@+id/touch_keypad"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:visibility="gone" />
+
+		<include layout="@layout/vtpanel_middle_buttons"
+				android:id="@+id/vtpanel_middle_buttons" />
+	    </LinearLayout>
+	<!-- place keypad -->
+</LinearLayout>

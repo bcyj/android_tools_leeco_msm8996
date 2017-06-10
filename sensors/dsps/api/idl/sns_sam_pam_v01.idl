@@ -1,0 +1,285 @@
+/*****************************************************************************
+  @FILE     sns_sam_pam.idl
+
+  @BRIEF    Message definition for Pedestrian Activity Monitor (PAM).
+
+  @DESCRIPTION
+  This file defines messages used by PAM algorithm service.
+
+  As prerequisite, the sensor algorithm must use the common interface
+  defined in the Sensor Algorithms framework.
+
+  The messages defined herein will be passed to the Sensor framework using
+  the sensor1_write() API.
+
+  @COPYRIGHT
+  Copyright (c) 2010-2014 Qualcomm Technologies, Inc.  All Rights Reserved
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+include "sns_sam_common_v01.idl";
+
+revision 5;
+
+const SNS_SAM_PAM_SUID = 0x866319e2cab14f1f;
+
+//! @ENUM SNS_SAM_PAM_STATE_ENUM
+enum {
+   SNS_SAM_PAM_DEV_STATE_UNKNOWN = -2,    /**< Initial state. */
+   SNS_SAM_PAM_DEV_STATE_STATIONARY = -1, /**< Device is in a Stationary state. */
+   SNS_SAM_PAM_DEV_STATE_MOTION = 0       /**< Device is in motion with 0 step count. */
+} sns_sam_pam_dev_state_e;
+
+/* Following are message definitions for PAM service */
+
+//============================================================================
+/** @COMMAND SNS_SAM_PAM_ENABLE
+    @BRIEF This command enables a sensor algorithm.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_PAM_ENABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint32  measurement_period;
+  /**< Measurement period in seconds over which the pedometer counts steps.
+  */
+  mandatory uint32  step_count_threshold;
+  /**< Step count threshold.
+       Send a new report to the client if the difference between the measured
+       step count and the last reported step count is more than this threshold.
+       The client can request a periodic report every measurement period by
+       setting this threshold to 0.
+  */
+  optional uint32  sample_rate;
+  /**< Sample rate in Hz; Q16 format. */
+
+  //! @VERSION 1.3
+  optional sns_suspend_notification_s notify_suspend;
+  /**< Identifies whether indications for this request are to be sent
+       when the processor is in the Suspend state.
+
+       If this field is not specified, the default value is set to:
+       notify_suspend->proc_type                  = SNS_PROC_APPS
+       notify_suspend->send_indications_during_suspend  = FALSE
+
+       This field does not have any bearing on error indication
+       messages, which are sent even during Suspend.
+    */
+} sns_sam_pam_enable_req_msg;
+
+//! @MSG     SNS_SAM_PAM_ENABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s  resp = 2;
+  /**< Common response message. */
+  optional uint8  instance_id;
+  /**< Instance ID, which is assigned by the SAM.
+       The client must use this instance ID for future messages associated with
+       the current algorithm instance.
+  */
+} sns_sam_pam_enable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_PAM_DISABLE
+    @BRIEF This command disables a sensor algorithm.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_PAM_DISABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8  instance_id;
+  /**< Identifies the algorithm instance. */
+} sns_sam_pam_disable_req_msg;
+
+//! @MSG     SNS_SAM_PAM_DISABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s  resp = 2;
+  /**< Common response message. */
+  optional uint8  instance_id;
+  /**< Identifies the algorithm instance. */
+} sns_sam_pam_disable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_PAM_REPORT
+    @BRIEF Output report from a sensor algorithm.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_PAM_REPORT_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8   instance_id;
+  /**< Identifies the algorithm instance. */
+  mandatory uint32  timestamp;
+  /**< Timestamp of the last sensor sample used to compute this result,
+       in SSC ticks.
+  */
+  mandatory int32   step_count;
+  /**< Step count measured in the latest measurement period, or
+       the current device state (sns_sam_pam_dev_state_e).
+  */
+} sns_sam_pam_report_ind_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_PAM_GET_REPORT
+    @BRIEF This command fetches latest report output from a sensor algorithm.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_PAM_GET_REPORT_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8  instance_id;
+  /**< Identifies the algorithm instance. */
+} sns_sam_pam_get_report_req_msg;
+
+//! @MSG     SNS_SAM_PAM_GET_REPORT_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s   resp = 2;
+  /**< Common response message. */
+  optional uint8  instance_id;
+  /**< Identifies the algorithm instance. */
+  optional uint32  timestamp;
+  /**< Timestamp of the input that caused this indication, in SSC ticks. */
+  optional int32  step_count;
+  /**< Step count measured in the latest measurement period, or
+       the current device state (sns_sam_pam_dev_state_e).
+  */
+} sns_sam_pam_get_report_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_PAM_ERROR
+    @BRIEF Asynchronous error report from a sensor algorithm.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_PAM_ERROR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//============================================================================
+
+message {
+  mandatory uint8  error;
+  /**< Sensors error code. */
+  mandatory uint8  instance_id;
+  /**< Identifies the algorithm instance. */
+} sns_sam_pam_error_ind_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_PAM_CANCEL
+    @BRIEF This command cancels all requests to the algorithm service.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//============================================================================
+/** @COMMAND SNS_SAM_PAM_VERSION
+    @BRIEF This command requests algorithm service version.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_SAM_PAM_SVC {
+  //! @ID SNS_SAM_PAM_CANCEL
+  sns_common_cancel_req_msg        SNS_SAM_PAM_CANCEL_REQ,
+  sns_common_cancel_resp_msg       SNS_SAM_PAM_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_SAM_PAM_VERSION
+  sns_common_version_req_msg       SNS_SAM_PAM_VERSION_REQ,
+  sns_common_version_resp_msg      SNS_SAM_PAM_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SAM_PAM_ENABLE
+  sns_sam_pam_enable_req_msg       SNS_SAM_PAM_ENABLE_REQ,
+  sns_sam_pam_enable_resp_msg      SNS_SAM_PAM_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_SAM_PAM_DISABLE
+  sns_sam_pam_disable_req_msg      SNS_SAM_PAM_DISABLE_REQ,
+  sns_sam_pam_disable_resp_msg     SNS_SAM_PAM_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_SAM_PAM_GET_REPORT
+  sns_sam_pam_get_report_req_msg   SNS_SAM_PAM_GET_REPORT_REQ,
+  sns_sam_pam_get_report_resp_msg  SNS_SAM_PAM_GET_REPORT_RESP
+    = 0x04;
+
+  //! @ID SNS_SAM_PAM_REPORT
+  sns_sam_pam_report_ind_msg       SNS_SAM_PAM_REPORT_IND
+    = 0x05;
+
+  //! @ID SNS_SAM_PAM_ERROR
+  sns_sam_pam_error_ind_msg        SNS_SAM_PAM_ERROR_IND
+    = 0x06;
+
+  //! @ID SNS_SAM_GET_ALGO_ATTRIBUTES
+  sns_sam_get_algo_attrib_req_msg  SNS_SAM_PAM_GET_ATTRIBUTES_REQ,
+  sns_sam_get_algo_attrib_resp_msg SNS_SAM_PAM_GET_ATTRIBUTES_RESP
+    = 0x24;
+
+} = SNS_QMI_SVC_ID_38;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+*/
+
+//============================================================================
+// End of Module
+//============================================================================
+

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+
+<resources>
+     <declare-styleable name="VTPanel">
+        <!-- Identifier for remote window. -->
+        <attr name="remoteWindow" format="reference" />
+        <!-- Identifier for local window. -->
+        <attr name="localWindow" format="reference" />
+        <!-- Identifier for call card. -->
+        <attr name="callCard" format="reference" />
+        <!-- Identifier for surface control buttons. -->
+        <attr name="controlButtons" format="reference" />
+        <!-- Extra offset for the handle at the bottom of the VTScreen. -->
+        <attr name="bottomOffset" format="dimension"  />
+        <!-- Extra offset for the handle at the top of the VTScreen. -->
+        <attr name="topOffset" format="dimension"  />
+        <!-- Extra remoteWindow offset to call card. -->
+        <attr name="internalGapSize" format="dimension"/>
+        <!-- large window height. -->
+        <attr name="largeWindowHeight" format="dimension"/>
+        <!-- large window width. -->
+        <attr name="largeWindowWidth" format="dimension"/>
+        <!-- large window height. -->
+        <attr name="smallWindowHeight" format="dimension"/>
+        <!-- large window width. -->
+        <attr name="smallWindowWidth" format="dimension"/>
+        <!-- window size for connecting -->
+        <attr name="connectWindowWidth" format="dimension"/>
+        <attr name="connectWindowHeight" format="dimension"/>
+
+        <attr name="middleWindowWidth" format="dimension"/>
+        <attr name="middleWindowHeight" format="dimension"/>
+
+        <attr name="panelHeightKeypad" format="dimension"/>
+        <attr name="panelHeightUnlockConnecting" format="dimension"/>
+        <attr name="panelHeightLockConnecting" format="dimension"/>
+        <attr name="panelHeightInCall" format="dimension"/>
+
+        <attr name="panelWidthKeypad" format="dimension"/>
+        <attr name="panelWidthConnecting" format="dimension"/>
+        <attr name="panelWidthInCall" format="dimension"/>
+
+        <!-- position details for modes! -->
+        <!-- 1. call card -->
+        <attr name="callCardLeftInCall" format="dimension"/>
+        <attr name="callCardLeftConnecting" format="dimension"/>
+        <attr name="callCardTop_localMode" format="dimension"/>
+        <attr name="callCardTop_lockConnecting" format="dimension"/>
+        <attr name="callCardTop_unlockConnecting" format="dimension"/>
+        <attr name="callCardTop_remoteMode" format="dimension"/>
+        <attr name="callCardTop_remoteKeypadMode" format="dimension"/>
+
+        <!-- 2. common for local and remote surface -->
+        <attr name="smallSurfaceLeft" format="dimension"/>
+        <attr name="largeSurfaceLeft" format="dimension"/>
+        <attr name="largeSurfaceLeft_moveLeft" format="dimension"/>
+        <attr name="largeSurfaceLeft_moveRight" format="dimension"/>
+        <attr name="middleSurfaceLeft_keypadMode" format="dimension"/>
+
+        <!-- 3. for local surface -->
+        <attr name="localSurfaceTop_localMode" format="dimension"/>
+        <attr name="localSurfaceTop_remoteMode" format="dimension"/>
+        <attr name="localSurfaceTop_unlockConnecting" format="dimension"/>
+        <attr name="localSurfaceLeft_unlockConnecting" format="dimension"/>
+        <attr name="localSurfaceTop_lockConnecting" format="dimension"/>
+        <attr name="localSurfaceLeft_lockConnecting" format="dimension"/>
+        <attr name="localSurfaceLeft_connecting" format="dimension"/>
+        <attr name="localSurfaceTop_remoteKeyPadMode" format="dimension"/>
+        <attr name="localSurfaceTop_localKeyPadMode" format="dimension"/>
+
+        <!-- 4. for remote surface -->
+        <attr name="remoteSurfaceTop_remoteMode" format="dimension"/>
+        <attr name="remoteSurfaceTopConnectin" format="dimension"/>
+
+        <!-- surface control buttons -->
+        <attr name="surfaceCtlBtn_width" format="dimension"/>
+        <attr name="surfaceCtlBtn_margin" format="dimension"/>
+
+	</declare-styleable>
+
+    <declare-styleable name="VTImageListItem">
+        <attr name="radioButton" format="reference" />
+        <attr name="imageView" format="reference" />
+        <attr name="addButton" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="VTPanelComponent">
+	<!-- lock screen connecting mode -->
+	<attr name="left_lock_connecting" format="dimension"/>
+	<attr name="top_lock_connecting" format="dimension"/>
+	<attr name="height_lock_connecting" format="dimension"/>
+	<attr name="width_lock_connecting" format="dimension"/>
+	<!-- unlock screen connecting mode -->
+	<attr name="left_unlock_connecting" format="dimension"/>
+	<attr name="top_unlock_connecting" format="dimension"/>
+	<attr name="height_unlock_connecting" format="dimension"/>
+	<attr name="width_unlock_connecting" format="dimension"/>
+	<!-- local mode -->
+	<attr name="left_local" format="dimension"/>
+	<attr name="top_local" format="dimension"/>
+	<attr name="height_local" format="dimension"/>
+	<attr name="width_local" format="dimension"/>
+	<!-- remote mode -->
+	<attr name="left_remote" format="dimension"/>
+	<attr name="top_remote" format="dimension"/>
+	<attr name="height_remote" format="dimension"/>
+	<attr name="width_remote" format="dimension"/>
+	<!-- keypad_local mode -->
+	<attr name="left_keypad_local" format="dimension"/>
+	<attr name="top_keypad_local" format="dimension"/>
+	<attr name="height_keypad_local" format="dimension"/>
+	<attr name="width_keypad_local" format="dimension"/>
+	<!-- keypad_remote mode -->
+	<attr name="left_keypad_remote" format="dimension"/>
+	<attr name="top_keypad_remote" format="dimension"/>
+	<attr name="height_keypad_remote" format="dimension"/>
+	<attr name="width_keypad_remote" format="dimension"/>
+	<!-- controlbtn_left_local mode -->
+	<attr name="left_controlbtn_left_local" format="dimension"/>
+	<attr name="top_controlbtn_left_local" format="dimension"/>
+	<attr name="height_controlbtn_left_local" format="dimension"/>
+	<attr name="width_controlbtn_left_local" format="dimension"/>
+	<!-- controlbtn_right_local mode -->
+	<attr name="left_controlbtn_right_local" format="dimension"/>
+	<attr name="top_controlbtn_right_local" format="dimension"/>
+	<attr name="height_controlbtn_right_local" format="dimension"/>
+	<attr name="width_controlbtn_right_local" format="dimension"/>
+	<!-- controlbtn_left_remote mode -->
+	<attr name="left_controlbtn_left_remote" format="dimension"/>
+	<attr name="top_controlbtn_left_remote" format="dimension"/>
+	<attr name="height_controlbtn_left_remote" format="dimension"/>
+	<attr name="width_controlbtn_left_remote" format="dimension"/>
+	<!-- controlbtn_right_remote mode -->
+	<attr name="left_controlbtn_right_remote" format="dimension"/>
+	<attr name="top_controlbtn_right_remote" format="dimension"/>
+	<attr name="height_controlbtn_right_remote" format="dimension"/>
+	<attr name="width_controlbtn_right_remote" format="dimension"/>
+	<!-- remote only mode -->
+	<attr name="left_remote_only" format="dimension"/>
+	<attr name="top_remote_only" format="dimension"/>
+	<attr name="height_remote_only" format="dimension"/>
+	<attr name="width_remote_only" format="dimension"/>
+	<!-- keypad remote only mode -->
+	<attr name="left_keypad_remote_only" format="dimension"/>
+	<attr name="top_keypad_remote_only" format="dimension"/>
+	<attr name="height_keypad_remote_only" format="dimension"/>
+	<attr name="width_keypad_remote_only" format="dimension"/>
+	<!-- animation attr -->
+	<attr name="has_animation" format="boolean"/>
+
+    </declare-styleable>
+
+    <!-- For sliding card panel -->
+    <declare-styleable name="VTSlidingCardPanel">
+        <attr name="up_limit_top" format="dimension" />
+        <attr name="down_limit_top" format="dimension" />
+        <attr name="mid_pos_top" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="EditPhoneNumberPreference">
+        <!-- The enable button text. -->
+        <attr name="enableButtonText" format="string" />
+        <!-- The disable button text. -->
+        <attr name="disableButtonText" format="string" />
+        <!-- The change / update button text. -->
+        <attr name="changeNumButtonText" format="string" />
+        <!-- The confirm button mode. -->
+        <attr name="confirmMode">
+            <!-- Traditional single action "ok" button. -->
+            <enum name="confirm" value="0" />
+            <!-- Two state "enable/disable" button. -->
+            <enum name="activation" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CallForwardEditPreference">
+        <attr name="serviceClass">
+            <!-- voice -->
+            <enum name="voice" value="1" />
+            <!-- data -->
+            <enum name="data" value="2" />
+             <!-- data_sync -->
+            <enum name="data_sync" value="16" />
+        </attr>
+        <attr name="reason">
+            <!-- unconditional  -->
+            <enum name="unconditional" value="0" />
+            <!-- busy -->
+            <enum name="busy" value="1" />
+            <!-- no_reply -->
+            <enum name="no_reply" value="2" />
+            <!-- not_reachable -->
+            <enum name="not_reachable" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="GlowPadView">
+        <attr name="android:gravity"/>
+
+        <!-- Reference to an array resource that be shown as targets around a circle. -->
+        <attr name="targetDrawables" format="reference"/>
+
+        <!-- Reference to an array resource that be used as description for the targets around the circle. -->
+        <attr name="targetDescriptions" format="reference"/>
+
+        <!-- Reference to an array resource that be used to announce the directions with targets around the circle. -->
+        <attr name="directionDescriptions" format="reference"/>
+
+        <!-- Sets a drawable as the center. -->
+        <attr name="handleDrawable" format="reference"/>
+
+        <!-- Drawable to use for wave ripple animation. -->
+        <attr name="outerRingDrawable" format="reference"/>
+
+        <!-- Drawble used for drawing points -->
+        <attr name="pointDrawable" format="reference"/>
+
+        <!-- Inner radius of glow area. -->
+        <attr name="innerRadius" format="dimension"/>
+
+        <!-- Outer radius of glow area. Target icons will be drawn on this circle. -->
+        <attr name="outerRadius" format="dimension"/>
+
+        <!-- Size of target radius. Points within this distance of target center is a "hit". -->
+        <!--
+        <attr name="hitRadius" format="dimension"/>
+        -->
+
+        <!-- Radius of glow under finger. -->
+        <attr name="glowRadius" format="dimension"/>
+
+        <!-- Tactile feedback duration for actions. Set to '0' for no vibration. -->
+        <attr name="vibrationDuration" format="integer"/>
+
+        <!-- How close we need to be before snapping to a target. -->
+        <attr name="snapMargin" format="dimension"/>
+
+        <!-- Number of waves/chevrons to show in animation. -->
+        <attr name="feedbackCount" format="integer"/>
+
+        <!-- Used when the handle shouldn't wait to be hit before following the finger -->
+        <attr name="alwaysTrackFinger" format="boolean"/>
+
+        <!-- Determine whether the glow pad is allowed to scale to fit the bounds indicated
+            by its parent. If this is set to false, no scaling will occur. If this is set to true
+            scaling will occur to fit for any axis in which gravity is set to center. -->
+        <attr name="allowScaling" format="boolean" />
+    </declare-styleable>
+</resources>

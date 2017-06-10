@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Choices for the "Reminder method" spinner.
+         These must be kept in sync with the reminder_methods_values array.
+         [CHAR LIMIT=10]
+    -->
+    <string-array name="reminder_methods_labels">
+        <item>"Обавештење"</item>
+        <item>"Имејл"</item>
+        <item>"SMS"</item>
+        <item>"Аларм"</item>
+    </string-array>
+
+    <!-- This maps reminder_methods_labels to internal constants. -->
+    <integer-array name="reminder_methods_values" translatable="false">
+        <item>1</item>  <!-- METHOD_ALERT -->
+        <item>2</item>  <!-- METHOD_EMAIL -->
+        <item>3</item>  <!-- METHOD_SMS -->
+        <item>4</item>  <!-- METHOD_ALARM -->
+    </integer-array>
+
+    <!-- Choices for the "Reminder minutes" spinner.
+         These must be kept in sync with the reminder_minutes_values array.
+         For consistency, the format should match what
+         EventViewUtils.constructReminderLabel() generates.  (TODO: eliminate
+         this and just generate the list from reminder_minutes_values?)
+         [CHAR LIMIT=15]
+    -->
+    <string-array name="reminder_minutes_labels">
+        <item>"0 минута"</item>
+        <item>"1 минут"</item>
+        <item>"5 минута"</item>
+        <item>"10 минута"</item>
+        <item>"15 минута"</item>
+        <item>"20 минута"</item>
+        <item>"25 минута"</item>
+        <item>"30 минута"</item>
+        <item>"45 минута"</item>
+        <item>"1 сат"</item>
+        <item>"2 сата"</item>
+        <item>"3 сата"</item>
+        <item>"12 сати"</item>
+        <item>"24 сата"</item>
+        <item>"2 дана"</item>
+        <item>"1 недеља"</item>
+    </string-array>
+
+    <integer-array name="reminder_minutes_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+        <item>120</item>
+        <item>180</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>2880</item>
+        <item>10080</item>
+    </integer-array>
+
+  <!-- Choices for the "Reminder minutes" spinner in the settings.
+         These must be kept in sync with the preferences_default_reminder_values array.
+         [CHAR LIMIT=12]
+    -->
+       <string-array name="preferences_default_reminder_labels">
+        <item>"Ништа"</item>
+        <item>"0 минута"</item>
+        <item>"1 минут"</item>
+        <item>"5 минута"</item>
+        <item>"10 минута"</item>
+        <item>"15 минута"</item>
+        <item>"20 минута"</item>
+        <item>"25 минута"</item>
+        <item>"30 минута"</item>
+        <item>"45 минута"</item>
+        <item>"1 сат"</item>
+        <item>"2 сата"</item>
+        <item>"3 сата"</item>
+        <item>"12 сати"</item>
+        <item>"24 сата"</item>
+        <item>"2 дана"</item>
+        <item>"1 недеља"</item>
+    </string-array>
+
+    <string-array name="preferences_default_reminder_values" translatable="false">
+        <item>"-1"</item>
+        <item>"0"</item>
+        <item>"1"</item>
+        <item>"5"</item>
+        <item>"10"</item>
+        <item>"15"</item>
+        <item>"20"</item>
+        <item>"25"</item>
+        <item>"30"</item>
+        <item>"45"</item>
+        <item>"60"</item>
+        <item>"120"</item>
+        <item>"180"</item>
+        <item>"720"</item>
+        <item>"1440"</item>
+        <item>"2880"</item>
+        <item>"10080"</item>
+    </string-array>
+
+    <string-array name="preferences_week_start_day_labels">
+        <item>"Подразумевано за локалитет"</item>
+        <item>"субота"</item>
+        <item>"недеља"</item>
+        <item>"понедељак"</item>
+    </string-array>
+
+    <string-array name="preferences_week_start_day_values" translatable="false">
+        <item>"-1"</item>
+        <item>"7"</item>
+        <item>"1"</item>
+        <item>"2"</item>
+    </string-array>
+
+
+
+    <string-array name="availability">
+        <item>"Заузето"</item>
+        <item>"Доступан/а"</item>
+        <item>"Проба"</item>
+    </string-array>
+
+    <!-- This maps reminder_methods_labels to internal constants. -->
+    <integer-array name="availability_values" translatable="false">
+        <item>0</item>  <!-- Busy -->
+        <item>1</item>  <!-- Available -->
+        <item>2</item>  <!-- Tentative -->
+    </integer-array>
+
+    <string-array name="visibility">
+        <item>"Подразумевано"</item>
+        <item>"Приватно"</item>
+        <item>"Јавно"</item>
+    </string-array>
+
+    <string-array name="ordinal_labels">
+        <item>"први"</item>
+        <item>"други"</item>
+        <item>"трећи"</item>
+        <item>"четврти"</item>
+        <item>"последњи"</item>
+    </string-array>
+
+    <!-- Invitation responses -->
+    <string-array name="response_labels1">
+        <item>"Без одговора"</item>
+        <item>"Да"</item>
+        <item>"Можда"</item>
+        <item>"Не"</item>
+    </string-array>
+
+    <!-- The corresponding indices are defined in DeleteEventHelper.java -->
+    <!-- This is a list of choices displayed when the user deletes an event.
+         It only is shown when deleting a recurring event.
+    -->
+    <skip/>
+    <string-array name="delete_repeating_labels">
+        <item>"Само овај догађај"</item>
+        <item>"Овај и будући догађаји"</item>
+        <item>"Сви догађаји"</item>
+    </string-array>
+
+    <!-- DO NOT TRANSLATE These values need to correspond to the indices
+         defined in DeleteEventHelper.java-->
+    <integer-array name="delete_repeating_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+
+    <!-- The corresponding indices are defined in DeleteEventHelper.java -->
+    <!-- This is the same array as above (the "delete_repeating_labels" array,
+         except that the first element "Only this event" is removed.  This
+         array exists to work-around a bug in the CalendarProvider and sync
+         code where you can\'t delete one instance of a repeating event that
+         was created on the phone until that event has been synced to the server.
+     -->
+    <skip/>
+    <string-array name="delete_repeating_labels_no_selected">
+        <item>"Овај и будући догађаји"</item>
+        <item>"Сви догађаји"</item>
+    </string-array>
+
+    <!-- The corresponding array indices are defined in EventInfoActivity.java -->
+    <skip/>
+    <!-- The list of choices displayed in a dialog box when the user wants to
+    respond to an invitation that repeats. -->
+    <string-array name="change_response_labels">
+        <!-- The choice for responding to only one instance of a repeating event -->
+        <item>"Само овај догађај"</item>
+        <!-- The choice for responding to all instances of a repeating event -->
+        <item>"Сви догађаји у овом низу"</item>
+    </string-array>
+
+    <!-- Strings for buttons in drop down menu -->
+    <string-array name="buttons_list">
+        <item>"Дан"</item>
+        <item>"Недеља"</item>
+        <item>"Месец"</item>
+        <item>"Распоред"</item>
+        <item>Година</item>
+    </string-array>
+
+    <!-- Experimental options for skipping reminders. [CHAR LIMIT = 37] -->
+    <string-array name="preferences_skip_reminders_labels">
+        <!-- Default choice -->
+        <item>"Само за одбијања"</item>
+        <!-- Second option, for skipping reminders to events not yet responded to. -->
+        <item>"За одбијања или догађаје без одговора"</item>
+    </string-array>
+
+    <string-array name="preferences_skip_reminders_values" translatable="false">
+        <item>declined</item>
+        <item>not_responded</item>
+    </string-array>
+
+    <!-- Recurrence picker: How events are to be repeated.  [CHAR LIMIT = 20] -->
+    <string-array name="recurrence_freq">
+        <item>"ПОНАВЉАЈ ДНЕВНО"</item>
+        <item>"ПОНАВЉАЈ НЕДЕЉНО"</item>
+        <item>"ПОНАВЉАЈ МЕСЕЧНО"</item>
+        <item>"ПОНАВЉАЈ ГОДИШЊЕ"</item>
+    </string-array>
+
+    <!-- The following sets of strings describe a monthly recurring event, which will repeat
+         on the Nth WEEKDAY of every month. For example, the 3rd Monday of every month, or
+         the last Sunday. These are set up like this to resolve any gender-matching issues
+         that were present in some languages.
+     -->
+    <!-- Repeat a monthly event on the same nth day of every Sunday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_sun">
+        <item>"сваке прве недеље"</item>
+        <item>"сваке друге недеље"</item>
+        <item>"сваке треће недеље"</item>
+        <item>"сваке четврте недеље"</item>
+        <item>"сваке последње недеље"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Monday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_mon">
+        <item>"сваког првог понедељка"</item>
+        <item>"сваког другог понедељка"</item>
+        <item>"сваког трећег понедељка"</item>
+        <item>"сваког четвртог понедељка"</item>
+        <item>"сваког последњег понедељка"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Tuesday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_tues">
+        <item>"сваког првог уторка"</item>
+        <item>"сваког другог уторка"</item>
+        <item>"сваког трећег уторка"</item>
+        <item>"сваког четвртог уторка"</item>
+        <item>"сваког последњег уторка"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Wednesday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_wed">
+        <item>"сваке прве среде"</item>
+        <item>"сваке друге среде"</item>
+        <item>"сваке треће среде"</item>
+        <item>"сваке четврте среде"</item>
+        <item>"сваке последње среде"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Thursday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_thurs">
+        <item>"сваког првог четвртка"</item>
+        <item>"сваког другог четвртка"</item>
+        <item>"сваког трећег четвртка"</item>
+        <item>"сваког четвртог четвртка"</item>
+        <item>"сваког последњег четвртка"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Friday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_fri">
+        <item>"сваког првог петка"</item>
+        <item>"сваког другог петка"</item>
+        <item>"сваког трећег петка"</item>
+        <item>"сваког четвртог петка"</item>
+        <item>"сваког последњег петка"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Saturday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_sat">
+        <item>"сваке прве суботе"</item>
+        <item>"сваке друге суботе"</item>
+        <item>"сваке треће суботе"</item>
+        <item>"сваке четврте суботе"</item>
+        <item>"сваке последње суботе"</item>
+    </string-array>
+</resources>

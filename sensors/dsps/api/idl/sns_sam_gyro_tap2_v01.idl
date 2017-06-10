@@ -1,0 +1,243 @@
+/*****************************************************************************
+  @FILE     sns_sam_gyro_tap2_v01.idl
+
+  @BRIEF    Message definition for gyro tap.
+
+  @DESCRIPTION
+  This file defines messages used by gyro tap algo service.
+
+  As prerequisite, the sensor algorithm must use the common Interface
+  defined in the Sensor Algorithms framework.
+
+  The messages defined herein will be passed to the Sensor framework using
+  the sensor1_write() API.
+
+  @COPYRIGHT
+  Copyright (c) 2012-2014 Qualcomm Technologies, Inc.  All Rights Reserved
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+include "sns_sam_common_v01.idl";
+
+revision 4;
+
+const SNS_SAM_GYRO_TAP2_SUID = 0xa1fc9a4ea8dcb772;
+
+/** ENUMs are for reference onl#y, uint8 is used instead */
+
+//! @ENUM   SNS_SAM_TAP_EVENT_ENUM
+enum {
+  GYRO_TAP_LEFT        = 1,
+  /**< Phone is tapped on the left. #*/
+  GYRO_TAP_RIGHT       = 2,
+  /**< Phone is tapped on the right. */
+  GYRO_TAP_TOP         = 3,
+  /**< Phone is tapped on the top. */
+  GYRO_TAP_BOTTOM      = 4,
+  /**< Phone is tapped on the bottom. */
+  GYRO_TAP_FRONT       = 5,
+  /**< Phone is tapped on the front. */
+  GYRO_TAP_BACK       = 6
+  /**< Phone is tapped on the back. */
+} sns_sam_gyro_tap2_event_e;
+
+/** Following are message definitions shared by all gyro tap related services */
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP2
+    @BRIEF This command enables a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_GYRO_TAP2_ENABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  optional int32 scenario;
+  /**< scenario to use
+       A scenario points to a collection of configuration parameters stroed in
+       the registry. This parameter is a handle - which is matched with the
+       handles read from the regisrtry. The matching parameter is used to decide
+       the configuration to use.
+
+       If no handles read from the registry match the supplied handle, a default
+       set of parameters is used for the scenario.
+       */
+
+  optional int32 accel_tap_thresh;
+  /**< Accelerometer threshold to detect taps */
+
+  optional int32 accel_tap_z_thresh;
+  /**< Accelerometer threshold to detect taps  on screen/back */
+
+  //! @VERSION 1.2
+  optional sns_suspend_notification_s notify_suspend;
+  /**< Identifies if indications for this request should be sent
+       when the processor is in suspend state.
+
+       If this field is not specified, default value will be set to
+       notify_suspend->proc_type                  = SNS_PROC_APPS
+       notify_suspend->send_indications_during_suspend  = FALSE
+
+       This field does not have any bearing on error indication
+       messages, which will be sent even during suspend.
+    */
+
+} sns_sam_gyro_tap2_enable_req_msg;
+
+//! @MSG     SNS_SAM_GYRO_TAP2_ENABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  optional uint8                             instance_id;
+  /**<
+    The instance ID is maintained/assigned by SAM.
+    The client shall use this instance ID for future messages associated with
+    current algorithm instance.
+  */
+} sns_sam_gyro_tap2_enable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP2_DISABLE
+    @BRIEF This command disables a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_GYRO_TAP2_DISABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< To identify an instance of an algorithm.  */
+} sns_sam_gyro_tap2_disable_req_msg;
+
+//! @MSG     SNS_SAM_GYRO_TAP2_DISABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  optional uint8                             instance_id;
+} sns_sam_gyro_tap2_disable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP2_REPORT_IND
+    @BRIEF Output report from a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_GYRO_TAP2_REPORT_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+
+  mandatory uint32                           timestamp;
+  /**< time stamp of input which caused this indication; in ticks */
+
+  mandatory sns_sam_gyro_tap2_event_e         tap_event;
+  /**< TAP direction */
+
+} sns_sam_gyro_tap2_report_ind_msg;
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP2_ERROR
+    @BRIEF Asynchronous error report from a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_GYRO_TAP2_ERROR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//============================================================================
+
+message {
+  mandatory uint8                            error; /**< sensors error code */
+  mandatory uint8                            instance_id;
+} sns_sam_gyro_tap2_error_ind_msg;
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP2_CANCEL
+    @BRIEF Cancels all requests to the algorithm service from this client.
+*/
+//============================================================================
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP2_VERSION
+    @BRIEF This command requests algorithm service version.
+*/
+//============================================================================
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP2_ENABLE
+    @BRIEF This command enables the GYRO TAP algorithm service.
+*/
+//============================================================================
+
+//============================================================================
+/** @COMMAND SNS_SAM_GYRO_TAP2_REPORT
+    @BRIEF This command requests/reports GYRO TAP algorithm reports
+*/
+//============================================================================
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_SAM_GYRO_TAP2_SVC {
+  //! @ID SNS_SAM_GYRO_TAP2_CANCEL
+  sns_common_cancel_req_msg        SNS_SAM_GYRO_TAP2_CANCEL_REQ,
+  sns_common_cancel_resp_msg       SNS_SAM_GYRO_TAP2_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_SAM_GYRO_TAP2_VERSION
+  sns_common_version_req_msg       SNS_SAM_GYRO_TAP2_VERSION_REQ,
+  sns_common_version_resp_msg      SNS_SAM_GYRO_TAP2_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SAM_GYRO_TAP2_ENABLE
+  sns_sam_gyro_tap2_enable_req_msg       SNS_SAM_GYRO_TAP2_ENABLE_REQ,
+  sns_sam_gyro_tap2_enable_resp_msg      SNS_SAM_GYRO_TAP2_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_SAM_GYRO_TAP2_DISABLE
+  sns_sam_gyro_tap2_disable_req_msg      SNS_SAM_GYRO_TAP2_DISABLE_REQ,
+  sns_sam_gyro_tap2_disable_resp_msg     SNS_SAM_GYRO_TAP2_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_SAM_GYRO_TAP2_REPORT
+  sns_sam_gyro_tap2_report_ind_msg       SNS_SAM_GYRO_TAP2_REPORT_IND
+    = 0x04;
+
+  //! @ID SNS_SAM_GYRO_TAP2_ERROR
+  sns_sam_gyro_tap2_error_ind_msg        SNS_SAM_GYRO_TAP2_ERROR_IND
+    = 0x05;
+
+  //! @ID SNS_SAM_GET_ALGO_ATTRIBUTES
+  sns_sam_get_algo_attrib_req_msg        SNS_SAM_GYRO_TAP2_GET_ATTRIBUTES_REQ,
+  sns_sam_get_algo_attrib_resp_msg       SNS_SAM_GYRO_TAP2_GET_ATTRIBUTES_RESP
+    = 0x24;
+
+} = SNS_QMI_SVC_ID_30;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+*/
+
+//============================================================================
+// End of Module
+//============================================================================

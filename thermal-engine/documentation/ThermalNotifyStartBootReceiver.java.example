@@ -1,0 +1,25 @@
+/* THERMAL-ENGINE DOCUMENTATION
+ *
+ *  Example java code to start ThermalNotify listener on boot.
+ *
+ * Copyright (c) 2012 Qualcomm Technologies, Inc.  All Rights Reserved.
+ *  Qualcomm Technologies Proprietary and Confidential.
+ * */
+package com.systemapp.thermal-engine;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+
+public class ThermalNotifyStartBootReceiver extends BroadcastReceiver
+{
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
+            Intent i = new Intent();
+            i.setAction("com.systemservice.THERMALNOTIFY");
+            context.startService(i);
+        }
+    }
+
+}

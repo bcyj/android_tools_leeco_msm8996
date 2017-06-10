@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2014, Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qti.xdivert"
+    android:sharedUserId="android.uid.phone"
+    >
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application android:process="com.android.phone">
+
+        <receiver android:name=".XDivert"
+            android:label="XDivert">
+         <intent-filter>
+           <action android:name="android.intent.action.BOOT_COMPLETED"/>
+           <action android:name="android.intent.action.RADIO_TECHNOLOGY"/>
+           <action android:name="android.intent.action.ACTION_SUBINFO_RECORD_UPDATED"/>
+         </intent-filter>
+       </receiver>
+       <activity android:name="XDivertPhoneNumbers"
+           android:label="@string/phone_numbers">
+       </activity>
+
+       <activity android:name="XDivertSetting"
+           android:label="@string/xdivert_setting">
+       </activity>
+
+    </application>
+
+</manifest>

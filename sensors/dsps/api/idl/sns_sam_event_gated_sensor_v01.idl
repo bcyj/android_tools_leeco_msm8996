@@ -1,0 +1,248 @@
+/*****************************************************************************
+  @FILE     sns_sam_event_gated_sensor.idl
+
+  @BRIEF    Message definition for Event Gated Sensor service.
+
+  @DESCRIPTION
+  This file defines messages used by Event Gated Sensor algo service.
+  Event Gated Sensor service gates the physical sensor stream based on
+  the state of the event sensor.
+
+  As prerequisite, the sensor algorithm must use the common Interface
+  defined in the Sensor Algorithms framework.
+
+  The messages defined herein will be passed to the Sensor framework using
+  the sensor1_write() API.
+
+  @COPYRIGHT
+  Copyright (c) 2014 Qualcomm Technologies, Inc.  All Rights Reserved
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+include "sns_sam_common_v01.idl";
+include "sns_smgr_common_v01.idl";
+
+revision 0;
+
+const SNS_SAM_EVENT_GATED_SENSOR_SUID = 0x8a839800b76018ca;
+
+//============================================================================
+/** @COMMAND SNS_SAM_EVENT_GATED_SENSOR_ENABLE
+    @BRIEF This command enables a event gated sensor service.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_EVENT_GATED_SENSOR_ENABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+message {
+
+  mandatory uint64              event_suid;
+  /**< Event Sensor SUID identifies the the gating event sensor. The following classify as event sensors -
+       SNS_SAM_AMD_SUID_V01, SNS_SAM_RMD_SUID_V01, SNS_SAM_SMD_SUID_V01, SNS_SAM_FACING_SUID_V01
+       Other service ID will result in SENSOR1_EBAD_PARAM response
+       The event sensors will be configured with default config options
+  */
+
+  mandatory uint8              gating_condition;
+  /**< Gating condition identifies the state of the event sensor during which the sensor stream is to be gated.
+       When event sensor is in the state specified by the gating condition, the sensor stream will be gated. In all other
+       states, the sensor stream will be allowed.
+       Gating condition must be one the event states supported by the event sensor as listed below
+       Sensor: SNS_SAM_AMD_SUID_V01/SNS_SAM_RMD_SUID_V01 - Gating Condition: SNS_SAM_MOTION_REST_V01 or SNS_SAM_MOTION_MOVE_V01
+       Sensor: SNS_SAM_SMD_SUID_V01                      - Gating Condition: SMD_STATE_NO_MOTION/SMD_STATE_MOTION
+       Sensor: SNS_SAM_FACING_SUID_V01                   - State: FACING_UP/FACING_DOWN
+       Else the service will respond with a SENSOR1_EBAD_PARAM
+  */
+
+  mandatory sns_smgr_buffering_req_item_s  streaming_item<SNS_SMGR_BUFFERING_REQUEST_MAX_ITEMS>;
+  /**< The configuration of the physical sensor streams to be gated
+
+       Note: It is NOT recommended to request a set of items with sampling
+             rates less than 1 Hz and sampling rates above 1 Hz. Rather, it is
+             recommended to request items with a sampling rate less than 1 Hz
+             separately, in its own request. The reasoning behind this
+             suggestion is to prevent large amounts of back-to-back QMI
+             indications from coming in. Reports that have items with sub-hz
+             (less than 1 Hz) sampling rates are forced to send each sample
+             individually in back-to-back indications. (See TimeStampOffset in
+             the sns_smgr_buffering_sample_s structure) (See Samples in the
+             sns_smgr_buffering_ind_msg message)
+  */
+
+  optional uint32            report_rate;
+  /**< Specifies the desired reporting rate for the streaming sensor expressed in Q16 format and in unit of Hz.
+    If report rate is not specified, sensor data will be reported at sampling rate
+    Sensor will be streaming only when the gating condition is not true i.e. when the event sensor is in any
+    state other than that specified in the gating condition.
+  */
+
+  optional sns_suspend_notification_s notify_suspend;
+  /**< Identifies if indications for this request should be sent
+       when the processor is in suspend state.
+
+       If this field is not specified, default value will be set to
+       notify_suspend->proc_type                  = SNS_PROC_APPS
+       notify_suspend->send_indications_during_suspend  = FALSE
+
+       This field does not have any bearing on error indication
+       messages, which will be sent even during suspend.
+    */
+} sns_sam_event_gated_sensor_enable_req_msg;
+
+//! @MSG     SNS_SAM_EVENT_GATED_SENSOR_ENABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s resp = 2;
+  optional  uint8             instance_id;
+  /**<
+    Instance ID is assigned by SAM.
+    The client shall use this instance ID for future messages associated with
+    this algorithm instance.
+  */
+} sns_sam_event_gated_sensor_enable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_EVENT_GATED_SENSOR_DISABLE
+    @BRIEF This command disables a event gated sensor service.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_EVENT_GATED_SENSOR_DISABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8             instance_id;
+  /**< Instance ID identifies the algorithm instance. */
+} sns_sam_event_gated_sensor_disable_req_msg;
+
+//! @MSG     SNS_SAM_EVENT_GATED_SENSOR_DISABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s  resp = 2;
+  optional uint8               instance_id;
+  /**< Instance ID identifies the algorithm instance. */
+} sns_sam_event_gated_sensor_disable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_EVENT_GATED_SENSOR_REPORT
+    @BRIEF Output report from a event gated sensor service.
+*/
+//============================================================================
+
+//!============================================================================
+/** @COMMAND SNS_SMGR_BUFFERING_IND
+    @BRIEF This command requests sensor data to be sampled and buffered up
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//!============================================================================
+
+//! @MSG     SNS_SMGR_BUFFERING_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+message {
+
+  mandatory uint8                 ReportId;
+  /**< The ID corresponding to a Buffering request */
+
+  mandatory sns_smgr_buffering_sample_index_s Indices<SNS_SMGR_BUFFERING_REQUEST_MAX_ITEMS>;
+  /**< Identifies which items in Samples belong to which SensorId/DataType pair
+    specified in Buffering request */
+
+  mandatory sns_smgr_buffering_sample_s  Samples<SNS_SMGR_BUFFERING_REPORT_MAX_SAMPLES>;
+  /**< Samples collected since previous report
+    Depending on whether Batching is in effect, this may contain samples for
+    only one of the requested items, or it may contain samples for all of them.
+
+    Note: If any overflow is expected in the TimeStampOffset fields within
+          this field, the SMGR will split each sample into its own indication
+          and send indications back-to-back. */
+
+  optional uint8 IndType;
+  /**< Optional batch indication type
+       SNS_BATCH_ONLY_IND - Standalone batch indication. Not part of a back to
+         back indication stream
+       SNS_BATCH_FIRST_IND - First indication in stream of back to back indications
+       SNS_BATCH_INTERMEDIATE_IND - Intermediate indication in stream of back to
+         back indications
+       SNS_BATCH_LAST_IND - Last indication in stream of back to back indications
+    */
+
+} sns_sam_event_gated_sensor_ind_msg;
+
+//============================================================================
+/** @COMMAND SNS_SAM_EVENT_GATED_SENSOR_ERROR
+    @BRIEF Asynchronous error indication from a event gated sensor service.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_EVENT_GATED_SENSOR_ERROR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//============================================================================
+
+message {
+  mandatory uint8              error;
+  /**< Sensor1 error code */
+  mandatory uint8              instance_id;
+  /**< Instance ID identifies the algorithm instance. */
+  mandatory uint32             timestamp;
+  /**< time stamp of input which caused this indication; in SSC ticks */
+} sns_sam_event_gated_sensor_error_ind_msg;
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_SAM_EVENT_GATED_SENSOR_SVC {
+  //! @ID SNS_COMMON_CANCEL
+  sns_common_cancel_req_msg        SNS_SAM_EVENT_GATED_SENSOR_CANCEL_REQ,
+  sns_common_cancel_resp_msg       SNS_SAM_EVENT_GATED_SENSOR_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_COMMON_VERSION
+  sns_common_version_req_msg       SNS_SAM_EVENT_GATED_SENSOR_VERSION_REQ,
+  sns_common_version_resp_msg      SNS_SAM_EVENT_GATED_SENSOR_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SAM_EVENT_GATED_SENSOR_ENABLE
+  sns_sam_event_gated_sensor_enable_req_msg       SNS_SAM_EVENT_GATED_SENSOR_ENABLE_REQ,
+  sns_sam_event_gated_sensor_enable_resp_msg      SNS_SAM_EVENT_GATED_SENSOR_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_SAM_EVENT_GATED_SENSOR_DISABLE
+  sns_sam_event_gated_sensor_disable_req_msg      SNS_SAM_EVENT_GATED_SENSOR_DISABLE_REQ,
+  sns_sam_event_gated_sensor_disable_resp_msg     SNS_SAM_EVENT_GATED_SENSOR_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_SAM_EVENT_GATED_SENSOR_REPORT
+  sns_sam_event_gated_sensor_ind_msg             SNS_SAM_EVENT_GATED_SENSOR_REPORT_IND
+    = 0x05;
+
+  //! @ID SNS_SAM_EVENT_GATED_SENSOR_ERROR
+  sns_sam_event_gated_sensor_error_ind_msg        SNS_SAM_EVENT_GATED_SENSOR_ERROR_IND
+    = 0x06;
+
+  //! @ID SNS_SAM_GET_ALGO_ATTRIBUTES
+  sns_sam_get_algo_attrib_req_msg            SNS_SAM_EVENT_GATED_SENSOR_GET_ATTRIBUTES_REQ,
+  sns_sam_get_algo_attrib_resp_msg           SNS_SAM_EVENT_GATED_SENSOR_GET_ATTRIBUTES_RESP
+    = 0x24;
+
+} = SNS_QMI_SVC_ID_49;
+
+//============================================================================
+// End of Module
+//============================================================================
+

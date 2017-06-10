@@ -1,0 +1,15 @@
+# Copyright (c) 2010 Qualcomm Technologies, Inc.
+
+# GPS Makefile for target msm7630_1x
+
+# Define C/C++ features
+GPS_FEATURES := \
+        -D FEATURE_COARSE_POS_TIMESTAMP_AGE \
+        -D FEATURE_LOC_MW_EFS_ACCESS \
+        -D FEATURE_RPC_CHAR_ARRAY
+
+# Additional entries in gps.conf, bash string format
+GPS_CONF_FOR_TARGET := \
+\n\# Wiper (wifi positioning), 1=enable, 0=disable\
+\nENABLE_WIPER=1\n
+

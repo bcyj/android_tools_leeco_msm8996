@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+    <!--
+        Copyright (C) 2012 - 2014 Qualcomm Technologies, Inc.
+        All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+    -->
+
+   <!-- This config file is to be used when local device is sink -->
+
+<WFDConfig>
+	<Capability>
+	  <AudioLPCM>
+		<Name>LPCM</Name>
+		<Valid>1</Valid>
+		<Channels>2</Channels>
+		<SamplingFreq>48000</SamplingFreq>
+		<Latency>33</Latency>
+	  </AudioLPCM>
+	  <AudioAAC>
+		<Name>AAC</Name>
+		<Valid>1</Valid>
+		<Channels>2</Channels>
+		<SamplingFreq>48000</SamplingFreq>
+		<Latency>0</Latency>
+	  </AudioAAC>
+	  <AudioAC3>
+		<Name>AC3</Name>
+		<Valid>0</Valid>
+		<Channels>0</Channels>
+		<SamplingFreq>0</SamplingFreq>
+		<Latency>0</Latency>
+	   </AudioAC3>
+	   <VideoHeader>
+		<VideoMethod>1</VideoMethod>
+		 <PreferredDisplaySupport>0</PreferredDisplaySupport>
+		 <H264Profiles>2</H264Profiles>
+		<Valid>1</Valid>
+	  </VideoHeader>
+<CBP>
+	  <VideoCodec>
+		<Profile>1</Profile>
+		<Level>4</Level>
+		<HorizontalResolution>1920</HorizontalResolution>
+		<VerticalResolution>1080</VerticalResolution>
+		<Latency>0</Latency>
+		<MinimumSliceSize>0</MinimumSliceSize>
+		<SliceEncodingParams>0</SliceEncodingParams>
+		<FrameRateControlSupp>1</FrameRateControlSupp>
+		<VideoFps>30</VideoFps>
+	  </VideoCodec>
+</CBP>
+<CHP>
+	  <VideoCodec>
+		<Profile>2</Profile>
+		<Level>4</Level>
+		<HorizontalResolution>1920</HorizontalResolution>
+		<VerticalResolution>1080</VerticalResolution>
+		<Latency>0</Latency>
+		<MinimumSliceSize>0</MinimumSliceSize>
+		<SliceEncodingParams>0</SliceEncodingParams>
+		<FrameRateControlSupp>1</FrameRateControlSupp>
+		<VideoFps>30</VideoFps>
+	  </VideoCodec>
+</CHP>
+
+
+	  <StandbyResumeCapability>
+		<Valid>1</Valid>
+	  </StandbyResumeCapability>
+	  <!--
+		   IDR interval is to trigger an IDR request from sink.
+		   This can be applcable only to sink. IDRInterval is in msec
+		-->
+	  <IDRRequest>
+		<Valid>0</Valid>
+		<IDRInterval>0</IDRInterval>
+	  </IDRRequest>
+	  <AVFormatChange>
+		<Valid>0</Valid>
+		<AVInterval>0</AVInterval>
+	  </AVFormatChange>
+	  <!--
+		   Frame skipping interval is in the scale of 500 msec/half second.
+		   FrameInterval can be between 1 to 7,  according to the WFD spec.
+		-->
+	  <FrameSkipping>
+		<Valid>0</Valid>
+		<FrameInterval>0</FrameInterval>
+	  </FrameSkipping>
+	  <ContentProtection>
+		<Valid>0</Valid>
+		<Version>WFD_HDCP_2_1</Version> <!-- Valid values WFD_HDCP_2_0 and WFD_HDCP_2_1 -->
+		<CPPort>6789</CPPort>
+		<EncryptAudio>0</EncryptAudio> <!-- Valid values 0 / 1 to indicate Audio encryption or not -->
+	  </ContentProtection>
+	  <RTPDumpEnable>
+		<Valid>0</Valid>
+	  </RTPDumpEnable>
+
+    <UIBC>
+      <UIBCValid>0</UIBCValid>                <!-- 0/1 UIBC supported or not -->
+      <M14Support>0</M14Support>        <!-- 0/1 M14 supported or not -->
+      <InputCategory>
+        <Generic>1</Generic>		<!-- 0/1 - support generic or not -->
+      </InputCategory>
+      <InputEvents>
+        <GenericInputEvents>
+          <Mouse>1</Mouse>		<!-- 0/1 for all Input Event Types -->
+          <Keyboard>1</Keyboard>
+          <SingleTouch>1</SingleTouch>
+          <MultiTouch>1</MultiTouch>
+          <JoyStick>0</JoyStick>
+          <Camera>0</Camera>
+          <Gesture>0</Gesture>
+          <RemoteControl>0</RemoteControl>
+        </GenericInputEvents>
+      </InputEvents>
+    <TcpPort>4321</TcpPort>
+  </UIBC>
+</Capability>
+
+	<DynamicBitrateAdaptation>1</DynamicBitrateAdaptation>
+	<SendKeepAlive>1</SendKeepAlive>
+	<RTSPPort>5550</RTSPPort>
+	<PerformanceLevelTurboMode>1</PerformanceLevelTurboMode>
+
+	<BitrateTable>
+		<AAC>
+			<BIT0>
+				<MaxBitrate>256000</MaxBitrate>
+				<MinBitrate>256000</MinBitrate>
+			</BIT0>
+			<BIT1>
+				<MaxBitrate>384000</MaxBitrate>
+				<MinBitrate>384000</MinBitrate>
+			</BIT1>
+			<BIT2>
+				<MaxBitrate>512000</MaxBitrate>
+				<MinBitrate>512000</MinBitrate>
+			</BIT2>
+		</AAC>
+		<CEA>
+			<BIT0>
+				<MinBitrate>1000000</MinBitrate>
+				<MaxBitrate>4000000</MaxBitrate>
+			</BIT0>
+			<BIT1>
+				<MinBitrate>1000000</MinBitrate>
+				<MaxBitrate>4000000</MaxBitrate>
+			</BIT1>
+			<BIT2>
+				<MinBitrate>1000000</MinBitrate>
+				<MaxBitrate>4000000</MaxBitrate>
+			</BIT2>
+			<BIT3>
+				<MinBitrate>1000000</MinBitrate>
+				<MaxBitrate>4000000</MaxBitrate>
+			</BIT3>
+			<BIT4>
+				<MinBitrate>1000000</MinBitrate>
+				<MaxBitrate>4000000</MaxBitrate>
+			</BIT4>
+			<BIT5>
+				<MinBitrate>2500000</MinBitrate>
+				<MaxBitrate>10000000</MaxBitrate>
+			</BIT5>
+			<BIT6>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT6>
+			<BIT7>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>10000000</MaxBitrate>
+			</BIT7>
+			<BIT8>
+				<MinBitrate>10000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT8>
+			<BIT9>
+				<MinBitrate>10000000</MinBitrate>
+				<MaxBitrate>40000000</MaxBitrate>
+			</BIT9>
+			<BIT10>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>10000000</MaxBitrate>
+			</BIT10>
+			<BIT11>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT11>
+			<BIT12>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT12>
+			<BIT13>
+				<MinBitrate>10000000</MinBitrate>
+				<MaxBitrate>40000000</MaxBitrate>
+			</BIT13>
+			<BIT14>
+				<MinBitrate>10000000</MinBitrate>
+				<MaxBitrate>40000000</MaxBitrate>
+			</BIT14>
+			<BIT15>
+				<MinBitrate>2500000</MinBitrate>
+				<MaxBitrate>10000000</MaxBitrate>
+			</BIT15>
+			<BIT16>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT16>
+		</CEA>
+		<VESA>
+			<BIT0>
+				<MinBitrate>500000</MinBitrate>
+				<MaxBitrate>2000000</MaxBitrate>
+			</BIT0>
+			<BIT1>
+				<MinBitrate>1000000</MinBitrate>
+				<MaxBitrate>4000000</MaxBitrate>
+			</BIT1>
+			<BIT2>
+				<MinBitrate>2500000</MinBitrate>
+				<MaxBitrate>10000000</MaxBitrate>
+			</BIT2>
+			<BIT3>
+				<MinBitrate>2500000</MinBitrate>
+				<MaxBitrate>10000000</MaxBitrate>
+			</BIT3>
+			<BIT4>
+				<MinBitrate>2500000</MinBitrate>
+				<MaxBitrate>10000000</MaxBitrate>
+			</BIT4>
+			<BIT5>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT5>
+			<BIT6>
+				<MinBitrate>2500000</MinBitrate>
+				<MaxBitrate>10000000</MaxBitrate>
+			</BIT6>
+			<BIT7>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT7>
+			<BIT8>
+				<MinBitrate>3500000</MinBitrate>
+				<MaxBitrate>14000000</MaxBitrate>
+			</BIT8>
+			<BIT9>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT9>
+			<BIT10>
+				<MinBitrate>3500000</MinBitrate>
+				<MaxBitrate>14000000</MaxBitrate>
+			</BIT10>
+			<BIT11>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT11>
+			<BIT12>
+				<MinBitrate>2500000</MinBitrate>
+				<MaxBitrate>10000000</MaxBitrate>
+			</BIT12>
+			<BIT13>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT13>
+			<BIT14>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT14>
+			<BIT15>
+				<MinBitrate>10000000</MinBitrate>
+				<MaxBitrate>40000000</MaxBitrate>
+			</BIT15>
+			<BIT16>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT16>
+			<BIT17>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT17>
+			<BIT18>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT18>
+			<BIT19>
+				<MinBitrate>10000000</MinBitrate>
+				<MaxBitrate>40000000</MaxBitrate>
+			</BIT19>
+			<BIT20>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT20>
+			<BIT21>
+				<MinBitrate>10000000</MinBitrate>
+				<MaxBitrate>40000000</MaxBitrate>
+			</BIT21>
+			<BIT22>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT22>
+			<BIT23>
+				<MinBitrate>10000000</MinBitrate>
+				<MaxBitrate>40000000</MaxBitrate>
+			</BIT23>
+			<BIT24>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT24>
+			<BIT25>
+				<MinBitrate>10000000</MinBitrate>
+				<MaxBitrate>40000000</MaxBitrate>
+			</BIT25>
+			<BIT26>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT26>
+			<BIT27>
+				<MinBitrate>10000000</MinBitrate>
+				<MaxBitrate>40000000</MaxBitrate>
+			</BIT27>
+			<BIT28>
+				<MinBitrate>5000000</MinBitrate>
+				<MaxBitrate>20000000</MaxBitrate>
+			</BIT28>
+			<BIT29>
+				<MinBitrate>10000000</MinBitrate>
+				<MaxBitrate>40000000</MaxBitrate>
+			</BIT29>
+		</VESA>
+		<HH>
+			<BIT0>
+				<MinBitrate>500000</MinBitrate>
+				<MaxBitrate>2000000</MaxBitrate>
+			</BIT0>
+			<BIT1>
+				<MinBitrate>1000000</MinBitrate>
+				<MaxBitrate>4000000</MaxBitrate>
+			</BIT1>
+			<BIT2>
+				<MinBitrate>500000</MinBitrate>
+				<MaxBitrate>2000000</MaxBitrate>
+			</BIT2>
+			<BIT3>
+				<MinBitrate>1000000</MinBitrate>
+				<MaxBitrate>4000000</MaxBitrate>
+			</BIT3>
+			<BIT4>
+				<MinBitrate>500000</MinBitrate>
+				<MaxBitrate>2000000</MaxBitrate>
+			</BIT4>
+			<BIT5>
+				<MinBitrate>1000000</MinBitrate>
+				<MaxBitrate>4000000</MaxBitrate>
+			</BIT5>
+			<BIT6>
+				<MinBitrate>500000</MinBitrate>
+				<MaxBitrate>2000000</MaxBitrate>
+			</BIT6>
+			<BIT7>
+				<MinBitrate>1000000</MinBitrate>
+				<MaxBitrate>4000000</MaxBitrate>
+			</BIT7>
+			<BIT8>
+				<MinBitrate>500000</MinBitrate>
+				<MaxBitrate>2000000</MaxBitrate>
+			</BIT8>
+			<BIT9>
+				<MinBitrate>1000000</MinBitrate>
+				<MaxBitrate>4000000</MaxBitrate>
+			</BIT9>
+			<BIT10>
+				<MinBitrate>500000</MinBitrate>
+				<MaxBitrate>2000000</MaxBitrate>
+			</BIT10>
+			<BIT11>
+				<MinBitrate>1000000</MinBitrate>
+				<MaxBitrate>4000000</MaxBitrate>
+			</BIT11>
+		</HH>
+	</BitrateTable>
+	<CyclicIntraRefresh>
+		0
+	</CyclicIntraRefresh>
+	<CIRNumberOfMacroBlocks>
+		50
+	</CIRNumberOfMacroBlocks>
+	<!--
+		RetryCount is Max no of times Client request to setup Socket connect
+		This can be applicable only to sink
+	-->
+	<RetryCount>40</RetryCount>
+	<!-- To disable/enable audio stream playback
+             support during power suspend - 0 or 1
+        -->
+	<AudioStreamInSuspend>0</AudioStreamInSuspend>
+        <AudioAVSyncDelay>-150</AudioAVSyncDelay>
+
+        <!-- To disable/enable AV Sync - 1 or 0
+        -->
+        <DisableAVSync>0</DisableAVSync>
+        <DropFrameOnPacketLossMode>0</DropFrameOnPacketLossMode>
+        <!-- To disable/enable Audio Track Latency - 0 or 1.This adds audio track
+         latency to renderer to improve AV sync during BT usecase.
+        -->
+        <EnableAudioTrackLatency>0</EnableAudioTrackLatency>
+
+        <!-- To Configure maximum capability for frame rate
+         of Max resolution supported.
+         It will be changed in code also based on target.
+        -->
+        <MaxFpsSupported>60</MaxFpsSupported>
+
+        <!-- Make audio AV Sync drop window configurable item.Sometimes if wlan
+             doesn't perform at required throughput,audio drops can happen due
+             to late arrival of audio frames.
+        -->
+        <AudioAVSyncDropWindow>-150000</AudioAVSyncDropWindow>
+
+        <!-- Make Video AV Sync drop window configurable item.Sometimes if wlan
+             doesn't perform at required throughput,Video drops can happen due
+             to late arrival of video frames.
+        -->
+        <VideoAVSyncDropWindow>-200000</VideoAVSyncDropWindow>
+</WFDConfig>

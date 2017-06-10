@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (c) 2014 Qualcomm Technologies, Inc.  All Rights Reserved.
+Qualcomm Technologies Proprietary and Confidential.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
+          package="com.qualcomm.qti.telephony"
+          coreApp="true"
+          android:sharedUserId="android.uid.phone">
+
+    <application>
+    <uses-library
+        android:name="com.qualcomm.qcrilhook"></uses-library>
+
+        <service android:name="QtiDdsSwitchService"
+            android:enabled="true"
+            android:process="com.android.phone"
+            android:exported="true"/>
+
+        <receiver android:name="SubInfoRecordUpdatedReceiver"
+                  android:enabled="true"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SUBINFO_RECORD_UPDATED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

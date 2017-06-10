@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!--
+     Copyright (C) 2011 Google Inc.
+     Licensed to The Android Open Source Project.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Names of packages and authorities that are common to all apps
+    and read from resources -->
+
+    <!-- Layout tests strings -->
+    <string name="mock_content_provider" translatable="false">Mock Content Provider</string>
+    <string name="conversation_content_provider" translatable="false">Conversation Content Provider</string>
+    <string name="account_cache_provider" translatable="false">Account Cache Provider</string>
+
+    <string name="app_name" translatable="false">Unified Email</string>
+
+    <!-- Compose -->
+    <!-- Shown in Compose; the sender of the message [CHAR LIMIT=10] -->
+    <string name="from">"प्रेषक"</string>
+    <!-- Shown in Compose; the recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="to">"प्रति"</string>
+    <!-- Shown in Compose; the cc recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="cc">"Cc"</string>
+    <!-- Shown in Compose; the bcc recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="bcc">"Bcc"</string>
+    <!-- Shown in Compose; the subject of the message [CHAR LIMIT=100] -->
+    <string name="subject_hint">"विषय"</string>
+    <!-- Shown in Compose; the body of the message [CHAR LIMIT=100] -->
+    <string name="body_hint">"ईमेल लिखें"</string>
+    <!--  Compose screen button. Add an attachment to this message [CHAR LIMIT=20] -->
+    <string name="add_file_attachment">"फ़ाइल अटैच करें"</string>
+    <!--  Compose screen button. Add a photo attachment to this message [CHAR LIMIT=20] -->
+    <string name="add_photo_attachment">"चित्र जोड़ें"</string>
+    <!-- Stub string for attaching from a service. Sub-apps should override this. -->
+    <!-- The actual string value doesn\'t matter, it should never appear. -->
+    <string name="attach_from_service_stub1" translatable="false"/>
+    <!-- Button name: save this message as draft [CHAR LIMIT=25]-->
+    <string name="save_draft">"अधूरा ईमेल सहेजें"</string>
+    <!--  Button name: discard this message [CHAR LIMIT=15] -->
+    <string name="discard">"अभी नहीं"</string>
+    <!-- The possible ways to reply to a message [CHAR LIMIT=15] -->
+    <string name="compose">"लिखें"</string>
+    <!-- The action bar title for the default compose mode [CHAR LIMIT=10] -->
+    <string name="compose_title">"लिखें"</string>
+    <!-- The possible ways to reply to a message [CHAR LIMIT=15] -->
+    <string-array name="compose_modes">
+        <!-- Reply -->
+        <item>"उत्तर दें"</item>
+        <!-- Reply all -->
+        <item>"सभी प्रषकों को उत्तर दें"</item>
+        <!-- Forward -->
+        <item>"आगे भेजें"</item>
+    </string-array>
+        <!-- Formatting string for the subject when it contains a reply or forward identifier. Do not translate.-->
+    <string name="formatted_subject" translatable="false"><xliff:g id="prefix">%1$s</xliff:g> <xliff:g id="subject">%2$s</xliff:g></string>
+    <!-- Compose screen, prefixed to the subject of a message when replying to it (if not already present). Do not translate. -->
+    <string name="reply_subject_label" translatable="false">Re:</string>
+    <!-- Compose screen, Prefix to forwarded message subject. Do not translate. -->
+    <string name="forward_subject_label" translatable="false">Fwd:</string>
+    <!-- Compose screen, displayed at the top of a message being replied to. Please preserve the HTML entities (surrounded by & and ;).  The two %s strings will be replaced by 1) the date 2) the person who wrote the email being responded to. [CHAR LIMIT=1000]-->
+    <string name="reply_attribution">"<xliff:g id="DATE">%s</xliff:g> को, <xliff:g id="PERSON">%s</xliff:g> ने लिखा:"</string>
+    <!-- Compose screen, displayed at the top of a message being forwarded. Please preserve the HTML entities (surrounded by & and ;). [CHAR LIMIT=1000] -->
+    <string name="forward_attribution">"---------- अग्रेषित संदेश ----------&lt;br&gt;प्रेषक: <xliff:g id="FROM">%1$s</xliff:g>&lt;br&gt;दिनांक: <xliff:g id="DATE">%2$s</xliff:g>&lt;br&gt;विषय: <xliff:g id="SUBJECT">%3$s</xliff:g>&lt;br&gt;प्रति: <xliff:g id="TO">%4$s</xliff:g>&lt;br&gt;"</string>
+    <!-- Compose screen, displayed at the top of a message being forwarded. [CHAR LIMIT=100]-->
+    <string name="forward_attribution_no_headers">"---------- अग्रेषित संदेश ----------"</string>
+    <!-- Compose screen, displayed at the top of a message being forwarded if there are any email addresses in the CC list. Please preserve the HTML entities (surrounded by & and ;). [CHAR LIMIT=1000]-->
+    <string name="cc_attribution">"Cc: <xliff:g id="CC">%1$s</xliff:g>&lt;br&gt;"</string>
+    <!-- Dialog text: select the type of an attachment while composing [CHAR LIMIT=100]-->
+    <string name="select_attachment_type">"अटैचमेंट का प्रकार चुनें"</string>
+    <!-- Toast, attachment too large for single file [CHAR LIMIT=100] -->
+    <string name="too_large_to_attach_single">"<xliff:g id="MAXSIZE">%1$s</xliff:g> से बड़ी फ़ाइल अटैचमेंट नहीं कर सकते."</string>
+    <!-- Toast, attachment too large for multiple files [CHAR LIMIT=100] -->
+    <string name="too_large_to_attach_multiple">"एक या अधिक फ़ाइलें अटैचमेंट नहीं हुईं. सीमा <xliff:g id="MAXSIZE">%1$s</xliff:g> की है."</string>
+    <!-- Toast, attachment too large when existing attachments exist [CHAR LIMIT=100] -->
+    <string name="too_large_to_attach_additional">"फ़ाइल अटैचमेंट नहीं हुई. <xliff:g id="MAXSIZE">%1$s</xliff:g> सीमा पूरी हो गई."</string>
+    <!-- Toast, problem attaching file [CHAR LIMIT=100] -->
+    <string name="generic_attachment_problem">"फ़ाइल अनुलग्न नहीं की जा सकी."</string>
+    <!-- Toast, cannot attach the provided file because the calling context doesn\'t have the permission [CHAR LIMIT=100] -->
+    <string name="attachment_permission_denied">"अटैचमेंट के लिए अनुमति अस्वीकृत."</string>
+    <!-- Displayed for one second after trying to send with no recipients in To field [CHAR LIMIT=200]-->
+    <string name="recipient_needed">"कम से कम एक प्राप्तकर्ता जोड़ें."</string>
+    <!-- Messages for send confirmation dialog [CHAR LIMIT=100]-->
+    <string name="confirm_send_message_with_no_subject">"संदेश के विषय में कोई लेख नहीं है."</string>
+    <string name="confirm_send_message_with_no_body">"संदेश के मुख्य भाग में कोई लेख नहीं है."</string>
+    <string name="confirm_send_message">"यह संदेश भेजें?"</string>
+    <!-- Displayed for one second after discarding draft message [CHAR LIMIT=50]-->
+    <string name="message_discarded">"संदेश छोड़ दिया गया."</string>
+    <!-- Formatting string for the user\'s signaure. [CHAR LIMIT=10] -->
+    <string name="signature">\n\n"<xliff:g id="SIGNATURE">%s</xliff:g>"</string>
+    <!--  Shown in the from dropdown in front of custom from addresses. [CHAR LIMIT=15] -->
+    <string name="custom_from_account_label">"मेल ऐसे भेजें:"</string>
+
+    <!-- Menu item: send this message -->
+    <string name="send">"भेजें"</string>
+    <!-- Menu item: mark this conversation as read -->
+    <string name="mark_read">"पढ़ी गई चिह्नित करें"</string>
+    <!-- Menu item: mark this conversation as unread -->
+    <string name="mark_unread">"बिना पढ़ी चिह्नित करें"</string>
+    <!-- Menu item: toggle read/unread for menus that contain both read and unread options -->
+    <string name="toggle_read_unread">"पठित-अपठित टॉगल करें"</string>
+    <!--  Menu item: mute this conversation -->
+    <string name="mute">"म्यूट करें"</string>
+    <!-- Menu item: add a star to this conversation -->
+    <string name="add_star">"तारांकित करें"</string>
+    <!-- Menu item: remove the star from this conversation -->
+    <string name="remove_star">"तारा निकालें"</string>
+    <!-- Remove the folder from this conversation [CHAR LIMIT = 30]-->
+    <string name="remove_folder">"<xliff:g id="FOLDERNAME">%1$s</xliff:g> से निकालें"</string>
+    <!-- Menu item: archive this conversation -->
+    <string name="archive">"संग्रह"</string>
+    <!-- Menu item: report this conversation as spam [CHAR LIMIT = 30] -->
+    <string name="report_spam">"अनचाहा की रिपोर्ट करें"</string>
+    <!-- Menu item: report this conversation not as spam [CHAR LIMIT = 30] -->
+    <string name="mark_not_spam">"अनचाहा नहीं की रिपोर्ट करें"</string>
+    <!-- Menu item: report this conversation as phishing [CHAR LIMIT = 30] -->
+    <string name="report_phishing">"फ़िशिंग की रिपोर्ट करें"</string>
+    <!-- Menu item: delete this conversation -->
+    <string name="delete">"हटाएं"</string>
+    <!-- Menu item: discard the drafts in this conversation [CHAR LIMIT = 30] -->
+    <string name="discard_drafts">"अधूरा ईमेल छोड़ें"</string>
+    <!-- Menu item: discard the failed messages in this conversation [CHAR LIMIT = 30] -->
+    <string name="discard_failed">"विफल संदेशों को छोड़ें"</string>
+    <!-- Menu item: refresh the inbox -->
+    <string name="refresh">"रीफ्रेश करें"</string>
+    <!-- Menu item: reply to this message -->
+    <string name="reply">"उत्तर दें"</string>
+    <!-- Menu item: reply to all recipients in this message [CHAR LIMIT=18] -->
+    <string name="reply_all">"सभी प्रषकों को उत्तर दें"</string>
+    <!-- Menu item: resume a draft message [CHAR LIMIT=12] -->
+    <string name="resume_draft">"संपादित करें"</string>
+    <!-- Menu item: forward this message -->
+    <string name="forward">"आगे भेजें"</string>
+    <!-- Menu item: compose a new email -->
+    <string name="menu_compose">"लिखें"</string>
+    <!-- Menu item: change the folders for this conversation. -->
+    <string name="menu_change_folders">"फ़ोल्डर बदलें"</string>
+    <!-- Menu item: moves to folders for selected conversation(s). [CHAR LIMIT = 30] -->
+    <string name="menu_move_to">"फ़ोल्डर ले जाएं"</string>
+    <!-- Menu item move_to state for displaying as an action or in overflow -->
+    <!-- 0 corresponds to SHOW_AS_ACTION_NEVER -->
+    <string name="menu_move_to_state" translatable="false">0</string>
+    <!-- Menu item: moves current or selected conversation(s) to Inbox. [CHAR LIMIT = 30] -->
+    <string name="menu_move_to_inbox">"इनबॉक्स में ले जाएं"</string>
+    <!-- Menu item: manages the folders for this account. [CHAR LIMIT = 30] -->
+    <string name="menu_manage_folders">"फ़ोल्डर सेटिंग"</string>
+    <!-- Menu item: report an email was not readable or poorly rendered -->
+    <string name="report_rendering_problem" translatable="false">Looks bad</string>
+    <!-- Menu item: report an email\'s readability has improved -->
+    <string name="report_rendering_improvement" translatable="false">Looks good</string>
+    <!-- Temporary text used for reporting rendering issues Googlers see in testing -->
+    <string name="report_rendering_problem_desc" translatable="false">
+        This message looks bad.
+    </string>
+    <!-- Temporary text used for reporting rendering improvements Googlers see in testing -->
+    <string name="report_rendering_improvement_desc" translatable="false">
+        This message looks good.
+    </string>
+    <!-- Menu item text to show the original version of an email conversation, before message manipulation [CHAR LIMIT=25] -->
+    <string name="menu_show_original">"स्वत: आकार बदलें वापस लाएं"</string>
+    <!-- Menu item: launch the Settings activity -->
+    <string name="menu_settings">"सेटिंग"</string>
+    <!-- Menu item: search through the Gmail inbox -->
+    <string name="menu_search">खोजें</string>
+    <!-- Menu item: toggle drawer -->
+    <string name="menu_toggle_drawer">"ड्रॉवर टॉगल करें"</string>
+    <!-- Title of the drawer, indicating what it is used for, which is navigation of the app -->
+    <string name="drawer_title">"मार्गदर्शक"</string>
+
+    <!--  Menu item: shown in conversation menu. Tap this to move to mark conversation as important [CHAR LIMIT=30] -->
+    <string name="mark_important">"महत्व. के रूप में चिह्नित करें"</string>
+    <!--  Menu item: shown in conversation menu. Tap this to move to mark conversation as not important [CHAR LIMIT=30] -->
+    <string name="mark_not_important">"महत्वपूर्ण नहीं चिह्नित करें"</string>
+
+    <!-- Compose screen, menu item: add Cc/Bcc fields -->
+    <string name="add_cc_label">"Cc/Bcc जोड़ें"</string>
+    <!-- Compose screen, menu item: add Bcc field [CHAR_LIMIT=20]-->
+    <string name="add_bcc_label">"Bcc जोड़ें"</string>
+    <!-- Compose screen, Prefix to quoted text in forwarded/replied message [CHAR LIMIT=50]-->
+    <string name="quoted_text">"उद्धरित लेख शामिल करें"</string>
+    <!-- Compose screen, Prefix to quoted text in forwarded/replied message; folder for the quoted text area. [CHAR LIMIT=25] -->
+    <string name="quoted_text_label">"उद्धरित लेख"</string>
+    <!--  Button for including inline responses. [CHAR LIMIT=25] -->
+    <string name="respond_inline">"इनलाइन प्रतिसाद दें"</string>
+    <!-- Format string for email addresses -->
+    <string name="formatted_email_address" translatable="false">&lt;<xliff:g id="email">%1$s</xliff:g>&gt;</string>
+
+    <!-- Attachments -->
+    <!-- Size unit, displayed in a button next to an attachment [CHAR LIMIT=5]-->
+    <string name="bytes">"<xliff:g id="COUNT">%s</xliff:g> B"</string>
+    <!-- Size unit, displayed in a button next to an attachment [CHAR LIMIT=5] -->
+    <string name="kilobytes">"<xliff:g id="COUNT">%s</xliff:g> KB"</string>
+    <!-- Size unit, displayed in a button next to an attachment  [CHAR LIMIT=5]-->
+    <string name="megabytes">"<xliff:g id="COUNT">%s</xliff:g> MB"</string>
+    <!-- Attachment description for image files [CHAR LIMIT=30] -->
+    <string name="attachment_image">"चित्र"</string>
+    <!-- Attachment description for video files [CHAR LIMIT=30] -->
+    <string name="attachment_video">"वीडियो"</string>
+    <!-- Attachment description for audio files [CHAR LIMIT=30] -->
+    <string name="attachment_audio">"ऑडियो"</string>
+    <!-- Attachment description for text files [CHAR LIMIT=30] -->
+    <string name="attachment_text">लेख</string>
+    <!-- Attachment description for .doc files [CHAR LIMIT=30] -->
+    <string name="attachment_application_msword">"दस्तावेज़"</string>
+    <!-- Attachment description for .ppt files [CHAR LIMIT=30] -->
+    <string name="attachment_application_vnd_ms_powerpoint">"प्रस्‍तुति"</string>
+    <!-- Attachment description for .pdf files [CHAR LIMIT=30] -->
+    <string name="attachment_application_vnd_ms_excel">"स्प्रैडशीट"</string>
+    <!-- Attachment description for .pdf files [CHAR LIMIT=30] -->
+    <string name="attachment_application_pdf">"PDF"</string>
+    <!-- Attachment description for unknown files [CHAR LIMIT=30]-->
+    <string name="attachment_unknown">"<xliff:g id="ATTACHMENTEXTENSION">%s</xliff:g> फ़ाइल"</string>
+    <!-- Read email screen, button name. Preview an attachment by Gview. [CHAR LIMIT=18] -->
+    <string name="preview_attachment">"पूर्वावलोकन"</string>
+    <!-- Read email screen, button name. Save an attachment to sd card. [CHAR LIMIT=10] -->
+    <string name="save_attachment">"सहेजें"</string>
+    <!-- Read email screen, button name. Redownload an attachment [CHAR LIMIT=20]-->
+    <string name="download_again">"फिर से डाउनलोड करें"</string>
+    <!-- A supplemental option on attachments for apps to override. This string intentionally blank here. [CHAR LIMIT=20] -->
+    <string name="attachment_extra_option1" translatable="false"/>
+    <!-- Remove this attachment [CHAR LIMIT=50] -->
+    <string name="remove_attachment_desc">"<xliff:g id="ATTACHMENTNAME">%s</xliff:g> अटैचमेंट निकालें"</string>
+    <!-- Dialog box title [CHAR LIMIT=30] -->
+    <string name="more_info_attachment">"जानकारी"</string>
+    <!-- Dialog box message, displayed when we could not view an attachment. [CHAR LIMIT=200]-->
+    <string name="no_application_found">"कोई भी ऐप्स  इस अटैचमेंट को देखने के लिए नहीं खोल सकता."</string>
+    <!-- Dialog box title. [CHAR LIMIT=30] -->
+    <string name="fetching_attachment">"अटैचमेंट फ़ेच कर रहा है"</string>
+    <!-- Dialog box message. [CHAR LIMIT=80] -->
+    <string name="please_wait">"कृपया प्रतीक्षा करें…"</string>
+    <!-- Displayed in the conversation view, next to a file\'s size and type. Status of a saved attachment. [CHAR LIMIT=20]-->
+    <string name="saved">"सहेजा गया, <xliff:g id="SIZE">%s</xliff:g>"</string>
+    <!-- Displayed in the conversation view. Status of a failed attachment. [CHAR LIMIT=50]-->
+    <string name="download_failed">"डाउनलोड नहीं हो सका. पुनर्प्रयास के लिए स्पर्श करें."</string>
+    <!-- Photo view screen, button name. Save all attachments to sd card. [CHAR LIMIT=17] -->
+    <string name="menu_photo_save_all">"सभी सहेजें"</string>
+    <!-- Photo view screen, button name. Share attachment. [CHAR LIMIT=10] -->
+    <string name="menu_photo_share">"साझा करें"</string>
+    <!-- Photo view screen, button name. Share all attachments. [CHAR LIMIT=20] -->
+    <string name="menu_photo_share_all">"सभी साझा करें"</string>
+    <!-- Photo view screen, button name. Print photo. [CHAR LIMIT=20] -->
+    <string name="menu_photo_print">"प्रिंट करें"</string>
+    <!-- Displayed in the action bar as a subtitle. Save in progress. [CHAR LIMIT=15] -->
+    <string name="saving">"सहेज रहा है…"</string>
+
+    <!-- Webview Context Menu Strings -->
+    <!-- Title of dialog for choosing which activity to share a link with. [CHAR LIMIT=50]-->
+    <string name="choosertitle_sharevia">"इसके द्वारा साझा करें:"</string>
+    <!-- Menu item to open a link  [CHAR LIMIT=50]-->
+    <string name="contextmenu_openlink">"ब्राउज़र में खोलें"</string>
+    <!-- Menu item to copy the selection  [CHAR LIMIT=50]-->
+    <string name="contextmenu_copy">प्रतिलिपि बनाएं</string>
+    <!-- Menu item to copy a link  [CHAR LIMIT=50]-->
+    <string name="contextmenu_copylink">"लिंक के URL की प्रतिलिपि बनाएं"</string>
+    <!-- Menu item to view an image  [CHAR LIMIT=50]-->
+    <string name="contextmenu_view_image">"चित्र देखें"</string>
+    <!-- Menu item to dial a number  [CHAR LIMIT=50]-->
+    <string name="contextmenu_dial_dot">"डायल करें…"</string>
+    <!-- Menu item to send an SMS  [CHAR LIMIT=50]-->
+    <string name="contextmenu_sms_dot">"SMS भेजें…"</string>
+    <!-- Menu item to add a contact  [CHAR LIMIT=50]-->
+    <string name="contextmenu_add_contact">"संपर्क जोड़ें"</string>
+    <!-- Menu item to send an email [CHAR LIMIT=50] -->
+    <string name="contextmenu_send_mail">"ईमेल भेजें"</string>
+    <!-- Menu item to show a map  [CHAR LIMIT=50]-->
+    <string name="contextmenu_map">"मानचित्र"</string>
+    <!-- Menu item to share link  [CHAR LIMIT=50]-->
+    <string name="contextmenu_sharelink">"लिंक साझा करें"</string>
+
+    <!-- Browse list item strings -->
+    <!-- Formatting string for the content description field of a conversation list item when device is in accessibility mode. [CHAR LIMIT=250] -->
+    <string name="content_description">"<xliff:g id="SUBJECT">%3$s</xliff:g> के बारे में <xliff:g id="TOHEADER">%1$s</xliff:g><xliff:g id="PARTICIPANT">%2$s</xliff:g>, <xliff:g id="DATE">%5$s</xliff:g> पर <xliff:g id="SNIPPET">%4$s</xliff:g>, <xliff:g id="READSTATE">%6$s</xliff:g>"</string>
+    <!-- Formatting string for the content description field of a conversation list item when device is in accessibility mode and the message was received today. [CHAR LIMI=250] -->
+    <string name="content_description_today">"<xliff:g id="SUBJECT">%3$s</xliff:g> के बारे में <xliff:g id="TOHEADER">%1$s</xliff:g><xliff:g id="PARTICIPANT">%2$s</xliff:g>, <xliff:g id="TIME">%5$s</xliff:g> पर <xliff:g id="SNIPPET">%4$s</xliff:g>, <xliff:g id="READSTATE">%6$s</xliff:g>"</string>
+    <!-- Formatting string for the content description field of a conversation list item when device is in accessibility mode. [CHAR LIMIT=250] -->
+    <string name="content_description_with_folders">"<xliff:g id="SUBJECT">%3$s</xliff:g> के बारे में <xliff:g id="TOHEADER">%1$s</xliff:g><xliff:g id="PARTICIPANT">%2$s</xliff:g>, <xliff:g id="DATE">%5$s</xliff:g> बजे <xliff:g id="SNIPPET">%4$s</xliff:g>, <xliff:g id="READSTATE">%6$s</xliff:g>, लेबल: <xliff:g id="FOLDERS">%7$s</xliff:g>"</string>
+    <!-- Formatting string for the content description field of a conversation list item when device is in accessibility mode and the message was received today. [CHAR LIMI=250] -->
+    <string name="content_description_today_with_folders">"<xliff:g id="SUBJECT">%3$s</xliff:g> के बारे में <xliff:g id="TOHEADER">%1$s</xliff:g><xliff:g id="PARTICIPANT">%2$s</xliff:g>, <xliff:g id="TIME">%5$s</xliff:g> बजे <xliff:g id="SNIPPET">%4$s</xliff:g>, <xliff:g id="READSTATE">%6$s</xliff:g>, लेबल: <xliff:g id="FOLDERS">%7$s</xliff:g>"</string>
+    <!-- String used in content description field of a conversation list item when device is in accessibility mode and the conversation was read [CHAR LIMIT=250] -->
+    <string name="read_string">"वार्तालाप पढ़ा गया"</string>
+    <!-- String used in content description field of a conversation list item when device is in accessibility mode and the conversation was not read [CHAR LIMIT=250] -->
+    <string name="unread_string">"वार्तालाप नहीं पढ़ा गया"</string>
+    <!-- Formatting string. If the subject contains the tag of a mailing-list (text surrounded with
+    return the subject with that tag ellipsized, e.g. "[android-gmail-team] Hello" -> "[andr...] Hello" [CHAR LIMIT=100] -->
+    <string name="filtered_tag"> [<xliff:g id="tag">%1$s</xliff:g>]<xliff:g id="subject">%2$s</xliff:g></string>
+    <!-- Displayed in conversation list item in the form of "badge subject" [CHAR LIMIT=7] -->
+    <string name="badge_and_subject"><xliff:g>%1$s</xliff:g> <xliff:g>%2$s</xliff:g></string>
+    <!-- Displayed in browse list item when the list item is a draft message instead of showing the subject [CHAR LIMIT=100] -->
+    <plurals name="draft">
+        <!-- Title of the screen when there is exactly one draft -->
+        <item quantity="one">"अधूरा ईमेल"</item>
+        <!-- Title of the screen when there are more than one draft -->
+        <item quantity="other">"अधूरा ईमेल"</item>
+    </plurals>
+    <!-- Message displayed in a browse list item for one second when message is being sent [CHAR LIMIT=20]-->
+    <string name="sending">"भेज रहा है…"</string>
+    <!-- Message displayed in the outgoing message list item when the message failed to sent and is being retried [CHAR LIMIT=20] -->
+    <string name="message_retrying">"पुन: प्रयास हो रहा है..."</string>
+    <!-- Message displayed in the outgoing message list item when the message failed to send [CHAR LIMIT=20] -->
+    <string name="message_failed">"विफल"</string>
+    <!-- Message displayed in a browse list item for one second after a send failed [CHAR LIMIT=26]-->
+    <string name="send_failed">"संदेश नहीं भेजा गया था."</string>
+    <!-- String used to represent "me" when used as an object pronoun. This string is used when
+         showing the list of recipients of a message [CHAR LIMIT=15] -->
+    <string name="me_object_pronoun">"मैं"</string>
+    <!-- String used to represent "me"/"I" when used as an subject pronoun. This string is use when
+         showing the list of senders for a conversation list item. [CHAR LIMIT=15] -->
+    <string name="me_subject_pronoun">"मैं"</string>
+
+    <plurals name="confirm_delete_conversation">
+        <!-- Dialog message to confirm deletion of one conversation -->
+        <item quantity="one">"इस बातचीत को हटाएं?"</item>
+        <!-- Dialog message to confirm deletion of several conversations -->
+        <item quantity="other">"ये <xliff:g id="COUNT">%1$d</xliff:g> बातचीत हटाएं?"</item>
+    </plurals>
+    <plurals name="confirm_archive_conversation">
+        <!-- Dialog message to confirm archival of one conversation -->
+        <item quantity="one">"इस बातचीत को संग्रहीत करें?"</item>
+        <!-- Dialog message to confirm archival of several conversations -->
+        <item quantity="other">"ये <xliff:g id="COUNT">%1$d</xliff:g> बातचीत संग्रहीत करें?"</item>
+    </plurals>
+    <plurals name="confirm_discard_drafts_conversation">
+        <!-- Dialog message to confirm discarding a single draft message [CHAR LIMIT=50] -->
+        <item quantity="one">"इस संदेश को छोड़ें?"</item>
+        <!-- Dialog message to confirm discarding many draft messages [CHAR LIMIT=50] -->
+        <item quantity="other">"इन <xliff:g id="COUNT">%1$d</xliff:g> संदेशों को छोड़ें?"</item>
+    </plurals>
+
+    <!-- Dialog text: confirm discard -->
+    <string name="confirm_discard_text">"यह संदेश छोड़ें?"</string>
+
+    <!-- Conversation list shared between the Activity and Widget -->
+    <!-- Displayed in the middle of the screen when conversations are being loaded [CHAR LIMIT 100]-->
+    <string name="loading_conversations">"लोड हो रहा है…"</string>
+    <!-- Displayed in the middle of the screen when an inbox is empty [CHAR LIMIT 100]-->
+    <string name="empty_inbox">"आपने पूर्ण कर लिया है! कृपया अपने दिन का आनंद लें."</string>
+    <!-- Displayed in the middle of the screen when a search returns no results [CHAR LIMIT 100]-->
+    <string name="empty_search">"ओह! हमें \"<xliff:g id="SEARCH_QUERY">%1$s</xliff:g>\" के लिए कुछ भी नहीं मिला."</string>
+    <!-- Displayed in the middle of the screen when the spam folder is empty [CHAR LIMIT 100]-->
+    <string name="empty_spam_folder">"हुर्रे, कोई अनचाहा ईमेल नहीं है!"</string>
+    <!-- Displayed in the middle of the screen when the trash folder is empty [CHAR LIMIT 100]-->
+    <string name="empty_trash_folder">"कोई मिटाए गए ईमेल नहीं है. रिसाइकलिंग के लिए धन्यवाद!"</string>
+    <!-- Displayed in the middle of the screen when a folder is empty [CHAR LIMIT 100]-->
+    <string name="empty_folder">"कोई मेल नहीं है."</string>
+    <!-- Displayed in the middle of the screen when a folder is loading [CHAR LIMIT 100]-->
+    <string name="getting_messages">"आपके संदेश प्राप्त हो रहे हैं"</string>
+
+    <!-- Undo bar strings -->
+    <!-- Menu item: undo latest action [CHAR LIMIT=12]-->
+    <string name="undo">"वापस लाएं"</string>
+
+    <plurals name="conversation_unstarred">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> बातचीत के तारांकन हटाए जा रहे हैं"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> बातचीत के तारांकन हटाए जा रहे हैं"</item>
+    </plurals>
+
+    <!-- The following are shown as a toast after the operation has completed --><skip/>
+    <plurals name="conversation_muted">
+        <!-- Displayed while muting one conversation -->
+        <item quantity="one">"&lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; को म्‍यूट कि‍या गया"</item>
+        <!-- Displayed while muting several conversations -->
+        <item quantity="other">"&lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; को म्‍यूट कि‍या गया"</item>
+    </plurals>
+
+    <plurals name="conversation_spammed">
+        <!-- Displayed while reporting one conversation as spam -->
+        <item quantity="one">"&lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; की अनचाहा ईमेल के रूप में रिपोर्ट की गई"</item>
+        <!-- Displayed while reporting several conversations as spam -->
+        <item quantity="other">"&lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; की अनचाहा ईमेल के रूप में रिपोर्ट की गई"</item>
+    </plurals>
+
+    <plurals name="conversation_not_spam">
+        <!-- Displayed while reporting one conversation as not spam -->
+        <item quantity="one">"&lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; की अनचाहा ईमेल नहीं के रूप में रिपोर्ट की गई"</item>
+        <!-- Displayed while reporting several conversations as not spam -->
+        <item quantity="other">"&lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; की अनचाहा ईमेल नहीं के रूप में रिपोर्ट की गई"</item>
+    </plurals>
+
+    <plurals name="conversation_not_important">
+        <!-- Displayed while reporting one conversation as not important in the important folder -->
+        <item quantity="one">"&lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; को महत्‍वपूर्ण नहीं के रूप में चि‍ह्नि‍त कि‍या गया"</item>
+        <!-- Displayed while reporting several conversations as not important in the important folder -->
+        <item quantity="other">"&lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; को महत्‍वपूर्ण नहीं के रूप में चि‍ह्नि‍त कि‍या गया"</item>
+    </plurals>
+
+    <plurals name="conversation_phished">
+        <!-- Displayed while reporting one conversation as phishing -->
+        <item quantity="one">"&lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; की फ़िशिंग के रूप में रिपोर्ट की गई"</item>
+        <!-- Displayed while reporting several conversations as phishing -->
+        <item quantity="other">"&lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; की फ़िशिंग के रूप में रिपोर्ट की गई"</item>
+    </plurals>
+
+    <plurals name="conversation_archived">
+        <!-- Displayed while archiving one conversation -->
+        <item quantity="one">"&lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; ईमेल को संग्रहीत कि‍या गया"</item>
+        <!-- Displayed while archiving multiple conversations -->
+        <item quantity="other">"&lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; ईमेल को संग्रहीत कि‍या गया"</item>
+    </plurals>
+
+    <plurals name="conversation_deleted">
+        <!-- Displayed while deleting one conversation -->
+        <item quantity="one">"&lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; को हटा दिया गया"</item>
+        <!-- Displayed while deleting multiple conversations -->
+        <item quantity="other">"&lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; को हटा दिया गया"</item>
+    </plurals>
+    <!-- Displayed when swiping away a single conversation to delete it [CHAR LIMIT=80] -->
+    <string name="deleted">"हटाई गई"</string>
+    <!-- Displayed when swiping away a single conversation to archive it [CHAR LIMIT=80] -->
+    <string name="archived">"संग्रहीत"</string>
+    <!-- Displayed when swiping away a single conversation to remove the currently displayed folder [CHAR LIMIT=80] -->
+    <string name="folder_removed">"<xliff:g id="FOLDERNAME">%1$s</xliff:g> से निकाला गया"</string>
+
+    <plurals name="conversation_folder_changed">
+        <!-- Displayed while adding and removing folders to a single conversation. [CHAR LIMIT=100] -->
+        <item quantity="one">"फ़ोल्‍डर बदल दिया गया."</item>
+        <!-- Displayed while adding and removing folders to multiple conversations. [CHAR LIMIT=100] -->
+        <item quantity="other">"फ़ोल्डर बदल दिए गए."</item>
+    </plurals>
+
+    <!-- Displayed after moving a conversation to a different folder. [CHAR LIMIT=100] -->
+    <string name="conversation_folder_moved">"<xliff:g id="FOLDERNAME">%1$s</xliff:g> में ले जाया गया"</string>
+
+    <!-- Search Results: Text for header that is shown above search results [CHAR LIMIT=30] -->
+    <string name="search_results_header">"परिणाम"</string>
+    <!-- Toast shown when the user taps the search hard key when viewing an account that does not support search [CHAR LIMIT=100] -->
+    <string name="search_unsupported">"इस खाते पर खोज समर्थित नहीं है."</string>
+    <!-- Accessibility description for the search suggestion item [CHAR LIMIT=100] -->
+    <string name="search_suggestion_desc">"सुझाव: <xliff:g id="SUGGESTION">%s</xliff:g>"</string>
+
+    <!-- Conversation view -->
+    <!--  Text anchor for control to add / change labels on a conversation when
+          viewing it. [CHAR LIMIT=40] -->
+    <string name="add_label">"फ़ोल्‍डर जोड़ें"</string>
+
+    <!-- New Message notification text that appears over conversation view on incoming messages. [CHAR LIMIT=40] -->
+    <plurals name="new_incoming_messages">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> नया संदेश"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> नए संदेश"</item>
+    </plurals>
+
+    <!-- Conversation message header strings -->
+    <!--  Text for showing the date and expanding recipient details in a message when viewing it. [CHAR LIMIT=40] -->
+    <string name="date_and_view_details">"<xliff:g id="DATE">%1$s</xliff:g> &lt;a href=\'http://www.example.com\'&gt;विवरण देखें&lt;/a&gt;"</string>
+    <!--  Text for collapsing recipient details in a message when viewing it. [CHAR LIMIT=40] -->
+    <string name="hide_details">"विवरणों को छिपाएं"</string>
+    <!-- Shown to display the recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="to_message_header">"<xliff:g id="RECIPIENTS">%1$s</xliff:g> को"</string>
+    <!-- Shown to display the bcc recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="bcc_header_for_recipient_summary">"bcc: "</string>
+    <!--  Icon name for showing sender contact information. [CHAR LIMIT=100] -->
+    <string name="contact_info_string">"<xliff:g id="NAME">%1$s</xliff:g> की संपर्क जानकारी दिखाएं"</string>
+    <!--  Icon name for showing sender contact information when we cannot get sender info. [CHAR LIMIT=100] -->
+    <string name="contact_info_string_default">"संपर्क जानकारी दिखाएं"</string>
+    <!-- Used for accessibility purposes when a conversation has several previously read
+         messages that are collapsed into a single touch target. Tapping on this touch target
+         expands these messages. [CHAR LIMIT=UNLIMITED] -->
+    <plurals name="show_messages_read">
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> पुराने संदेश विस्तृत करें"</item>
+    </plurals>
+    <!-- Used for accessibility purposes when a conversation has several previously read
+         messages that are collapsed into a single touch target to announce that the messages
+         have been expanded. [CHAR LIMIT=UNLIMITED] -->
+    <plurals name="super_collapsed_block_accessibility_announcement">
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> पुराने संदेश विस्तृत किए गए"</item>
+    </plurals>
+    <!-- Shown to display the from address of the message [CHAR LIMIT=10] -->
+    <string name="from_heading">"प्रेषक:"</string>
+    <!-- Shown to display the reply to address of the message [CHAR LIMIT=20] -->
+    <string name="replyto_heading">"उत्तर पता:"</string>
+    <!-- Shown to display the to recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="to_heading">"प्रति: "</string>
+    <!-- Shown to display the to recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="to_heading_no_space">"प्रति:"</string>
+    <!-- Shown to display the cc recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="cc_heading">"Cc:"</string>
+    <!-- Shown to display the bcc recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="bcc_heading">"Bcc:"</string>
+    <!-- Shown to display the date of the message [CHAR LIMIT=10] -->
+    <string name="date_heading">"दिनांक:"</string>
+    <!-- Displayed above an HTML message to show the images in that message [CHAR LIMIT=40] -->
+    <string name="show_images">"चित्र दिखाएं"</string>
+    <!-- Displayed above an HTML message to always show images in messages from that sender [CHAR LIMIT=40] -->
+    <string name="always_show_images">"इस प्रेषक के चित्र हमेशा दिखाएं"</string>
+    <!-- Shown in a toast to acknowledge always showing images for a sender [CHAR LIMIT=100] -->
+    <string name="always_show_images_toast">"इस प्रेषक के चित्रों को अपने आप दिखाया जाएगा."</string>
+    <!-- Display format of an email recipient, displayed in expanded message details [CHAR LIMIT=10] -->
+    <string name="address_display_format"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="email">%2$s</xliff:g></string>
+    <!-- Display format of an email sender if the message has a via domain set, displayed in expanded message details [CHAR LIMIT=15] -->
+    <string name="address_display_format_with_via_domain">"<xliff:g id="VIA_DOMAIN">%3$s</xliff:g> के द्वारा <xliff:g id="NAME">%1$s</xliff:g> <xliff:g id="EMAIL">%2$s</xliff:g>"</string>
+    <!-- Displayed for one second after user saves message as draft [CHAR LIMIT=50]-->
+    <string name="message_saved">"संदेश अधूरा ईमेल के रूप में सहेजा गया."</string>
+    <!-- Displayed for one second while message is being sent [CHAR LIMIT=50]-->
+    <string name="sending_message">"संदेश भेज रहा है..."</string>
+    <!-- Displayed for one second after trying to send with invalid recipients [CHAR LIMIT=50]-->
+    <string name="invalid_recipient">"<xliff:g id="WRONGEMAIL">%s</xliff:g> पता अमान्‍य है."</string>
+    <!-- Shown in HTML to allow the user to see quoted text; should match Gmail web UI. [CHAR LIMIT=50] -->
+    <string name="show_elided">"उद्धृत लेख दिखाएं"</string>
+    <!-- Shown in HTML to allow the user to hide quoted text; should match Gmail web UI. 25BC is Unicode for a downward-pointing triangle. [CHAR LIMIT=50] -->
+    <string name="hide_elided">"▼ उद्धृत लेख छिपाएं"</string>
+    <!-- Shown as a heading in message view when a message contains a calendar invite [CHAR LIMIT=30]-->
+    <string name="message_invite_title">"कैलेंडर आमंत्रण"</string>
+    <!-- Shown as a button label in message view to launch calendar to see this invite [CHAR LIMIT=40]-->
+    <string name="message_invite_calendar_view">"कैलेंडर में देखें"</string>
+    <!-- Shown as a text label in message view describing the choices of whether to attend an invite [CHAR LIMIT=20]-->
+    <string name="message_invite_label_attending">"जा रहे हैं?"</string>
+    <!-- Shown as a button label in message view to accept a calendar invite [CHAR LIMIT=20]-->
+    <string name="message_invite_accept">"हां"</string>
+    <!-- Shown as a button label in message view to give a tentative response to a calendar invite [CHAR LIMIT=20]-->
+    <string name="message_invite_tentative">"शायद"</string>
+    <!-- Shown as a button label in message view to decline a calendar invite [CHAR LIMIT=20]-->
+    <string name="message_invite_decline">"नहीं"</string>
+
+    <!-- An enumeration comma for separating items in lists. [CHAR LIMIT=2] -->
+    <string name="enumeration_comma">,\u0020</string>
+
+    <!-- Button name, displayed in dialogs [CHAR LIMIT=20]-->
+    <string name="send_anyway">"फिर भी भेजें"</string>
+    <!-- Button name, displayed in dialogs [CHAR LIMIT=10] -->
+    <string name="ok">"ठीक"</string>
+    <!-- Button name, displayed in dialogs [CHAR LIMIT=10] -->
+    <string name="done">"पूर्ण"</string>
+    <!-- Button name, displayed in dialogs [CHAR LIMIT=10] -->
+    <string name="cancel">"रहने दें"</string>
+    <!-- Button name, displayed in dialogs [CHAR LIMIT=10] -->
+    <string name="clear">"साफ़ करें"</string>
+    <!-- Button name, used as part of a multi-step process [CHAR LIMIT=10] -->
+    <string name="next">"अगला"</string>
+    <!-- Button name, used as part of a multi-step process [CHAR LIMIT=10] -->
+    <string name="previous">"पिछला"</string>
+
+    <!-- Sync status errors. Please do not change the order [CHAR LIMIT=100] -->
+    <string-array name="sync_status">
+        <item>"सफल"</item>
+        <item>"कोई कनेक्शन नहीं"</item>
+        <item>"प्रवेश नहीं हो सका"</item>
+        <item>"सफल"</item>
+        <item>"कोई कनेक्शन नहीं"</item>
+        <item>"आंतरिक त्रुटि"</item>
+        <item>"सर्वर त्रुटि"</item>
+    </string-array>
+
+    <!-- Widget strings -->
+    <!-- Displayed when user adds a new widget. Tapping on the widget in this
+          mode will bring user to the account selection screen [CHAR LIMIT=35] -->
+    <string name="tap_to_configure">"सेट करने के लिए स्पर्श करें"</string>
+
+    <!-- Displayed within a widget that was setup for a non-synced folder [CHAR LIMIT=60] -->
+    <string name="non_synced_folder_description">"बातचीत देखने के लिए, फ़ोल्डर समन्वयित करें."</string>
+
+    <!-- Displayed within a widget that was setup for a non-synced folder.  This is the text of the
+         button that will allow the user to configure sync for the folder [CHAR LIMIT=35] -->
+    <string name="tap_to_configure_folder_sync">"फ़ोल्डर समन्वयित करें"</string>
+
+    <!-- Displayed in widget when unread count > 99. [CHAR LIMIT=4] -->
+    <string name="widget_large_unread_count">%d+</string>
+
+    <!-- Displayed when there are >99 unseen messages, see:unseen_count [CHAR LIMIT=3] -->
+    <string name="large_unseen_count">"<xliff:g id="COUNT">%d</xliff:g>+ नए"</string>
+
+    <!-- Displayed when there are unseen messages [CHAR LIMIT=3] [BACKUP_MESSAGE_ID: 3377106103106345367] -->
+    <string name="unseen_count">"<xliff:g id="COUNT">%d</xliff:g> नए"</string>
+
+    <plurals name="actionbar_unread_messages">
+        <!-- String for the actionbar subtitle when messages are unread [CHAR LIMIT=30] -->
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> अपठित"</item>
+    </plurals>
+
+    <!-- Displayed at the end of the conversation list in the widget. Tapping on this will open the default Inbox. [CHAR LIMIT=35] -->
+    <string name="view_more_conversations">"अधिक बातचीत देखें"</string>
+
+    <!-- Displayed while we load a conversation. [CHAR LIMIT=100] -->
+    <string name="loading_conversation">"लोड हो रहा है…"</string>
+
+    <!-- Name of the Mailboxes activity [CHAR LIMIT=30] -->
+    <string name="activity_mailbox_selection">"खाता चुनें"</string>
+
+    <!-- Name of the Folders activity [CHAR LIMIT=30] -->
+    <string name="activity_folder_selection">"फ़ोल्डर चुनें"</string>
+
+    <!-- Name of the Folder shortcut widget. Should use "Email" to refer to the app. [CHAR LIMIT=30] -->
+    <string name="folder_shortcut_widget_label">"ईमेल फ़ोल्डर"</string>
+
+    <!-- Folder selection dialog -->
+    <!-- Title for change folders dialog [CHAR LIMIT=30] -->
+    <string name="change_folders_selection_dialog_title">"फ़ोल्डर बदलें"</string>
+    <!-- Title for move to dialog [CHAR LIMIT=30] -->
+    <string name="move_to_selection_dialog_title">"इसमें ले जाएं"</string>
+
+    <!-- Search -->
+    <!-- Title of the search dialog -->
+    <string name="search_title" translatable="false">Unified Email</string>
+    <!-- Shown in light gray in the Search box when no text has been entered [CHAR LIMIT=20]-->
+    <string name="search_hint">खोजें</string>
+    <!-- Search Results: Text for status of the search when the results are completely loaded [CHAR LIMIT=10] -->
+    <string name="search_results_loaded"><xliff:g id="searchCount">%1$d</xliff:g></string>
+    <!-- Voice search is not supported on this device [CHAR LIMIT=100] -->
+    <string name="voice_search_not_supported">"इस डिवाइस पर ध्‍वनि खोज सुविधा उपलब्‍ध नहीं है."</string>
+    <!-- Description of the back button [CHAR LIMIT=100] -->
+    <string name="search_back_desc">"खोज बंद करें"</string>
+    <!-- Description of the voice icon [CHAR LIMIT=100] -->
+    <string name="search_voice_desc">"बोलकर खोजें शुरु करें"</string>
+    <!-- Description of the clear icon (clears the current input text in the search bar) [CHAR LIMIT=100] -->
+    <string name="search_clear_desc">"खोज पाठ साफ करें"</string>
+
+    <!-- Shown in conversation list footer when application cannot make a connection [CHAR LIMIT=20]-->
+    <string name="network_error">"कोई कनेक्शन नहीं"</string>
+    <!-- Button at bottom of conversation list screen if last attempt to load conversations failed [CHAR LIMIT=20]-->
+    <string name="retry">"पुन: प्रयास करें"</string>
+    <!-- Button at bottom of conversation list screen if the folder for which contents are being shown supports loading more on demand [CHAR LIMIT=20]-->
+    <string name="load_more">"अधिक लोड करें"</string>
+
+    <!-- Text for dummy attachments to load the actual attachment. This is not an ideal string, but it\'s too late to add a new string and get it translated -->
+    <string name="load_attachment">@string/load_more</string>
+
+    <!-- Shortcut strings -->
+    <!-- Title for shortcut naming dialog [CHAR LIMIT=100]-->
+    <string name="shortcut_name_title">"नाम फ़ोल्‍डर शॉर्टकट"</string>
+
+    <!-- Wait fragment strings -->
+    <!-- Displayed in title bar during the initial sync  [CHAR LIMIT=40] -->
+    <string name="wait_for_sync_title">"समन्‍वयन की प्रतीक्षा कर रहा है"</string>
+    <!-- Title for the screen displayed during the initial sync [CHAR LIMIT=100]  -->
+    <string name="not_synced_title">"खाता समन्वयित नहीं है"</string>
+    <!-- Displayed in the middle of the screen during the initial sync [CHAR LIMIT=300]-->
+    <string name="wait_for_manual_sync_body">"यह खाता अपने आप समन्वयित करने के लिए सेट नहीं है. \nएक बार मेल समन्‍वयित करने के लिए, "<b>"अभी समन्वयित करें"</b>" स्‍पर्श करें, या इस खाते को मेल अपने आप समन्‍वयित करने के लिए सेट करने के लिए "<b>"समन्वयन सेटिंग बदलें"</b>" स्‍पर्श करें."</string>
+    <!-- Displayed at the bottom of the screen during the initial sync. If pressed will sync users mail for the selected account. [CHAR LIMIT=12]  -->
+    <string name="manual_sync">"अभी समन्वयित करें"</string>
+    <!-- Displayed at the bottom of the screen during the initial sync. If pressed will open sync setting screen for accounts. [CHAR LIMIT=30]  -->
+    <string name="change_sync_settings">"समन्वयन सेटिंग बदलें"</string>
+
+    <!-- Displayed when we could not load a photo in the photo viewer. [CHAR LIMIT=30] -->
+    <string name="photo_load_failed">"चित्र लोड नहीं की जा सकी"</string>
+
+    <!--  The move message / change labels action can\'t be taken because the selected messages
+        come from different accounts -->
+    <string name="cant_move_or_change_labels">"चयन में एकाधिक खाते होने के कारण नहीं ले जाया जा सकता."</string>
+
+    <!-- Format string used when displaying a summary in a message summary in list notification that was triggered by several new conversations.
+         Extra space between sender and subject is intentional.  [CHAR LIMIT=120] -->
+    <string name="multiple_new_message_notification_item"><b><xliff:g id="sender">%1$s</xliff:g></b>\u0020\u0020\u0020<xliff:g id="subject">%2$s</xliff:g></string>
+
+    <!-- Format string used when displaying the big text of a notification that was triggered by a single new conversation. [CHAR LIMIT=120] -->
+    <string name="single_new_message_notification_big_text"><xliff:g id="subject">%1$s</xliff:g>\n<xliff:g id="snippet">%2$s</xliff:g></string>
+
+    <!-- Displayed in a message subheading. Ignore the current spam warning. [CHAR LIMIT=30] -->
+    <string name="ignore_spam_warning">"ध्यान न दें, मुझे इस संदेश पर भरोसा है"</string>
+
+    <!-- Displayed in the message heading. Shown if the message was sent via another domain. [CHAR LIMIT=10] -->
+    <string name="via_domain">"<xliff:g id="VIADOMAIN">%1$s</xliff:g> के माध्यम से"</string>
+
+    <!-- Button text for the button to click to have the user sign in again or adjust their credentials. [CHAR LIMIT=20]-->
+    <string name="signin">"साइन-इन करें"</string>
+    <!-- Button text for the button to click for more information. [CHAR LIMIT=20]-->
+    <string name="info">"जानकारी"</string>
+    <!-- Button text for the button to click to report feedback. [CHAR LIMIT=20]-->
+    <string name="report">"रिपोर्ट करें"</string>
+    <!-- Button text for the button to click to show newly received messages in the active thread. [CHAR LIMIT=20]-->
+    <string name="show">दिखाएं</string>
+    <!-- Dialog title when a sync error occurs. [CHAR LIMIT=50]-->
+    <string name="sync_error">"समन्‍वयित नहीं किया जा सका."</string>
+    <!-- Dialog title when a sync error occurs. [CHAR LIMIT=100]-->
+    <string name="sync_error_message">"आपके डिवाइस में समन्वयित करने के लिए पर्याप्त मेमोरी स्थान नहीं है."</string>
+    <!-- Button text for the button to click to go to the manage storage settings screen. [CHAR LIMIT=20]-->
+    <string name="storage">संग्रहण</string>
+
+    <string translatable="false" name="hierarchical_folder_parent_top"><xliff:g id="topLevelParent">%1$s</xliff:g>\u2215<xliff:g id="parent">%2$s</xliff:g>\u2215</string>
+    <string translatable="false" name="hierarchical_folder_parent_top_ellip"><xliff:g id="topLevelParent">%1$s</xliff:g>\u2215\u2026\u2215<xliff:g id="parent">%2$s</xliff:g>\u2215</string>
+    <string translatable="false" name="hierarchical_folder_top"><xliff:g id="topLevelParent">%1$s</xliff:g>\u2215</string>
+
+    <!-- Token used as a divider between senders -->
+    <string name="senders_split_token">,\u00A0</string>
+    <string name="draft_count_format">\u00A0(<xliff:g id="count">%1$s</xliff:g>)</string>
+
+    <!-- Token to replace senders that are not visible -->
+    <string translatable="false" name="senders_elided">..</string>
+    <!-- Token used to space out elided senders that are not visible -->
+    <string translatable="false" name="elided_padding_token">\u00A0</string>
+    <!-- Token used to space out message count, draft text, and senders -->
+    <string translatable="false" name="message_count_spacer">\u00A0\u00A0</string>
+
+    <string translatable="false" name="quote_begin">&lt;div class=\"quote\"&gt;</string>
+
+    <!-- String used in the FolderListFragment to mark the start of user-defined folders -->
+    <string name="all_folders_heading">"सभी फ़ोल्डर"</string>
+    <!-- String used in the FolderListFragment to mark the start of recent folders -->
+    <string name="recent_folders_heading">"हाल ही के फ़ोल्‍डर"</string>
+
+    <!-- Dialog title when showing message header details in a popup window. [CHAR LIMIT=100]-->
+    <string name="message_details_title">"संदेश विवरण"</string>
+
+    <!-- General preference: Label of the setting for the direction to move to
+         when deleting the current message.
+         Options contain "newer message","older message", etc. [CHAR LIMIT=32] -->
+    <string name="preference_advance_to_title">"अतिरिक्त सुविधाएं"</string>
+
+    <!-- The auto-advance modes -->
+    <string-array name="prefEntries_autoAdvance">
+        <!-- Newer conversation -->
+        <item>"नया"</item>
+        <!-- Older conversation -->
+        <item>"पुराना"</item>
+        <!-- Conversation list -->
+        <item>"वार्तालाप सूची"</item>
+    </string-array>
+
+    <!-- Description for each auto-advance option to display after the user has picked one -->
+    <!-- The entries here must correspond to the entries in prefEntries_autoAdvance [CHAR LIMIT=60] -->
+    <string-array name="prefSummaries_autoAdvance">
+        <!-- Newer conversation -->
+        <item>"आपके द्वारा हटाए जाने के बाद नया वार्तालाप दिखाएं"</item>
+        <!-- Older conversation -->
+        <item>"आपके द्वारा हटाए जाने के बाद पुराना वार्तालाप दिखाएं"</item>
+        <!-- Conversation list -->
+        <item>"आपके द्वारा हटाए जाने के बाद वार्तालाप सूची दिखाएं"</item>
+    </string-array>
+
+    <!-- Dialog title for the auto-advance list -->
+    <string name="prefDialogTitle_autoAdvance">"इससे आगे"</string>
+
+    <!-- TODO: these pref keys that are never user visible should probably be
+    moved to a donttranslate file -->
+    <!-- The default auto-advance mode -->
+    <string translatable="false" name="prefDefault_autoAdvance">list</string>
+
+    <!-- The auto-advance mode values -->
+    <string-array translatable="false" name="prefValues_autoAdvance">
+        <item>newer</item>
+        <item>older</item>
+        <item>list</item>
+    </string-array>
+
+    <!-- Settings screen, title of "Restore default for "Show pictures"" [CHAR LIMIT=1000]-->
+    <string name="clear_display_images_whitelist_title">"चित्र स्वीकृतियां साफ़ करें"</string>
+
+    <!-- Settings screen, title of dialog shown to confirm action when user taps
+    "Clear picture approvals" in preferences [CHAR LIMIT=200]-->
+    <string name="clear_display_images_whitelist_dialog_title">"चित्र स्वीकृतियां साफ़ करें?"</string>
+    <!-- Settings screen, message of dialog shown to confirm action when tapping
+    "Clear picture approvals" [CHAR LIMIT=1000]-->
+    <string name="clear_display_images_whitelist_dialog_message">"आपने जिन प्रेषकों को पहले अनुमति दे रखी है, उनके इनलाइन चित्रों का प्रदर्शन रोकें."</string>
+
+    <!-- Message shown in toast when the user taps "Restore default for "Show pictures"" in Gmail general preferences. [CHAR LIMIT=50] -->
+    <string name="sender_whitelist_cleared">"चित्र अपने आप नहीं दिखाए जाएंगे."</string>
+
+    <!-- Settings screen, name of the setting that lets the user choose their signature [CHAR LIMIT=50] -->
+    <string name="preferences_signature_title">"हस्ताक्षर"</string>
+    <!-- Settings screen, title of the dialog that lets the user configure their signature [CHAR LIMIT=50] -->
+    <string name="preferences_signature_dialog_title">"हस्ताक्षर"</string>
+    <!-- Settings screen, setting summary text when no signature set [CHAR LIMIT=100] -->
+    <string name="preferences_signature_summary_not_set">"सेट नहीं है"</string>
+
+    <!-- Notification action for replying to a message. [CHAR LIMIT=20] -->
+    <string name="notification_action_reply">"उत्तर दें"</string>
+    <!-- Notification action for replying-all to a message. [CHAR LIMIT=20] -->
+    <string name="notification_action_reply_all">"सभी प्रषकों को उत्तर दें"</string>
+    <!-- Notification action for archiving a message. [CHAR LIMIT=20] -->
+    <string name="notification_action_archive">"संग्रहीत करें"</string>
+    <!-- Notification action for removing a label from a message. [CHAR LIMIT=20] -->
+    <string name="notification_action_remove_label">"लेबल निकालें"</string>
+    <!-- Notification action for deleting a message. [CHAR LIMIT=20] -->
+    <string name="notification_action_delete">"हटाएं"</string>
+
+    <!-- Notification undo text after archiving a message. [CHAR LIMIT=30] -->
+    <string name="notification_action_undo_archive">"संग्रहीत"</string>
+    <!-- Notification undo text after removing a label from a message. [CHAR LIMIT=30] -->
+    <string name="notification_action_undo_remove_label">"लेबल निकाल दिया गया"</string>
+    <!-- Notification undo text after deleting a message. [CHAR LIMIT=30] -->
+    <string name="notification_action_undo_delete">"हटा दिया गया"</string>
+
+    <!-- Regex that specifies veiled addresses. These are all empty because this is disabled currently. -->
+    <string name="veiled_address"/>
+    <!-- String to be shown instead of a veiled addresses. [CHAR LIMIT=50] -->
+    <string name="veiled_alternate_text"/>
+    <!-- String to be shown instead of a veiled addresses. [CHAR LIMIT=50] -->
+    <string name="veiled_alternate_text_unknown_person"/>
+    <!-- Summary string to be shown instead of a veiled recipient. [CHAR LIMIT=50] -->
+    <string name="veiled_summary_unknown_person"/>
+
+    <!-- Notification ticker text for per-label notification [CHAR LIMIT=30]-->
+    <string name="label_notification_ticker">"<xliff:g id="label">%s</xliff:g>: <xliff:g id="notification">%s</xliff:g>"</string>
+
+    <!-- Notification message to the user upon new messages for a conversation. [CHAR LIMIT=120] -->
+    <plurals name="new_messages">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> नया संदेश"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> नए संदेश"</item>
+    </plurals>
+
+    <!-- Format string used when displaying the title of a notification that was triggered by a single new conversation. [CHAR LIMIT=120] -->
+    <string name="single_new_message_notification_title"><xliff:g id="sender">%1$s</xliff:g>: <xliff:g id="subject">%2$s</xliff:g></string>
+
+    <!-- Settings screen, what to display for Ringtone when the user chooses "silent" [CHAR LIMIT=100]-->
+    <string name="silent_ringtone">"मौन"</string>
+
+    <!-- Settings screen, preference name for archive vs. delete [CHAR LIMIT=50] -->
+    <string name="preference_removal_action_title">"डिफ़ॉल्ट सेटिंग"</string>
+    <!-- Options to select from for whether to have archive or delete as the remove action [CHAR LIMIT=50] -->
+    <string-array name="prefEntries_removal_action">
+        <item>"संग्रह"</item>
+        <item>"हटाएं"</item>
+    </string-array>
+    <!-- Description of currently selected option of whether to use archive or delete as remove action [CHAR LIMIT=200] -->
+    <string-array name="prefSummaries_removal_action_summary">
+        <item>"संग्रहीत करें"</item>
+        <item>"हटाएं"</item>
+    </string-array>
+    <string-array translatable="false" name="prefValues_removal_action">
+        <item>archive</item>
+        <item>delete</item>
+    </string-array>
+    <!-- Dialog title for the choosing whether to use archive or delete as remove action [CHAR LIMIT=150] -->
+    <string name="prefDialogTitle_removal_action">"डिफ़ॉल्ट सेटिंग"</string>
+    <!-- The default value -->
+    <string translatable="false" name="prefDefault_removal_action">archive</string>
+
+    <!--  Settings screen, Reply to all default setting title  [CHAR LIMIT=30] -->
+    <string name="preferences_default_reply_all_title">"सभी प्रषकों को उत्तर दें"</string>
+    <!--  Settings screen, Reply to all default setting summary [CHAR LIMIT=70] -->
+    <string name="preferences_default_reply_all_summary_impl">"संदेश के जवाबों के लिए डिफ़ॉल्ट के रूप में उपयोग करें"</string>
+    <!--  DO NOT TRANSLATE THE BELOW STRING - In order to allow overriding of this for K tablets (but not pre-K tablets), we use an indirection with the actual string defined above. -->
+    <string name="preferences_default_reply_all_summary" translatable="false">@string/preferences_default_reply_all_summary_impl</string>
+
+    <!-- Preference name for swipe actions preference [CHAR LIMIT=100]-->
+    <string name="preference_swipe_title">"स्वाइप करके सूचि में जोड़ें"</string>
+    <!-- Preference description swiping in conversation list option [CHAR LIMIT=100] -->
+    <string name="preference_swipe_description">"बातचीत की सूची में"</string>
+
+    <!-- Preference name for whether to display sender images in conversation list [CHAR LIMIT=100] -->
+    <string name="preference_sender_image_title">"प्रेषक का चित्र"</string>
+    <!-- Preference description for whether to display sender image option [CHAR LIMIT=200] -->
+    <string name="preference_sender_image_description">"बातचीत सूची में नाम के पास दिखाएं"</string>
+
+    <!-- Conversation list screen overflow menu in trash folder [CHAR LIMIT=50]  -->
+    <string name="empty_trash">"मिटाया हुआ खाली करें"</string>
+
+    <!-- Conversation list screen overflow menu in spam folder [CHAR LIMIT=50]  -->
+    <string name="empty_spam">"अनचाहा ईमेल खाली करें"</string>
+
+    <!-- Dialog title for empty trash confirmation dialog [CHAR LIMIT=100] -->
+    <string name="empty_trash_dialog_title">"मिटाया हुआ खाली करें?"</string>
+
+    <!-- Dialog title for empty spam confirmation dialog [CHAR LIMIT=100] -->
+    <string name="empty_spam_dialog_title">"अनचाहा खाली करें?"</string>
+
+    <!-- Dialog message for empty folder confirmation dialog [CHAR LIMIT=300] -->
+    <plurals name="empty_folder_dialog_message">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> संदेश स्थायी रूप हटा दिया जाएगा."</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> संदेश स्थायी रूप से हटा दिए जाएंगे."</item>
+    </plurals>
+
+    <!-- Strings used for accessibility for the items that toggles the drawer action  -->
+    <string name="drawer_open">"मार्गदर्शक ड्रॉवर खोलें"</string>
+    <string name="drawer_close">"मार्गदर्शक ड्रॉवर बंद करें"</string>
+
+    <string name="conversation_photo_welcome_text">"उस बातचीत को चुनने के लिए प्रेषक के चित्र को स्पर्श करें."</string>
+
+    <string name="long_press_to_select_tip">"एक वार्तालाप चुनने के लिए स्पर्श करके रखें, फिर अधिक वार्तालाप चुनने के लिए स्पर्श करें."</string>
+
+    <!-- Content description for the folder icon for nested folders. -->
+    <string name="folder_icon_desc">"फ़ोल्डर आइकन"</string>
+
+    <!--  Button, "Add account" in the preference screen [CHAR LIMIT=30] -->
+    <string name="add_account">"खाता जोड़ें"</string>
+
+    <!-- Content Provider Authority for Eml Attachments -->
+    
+
+    <!-- Content description for the "X" image icon for dismissing a tip. This is used for spoken description of the icon when touch explore is enabled. [CHAR LIMIT=50] -->
+    <string name="dismiss_tip_hover_text">"युक्ति ख़ारिज करें"</string>
+
+    <!-- Tip for letting user know that their device auto-sync setting
+        is turned off, in case they are wondering why they are not
+        receiving any new mail. [CHAR LIMIT=250] -->
+    <string name="auto_sync_off">"स्‍वतः समन्‍वयन बंद है. चालू करने के लिए स्पर्श करें."</string>
+
+    <!-- Tip for letting user know that their account level sync setting
+        is turned off, in case they are wondering why they are not
+        receiving any new mail. Then prompts the user to enable sync in Gmail\'s
+        account settings. [CHAR LIMIT=250] -->
+    <string name="account_sync_off">"खाता समन्वयन बंद है. &lt;a href=\'http://www.example.com\'&gt;खाता सेटिंग&lt;/a&gt; में चालू करें"</string>
+
+    <!-- Hint text that there are X number of unsent messages users
+    Outbox. [CHAR LIMIT=250] -->
+    <string name="unsent_messages_in_outbox">"<xliff:g id="OUTBOX">%2$s</xliff:g> में <xliff:g id="NUMBER">%1$s</xliff:g> अप्रेषित"</string>
+
+    <!-- Title of dialog to turn auto-sync on [CHAR LIMIT=100] -->
+    <string name="turn_auto_sync_on_dialog_title">"स्वत:-समन्वयन चालू करें?"</string>
+
+    <!-- Text of dialog to turn auto-sync on [CHAR LIMIT=500] -->
+    <string name="turn_auto_sync_on_dialog_body">"आपके द्वारा न केवल Gmail में, बल्कि सभी ऐप्स  और खातों में किए जाने वाले बदलाव, वेब, आपके अन्य डिवाइस, और आपके <xliff:g id="PHONE_OR_TABLET">%1$s</xliff:g> के बीच समन्वयित किए जाएंगे."</string>
+
+    <!-- Phone (vs. tablet) for describing this device [CHAR LIMIT=30] -->
+    <string name="phone">"फ़ोन"</string>
+
+    <!-- Tablet (vs. phone) for describing this device [CHAR LIMIT=30] -->
+    <string name="tablet">"टेबलेट"</string>
+
+    <!-- Confirm button text for dialog to turn auto-sync on [CHAR
+         LIMIT=30] -->
+    <string name="turn_auto_sync_on_dialog_confirm_btn">"चालू करें"</string>
+
+    <!-- Button in conversation list to show more folders [CHAR LIMIT=50] -->
+    <string name="show_n_more_folders">"<xliff:g id="NUMBER">%1$s</xliff:g> फ़ोल्डर दिखाएं"</string>
+    <!-- Button in conversation list to hide folders [CHAR LIMIT=50] -->
+    <string name="hide_folders">"फ़ोल्डर छिपाएं"</string>
+
+    <!-- Menu item text to that when clicked will allow a user to print an email message. [CHAR LIMIT=25] -->
+    <string name="print">"प्रिंट करें"</string>
+    <!-- Menu item text to that when clicked will allow a user to print an email conversation. [CHAR LIMIT=25] -->
+    <string name="print_all">"सभी प्रिंट करें"</string>
+    <!-- Number of messages in a conversation [CHAR LIMIT=30]-->
+    <plurals name="num_messages">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> संदेश"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> संदेश"</item>
+    </plurals>
+
+    <!-- Display format of an email recipient, displayed in printed message details [CHAR LIMIT=10] -->
+    <string name="address_print_display_format" translatable="false"><xliff:g id="name">%1$s</xliff:g> &amp;lt;<xliff:g id="email">%2$s</xliff:g>&amp;gt;</string>
+    <!-- Shown to display the date of the message [CHAR LIMIT=50] -->
+    <string name="date_message_received_print">"<xliff:g id="DAY_AND_DATE">%1$s</xliff:g>, <xliff:g id="TIME">%2$s</xliff:g> पर"</string>
+    <!-- Shown to display the to recipient(s) of the message if the message is a draft [CHAR LIMIT=20] -->
+    <string name="draft_to_heading">"इनके लिए ड्राफ़्ट:"</string>
+
+    <!-- Shown to display in the message header if the message is a draft and there are no "to" addresses in the draft [CHAR LIMIT=10] -->
+    <string name="draft_heading">"ड्राफ़्ट"</string>
+    <!-- Shown to inform the user that the quoted text for this message has been hidden. [CHAR LIMIT=50] -->
+    <string name="quoted_text_hidden_print">"उद्धृत लेख छिपा दिया गया है"</string>
+    <!-- Number of attachments in a message [CHAR LIMIT=30]-->
+    <plurals name="num_attachments">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> अटैचमेंट"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> अटैचमेंट"</item>
+    </plurals>
+
+    <!-- Provider name for widgets -->
+    <string name="widget_provider" translatable="false">com.android.mail.widget.WidgetProvider</string>
+
+    <string name="print_job_name" translatable="false">Unified Email - <xliff:g id="subject">%1$s</xliff:g></string>
+    <!-- Title to display when an email has no subject. [CHAR LIMIT=50]-->
+    <string name="no_subject">"(कोई विषय नहीं)"</string>
+
+    <!-- Action bar title for the screen to set a vacation responder (out-of-office) message. [CHAR LIMIT=50] -->
+    <string name="vacation_responder">"अवकाश प्रतिसाददाता"</string>
+    <!-- Account preference: Title of the setting to set a vacation responder (out-of-office) message. [CHAR LIMIT=50]-->
+    <string name="preferences_vacation_responder_title">"अवकाश प्रतिसाददाता"</string>
+    <!-- Shown in vacation responder; the body of the message [CHAR LIMIT=100] -->
+    <string name="vacation_responder_body_hint_text">"संदेश"</string>
+    <!-- Shown in vacation responder; accompanies a checkbox that, if checked, causes vacation responses to be sent to people in the user\'s contacts [CHAR LIMIT=75] -->
+    <string name="send_to_contacts_text">"केवल मेरे संपर्कों को भेजें"</string>
+    <!-- Shown in vacation responder; accompanies a checkbox that, if checked, causes vacation responses to be sent to people in the user\'s corporate domain [CHAR LIMIT=75] -->
+    <string name="send_to_domain_text">"केवल <xliff:g id="DOMAIN">%1$s</xliff:g> को भेजें"</string>
+    <!-- Title text for the button to be pressed if the user wishes to change the start date of the vacation responder. [CHAR LIMIT=25]-->
+    <string name="pick_start_date_title">"प्रारंभ"</string>
+    <!-- Title text for the button to be pressed if the user wishes to change the end date of the vacation responder.
+            This text should include a note that this field is optional to set. [CHAR LIMIT=25]-->
+    <string name="pick_end_date_title">"समाप्ति (वैकल्पिक)"</string>
+    <!-- Shown to display that an end date in the vacation responder has not been set. [CHAR LIMIT=25]-->
+    <string name="date_not_set">"सेट नहीं है"</string>
+    <!-- Title text for the dialog that appears when the user wishes to change the end date of the vacation responder.
+            This text should include a note that this field is optional to set. [CHAR LIMIT=35]-->
+    <string name="set_end_date_dialog_title">"समाप्ति दिनांक (वैकल्पिक)"</string>
+    <!-- Shown as an option in a dialog to set a custom end date for a vacation responder message.  [CHAR LIMIT=30] -->
+    <string name="custom_date">"कस्टम"</string>
+    <!-- Shown as an option in a dialog to set no end date for a vacation responder message. [CHAR LIMIT=30]-->
+    <string name="date_none">"कोई नहीं"</string>
+    <!-- Asks the user whether they wish to discard changes. [CHAR LIMIT=50]-->
+    <string name="discard_changes">"बदलाव छोड़ें?"</string>
+    <!-- Toast, vacation responder changes were saved. [CHAR LIMIT=100]-->
+    <string name="vacation_responder_changes_saved">"अवकाश प्रतिसाददाता बदलावों को सहेजा गया"</string>
+    <!-- Toast, vacation responder changes were discarded. [CHAR LIMIT=100]-->
+    <string name="vacation_responder_changes_discarded">"अवकाश प्रतिसाददाता बदलावों को छोड़ा गया"</string>
+    <!-- Account preference: Subtitle of the setting to set a vacation responder (out-of-office) message
+            when the vacation responder is off. [CHAR LIMIT=50]-->
+    <string name="vacation_responder_off">"बंद"</string>
+    <!-- Account preference: Subtitle of the setting to set a vacation responder (out-of-office) message
+            when the vacation responder is on but does not have an end date set (only a start date). [CHAR LIMIT=50]-->
+    <string name="vacation_responder_on">"चालू, <xliff:g id="DATE">%1$s</xliff:g> से"</string>
+    <!-- Account preference: Subtitle of the setting to set a vacation responder (out-of-office) message
+            when the vacation responder is on and has both a start and end date set. [CHAR LIMIT=50]-->
+    <string name="vacation_responder_on_with_end_date">"चालू, <xliff:g id="START_DATE">%1$s</xliff:g> से <xliff:g id="END_DATE">%2$s</xliff:g> तक"</string>
+    <!-- Informs the user that both the subject and body of the vacation responder are empty
+         when they try to enable the responder. [CHAR LIMIT=50]-->
+    <string name="vacation_responder_empty_subject_and_body_warning">"कोई विषय या संदेश जोड़ें"</string>
+
+    <!-- Content description for the attach button that appears in compose for tablet layouts.
+         This is not to be confused with the menu items, this is an actual button in the layout.
+         On v18 and below devices, this button is used to attach photos only and so the text
+         is for adding a photo attachment. On v19, it is used to attach an arbitrary file
+         and so this string is overridden to use the "attach file" text. The drawable used
+         for this button is overridden similarly. -->
+    <string name="attach_file_content_description" translatable="false">@string/add_photo_attachment</string>
+
+    <!-- Displayed below a message that has been truncated to show the full message. [CHAR LIMIT=50] -->
+    <string name="view_entire_message">"पूरा संदेश देखें"</string>
+
+    <!-- Toast text for error loading an eml file -->
+    <string name="eml_loader_error_toast">"यह फ़ाइल नहीं खुल पा रही"</string>
+
+    <!-- String tag identifying the drawer pullout view -->
+    <string name="drawer_pullout_tag" translatable="false">drawer_pullout</string>
+
+    <!-- Menu item that displays the help page. [CHAR LIMIT=50]-->
+    <string name="help_and_info">"सहायता"</string>
+
+    <!-- Menu item that displays the help page. [CHAR LIMIT=50]-->
+    <string name="help_and_feedback">"सहायता और फ़ीडबैक"</string>
+
+    <!-- URI to display the help content; this must be overlayed -->
+    <string name="help_uri" translatable="false"/>
+
+    <!-- Solicit feedback string in about screen [CHAR LIMIT=50]-->
+    <string name="feedback">"सुझाव भेजें"</string>
+
+    <!-- Copyright text [CHAR LIMIT=50] -->
+    <string name="copyright">"©<xliff:g id="YEAR">%1$d</xliff:g> Google Inc."</string>
+
+    <!-- Version text [CHAR LIMIT=50] -->
+    <string name="version">"<xliff:g id="APP_NAME">%1$s</xliff:g> वर्शन <xliff:g id="VERSION">%2$s</xliff:g>"</string>
+
+    <!-- Menu item: view a webpage about this application [CHAR LIMIT=50]; this MUST be overlayed -->
+    <string name="view_app_page"/>
+
+    <!-- URL to a webpage about this application; this MUST be overlayed -->
+    <string name="app_url" translatable="false"/>
+
+    <!-- Menu item: print... [CHAR LIMIT=25] -->
+    <string name="print_dialog">"प्रिंट करें…"</string>
+
+    <!-- Menu item: copyright information [CHAR LIMIT=25] -->
+    <string name="copyright_information">"कॉपीराइट जानकारी"</string>
+
+    <!-- Menu item: privacy policy [CHAR LIMIT=25] -->
+    <string name="privacy_policy">"गोपनीयता नीति"</string>
+
+    <!-- URI to display the privacy; this must be overlayed -->
+    <string name="privacy_policy_uri" translatable="false"/>
+
+    <!-- Menu item: open source licenses [CHAR LIMIT=25] -->
+    <string name="open_source_licenses">"ओपन सोर्स लाइसेंस"</string>
+
+    <!-- Activity class name for showing a full message url.
+         Empty by default since this should be overridden by implementing apps. -->
+    <string name="full_message_activity" translatable="false"/>
+
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_yes">"हां"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_no">"नहीं"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_ok">"ठीक"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_hehe">"हेहे"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_thanks">"धन्यवाद"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_i_agree">"मैं सहमत हूं"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_nice">"बढ़िया"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_on_my_way">"मेरे रास्ते में रहने के दौरान"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_later">"ठीक है, मैं आपसे संपर्क करूंगा/करूंगा"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_smiling_face">:)</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_frowning_face">:(</string>
+
+    <array name="reply_choices">
+        <item>@string/reply_choice_yes</item>
+        <item>@string/reply_choice_no</item>
+        <item>@string/reply_choice_ok</item>
+        <item>@string/reply_choice_hehe</item>
+        <item>@string/reply_choice_thanks</item>
+        <item>@string/reply_choice_i_agree</item>
+        <item>@string/reply_choice_nice</item>
+        <item>@string/reply_on_my_way</item>
+        <item>@string/reply_choice_later</item>
+        <item>@string/reply_choice_smiling_face</item>
+        <item>@string/reply_choice_frowning_face</item>
+    </array>
+
+    <!-- Settings screen, heading for grouping action confirmation related  settings together [CHAR LIMIT=100] -->
+    <string name="preference_header_action_confirmations">"कार्रवाई पुष्टिकरण"</string>
+    <!--  Settings screen, confirm on action option title [CHAR LIMIT=150] -->
+    <string name="preference_confirm_before_delete_title">"हटाने से पहले दुबारा पूछें"</string>
+    <!--  Settings screen, confirm on action option title [CHAR LIMIT=150] -->
+    <string name="preference_confirm_before_archive_title">"मेमोरी से पहले दुबारा पूछें"</string>
+    <!--  Settings screen, confirm on action option title [CHAR LIMIT=150] -->
+    <string name="preference_confirm_before_send_title">"भेजने से पहले दुबारा पूछें"</string>
+
+    <!--  Settings screen, Conversation mode setting titile  [CHAR LIMIT=30] -->
+    <string name="preferences_conversation_mode_title">"संदेशों को स्वत: फ़िट करें"</string>
+    <!--  Settings screen, Conversation mode setting summary [CHAR LIMIT=70] -->
+    <string name="preferences_conversation_mode_summary">"स्क्रीन पर फ़िट होने के लिए संदेशों को सिकोड़ें"</string>
+
+    <!--  Settings screen, disable snap headers setting title  [CHAR LIMIT=30] -->
+    <string name="preferences_disable_snap_headers_title">"संदेश कार्रवाइयां"</string>
+
+    <!-- The snap header summaries -->
+    <string-array name="prefSummaries_snapHeader">
+        <item>"स्‍क्रीन में ऊपर हमेशा संदेश कार्रवाइयां दिखाएं"</item>
+        <item>"जब पोट्रेट पर घुमाया जाए, केवल तब ही स्‍क्रीन में ऊपर संदेश कार्रवाइयां दिखाएं"</item>
+        <item>"संदेश शीर्षलेख के बाहर संदेश कार्यवाहियां न दिखाएं"</item>
+    </string-array>
+
+    <!-- The snap header modes -->
+    <string-array name="prefEntries_snapHeader">
+        <item>"हमेशा दिखाएं"</item>
+        <item>"केवल पोर्ट्रेट में दिखाएं"</item>
+        <item>"न दिखाएं"</item>
+    </string-array>
+
+    <!-- The snap header values -->
+    <string-array translatable="false" name="prefValues_snapHeader">
+        <item>always</item>
+        <item>portrait</item>
+        <item>never</item>
+    </string-array>
+
+    <!-- Settings screen, title of "Clear search history" menu item -->
+    <string name="clear_history_title">"खोज इतिहास साफ़ करें"</string>
+    <!-- Message shown in toast when the user taps "clear search history" in general preferences. [CHAR LIMIT=50] -->
+    <string name="search_history_cleared">"खोज इतिहास साफ़ किया गया."</string>
+    <!-- Settings screen, title of dialog shown to confirm action when user taps
+    "Clear search history" in preferences [CHAR LIMIT=200]-->
+    <string name="clear_history_dialog_title">"खोज इतिहास साफ़ करें?"</string>
+    <!-- Settings screen, message of dialog shown to confirm action when user taps
+    "Clear search history" in preferences [CHAR LIMIT=1000]-->
+    <string name="clear_history_dialog_message">"आपके द्वारा पहले की गई सभी खोजों को निकाल दिया जाएगा."</string>
+
+    <!-- Settings screen, preference item to launch into Settings [CHAR LIMIT=50] -->
+    <string name="manage_accounts_menu_item">"खाते प्रबंधित करें"</string>
+
+    <!-- Settings screen, main title of the screen, big font [CHAR LIMIT=50]-->
+    <string name="general_preferences_title">"सामान्य सेटिंग"</string>
+
+    <!-- Settings screen title -->
+    <!-- Name of the Settings activity -->
+    <string name="activity_preferences">"सेटिंग"</string>
+
+    <!-- Content description for the action menu overflow button. [CHAR LIMIT=NONE] -->
+    <string name="overflow_description">"अधिक विकल्प"</string>
+
+    <string name="user_agent_format" translatable="false">%1$s AndroidUnifiedEmail/%2$s</string>
+
+    <!--  Settings screen, confirm on action option title [CHAR LIMIT=150] -->
+    <string name="preference_confirm_before_forward_title">अग्रेषित करने से पहले पुष्टि करें</string>
+    <!-- Confirm forward dialog message -->
+    <string name="confirm_forward_message">यदि इस संदेश में अनलोड किए गए संलग्नक नहीं हैं, तो आप क्या चाहते हैं?</string>
+    <string name="confirm_forward_normal">लोड होने के बाद भेजें</string>
+    <string name="confirm_forward_drop_unloaded">अनलोड किए गए ड्रॉप करें</string>
+    <!-- Forward dialog message -->
+    <string name="forward_dialog_message">क्या आप यह संदेश अग्रेषित करना चाहते हैं?</string>
+    <!-- Feedback uri to be used when feedback is enabled -->
+    <string name="email_feedback_uri" translatable="false"/>
+    <!-- Text when there is a security hold on an account that needs to be accepted. The email address param takes the for "abc@xyz.com" -->
+    <string name="security_hold_required_text">"<xliff:g id="EMAIL_ADDRESS">%1$s</xliff:g> के लिए सुरक्षा अपडेट आवश्यक है"</string>
+
+    <!-- Text to go to the dialog to accept the security hold -->
+    <string name="update_security_text">"अभी अपडेट करें"</string>
+    <!-- Shown when user submits a form. [CHAR LIMIT=40] -->
+    <string name="forms_are_disabled">"Gmail में फ़ॉर्म अक्षम हैं."</string>
+
+    <!-- activity name of the photoviewer -->
+    <string name="photo_view_activity" translatable="false">com.android.mail.photo.MailPhotoViewActivity</string>
+</resources>

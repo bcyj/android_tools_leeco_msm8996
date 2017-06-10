@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015, Qualcomm Technologies, Inc. All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<group xmlns:android="http://schemas.android.com/apk/res/android"
+    label="@string/group_cmcc_label" carrier="ChinaMobile">
+    <include xml="@xml/cmcc_lab_settings" />
+    <child label="@string/child_ft_settings_label">
+        <!-- empty -->
+    </child>
+    <child label="@string/child_agps_settings_label">
+        <!-- empty -->
+    </child>
+    <child label="@string/child_dm_settings_label">
+        <list title="@string/child_dm_settings_label">
+            <checkitem label="@string/checkitem_check_pdn_apn">
+                <dialog title="" message="">
+                    <positive label="@android:string/ok" />
+                </dialog>
+            </checkitem>
+        </list>
+    </child>
+</group>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--========================================================================
+@file sensor_list_item.xml
+
+@brief
+Specifies how each sensor and items such as its current data
+should be displayed on the screen.
+
+Copyright (c) 2011,2013 Qualcomm Technologies, Inc. All Rights Reserved.
+Qualcomm Technologies Proprietary and Confidential.
+=========================================================================-->
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/stream_sensor_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/stream_sensor_title"
+            android:clickable="true"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/stream_sensor_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:gravity="left"
+                        android:text="@string/stream_info" />
+
+                    <TextView
+                        android:id="@+id/stream_data_accuracy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="@string/stream_data_accuracy" />
+
+                    <TextView
+                        android:id="@+id/stream_batch_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/batch_rate" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/stream_data_column1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:text="@string/stream_data_column1" />
+
+                    <TextView
+                        android:id="@+id/stream_data_column2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:text="@string/stream_data_column2" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/stream_button_cancel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:background="@null"
+                android:src="@drawable/button_cancel"
+                android:contentDescription="@string/cancel_icon" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/stream_data_ts"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:text="@string/stream_data_ts" />
+
+    <View style="@style/Divider"/>
+    </LinearLayout>
+</RelativeLayout>

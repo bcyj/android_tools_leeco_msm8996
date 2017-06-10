@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015, Qualcomm Technologies, Inc. All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<checkitem xmlns:android="http://schemas.android.com/apk/res/android"
+    label="Debugging APP Logkit" function="propR"
+    params="persist.sys.logkit.ctrlcode,1" expect="0"
+    summary_values="@array/on_off_values" summary_labels="@array/on_off_labels">
+    <dialog title="@string/dialog_edit_label">
+        <view>
+            <switch label="Debugging APP Logkit" function="propR"
+                params="persist.sys.logkit.ctrlcode,1">
+                <set checked="false" value="0" />
+                <set checked="true" value="1" />
+            </switch>
+        </view>
+        <positive label="@android:string/ok" function="propW"
+            params="persist.sys.logkit.ctrlcode,(EditContent)" />
+        <negative label="@android:string/cancel" />
+    </dialog>
+</checkitem>

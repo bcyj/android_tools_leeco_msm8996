@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- used in various places to indicate there is one song for a given artist or album -->
+    <string name="onesong">1 បទ</string>
+    <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
+    <plurals name="Nsongs">
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> បទ</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other"><xliff:g id="count_for_artist">%2$d</xliff:g> នៃ <xliff:g id="total_count">%1$d</xliff:g> បទ</item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+        <!-- number of albums is one -->
+        <item quantity="one">1 អាល់ប៊ុម</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> អាល់ប៊ុម</item>
+    </plurals>
+
+    <!--
+    This string is used as the format string in a String.format call,
+    and 5 additional arguments are available for printing:
+    1 - hours
+    2 - minutes
+    3 - minutes%60
+    4 - seconds
+    5 - second%60
+    -->
+    <skip/>
+    <!-- Do not translate. Duration format for duration < 1 hour -->
+    <string translatable="false" name="durationformatshort"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    <!-- Do not translate. Duration format for duration >= 1 hour -->
+    <string translatable="false" name="durationformatlong"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    <!-- Menu item that takes the user back to the top level screen of the music player -->
+    <string name="goto_start">បណ្តាញល័យ</string>
+    <!-- Menu item that switches the music player in to party shuffle mode -->
+    <string name="party_shuffle">លេងក្រុមមិនតាមលំដាប់</string>
+    <!-- Menu item that switches the music player out of party shuffle mode -->
+    <string name="party_shuffle_off">លេងក្រុមមិនតាមលំដាប់បិទ</string>
+    <!-- Menu item that clear all playlists mode -->
+    <string name="clear_all_playlists">ជម្រះបញ្ជីចាក់ទាំងអស់</string>
+    <!-- Menu item that deletes the currently selected item, which might be a single song, or a collection of songs.
+         The user will be prompted to confirm before deletion actually takes place -->
+    <string name="delete_item">លុប</string>
+    <!-- Menu item to play back all the songs in the currently showing list in shuffle mode -->
+    <string name="shuffle_all">លេងទាំងអស់មិនតាមលំដាប់</string>
+    <!-- Menu item to play back all the songs in the currently showing list in list order -->
+    <string name="play_all">លេងទាំងអស់</string>
+    <!-- Menu item to play song in music -->
+    <string name="open_in_music">បើកក្នុងតន្រ្តី</string>
+    <!-- Menu item to share audio or video -->
+    <string name="share">"ចែក​រំលែក"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc">លុបចម្រៀងទាំងអស់ជាអចិន្រ្តៃដោយ <xliff:g id="artist">%s</xliff:g> ពីកាត SD?</string>
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc_nosdcard">លុបចម្រៀងទាំងអស់ជាអចិន្រ្តៃដោយ <xliff:g id="artist">%s</xliff:g> ពីកន្លែងផ្ទុក USB?</string>
+
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc">លុបអាល់ប៊ុមទាំងមូលជាអចិន្រ្តៃ \"<xliff:g id="album">%s</xliff:g>\" ពីកាត SD?</string>
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc_nosdcard">លុបអាល់ប៊ុមទាំងមូលជាអចិន្រ្តៃ \"<xliff:g id="album">%s</xliff:g>\" ពីកន្លែងផ្ទុក USB?</string>
+
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc">លុបជាអចិន្រ្តៃ \"<xliff:g id="song">%s</xliff:g>\" ពីកាត SD?</string>
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc_nosdcard">លុបជាអចិន្រ្តៃ \"<xliff:g id="song">%s</xliff:g>\" ពីកន្លែងផ្ទុក USB?</string>
+
+    <!-- Delete confirmation dialog, confirmation button text -->
+    <string name="delete_confirm_button_text">យល់ព្រម</string>
+    <!-- Toast confirming that song(s) was/were deleted. -->
+    <plurals name="NNNtracksdeleted">
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">1 បទត្រូវបានលុបចោល។</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> បទត្រូវបានលុបចោល។</item>
+    </plurals>
+
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning">កំពុងស្កេនកាត SD\u2026</string>
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning_nosdcard">កំពុងស្កេនកន្លែងផ្ទុក USB\u2026</string>
+
+    <!-- title of the "current playlist" screen when not in party shuffle mode -->
+    <string name="nowplaying_title">ឥឡូវកំពុងលេង</string>
+    <!-- title of the "current playlist" screen when in party shuffle mode-->
+    <string name="partyshuffle_title">លេងក្រុមមិនតាមលំដាប់</string>
+    <!-- Artist screen title -->
+    <string name="artists_title">អ្នកចម្រៀង</string>
+    <!-- Category label on Library screen -->
+    <string name="albums_menu">អាល់ប៊ុម</string>
+    <!-- Albums screen title -->
+    <string name="albums_title">អាល់ប៊ុម</string>
+    <!-- Category label on Library screen -->
+    <string name="tracks_menu">ចម្រៀង</string>
+    <!-- Songs screen title -->
+    <string name="tracks_title">ចម្រៀង</string>
+    <!-- Category label on Library screen -->
+    <string name="folder_menu">ថត</string>
+    <!-- Folder screen title -->
+    <string name="folders_title">ថត</string>
+    <!-- Category label on Library screen -->
+    <string name="playlists_menu">បញ្ជីលេង</string>
+    <!-- Playlists screen title -->
+    <string name="playlists_title">បញ្ជីលេង</string>
+    <!-- Videos screen title -->
+    <string name="videos_title">វីដេអូ</string>
+    <!-- All media screen title -->
+    <string name="all_title">មេឌៀទាំងអស់</string>
+    <!-- Category label on Library screen -->
+    <string name="browse_menu">អ្នកចម្រៀង</string>
+    <!-- Library screen, menu item -->
+    <string name="search_title">ស្វែងរក</string>
+    <!-- Title of screen when there are no songs, or if the SD card is busy -->
+    <string name="no_tracks_title">គ្មានចម្រៀង</string>
+    <!-- Title of screen when there are no videos, or if the SD card is busy -->
+    <string name="no_videos_title">គ្មានវីដេអូ</string>
+    <!-- Title of screen when there are no playlists, or if the SD card is busy -->
+    <string name="no_playlists_title">គ្មានបញ្ជីលេង</string>
+    <!-- Playlist context menu item to delete the selected playlist. -->
+    <string name="delete_playlist_menu">លុប</string>
+    <!-- Playlist context menu item to edit the selected playlist -->
+    <string name="edit_playlist_menu">កែតម្រូវ</string>
+    <!-- Playlist context menu item to rename the selected playlist-->
+    <string name="rename_playlist_menu">ប្តូរឈ្មោះ</string>
+    <!-- Dialog box message shown when clearing all playlists-->
+    <string name="clear_all_playlists_message">តើអ្នកចង់ជម្រះបញ្ជីចាក់ទាំងអស់?</string>
+    <!-- Dialog box message shown when deleting a playlist-->
+    <string name="delete_playlist_message">តើអ្នកចង់លុប \"<xliff:g id="name">%s</xliff:g>\"?</string>
+    <!-- Dialog box button -->
+    <string name="delete_playlist_button_ok">យល់ព្រម</string>
+    <string name="delete_playlist_button_cancel">"បោះ​បង់"</string>
+    <!-- Transient popup message shown after deleting a playlist -->
+    <string name="playlist_deleted_message">បានលុបបញ្ជីលេង។</string>
+    <!-- Transient popup message shown after renaming a playlist -->
+    <string name="playlist_renamed_message">បានប្តូរឈ្មោះបញ្ជីលេង។</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in list view -->
+    <string name="recentlyadded">បានបន្ថែមថ្មីៗនេះ</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in title bar of songs list -->
+    <string name="recentlyadded_title">បានបន្ថែមថ្មីៗនេះ</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in list view -->
+    <string name="podcasts_listitem">Podcasts</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in title bar of songs list -->
+    <string name="podcasts_title">Podcasts</string>
+    <!-- all recordings will show up in the media database in a playlist with thiis name -->
+    <string name="audio_db_playlist_name">"ការ​ថត​របស់​ខ្ញុំ"</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title">គ្មានកាត SD</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title_nosdcard">គ្មានកន្លែងផ្ទុក USB</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message">ទូរស័ព្ទរបស់អ្នកមិន\'មានកាត SD បញ្ចូលទេ។</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message_nosdcard">ទូរស័ព្ទរបស់អ្នកមិន\'មានកន្លែងផ្ទុក USB ទេ។</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title">កាត SD មិនអាចរកបាន</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title_nosdcard">កន្លែងផ្ទុក USB មិនអាចរកបាន</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message">កាត SD របស់អ្នករវល់។</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message_nosdcard">កន្លែងផ្ទុក USB របស់អ្នករវល់។</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title">មានកំហុសកាត SD</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title_nosdcard">មានកំហុសកន្លែងផ្ទុក USB</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message">កំហុសមួយត្រូវបានរកឃើញលើកាត SD របស់អ្នក។</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message_nosdcard">កំហុសមួយត្រូវបានរកឃើញក្នុងកន្លែងផ្ទុក USB របស់អ្នក។</string>
+    <!-- Default name of artist that doesn\'t have a name in the metadata -->
+    <string name="unknown_artist_name">មិនស្គាល់អ្នកចម្រៀង</string>
+    <!-- Default name of album that doesn\'t have a name in the metadata -->
+    <string name="unknown_album_name">មិនស្គាល់អាល់ប៊ុម</string>
+    <!-- Default name of folder that doesn\'t have a path in the metadata -->
+    <string name="unknown_folder_name">ផ្លូវមិនស្គាល់</string>
+    <!-- Default name of folder that doesn\'t have a count in the metadata -->
+    <string name="unknown_folder_count">ការរាប់មិនស្គាល់</string>
+    <!-- Toast after turning shuffle on -->
+    <string name="shuffle_on_notif">បើកការលេងមិនតាមលំដាប់។</string>
+    <!-- Toast after turning shuffle off -->
+    <string name="shuffle_off_notif">បិទការលេងមិនតាមលំដាប់។</string>
+    <!-- Toast after turning repeat off -->
+    <string name="repeat_off_notif">បិទការលេងឡើងវិញ។</string>
+    <!-- Toast after turning single repeat on -->
+    <string name="repeat_current_notif">លេងចម្រៀងបច្ចុប្បន្នឡើងវិញ។</string>
+    <!-- Toast after turning repeat all on -->
+    <string name="repeat_all_notif">កំពុងលេងចម្រៀងទាំងអស់ឡើងវិញ។</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu">ប្រើជាសំឡេងរោទិ៍ទូរស័ព្ទ</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short">ប្រើជាសំឡេងរោទិ៍</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" កំណត់ជាងសំឡេងរោទិ៍ទូរស័ព្ទ។</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu_1">ប្រើជាសំឡេងរោទិ៍ទូរស័ព្ទរន្ធទី1</string>
+    <string name="ringtone_menu_2">ប្រើជាសំឡេងរោទិ៍ទូរស័ព្ទរន្ធទី2</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short_1">ប្រើជាសំឡេងរោទិ៍ទី1</string>
+    <string name="ringtone_menu_short_2">ប្រើជាសំឡេងរោទិ៍ទី2</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_1">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" កំណត់ជាសំឡេងរោទិ៍រន្ធទី1។</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_2">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" កំណត់ជាសំឡេងរោទិ៍រន្ធទី2។</string>
+    <!-- Context menu item -->
+    <string name="play_selection">លេង</string>
+    <!-- Context menu item -->
+    <string name="add_to_playlist">បន្ថែមទៅបញ្ជីលេង</string>
+    <!-- Context menu item -->
+    <string name="queue">បញ្ជីលេងបច្ចុប្បន្ន</string>
+    <!-- Context menu item -->
+    <string name="new_playlist">ថ្មី</string>
+    <!-- Template for newly created playlist name -->
+    <string name="new_playlist_name_template">បញ្ជីលេងថ្មី <xliff:g id="number">%d</xliff:g></string>
+    <!-- Toasts after adding song(s) to playlists -->
+    <plurals name="NNNtrackstoplaylist">
+        <!-- message shown when one song was added -->
+        <item quantity="one">1 បទត្រូវបានបន្ថែមទៅបញ្ជីចាក់។</item>
+        <!-- message shown when zero or more than one song was added -->
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> បទត្រូវបានបន្ថែមទៅបញ្ជីចាក់។</item>
+    </plurals>
+    <!-- Toast after selecting an empty playlist -->
+    <string name="emptyplaylist">បញ្ជីលេងដែលបានជ្រើសរើសគឺទទេ។</string>
+    <!-- Button name when saving a playlist -->
+    <string name="create_playlist_create_text">រក្សាទុក</string>
+    <!-- Button name when saving a playlist and the new playlist will overwrite an existing one -->
+    <string name="create_playlist_overwrite_text">សរសេរជាន់ពីលើ</string>
+    <!-- Dialog box title -->
+    <string name="service_start_error_title">លេងត្រឡប់មានបញ្ហា</string>
+    <!-- Dialog box message -->
+    <string name="service_start_error_msg">បទនេះមិន\'អាចលេងបាន។</string>
+    <!-- Dialog box button -->
+    <string name="service_start_error_button">យល់ព្រម</string>
+    <!-- Time span edit options that appear when editing system playlist "Recently added" -->
+    <!-- Used to indicate the number of weeks the "recently added" playlist covers in a selector widget -->
+    <string-array name="weeklist">
+        <item>"1 សប្តាហ៍ "</item>
+        <item>"2 សប្តាហ៍"</item>
+        <item>"3 សប្តាហ៍"</item>
+        <item>"4 សប្តាហ៍"</item>
+        <item>"5 សប្តាហ៍"</item>
+        <item>"6 សប្តាហ៍"</item>
+        <item>"7 សប្តាហ៍"</item>
+        <item>"8 សប្តាហ៍"</item>
+        <item>"9 សប្តាហ៍"</item>
+        <item>"10 សប្តាហ៍"</item>
+        <item>"11 សប្តាហ៍"</item>
+        <item>"12 សប្តាហ៍"</item>
+    </string-array>
+    <!-- Button name in time span picker -->
+    <string name="weekpicker_set">រួចរាល់</string>
+    <!-- Title of time span picker -->
+    <string name="weekpicker_title">កំណត់ពេល</string>
+    <!-- Do not translate. Background color for currently dragged item in playlist edit mode. -->
+    <color name="dragndrop_background">#e0103010</color>
+    <!-- Do not translate. Background color for albums in the artists list view. -->
+    <color name="expanding_child_background">#ff404040</color>
+
+    <!-- menu item to save the current list as a new playlist -->
+    <string name="save_as_playlist">រក្សាទុកបញ្ជីលេង</string>
+    <!-- menu item to clear the current playlist -->
+    <string name="clear_playlist">ជម្រះបញ្ជីលេង</string>
+
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicbrowserlabel">តន្រ្តី</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicshortcutlabel">បញ្ជីលេងតន្រ្តី</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediaplaybacklabel">តន្រ្តី</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="videobrowserlabel">វីដេអូ</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediapickerlabel">តន្រ្តី</string>
+
+    <!-- Shown as a transient message whenever a file fails to play -->
+    <string name="playback_failed">ឧបករណ៍លេងនេះមិនទ្រទ្រង់ប្រភេទឯកសារអូឌីយោនេះទេ។</string>
+    <!-- Shown as a transient message whenever a file fails to open -->
+    <string name="open_failed">អធ្យាស្រ័យ, មិនអាចបើកឯកសារ។</string>
+
+    <!-- Text for the "cancel" button in the "delete" and "create playlist" confirmation dialogs -->
+    <string name="cancel">បោះបង់</string>
+
+    <!-- context menu item to remove the selected item from the playlist -->
+    <string name="remove_from_playlist">លុបចេញពីបញ្ជីលេង</string>
+
+    <!-- shown when connecting to a music stream, before it starts playing -->
+    <string name="streamloadingtext">កំពុងភ្ជាប់ទៅ <xliff:g id="host">%s</xliff:g>\u2026</string>
+
+    <!-- title of contextual music search menu -->
+    <string name="mediasearch">ស្វែងរក <xliff:g id="term" example="Beethoven">%s</xliff:g> ដោយប្រើប្រាស់៖</string>
+
+    <!-- Shown in the title bar while the list of artists is being retrieved in the background -->
+    <string name="working_artists">អ្នកចម្រៀង\u2026</string>
+    <!-- Shown in the title bar while the list of albums is being retrieved in the background -->
+    <string name="working_albums">អាល់ប៊ុម\u2026</string>
+    <!-- Shown in the title bar while the list of songs is being retrieved in the background -->
+    <string name="working_songs">ចម្រៀង\u2026</string>
+    <!-- Shown in the title bar while the list of folders is being retrieved in the background -->
+    <string name="working_folders">ថត\u2026</string>
+    <!-- Shown in the title bar while the list of playlists is being retrieved in the background -->
+    <string name="working_playlists">បញ្ជីលេង\u2026</string>
+
+    <!-- Shown in the music picker while loading the music database. -->
+    <string name="loading">កំពុងផ្ទុកឡើង\u2026</string>
+    <!-- Menu in music picker to sort the list by track/song name. -->
+    <string name="sort_by_track">មួយបទៗ</string>
+    <!-- Menu in music picker to sort the list by album name. -->
+    <string name="sort_by_album">អាល់ប៊ុម</string>
+    <!-- Menu in music picker to sort the list by artist name. -->
+    <string name="sort_by_artist">អ្នកចម្រៀង</string>
+    <!--  Title of the music picker activity. -->
+    <string name="music_picker_title">ជ្រើសរើសបទតន្រ្តី</string>
+
+    <!-- The string used to describe Music as a searchable item within system search settings. -->
+    <string name="search_settings_description">អ្នកចម្រៀង អាល់ប៊ុម និងបទ</string>
+
+    <!-- Shown in the search box as a hint -->
+    <string name="search_hint">ស្វែងរកតន្រ្តី</string>
+    <string name="search_hint_video">ស្វែងរកវីដេអូ</string>
+
+    <!--The fast scroll thumb will show one character from this string depending on the position in the list -->
+    <string name="fast_scroll_alphabet">\u0020ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+
+    <!-- Text shown on widget when first loaded -->
+    <string name="widget_initial_text">ប៉ះដើម្បីជ្រើសរើសតន្រ្តី។</string>
+
+    <!-- Menu text for the item controlling the audio effects panel [CHAR LIMIT=15] -->
+    <string name="effectspanel">បែបផែនសំឡេង</string>
+
+    <string name="duplicate_playlist_name_alert">មានបញ្ជីចាក់រួចហើយដែលបានដាក់ឈ្មោះ \"<xliff:g id="name">%s</xliff:g>\". សូមជ្រើសឈ្មោះផ្សេងមួយ។</string>
+    <string name="same_playlist_name_alert">បញ្ជីចាក់ \"<xliff:g id="name">%s</xliff:g>\" ឈ្មោះ​មិនត្រូវ​បាន​ប្ដូរ។ សូម​ជ្រើសរើស​ឈ្មោះ​ផ្សេង​មួយ។</string>
+    <string name="button_ok">យល់ព្រម</string>
+    <string name="list_empty">គ្មាន​តន្ត្រី​នៅ​ក្នុង​បញ្ជី​ចាក់​ទេ។</string>
+
+    <!-- Shown when video is played after disable Gallery app from Settings -->
+    <string name="enable_gallery_app">មិនអាចចាក់វីដេអូ សូមបើកកម្មវិធីវិចិត្រសាលពីការកំណត់។</string>
+    <string name="close_music">"បញ្ចប់"</string>
+    <string name="delete_video_item_message">តើអ្នកចង់លុប \"<xliff:g id="name">%s</xliff:g>\"?</string>
+    <string name="video_deleted_message">នឹង​លុបឯកសារ​វីដេអូ។</string>
+
+    <!-- Menu item that takes the user link to net to see more music -->
+    <string name="more_music">តន្ត្រី​ច្រើនទៀត</string>
+    <!-- Menu item that takes the user link to net to see more video -->
+    <string name="more_video">វីដេអូច្រើនទៀត</string>
+    <!--gesture control playback status-->
+    <string name="music_gesture_play">"ចាក់/ផ្អាក​អូឌីយ៉ូ"</string>
+    <string name="music_gesture_prev">"ចាក់​បទ​មុន"</string>
+    <string name="music_gesture_next">"ចាក់​បទ​បន្ទាប់"</string>
+
+    <!-- DRM Related Strings -->
+    <string name="no_permission_for_drm">"សូម​ទោស មិន​អាច​ចែករំលែក​ឯកសារ Drm"</string>
+    <string name="drm_license_info">ព័ត៌មាន​អាជ្ញាប័ណ្ណ Drm</string>
+    <string name="drm_ringtone_error">មិន​អាច​កំណត់​ឯកសារ​ស៊ីឌី/អេសឌី​ជា​សំឡេង​រោទ៍</string>
+
+</resources>

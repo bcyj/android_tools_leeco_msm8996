@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2013 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Official label of the Telecomm/Phone app, as seen in "Manage Applications"
+         and other settings UIs. This is the "app name" used in notification, recents,
+         and app info screens. -->
+    <string name="telecommAppLabel" product="default">ফোন</string>
+
+    <!-- Name for an "unknown" caller. -->
+    <string name="unknown">অজানা</string>
+
+    <!-- Notification strings -->
+    <!-- Missed call notification label, used when there\'s exactly one missed call -->
+    <string name="notification_missedCallTitle">মিসড কল</string>
+    <!-- Missed call notification label, used when there are two or more missed calls -->
+    <string name="notification_missedCallsTitle">মিসড কল</string>
+    <!-- Missed call notification message used when there are multiple missed calls -->
+    <string name="notification_missedCallsMsg"><xliff:g id="num_missed_calls">%s</xliff:g> মিসড কল</string>
+    <!-- Missed call notification message used for a single missed call, including
+         the caller-id info from the missed call -->
+    <string name="notification_missedCallTicker"><xliff:g id="missed_call_from">%s</xliff:g> থেকে মিসড কল</string>
+    <!-- Message for "call back" Action, which is displayed in the missed call notificaiton.
+         The user will be able to call back to the person or the phone number.
+         [CHAR LIMIT=60] -->
+    <string name="notification_missedCall_call_back">ফিরতি কল</string>
+    <!-- Message for "reply via sms" action, which is displayed in the missed call notification.
+         The user will be able to send text messages using the phone number.
+         [CHAR LIMIT=60] -->
+    <string name="notification_missedCall_message">SMS</string>
+
+    <!-- Content description of the call muted notification icon for
+         accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_call_muted">কল নীরব করা হয়েছে।</string>
+
+    <!-- Content description of the speakerphone enabled notification icon for
+         accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_speakerphone_enabled">স্পীকারফোন সক্ষম।</string>
+
+    <!-- Canned response for the "Respond via SMS" feature for incoming calls. [CHAR LIMIT=35] -->
+    <string name="respond_via_sms_canned_response_1">এখন কথা\বলা যাবে না। কী\চলছে?</string>
+    <!-- Canned response for the "Respond via SMS" feature for incoming calls. [CHAR LIMIT=35] -->
+    <string name="respond_via_sms_canned_response_2">আমি\ তোমার সাথে ফিরে কথা বলছি।</string>
+    <!-- Canned response for the "Respond via SMS" feature for incoming calls. [CHAR LIMIT=35] -->
+    <string name="respond_via_sms_canned_response_3">আমি\তোমাকে পরে কল করব।</string>
+    <!-- Canned response for the "Respond via SMS" feature for incoming calls. [CHAR LIMIT=35] -->
+    <string name="respond_via_sms_canned_response_4">এখন কথা\বলা যাবে না। আমাকে পরে কল করবেন?</string>
+
+    <!-- Title of settings screen for managing the "Respond via SMS" feature. [CHAR LIMIT=30] -->
+    <string name="respond_via_sms_setting_title">দ্রুত প্রত্যুত্তর</string>
+    <!-- Slightly more verbose title of settings screen for managing the
+         "Respond via SMS" feature. [CHAR LIMIT=30] -->
+    <string name="respond_via_sms_setting_title_2">দ্রুত প্রত্যুত্তর সম্পাদনা</string>
+    <!-- Settings summary string for the "Respond via SMS" feature. [CHAR LIMIT=40] -->
+    <string name="respond_via_sms_setting_summary"/>
+    <!-- Prompt toast message string for the "Respond via SMS" feature. [CHAR LIMIT=40] -->
+    <string name="respond_via_sms_cannot_be_empty">দ্রুত প্রতিক্রিয়া ফাঁকা হতে পারে না</string>
+    <!-- Dialog title when changing a string for the "Respond via SMS" feature. [CHAR LIMIT=30] -->
+    <string name="respond_via_sms_edittext_dialog_title">দ্রুত প্রত্যুত্তর</string>
+    <!-- Menu option in  "Respond via SMS" that allows user to reset the default
+         activity used to handle "Respond via SMS" [CHAR LIMIT=30] -->
+    <string name="respond_via_sms_menu_reset_default_activity">ডিফল্ট অ্যাপ রিসেট করুন</string>
+
+    <!-- "Respond via SMS": Confirmation message shown after sending
+        a text response. [CHAR LIMIT=40] -->
+    <string name="respond_via_sms_confirmation_format">বার্তা <xliff:g id="phone_number">%s</xliff:g> এ পাঠানো হয়েছে।</string>
+
+    <!-- Message indicating that the user is not allowed to make non-emergency outgoing phone calls
+         due to a user restriction -->
+    <string name="outgoing_call_not_allowed">এই ব্যবহারকারী কোনও অ-আপৎকালীন ফোন কল করার জন্য অনুমোদিত নয়</string>
+
+    <!-- Call failure message displayed in an error dialog used to indicate that a phone number was not provided -->
+    <string name="outgoing_call_error_no_phone_number_supplied">কল পাঠানো হয় নি, কোন বৈধ নম্বর প্রবেশ করানো হয় নি।</string>
+
+    <!-- Message indicating video calls not allowed if user enabled TTY Mode -->
+    <string name="video_call_not_allowed_if_tty_enabled">ভিডিও কলগুলি করতে দয়া করে TTY মোডকে অক্ষম করুন।</string>
+
+    <!-- missing voicemail number -->
+    <!-- Title of the "Missing voicemail number" dialog -->
+    <string name="no_vm_number">হারানো ভয়েসমেইল নম্বর দিয়ে</string>
+    <!-- Body text of the "Missing voicemail number" dialog -->
+    <string name="no_vm_number_msg">SIM কার্ডে কোন ভয়েসমেইল নম্বর সংরক্ষিত নেই।</string>
+    <!-- Button label on the "Missing voicemail number" dialog -->
+    <string name="add_vm_number_str">নম্বর যোগ করুন</string>
+
+    <!-- DO NOT TRANSLATE. Label for test Subscription 0. -->
+    <string name="test_account_0_label">Q Mobile</string>
+    <!-- DO NOT TRANSLATE. Label for test Subscription 1. -->
+    <string name="test_account_1_label">Market Wireless</string>
+    <!-- DO NOT TRANSLATE. Label for test Subscription 2. -->
+    <string name="test_account_2_label">Sonoma Circles Talk Plus</string>
+    <!-- DO NOT TRANSLATE. Label for test Subscription 3. -->
+    <string name="test_account_3_label">Bay Voice Chat Pro</string>
+
+    <!-- DO NOT TRANSLATE. Short description for test Subscription 0. -->
+    <string name="test_account_0_short_description">Q Mobile সহ অ্যাকাউন্ট</string>
+    <!-- DO NOT TRANSLATE. Short description for test Subscription 1. -->
+    <string name="test_account_1_short_description">Market Wireless সহ অ্যাকাউন্ট</string>
+    <!-- DO NOT TRANSLATE. Short description for test Subscription 2. -->
+    <string name="test_account_2_short_description">আপনার সার্কেলগুলিতে থাকা প্রত্যেকের সাথে কথা বলুন!</string>
+    <!-- DO NOT TRANSLATE. Short description for test Subscription 3. -->
+    <string name="test_account_3_short_description">চ্যাট নেটওয়ার্ক ব্যবহরকারীদের সাথে চ্যাট করুন</string>
+
+    <!-- DO NOT TRANSLATE. Hardcoded number used for restricted incoming phone numbers. -->
+    <string name="handle_restricted">সীমাবদ্ধ</string>
+
+    <string name="headset_plugin_view_text">হেডসেট প্লাগ ইন আছে।</string>
+    <string name="headset_plugin_view_title">হেডসেট</string>
+</resources>

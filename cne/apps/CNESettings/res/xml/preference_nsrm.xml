@@ -1,0 +1,30 @@
+<!--
+ Copyright (c) 2013-2014 Qualcomm Technologies, Inc.  All Rights Reserved.
+ Qualcomm Technologies Proprietary and Confidential.
+-->
+
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+            android:title="NSRM Settings"
+            android:key="nsrm_version_list"
+            android:entries="@array/nsrm_list_array"
+            android:entryValues="@array/nsrm_list_values"
+            android:enabled="false" />
+
+    <PreferenceCategory android:title="@string/header_category_nsrm">
+        <Preference
+            android:key="nsrm_version_key"
+            android:title="@string/nsrm_version_title"
+            android:summary="@string/nsrm_version_summary" />
+        <EditTextPreference
+            android:key="nsrm_file_path_key"
+            android:title="@string/nsrm_file_path_title"
+            android:summary="@string/nsrm_file_path_summary" />
+        <Preference
+            android:key="nsrm_update_key"
+            android:title="@string/nsrm_update_title"
+            android:summary="@string/nsrm_update_summary" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!---/******************************************************************************
+* @file    AndroidManifest.xml
+* @brief   declare the permission to access location api
+*
+*  Copyright (c) 2012-2014 Qualcomm Atheros, Inc.
+*  All Rights Reserved.
+*  Qualcomm Atheros Confidential and Proprietary.
+*
+*  Coppyright (C) 2010,2012-2014 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.location"
+    coreApp="true"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <permission android:description="@string/desc"
+                android:label="@string/label"
+                android:name="com.qualcomm.permission.IZAT"
+                android:protectionLevel="signatureOrSystem"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH"/>
+    <uses-permission android:name="com.qualcomm.permission.IZAT"/>
+    <uses-permission android:name="com.qualcomm.permission.ACCESS_LOCATION_API"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CONTROL_LOCATION_UPDATES"/>
+
+    <!-- 'persistent' makes this application immune from OOM killer -->
+    <application
+        android:process="system"
+        android:label="LocationServices"
+        android:persistent="true">
+        <uses-library android:name="com.android.location.provider" />
+
+        <receiver android:name=".LocationServiceReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED">
+                </action>
+            </intent-filter>
+        </receiver>
+        <service android:name=".LBSSystemMonitorService"
+                 android:exported="false">
+        </service>
+        <service android:name=".GeoFenceService"
+                 android:permission="com.qualcomm.permission.IZAT">
+            <intent-filter>
+                <action android:name="com.qualcomm.location" />
+            </intent-filter>
+        </service>
+        <service android:name=".LocationService"
+                 android:exported="false">
+            <intent-filter>
+                <action
+                android:name="com.qualcomm.location.LocationService" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".NetInitiatedActivity"
+                android:theme="@*android:style/Theme.Holo.Dialog.Alert"
+                android:excludeFromRecents="true"
+                android:process="system">
+        </activity>
+
+        <service android:name=".ulp.UlpService"
+                 android:exported="true"
+                 android:permission="android.permission.WRITE_SECURE_SETTINGS" >
+           <intent-filter>
+               <action android:name="com.android.location.service.FusedLocationProvider" />
+           </intent-filter>
+           <meta-data android:name="serviceVersion" android:value="1" />
+        </service>
+
+        <service android:name=".nlp.NlpProxyService"
+                 android:exported="false">
+            <intent-filter>
+                <action android:name="com.android.location.service.v2.NetworkLocationProvider" />
+                <action android:name="com.android.location.service.v3.NetworkLocationProvider" />
+            </intent-filter>
+            <meta-data android:name="serviceVersion" android:value="10000" />
+        </service>
+        <receiver android:name=".GpsNetInitiatedHandler$OutgoingCallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.qualcomm.lib.location.osagent.OsAgent"
+                 android:exported="false">
+        </service>
+
+        <service android:name=".lci.LciService"
+                 android:exported="true"
+                 android:permission="android.permission.ACCESS_FINE_LOCATION" >
+            <intent-filter>
+                <action android:name="com.qualcomm.location.lci.LciService" />
+            </intent-filter>
+            <meta-data android:name="serviceVersion" android:value="1" />
+        </service>
+
+        <service android:name=".xtwifi.XTWiFiLocationProvider"
+                 android:exported="false">
+            <meta-data android:name="serviceVersion" android:value="0"/>
+            <intent-filter>
+            <action
+               android:name="com.qualcomm.location.service.v2.NetworkLocationProvider"/>
+            </intent-filter>
+        </service>
+
+        <service android:name=".pvd.PVDService"
+                android:exported="true"
+                android:permission="android.permission.ACCESS_FINE_LOCATION" >
+            <intent-filter>
+                <action android:name="com.qualcomm.location.pvd.PVDService" />
+            </intent-filter>
+            <meta-data android:name="serviceVersion" android:value="1" />
+        </service>
+
+    </application>
+</manifest>

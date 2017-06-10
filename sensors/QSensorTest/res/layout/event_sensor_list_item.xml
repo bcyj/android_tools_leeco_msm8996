@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--========================================================================
+@file event_sensor_list_item.xml
+
+@brief
+Specifies how each event sensor and items such as its current data
+should be displayed on the screen.
+
+Copyright (c) 2013 Qualcomm Technologies, Inc. All Rights Reserved.
+Qualcomm Technologies Proprietary and Confidential.
+=========================================================================-->
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/stream_sensor_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="@string/stream_sensor_title"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/stream_event_column1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:text="@string/stream_event_column1" />
+
+                <TextView
+                    android:id="@+id/stream_event_column2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:text="@string/stream_event_column2" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/stream_button_cancel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:background="@null"
+                android:contentDescription="@string/cancel_icon"
+                android:src="@drawable/button_cancel" />
+
+        </LinearLayout>
+    <View style="@style/Divider"/>
+    </LinearLayout>
+</RelativeLayout>

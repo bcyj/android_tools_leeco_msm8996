@@ -1,0 +1,145 @@
+# '#' or ';' starts a comment line
+# Command line formats as <TS_CMD>(<ARG1> <ARG2> ...<ARGn>)RESULT
+# The expected default result is 0 if a result is not given
+#
+# system initialization first,
+TS_SYSTEM_INIT(void) 0
+# You can have a loop from the TS_LOOP_START to TS_LOOP_END. Right now
+# only one loop is supported and the loop count is a 4 bytes integer
+TS_COUNT_RESET
+TS_LOOP_START(5)
+TS_TIME
+# print test count
+TS_COUNT
+# Launch preview with TS_PREVIEW_START, then use TS_SLEEP to control the
+# duration (second) of preview, then use TS_PREVIEW_STOP to stop preview
+# To control the duration (in millisecond), use TS_MSLEEP.
+TS_SLEEP(1)
+TS_PREVIEW_START(void) 0
+TS_SLEEP(1)
+TS_PREVIEW_STOP(void) 0
+#
+TS_TIME_MARKER
+TS_SNAPSHOT_JPEG_PICTURE(void) 0
+TS_TIME_SINCE_MARKER
+#
+TS_LOOP_END
+#
+TS_PREVIEW_START(void) 0
+TS_SLEEP(1)
+TS_PRINT_MAXZOOM(void) 0
+TS_SLEEP(5)
+TS_PRINT_ZOOMRATIOS(void) 0
+TS_SLEEP(5)
+TS_ZOOM_INCREASE(void) 0
+TS_SLEEP(5)
+TS_ZOOM_STEP_DECREASE(void) 0
+TS_SLEEP(5)
+TS_ZOOM_DECREASE(void) 0
+TS_SLEEP(5)
+TS_ZOOM_STEP_INCREASE(void) 0
+TS_SLEEP(5)
+TS_PREVIEW_STOP(void) 0
+TS_SLEEP(1)
+# Snapshot resolution parameter:
+#    SQCIF                  = 1,
+#    QCIF                   = 2,
+#    QVGA                   = 3,
+#    CIF                    = 4,
+#    VGA                    = 5,
+#    WVGA                   = 6,
+#    SVGA                   = 7,
+#    XGA                    = 8,
+#    HD720                  = 9,
+#    WXGA                   = 10,
+#    MP1                    = 11,
+#    MP2                    = 12,
+#    HD1080                 = 13,
+#    MP3                    = 14,
+#    MP5                    = 15,
+TS_SNAPSHOT_RESOLUTION(11) 0
+#
+TS_SNAPSHOT_YUV_PICTURE(void) 0
+TS_SLEEP(1)
+TS_SNAPSHOT_RAW_PICTURE(void) 0
+TS_SLEEP(1)
+TS_PREVIEW_START(void) 0
+TS_SLEEP(1)
+TS_CONTRAST_INCREASE(void) 0
+TS_SLEEP(1)
+TS_CONTRAST_DECREASE(void) 0
+TS_SLEEP(1)
+TS_SATURATION_INCREASE(void) 0
+TS_SLEEP(1)
+TS_SATURATION_DECREASE(void) 0
+TS_SLEEP(1)
+TS_SPECIAL_EFFECT(void) 0
+TS_SLEEP(1)
+TS_BRIGHTNESS_INCREASE(void) 0
+TS_SLEEP(1)
+TS_BRIGHTNESS_DECREASE(void) 0
+TS_SLEEP(1)
+TS_EV_INCREASE(void) 0
+TS_SLEEP(1)
+TS_EV_DECREASE(void) 0
+TS_SLEEP(1)
+TS_ANTI_BANDING(void) 0
+TS_SLEEP(1)
+TS_SET_WHITE_BALANCE(void) 0
+TS_SLEEP(1)
+TS_AEC_MODE(void) 0
+TS_SLEEP(1)
+TS_ISO_INCREASE(void) 0
+TS_SLEEP(1)
+TS_ISO_DECREASE(void) 0
+TS_SLEEP(1)
+TS_SHARPNESS_INCREASE(void) 0
+TS_SLEEP(1)
+TS_SHARPNESS_DECREASE(void) 0
+TS_SLEEP(1)
+TS_SET_AUTO_FOCUS(void) 0
+TS_SLEEP(1)
+TS_SET_HJR(void) 0
+TS_SLEEP(1)
+TS_SET_LENS_SHADING(void) 0
+TS_SLEEP(1)
+TS_SET_LED_MODE(void) 0
+TS_SLEEP(1)
+TS_GET_SHARPNESS_AF(void) 0
+TS_SLEEP(1)
+TS_MOTION_ISO(void) 0
+TS_SLEEP(1)
+TS_TOGGLE_HUE(void) 0
+TS_SLEEP(1)
+TS_CANCEL_AUTO_FOCUS(void) 0
+TS_SLEEP(1)
+TS_GET_AF_STEP(void) 0
+TS_SLEEP(1)
+TS_SET_AF_STEP(void) 0
+TS_SLEEP(1)
+TS_ENABLE_AFD(void) 0
+TS_SLEEP(1)
+TS_PREVIEW_STOP(void) 0
+TS_SLEEP(1)
+#
+# Preview resolution parameter:
+#    SQCIF                  = 1,
+#    QCIF                   = 2,
+#    QVGA                   = 3,
+#    CIF                    = 4,
+#    VGA                    = 5,
+#    WVGA                   = 6,
+# For preview resolution, system has to be restarted for new resolution to take effect
+TS_PREVIEW_RESOLUTION(3) 0
+TS_SYSTEM_DESTROY(void) 0
+TS_SYSTEM_INIT(void) 0
+TS_PREVIEW_START(void) 0
+TS_SLEEP(5)
+TS_PREVIEW_STOP(void) 0
+#
+# after everything done, destroy system.
+TS_SYSTEM_DESTROY(void) 0
+# Exit the camera test suite server.
+TS_SERVER_EXIT
+# Exit the camera test suite client.
+TS_CLIENT_EXIT

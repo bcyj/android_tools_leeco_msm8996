@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!---/**************************************************************************
+*  Copyright (c) 2013-2014 Qualcomm Technologies, Inc.  All Rights Reserved.
+*  Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************-->
+<mixer>
+    <!-- These are actual sound device specific mixer settings -->
+    <path name="adc1">
+        <ctl name="AIF2_CAP Mixer SLIM TX6" value="1"/>
+        <ctl name="SLIM TX6 MUX" value="DEC6" />
+        <ctl name="DEC6 MUX" value="ADC1" />
+        <ctl name="ADC1 Volume" value="8" />
+        <ctl name="DEC6 Volume" value="84" />
+    </path>
+
+    <path name="adc5">
+        <ctl name="AIF2_CAP Mixer SLIM TX8" value="1"/>
+        <ctl name="SLIM TX8 MUX" value="DEC8" />
+        <ctl name="DEC8 MUX" value="ADC5" />
+        <ctl name="ADC5 Volume" value="8" />
+        <ctl name="DEC8 Volume" value="84" />
+    </path>
+
+    <path name="adc6">
+        <ctl name="AIF2_CAP Mixer SLIM TX1" value="1"/>
+        <ctl name="SLIM TX1 MUX" value="DEC1" />
+        <ctl name="DEC1 MUX" value="ADC6" />
+        <ctl name="ADC6 Volume" value="19" />
+        <ctl name="DEC1 Volume" value="84" />
+    </path>
+
+    <path name="dmic4">
+        <ctl name="AIF2_CAP Mixer SLIM TX4" value="1"/>
+        <ctl name="SLIM TX4 MUX" value="DEC4" />
+        <ctl name="DEC4 MUX" value="DMIC4" />
+        <ctl name="DEC4 Volume" value="84" />
+    </path>
+
+    <path name="dmic2">
+        <ctl name="AIF2_CAP Mixer SLIM TX2" value="1"/>
+        <ctl name="SLIM TX2 MUX" value="DEC2" />
+        <ctl name="DEC2 MUX" value="DMIC2" />
+        <ctl name="DEC2 Volume" value="84" />
+    </path>
+
+    <path name="dmic5">
+        <ctl name="AIF2_CAP Mixer SLIM TX5" value="1"/>
+        <ctl name="SLIM TX5 MUX" value="DEC5" />
+        <ctl name="DEC5 MUX" value="DMIC5" />
+        <ctl name="DEC5 Volume" value="84" />
+    </path>
+
+    <path name="tx_1_3_5_7_11">
+        <path name="dmic4" />
+        <path name="dmic2" />
+        <path name="dmic5" />
+        <path name="adc1" />
+        <path name="adc6" />
+    </path>
+
+    <path name="tx_1_3_5_7">
+        <path name="dmic4" />
+        <path name="dmic2" />
+        <path name="dmic5" />
+        <path name="adc1" />
+    </path>
+
+    <path name="tx_1_3_5_7_8_11">
+        <path name="dmic4" />
+        <path name="dmic2" />
+        <path name="dmic5" />
+        <path name="adc1" />
+        <path name="adc5" />
+        <path name="adc6" />
+    </path>
+
+    <path name="tx_1">
+        <path name="dmic4" />
+    </path>
+
+    <path name="tx_3">
+        <path name="dmic2" />
+    </path>
+
+    <path name="tx_5">
+        <path name="dmic5" />
+    </path>
+
+    <path name="tx_7">
+        <path name="adc1" />
+    </path>
+
+    <path name="tx_8">
+        <path name="adc5" />
+    </path>
+
+    <path name="rx_1">
+        <ctl name="SLIM RX4 MUX" value="AIF2_PB" />
+        <ctl name="RX1 MIX1 INP3" value="RX4" />
+        <ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
+        <ctl name="DAC1 Switch" value="1" />
+        <ctl name="EAR PA Gain" value="POS_6_DB" />
+        <ctl name="RX4 Digital Volume" value="84" />
+    </path>
+
+</mixer>

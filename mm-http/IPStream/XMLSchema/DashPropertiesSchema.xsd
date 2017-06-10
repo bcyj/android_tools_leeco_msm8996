@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <!--
+2  COPYRIGHT 2012 Qualcomm Technologies, Inc.
+3  All rights reserved. Qualcomm Technologies proprietary and confidential.
+4 -->
+<xs:schema targetNamespace="urn:mpeg:DASH:schema:MPD:2011" elementFormDefault="qualified" attributeFormDefault="unqualified"  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:mas="urn:marlin:mas:1-0:services:schemas:mpd" xmlns="urn:mpeg:DASH:schema:MPD:2011" >
+  <xs:import namespace="urn:marlin:mas:1-0:services:schemas:mpd" schemaLocation="MarlinSchema.xsd"/>
+  <xs:element name="MPD" type="MPDtype"/>
+  <xs:complexType name="MPDtype">
+    <xs:sequence>
+      <xs:element name="MPDProperties" type="MPDPropertiesType" minOccurs="0"/>
+      <xs:element name="Period" type="PeriodType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MPDPropertiesType">
+    <xs:sequence>
+      <xs:element name="profiles" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PeriodType">
+    <xs:sequence>
+      <xs:element name="PeriodProperties" type="PeriodPropertiesType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="AdaptationSet" type="AdaptationSetType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="Key" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="PeriodPropertiesType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AdaptationSetType">
+    <xs:sequence>
+      <xs:element name="AdaptationSetProperties" type="AdaptationSetPropertiesType" minOccurs="0"/>
+      <xs:element name="Representation" type="RepresentationType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="Key" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="RepresentationType">
+    <xs:sequence>
+      <xs:element name="RepresentationProperties" type="RepresentationPropertiesType" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="Key" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="AdaptationSetPropertiesType">
+    <xs:complexContent>
+      <xs:extension base="PropertiesBaseType">
+        <xs:sequence>
+          <xs:element name="id" type="xs:unsignedInt" minOccurs="0"/>
+          <xs:element name="Accessibility" type="DescriptorType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="Role" type="DescriptorType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="contentType" type="xs:string" minOccurs="0"/>
+          <xs:element name="lang" type="xs:language" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RepresentationPropertiesType">
+    <xs:complexContent>
+      <xs:extension base="PropertiesBaseType">
+        <xs:sequence>
+          <xs:element name="id" type="StringNoWhitespaceType"  minOccurs="1"/>
+          <xs:element name="bandwidth" type="xs:unsignedInt" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PropertiesBaseType">
+    <xs:sequence>
+      <xs:element name="AudioChannelConfiguration" type="DescriptorType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="mimeType" type="xs:string" minOccurs="0"/>
+      <xs:element name="codecs" type="xs:string" minOccurs="0"/>
+      <xs:element name="width" type="xs:unsignedInt" minOccurs="0"/>
+      <xs:element name="height" type="xs:unsignedInt" minOccurs="0"/>
+      <xs:element name="ContentProtection" type="ContentProtectionType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DescriptorType">
+    <xs:attribute name="schemeIdUri" type="xs:anyURI" use="required"/>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="ContentProtectionType">
+    <xs:complexContent>
+      <xs:extension base="DescriptorType">
+        <xs:sequence>
+          <xs:element ref="mas:FormatVersion" minOccurs="0"/>
+          <xs:element ref="mas:MarlinContentIds" minOccurs="0"/>
+          <xs:element ref="mas:MarlinBroadband" minOccurs="0"/>
+          <xs:element ref="mas:MS3" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="StringNoWhitespaceType">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[^\r\n\t \p{Z}]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

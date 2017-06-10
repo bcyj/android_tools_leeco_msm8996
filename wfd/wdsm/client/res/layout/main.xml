@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2012 - 2013 QUALCOMM Technologies, Inc.  All Rights Reserved.
+  QUALCOMM Technologies Proprietary and Confidential.
+ -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_ui"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tl_top_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:background="#848484">
+        <TableRow
+            android:background="#000000">
+            <TextView
+                android:textSize="36sp"
+                android:text="@string/app_name"
+                android:textColor="#1E90FF"
+                android:layout_span="2"
+                android:gravity="left" />
+             <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                android:layout_span="2"
+                android:gravity="right" >
+                <TextView
+                    android:textSize="12sp"
+                    android:id="@+id/tv_my_name"
+                    android:textColor="#1E90FF"
+                    android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:gravity="right" />
+                <TextView
+                    android:textSize="12sp"
+                    android:id="@+id/tv_my_mac_address"
+                    android:textColor="#1E90FF"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right" />
+                <TextView
+                    android:textSize="12sp"
+                    android:id="@+id/tv_my_status"
+                    android:textColor="#1E90FF"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="right" />
+               </LinearLayout>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr_blank_black"
+            android:background="#000000">
+            <Button
+                android:id="@+id/btn_blank_black"
+                android:textSize="10sp"
+                android:background="#000000"
+                android:text="@string/btn_blank"
+                android:textColor="#000000"
+                android:layout_span="4"
+                android:gravity="center_horizontal" />
+        </TableRow>
+    </TableLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_peers_label"
+        android:background="#000000"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/tl_top_buttons">
+        <!-- <TextView
+            android:id="@+id/tv_peers"
+            android:textSize="30sp"
+            android:background="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_peers"
+            android:textColor="#1E90FF"
+            android:layout_alignParentLeft="true"
+            android:layout_above="@+id/tv_peers_fragment_spacer"   />
+        <ImageButton
+            android:id="@+id/btn_filter"
+            android:src="@drawable/ic_menu_filter"
+            android:background="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/filter"
+            android:onClick="toggleClickHandler" />
+        <TextView
+            android:id="@+id/tv_peers_fragment_spacer"
+            android:textSize="2sp"
+            android:background="#848484"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_peers"
+            android:layout_below="@+id/btn_filter" /> -->
+        <TextView
+            android:id="@+id/tv_peers"
+            android:textSize="30sp"
+            android:background="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_peers"
+            android:textColor="#1E90FF"
+            android:layout_alignParentLeft="true" />
+        <TextView
+            android:id="@+id/tv_peers_fragment_spacer"
+            android:textSize="2sp"
+            android:background="#848484"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_peers"
+            android:layout_below="@+id/tv_peers" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/linearLayout1"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/ll_peers_label">
+        <fragment
+            class="com.qualcomm.wfd.client.DeviceListFragment"
+            android:id="@+id/frag_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </LinearLayout>
+
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tl_control_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#848484"
+        android:gravity="bottom"
+        android:stretchColumns="*" >
+        <TableRow
+            android:id="@+id/tr_control_buttons"
+            android:layout_marginTop="2dp"
+            android:background="#848484" >
+            <ToggleButton
+                android:id="@+id/btn_play_pause"
+                android:layout_marginRight="1dp"
+                android:background="@drawable/control_button_selector"
+                android:gravity="center_horizontal"
+                android:textOff="Pause"
+                android:textOn="Play"
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:onClick="playPauseWfdOperation" />
+            <ToggleButton
+                android:id="@+id/btn_standby_resume"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:background="@drawable/control_button_selector"
+                android:gravity="center_horizontal"
+                android:textOff="Resume"
+                android:textOn="Standby"
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:onClick="standbyResumeWfdOperation" />
+            <Button
+                android:id="@+id/btn_teardown"
+                android:layout_marginLeft="1dp"
+                android:background="@drawable/control_button_selector"
+                android:gravity="center_horizontal"
+                android:text="@string/btn_teardown"
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:onClick="teardownWfdOperation" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr_control_buttons_bottom"
+            android:layout_marginTop="2dp"
+            android:background="#848484" >
+            <ToggleButton
+                android:layout_span="1"
+                android:id="@+id/btn_start_stop_uibc"
+                android:background="@drawable/control_button_selector"
+                android:gravity="center_horizontal"
+                android:text="@string/btn_start_stop_uibc"
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:textOff="Start UIBC"
+                android:textOn="Stop UIBC"
+                android:onClick="startStopUibcWfdOperation" />
+            <ToggleButton
+                android:layout_span="1"
+                android:id="@+id/btn_transport_udp_tcp"
+                android:background="@drawable/control_button_selector"
+                android:layout_marginLeft="1dp"
+                android:gravity="center_horizontal"
+                android:text="@string/btn_transport_udp_tcp"
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:textOff="TCP"
+                android:textOn="UDP"
+                android:onClick="toggleRTPTransport" />
+            <ToggleButton
+                android:layout_span="1"
+                android:id="@+id/btn_flush"
+                android:background="@drawable/control_button_selector"
+                android:layout_marginLeft="1dp"
+                android:gravity="center_horizontal"
+                android:text="@string/btn_flush"
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:textOff="FLUSH"
+                android:textOn="FLUSH"
+                android:onClick="flushOperation" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>
+</RelativeLayout>

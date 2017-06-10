@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+        Copyright (c) 2012-2013, Qualcomm Technologies, Inc.
+        All Rights Reserved.
+        Qualcomm Technologies Proprietary and Confidential.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.android.qrd.engineeringmode"
+      android:sharedUserId="android.uid.phone">
+
+    <application android:label="@string/app_name" android:process="com.android.phone">
+        <activity android:name=".DeviceInfo"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.ENGINEER_MODE_DEVICEINFO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>
+

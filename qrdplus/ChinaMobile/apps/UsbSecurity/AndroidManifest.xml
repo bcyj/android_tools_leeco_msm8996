@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+Qualcomm Technologies Proprietary and Confidential.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.usbsecurity"
+    android:versionCode="1"
+    android:versionName="1.0"
+    android:sharedUserId="android.uid.system">
+
+    <application>
+         <receiver android:name="UsbSecurityReceiver">
+            <intent-filter>
+                 <action android:name="android.hardware.usb.action.USB_STATE" />
+                 <action android:name="android.intent.action.SIM_STATE_CHANGED" />
+            </intent-filter>
+       </receiver>
+        <activity
+            android:name=".UsbSecurityActivity"
+            android:clearTaskOnLaunch="true"
+            android:exported="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:theme="@*android:style/Theme.Holo.Dialog.Alert" >
+        </activity>
+    </application>
+
+</manifest>

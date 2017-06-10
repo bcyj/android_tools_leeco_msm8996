@@ -1,0 +1,4 @@
+base=/system
+export CLASSPATH=$base/framework/wfdserver.jar
+trap "" HUP
+exec app_process $base/bin com.qualcomm.wfd.service.WfdServer $*

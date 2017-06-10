@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright (c) 2014 Qualcomm Technologies, Inc.  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.-->
+<NsrmPolicy>
+  <Nsrm>
+    <!--The version of the NSRM software-->
+    <Version>2.0</Version>
+    <!--Length of time in seconds to keep gate open each time it is opened
+        valid values 1 to 24*60*60 seconds-->
+    <GateOpenTime>10</GateOpenTime>
+    <!--Maximum time in seconds to wait before forcing gate open for connect,
+         getaddrinfo or other resolver calls
+         valid values 1 to 24*60*60 seconds-->
+    <GateSyncSocketSetupTime>1200</GateSyncSocketSetupTime>
+    <!--Maximum time in seconds to wait before forcing gate open for write and
+        other socket calls that send data
+        valid values 1 to 24*60*60 seconds-->
+    <GateSyncSocketWriteTime>600</GateSyncSocketWriteTime>
+    <!--Time in seconds to wait before releasing the queued sockets when the
+        emergency alert notification is received
+        EAQSRT stands for Emergency Alert Queued Socket Release Delay Time
+        valid values 1 to 24*60*60 seconds-->
+    <EAQSRDT>60</EAQSRDT>
+    <!--Mode to indicate how processes which share the same UID should be
+        handled-->
+    <SharedUIDMode>Conservative</SharedUIDMode>
+    <!--List of applications which to apply Nsrm to-->
+    <AppList Type="Exclusion">
+    </AppList>
+    <!-- Example MCC_MNC configuration
+         NTO values are configured in seconds
+         GATE will OPEN seconds before expiration of network binding, based on NTO
+         Twsync will expires 10 seconds before NTO value
+         port "0" is the default configuration, applies if no port match is found
+         valid values for NTO is 0 to 24*60*60 seconds-->
+    <!--MCC_MNC value="210456">
+        <port value="8080" NTO="1200"/>
+        <port value="56" NTO="1800"/>
+        <port value="0" NTO="300"/>
+    </MCC_MNC-->
+    <MCC_MNC value="Default">
+        <port value="0" NTO="300"/>
+    </MCC_MNC>
+  </Nsrm>
+  <!-- The next element is for reference only to show how to config NSRM
+       parameters for another version that may be supported on the device -->
+  <!--
+  <Nsrm>
+    <Version>1.2</Version>
+    <GateOpenTime>32</GateOpenTime>
+    <GateSyncTime>1202</GateSyncTime>
+    <EAQSRDT>62</EAQSRDT>
+    <SharedUIDMode>Conservative</SharedUIDMode>
+    <AppList Type="Exclusion">
+    </AppList>
+  </Nsrm>
+  -->
+</NsrmPolicy>

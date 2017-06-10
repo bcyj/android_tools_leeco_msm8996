@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2014-2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution, Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!--
+     Copyright (C) 2013 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+
+    <!--
+        Timezone IDs for the time zones that we want to override the display strings.
+        ALWAYS ADD NEW ENTRIES AT THE END. Othewise the entries after the insertion point will
+        not match for languages that didn\'t get the translations.
+    -->
+    <string-array name="timezone_rename_ids" translatable="false">
+
+        <!-- Australia -->
+        <item>"Australia/Darwin"</item>
+        <item>"Australia/Adelaide"</item>
+        <item>"Australia/Brisbane"</item>
+        <item>"Australia/Sydney"</item>
+
+        <!-- Canada -->
+        <!-- Non DST version -->
+        <item>"America/Dawson_Creek"</item>
+        <!-- Non DST version -->
+        <item>"America/Regina"</item>
+        <!-- Non DST version -->
+        <item>"America/Atikokan"</item>
+        <!-- Non DST version -->
+        <item>"America/Blanc-Sablon"</item>
+
+        <!-- US -->
+        <!-- Non DST version -->
+        <item>"Pacific/Honolulu"</item>
+        <!-- DST version -->
+        <item>"America/Adak"</item>
+        <!-- Non DST version -->
+        <item>"America/Metlakatla"</item>
+        <!-- Non DST version -->
+        <item>"America/Phoenix"</item>
+
+        <!-- Mexico -->
+        <!-- DST version with post-2006 US rule -->
+        <item>"America/Tijuana"</item>
+        <!-- DST version with post-2006 US rule -->
+        <item>"America/Ojinaga"</item>
+        <!-- DST version with post-2006 US rule -->
+        <item>"America/Matamoros"</item>
+        <!-- Non DST version -->
+        <item>"America/Hermosillo"</item>
+
+        <!-- Other time zones with missing labels from the framework -->
+        <!-- Missing string in ICS -->
+        <item>"Africa/Juba"</item>
+        <!-- Missing string in ICS -->
+        <item>"America/Kralendijk"</item>
+        <!-- Missing string in ICS -->
+        <item>"America/Lower_Princes"</item>
+        <!-- Only had GMT as the display string -->
+        <item>"Europe/Minsk"</item>
+        <!-- Only had GMT as the display string -->
+        <item>"Europe/Kaliningrad"</item>
+
+        <!-- Brazil -->
+        <!-- Non DST version -->
+        <item>"America/Porto_Velho"</item>
+        <!-- Non DST version -->
+        <item>"America/Belem"</item>
+</string-array>
+
+    <!--
+        Replacement display strings for time zones. The order should match the entries in
+        timezone_rename_ids
+        ALWAYS ADD NEW ENTRIES AT THE END. Othewise the array will not be the same size until
+        all the translations are available. [CHAR LIMIT=32]
+    -->
+    <string-array name="timezone_rename_labels">
+
+        <!-- Australia -->
+        <item>"ऑस्ट्रेलियन मध्य - NT"</item>
+        <item>"ऑस्ट्रेलियन मध्य - SA"</item>
+        <item>"ऑस्ट्रेलियन पूर्वीय - QLD"</item>
+        <item>"ऑस्ट्रेलियन पूर्वीय - NSW"</item>
+
+        <!-- Canada -->
+        <item>"माउंटन मानक - डॉसन क्रीक"</item>
+        <item>"मध्य मानक - सास्काचेवान"</item>
+        <item>"पूर्वीय मानक - अ‍ॅटिकोकन"</item>
+        <item>"अटलांटिक मानक - क्वेबेक"</item>
+
+        <!-- US -->
+        <item>"हवाई-अल्युशन - हवाई"</item>
+        <item>"हवाई-अल्युशन - अलास्का"</item>
+        <item>"पॅसिफिक मानक - मेट्‍लाकाट्‍ला"</item>
+        <item>"माउंटन मानक - ऍरिझोना"</item>
+
+        <!-- Mexico -->
+        <item>"पॅसिफिक - बाजा कॅलिफोर्निया"</item>
+        <item>"माउंटन - चिहुआहुआ"</item>
+        <item>"मध्‍य - तमाउलिपस"</item>
+        <item>"माउंटन - सोनोरा"</item>
+
+        <!-- Other countries with missing or undesirable labels from the framework -->
+        <item>"पूर्व आफ्रिका वेळ"</item>
+        <item>"अटलांटिक प्रमाणवेळ"</item>
+        <item>"अटलांटिक प्रमाणवेळ"</item>
+        <item>"पूर्व युरोपियन वेळ"</item>
+        <item>"कलिनिनग्राड वेळ"</item>
+
+        <!-- Brazil -->
+        <!-- Non DST version of Amazon Standard Time -->
+        <item>"ऍमेझॉन - रोन्‍डोनिया"</item>
+        <!-- Non DST version of Brasilia Standard Time -->
+        <item>"ब्रासिलिया - पॅरा"</item>
+        </string-array>
+
+    <!--
+        Country codes
+        The order should match the entries in backup_country_names
+        ALWAYS ADD NEW ENTRIES AT THE END. Othewise the entries after the insertion point will
+        not match for languages that didn\'t get the translations.
+    -->
+    <string-array name="backup_country_codes" translatable="false">
+        <item>"SX"</item>
+        <item>"BQ"</item>
+        <item>"CW"</item>
+        <item>"SS"</item>
+    </string-array>
+
+    <!--
+        Display strings for country names. Used only if framework doesn\'t have translated
+        country names. The order should match the entries in backup_country_codes
+        ALWAYS ADD NEW ENTRIES AT THE END. Othewise the array will not be the same size until
+        all the translations are available. [CHAR LIMIT=32]
+    -->
+    <string-array name="backup_country_names">
+        <item>"सिंत मार्टेन"</item>
+        <item>"कॅरिबियन नेदरलँड्स"</item>
+        <item>"कुरॅको"</item>
+        <item>"दक्षिण सुदान"</item>
+    </string-array>
+</resources>

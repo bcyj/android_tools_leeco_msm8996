@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2013-2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution.
+ * Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- used in various places to indicate there is one song for a given artist or album -->
+    <string name="onesong">1 गाणं</string>
+    <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
+    <plurals name="Nsongs">
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> गाणी</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other"><xliff:g id="count_for_artist">%2$d</xliff:g> पैकी <xliff:g id="total_count">%1$d</xliff:g> गाणी</item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+        <!-- number of albums is one -->
+        <item quantity="one">1 अल्बम</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> अल्बम्स</item>
+    </plurals>
+
+    <!--
+    This string is used as the format string in a String.format call,
+    and 5 additional arguments are available for printing:
+    1 - hours
+    2 - minutes
+    3 - minutes%60
+    4 - seconds
+    5 - second%60
+    -->
+    <skip/>
+    <!-- Do not translate. Duration format for duration < 1 hour -->
+    <string translatable="false" name="durationformatshort"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    <!-- Do not translate. Duration format for duration >= 1 hour -->
+    <string translatable="false" name="durationformatlong"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    <!-- Menu item that takes the user back to the top level screen of the music player -->
+    <string name="goto_start">लायब्ररी</string>
+    <!-- Menu item that switches the music player in to party shuffle mode -->
+    <string name="party_shuffle">पार्टी शफल</string>
+    <!-- Menu item that switches the music player out of party shuffle mode -->
+    <string name="party_shuffle_off">पार्टी शफल बंद</string>
+    <!-- Menu item that clear all playlists mode -->
+    <string name="clear_all_playlists">सर्व प्‍लेलिस्‍ट्स साफ करा</string>
+    <!-- Menu item that deletes the currently selected item, which might be a single song, or a collection of songs.
+         The user will be prompted to confirm before deletion actually takes place -->
+    <string name="delete_item">हटवा</string>
+    <!-- Menu item to play back all the songs in the currently showing list in shuffle mode -->
+    <string name="shuffle_all">सर्वांना शफल करा</string>
+    <!-- Menu item to play back all the songs in the currently showing list in list order -->
+    <string name="play_all">सर्व प्ले करा</string>
+    <!-- Menu item to play song in music -->
+    <string name="open_in_music">संगीतामध्ये उघडा</string>
+    <!-- Menu item to share audio or video -->
+    <string name="share">सामायिक करा</string>
+
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc">SD कार्डवरून सर्व गाणी <xliff:g id="artist">%s</xliff:g> द्वारे कायमची हटवायची?</string>
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc_nosdcard">USB संचयनावरून सर्व गाणी <xliff:g id="artist">%s</xliff:g> द्वारे कायमची हटवायची?</string>
+
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc">SD कार्डवरून संपूर्ण अल्बम \"<xliff:g id="album">%s</xliff:g>\" द्वारे हटवा?</string>
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc_nosdcard">USB संचयनावरून संपूर्ण अल्बम \"<xliff:g id="album">%s</xliff:g>\" द्वारे कायमचा हटवायचा?</string>
+
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc">SD कार्डवरून \"<xliff:g id="song">%s</xliff:g>\" कायमचे हटवायचे?</string>
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc_nosdcard">USB संचयनावरून \"<xliff:g id="song">%s</xliff:g>\" कायमचे हटवायचे?</string>
+
+    <!-- Delete confirmation dialog, confirmation button text -->
+    <string name="delete_confirm_button_text">ओके</string>
+    <!-- Toast confirming that song(s) was/were deleted. -->
+    <plurals name="NNNtracksdeleted">
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">1 गाणं हटवले.</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> गाणी हटवली.</item>
+    </plurals>
+
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning">SD कार्ड स्कॅन करत आहे\u2026</string>
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning_nosdcard">USB साठवणूक स्कॅन करीत आहे\u2026</string>
+
+    <!-- title of the "current playlist" screen when not in party shuffle mode -->
+    <string name="nowplaying_title">आता प्ले करीत आहे</string>
+    <!-- title of the "current playlist" screen when in party shuffle mode-->
+    <string name="partyshuffle_title">पार्टी शफल</string>
+    <!-- Artist screen title -->
+    <string name="artists_title">कलाकार</string>
+    <!-- Category label on Library screen -->
+    <string name="albums_menu">अल्बम्स</string>
+    <!-- Albums screen title -->
+    <string name="albums_title">अल्बम्स</string>
+    <!-- Category label on Library screen -->
+    <string name="tracks_menu">गाणी</string>
+    <!-- Songs screen title -->
+    <string name="tracks_title">गाणी</string>
+    <!-- Category label on Library screen -->
+    <string name="folder_menu">फोल्डर</string>
+    <!-- Folder screen title -->
+    <string name="folders_title">फोल्डर</string>
+    <!-- Category label on Library screen -->
+    <string name="playlists_menu">प्लेलिस्ट्स</string>
+    <!-- Playlists screen title -->
+    <string name="playlists_title">प्लेलिस्ट्स</string>
+    <!-- Videos screen title -->
+    <string name="videos_title">व्हिडीओज</string>
+    <!-- All media screen title -->
+    <string name="all_title">सर्व माध्यमे</string>
+    <!-- Category label on Library screen -->
+    <string name="browse_menu">कलाकार</string>
+    <!-- Library screen, menu item -->
+    <string name="search_title">शोधा</string>
+    <!-- Title of screen when there are no songs, or if the SD card is busy -->
+    <string name="no_tracks_title">गाणी नाहीत</string>
+    <!-- Title of screen when there are no videos, or if the SD card is busy -->
+    <string name="no_videos_title">व्हिडीओज नाहीत</string>
+    <!-- Title of screen when there are no playlists, or if the SD card is busy -->
+    <string name="no_playlists_title">प्लेलिस्ट्स नाहीत</string>
+    <!-- Playlist context menu item to delete the selected playlist. -->
+    <string name="delete_playlist_menu">हटवा</string>
+    <!-- Playlist context menu item to edit the selected playlist -->
+    <string name="edit_playlist_menu">संपादित करा</string>
+    <!-- Playlist context menu item to rename the selected playlist-->
+    <string name="rename_playlist_menu">पुनर्नामित करा</string>
+    <!-- Dialog box message shown when clearing all playlists-->
+    <string name="clear_all_playlists_message">आपण सर्व प्‍लेलिस्‍ट्स साफ करू इच्छिता?</string>
+    <!-- Dialog box message shown when deleting a playlist-->
+    <string name="delete_playlist_message">आपल्याला हटवायचे आहे का \"<xliff:g id="name">%s</xliff:g>\"?</string>
+    <!-- Dialog box button -->
+    <string name="delete_playlist_button_ok">ओके</string>
+    <string name="delete_playlist_button_cancel">रद्द करा</string>
+    <!-- Transient popup message shown after deleting a playlist -->
+    <string name="playlist_deleted_message">प्लेलिस्ट हटविली.</string>
+    <!-- Transient popup message shown after renaming a playlist -->
+    <string name="playlist_renamed_message">प्लेलिस्टला पुन्हा नाव दिले.</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in list view -->
+    <string name="recentlyadded">नुकते समाविष्ट केले</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in title bar of songs list -->
+    <string name="recentlyadded_title">नुकते समाविष्ट केले</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in list view -->
+    <string name="podcasts_listitem">पॉडकास्ट्स</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in title bar of songs list -->
+    <string name="podcasts_title">पॉडकास्ट्स</string>
+    <!-- all recordings will show up in the media database in a playlist with thiis name -->
+    <string name="audio_db_playlist_name">माझी रेकॉर्डिंग</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title">SD कार्ड नाही</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title_nosdcard">USB संग्रह नाही</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message">तुमच्या फोनमध्ये SD कार्ड समाविष्ट केलेले नाही.</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message_nosdcard">तुमच्या फोनमध्ये USB संग्रह समाविष्ट नाही.</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title">SD कार्ड अनुपलब्ध</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title_nosdcard">USB संग्रह अनुपलब्ध</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message">तुमचे SD कार्ड व्यस्त आहे.</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message_nosdcard">तुमची USB संचय व्यस्त आहे.</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title">SD कार्ड त्रुटी</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title_nosdcard">USB संग्रह त्रुटी</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message">तुमच्या SD कार्डवर त्रुटी आढळली.</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message_nosdcard">तुमच्या USB संग्रहावर त्रुटी आढळली.</string>
+    <!-- Default name of artist that doesn\'t have a name in the metadata -->
+    <string name="unknown_artist_name">अज्ञात कलाकार</string>
+    <!-- Default name of album that doesn\'t have a name in the metadata -->
+    <string name="unknown_album_name">अज्ञात अल्बम</string>
+    <!-- Default name of folder that doesn\'t have a path in the metadata -->
+    <string name="unknown_folder_name">अज्ञात पाथ</string>
+    <!-- Default name of folder that doesn\'t have a count in the metadata -->
+    <string name="unknown_folder_count">अज्ञात काउंट</string>
+    <!-- Toast after turning shuffle on -->
+    <string name="shuffle_on_notif">शफल चालू आहे.</string>
+    <!-- Toast after turning shuffle off -->
+    <string name="shuffle_off_notif">शफल बंद आहे.</string>
+    <!-- Toast after turning repeat off -->
+    <string name="repeat_off_notif">पुनरावृत्ती बंद आहे.</string>
+    <!-- Toast after turning single repeat on -->
+    <string name="repeat_current_notif">चालू गाण्याची पुनरावृत्ती करीत आहे.</string>
+    <!-- Toast after turning repeat all on -->
+    <string name="repeat_all_notif">सर्व गाण्यांची पुनरावृत्ती करीत आहे.</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu">फोन रिंगटोन म्हणून वापरा</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short">रिंगटोन म्हणून वापरा</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" फोन रिंगटोन म्हणून सेट करा.</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu_1">स्लॉट 1 रिंगटोन म्हणून वापरा</string>
+    <string name="ringtone_menu_2">स्लॉट 2 रिंगटोन म्हणून वापरा</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short_1">रिंगटोन 1 म्हणून वापरा</string>
+    <string name="ringtone_menu_short_2">रिंगटोन 2 म्हणून वापरा</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_1">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" स्लॉट 1 रिंगटोन म्हणून सेट केले. </string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_2">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" स्लॉट 1 रिंगटोन म्हणून सेट केले. </string>
+    <!-- Context menu item -->
+    <string name="play_selection">प्ले करा</string>
+    <!-- Context menu item -->
+    <string name="add_to_playlist">प्लेलिस्टमध्ये जोडा</string>
+    <!-- Context menu item -->
+    <string name="queue">चालू प्लेलिस्ट</string>
+    <!-- Context menu item -->
+    <string name="new_playlist">नवीन</string>
+    <!-- Template for newly created playlist name -->
+    <string name="new_playlist_name_template">नवीन प्लेलिस्ट <xliff:g id="number">%d</xliff:g></string>
+    <!-- Toasts after adding song(s) to playlists -->
+    <plurals name="NNNtrackstoplaylist">
+        <!-- message shown when one song was added -->
+        <item quantity="one">1 गाणं प्लेलिस्टमध्ये जोडले.</item>
+        <!-- message shown when zero or more than one song was added -->
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> गाणी प्लेलिस्टमध्ये जोडली. </item>
+    </plurals>
+    <!-- Toast after selecting an empty playlist -->
+    <string name="emptyplaylist">निवडलेली प्लेलिस्ट रिकामी आहे.</string>
+    <!-- Button name when saving a playlist -->
+    <string name="create_playlist_create_text">जतन करा</string>
+    <!-- Button name when saving a playlist and the new playlist will overwrite an existing one -->
+    <string name="create_playlist_overwrite_text">ओव्हरराईट करा</string>
+    <!-- Dialog box title -->
+    <string name="service_start_error_title">प्लेबॅक समस्या</string>
+    <!-- Dialog box message -->
+    <string name="service_start_error_msg">गाणे प्ले केले जाऊ शकले नाही.</string>
+    <!-- Dialog box button -->
+    <string name="service_start_error_button">ओके</string>
+    <!-- Time span edit options that appear when editing system playlist "Recently added" -->
+    <!-- Used to indicate the number of weeks the "recently added" playlist covers in a selector widget -->
+    <string-array name="weeklist">
+        <item>1 आठवडा  </item>
+        <item>2 आठवडे</item>
+        <item>3 आठवडे</item>
+        <item>4 आठवडे</item>
+        <item>5 आठवडे</item>
+        <item>6 आठवडे</item>
+        <item>7 आठवडे</item>
+        <item>8 आठवडे</item>
+        <item>9 आठवडे</item>
+        <item>10 आठवडे</item>
+        <item>11 आठवडे</item>
+        <item>12 आठवडे</item>
+    </string-array>
+    <!-- Button name in time span picker -->
+    <string name="weekpicker_set">झाले</string>
+    <!-- Title of time span picker -->
+    <string name="weekpicker_title">वेळ सेट करा</string>
+    <!-- Do not translate. Background color for currently dragged item in playlist edit mode. -->
+    <color name="dragndrop_background">#e0103010</color>
+    <!-- Do not translate. Background color for albums in the artists list view. -->
+    <color name="expanding_child_background">#ff404040</color>
+
+    <!-- menu item to save the current list as a new playlist -->
+    <string name="save_as_playlist">प्लेलिस्ट म्हणून जतन करा</string>
+    <!-- menu item to clear the current playlist -->
+    <string name="clear_playlist">प्लेलिस्ट साफ करा</string>
+
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicbrowserlabel">संगीत</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicshortcutlabel">संगीत प्लेलिस्ट</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediaplaybacklabel">संगीत</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="videobrowserlabel">व्हिडीओज</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediapickerlabel">संगीत</string>
+
+    <!-- Shown as a transient message whenever a file fails to play -->
+    <string name="playback_failed">प्लेअर अशा प्रकारच्या ऑडिओ फाइलचे समर्थन करत नाही.</string>
+    <!-- Shown as a transient message whenever a file fails to open -->
+    <string name="open_failed">क्षमस्व, फाइल उघडू शकत नाही.</string>
+
+    <!-- Text for the "cancel" button in the "delete" and "create playlist" confirmation dialogs -->
+    <string name="cancel">रद्द करा</string>
+
+    <!-- context menu item to remove the selected item from the playlist -->
+    <string name="remove_from_playlist">प्लेलिस्टमधून काढा</string>
+
+    <!-- shown when connecting to a music stream, before it starts playing -->
+    <string name="streamloadingtext"><xliff:g id="host">%s</xliff:g> ला कनेक्ट करीत आहे\u2026</string>
+
+    <!-- title of contextual music search menu -->
+    <string name="mediasearch">हे वापरून <xliff:g id="term" example="Beethoven">%s</xliff:g> शोधा:</string>
+
+    <!-- Shown in the title bar while the list of artists is being retrieved in the background -->
+    <string name="working_artists">कलाकार\u2026</string>
+    <!-- Shown in the title bar while the list of albums is being retrieved in the background -->
+    <string name="working_albums">अल्बम्स\u2026</string>
+    <!-- Shown in the title bar while the list of songs is being retrieved in the background -->
+    <string name="working_songs">गाणी\u2026</string>
+    <!-- Shown in the title bar while the list of folders is being retrieved in the background -->
+    <string name="working_folders">फोल्‍डर्स\u2026</string>
+    <!-- Shown in the title bar while the list of playlists is being retrieved in the background -->
+    <string name="working_playlists">प्लेलिस्ट्स\u2026</string>
+
+    <!-- Shown in the music picker while loading the music database. -->
+    <string name="loading">लोड करत आहे\u2026</string>
+    <!-- Menu in music picker to sort the list by track/song name. -->
+    <string name="sort_by_track">ट्रॅक्स</string>
+    <!-- Menu in music picker to sort the list by album name. -->
+    <string name="sort_by_album">अल्बम्स</string>
+    <!-- Menu in music picker to sort the list by artist name. -->
+    <string name="sort_by_artist">कलाकार</string>
+    <!--  Title of the music picker activity. -->
+    <string name="music_picker_title">संगित ट्रॅक निवडा</string>
+
+    <!-- The string used to describe Music as a searchable item within system search settings. -->
+    <string name="search_settings_description">कलाकार, अल्बम्स आणि ट्रॅक्स</string>
+
+    <!-- Shown in the search box as a hint -->
+    <string name="search_hint">संगीत शोधा</string>
+    <string name="search_hint_video">व्हिडियो शोधा</string>
+
+    <!--The fast scroll thumb will show one character from this string depending on the position in the list -->
+    <string name="fast_scroll_alphabet">\u0020ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+
+    <!-- Text shown on widget when first loaded -->
+    <string name="widget_initial_text">संगित निवडण्यासाठी स्पर्श करा.</string>
+
+    <!-- Menu text for the item controlling the audio effects panel [CHAR LIMIT=15] -->
+    <string name="effectspanel">आवाज प्रभाव</string>
+
+    <string name="duplicate_playlist_name_alert">आधीच एक प्लेलिस्ट आहे \"<xliff:g id="name">%s</xliff:g>\" नावाची. कृपया वेगळे नाव निवडा.</string>
+    <string name="same_playlist_name_alert">प्‍लेलिस्‍ट \"<xliff:g id="name">%s</xliff:g>\" नाव बदललेले नाही. कृपया वेगळे नाव निवडा.</string>
+    <string name="button_ok">ओके</string>
+    <string name="list_empty">प्‍लेलिस्‍टमध्‍ये कोणतेही संगीत नाही.</string>
+
+    <!-- Shown when video is played after disable Gallery app from Settings -->
+    <string name="enable_gallery_app">व्हिडिओ दाखवला जाऊ शकला नाही, कृपया सेटिंग्जमधून गॅलरी अॅप सक्षम करा.</string>
+    <string name="close_music">"समाप्‍त करा"</string>
+    <string name="delete_video_item_message">आपण \"<xliff:g id="name">%s</xliff:g>\"हटवू इच्छिता?</string>
+    <string name="video_deleted_message">व्हिडिओ फाइल हटवली.</string>
+
+    <!-- Menu item that takes the user link to net to see more music -->
+    <string name="more_music">अधिक संगीत</string>
+    <!-- Menu item that takes the user link to net to see more video -->
+    <string name="more_video">अधिक व्हिडिओ</string>
+    <!--gesture control playback status-->
+    <string name="music_gesture_play">"ऑडिओ प्ले करा/विराम द्या"</string>
+    <string name="music_gesture_prev">"मागील ट्रॅक प्ले करा"</string>
+    <string name="music_gesture_next">"पुढील ट्रॅक प्ले करा"</string>
+
+    <!-- DRM Related Strings -->
+    <string name="no_permission_for_drm">"क्षमस्व, Drm फाइल सामायिक करणे शक्य नाही"</string>
+    <string name="drm_license_info">Drm परवाना माहिती</string>
+    <string name="drm_ringtone_error">CD/SD फाइल्स रिंगटोन म्हणून सेट करू शकत नाही</string>
+
+</resources>

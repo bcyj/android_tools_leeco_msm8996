@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+-/**************************************************************************
+* @file       set_cdma_sub_src.xml
+* @brief      layout for Set CDMA Subscription Source activity
+*
+*  Copyright (C) 2013 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  **************************************************************************
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="10dp" >
+            <RadioButton
+                android:id="@+id/cdma_sub_src_ruim_sim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/cdma_sub_src_ruim_sim" />
+            <RadioButton
+                android:id="@+id/cdma_sub_src_nv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/cdma_sub_src_nv" />
+            <RadioButton
+                android:id="@+id/cdma_sub_src_ruim_if_avail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/cdma_sub_src_ruim_if_avail" />
+        </RadioGroup>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_spc" >
+        </TextView>
+        <EditText
+            android:layout_height="wrap_content"
+            android:id="@+id/spcode"
+            android:numeric="decimal"
+            android:maxLength="6"
+            android:layout_width="fill_parent">
+        </EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/cdma_sub_src_ok_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/cdma_sub_src_button_ok" >
+        </Button>
+        <Button
+            android:id="@+id/cdma_sub_src_cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cdma_sub_src_button_cancel" >
+        </Button>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,1456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!--
+/*
+**
+** Copyright 2007 The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Choices for timezone picker first level.
+         These values will be used as search terms for TimeZone displayName
+         strings. --> <skip/>
+    <!-- The time zone picker screen has two levels.  The first level allows the user to choose a region. -->
+    <string-array name="timezone_filters">
+    <!-- The next level of the time zoner picker should show time zones from the Americas. -->
+        <item>"Marekani"</item>
+    <!-- The next level of the time zoner picker should show time zones from Europe. -->
+        <item>"Ulaya"</item>
+    <!-- The next level of the time zoner picker should show time zones from Africa. -->
+        <item>"Afrika"</item>
+    <!-- The next level of the time zoner picker should show time zones from Asia. -->
+        <item>"Asia"</item>
+    <!-- The next level of the time zoner picker should show time zones from Australia. -->
+        <item>"Australia"</item>
+    <!-- The next level of the time zoner picker should show time zones from Pacific. -->
+        <item>"Pasifiki"</item>
+    <!-- The next level of the time zoner picker should show time zones from ALL regions. -->
+        <item>"Zote"</item>
+    </string-array>
+
+     <!-- There is a setting to control the format of dates displayed throughout the system.  This is in the Date & Time Settings screen.  These will be adjusted to use punctuation appropriate to the user\'s locale. -->
+    <string-array name="date_format_values" translatable="false">
+        <!-- The blank item means to use whatever the locale calls for. -->
+        <item/>
+        <item>MM-dd-yyyy</item>
+        <item>dd-MM-yyyy</item>
+        <item>yyyy-MM-dd</item>
+    </string-array>
+
+    <!-- Display settings.  The delay in inactivity before the screen is turned off. These are shown in a list dialog. -->
+    <string-array name="screen_timeout_entries">
+        <item>"Sekunde 15"</item>
+        <item>"Sekunde 30"</item>
+        <item>"Dakika 1"</item>
+        <item>"Dakika 2"</item>
+        <item>"Dakika 5"</item>
+        <item>"Dakika 10"</item>
+        <item>"Dakika 30"</item>
+        <item>Kamwe</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="screen_timeout_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>15000</item>
+        <!-- Do not translate. -->
+        <item>30000</item>
+        <!-- Do not translate. -->
+        <item>60000</item>
+        <!-- Do not translate. -->
+        <item>120000</item>
+        <!-- Do not translate. -->
+        <item>300000</item>
+        <!-- Do not translate. -->
+        <item>600000</item>
+        <!-- Do not translate. -->
+        <item>1800000</item>
+        <!-- Do not translate. -->
+        <item>-1</item>
+    </string-array>
+
+    <!-- Display settings.  The delay in inactivity before the dream is shown. These are shown in a list dialog. -->
+    <string-array name="dream_timeout_entries">
+        <item>"Katu"</item>
+        <item>"Sekunde 15"</item>
+        <item>"Sekunde 30"</item>
+        <item>"Dakika 1"</item>
+        <item>"Dakika 2"</item>
+        <item>"Dakika 5"</item>
+        <item>"Dakika 10"</item>
+        <item>"Dakika 30"</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="dream_timeout_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>15000</item>
+        <!-- Do not translate. -->
+        <item>30000</item>
+        <!-- Do not translate. -->
+        <item>60000</item>
+        <!-- Do not translate. -->
+        <item>120000</item>
+        <!-- Do not translate. -->
+        <item>300000</item>
+        <!-- Do not translate. -->
+        <item>600000</item>
+        <!-- Do not translate. -->
+        <item>1800000</item>
+    </string-array>
+
+    <!-- Security settings.  The delay after screen is turned off until device locks.
+         These are shown in a list dialog. -->
+    <string-array name="lock_after_timeout_entries">
+        <item>"Mara moja"</item>
+        <item>"Sekunde 5"</item>
+        <item>"Sekunde 15"</item>
+        <item>"Sekunde 30"</item>
+        <item>"Dakika 1"</item>
+        <item>"Dakika 2"</item>
+        <item>"Dakika 5"</item>
+        <item>"Dakika 10"</item>
+        <item>"Dakika 30"</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="lock_after_timeout_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>5000</item>
+        <!-- Do not translate. -->
+        <item>15000</item>
+        <!-- Do not translate. -->
+        <item>30000</item>
+        <!-- Do not translate. -->
+        <item>60000</item>
+        <!-- Do not translate. -->
+        <item>120000</item>
+        <!-- Do not translate. -->
+        <item>300000</item>
+        <!-- Do not translate. -->
+        <item>600000</item>
+        <!-- Do not translate. -->
+        <item>1800000</item>
+    </string-array>
+
+    <string-array name="entries_font_size">
+        <item msgid="6490061470416867723">"Ndogo"</item>
+        <item msgid="3579015730662088893">"Kawaida"</item>
+        <item msgid="1678068858001018666">"Kubwa"</item>
+        <item msgid="490158884605093126">"Kubwa sana"</item>
+    </string-array>
+
+    <string-array name="entryvalues_font_size" translatable="false">
+        <item>0.85</item>
+        <item>1.0</item>
+        <item>1.15</item>
+        <item>1.30</item>
+    </string-array>
+
+    <!-- TTS settings -->
+
+    <!-- Default speech rate choices -->
+    <string-array name="tts_rate_entries">
+        <item>"Polepole sana"</item>
+        <item>"Polepole"</item>
+        <item>"Kawaida"</item>
+        <item>"Haraka"</item>
+        <item>"Kwa kasi"</item>
+        <item>"Kasi sana"</item>
+        <item>"Haraka"</item>
+        <item>"Haraka sana"</item>
+        <item>"Haraka mno"</item>
+    </string-array>
+    <!-- Do not translate. -->
+    <string-array name="tts_rate_values">
+        <item>60</item>
+        <item>80</item>
+        <item>100</item>
+        <item>150</item>
+        <item>200</item>
+        <item>250</item>
+        <item>300</item>
+        <item>350</item>
+        <item>400</item>
+    </string-array>
+
+    <!-- Default pitch choices -->
+    <string-array name="tts_pitch_entries">
+        <item>"Chini sana"</item>
+        <item>"Chini"</item>
+        <item>"Kawaida"</item>
+        <item>"Juu"</item>
+        <item>"Juu sana"</item>
+    </string-array>
+    <!-- Do not translate. -->
+    <string-array name="tts_pitch_values">
+        <item>50</item>
+        <item>80</item>
+        <item>100</item>
+        <item>120</item>
+        <item>150</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="tts_demo_strings" translatable="false">
+        <item>This is an example of speech synthesis in English.</item>
+        <item>Voici un échantillon de synthèse vocale en français.</item>
+        <item>Dies ist ein Beispiel für Sprachsynthese in Deutsch.</item>
+        <item>Questo è un esempio di sintesi vocale in italiano.</item>
+        <item>Este es un ejemplo de síntesis de voz en español.</item>
+        <item>이것은 한국어 음성 합성의 예입니다.</item>
+    </string-array>
+    <string-array name="tts_demo_string_langs" translatable="false">
+        <item>eng</item>
+        <item>fra</item>
+        <item>deu</item>
+        <item>ita</item>
+        <item>spa</item>
+        <item>kor</item>
+    </string-array>
+
+    <!-- AGPS settings -->
+
+    <!-- agps network -->
+    <string-array name="agps_network_values">
+     <item>0</item>
+     <item>1</item>
+    </string-array>
+    <string-array name="agps_network_entries">
+     <item>"Mtandao wa nyumbani"</item>
+     <item>"Mitandoa yote"</item>
+   </string-array>
+   <!-- agps si mode type -->
+    <string-array name="agps_si_mode_values" translatable="false">
+     <item>0</item>
+     <item>1</item>
+    </string-array>
+    <string-array name="agps_si_mode_entries">
+     <item>"MSB"</item>
+     <item>"MSA"</item>
+    </string-array>
+    <!-- agps apn type -->
+    <string-array name="agps_apn_values">
+     <item>0</item>
+     <item>1</item>
+    </string-array>
+    <string-array name="agps_apn_entries">
+     <item>"CMWAP"</item>
+     <item>"CMNET"</item>
+    </string-array>
+    <!-- agps reset type -->
+    <string-array name="agps_reset_type_values">
+     <item>0</item>
+     <item>1</item>
+     <item>2</item>
+    </string-array>
+    <string-array name="agps_reset_type_entries">
+     <item>"HOT"</item>
+     <item>"WARM"</item>
+     <item>"COLD"</item>
+    </string-array>
+
+    <!-- Wi-Fi settings -->
+
+    <!-- Match this with the order of NetworkInfo.DetailedState. --> <skip/>
+    <!-- Wi-Fi settings. The status messages when the network is unknown. -->
+    <string-array name="wifi_status">
+        <!-- Status message of Wi-Fi when it is idle. -->
+        <item/>
+        <!-- Status message of Wi-Fi when it is scanning. -->
+        <item>"Inasafisha..."</item>
+        <!-- Status message of Wi-Fi when it is connecting. -->
+        <item>"Inaunganisha…"</item>
+        <!-- Status message of Wi-Fi when it is authenticating. -->
+        <item>"Inathibitisha..."</item>
+        <!-- Status message of Wi-Fi when it is obtaining IP address. -->
+        <item>"Inapata anwani ya Ip..."</item>
+        <!-- Status message of Wi-Fi when it is connected. -->
+        <item>"Umeunganishwa"</item>
+        <!-- Status message of Wi-Fi when it is suspended. -->
+        <item>"Imesimamishwa"</item>
+        <!-- Status message of Wi-Fi when it is disconnecting. -->
+        <item>"Inakatisha muunganisho..."</item>
+        <!-- Status message of Wi-Fi when it is disconnected. -->
+        <item>"Muunganisho Umekatika"</item>
+        <!-- Status message of Wi-Fi when it is a failure. -->
+        <item>"Haijafanikiwa"</item>
+        <!-- Status message of Wi-Fi when it is blocked. -->
+        <item>"Imezuiwa"</item>
+        <!-- Status message of Wi-Fi when connectiong is being verified. -->
+        <item>"Inaepuka kwa muda muunganisho mbovu"</item>
+    </string-array>
+
+    <!-- Match this with the order of NetworkInfo.DetailedState. --> <skip/>
+    <!-- Wi-Fi settings. The status messages when the network is known. -->
+    <string-array name="wifi_status_with_ssid">
+        <!-- Status message of Wi-Fi when it is idle. -->
+        <item/>
+        <!-- Status message of Wi-Fi when it is scanning. -->
+        <item>"Inasafisha..."</item>
+        <!-- Status message of Wi-Fi when it is connecting to a network. -->
+        <item>"Inaunganisha kwa <xliff:g id="NETWORK_NAME">%1$s</xliff:g>…"</item>
+        <!-- Status message of Wi-Fi when it is authenticating with a network. -->
+        <item>"Uhalalishaji kwa <xliff:g id="NETWORK_NAME">%1$s</xliff:g>…"</item>
+        <!-- Status message of Wi-Fi when it is obtaining IP address from a network. -->
+        <item>"Inamiliki anwani ya IP kutoka <xliff:g id="NETWORK_NAME">%1$s</xliff:g>…"</item>
+        <!-- Status message of Wi-Fi when it is connected to a network. -->
+        <item>" Umeunganishwa kwa<xliff:g id="NETWORK_NAME">%1$s</xliff:g>"</item>
+        <!-- Status message of Wi-Fi when it is suspended. -->
+        <item>"Imesimamishwa"</item>
+        <!-- Status message of Wi-Fi when it is disconnecting from a network. -->
+        <item>"inakatisha muunganisho kutoka <xliff:g id="NETWORK_NAME">%1$s</xliff:g>…"</item>
+        <!-- Status message of Wi-Fi when it is disconnected. -->
+        <item>"Muunganisho Umekatika"</item>
+        <!-- Status message of Wi-Fi when it is a failure. -->
+        <item>"Haijafanikiwa"</item>
+        <!-- Status message of Wi-Fi when it is blocked. -->
+        <item>"Imezuiwa"</item>
+        <!-- Status message of Wi-Fi when connectiong is being verified. -->
+        <item>"Inaepuka kwa muda muunganisho mbovu"</item>
+    </string-array>
+
+    <!-- Match this with the constants in AccessPoint. --> <skip/>
+    <!-- Wi-Fi security choices used when manually added a Wi-Fi network -->
+    <string-array name="wifi_security">
+        <!-- The Wi-Fi network does not have any security. -->
+        <item>@string/wifi_security_none</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_wep</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_psk_generic</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_eap</item>
+
+    </string-array>
+
+    <!-- Match this with the constants in AccessPoint. --> <skip/>
+    <!-- Wi-Fi security types for New User Dialog. EAP is not configurable. -->
+    <string-array name="wifi_security_no_eap">
+        <!-- The Wi-Fi network does not have any security. -->
+        <item>@string/wifi_security_none</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_wep</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_psk_generic</item>
+    </string-array>
+
+   <!-- Wi-Fi AP settings.  The type of security a Wi-Fi AP supports. -->
+   <!-- Note that adding/removing/moving the items will need wifi settings code change. -->
+    <string-array name="wifi_ap_security">
+        <item>@string/wifi_security_none</item>
+        <item>@string/wifi_security_wpa2</item>
+    </string-array>
+
+    <!-- Match this with the constants in WifiDialog. --> <skip/>
+    <!-- Wi-Fi settings.  The type of EAP method a Wi-Fi network has. -->
+    <string-array name="wifi_eap_method">
+        <!-- Do not translate. -->
+        <item>"PEAP"</item>
+        <!-- Do not translate. -->
+        <item>"TLS"</item>
+        <!-- Do not translate. -->
+        <item>"TTLS"</item>
+        <!-- Do not translate. -->
+        <item>"PWD"</item>
+    </string-array>
+
+   <!-- Wi-Fi WPS setup for p2p connections.  -->
+   <!-- Note that adding/removing/moving the items will need wifi settings code change. -->
+    <string-array name="wifi_p2p_wps_setup">
+        <!-- Push button based configuration involves pushing a button on two connecting devices [CHAR LIMIT=30]-->
+        <item>"Kichupo cha kusukuma"</item>
+        <!-- This involves entering a pin obtained from a peer device [CHAR LIMIT=30] -->
+        <item>"PIN kutoka kwa kifaa cha rika"</item>
+        <!-- This involves generating a pin from this device [CHAR LIMIT=20] -->
+        <item>"PIN kutoka kwa kifaa hiki"</item>
+    </string-array>
+
+    <!-- Match this with the order of WifiP2pDevice.Status -->
+    <!-- Wi-Fi p2p settings device status message -->
+    <string-array name="wifi_p2p_status">
+        <item>"Umeunganishwa"</item>
+        <item>"Umealikwa"</item>
+        <item>"Haijafanikiwa"</item>
+        <item>"Inapatikana"</item>
+        <item>"Nje-ya-eneo"</item>
+   </string-array>
+
+
+    <!-- Bluetooth Settings -->
+
+    <!-- Discoverable mode timeout options -->
+    <string-array name="bluetooth_visibility_timeout_entries">
+        <item>"Dakika 2"</item>
+        <item>"Dakika 5"</item>
+        <item>"Saa 1"</item>
+        <item>"Kamwe muda usiishe"</item>
+    </string-array>
+
+    <!-- Match this with drawable.wifi_signal. --> <skip/>
+    <!-- Wi-Fi settings. The signal strength a Wi-Fi network has. -->
+    <string-array name="wifi_signal">
+        <item>"Mbaya"</item>
+        <item>"Wastani"</item>
+        <item>"Nzuri"</item>
+        <item>"Bora zaidi"</item>
+    </string-array>
+
+    <!-- Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi sleep policy. -->
+    <string-array name="wifi_sleep_policy_entries">
+        <!-- Always keep Wi-Fi on when screen turns off. -->
+        <item>"Daima"</item>
+        <!-- Keep Wi-Fi on when screen turns off and plugged in.  When on battery, go to sleep when screen turns off. -->
+        <item>"Wakati inachaji pekee"</item>
+        <!-- Do not keep Wi-Fi on when screen turns off.  [CHAR LIMIT=40] -->
+        <item>"Katu"</item>
+    </string-array>
+
+    <!-- Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi sleep policy. Used when
+         the device is Wi-Fi-only. [CHAR LIMIT=30] -->
+    <string-array name="wifi_sleep_policy_entries_wifi_only">
+        <!-- Always keep Wi-Fi on when screen turns off. -->
+        <item>"Daima"</item>
+        <!-- Keep Wi-Fi on when screen turns off and plugged in.  When on battery, go to sleep when screen turns off. -->
+        <item>"Wakati inachaji pekee"</item>
+        <!-- Do not keep Wi-Fi on when screen turns off, for Wi-Fi-only devices, no other data connection -->
+        <item>"kamwe"</item>
+    </string-array>
+
+    <!-- Match with wifi_sleep_policy_entries and the values of the settings in Settings class. --> <skip/>
+    <!-- Do not translate. -->
+    <string-array name="wifi_sleep_policy_values">
+        <!-- Do not translate. -->
+        <item>2</item>
+        <!-- Do not translate. -->
+        <item>1</item>
+        <!-- Do not translate. -->
+        <item>0</item>
+    </string-array>
+
+    <!-- Data Usage settings. Range of data usage. -->
+    <string-array name="data_usage_data_range">
+        <!-- Last 30 days [CHAR LIMIT=25]-->
+        <item>"Siku 30 zilizopita"</item>
+        <!-- Set usage cycle [CHAR LIMIT=25]-->
+        <item>"Weka mzunguko wa matumizi..."</item>
+    </string-array>
+
+    <!-- Sim Cards display numbers. Range of data usage. -->
+    <string-array name="sim_card_data_range">
+        <!-- Last 4 digits [CHAR LIMIT=40]-->
+        <item>"Tarakimu 4 za mwisho"</item>
+        <!-- First 4 digits [CHAR LIMIT=40]-->
+        <item>"Tarakimu 4 za kwanza"</item>
+    </string-array>
+
+    <!-- Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi frequency band. -->
+    <string-array name="wifi_frequency_band_entries">
+        <!-- Operation on both 2.4 GHz and 5 GHz [CHAR LIMIT=25]-->
+        <item>"Otomatiki"</item>
+        <!-- Operation on 5 GHz alone [CHAR LIMIT=25]-->
+        <item>"GHz 5 tu"</item>
+        <!-- Operation on 2.4 GHz alone [CHAR LIMIT=25]-->
+        <item>"GHz 2.4 tu"</item>
+    </string-array>
+
+    <!-- Match with wifi_frequency_band_entries and the values of the settings in WifiManager. -->
+    <!-- Do not translate. -->
+    <string-array name="wifi_frequency_band_values">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>1</item>
+        <!-- Do not translate. -->
+        <item>2</item>
+    </string-array>
+
+
+    <!-- Display options for UsageStats class -->
+    <string-array name="usage_stats_display_order_types">
+        <item>"Muda wa utumiaji"</item>
+        <item>"Mara ya mwisho ilipotumika"</item>
+        <item>"Jina la Programu"</item>
+    </string-array>
+
+    <!-- EAP method -->
+    <string-array name="wifi_eap_entries">
+        <item>"PEAP"</item>
+        <item>"TLS"</item>
+        <item>"TTLS"</item>
+        <item>"PWD"</item>
+    </string-array>
+
+    <!-- Phase 2 options for PEAP -->
+    <string-array name="wifi_peap_phase2_entries">
+        <item>Hamna</item>
+        <item>"MSCHAPV2"</item>
+        <item>"GTC"</item>
+    </string-array>
+
+    <!-- Phase 2 options for rest of EAP methods -->
+    <string-array name="wifi_phase2_entries">
+        <item>"Hamna"</item>
+        <item>"PAP"</item>
+        <item>"MSCHAP"</item>
+        <item>"MSCHAPV2"</item>
+        <item>"GTC"</item>
+    </string-array>
+
+    <!-- Wi-Fi IP settings. -->
+   <!-- Note that adding/removing/moving the items will need wifi settings code change. -->
+    <string-array name="wifi_ip_settings">
+        <!-- Use DHCP (Dynamic Host Configuration Protocol) for obtaining IP settings [CHAR LIMIT=25] -->
+        <item>"DHCP"</item>
+        <!-- Use statically defined IP settings [CHAR LIMIT=25]-->
+        <item>"Haibadiliki"</item>
+    </string-array>
+
+    <!-- Wi-Fi proxy settings. -->
+    <!-- Note that adding/removing/moving the items will need wifi settings code change. -->
+    <string-array name="wifi_proxy_settings">
+        <!-- No HTTP proxy is used for the current wifi network [CHAR LIMIT=25] -->
+        <item>"Hamna"</item>
+        <!-- Manual HTTP proxy settings are used for the current wifi network [CHAR LIMIT=25] -->
+        <item>"Mwongozo"</item>
+        <!-- Proxy Auto-Config URL that is used for the current wifi network [CHAR LIMIT=25] -->
+        <item>"Usanidi Kiotomatiki wa Seva Mbadala"</item>
+    </string-array>
+
+    <!-- Authentication Types used in APN editor -->
+    <string-array name="apn_auth_entries">
+        <item>"Hamna"</item>
+        <item>"PAP"</item>
+        <item>"CHAP"</item>
+        <item>"PAP au CHAP"</item>
+    </string-array>
+
+    <string-array translatable="false" name="apn_auth_values">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>1</item>
+        <!-- Do not translate. -->
+        <item>2</item>
+        <!-- Do not translate. -->
+        <item>3</item>
+    </string-array>
+
+    <!-- Authentication Types used in APN editor -->
+    <string-array name="apn_protocol_entries">
+        <item>"IPv4"</item>
+        <item>"IPv6"</item>
+        <item>"IPv4/IPv6"</item>
+    </string-array>
+
+    <string-array translatable="false" name="apn_protocol_values">
+        <!-- Do not translate. -->
+        <item>IP</item>
+        <!-- Do not translate. -->
+        <item>IPV6</item>
+        <!-- Do not translate. -->
+        <item>IPV4V6</item>
+    </string-array>
+
+    <!-- Bearer Info used in APN editor -->
+    <string-array name="bearer_entries">
+        <item>"LTE"</item>
+        <item>"eHRPD"</item>
+        <item>"(haijabainishwa)"</item>
+    </string-array>
+
+    <string-array translatable="false" name="bearer_values">
+        <!-- Do not translate. -->
+        <item>14</item>
+        <!-- Do not translate. -->
+        <item>13</item>
+        <!-- Do not translate. -->
+        <item>0</item>
+    </string-array>
+
+    <!-- MVNO Info used in APN editor -->
+    <string-array name="mvno_type_entries">
+        <!-- Do not translate. -->
+        <item>"None"</item>
+        <!-- Do not translate. -->
+        <item>"SPN"</item>
+        <!-- Do not translate. -->
+        <item>"IMSI"</item>
+        <!-- Do not translate. -->
+        <item>"GID"</item>
+    </string-array>
+
+    <string-array translatable="false" name="mvno_type_values">
+        <!-- Do not translate. -->
+        <item/>
+        <!-- Do not translate. -->
+        <item>spn</item>
+        <!-- Do not translate. -->
+        <item>imsi</item>
+        <!-- Do not translate. -->
+        <item>gid</item>
+    </string-array>
+
+    <!-- Apps on SD installation location options in ApplicationSettings -->
+    <string-array name="app_install_location_entries">
+        <item>"Kifaa cha hifadhi ya ndani"</item>
+        <item>"Kadi ya SD inayoondolewa"</item>
+        <item>"Wacha mfumo uamue"</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="app_install_location_values" translatable="false">
+        <item>device</item>
+        <item>sdcard</item>
+        <item>auto</item>
+    </string-array>
+
+    <!-- App ops permissions -->
+    <string-array name="app_ops_permissions">
+        <item>Imeruhusiwa</item>
+        <item>Imepuuzwa</item>
+        <item>Uliza wakati wote</item>
+    </string-array>
+
+    <!-- Names of categories of app ops tabs -->
+    <string-array name="app_ops_categories">
+        <item>"Eneo"</item>
+        <item>"Binafsi"</item>
+        <item>"Utumaji ujumbe"</item>
+        <item>"Vyombo vya Habari"</item>
+        <item>"Kifaa"</item>
+        <item>Washa</item>
+    </string-array>
+
+    <!-- User display names for app ops codes -->
+    <string-array name="app_ops_summaries">
+        <item>"eneo lisilo laini"</item>
+        <item>"Eneo bora"</item>
+        <item>"GPS"</item>
+        <item>"tetema"</item>
+        <item>"soma anwani"</item>
+        <item>"rekebisha anwani"</item>
+        <item>"soma rajisi ya simu"</item>
+        <item>"rekebisha rajisi ya simu"</item>
+        <item>"soma kalenda"</item>
+        <item>"rekebisha kalenda"</item>
+        <item>"uchanganuzi wa wi-fi"</item>
+        <item>"arifa"</item>
+        <item>"uchanganuzi wa seli"</item>
+        <item>"piga simu"</item>
+        <item>"soma SMS"</item>
+        <item>"andika SMS"</item>
+        <item>"pokea SMS"</item>
+        <item>"pokea SMS za dharura"</item>
+        <item>"pokea MMS"</item>
+        <item>"pokea msukumo wa WAP"</item>
+        <item>"tuma SMS"</item>
+        <item>"soma SMS za ICC"</item>
+        <item>"andika SMS za ICC"</item>
+        <item>"rekebisha mipangilio"</item>
+        <item>"chora juu"</item>
+        <item>"fikia arifa"</item>
+        <item>"kamera"</item>
+        <item>"rekodi sauti"</item>
+        <item>"cheza sauti"</item>
+        <item>"soma ubao klipu"</item>
+        <item>"badilisha ubao klipu"</item>
+        <item>"vitufe vya vyombo vya habari"</item>
+        <item>"mkazo wa sauti"</item>
+        <item>"sauti kuu"</item>
+        <item>"kiwango cha sauti"</item>
+        <item>"sauti ya mlio"</item>
+        <item>"sauti ya midia"</item>
+        <item>"sauti ya king\'ora"</item>
+        <item>"sauti ya arifa"</item>
+        <item>"sauti ya bluetooth"</item>
+        <item>"kaa chonjo"</item>
+        <item>"fuatilia eneo"</item>
+        <item>"fuatilia eneo kuu"</item>
+        <item>"pata takwimu za matumizi"</item>
+        <item>"zima au uwashe sauti ya maikrofoni"</item>
+        <item>"maudhui ya mradi"</item>
+        <item>"anzisha VPN"</item>
+        <item>"anzisha VPN"</item>
+        <item>badiliko la wlan</item>
+        <item>badiliko la bluetooth</item>
+        <item>tuma MMS</item>
+        <item>soma MMS</item>
+        <item>andika MMS</item>
+        <item>washa oto</item>
+        <item>badiliko la nfc</item>
+        <item>futa SMS</item>
+        <item>futa MMS</item>
+        <item>futa waasiliani</item>
+        <item>futa logi ya simu</item>
+        <item>badiliko la data</item>
+    </string-array>
+
+    <!-- User display names for app ops codes -->
+    <string-array name="app_ops_labels">
+        <item>"Eneo"</item>
+        <item>"Eneo"</item>
+        <item>"Eneo"</item>
+        <item>"Tetema"</item>
+        <item>"Soma anwani"</item>
+        <item>"Rekebisha anwani"</item>
+        <item>"soma rajisi ya simu"</item>
+        <item>"Rekebisha rajisi ya simu"</item>
+        <item>"Soma kalenda"</item>
+        <item>"Rekebisha kalenda"</item>
+        <item>"Eneo"</item>
+        <item>"Chapisha arifa"</item>
+        <item>"Eneo"</item>
+        <item>"Piga simu"</item>
+        <item>"Soma SMS/MMS"</item>
+        <item>"Andika SMS/MMS"</item>
+        <item>"Pokea SMS/MMS"</item>
+        <item>"Pokea SMS/MMS"</item>
+        <item>"Pokea SMS/MMS"</item>
+        <item>"Pokea SMS/MMS"</item>
+        <item>"Tuma SMS/MMS"</item>
+        <item>"Soma SMS/MMS"</item>
+        <item>"Andika SMS/MMS"</item>
+        <item>"Rekebisha mipangilio"</item>
+        <item>"Chora juu"</item>
+        <item>"Fikia arifa"</item>
+        <item>"Kamera"</item>
+        <item>"Rekodi sauti"</item>
+        <item>"Cheza sauti"</item>
+        <item>"Soma ubao klipu"</item>
+        <item>"Rekebisha ubao klipu"</item>
+        <item>"Vitufe vya media"</item>
+        <item>"Kotovu cha sauti"</item>
+        <item>"Sauti kuu"</item>
+        <item>"Kiwango cha sauti"</item>
+        <item>"Sauti ya mlio"</item>
+        <item>"Sauti ya media"</item>
+        <item>"Sauti ya king\'ora"</item>
+        <item>"Sauti ya arifa"</item>
+        <item>"Sauti ya Bluetooth"</item>
+        <item>"Kaa chonjo"</item>
+        <item>"Eneo"</item>
+        <item>"Eneo"</item>
+        <item>"Pata takwimu za matumizi"</item>
+        <item>"Zima ama uwashe sauti ya maikrofoni"</item>
+        <item>"Maudhui ya mradi"</item>
+        <item>"Anzisha VPN"</item>
+        <item>"Anzisha VPN"</item>
+        <item>Badiliko la WLAN</item>
+        <item>Badiliko la Bluetooth</item>
+        <item>"Tuma MMS"</item>
+        <item>Soma MMS</item>
+        <item>Andika MMS</item>
+        <item>Washa oto</item>
+        <item>Badiliko la nfc</item>
+        <item>Futa SMS</item>
+        <item>Futa MMS</item>
+        <item>Futa waasiliani</item>
+        <item>Futa logi ya simu</item>
+        <item>Badiliko la data</item>
+    </string-array>
+
+    <!-- Titles for the list of long press timeout options. -->
+    <string-array name="long_press_timeout_selector_titles">
+        <!-- A title for the option for short long-press timeout [CHAR LIMIT=25] -->
+        <item>"Fupi"</item>
+        <!-- A title for the option for medium long-press timeout [CHAR LIMIT=25] -->
+        <item>"Wastani"</item>
+        <!-- A title for the option for long long-press timeout [CHAR LIMIT=25] -->
+        <item>"Ndefu"</item>
+    </string-array>
+
+    <!-- Values for the list of long press timeout options. -->
+    <string-array name="long_press_timeout_selector_values" translatable="false">
+        <item>500</item>
+        <item>1000</item>
+        <item>1500</item>
+    </string-array>
+
+    <!-- Titles for captioning typeface preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_typeface_selector_titles">
+        <item>"Chaguo-msingi"</item>
+        <item>"Sans-serif"</item>
+        <item>"Sans-serif iliyofupishwa"</item>
+        <item>"Sans-serif monospace"</item>
+        <item>"Serif"</item>
+        <item>"Serif monospace"</item>
+        <item>"Ya kawaida"</item>
+        <item>"Mwandiko ulioviringwa na kuunganishwa"</item>
+        <item>"Herufi kubwa zenye umbo ndogo"</item>
+    </string-array>
+
+    <!-- Values for captioning typeface preference. -->
+    <string-array name="captioning_typeface_selector_values" translatable="false">
+        <item/>
+        <item>sans-serif</item>
+        <item>sans-serif-condensed</item>
+        <item>sans-serif-monospace</item>
+        <item>serif</item>
+        <item>serif-monospace</item>
+        <item>casual</item>
+        <item>cursive</item>
+        <item>sans-serif-smallcaps</item>
+    </string-array>
+
+    <!-- Titles for captioning font size preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_font_size_selector_titles">
+        <item>"Madogo sana"</item>
+        <item>"Madogo"</item>
+        <item>"Ya Kawaida"</item>
+        <item>"Makubwa"</item>
+        <item>"Makubwa sana"</item>
+    </string-array>
+
+    <!-- Values for captioning font size preference. -->
+    <string-array name="captioning_font_size_selector_values" translatable="false">
+        <item>0.25</item>
+        <item>0.5</item>
+        <item>1.0</item>
+        <item>1.5</item>
+        <item>2.0</item>
+    </string-array>
+
+    <!-- Titles for captioning character edge type preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_edge_type_selector_titles">
+        <item>"Chaguo-msingi"</item>
+        <item>"Hamna"</item>
+        <item>"Mistari"</item>
+        <item>"Angusha kivuli"</item>
+        <item>"Imeinuliwa"</item>
+        <item>"Imepunguzwa"</item>
+    </string-array>
+
+    <!-- Values for captioning character edge type preference. -->
+    <integer-array name="captioning_edge_type_selector_values" translatable="false">
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </integer-array>
+
+    <!-- Titles for captioning color preference. -->
+    <string-array name="captioning_color_selector_titles" translatable="false">
+        <item>@string/color_unspecified</item>
+        <item>@string/color_white</item>
+        <item>@string/color_black</item>
+        <item>@string/color_red</item>
+        <item>@string/color_yellow</item>
+        <item>@string/color_green</item>
+        <item>@string/color_cyan</item>
+        <item>@string/color_blue</item>
+        <item>@string/color_magenta</item>
+    </string-array>
+
+    <!-- Values for captioning color preference. -->
+    <integer-array name="captioning_color_selector_values" translatable="false">
+        <item>0x00000100</item>
+        <item>0xFFFFFFFF</item>
+        <item>0xFF000000</item>
+        <item>0xFFFF0000</item>
+        <item>0xFFFFFF00</item>
+        <item>0xFF00FF00</item>
+        <item>0xFF00FFFF</item>
+        <item>0xFF0000FF</item>
+        <item>0xFFFF00FF</item>
+        <item>0xFF000055</item>
+        <item>0xFF0000AA</item>
+        <item>0xFF005500</item>
+        <item>0xFF005555</item>
+        <item>0xFF0055AA</item>
+        <item>0xFF0055FF</item>
+        <item>0xFF00AA00</item>
+        <item>0xFF00AA55</item>
+        <item>0xFF00AAAA</item>
+        <item>0xFF00AAFF</item>
+        <item>0xFF00FF55</item>
+        <item>0xFF00FFAA</item>
+        <item>0xFF550000</item>
+        <item>0xFF550055</item>
+        <item>0xFF5500AA</item>
+        <item>0xFF5500FF</item>
+        <item>0xFF555500</item>
+        <item>0xFF555555</item>
+        <item>0xFF5555AA</item>
+        <item>0xFF5555FF</item>
+        <item>0xFF55AA00</item>
+        <item>0xFF55AA55</item>
+        <item>0xFF55AAAA</item>
+        <item>0xFF55AAFF</item>
+        <item>0xFF55FF00</item>
+        <item>0xFF55FF55</item>
+        <item>0xFF55FFAA</item>
+        <item>0xFF55FFFF</item>
+        <item>0xFFAA0000</item>
+        <item>0xFFAA0055</item>
+        <item>0xFFAA00AA</item>
+        <item>0xFFAA00FF</item>
+        <item>0xFFAA5500</item>
+        <item>0xFFAA5555</item>
+        <item>0xFFAA55AA</item>
+        <item>0xFFAA55FF</item>
+        <item>0xFFAAAA00</item>
+        <item>0xFFAAAA55</item>
+        <item>0xFFAAAAAA</item>
+        <item>0xFFAAAAFF</item>
+        <item>0xFFAAFF00</item>
+        <item>0xFFAAFF55</item>
+        <item>0xFFAAFFAA</item>
+        <item>0xFFAAFFFF</item>
+        <item>0xFFFF0055</item>
+        <item>0xFFFF00AA</item>
+        <item>0xFFFF5500</item>
+        <item>0xFFFF5555</item>
+        <item>0xFFFF55AA</item>
+        <item>0xFFFF55FF</item>
+        <item>0xFFFFAA00</item>
+        <item>0xFFFFAA55</item>
+        <item>0xFFFFAAAA</item>
+        <item>0xFFFFAAFF</item>
+        <item>0xFFFFFF55</item>
+        <item>0xFFFFFFAA</item>
+    </integer-array>
+
+    <!-- Titles for captioning opacity preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_opacity_selector_titles">
+        <item>"25%"</item>
+        <item>"50%"</item>
+        <item>"75%"</item>
+        <item>"100%"</item>
+    </string-array>
+
+    <!-- Values for captioning opacity preference. -->
+    <integer-array name="captioning_opacity_selector_values" translatable="false">
+        <item>0x40FFFFFF</item>
+        <item>0x80FFFFFF</item>
+        <item>0xC0FFFFFF</item>
+        <item>0xFFFFFFFF</item>
+    </integer-array>
+
+    <!-- Titles for captioning text style preset preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_preset_selector_titles">
+        <item>"Tumia programu chaguo-msingi"</item>
+        <item>"Nyeupe kwenye nyeusi"</item>
+        <item>"Nyeusi kwenye nyeupe"</item>
+        <item>"Manjano kwenye nyeusi"</item>
+        <item>"Manjano kwenye samawati"</item>
+        <item>"Maalum"</item>
+    </string-array>
+
+    <!-- Values for captioning text style preset preference. -->
+    <integer-array name="captioning_preset_selector_values" translatable="false">
+        <item>4</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>-1</item>
+    </integer-array>
+
+    <!-- Titles for logd limit size selection preference. [CHAR LIMIT=14] -->
+    <string-array name="select_logd_size_titles">
+        <item>"K64"</item>
+        <item>"K256"</item>
+        <item>"M1"</item>
+        <item>"M4"</item>
+        <item>"M16"</item>
+    </string-array>
+
+    <!-- Titles for logd limit size lowram selection preference. [CHAR LIMIT=14] -->
+    <string-array name="select_logd_size_lowram_titles">
+        <item>"K64"</item>
+        <item>"K256"</item>
+        <item>"M1"</item>
+    </string-array>
+
+    <!-- Values for logd limit size selection preference. -->
+    <string-array name="select_logd_size_values" translatable="false">
+        <item>65536</item>
+        <item>262144</item>
+        <item>1048576</item>
+        <item>4194304</item>
+        <item>16777216</item>
+    </string-array>
+
+    <!-- Summaries for logd limit size selection preference. [CHAR LIMIT=30]-->
+    <string-array name="select_logd_size_summaries">
+        <item>"K64 kwa kumbukumbu"</item>
+        <item>"K256 kwa kumbukumbu"</item>
+        <item>"M1 kwa kumbukumbu"</item>
+        <item>"M4 kwa kumbukumbu"</item>
+        <item>"M16 kwa kumbukumbu"</item>
+    </string-array>
+
+    <!-- Titles for HDCP checking preference. [CHAR LIMIT=35] -->
+    <string-array name="hdcp_checking_titles">
+        <item>"Katu usikague"</item>
+        <item>"Chunguza maudhui ya DRM pekee"</item>
+        <item>"Kagua kila wakati"</item>
+    </string-array>
+
+    <!-- Values for HDCP checking preference. -->
+    <string-array name="hdcp_checking_values" translatable="false">
+        <item>never</item>
+        <item>drm-only</item>
+        <item>always</item>
+    </string-array>
+
+    <!-- Summaries for HDCP checking preference. [CHAR LIMIT=100]-->
+    <string-array name="hdcp_checking_summaries">
+        <item>"Katu usitumie kikaguaji cha HDCP"</item>
+        <item>"Tumia ukaguaji wa HDCP kwa maudhui ya DRM pekee"</item>
+        <item>"Kila wakati tumia ukakuaji wa HDCP"</item>
+    </string-array>
+
+    <!-- Titles for window animation scale preference. [CHAR LIMIT=35] -->
+    <string-array name="window_animation_scale_entries">
+        <item>"Haiwani imezimwa"</item>
+        <item>"Skeli .5x ya haiwani"</item>
+        <item>"Skeli 1x ya haiwani"</item>
+        <item>"Skeli 1.5x ya haiwani"</item>
+        <item>"Skeli 2x ya haiwani"</item>
+        <item>"Skeli 5x ya haiwani"</item>
+        <item>"Skeli 10x ya haiwani"</item>
+    </string-array>
+
+    <!-- Values for window animation scale preference. -->
+    <string-array name="window_animation_scale_values" translatable="false">
+        <item>0</item>
+        <item>.5</item>
+        <item>1</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+
+    <!-- Titles for transition animation scale preference. [CHAR LIMIT=35] -->
+    <string-array name="transition_animation_scale_entries">
+        <item>"Haiwani imezimwa"</item>
+        <item>"Skeli .5x ya haiwani"</item>
+        <item>"Skeli 1x ya haiwani"</item>
+        <item>"Skeli 1.5x ya haiwani"</item>
+        <item>"Skeli 2x ya haiwani"</item>
+        <item>"Skeli 5x ya haiwani"</item>
+        <item>"Skeli ya 10x ya uhuishaji"</item>
+    </string-array>
+
+    <!-- Values for transition animation scale preference. -->
+    <string-array name="transition_animation_scale_values" translatable="false">
+        <item>0</item>
+        <item>.5</item>
+        <item>1</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+
+    <!-- Titles for animator duration scale preference. [CHAR LIMIT=35] -->
+    <string-array name="animator_duration_scale_entries">
+        <item>"Uhuishaji umezimwa"</item>
+        <item>"Mizani .5x ya uhuishaji"</item>
+        <item>"Mizani 1x ya uhuishaji"</item>
+        <item>"Mizani 1.5x ya uhuishaji"</item>
+        <item>"Mizani 2x ya uhuishaji"</item>
+        <item>"Mizani 5x ya uhuishaji"</item>
+        <item>"Mizani 10x ya uhuishaji"</item>
+    </string-array>
+
+    <!-- Values for animator duration scale preference. -->
+    <string-array name="animator_duration_scale_values" translatable="false">
+        <item>0</item>
+        <item>.5</item>
+        <item>1</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+
+    <!-- Titles for overlay display devices preference. [CHAR LIMIT=35] -->
+    <string-array name="overlay_display_devices_entries">
+        <item>"Hamna"</item>
+        <item>"720x480 mdpi"</item>
+        <item>"720x480 mdpi (salama)"</item>
+        <item>"1280x720 tvdpi"</item>
+        <item>"1280x720 tvdpi (salama)"</item>
+        <item>"1920x1080 xhdpi"</item>
+        <item>"1920x1080 xhdpi (salama)"</item>
+        <item>"1280x720 tvdpi na 1920x1080 xhdpi"</item>
+    </string-array>
+
+    <!-- Values for overlay display devices preference. -->
+    <string-array name="overlay_display_devices_values" translatable="false">
+        <item/>
+        <item>720x480/160</item>
+        <item>720x480/160,secure</item>
+        <item>1280x720/213</item>
+        <item>1280x720/213,secure</item>
+        <item>1920x1080/320</item>
+        <item>1920x1080/320,secure</item>
+        <item>1280x720/213;1920x1080/320</item>
+    </string-array>
+
+    <!-- Titles for OpenGL traces preference. [CHAR LIMIT=35] -->
+    <string-array name="enable_opengl_traces_entries">
+        <item>"Hamna"</item>
+        <item>"Logcat"</item>
+        <item>"Systrace (Michoro)"</item>
+        <item>"Simu imekwama kwenye glGetError"</item>
+    </string-array>
+
+    <!-- Values for OpenGL traces preference. -->
+    <string-array name="enable_opengl_traces_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>systrace</item>
+        <item>error</item>
+    </string-array>
+
+    <!-- Titles for non-rectangular clipping preference. [CHAR LIMIT=35] -->
+    <string-array name="show_non_rect_clip_entries">
+        <item>"Imezimwa"</item>
+        <item>"Chora eneo la klipu lisilo mstatili kwa rangi ya bluu"</item>
+        <item>"Angazia amri za michoro iliyojaribiwa kwa rangi ya kijani"</item>
+    </string-array>
+
+    <!-- Values for non-rectangular clipping preference. -->
+    <string-array name="show_non_rect_clip_values" translatable="false">
+        <item>hide</item>
+        <item>region</item>
+        <item>highlight</item>
+    </string-array>
+
+    <!-- Titles for frame time tracking preference. [CHAR LIMIT=35] -->
+    <string-array name="track_frame_time_entries">
+        <item>"Imezimwa"</item>
+        <item>"Kwenye skrini kama pau"</item>
+        <item>"Katika adb shell dumpsys gfxinfo"</item>
+    </string-array>
+
+    <!-- Values for frame time tracking preference. -->
+    <string-array name="track_frame_time_values" translatable="false">
+        <item>false</item>
+        <item>visual_bars</item>
+        <item>true</item>
+    </string-array>
+
+    <!-- Titles for debug overdraw preference. [CHAR LIMIT=50] -->
+    <string-array name="debug_hw_overdraw_entries">
+        <item>"Zima"</item>
+        <item>"Onyesha maeneo yaliyoondolewa"</item>
+        <item>"Onyesha sehemu za Upofu Rangi Kijani"</item>
+    </string-array>
+
+    <!-- Values for debug overdraw preference. -->
+    <string-array name="debug_hw_overdraw_values" translatable="false">
+        <item>false</item>
+        <item>show</item>
+        <item>show_deuteranomaly</item>
+    </string-array>
+
+    <!-- Titles for app process limit preference. [CHAR LIMIT=35] -->
+    <string-array name="app_process_limit_entries">
+        <item>"Kiwango cha wastani"</item>
+        <item>"Hakuna mchakato wa mandari nyuma"</item>
+        <item>"Angalau mchakato 1"</item>
+        <item>"Angalau michakato 2"</item>
+        <item>"Angalau michakato 3"</item>
+        <item>"Angalau michakato 4"</item>
+    </string-array>
+
+    <!-- Values for app process limit preference. -->
+    <string-array name="app_process_limit_values" translatable="false">
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <!-- Match this with the constants in VpnProfile. --> <skip/>
+    <!-- Short names for each VPN type, not really translatable. [CHAR LIMIT=20] -->
+    <string-array name="vpn_types" translatable="false">
+        <item>PPTP</item>
+        <item>L2TP/IPSec PSK</item>
+        <item>L2TP/IPSec RSA</item>
+        <item>IPSec Xauth PSK</item>
+        <item>IPSec Xauth RSA</item>
+        <item>IPSec Hybrid RSA</item>
+    </string-array>
+
+    <!-- Match this with the constants in VpnProfile. --> <skip/>
+    <!-- Longer descriptions for each VPN type. [CHAR LIMIT=100] -->
+    <string-array name="vpn_types_long">
+        <item>"PPTP VPN"</item>
+        <item>"L2TP/IPSec VPN na vitufe vilivyoshirikishwa kabla"</item>
+        <item>"L2TP/IPSec VPN na vyeti"</item>
+        <item>"IPSec VPN  na vitue vilivyoshirikishwa kabla na uthibitishaji wa Xauth"</item>
+        <item>"IPSec VPN  na vieti na uthibitishaji wa Xauth"</item>
+        <item>"IPSec VPN  na vieti na uthibitishaji wa hybridi"</item>
+    </string-array>
+
+    <!-- Match this with the constants in LegacyVpnInfo. --> <skip/>
+    <!-- Status for a VPN network. [CHAR LIMIT=100] -->
+    <string-array name="vpn_states">
+        <!-- Status message when VPN is disconnected. -->
+        <item>"Imetenganishwa"</item>
+        <!-- Status message when VPN is initializing. -->
+        <item>"Inaanza…"</item>
+        <!-- Status message when VPN is connecting. -->
+        <item>"Inaunganisha…"</item>
+        <!-- Status message when VPN is connected. -->
+        <item>"Umeunganishwa"</item>
+        <!-- Status message when VPN is timeout. -->
+        <item>"Muda wa umeisha"</item>
+        <!-- Status message when VPN is failed. -->
+        <item>"Haijafanikiwa"</item>
+    </string-array>
+
+    <!-- User content ratings for restricted users [CHAR LIMIT=30] -->
+    <string-array name="user_content_ratings_entries" translatable="false">
+        <item>Ascended being</item>
+        <item>Human</item>
+        <item>Neanderthal</item>
+        <item>Chimp</item>
+        <item>Monkey</item>
+    </string-array>
+
+    <!-- Values for user content ratings for restricted users -->
+    <string-array name="user_content_ratings_values" translatable="false">
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+
+    <!-- Values for premium SMS permission selector [CHAR LIMIT=30] -->
+    <string-array name="security_settings_premium_sms_values">
+        <!-- Ask user before sending to premium SMS short code. -->
+        <item>"Uliza"</item>
+        <!-- Never allow app to send to premium SMS short code. -->
+        <item>"Usiruhusu kamwe"</item>
+        <!-- Always allow app to send to premium SMS short code. -->
+        <item>"Ruhusu kila wakati"</item>
+    </string-array>
+
+    <!-- [CHAR LIMIT=30] Labels for memory states -->
+    <string-array name="ram_states">
+        <!-- Normal desired memory state. -->
+        <item>"kawaida"</item>
+        <!-- Moderate memory state, not as good as normal. -->
+        <item>"wastani"</item>
+        <!-- Memory is running low. -->
+        <item>"chini"</item>
+        <!-- Memory is critical. -->
+        <item>"muhimu"</item>
+    </string-array>
+
+    <!-- Display color space adjustment modes for accessibility -->
+    <string-array name="daltonizer_type_entries" translatable="false">
+        <item>@string/daltonizer_mode_deuteranomaly</item>
+        <item>@string/daltonizer_mode_protanomaly</item>
+        <item>@string/daltonizer_mode_tritanomaly</item>
+    </string-array>
+
+    <!-- Values for display color space adjustment modes for accessibility -->
+    <string-array name="daltonizer_type_values" translatable="false">
+        <item>12</item>
+        <item>11</item>
+        <item>13</item>
+    </string-array>
+
+    <!-- values for screen color adjusting -->
+    <string-array name="screen_color_setting">
+        <item>Sanifu</item>
+        <item>Ng\'avu</item>
+        <item>Kaida</item>
+    </string-array>
+
+    <!-- Display color space adjustment modes for developers -->
+    <string-array name="simulate_color_space_entries" translatable="false">
+        <item>@string/daltonizer_mode_disabled</item>
+        <item>@string/daltonizer_mode_monochromacy</item>
+        <item>@string/daltonizer_mode_deuteranomaly</item>
+        <item>@string/daltonizer_mode_protanomaly</item>
+        <item>@string/daltonizer_mode_tritanomaly</item>
+    </string-array>
+
+    <!-- Values for display color space adjustment modes for developers -->
+    <string-array name="simulate_color_space_values" translatable="false">
+        <item>-1</item>
+        <item>0</item>
+        <item>2</item>
+        <item>1</item>
+        <item>3</item>
+    </string-array>
+
+    <!-- Setting display values for zen mode -->
+    <string-array name="entries_zen_mode">
+        <item>"Kimezimwa"</item>
+        <item>"Ukatizwaji mdogo"</item>
+        <item>"Haikatizwi kabisa"</item>
+    </string-array>
+
+    <!-- Setting values for zen mode, must match the Settings.Global.ZEN_MODE_ constants -->
+    <string-array name="entryvalues_zen_mode" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- Battery saver mode: allowable trigger threshold levels. -->
+    <integer-array name="battery_saver_trigger_values" translatable="false">
+        <item>0</item>
+        <item>5</item>
+        <item>15</item>
+    </integer-array>
+
+    <!-- Process stats memory use details: labels for memory states -->
+    <string-array name="proc_stats_memory_states">
+        <item>"Kawaida"</item>
+        <item>"Wastani"</item>
+        <item>"Chini"</item>
+        <item>"Imepungua sana"</item>
+    </string-array>
+
+    <!-- Process stats memory use details: labels for process -->
+    <string-array name="proc_stats_process_states">
+        <item>"Endelevu"</item>
+        <item>"Shughuli maarufu"</item>
+        <item>"Muhimu (inatumika sasa)"</item>
+        <item>"Muhimu (chinichini)"</item>
+        <item>"Hifadhi nakala rufudu"</item>
+        <item>"Uzito mkubwa"</item>
+        <item>"Huduma (inaendesha)"</item>
+        <item>"Huduma (inaanzisha tena)"</item>
+        <item>"Kipokezi"</item>
+        <item>"Mwanzo"</item>
+        <item>"Shughuli ya mwisho"</item>
+        <item>"Imewekwa akiba (shughuli)"</item>
+        <item>"Imewekwa akiba (kiteja cha shughuli)"</item>
+        <item>"Imewekwa akiba (tupu)"</item>
+    </string-array>
+
+    <!-- Defined the hide accounts\' type -->
+    <string-array name="hide_account_list">
+        <item>com.qualcomm.qti.calendarlocalaccount</item>
+        <item>com.android.localphone</item>
+        <item>com.android.sim</item>
+    </string-array>
+
+
+    <string-array name="cellcular2wifi_entries">
+        <item>Unganisha kiotomatiki</item>
+        <item>Unganisha mwenyewe</item>
+        <item>Uliza wakati wote</item>
+    </string-array>
+
+    <string-array name="cellcular2wifi_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="hidesupl_plmn_list">
+        <item>46001</item>
+    </string-array>
+
+    <string-array name="origin_carrier_names" translateable="false">
+        <item>CMCC</item>
+        <item>CHINA\u0020\u0020MOBILE</item>
+        <item>CHN-UNICOM</item>
+        <item>China Mobile</item>
+        <item>China Unicom</item>
+        <item>China Telecom</item>
+        <item>中国移动</item>
+        <item>中国联通</item>
+        <item>中国电信</item>
+        <item>Searching for Service</item>
+    </string-array>
+    <string-array name="locale_carrier_names" translatable="false">
+        <item>China_Mobile</item>
+        <item>China_Mobile</item>
+        <item>China_Unicom</item>
+        <item>China_Mobile</item>
+        <item>China_Unicom</item>
+        <item>China_Telecom</item>
+        <item>China_Mobile</item>
+        <item>China_Unicom</item>
+        <item>China_Telecom</item>
+        <item>roamingTextSearching</item>
+    </string-array>
+
+    <string-array name="wifi_hotsopt_mode_entries">
+        <item>"Daima"</item>
+        <item>Zima wakati haijatumika kwa dakika 5</item>
+        <item>Zima wakati haijatumika kwa dakika 10</item>
+    </string-array>
+
+    <string-array name="wifi_hotsopt_mode_entryValues">
+        <item>Always</item>
+        <item>Turn_off_5min</item>
+        <item>Turn_off_10min</item>
+    </string-array>
+
+    <string-array name="wifi_hotsopt_mode_summaries">
+        <item>"Daima"</item>
+        <item>Zima wakati haijatumika kwa dakika 5</item>
+        <item>Zima wakati haijatumika kwa dakika 10</item>
+    </string-array>
+
+    <string-array name="default_sim_name">
+        <item>SUB 1</item>
+        <item>SUB 2</item>
+        <item>SUB 3</item>
+    </string-array>
+    <string-array name="hidedm_plmn_list">
+        <item>46000</item>
+        <item>46002</item>
+        <item>46003</item>
+        <item>46007</item>
+    </string-array>
+    <string-array name="plmn_list_for_apn_disable">
+        <item>46001</item>
+        <item>46009</item>
+    </string-array>
+
+    <!-- Array of titles for sim color for multi-sim -->
+    <string-array name="color_picker">
+        <item>Tili</item>
+        <item>"Samawati"</item>
+        <item>Nili</item>
+        <item>"Zambarau"</item>
+        <item>Waridi</item>
+        <item>"Nyekundu"</item>
+    </string-array>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2014, Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.apnsettings"
+    android:sharedUserId="android.uid.phone" >
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application android:process="com.android.phone">
+        <receiver android:name=".ApnStateReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.SIM_STATE_CHANGED" />
+                <action android:name="android.intent.action.SERVICE_STATE" />
+                <action android:name="com.android.apnsettings.RESRORE_COMPLETE" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

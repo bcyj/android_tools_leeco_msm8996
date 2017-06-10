@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+<title>Message definition for the Distance Bound algorithm service</title>
+<link rel="stylesheet" type="text/css" href="qmi_idl_wiredoc.css" />
+</head>
+
+<body>
+<h1>Message definition for the Distance Bound algorithm service
+</h1>
+ This file defines messages used by Distance Bound algorithm service.<br><br> As prerequisite, the sensor algorithm must use the common Interface<br> defined in the Sensor algorithm framework.<br><br> The messages defined herein will be passed to the Sensor framework using<br> the sensor1_write() API.
+
+<h1>Service Type</h1>
+<ul>
+<li>QMI service type <b>SNS_QMI_SVC_ID_42</b>
+<li>Version <b>01</b>
+</ul>
+<h1><a name='Messages'>Messages</a></h1>
+<table class = 'tlv'><tr class='head'><th>Command</th><th>ID</th><th>Messages</th><th>Description</th></tr>
+<tr><td class='l'><a href='#SNS_SAM_DISTANCE_BOUND_CANCEL'>SNS_SAM_DISTANCE_BOUND_CANCEL</a></td><td>0x0000</td><td class='l'></td><td class='l'>Cancels all requests to the algorithm service from this client. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_DISTANCE_BOUND_VERSION'>SNS_SAM_DISTANCE_BOUND_VERSION</a></td><td>0x0001</td><td class='l'></td><td class='l'>This command requests algorithm service version. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_DISTANCE_BOUND_ENABLE'>SNS_SAM_DISTANCE_BOUND_ENABLE</a></td><td>0x0002</td><td class='l'><a href="#SNS_SAM_DISTANCE_BOUND_ENABLE_REQ">SNS_SAM_DISTANCE_BOUND_ENABLE_REQ</a></br><a href="#SNS_SAM_DISTANCE_BOUND_ENABLE_RESP">SNS_SAM_DISTANCE_BOUND_ENABLE_RESP</a></br></td><td class='l'>This command enables the distance_bound algorithm. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_DISTANCE_BOUND_DISABLE'>SNS_SAM_DISTANCE_BOUND_DISABLE</a></td><td>0x0003</td><td class='l'><a href="#SNS_SAM_DISTANCE_BOUND_DISABLE_REQ">SNS_SAM_DISTANCE_BOUND_DISABLE_REQ</a></br><a href="#SNS_SAM_DISTANCE_BOUND_DISABLE_RESP">SNS_SAM_DISTANCE_BOUND_DISABLE_RESP</a></br></td><td class='l'>This command disables the distance_bound algorithm. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_DISTANCE_BOUND_GET_REPORT'>SNS_SAM_DISTANCE_BOUND_GET_REPORT</a></td><td>0x0004</td><td class='l'><a href="#SNS_SAM_DISTANCE_BOUND_GET_REPORT_REQ">SNS_SAM_DISTANCE_BOUND_GET_REPORT_REQ</a></br><a href="#SNS_SAM_DISTANCE_BOUND_GET_REPORT_RESP">SNS_SAM_DISTANCE_BOUND_GET_REPORT_RESP</a></br></td><td class='l'>This command fetches latest report output of distance_bound algorithm. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_DISTANCE_BOUND_REPORT'>SNS_SAM_DISTANCE_BOUND_REPORT</a></td><td>0x0005</td><td class='l'><a href="#SNS_SAM_DISTANCE_BOUND_REPORT_IND">SNS_SAM_DISTANCE_BOUND_REPORT_IND</a></br></td><td class='l'>Output report from the distance_bound algorithm. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_DISTANCE_BOUND_ERROR'>SNS_SAM_DISTANCE_BOUND_ERROR</a></td><td>0x0006</td><td class='l'><a href="#SNS_SAM_DISTANCE_BOUND_ERROR_IND">SNS_SAM_DISTANCE_BOUND_ERROR_IND</a></br></td><td class='l'>Asynchronous error report from the distance_bound algorithm. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_DISTANCE_BOUND_SET_BOUND'>SNS_SAM_DISTANCE_BOUND_SET_BOUND</a></td><td>0x0020</td><td class='l'><a href="#SNS_SAM_DISTANCE_BOUND_SET_BOUND_REQ">SNS_SAM_DISTANCE_BOUND_SET_BOUND_REQ</a></br><a href="#SNS_SAM_DISTANCE_BOUND_SET_BOUND_RESP">SNS_SAM_DISTANCE_BOUND_SET_BOUND_RESP</a></br></td><td class='l'>This COMMAND sets the distance bound. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_GET_ALGO_ATTRIBUTES'>SNS_SAM_GET_ALGO_ATTRIBUTES</a></td><td>0x0024</td><td class='l'><a href="#SNS_SAM_GET_ALGO_ATTRIBUTES_REQ">SNS_SAM_GET_ALGO_ATTRIBUTES_REQ</a></br><a href="#SNS_SAM_GET_ALGO_ATTRIBUTES_RESP">SNS_SAM_GET_ALGO_ATTRIBUTES_RESP</a></br></td><td class='l'>This command requests the attributes of the algorithm service This command shall only be used by algorithm services. </td></tr>
+</table>
+<br><br>
+<h4>Description of  REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_DISTANCE_BOUND_ENABLE'></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_ENABLE</a></h2>
+This command enables the distance_bound algorithm.
+<h4>Message ID</h4>
+0x0002
+<h3><a name="SNS_SAM_DISTANCE_BOUND_ENABLE_REQ"></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_ENABLE_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>motion_state_speed_bounds_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- motion_state_speed_bounds</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>motion_state_speed_bounds</td><td>Var</td><td class='l'> An array that specifies a maximum speed associated with each motion state<br> defined in meters per second. If not provided, the algorithm will<br> use default values. The sns_sam_distance_bound_ms_e specifies the index of<br> each motion state in the array motion_state_speed_bounds array.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>5</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>proc_type</td><td>4</td><td class='l'>Defines the processor to monitor for suspend.<br> This would typically be the processor on which the<br> request message originated from.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>send_indications_during_suspend</td><td>1</td><td class='l'>Defines if indications for this request should be sent when the<br> processor is in suspend state.<ul><li>if send_indications_during_suspend=1 or TRUE, then indications</ul> will be sent for this request when processor is in suspend state<br> (Such indications may wake up the processor from suspend).<br><ul><li>if send_indications_during_suspend=0 or FALSE, then some indications </ul> will not be sent for this request when the processor is in suspend state.<br> The list of indications not sent will be defined by the message in question.<br> </td></tr>
+
+</table>
+<h3><a name="SNS_SAM_DISTANCE_BOUND_ENABLE_RESP"></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_ENABLE_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'> Algorithm instance ID maintained/assigned by SAM.<br> The client shall use this instance ID for future messages associated with<br> current algorithm instance.<br> </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_DISTANCE_BOUND_ENABLE REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_DISTANCE_BOUND_DISABLE'></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_DISABLE</a></h2>
+This command disables the distance_bound algorithm.
+<h4>Message ID</h4>
+0x0003
+<h3><a name="SNS_SAM_DISTANCE_BOUND_DISABLE_REQ"></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_DISABLE_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>To identify the algorithm instance to be disabled. </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_DISTANCE_BOUND_DISABLE_RESP"></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_DISABLE_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance id identifies the algorithm instance. </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_DISTANCE_BOUND_DISABLE REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_DISTANCE_BOUND_GET_REPORT'></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_GET_REPORT</a></h2>
+This command fetches latest report output of distance_bound algorithm.
+<h4>Message ID</h4>
+0x0004
+<h3><a name="SNS_SAM_DISTANCE_BOUND_GET_REPORT_REQ"></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_GET_REPORT_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance id identifies the algorithm instance. </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_DISTANCE_BOUND_GET_REPORT_RESP"></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_GET_REPORT_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance id identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp</td><td>4</td><td class='l'>Timestamp of input with which latest distance bound report was computed<br> in SSC ticks </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x12</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>5</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>distance_bound_breach_event</td><td>4</td><td class='l'> Indicates if the distance bound set by client has been breached.<br> Set to SNS_SAM_DISTANCE_BOUND_BREACH_EVENT_UNKNOWN if<br> no sns_sam_distance_bound_set_bound_req_msg has been received. All other<br> output fields are to be ignored.<br> Set to SNS_SAM_DISTANCE_BOUND_BREACH_EVENT_TRUE if breach has occurred.<br> Set to SNS_SAM_DISTANCE_BOUND_BREACH_EVENT_FALSE if breach has not occurred.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>session_key</td><td>1</td><td class='l'> The unique session key provided by client associated with this report.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x13</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>distance_accumulated</td><td>4</td><td class='l'> Distance accumulated in meters since the last sns_sam_distance_bound_set_bound_req<br> </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_DISTANCE_BOUND_GET_REPORT REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_DISTANCE_BOUND_REPORT'></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_REPORT</a></h2>
+Output report from the distance_bound algorithm.
+<h4>Message ID</h4>
+0x0005
+<h3><a name="SNS_SAM_DISTANCE_BOUND_REPORT_IND"></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_REPORT_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance id identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp</td><td>4</td><td class='l'>Timestamp of input with which latest distance bound report was computed<br> in SSC ticks </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>5</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>distance_bound_breach_event</td><td>4</td><td class='l'> Indicates if the distance bound set by client has been breached.<br> Set to SNS_SAM_DISTANCE_BOUND_BREACH_EVENT_UNKNOWN if<br> no sns_sam_distance_bound_set_bound_req_msg has been received. All other<br> output fields are to be ignored.<br> Set to SNS_SAM_DISTANCE_BOUND_BREACH_EVENT_TRUE if breach has occurred.<br> Set to SNS_SAM_DISTANCE_BOUND_BREACH_EVENT_FALSE if breach has not occurred.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>session_key</td><td>1</td><td class='l'> The unique session key provided by client associated with this report.<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>distance_accumulated</td><td>4</td><td class='l'> Distance accumulated in meters since the last sns_sam_distance_bound_set_bound_req<br> </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_DISTANCE_BOUND_REPORT</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_DISTANCE_BOUND_ERROR'></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_ERROR</a></h2>
+Asynchronous error report from the distance_bound algorithm.
+<h4>Message ID</h4>
+0x0006
+<h3><a name="SNS_SAM_DISTANCE_BOUND_ERROR_IND"></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_ERROR_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance id identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp</td><td>4</td><td class='l'>Timestamp of when the error was detected; in SSC ticks </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>error</td><td>1</td><td class='l'>sensors error code </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SAM_DISTANCE_BOUND_ERROR</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_DISTANCE_BOUND_SET_BOUND'></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_SET_BOUND</a></h2>
+This COMMAND sets the distance bound.
+<h4>Message ID</h4>
+0x0020
+<h3><a name="SNS_SAM_DISTANCE_BOUND_SET_BOUND_REQ"></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_SET_BOUND_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance id identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>distance_bound</td><td>4</td><td class='l'> The distance bound in meters. When the distance travelled exceeds this,<br> an event is sent to the requestor, and the distance travelled accumulation<br> is reset.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>session_key</td><td>1</td><td class='l'> A unique key provided by the client that identifies the session associated<br> with the sns_sam_distance_bound_set_bound_req_msg. A session is defined as<br> the period between the arrival of a sns_sam_distance_bound_set_bound_req_msg<br> and the generation of a sns_sam_distance_bound_report_ind_msg associated with<br> it. There can be only one session active at a time. The arrival of a new<br> sns_sam_distance_bound_set_bound_req_msg discards the previous session. The<br> session_key returned with the sns_sam_distance_bound_report_ind_msg can be used<br> by a client to identify the request associated with it.<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_DISTANCE_BOUND_SET_BOUND_RESP"></a><a href='#Messages'>SNS_SAM_DISTANCE_BOUND_SET_BOUND_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance id identifies the algorithm instance. </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_DISTANCE_BOUND_SET_BOUND REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_GET_ALGO_ATTRIBUTES'></a><a href='#Messages'>SNS_SAM_GET_ALGO_ATTRIBUTES</a></h2>
+This command requests the attributes of the algorithm service<br><br> This command shall only be used by algorithm services.
+<h4>Message ID</h4>
+0x0024
+<h3><a name="SNS_SAM_GET_ALGO_ATTRIBUTES_REQ"></a><a href='#Messages'>SNS_SAM_GET_ALGO_ATTRIBUTES_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_GET_ALGO_ATTRIBUTES_RESP"></a><a href='#Messages'>SNS_SAM_GET_ALGO_ATTRIBUTES_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>algorithm_revision</td><td>4</td><td class='l'>Revision number of the algorithm implemented by the service </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>proc_type</td><td>4</td><td class='l'>ID of the processor on which the algorithm is running </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x05</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>supported_reporting_modes</td><td>4</td><td class='l'>Bitmask of all reporting modes supported by algorithm.<br> See sns_sam_report_e for reporting options </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x06</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>min_report_rate</td><td>4</td><td class='l'>Minimum report rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x07</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_report_rate</td><td>4</td><td class='l'>Maximum report rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x08</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>min_sample_rate</td><td>4</td><td class='l'>Minimum sample rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x09</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_sample_rate</td><td>4</td><td class='l'>Maximum sample rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x0A</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_batch_size</td><td>4</td><td class='l'>The maximum batch size (in reports) supported by this service.<br> Returns 0, if batching is not supported </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x0B</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>power</td><td>4</td><td class='l'>Power estimate for algorithm (in mA, Q16) </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>8</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sensorUID</td><td>8</td><td class='l'>SSC Unique identifier for this sensor </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_GET_ALGO_ATTRIBUTES REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+\appendix
+\chapter{Additional Information}
+\section{@FOOTER}
+

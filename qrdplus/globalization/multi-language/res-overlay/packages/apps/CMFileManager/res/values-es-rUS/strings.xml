@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+<!--
+     Copyright (C) 2012-2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- The name of the app -->
+    <string name="app_name">Administrador de archivos</string>
+    <!-- The description of the app -->
+    <string name="app_description">Administrador de archivos CyanogenMod</string>
+
+    <!-- Human readable sizes -->
+    <string name="size_bytes">"B"</string>
+    <string name="size_kilobytes">kB</string>
+    <string name="size_megabytes">"MB"</string>
+    <string name="size_gigabytes">"GB"</string>
+
+    <!-- Date/time format order (%1$s: date; %2$s: time) -->
+    <string name="datetime_format_order">%1$s %2$s</string>
+
+    <!-- Devices types -->
+    <string name="device_blockdevice">Dispositivo orientado a bloques</string>
+    <string name="device_characterdevice">Dispositivo orientado a caracteres</string>
+    <string name="device_namedpipe">Canalización con nombre</string>
+    <string name="device_domainsocket">Socket de dominio</string>
+
+    <!-- Mount Point States -->
+    <string name="mount_point_readonly">RO</string>
+    <string name="mount_point_readwrite">RW</string>
+
+    <!-- Default buttons -->
+    <string name="ok" translatable="false">@android:string/ok</string>
+    <string name="cancel" translatable="false">@android:string/cancel</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="all">"Todos"</string>
+    <string name="overwrite">SOBREESC.</string>
+    <string name="select">"Seleccionar"</string>
+
+    <!-- The root directory name -->
+    <string name="root_directory_name"><![CDATA[<Carpeta raíz>]]></string>
+    <!-- The search result name -->
+    <string name="search_result_name">Buscar: <xliff:g id="terms">%1$s</xliff:g></string>
+
+    <!-- Loading waiting message -->
+    <string name="loading_message">"Cargando..."</string>
+    <!-- Computing message -->
+    <string name="computing_message" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Computing new line message -->
+    <string name="computing_message_ln" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Cancelled message -->
+    <string name="cancelled_message">Cancelado.</string>
+    <!-- Error message -->
+    <string name="error_message">Error.</string>
+    <!-- Copy text content description -->
+    <string name="copy_text_cd">Toca para copiar el texto al portapapeles</string>
+    <!-- Copy text content message -->
+    <string name="copy_text_msg">Texto copiado en el portapapeles</string>
+
+    <!-- Warning dialog title -->
+    <string name="warning_title">Advertencia</string>
+    <!-- Error dialog title -->
+    <string name="error_title">Se encontró un error</string>
+    <!-- Confirm operation dialog title -->
+    <string name="confirm_operation">Confirmar la operación</string>
+    <!-- Confirm overwrite dialog title -->
+    <string name="confirm_overwrite">Confirmar la sobreescritura</string>
+    <!-- Confirm deletion dialog title -->
+    <string name="confirm_deletion">Confirmar la eliminación</string>
+
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Title -->
+    <string name="msgs_change_to_prompt_access_mode_title">Confirmar cambio</string>
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Message -->
+    <string name="msgs_change_to_prompt_access_mode_msg">No se puede ejecutar en Modo de acceso a raíz. Cambiar a Modo seguro.\n\n¿Deseas aplicar este cambio?</string>
+
+    <!-- A console couldn\'t be created - Without privileges, the app won\'t work -->
+    <string name="msgs_cant_create_console">No se pueden obtener los privilegios necesarios para funcionar.</string>
+    <!-- The message shown when an allocation of a privileged console fails, and a non
+         privileged is allocated -->
+    <string name="msgs_privileged_console_alloc_failed">No se puede ejecutar en Modo de acceso a raíz. Cambiar a Modo seguro.</string>
+    <!-- The selected setting was not applied or stored -->
+    <string name="msgs_settings_save_failure">No se pudo aplicar o almacenar la configuración.</string>
+    <!-- The initial directory has an invalid or inaccessible reference -->
+    <string name="msgs_settings_invalid_initial_directory">La carpeta inicial \'<xliff:g id="initial_dir">%1$s</xliff:g>\' no es válida. Cambiar a carpeta raíz.</string>
+    <!-- Root is not available message -->
+    <string name="root_not_available_msg">La raíz no está disponible en este dispositivo. Esta operación no se puede realizar.</string>
+
+    <!-- Success -->
+    <string name="msgs_success">La operación se completó correctamente.</string>
+    <!-- Unknown error -->
+    <string name="msgs_unknown">Se detectó un error. La operación no se completó correctamente.</string>
+    <!-- When an operation requires elevated privileged (normally caused for the use of a
+         non-privileged console) -->
+    <string name="msgs_insufficient_permissions">Esta operación requiere permisos elevados. Prueba cambiando a Modo de acceso a raíz.</string>
+    <!-- When an operation fails because the device has run out of storage. -->
+    <string name="msgs_no_disk_space">Esta operación no se llevó a cabo debido a que no hay espacio en el dispositivo.</string>
+    <!-- The file or directory was not found -->
+    <string name="msgs_file_not_found">No se encontró el archivo o la carpeta.</string>
+    <!-- The command reference couldn\'t be created (not found or invalid definition)
+         (normally caused by a development error) -->
+    <string name="msgs_command_not_found">No se encontró el comando de la operación o tiene una definición no válida.</string>
+    <!-- I/O exception -->
+    <string name="msgs_io_failed">Error de lectura/escritura.</string>
+    <!-- Operation timeout detected -->
+    <string name="msgs_operation_timeout">Se agotó el tiempo de espera para la operación.</string>
+    <!-- The operation returns an invalid exit code -->
+    <string name="msgs_operation_failure">Error en la operación.</string>
+    <!-- A console couldn\'t be allocated -->
+    <string name="msgs_console_alloc_failure">Se produjo un error interno.</string>
+    <!-- An operation can\'t be cancelled -->
+    <string name="msgs_operation_can_not_be_cancelled">No se puede cancelar la operación.</string>
+    <!-- The operation requieres mount the file system prior to execute the command -->
+    <string name="msgs_read_only_filesystem">El sistema de archivos es de solo lectura. Intenta volver a montar el sistema de archivos como de lectura-escritura antes de intentar la operación.</string>
+    <!-- Illegal argument (normally caused by a development error when calling internal api) -->
+    <string name="msgs_illegal_argument">Argumento no válido. Error en la invocación.</string>
+    <!-- The operation will cause inconsistencies -->
+    <string name="msgs_unresolved_inconsistencies">La operación no está permitida, ya que crearía inconsistencias.</string>
+    <!-- Operation not permitted in current directory -->
+    <string name="msgs_operation_not_allowed_in_current_directory">La operación no está permitida en la carpeta actual.\n\nLa carpeta de destino no puede ser subcarpeta de la original o ser igual a esta.</string>
+
+    <!-- The advice message prior to exit the app -->
+    <string name="msgs_push_again_to_exit">Presiona nuevamente para salir.</string>
+
+    <!-- There is no registered app that can handle the mime-type -->
+    <string name="msgs_not_registered_app">No hay ninguna aplicación registrada que pueda procesar el tipo de archivo seleccionado.</string>
+
+    <!-- Overwrite files? -->
+    <string name="msgs_overwrite_files">Algunos de los archivos ya existen en la carpeta de destino.\n\n¿Deseas sobrescribirlos?</string>
+
+    <!-- The association of an action to the app failed -->
+    <string name="msgs_action_association_failed">Error en la asociación de la acción con la aplicación.</string>
+
+    <!-- An operation requires elevated privileged. Ask the user. -->
+    <string name="advise_insufficient_permissions">La operación requiere privilegios elevados. \n\n¿Deseas cambiar a Modo de acceso a raíz?</string>
+
+    <!-- The parent directory of the current directory in navigation view -->
+    <string name="parent_dir">Carpeta principal</string>
+    <!-- External storage descripton -->
+    <string name="external_storage">Almacenamiento externo</string>
+    <!-- Usb storage descripton -->
+    <string name="usb_storage">"Almacenamiento USB"</string>
+
+    <!-- ActionBar Buttons - FileSystem -->
+    <string name="actionbar_button_filesystem_cd">Información del sistema de archivos</string>
+    <!-- ActionBar Buttons - Sort Mode -->
+    <string name="actionbar_button_sort_mode_cd">Modo de ordenación</string>
+    <!-- ActionBar Buttons - Layout Mode -->
+    <string name="actionbar_button_layout_mode_cd">Modo de diseño</string>
+    <!-- ActionBar Buttons - Other View Options -->
+    <string name="actionbar_button_other_view_options_cd">Otras opciones de vista</string>
+    <!-- ActionBar Buttons - Done -->
+    <string name="actionbar_button_selection_done_cd">"Finalizar"</string>
+    <!-- ActionBar Buttons - Actions -->
+    <string name="actionbar_button_actions_cd">Acciones</string>
+    <!-- ActionBar Buttons - Search -->
+    <string name="actionbar_button_search_cd">"Buscar"</string>
+    <!-- ActionBar Buttons - Overflow -->
+    <string name="actionbar_button_overflow_cd">"Más opciones"</string>
+    <!-- ActionBar Buttons - Storage volumes -->
+    <string name="actionbar_button_storage_cd">Volúmenes de almacenamiento</string>
+    <!-- ActionBar Buttons - Save -->
+    <string name="actionbar_button_save_cd">"Guardar"</string>
+    <!-- ActionBar Buttons - Print -->
+    <string name="actionbar_button_print_cd">"Imprimir"</string>
+
+    <!-- Navigation View - Sort - Sort by name (ascending) -->
+    <string name="sort_by_name_asc">Por nombre \u25B2</string>
+    <!-- Navigation View - Sort - Sort by name (descending) -->
+    <string name="sort_by_name_desc">Por nombre \u25BC</string>
+    <!-- Navigation View - Sort - Sort by date (ascending) -->
+    <string name="sort_by_date_asc">Por fecha \u25B2</string>
+    <!-- Navigation View - Sort - Sort by date (descending) -->
+    <string name="sort_by_date_desc">Por fecha \u25BC</string>
+    <!-- Navigation View - Sort - Sort by size (ascending) -->
+    <string name="sort_by_size_asc">Por tamaño \u25B2</string>
+    <!-- Navigation View - Sort - Sort by size (descending) -->
+    <string name="sort_by_size_desc">Por tamaño \u25BC</string>
+    <!-- Navigation View - Sort - Sort by type (ascending) -->
+    <string name="sort_by_type_asc">Por tipo \u25B2</string>
+    <!-- Navigation View - Sort - Sort by type (descending) -->
+    <string name="sort_by_type_desc">Por tipo \u25BC</string>
+
+    <!-- Navigation View - Layout - Icons -->
+    <string name="layout_icons">Iconos</string>
+    <!-- Navigation View - Layout - Simple -->
+    <string name="layout_simple">Simple</string>
+    <!-- Navigation View - Layout - Details -->
+    <string name="layout_details">"Detalles"</string>
+
+    <!-- Navigation View - View - Show folders first -->
+    <string name="cm_filemanager_show_dirs_first">Mostrar carpetas 1º </string>
+    <!-- Navigation View - View - Show hidden files option -->
+    <string name="cm_filemanager_show_hidden">Mostrar archivos ocultos</string>
+    <!-- Navigation View - View - Show system files option -->
+    <string name="cm_filemanager_show_system">Mostrar los archivos de sistema</string>
+    <!-- Navigation View - View - Show symlinks option -->
+    <string name="cm_filemanager_show_symlinks">Mostrar symlinks</string>
+
+    <!-- Filesystem Info (no data). Dialog title -->
+    <string name="filesystem_info_warning_title">Sin información</string>
+    <!-- Filesystem Info (no data). Dialog message -->
+    <string name="filesystem_info_warning_msg">No hay información disponible para el sistema de archivos.</string>
+    <!-- Filesystem Info - Filesystem couldn\'t be mounted -->
+    <string name="filesystem_info_cant_be_mounted_msg">No se puede montar o desmontar el sistema de archivos.</string>
+    <!-- Filesystem Info - Not allowed message -->
+    <string name="filesystem_info_mount_not_allowed_msg">Las operaciones de montaje del sistema de archivos no están permitidas en el Modo seguro. Toca para cambiar al Modo de acceso a raíz.</string>
+    <!-- Filesystem Info - Mount failed -->
+    <string name="filesystem_info_mount_failed_msg">Error en la operación de montaje del sistema de archivos. Algunos sistemas de archivos, como las tarjetas SD, no se pueden montar o desmontar debido a que están integrados como sistemas de archivos de solo lectura.</string>
+    <!-- Filesystem Info Dialog - Title -->
+    <string name="filesystem_info_dialog_title">Información del sistema de archivos</string>
+    <!-- Filesystem Info Dialog - Tab - Info -->
+    <string name="filesystem_info_dialog_tab_info">"Info"</string>
+    <!-- Filesystem Info Dialog - Tab - Disk Usage -->
+    <string name="filesystem_info_dialog_tab_disk_usage">Uso del disco</string>
+    <!-- Filesystem Info Dialog - Status Label -->
+    <string name="filesystem_info_dialog_status">Estado:</string>
+    <!-- Filesystem Info Dialog - Mount Point Label -->
+    <string name="filesystem_info_dialog_mount_point">Punto de montaje:</string>
+    <!-- Filesystem Info Dialog - Device Label -->
+    <string name="filesystem_info_dialog_device">Dispositivo:</string>
+    <!-- Filesystem Info Dialog - Type Label -->
+    <string name="filesystem_info_dialog_type">Tipo:</string>
+    <!-- Filesystem Info Dialog - Options Label -->
+    <string name="filesystem_info_dialog_options">Opciones:</string>
+    <!-- Filesystem Info Dialog - Dump/Pass Label -->
+    <string name="filesystem_info_dialog_dump_pass">Volcado / Paso:</string>
+    <!-- Filesystem Info Dialog - Virtual Label -->
+    <string name="filesystem_info_dialog_virtual">Virtual:</string>
+    <!-- Filesystem Info Dialog - Total Disk Usage -->
+    <string name="filesystem_info_dialog_total_disk_usage">Total:</string>
+    <!-- Filesystem Info Dialog - Used Disk Usage -->
+    <string name="filesystem_info_dialog_used_disk_usage">Usado:</string>
+    <!-- Filesystem Info Dialog - Free Disk Usage -->
+    <string name="filesystem_info_dialog_free_disk_usage">Disponible:</string>
+
+    <!-- Fso Properties - Not allowed message -->
+    <string name="fso_properties_permissions_not_allowed_msg">Las operaciones de permiso no están permitidas en el Modo seguro. Toca para cambiar al Modo de acceso a raíz.</string>
+    <!-- Fso Properties - Failed to change owner to fso -->
+    <string name="fso_properties_failed_to_change_owner_msg">Error en la operación de cambio de propietario.\n\nPor razones de seguridad, algunos sistemas de archivos, como las tarjetas SD, no permiten el cambio de propietario.</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_group_msg">Error en la operación de cambio de grupo.\n\nPor razones de seguridad, algunos sistemas de archivos, como las tarjetas SD, no permiten el cambio de grupos.</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_permission_msg">Error en la operación de cambio de permisos.\n\nPor razones de seguridad, algunos sistemas de archivos, como las tarjetas SD, no permiten el cambio de permisos.</string>
+    <!-- Fso Properties Dialog - Title -->
+    <string name="fso_properties_dialog_title">"Propiedades"</string>
+    <!-- Fso Properties Dialog - Tab - Info -->
+    <string name="fso_properties_dialog_tab_info">"Info"</string>
+    <!-- Fso Properties Dialog - Tab - Permissions -->
+    <string name="fso_properties_dialog_tab_permissions">"Permisos"</string>
+    <!-- Fso Properties Dialog - Name Label -->
+    <string name="fso_properties_dialog_name">Nombre:</string>
+    <!-- Fso Properties Dialog - Parent Folder Label -->
+    <string name="fso_properties_dialog_parent">Principal:</string>
+    <!-- Fso Properties Dialog - Type Label -->
+    <string name="fso_properties_dialog_type">Tipo:</string>
+    <!-- Fso Properties Dialog - Category Label -->
+    <string name="fso_properties_dialog_category">Categoría:</string>
+    <!-- Fso Properties Dialog - Link Label -->
+    <string name="fso_properties_dialog_link">Enlace:</string>
+    <!-- Fso Properties Dialog - Size Label -->
+    <string name="fso_properties_dialog_size">Tamaño:</string>
+    <!-- Fso Properties Dialog - Contains Label -->
+    <string name="fso_properties_dialog_contains">Contenido:</string>
+    <!-- Fso Properties Dialog - Last Accessed Time Label -->
+    <string name="fso_properties_dialog_last_accessed_date">Último acceso:</string>
+    <!-- Fso Properties Dialog - Last Modified Time Label -->
+    <string name="fso_properties_dialog_last_modified_date">Modificación:</string>
+    <!-- Fso Properties Dialog - Last Changed Time -->
+    <string name="fso_properties_dialog_last_changed_date">Cambio:</string>
+    <!-- Fso Properties Dialog - Owner Label -->
+    <string name="fso_properties_dialog_owner">Propietario:</string>
+    <!-- Fso Properties Dialog - Group Label -->
+    <string name="fso_properties_dialog_group">Grupo:</string>
+    <!-- Fso Properties Dialog - Others Label -->
+    <string name="fso_properties_dialog_others">Otros:</string>
+    <!-- Fso Properties Dialog - Special Label -->
+    <string name="fso_properties_dialog_special" translatable="false">S</string>
+    <!-- Fso Properties Dialog - Read Label -->
+    <string name="fso_properties_dialog_read" translatable="false">R</string>
+    <!-- Fso Properties Dialog - Write Label -->
+    <string name="fso_properties_dialog_write" translatable="false">W</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_execute" translatable="false">X</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_folder_items" translatable="false"><xliff:g id="folders">%1$s</xliff:g> / <xliff:g id="files">%2$s</xliff:g></string>
+    <!-- Fso Properties Dialog - Skip media scan -->
+    <string name="fso_properties_dialog_include_in_media_scan">Omitir el análisis de medios:</string>
+    <string name="fso_failed_to_allow_media_scan">No se pudo permitir el análisis de medios</string>
+    <string name="fso_failed_to_prevent_media_scan">No se pudo omitir el análisis de medios</string>
+    <string name="fso_delete_nomedia_dir_title">Eliminar el directorio .nomedia</string>
+    <string name="fso_delete_nomedia_dir_body">Este directorio contiene un directorio .nomedia.\n\n¿Deseas eliminarlo junto con todo su contenido?</string>
+    <string name="fso_delete_nomedia_non_empty_title">Eliminar archivo .nomedia</string>
+    <string name="fso_delete_nomedia_non_empty_body">Este directorio contiene un archivo .nomedia con contenido. \n\n¿Deseas eliminarlo?</string>
+
+    <!-- History - History activity title -->
+    <string name="history">"Historial"</string>
+    <!-- History - The history is empty -->
+    <string name="msgs_history_empty">El historial está vacío.</string>
+    <!-- History - The history reference is not in the actual history list -->
+    <string name="msgs_history_unknown">Elemento de historial desconocido.</string>
+
+    <!-- Search - Search activity title -->
+    <string name="search">Resultados de la búsqueda</string>
+    <!-- Search - Search hint message -->
+    <string name="search_hint">Escribe tu búsqueda</string>
+    <!-- Search - Voice search hint message -->
+    <string name="search_voice_hint">Búsqueda por voz</string>
+    <!-- Search - Search error message -->
+    <string name="search_error_msg">Se produjo un error durante la búsqueda. No se encontraron resultados.</string>
+    <!-- Search - Search no results message -->
+    <string name="search_no_results_msg">No se encontraron resultados.</string>
+    <!-- Search - Number of items found in directory -->
+    <string name="search_found_items_in_directory"><xliff:g id="items">%1$s</xliff:g> en <xliff:g id="path">%2$s</xliff:g></string>
+    <!-- Search - Search query terms -->
+    <string name="search_terms">&lt;b&gt;Términos:&lt;/b&gt; <xliff:g id="terms">%1$s</xliff:g></string>
+    <!-- Search - Confirm search -->
+    <string name="search_few_characters_title">Confirmar búsqueda</string>
+    <!-- Search - Some terms of the search are too small. The operation could be very costly -->
+    <string name="search_few_characters_msg">Algunos de los términos de la búsqueda tienen pocos caracteres. La operación puede durar bastante y utilizar varios recursos del sistema.\n\n¿Deseas continuar?</string>
+    <!-- Search - Searching dialog title -->
+    <string name="searching">"Espera, por favor..."</string>
+    <!-- Search - Searching label -->
+    <string name="searching_action_label">Búsqueda en curso</string>
+
+    <!-- Picker Activity -->
+    <string name="picker" translatable="false">@string/app_name</string>
+    <!-- Picker Activity - Dialog title -->
+    <string name="picker_title">Seleccione un archivo</string>
+    <string name="directory_picker_title">Seleccione un directorio</string>
+
+    <!-- Editor - Editor activity title -->
+    <string name="editor">Editor</string>
+    <!-- Editor - Invalid file message -->
+    <string name="editor_invalid_file_msg">Archivo no válido.</string>
+    <!-- Editor - File not found message -->
+    <string name="editor_file_not_found_msg">No se encontró el archivo.</string>
+    <!-- Editor - File size exceed the limit -->
+    <string name="editor_file_exceed_size_msg">El archivo es demasiado grande para abrirlo en este dispositivo.</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog title -->
+    <string name="editor_dirty_ask_title">Confirmar salida</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog message -->
+    <string name="editor_dirty_ask_msg">Hay cambios sin guardar.\n\n¿Deseas salir sin guardarlos?</string>
+    <!-- Editor - Save operation success -->
+    <string name="editor_successfully_saved">El archivo se guardó correctamente.</string>
+    <!-- Editor - Read-only file mode -->
+    <string name="editor_read_only_mode">El archivo se abrió en modo de solo lectura.</string>
+    <!-- Editor - Dumping message -->
+    <string name="dumping_message">Generando volcado hexadecimal\u2026</string>
+    <!-- Editor - Displaying -->
+    <string name="displaying_message">Mostrando\u2026</string>
+
+    <!-- Bookmarks - Bookmarks activity title -->
+    <string name="bookmarks">Marcadores</string>
+    <!-- Bookmarks - Bookmark name - Home -->
+    <string name="bookmarks_home">"Casa"</string>
+    <!-- Bookmarks - Bookmark name - Root folder -->
+    <string name="bookmarks_root_folder">Carpeta raíz</string>
+    <!-- Bookmarks - Bookmark name - System folder -->
+    <string name="bookmarks_system_folder">Carpeta del sistema</string>
+    <!-- Bookmarks - Bookmark name - Secure storage -->
+    <string name="bookmarks_secure">Almacenamiento seguro</string>
+    <!-- Bookmarks - Bookmark name - Remote storage -->
+    <string name="bookmarks_remote">Almacenamiento remoto</string>
+    <!-- Bookmarks - Bookmark name - Button - Initial directory content description -->
+    <string name="bookmarks_button_config_cd">Establecer la carpeta inicial.</string>
+    <!-- Bookmarks - Bookmark name - Button - Remove bookmark content description -->
+    <string name="bookmarks_button_remove_bookmark_cd">Quitar el marcador.</string>
+    <!-- Bookmarks - Bookmarks - Actions - Bookmark successfully added -->
+    <string name="bookmarks_msgs_add_success">El marcador se agregó correctamente.</string>
+
+    <!-- Initial directory dialog title -->
+    <string name="initial_directory_dialog_title">Carpeta inicial</string>
+    <!-- Initial directory label -->
+    <string name="initial_directory_label">Selecciona la carpeta inicial:</string>
+    <!-- Initial directory is relative -->
+    <string name="initial_directory_relative_msg">No se permiten rutas de acceso relativas.</string>
+    <!-- Initial directory error message -->
+    <string name="initial_directory_error_msg">Se produjo un error al guardar la carpeta inicial.</string>
+
+    <!-- Menu - Navigation - Search -->
+    <string name="menu_search">"Buscar"</string>
+    <!-- Menu - Navigation - Settings -->
+    <string name="menu_settings">"Configuración"</string>
+    <!-- Menu - History - Clear history -->
+    <string name="menu_clear_history">"Eliminar historial"</string>
+    <!-- Menu - Editor - No suggestions -->
+    <string name="menu_no_suggestions">Sin sugerencias</string>
+    <!-- Menu - Editor - Word wrap -->
+    <string name="menu_word_wrap">Ajuste de línea</string>
+    <!-- Menu - Editor - Sintax highlight -->
+    <string name="menu_syntax_highlight">Resaltado de sintaxis</string>
+
+    <!-- Regular expression for create copy action -->
+    <string name="create_copy_regexp"><xliff:g id="name">%1$s</xliff:g> - copiar<xliff:g id="extension">%2$s</xliff:g></string>
+    <!-- Regular expression for new compressed file -->
+    <string name="create_new_compress_file_regexp"><xliff:g id="name">%1$s</xliff:g> - nuevo<xliff:g id="extension">%2$s</xliff:g></string>
+
+    <!-- Waiting dialog - Performing operation message -->
+    <string name="waiting_dialog_msg">Realizando la operación\u2026</string>
+    <!-- Waiting dialog - Copying title -->
+    <string name="waiting_dialog_copying_title">Copiando…\u2026</string>
+    <!-- Waiting dialog - Copying message -->
+    <string name="waiting_dialog_copying_msg">&lt;b&gt;Desde&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>&lt;br/&gt;&lt;b&gt;Hacia&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g></string>
+    <!-- Waiting dialog - Moving title -->
+    <string name="waiting_dialog_moving_title">Moviendo\u2026</string>
+    <!-- Waiting dialog - Moving message -->
+    <string name="waiting_dialog_moving_msg">&lt;b&gt;Desde&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>&lt;br/&gt;&lt;b&gt;Hacia&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g></string>
+    <!-- Waiting dialog - Deleting title -->
+    <string name="waiting_dialog_deleting_title">Eliminando\u2026</string>
+    <!-- Waiting dialog - Deleting message -->
+    <string name="waiting_dialog_deleting_msg">&lt;b&gt;Archivo&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_extracting_title">"Extrayendo…"</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_extracting_msg">&lt;b&gt;Archivo&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_compressing_title">Comprimiendo\u2026</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_compressing_msg">&lt;b&gt;Archivo&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Initializing the dialog -->
+    <string name="waiting_dialog_analizing_msg"><![CDATA[<b>Analizando\u2026</b>]]></string>
+    <!-- Extracting - Success message -->
+    <string name="msgs_extracting_success">La extracción se completó correctamente. Los datos se extrajeron en <xliff:g id="destination">%1$s</xliff:g>.</string>
+    <!-- Compressing - Success message -->
+    <string name="msgs_compressing_success">La compresión se realizó correctamente. Los datos se comprimieron en <xliff:g id="destination">%1$s</xliff:g>.</string>
+
+    <!-- Actions Dialog - Title -->
+    <string name="actions_dialog_title">Acciones</string>
+    <!-- Actions Dialog - Menu - Properties of current folder -->
+    <string name="actions_menu_properties_current_folder">"Propiedades"</string>
+    <!-- Actions Dialog - Menu - Refresh -->
+    <string name="actions_menu_refresh">"Actualizar"</string>
+    <!-- Actions Dialog - Menu - New directory -->
+    <string name="actions_menu_new_directory">Carpeta nueva</string>
+    <!-- Actions Dialog - Menu - New file -->
+    <string name="actions_menu_new_file">Archivo nuevo</string>
+    <!-- Actions Dialog - Menu - Select all -->
+    <string name="actions_menu_select_all">Seleccionar todo</string>
+    <!-- Actions Dialog - Menu - Deselect all -->
+    <string name="actions_menu_deselect_all">"Desmarcar todo"</string>
+    <!-- Actions Dialog - Menu - Select -->
+    <string name="actions_menu_select">"Seleccionar"</string>
+    <!-- Actions Dialog - Menu - Deselect -->
+    <string name="actions_menu_deselect">Anular la selección</string>
+    <!-- Actions Dialog - Menu - Copy/Paste selection -->
+    <string name="actions_menu_paste_selection">Copiar la selección aquí</string>
+    <!-- Actions Dialog - Menu - Move selection -->
+    <string name="actions_menu_move_selection">Mover la selección aquí</string>
+    <!-- Actions Dialog - Menu - Delete selection -->
+    <string name="actions_menu_delete_selection">Eliminar la selección</string>
+    <!-- Actions Dialog - Menu - Compress selection -->
+    <string name="actions_menu_compress_selection">Comprimir la selección</string>
+    <!-- Actions Dialog - Menu - Create link -->
+    <string name="actions_menu_create_link">Crear un enlace</string>
+    <!-- Actions Dialog - Menu - Open -->
+    <string name="actions_menu_open">"Abrir"</string>
+    <!-- Actions Dialog - Menu - Open with -->
+    <string name="actions_menu_open_with">"Abrir con"</string>
+    <!-- Actions Dialog - Menu - Execute -->
+    <string name="actions_menu_execute">"Ejecutar"</string>
+    <!-- Actions Dialog - Menu - Send -->
+    <string name="actions_menu_send">"Enviar"</string>
+    <!-- Actions Dialog - Menu - Send selection -->
+    <string name="actions_menu_send_selection">Enviar la selección</string>
+    <!-- Actions Dialog - Menu - Compress -->
+    <string name="actions_menu_compress">Comprimir</string>
+    <!-- Actions Dialog - Menu - Extract -->
+    <string name="actions_menu_extract">Extraer</string>
+    <!-- Actions Dialog - Menu - Delete -->
+    <string name="actions_menu_delete">"Eliminar"</string>
+    <!-- Actions Dialog - Menu - Rename -->
+    <string name="actions_menu_rename">"Cambiar nombre"</string>
+    <!-- Actions Dialog - Menu - Create copy -->
+    <string name="actions_menu_create_copy">Crear una copia</string>
+    <!-- Actions Dialog - Menu - Properties -->
+    <string name="actions_menu_properties">"Propiedades"</string>
+    <!-- Actions Dialog - Menu - Add to bookmarks -->
+    <string name="actions_menu_add_to_bookmarks">Añadir a marcadores</string>
+    <!-- Actions Dialog - Menu - Add shortcut -->
+    <string name="actions_menu_add_shortcut">Añadir acceso directo</string>
+    <!-- Actions Dialog - Menu - Open parent folder -->
+    <string name="actions_menu_open_parent_folder">Abrir principal</string>
+    <!-- Actions Dialog - Menu - Compute checksum -->
+    <string name="actions_menu_compute_checksum">Calcular suma de comprobación</string>
+    <!-- Actions Dialog - Menu - Print -->
+    <string name="actions_menu_print">"Imprimir"</string>
+    <!-- Actions Dialog - Menu - Set as home -->
+    <string name="actions_menu_set_as_home">Est. principal</string>
+
+    <!-- Actions - Ask user prior to do an undone operation. Dialog message -->
+    <string name="actions_ask_undone_operation_msg">Esta acción no se puede deshacer. ¿Deseas continuar?</string>
+
+    <!-- Enter Name Dialog - Label -->
+    <string name="input_name_dialog_label">Nombre:</string>
+    <!-- Enter Name Dialog - Message - Empty name -->
+    <string name="input_name_dialog_message_empty_name">El nombre no puede estar vacío.</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_path_name">El nombre no es válido. Los caracteres \'<xliff:g id="invalid_characters">%1$s</xliff:g>\' no están permitidos.</string>
+    <!-- Enter Name Dialog - Message - Invalid name length -->
+    <string name="input_name_dialog_message_invalid_name_length">El nombre del archivo es demasiado largo, debe tener 255 caracteres o menos.</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_name">El nombre no es válido. Los nombres \'.\' y \'..\' no están permitidos.</string>
+    <!-- Enter Name Dialog - Message - Name exists -->
+    <string name="input_name_dialog_message_name_exists">El nombre ya existe.</string>
+
+    <!-- Associations Dialog - Title -->
+    <string name="associations_dialog_title">Asociaciones</string>
+    <!-- Associations Dialog - Remember the user action -->
+    <string name="associations_dialog_remember">Recordar selección</string>
+    <!-- Associations Dialog - Open with Title -->
+    <string name="associations_dialog_openwith_title">"Abrir con"</string>
+    <!-- Associations Dialog - Open action (button title) -->
+    <string name="associations_dialog_openwith_action">"Abrir"</string>
+    <!-- Associations Dialog - Send with Title -->
+    <string name="associations_dialog_sendwith_title">Enviar con</string>
+    <!-- Associations Dialog - Send action (button title) -->
+    <string name="associations_dialog_sendwith_action">"Enviar"</string>
+
+    <!-- Inline Autocomplete Widget - Tab message nothing to complete -->
+    <string name="inline_autocomplete_tab_nothing_to_complete_msg">No hay nada que completar.</string>
+
+    <!-- Execution console - Title -->
+    <string name="execution_console_title">Consola</string>
+    <!-- Execution console - The script name label -->
+    <string name="execution_console_script_name_label">Secuencia de comandos:</string>
+    <!-- Execution console - The script execution time label -->
+    <string name="execution_console_script_execution_time_label">Tiempo:</string>
+    <!-- Execution console - The script exit code label -->
+    <string name="execution_console_script_exitcode_label">Código de salida:</string>
+    <!-- Execution console - The script execution time seconds string -->
+    <string name="execution_console_script_execution_time_text"><xliff:g id="seconds">%1$s</xliff:g> seg.</string>
+
+    <!-- Compute checksum - Title -->
+    <string name="compute_checksum_title">Calcular suma de comprobación</string>
+    <!-- Compute checksum - The file name label -->
+    <string name="compute_checksum_filename_label">Archivo:</string>
+    <!-- Compute checksum - The MD5 label -->
+    <string name="compute_checksum_md5_label" translatable="false">MD5:</string>
+    <!-- Compute checksum - The SHA1 label -->
+    <string name="compute_checksum_sha1_label" translatable="false">SHA-1:</string>
+    <!-- Compute checksum - The computing checksum message-->
+    <string name="compute_checksum_computing_checksum_msg">Calculando suma de comprobación\u2026</string>
+
+    <!-- Mime/Types - Folder -->
+    <string name="mime_folder">Carpeta</string>
+    <!-- Mime/Types - Symlink -->
+    <string name="mime_symlink">Symlink</string>
+    <!-- Mime/Types - Unknown -->
+    <string name="mime_unknown">"Desconocido"</string>
+
+    <!--  Filetime formats -->
+    <string name="filetime_format_mode_system">Definido por sistema</string>
+    <string name="filetime_format_mode_locale">Definido localmente</string>
+    <string name="filetime_format_mode_ddMMyyyy_HHmmss">dd/mm/aaaa hh:mm:ss</string>
+    <string name="filetime_format_mode_MMddyyyy_HHmmss">mm/dd/aaaa hh:mm:ss</string>
+    <string name="filetime_format_mode_yyyyMMdd_HHmmss">aaaa-mm-dd hh:mm:ss</string>
+
+    <!-- Selection -->
+    <!-- For example "2 folders and 1 file selected." -->
+    <string name="selection_folders_and_files"><xliff:g id="folders">%1$s</xliff:g> y <xliff:g id="files">%2$s</xliff:g> seleccionados.</string>
+
+    <!-- Category descriptions -->
+    <string name="category_system">"SISTEMA"</string>
+    <string name="category_app">APLICACIÓN</string>
+    <string name="category_binary">BINARIO</string>
+    <string name="category_text">TEXTO</string>
+    <string name="category_document">DOCUMENTO</string>
+    <string name="category_ebook">LIBRO ELECTRÓNICO</string>
+    <string name="category_mail">CORREO ELECTRÓNICO</string>
+    <string name="category_compress">COMPRIMIR</string>
+    <string name="category_exec">EJECUTABLE</string>
+    <string name="category_database">BASE DE DATOS</string>
+    <string name="category_font">FUENTE</string>
+    <string name="category_image">IMAGEN</string>
+    <string name="category_audio">AUDIO</string>
+    <string name="category_video">VIDEO</string>
+    <string name="category_security">SEGURIDAD</string>
+    <string name="category_all">TODOS</string>
+
+    <!-- Compression - Compression modes dialog title -->
+    <string name="compression_mode_title">Modo de compresión</string>
+    <!-- Compression - Supported archive and compression modes -->
+    <string name="compression_mode_tar" translatable="false">Tar (tar)</string>
+    <string name="compression_mode_tar_gzip" translatable="false">Tar/gzip (tar.gz)</string>
+    <string name="compression_mode_tar_gzip2" translatable="false">Tar/gzip (tgz)</string>
+    <string name="compression_mode_tar_bzip" translatable="false">Tar/bzip (tar.bz2)</string>
+    <string name="compression_mode_gzip" translatable="false">Gzip (gz)</string>
+    <string name="compression_mode_bzip" translatable="false">Bzip (bz2)</string>
+    <string name="compression_mode_zip" translatable="false">Zip (zip)</string>
+
+    <!-- Shortcut. Failed to handle the shortcut -->
+    <string name="shortcut_failed_msg">Error al manipular el acceso directo.</string>
+    <!-- Shortcut. The shortcut was created -->
+    <string name="shortcut_creation_success_msg">Acceso directo creado correctamente.</string>
+    <!-- Shortcut. The shortcut wasn\'t created -->
+    <string name="shortcut_creation_failed_msg">Error en la creación del acceso directo.</string>
+
+    <!-- Preferences title -->
+    <string name="pref">"Configuración"</string>
+    <!-- Preferences - General title -->
+    <string name="pref_general">"Configuración general"</string>
+    <!-- Preferences - Search title -->
+    <string name="pref_search">Opciones de búsqueda</string>
+    <!-- Preferences - Storage title -->
+    <string name="pref_storage">Opciones de almacenamiento</string>
+    <!-- Preferences - Editor title -->
+    <string name="pref_editor">Opciones de edición</string>
+    <!-- Preferences - Themes title -->
+    <string name="pref_themes">Temas</string>
+    <!-- Preferences - About title -->
+    <string name="pref_about">"Acerca de"</string>
+    <!-- Preferences - About summary -->
+    <string name="pref_about_summary">Administrador de archivos v<xliff:g id="version">%1$s</xliff:g>\nCopyright \u00A9 2012–2014 The CyanogenMod Project</string>
+
+    <!-- Preferences - General - Behaviour category -->
+    <string name="pref_general_behaviour_category">"General"</string>
+    <!-- Preferences - General - Case sensitive sort and navigating title -->
+    <string name="pref_case_sensitive_sort">Distinguir mayúsculas y minúsculas</string>
+    <!-- Preferences - General - Case sensitive sort and navigating summary -->
+    <string name="pref_case_sensitive_sort_summary">Ten en consideración el tipo de letra al momento de navegar u ordenar los resultados de una búsqueda</string>
+    <!-- Preferences - General - Filetime format mode title -->
+    <string name="pref_filetime_format_mode">Formato de fecha y hora</string>
+    <!-- Preferences - General -Disk usage warning level title -->
+    <string name="pref_disk_usage_warning_level">Advertencia de uso del disco</string>
+    <!-- Preferences - General - Disk usage warning level summary -->
+    <!-- FIXME Use "percent" instead of "%" symbol, because it make crash the app on getSummary
+         of ListPreference. This should be fixed in frameworks base prior to be added here. -->
+    <string name="pref_disk_usage_warning_level_summary" formatted="false">Muestra un color diferente en los widgets de uso de discos cuando alcanza el <xliff:g id="level">%1$s</xliff:g> por ciento de espacio disponible en el disco</string>
+    <!-- Preferences - General - Compute folder statistics title -->
+    <string name="pref_compute_folder_statistics">Calcular las estadísticas de la carpeta</string>
+    <!-- Preferences - General - Compute folder statistics summary on -->
+    <string name="pref_compute_folder_statistics_on">Advertencia: El cálculo de estadísticas de la carpeta toma tiempo y usa varios recursos del sistema</string>
+    <!-- Preferences - General - Display thumbs -->
+    <string name="pref_display_thumbs">Vista previa</string>
+    <!-- Preferences - General - Display thumbs summary -->
+    <string name="pref_display_thumbs_summary">Mostrar una imagen de vista previa para aplicaciones, archivos de música, fotografías y videos</string>
+    <!-- Preferences - General - Use flinger detection -->
+    <string name="pref_use_flinger">Utilizar gestos de deslizamiento</string>
+    <!-- Preferences - General - Use flinger detection summary -->
+    <string name="pref_use_flinger_summary">Realiza un gesto de deslizamiento de izquierda a derecha para eliminar archivos o carpetas</string>
+    <!-- Preferences - General - Advanced settings category -->
+    <string name="pref_general_advanced_settings_category">"Config. avanzada"</string>
+    <!-- Preferences - General - Access mode -->
+    <string name="pref_access_mode">Modo de acceso</string>
+    <!-- Preferences - General - Safe mode -->
+    <string name="pref_access_mode_safe">"Modo seguro"</string>
+    <!-- Preferences - General - Safe mode summary -->
+    <string name="pref_access_mode_safe_summary">Modo seguro\n\nLa aplicación se está ejecutando sin privilegios y los únicos archivos de sistema a los que se puede acceder son los volúmenes de almacenamiento (tarjetas SD y USB)</string>
+    <!-- Preferences - General - Prompt user mode -->
+    <string name="pref_access_mode_prompt">Modo usuario con avisos</string>
+    <!-- Preferences - General - Prompt user mode summary -->
+    <string name="pref_access_mode_prompt_summary">Modo usuario con avisos\n\nLa aplicación se está ejecutando con un acceso completo al sistema de archivos, pero se te pedirá permiso antes de ejecutar acciones con privilegios</string>
+    <!-- Preferences - General - Root access mode -->
+    <string name="pref_access_mode_root">Modo de acceso a raíz</string>
+    <!-- Preferences - General - Root access mode summary -->
+    <string name="pref_access_mode_root_summary">Modo de acceso a raíz\n\nAdvertencia: este modo permite realizar operaciones que podrían hacer que dispositivo no funcione correctamente. Es tu responsabilidad garantizar que la operación sea segura</string>
+    <!-- Preferences - General - Restrict secondary users access title -->
+    <string name="pref_restrict_secondary_users_access_title">Restringir el acceso a los usuarios</string>
+    <!-- Preferences - General - Restrict secondary users access summary -->
+    <string name="pref_restrict_secondary_users_access_summary">Restringir el acceso de usuarios secundarios al sistema por completo</string>
+    <!-- Preferences - Search - Results category -->
+    <string name="pref_search_results_category">"Resultados"</string>
+    <!-- Preferences - Search - Show relevance widget -->
+    <string name="pref_show_relevance_widget">Mostrar el widget de relevancia</string>
+    <!-- Preferences - Search - Highlight search terms -->
+    <string name="pref_highlight_terms">Resaltar los términos de la búsqueda</string>
+    <!-- Preferences - Search - Sort results mode -->
+    <string name="pref_sort_search_results_mode">Modo de orden de resultados</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_none">Sin ordenar</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_name">"Por nombre"</string>
+    <!-- Preferences - Search - Sort results mode. Relevance -->
+    <string name="pref_sort_search_results_mode_relevance">Por relevancia</string>
+    <!-- Preferences - Search - Privacity category -->
+    <string name="pref_search_privacity_category">"Privacidad"</string>
+    <!-- Preferences - Search - Save search terms -->
+    <string name="pref_save_search_terms">Guardar los términos de la búsqueda</string>
+    <!-- Preferences - Search - Save search terms summary on -->
+    <string name="pref_save_search_terms_on">Los términos de la búsqueda se guardarán y utilizarán como sugerencias para futuras búsquedas</string>
+    <!-- Preferences - Search - Save search terms summary off -->
+    <string name="pref_save_search_terms_off">Los términos de la búsqueda no se guardarán</string>
+    <!-- Preferences - Search - Remove saved search terms -->
+    <string name="pref_remove_saved_search_terms">Eliminar los términos de búsquedas guardados</string>
+    <!-- Preferences - Search - Remove saved search terms summary -->
+    <string name="pref_remove_saved_search_terms_summary">Toca para eliminar todos los términos de búsqueda guardados</string>
+    <!-- Preferences - Search - Suggestions were truncated -->
+    <string name="pref_remove_saved_search_terms_msg">Se eliminaron todos los términos de búsqueda guardados</string>
+    <!-- Preferences - Storage - Secure Storage category -->
+    <string name="pref_secure_storage_category">Almacenamiento seguro</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync title -->
+    <string name="pref_secure_storage_delayed_sync_title">Sincronización postergada</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync summary -->
+    <string name="pref_secure_storage_delayed_sync_summary">La sincronización de sistemas de archivos seguros es una operación costosa. Activa esta opción para permitir respuestas más rápidas después de cada operación, realizar la sincronización cuando el sistema de archivos está en estado desocupado, pero a expensas de perder la información pendiente sin sincronizar en caso de que la aplicación deje de funcionar.</string>
+    <!-- Preferences - Storage - Secure Storage - Reset password title -->
+    <string name="pref_secure_storage_reset_password_title">Restablecer contraseña</string>
+    <!-- Preferences - Storage - Secure Storage - Delete storage title -->
+    <string name="pref_secure_storage_delete_storage_title">Eliminar el almacenamiento</string>
+    <!-- Preferences - Editor - Behaviour category -->
+    <string name="pref_editor_behaviour_category">Comportamiento</string>
+    <!-- Preferences - Editor - No suggestions -->
+    <string name="pref_no_suggestions">Sin sugerencias</string>
+    <!-- Preferences - Editor - No suggestions summary -->
+    <string name="pref_no_suggestions_desc">No mostrar sugerencias del diccionario durante la edición del archivo</string>
+    <!-- Preferences - Editor - Word wrap -->
+    <string name="pref_word_wrap">Ajuste de línea</string>
+    <!-- Preferences - Editor - Hex dump -->
+    <string name="pref_hexdump">Volcado hexadecimal de archivos binarios</string>
+    <!-- Preferences - Editor - Hex dump desc -->
+    <string name="pref_hexdump_desc">Cuando se abre un archivo binario, genera un volcado hexadecimal de este y lo abre en el visor hexadecimal</string>
+    <!-- Preferences - Editor - Syntax highlight category -->
+    <string name="pref_editor_syntax_highlight_category">Resaltado de sintaxis</string>
+    <!-- Preferences - Editor - Syntax highlight -->
+    <string name="pref_syntax_highlight">Resaltado de sintaxis</string>
+    <!-- Preferences - Editor - Syntax highlight summary -->
+    <string name="pref_syntax_highlight_desc">Resalta la sintaxis del archivo que se muestra en el editor (solo cuando un procesador de resaltado de sintaxis está disponible para el tipo de archivo)</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme -->
+    <string name="pref_syntax_highlight_color_scheme">Esquema de colores</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme summary -->
+    <string name="pref_syntax_highlight_color_scheme_desc">Selecciona el esquema de color del resaltado de sintaxis</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme -->
+    <string name="pref_syntax_sh_use_theme_default">Usa un tema predeterminado</string>
+    <!-- Preferences - Editor - Syntax highlight -Color Scheme summary -->
+    <string name="pref_syntax_sh_use_theme_default_desc">Usa el resaltado de sintaxis predeterminado del tema actual</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme - Items category -->
+    <string name="pref_editor_sh_item_category">Elementos</string>
+    <!-- Preferences - Themes - Themes selection category -->
+    <string name="pref_themes_selection_category">Temas</string>
+    <!-- Preferences - Themes - Set theme button -->
+    <string name="pref_themes_set_theme">Establecer un tema</string>
+    <!-- Preferences - Themes - Confirmation message -->
+    <string name="pref_themes_confirmation">El tema se aplicó correctamente.</string>
+    <!-- Preferences - Themes - Theme not found message -->
+    <string name="pref_themes_not_found">No se encontró el tema.</string>
+
+    <!-- Preferences - Debug - Capture debug traces -->
+    <string name="pref_debug_traces">Información de depuración del registro</string>
+
+    <!-- Themes - Default theme name -->
+    <string name="theme_default_name">Tema claro</string>
+    <!-- Themes - Default theme description -->
+    <string name="theme_default_description">Un tema con colores claros para el administrador de archivos CyanogenMod.</string>
+    <!-- Themes - Default theme author -->
+    <string name="themes_author">CyanogenMod</string>
+
+    <!-- Navigation drawer -->
+    <string name="drawer_open">"Abrir panel de navegación"</string>
+    <string name="drawer_close">"Cerrar panel de navegación"</string>
+
+    <!-- ColorPickerDialog -->
+    <!-- The text of the alpha slider control -->
+    <string name="color_picker_alpha_slider_text">Alpha</string>
+    <!-- The label of the current color panel -->
+    <string name="color_picker_current_text">Actual:</string>
+    <!-- The label of the new color panel -->
+    <string name="color_picker_new_text">Nuevo:</string>
+    <!-- The label of the color input -->
+    <string name="color_picker_color">Color:</string>
+
+    <!-- Android Syntax Highlight -->
+    <string name="ash_reset_color_scheme">Restaurar el esquema de colores del tema predeterminado</string>
+    <string name="ash_text">Texto</string>
+    <string name="ash_assignment">Asignación</string>
+    <string name="ash_singleline_comment">Comentario de línea única</string>
+    <string name="ash_multiline_comment">Comentario de múltiples líneas</string>
+    <string name="ash_keyword">Palabra clave</string>
+    <string name="ash_quoted_string">Cadena entrecomillada</string>
+    <string name="ash_variable">Variable</string>
+
+    <!-- Secure Storage -->
+    <!-- Secure Storage dialog title - Unlock -->
+    <string name="secure_storage_unlock_title">Desbloquear almacenamiento</string>
+    <!-- Secure Storage dialog title - Create -->
+    <string name="secure_storage_create_title">Crear almacenamiento</string>
+    <!-- Secure Storage dialog title - Reset -->
+    <string name="secure_storage_reset_title">Restablecer contraseña</string>
+    <!-- Secure Storage dialog title - Delete -->
+    <string name="secure_storage_delete_title">Eliminar el almacenamiento</string>
+    <!-- Secure Storage unlock dialog message (secure storage exists) -->
+    <string name="secure_storage_unlock_key_prompt_msg">Escribe la contraseña para desbloquear el sistema de archivos de almacenamiento seguro.</string>
+    <!-- Secure Storage unlock dialog message (new secure storage) -->
+    <string name="secure_storage_unlock_key_new_msg">Escribe una contraseña para proteger el sistema de archivos de almacenamiento seguro.</string>
+    <!-- Secure Storage unlock dialog message (reset the current password) -->
+    <string name="secure_storage_unlock_key_reset_msg">Escribe la contraseña actual y nueva para restablecer el sistema de archivos de almacenamiento seguro.</string>
+    <!-- Secure Storage unlock dialog message (delete the secure storage) -->
+    <string name="secure_storage_unlock_key_delete_msg">Escribe la contraseña actual para eliminar el sistema de archivos de almacenamiento seguro.</string>
+    <!-- Secure Storage unlock dialog old key title -->
+    <string name="secure_storage_unlock_old_key_title">Contraseña anterior:</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_new_key_title">Contraseña nueva:</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_key_title">Contraseña:</string>
+    <!-- Secure Storage unlock dialog repeat key title-->
+    <string name="secure_storage_unlock_repeat_title">Repetir la contraseña:</string>
+    <!-- Secure Storage create button -->
+    <string name="secure_storage_create_button">"Crear"</string>
+    <!-- Secure Storage unlock button -->
+    <string name="secure_storage_unlock_button">"Desbloquear"</string>
+    <!-- Secure Storage reset button -->
+    <string name="secure_storage_reset_button">"Restablecer"</string>
+    <!-- Secure Storage delete button -->
+    <string name="secure_storage_delete_button">"Eliminar"</string>
+    <!-- Secure Storage unlock failed toast -->
+    <string name="secure_storage_unlock_failed">No se puede desbloquear el almacenamiento</string>
+    <!-- Secure Storage unlock validation, length -->
+    <string name="secure_storage_unlock_validation_length">La contraseña debe tener al menos <xliff:g id="characters">%1$d</xliff:g> caracteres.</string>
+    <!-- Secure Storage unlock validation, equal -->
+    <string name="secure_storage_unlock_validation_equals">Las contraseñas no coinciden.</string>
+
+    <!-- Print messages -->
+    <!-- Unsupported document format -->
+    <string name="print_unsupported_document">El formato de documento no es compatible</string>
+    <!-- Unsupported image format -->
+    <string name="print_unsupported_image">El formato de imagen no es compatible</string>
+    <!-- Print header -->
+    <string name="print_document_header">Documento: <xliff:g id="document_name">%1$s</xliff:g></string>
+    <!-- Print footer -->
+    <string name="print_document_footer">Página <xliff:g id="page_number">%1$s</xliff:g></string>
+
+    <!-- Security - Extract relative or absolute files -->
+    <string name="security_warning_extract">Advertencia\n\nExtraer un archivo con rutas relativas o absolutas puede causar daños en el dispositivo al sobrescribir los archivos de sistema.\n\n¿Deseas continuar?</string>
+
+    <!-- ChangeLog - Dialog title -->
+    <string name="changelog_title">Registro de cambios</string>
+
+    <!-- Welcome Dialog - Title -->
+    <string name="welcome_title">Bienvenido</string>
+    <!-- Welcome Dialog - Message -->
+    <string name="welcome_msg">Bienvenido a al administrador de archivos CyanogenMod.\n\nEsta aplicación te permite explorar el sistema de archivos y realizar operaciones que podrían provocar el mal funcionamiento del dispositivo. Para evitar daños, la aplicación se iniciará en un modo seguro y con pocos privilegios.\n\nPuedes acceder al modo avanzado con privilegios completos a través de la Configuración. Es tu responsabilidad garantizar que la operación no provoque daños en su sistema.\n\nEl equipo de CyanogenMod</string>
+
+    <string name="easy_mode_type_icon">Icono para tipo MIME</string>
+    <string name="easy_mode_type_none">Todos los archivos</string>
+    <string name="easy_mode_type_images">"Imágenes"</string>
+    <string name="easy_mode_type_videos">"Videos"</string>
+    <string name="easy_mode_type_music">"Música"</string>
+    <string name="easy_mode_type_documents">"Documentos"</string>
+
+    <string name="activity_not_found_exception">No se pudo encontrar una aplicación para abrir este archivo</string>
+    <string name="no_permission_for_drm">"Lo sentimos, no se puede compartir el archivo DRM"</string>
+    <string name="actions_menu_drm_license_info">Información de licencia de DRM</string>
+</resources>

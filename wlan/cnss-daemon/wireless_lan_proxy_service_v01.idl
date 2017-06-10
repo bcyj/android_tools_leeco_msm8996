@@ -1,0 +1,214 @@
+/*****************************************************************************
+  @FILE     wireless_lan_proxy_service_v01.idl
+
+  @BRIEF    WLAN proxy service API between APSS and ADSP
+
+  @DESCRIPTION
+  This specification documents Major Version 1 of the Qualcomm Messaging
+  Interface (QMI) for WLAN Proxy Service (QMI_WLPS).
+
+  This service is used for exchange WLAN on/off status information
+  between two subsystems APSS and ADSP.  WLPS QMI client runs on
+  APSS and WLPS QMI server runs on ADSP. There is only one client
+  that using this service since only client on APSS can receive
+  WLAN status information from WLAN host driver.
+
+  @Copyright (c) 2014 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+
+include "common_v01.idl";
+
+revision 0;
+
+
+//! Maximum SSID length
+const QMI_WLPS_MAX_SSID_LEN = 32;
+//! Maximum BSSID length
+const QMI_WLPS_MAX_BSSID_LEN = 6;
+//! Maximum string length
+const QMI_WLPS_MAX_STR_LEN = 16;
+//! Maximum number of channels
+const QMI_WLPS_MAX_NUM_CHAN = 128;
+//! Maximum country code length
+const QMI_WLPS_COUNTRY_CODE_LEN = 3;
+
+//! WLAN Mode
+enum {
+  QMI_WLPS_INFRA_STATION,
+  /**< station mode */
+  QMI_WLPS_SOFTAP,
+  /**< soft AP mode */
+  QMI_WLPS_P2P_CLIENT,
+  /**< P2P client mode */
+  QMI_WLPS_P2P_GO,
+  /**< P2P GO mode */
+  QMI_WLPS_MONITOR,
+  /**< monitor mode */
+  QMI_WLPS_FTM,
+  /**< FTM mode */
+  QMI_WLPS_IBSS,
+  /**< IBSS mode */
+  QMI_WLPS_P2P_DEVICE
+  /**< P2P device mode */
+} wlps_vdev_mode_t;
+
+//! structure for VDEV basic information
+struct {
+   uint8 vdev_id;
+   wlps_vdev_mode_t vdev_mode;
+} wlps_vdev_info_s;
+
+//! structure for VDEV connection information
+struct {
+    boolean is_connected;
+    uint8 country_code[QMI_WLPS_COUNTRY_CODE_LEN];
+    uint32 freq;
+    uint8 bssid[QMI_WLPS_MAX_BSSID_LEN];
+    uint8 ssid<QMI_WLPS_MAX_SSID_LEN>;
+} wlps_vdev_conn_info_s;
+
+//============================================================================
+/** @COMMAND QMI_WLPS_UPDATE_CLIENT_VERSION
+    @BRIEF This command sends chip/host/FW version.
+    @CMD_VERSION 1.0
+    @USAGE Production
+    @SECURITY_LEVEL Low Risk
+    @EQUIRED_ACTION Default
+*/
+//============================================================================
+
+//! @MSG     QMI_WLPS_UPDATE_CLIENT_VERSION_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+
+message {
+  //! Chip ID
+  //! @VERSION 1.0
+  //! @VERSION_INTRODUCED 1.0
+  mandatory uint32 chip_id;
+  //! Chip Name
+  //! @VERSION 1.0
+  //! @VERSION_INTRODUCED 1.0
+  mandatory char chip_name[QMI_WLPS_MAX_STR_LEN];
+  //! Chip Manufacturer
+  //! @VERSION 1.0
+  //! @VERSION_INTRODUCED 1.0
+  mandatory char chip_from[QMI_WLPS_MAX_STR_LEN];
+  //! Host Driver Version
+  //! @VERSION 1.0
+  //! @VERSION_INTRODUCED 1.0
+  mandatory char host_version[QMI_WLPS_MAX_STR_LEN];
+  //! FW Driver Version
+  //! @VERSION 1.0
+  //! @VERSION_INTRODUCED 1.0
+  mandatory char fw_version[QMI_WLPS_MAX_STR_LEN];
+} wlps_update_client_version_req_msg;
+
+//! @MSG     QMI_WLPS_UPDATE_CLIENT_VERSION_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  //! Result Code
+  //! @VERSION 1.0
+  //! @VERSION_INTRODUCED 1.0
+  mandatory qmi_response_type resp;           //!< Standard response type.
+} wlps_update_client_version_resp_msg;
+
+/** @ERROR
+   QMI_ERR_NONE        No error in the request
+   QMI_ERR_INTERNAL    Unexpected error occurred during processing
+*/
+
+/** @DESCRIPTION
+This command send WLAN chip/host/fw version information.
+*/
+
+//============================================================================
+/** @COMMAND QMI_WLPS_UPDATE_CLIENT_STATUS
+    @BRIEF This command sends WLAN status.
+    @CMD_VERSION 1.0
+    @USAGE Production
+    @SECURITY_LEVEL Low Risk
+    @EQUIRED_ACTION Default
+*/
+//============================================================================
+
+//! @MSG     QMI_WLPS_UPDATE_CLIENT_STATUS_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+
+message {
+  //! FW Service Bit
+  //! @VERSION 1.0
+  //! @VERSION_INTRODUCED 1.0
+  mandatory boolean fw_adsp_support;
+  /**<  This bit indicating whether FW supports the service or not
+        WLPS server will ignore all the message if this bit is 0 */
+  //! WLAN Power Status
+  //! @VERSION 1.0
+  //! @VERSION_INTRODUCED 1.0
+  mandatory boolean is_on;
+  //! VDEV Information
+  //! @VERSION 1.0
+  //! @VERSION_INTRODUCED 1.0
+  optional wlps_vdev_info_s vdev_info;
+  //! VDEV Connection Information
+  //! @VERSION 1.0
+  //! @VERSION_INTRODUCED 1.0
+  optional wlps_vdev_conn_info_s vdev_conn_info;
+  //! Channel Information
+  //! @VERSION 1.0
+  //! @VERSION_INTRODUCED 1.0
+  optional uint8 channel_info<QMI_WLPS_MAX_NUM_CHAN>;
+} wlps_update_client_status_req_msg;
+
+//! @MSG     QMI_WLPS_UPDATE_CLIENT_STATUS_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  //! Result Code
+  //! @VERSION 1.0
+  //! @VERSION_INTRODUCED 1.0
+  mandatory qmi_response_type resp;           //!< Standard response type.
+} wlps_update_client_status_resp_msg;
+
+/** @ERROR
+   QMI_ERR_NONE        No error in the request
+   QMI_ERR_INTERNAL    Unexpected error occurred during processing
+*/
+
+/** @DESCRIPTION
+This command send WLAN power status with VDEV related information.
+*/
+
+//============================================================================
+// Service definition
+//============================================================================
+service wlps {
+  //! @ID QMI_WLPS_UPDATE_CLIENT_VERSION
+  wlps_update_client_version_req_msg   QMI_WLPS_UPDATE_CLIENT_VERSION_REQ,
+  wlps_update_client_version_resp_msg  QMI_WLPS_UPDATE_CLIENT_VERSION_RESP = 0x020;
+
+  //! @ID QMI_WLPS_UPDATE_CLIENT_STATUS
+  wlps_update_client_status_req_msg    QMI_WLPS_UPDATE_CLIENT_STATUS_REQ,
+  wlps_update_client_status_resp_msg   QMI_WLPS_UPDATE_CLIENT_STATUS_RESP;
+} = 0x0039;
+
+//============================================================================
+// File footer
+//============================================================================
+/*
+@FOOTER Test Appendix
+*/
+//============================================================================
+// End of Module
+//============================================================================

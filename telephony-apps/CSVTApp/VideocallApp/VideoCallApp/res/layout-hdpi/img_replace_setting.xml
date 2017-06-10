@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+	<RelativeLayout  android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:gravity="center_horizontal|center_vertical"
+		android:orientation="vertical">
+		<ImageView android:id="@+id/photoImage"
+			style="?android:attr/imageWellStyle"
+			android:layout_width="fill_parent"
+			android:layout_height="345px"
+			android:clickable="true"
+			android:focusable="true"
+			android:padding="0px"
+			android:layout_marginLeft="8px"
+			android:layout_marginRight="8px"
+			android:layout_marginBottom="20px"
+			android:scaleType="fitXY"
+		/>
+		<ImageView
+			android:id="@+id/photo_triangle_affordance"
+			android:src="@drawable/photoscript"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:clickable="true"
+			android:focusable="true"
+			android:layout_alignBottom="@id/photoImage"
+			android:layout_alignRight="@id/photoImage"
+		/>
+	</RelativeLayout>
+</RelativeLayout>

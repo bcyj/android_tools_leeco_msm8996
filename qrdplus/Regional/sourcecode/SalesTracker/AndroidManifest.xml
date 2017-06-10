@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.salestracker">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+
+    <application>
+        <receiver android:name=".SalesTrackerReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.android.salestracker.action.SENT_RESULT" />
+                <action android:name="com.android.salestracker.action.DELIVERY_RESULT" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".SalesTrackerService">
+            <intent-filter>
+                <action android:name="com.android.salestracker.action.START_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".RegistrationPromptActivity"
+            android:theme="@style/RegistrationPromptActivityTheme"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" />
+    </application>
+</manifest>
+

@@ -1,0 +1,51 @@
+<!--
+    Copyright (c) 2015, Qualcomm Technologies, Inc. All Rights Reserved.
+    Qualcomm Technologies Proprietary and Confidential.
+-->
+
+<resources>
+    <!-- Text in the action bar at the top of the screen.
+         SDN list Should be kept in sync with Dialer. -->
+    <style name="DialtactsActionBarTitleText"
+           parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/phone_settings_actionbar_text_color</item>
+    </style>
+    <style name="TelephonyActionBarStyle" parent="android:Widget.Material.ActionBar">
+        <item name="android:displayOptions">showHome|homeAsUp|showTitle</item>
+        <item name="android:background">@color/actionbar_background_color</item>
+        <item name="android:titleTextStyle">@style/DialtactsActionBarTitleText</item>
+        <item name="android:height">@dimen/action_bar_height</item>
+        <item name="android:elevation">@dimen/action_bar_elevation</item>
+        <!-- Empty icon -->
+        <item name="android:icon">@android:color/transparent</item>
+    </style>
+
+    <!-- Style for the call settings action bar.  Should be kept in sync with Dialer. -->
+    <style name="DialtactsActionBarStyle" parent="@style/TelephonyActionBarStyle">
+        <!-- Shift the title text to the right -->
+        <item name="android:contentInsetStart">@dimen/actionbar_contentInsetStart</item>
+    </style>
+    <style name="SettingsLight" parent="android:Theme.Material.Light">
+        <item name="android:windowBackground">@color/phone_settings_background_color</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:actionBarStyle">@style/DialtactsActionBarStyle</item>
+        <item name="android:actionMenuTextColor">@color/phone_settings_actionbar_text_color</item>
+        <!--item name="android:actionOverflowButtonStyle">@style/DialtactsActionBarOverflow</item-->
+        <item name="android:homeAsUpIndicator">@drawable/ic_back_arrow</item>
+        <item name="android:windowActionBarOverlay">false</item>
+        <item name="android:colorPrimaryDark">@color/actionbar_background_color_dark</item>
+        <!-- Setting text. -->
+        <item name="android:textColorPrimary">@color/setting_primary_color</item>
+        <!-- Setting description. -->
+        <item name="android:textColorSecondary">@color/setting_secondary_color</item>
+    </style>
+
+    <style name="DialerSettingsLight" parent="SettingsLight">
+        <item name="android:colorAccent">@color/dialer_theme_color</item>
+        <item name="android:dialogTheme">@style/DialerAlertDialogTheme</item>
+    </style>
+    <style name="DialerAlertDialogTheme"
+        parent="@android:style/Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">@color/dialer_theme_color</item>
+    </style>
+</resources>

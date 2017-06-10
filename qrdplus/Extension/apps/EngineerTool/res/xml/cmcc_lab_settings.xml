@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015, Qualcomm Technologies, Inc. All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<child xmlns:android="http://schemas.android.com/apk/res/android"
+    label="@string/child_lab_settings_label">
+    <dialog message="@string/choose_action_message">
+        <positive label="@string/choose_action_display_check_list">
+            <list title="@string/child_lab_settings_label" menu="apply">
+                <checkitem label="@string/checkitem_prefer_rtp_over_tcp">
+                    <dialog title="@string/dialog_edit_label">
+                        <view>
+                            <switch label="@string/checkitem_prefer_rtp_over_tcp" />
+                        </view>
+                        <positive label="@android:string/ok" />
+                        <negative label="@android:string/cancel" />
+                    </dialog>
+                </checkitem>
+                <checkitem label="@string/checkitem_network_mode">
+                    <dialog title="@string/dialog_edit_label">
+                        <view info="@string/dialog_info_select_network_mode"
+                            info_gravity="top">
+                            <spinner>
+                                <set label="@string/network_mode_tdscdma" value="1" />
+                                <set label="@string/network_mode_lwtg" value="2" />
+                                <set label="@string/network_mode_gsm" value="3" />
+                            </spinner>
+                        </view>
+                        <positive label="@android:string/ok" />
+                        <negative label="@android:string/cancel" />
+                    </dialog>
+                </checkitem>
+                <checkitem label="@string/checkitem_attach_apn">
+                    <dialog title="@string/checkitem_attach_apn"
+                        message="">
+                        <positive label="@string/dialog_edit_label">
+                            <intent type="activity" action="android.settings.APN_SETTINGS">
+                                <extra key="subscription" value="0" />
+                            </intent>
+                        </positive>
+                        <negative label="@android:string/cancel" />
+                    </dialog>
+                </checkitem>
+                <checkitem label="@string/checkitem_cmcc_primary_card_lock_policy">
+                    <dialog title="@string/dialog_edit_label">
+                        <view info="@string/cmcc_card_lock_info" info_gravity="bottom">
+                            <switch label="@string/cmcc_card_lock_switch_label" />
+                        </view>
+                        <positive label="@android:string/ok" />
+                        <negative label="@android:string/cancel" />
+                    </dialog>
+                </checkitem>
+            </list>
+        </positive>
+        <neutral label="@string/choose_action_apply_default_value">
+            <do>
+                <op function="" params="" />
+                <op function="" params="" />
+            </do>
+        </neutral>
+    </dialog>
+</child>

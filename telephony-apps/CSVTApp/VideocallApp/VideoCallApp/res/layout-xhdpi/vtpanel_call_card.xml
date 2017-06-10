@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<!-- Call card hold call related information -->
+<com.borqs.videocall.VTPanelCallCard	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:VTScreen="http://schemas.android.com/apk/res/com.borqs.videocall"
+	android:layout_width="wrap_content"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+
+
+    VTScreen:left_local="0dp"
+    VTScreen:top_local="0dp"
+    VTScreen:height_local="133dp"
+    VTScreen:width_local="360dp"
+
+    VTScreen:left_remote="0dp"
+    VTScreen:top_remote="0dp"
+    VTScreen:height_remote="133dp"
+    VTScreen:width_remote="360dp"
+
+    VTScreen:left_keypad_local="0dp"
+    VTScreen:top_keypad_local="0dp"
+    VTScreen:height_keypad_local="133dp"
+    VTScreen:width_keypad_local="360dp"
+
+    VTScreen:left_keypad_remote="0dp"
+    VTScreen:top_keypad_remote="0dp"
+    VTScreen:height_keypad_remote="133dp"
+    VTScreen:width_keypad_remote="360dp"
+
+
+    VTScreen:left_remote_only="200dp"
+    VTScreen:top_remote_only="350dp"
+    VTScreen:height_remote_only="185dp"
+    VTScreen:width_remote_only="300dp">
+
+    <RelativeLayout android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+	>
+	<TextView android:id="@+id/vt_card_title"
+		android:textSize="18dp"
+		android:textColor="#ffffff"
+		android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+	<!-- Name (or the phone number, if we don't have a name to display). -->
+	<TextView android:id="@+id/vt_name"
+            android:textSize="16dp"
+		android:textColor="#a6ffa2"
+		android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp" />
+	<TextView android:id="@+id/vt_phone_number"
+		android:textSize="16dp"
+		android:textColor="#c0c0c0"
+		android:layout_width="175dp"
+		android:layout_height="wrap_content"
+		android:singleLine="true"
+		android:layout_marginTop="40dp" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/txt_view_userinput"
+        android:layout_width="fill_parent"
+        android:layout_height="58dp"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="#FFFFFF"
+        android:singleLine="true"
+        android:cursorVisible="true"
+        android:background="@drawable/input" >
+    </EditText>
+</com.borqs.videocall.VTPanelCallCard>

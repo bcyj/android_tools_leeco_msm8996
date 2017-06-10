@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2013 Qualcomm Technologies, Inc. All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ */
+ -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayoutMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="40dp"
+    android:paddingTop="12dp"
+    android:paddingRight="40dp"
+    android:paddingBottom="12dp"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/bt_gsm_opt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_sub_cdma"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:background="@drawable/button_sharp"
+        android:text="@string/pref_gsm_choose_title" />
+
+    <LinearLayout
+        android:id="@+id/layout_sub_gsm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_gsm_opt"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:visibility="gone"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_gsm_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@string/gsm_network_list_title" />
+
+        <TextView
+            android:id="@+id/tv_gsm_loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="@string/searching_gsm_network_title" />
+
+        <ListView
+            android:id="@+id/lv_gsm_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_gsm_opt"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:background="@drawable/list_sharp" >
+        </ListView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_current_effect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="@string/manual_select_network_tip" />
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2014 Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qti.cbwidget"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="false"
+        android:label="@string/app_name" >
+
+        <!-- Require the sender to have this permission to prevent third party spoofing -->
+        <receiver android:name="com.qti.cbwidget.PrivilegedCBWidgetProvider"
+            android:permission="android.permission.RECEIVE_EMERGENCY_BROADCAST">
+            <intent-filter>
+                <action android:name="android.cellbroadcastreceiver.CB_AREA_INFO_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.qti.cbwidget.CBWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_DISABLED" />
+                <action android:name="android.intent.action.AIRPLANE_MODE" />
+                <action android:name="android.intent.action.SERVICE_STATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+    </application>
+</manifest>

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Category mapping from ATSC to canonical genre -->
+    <string-array name="genre_mapping_atsc">
+        <item>Giáo dục|GIÁO DỤC</item>
+        <item>Giải trí|GIẢI TRÍ</item>
+        <item>Phim|PHIM</item>
+        <item>Tin tức|TIN TỨC</item>
+        <item>Tôn giáo|PHONG CÁCH SỐNG</item>
+        <item>Thể thao|THỂ THAO</item>
+        <item>Khác|KHÁC</item>
+        <item>Hành động|PHIM</item>
+        <item>Quảng cáo|KHÁC</item>
+        <item>Hoạt hình|GIA ĐÌNH_TRẺ EM</item>
+        <item>Hợp tuyển|TRUYỀN HÌNH</item>
+        <item>Ô tô|KHÁC</item>
+        <item>Giải thưởng|GIẢI TRÍ</item>
+        <item>Bóng chày|THỂ THAO</item>
+        <item>Bóng rổ|THỂ THAO</item>
+        <item>Tập san|KHÁC</item>
+        <item>Kinh doanh|KHÁC</item>
+        <item>Cổ điển|NHẠC</item>
+        <item>Đại học|GIÁO DỤC</item>
+        <item>Chiến đấu|KHÁC</item>
+        <item>Hài|HÀI</item>
+        <item>Tài liệu|KHÁC</item>
+        <item>Hòa nhạc|NHẠC</item>
+        <item>Người tiêu dùng|KHÁC</item>
+        <item>Đương đại|KHÁC</item>
+        <item>Hình sự|PHIM</item>
+        <item>Múa|GIẢI TRÍ</item>
+        <item>Tài liệu|TIN TỨC</item>
+        <item>Kịch|TRUYỀN HÌNH</item>
+        <item>Tiểu học|GIÁO DỤC</item>
+        <item>Khiêu dâm|PHIM</item>
+        <item>Tập thể dục|THỂ THAO</item>
+        <item>Giả tưởng|PHIM</item>
+        <item>Nông trại|KHÁC</item>
+        <item>Thời trang|PHONG CÁCH SỐNG</item>
+        <item>Hư cấu|NGHỆ THUẬT</item>
+        <item>Thực phẩm|PHONG CÁCH SỐNG</item>
+        <item>Bóng bầu dục|THỂ THAO</item>
+        <item>Ngước ngoài|KHÁC</item>
+        <item>Gây quỹ từ thiện|KHÁC</item>
+        <item>Trò chơi/Câu hỏi|TRÒ CHƠI</item>
+        <item>Vườn|PHONG CÁCH SỐNG</item>
+        <item>Gôn|THỂ THAO</item>
+        <item>Chính phủ|KHÁC</item>
+        <item>Sức khỏe|PHONG CÁCH SỐNG</item>
+        <item>Trung học|GIÁO DỤC</item>
+        <item>Lịch sử|GIÁO DỤC</item>
+        <item>Sở thích|PHONG CÁCH SỐNG</item>
+        <item>Khúc côn cầu|THỂ THAO</item>
+        <item>Nhà|PHONG CÁCH SỐNG</item>
+        <item>Kinh dị|PHIM</item>
+        <item>Thông tin|TIN TỨC</item>
+        <item>Hướng dẫn|KHÁC</item>
+        <item>Quốc tế|KHÁC</item>
+        <item>Phỏng vấn|KHÁC</item>
+        <item>Ngôn ngữ|GIÁO DỤC</item>
+        <item>Pháp lý|KHÁC</item>
+        <item>Trực tiếp|KHÁC</item>
+        <item>Địa phương|KHÁC</item>
+        <item>Toán|GIÁO DỤC</item>
+        <item>Y tế|KHÁC</item>
+        <item>Họp|KHÁC</item>
+        <item>Quân sự|KHÁC</item>
+        <item>Phim bộ|TRUYỀN HÌNH</item>
+        <item>Nhạc|NHẠC</item>
+        <item>Bí ẩn|PHIM</item>
+        <item>Quốc gia|KHÁC</item>
+        <item>Tự nhiên|ĐỘNG VẬT HOANG DÃ</item>
+        <item>Cảnh sát|KHÁC</item>
+        <item>Chính trị|KHÁC</item>
+        <item>Lần đầu trình chiếu|LẦN ĐẦU TRÌNH CHIẾU</item>
+        <item>Ghi sẵn|KHÁC</item>
+        <item>Sản phẩm|KHÁC</item>
+        <item>Chuyên nghiệp|KHÁC</item>
+        <item>Công cộng|KHÁC</item>
+        <item>Đua xe|THỂ THAO</item>
+        <item>Đọc|NGHỆ THUẬT</item>
+        <item>Sửa chữa|KHÁC</item>
+        <item>Lặp lại|KHÁC</item>
+        <item>Đánh giá|KHÁC</item>
+        <item>Lãng mạn|PHIM</item>
+        <item>Khoa học|KHOA HỌC KỸ THUẬT</item>
+        <item>Phim truyền hình|TRUYỀN HÌNH</item>
+        <item>Dịch vụ|KHÁC</item>
+        <item>Mua sắm|MUA SẮM</item>
+        <item>Kịch truyền hình|TRUYỀN HÌNH</item>
+        <item>Đặc biệt|KHÁC</item>
+        <item>Hồi hộp|PHIM</item>
+        <item>Trò chuyện|GIẢI TRÍ</item>
+        <item>Kỹ thuật|KHOA HỌC KỸ THUẬT</item>
+        <item>Quần vợt|THỂ THAO</item>
+        <item>Du lịch|DU LỊCH</item>
+        <item>Tạp kỹ|GIẢI TRÍ</item>
+        <item>Video|NGHỆ THUẬT</item>
+        <item>Thời tiết|TIN TỨC</item>
+        <item>Miền tây|KHÁC</item>
+        <item>Nghệ thuật|NGHỆ THUẬT</item>
+        <item>Đua ô tô|THỂ THAO</item>
+        <item>Hàng không|THỂ THAO</item>
+        <item>Tiểu sử|TIN TỨC</item>
+        <item>Chèo thuyền|THỂ THAO</item>
+        <item>Bowling|THỂ THAO</item>
+        <item>Quyền anh|THỂ THAO</item>
+        <item>Hoạt hình|GIA ĐÌNH_TRẺ EM</item>
+        <item>Trẻ em|GIA ĐÌNH_TRẺ EM</item>
+        <item>Phim kinh điển|PHIM</item>
+        <item>Cộng đồng|KHÁC</item>
+        <item>Máy vi tính|KHOA HỌC KỸ THUẬT</item>
+        <item>Nhạc đồng quê|NHẠC</item>
+        <item>Tòa án|KHÁC</item>
+        <item>Thể thao mạo hiểm|THỂ THAO</item>
+        <item>Gia đình|GIA ĐÌNH_TRẺ EM</item>
+        <item>Tài chính|TIN TỨC</item>
+        <item>Thể dục dụng cụ|THỂ THAO</item>
+        <item>Tin nổi bật|TIN TỨC</item>
+        <item>Đua ngựa|THỂ THAO</item>
+        <item>Săn bắn/Câu cá/Ngoài trời|ĐỘNG VẬT HOANG DÃ</item>
+        <item>Độc lập|KHÁC</item>
+        <item>Jazz|NHẠC</item>
+        <item>Tạp chí|TIN TỨC</item>
+        <item>Đua mô tô|THỂ THAO</item>
+        <item>Nhạc/Phim/Sách|KHÁC</item>
+        <item>Tin quốc tế|TIN TỨC</item>
+        <item>Tin địa phương|TIN TỨC</item>
+        <item>Tin quốc gia|TIN TỨC</item>
+        <item>Tin khu vực|TIN TỨC</item>
+        <item>Thế vận hội|THỂ THAO</item>
+        <item>Nguyên bản|PHIM</item>
+        <item>Nghệ thuật biểu diễn|NGHỆ THUẬT</item>
+        <item>Vật nuôi/Động vật|ĐỘNG VẬT HOANG DÃ</item>
+        <item>Pop|NHẠC</item>
+        <item>Rock  Roll|NHẠC</item>
+        <item>Khoa học viễn tưởng|PHIM</item>
+        <item>Tự cải thiện|GIÁO DỤC</item>
+        <item>Sitcom|PHIM TRUYỀN HÌNH</item>
+        <item>Trượt băng|THỂ THAO</item>
+        <item>Trượt tuyết|THỂ THAO</item>
+        <item>Bóng đá|THỂ THAO</item>
+        <item>Điền kinh|THỂ THAO</item>
+        <item>Thực|KHÁC</item>
+        <item>Bóng chuyền|THỂ THAO</item>
+        <item>Đấu vật|THỂ THAO</item>
+    </string-array>
+
+    <!-- Category mapping from DVB to canonical genre -->
+    <string-array name="genre_mapping_dvb">
+        <item>phim/kịch|PHIM</item>
+        <item>thám tử/ly kỳ|PHIM</item>
+        <item>phiêu lưu/miền tây/chiến tranh|PHIM</item>
+        <item>khoa học viễn tưởng/giả tưởng/rùng rợn|PHIM</item>
+        <item>hài|HÀI</item>
+        <item>kịch/tình cảm/dân gian|TRUYỀN HÌNH</item>
+        <item>lãng mạn|PHIM</item>
+        <item>nghệ thuật/cổ điển/tôn giáo/phim lịch sử/kịch|PHIM</item>
+        <item>phim người lớn/kịch|PHIM</item>
+        <item>tin tức/thời sự|TIN TỨC</item>
+        <item>tin tức/tổng hợp thời tiết|TIN TỨC</item>
+        <item>tạp chí tin tức|TIN TỨC</item>
+        <item>tài liệu|TIN TỨC</item>
+        <item>thảo luận/phỏng vấn/tranh luận|TIN TỨC</item>
+        <item>chương trình truyền hình/chương trình trò chơi|GIẢI TRÍ</item>
+        <item>chương trình trò chơi/câu hỏi/cuộc thi|TRÒ CHƠI</item>
+        <item>chương trình tổng hợp|GIẢI TRÍ</item>
+        <item>chương trình trò chuyện|GIẢI TRÍ</item>
+        <item>thể thao|THỂ THAO</item>
+        <item>sự kiện đặc biệt (Thế vận hội Olympic, World Cup v.v.)|THỂ THAO</item>
+        <item>tạp chí thể thao|THỂ THAO</item>
+        <item>bóng bầu dục/bóng đá|THỂ THAO</item>
+        <item>quần vợt/bóng quần|THỂ THAO</item>
+        <item>thể thao tập thể (trừ bóng đá)|THỂ THAO</item>
+        <item>điền kinh|THỂ THAO</item>
+        <item>thể thao mô tô|THỂ THAO</item>
+        <item>thể thao dưới nước|THỂ THAO</item>
+        <item>thể thao mùa đông|THỂ THAO</item>
+        <item>cưỡi ngựa|THỂ THAO</item>
+        <item>thể thao võ thuật|THỂ THAO</item>
+        <item>chương trình dành cho thiếu niên|GIA ĐÌNH_TRẺ EM</item>
+        <item>chương trình dành cho trẻ chuẩn bị vào lớp một|GIA ĐÌNH_TRẺ EM</item>
+        <item>chương trình giải trí dành cho lứa tuổi 6-14|GIA ĐÌNH_TRẺ EM</item>
+        <item>chương trình giải trí dành cho lứa tuổi 10-16|GIA ĐÌNH_TRẺ EM</item>
+        <item>chương trình thông tin/giáo dục/trường học|GIA ĐÌNH_TRẺ EM</item>
+        <item>hoạt hình/múa rối|GIA ĐÌNH_TRẺ EM</item>
+        <item>nhạc/ba lê/múa|NHẠC</item>
+        <item>rock/pop|NHẠC</item>
+        <item>nhạc nghệ thuật/nhạc cổ điển|NHẠC</item>
+        <item>dân ca/nhạc truyền thống|NHẠC</item>
+        <item>jazz|NHẠC</item>
+        <item>nhạc/opera|NHẠC</item>
+        <item>ba lê|GIẢI TRÍ</item>
+        <item>nghệ thuật/văn hóa|NGHỆ THUẬT</item>
+        <item>nghệ thuật biểu diễn|NGHỆ THUẬT</item>
+        <item>mỹ thuật|NGHỆ THUẬT</item>
+        <item>tôn giáo|PHONG CÁCH SỐNG</item>
+        <item>văn hóa đại chúng/nghệ thuật truyền thống|PHONG CÁCH SỐNG</item>
+        <item>văn học|NGHỆ THUẬT</item>
+        <item>phim/rạp chiếu phim|NGHỆ THUẬT</item>
+        <item>video/phim thử nghiệm|NGHỆ THUẬT</item>
+        <item>truyền hình/báo chí|NGHỆ THUẬT</item>
+        <item>phương tiện truyền thông mới|NGHỆ THUẬT</item>
+        <item>tập chí văn hóa/nghệ thuật|NGHỆ THUẬT</item>
+        <item>thời trang|PHONG CÁCH SỐNG</item>
+        <item>chính trị/xã hội/kinh tế|KHÁC</item>
+        <item>tạp chí/phóng sự/tài liệu|TIN TỨC</item>
+        <item>tư vấn xã hội/kinh tế|KHÁC</item>
+        <item>người nổi bật|KHÁC</item>
+        <item>chủ đề giáo dục/khoa học/thực tế|GIÁO DỤC</item>
+        <item>tự nhiên/động vật/môi trường|ĐỘNG VẬT HOANG DÃ</item>
+        <item>kỹ thuật/khoa học tự nhiên|KHOA HỌC KỸ THUẬT</item>
+        <item>y học/sinh lý/tâm lý|KHOA HỌC KỸ THUẬT</item>
+        <item>nước ngoài/sống ở nước ngoài|GIÁO DỤC</item>
+        <item>khoa học tâm linh/xã hội|KHOA HỌC KỸ THUẬT</item>
+        <item>cao học|GIÁO DỤC</item>
+        <item>ngôn ngữ|GIÁO DỤC</item>
+        <item>sở thích giải trí|PHONG CÁCH SỐNG</item>
+        <item>du lịch|DU LỊCH</item>
+        <item>thủ công mỹ nghệ|PHONG CÁCH SỐNG</item>
+        <item>ô tô|PHONG CÁCH SỐNG</item>
+        <item>thể dục và sức khỏe|PHONG CÁCH SỐNG</item>
+        <item>nấu ăn|PHONG CÁCH SỐNG</item>
+        <item>quảng cáo/mua sắm|MUA SẮM</item>
+        <item>làm vườn|PHONG CÁCH SỐNG</item>
+        <item>ngôn ngữ gốc|KHÁC</item>
+        <item>đen trắng|KHÁC</item>
+        <item>chưa công bố|KHÁC</item>
+        <item>truyền hình trực tiếp|KHÁC</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB to canonical genre -->
+    <string-array name="genre_mapping_isdb">
+        <item>Hoạt hình|PHIM</item>
+        <item>Bóng chày|THỂ THAO</item>
+        <item>Bài hát thiếu nhi|NHẠC</item>
+        <item>Cổ điển, opera|NHẠC</item>
+        <item>Đa dạng ẩm thực|GIẢI TRÍ</item>
+        <item>Chương trình hài|GIẢI TRÍ</item>
+        <item>Chuyện hài, Giải trí|GIẢI TRÍ</item>
+        <item>Máy vi tính, Trò chơi truyền hình|KHOA HỌC KỸ THUẬT</item>
+        <item>Trò chuyện, ngôn ngữ|GIÁO DỤC</item>
+        <item>Múa, Ba lê|GIẢI TRÍ</item>
+        <item>Thảo luận, hội nghị|TIN TỨC</item>
+        <item>Báo cáo thị trường, kinh tế|TIN TỨC</item>
+        <item>Vấn đề giáo dục|GIÁO DỤC</item>
+        <item>Sự kiện|GIẢI TRÍ</item>
+        <item>Thời trang|PHONG CÁCH SỐNG</item>
+        <item>Nhạc dân tộc, nhạc thế giới|NHẠC</item>
+        <item>Trò chơi|TRÒ CHƠI</item>
+        <item>Làm vườn, vật nuôi, thủ công mỹ nghệ|PHONG CÁCH SỐNG</item>
+        <item>Gôn|THỂ THAO</item>
+        <item>Chương trình tán dóc/lá cải|GIẢI TRÍ</item>
+        <item>Người sành ăn, nấu ăn|PHONG CÁCH SỐNG</item>
+        <item>Sức khỏe, điều trị y tế|PHONG CÁCH SỐNG</item>
+        <item>Sở thích/Giáo dục|PHONG CÁCH SỐNG</item>
+        <item>Đua ngựa, đua công khai|THỂ THAO</item>
+        <item>Hoạt hình Nhật|GIA ĐÌNH_TRẺ EM</item>
+        <item>Ballad Nhật, nhạc truyền thống Nhật|NHẠC</item>
+        <item>Cờ nhật (shogi) và "go"|TRÒ CHƠI</item>
+        <item>Phim truyền hình Nhật|PHIM TRUYỀN HÌNH</item>
+        <item>Phim Nhật|PHIM</item>
+        <item>Nhạc rock, pop Nhật|NHẠC</item>
+        <item>Jazz, fusion|NHẠC</item>
+        <item>Học sinh trung học cơ sở và trung học phổ thông|GIÁO DỤC</item>
+        <item>Kabuki, kịch cổ điển|TRUYỀN HÌNH</item>
+        <item>Karaoke, cuộc thi hát không chuyên|NHẠC</item>
+        <item>Giáo dục trọn đời, bằng cấp|GIÁO DỤC</item>
+        <item>Trẻ nhỏ, học sinh|GIÁO DỤC</item>
+        <item>Hòa nhạc sống|NHẠC</item>
+        <item>Cuộc sống, nhà|PHONG CÁCH SỐNG</item>
+        <item>Chương trình địa phương|TIN TỨC</item>
+        <item>Mah-jong, trò chơi pinball|TRÒ CHƠI</item>
+        <item>Marathon, điền kinh, bơi lội|THỂ THAO</item>
+        <item>Thể thao biển, thể thao mùa đông|THỂ THAO</item>
+        <item>Phim truyền hình hiện đại, Phim truyền hình kiểu phương Tây|PHIM TRUYỀN HÌNH</item>
+        <item>Thể thao mô tô|THỂ THAO</item>
+        <item>Nhạc|NHẠC</item>
+        <item>Nhạc, nghệ thuật, mỹ thuật công nghiệp|NGHỆ THUẬT</item>
+        <item>Nhạc tổng hợp|GIẢI TRÍ</item>
+        <item>Phân tích tin tức|TIN TỨC</item>
+        <item>Thế vận hội, giải đấu quốc tế|THỂ THAO</item>
+        <item>Các môn bóng khác|THỂ THAO</item>
+        <item>Hoạt hình nước ngoài|GIA ĐÌNH_TRẺ EM</item>
+        <item>Phim truyền hình nước ngoài|PHIM TRUYỀN HÌNH</item>
+        <item>Nước ngoài, phóng sự quốc tế|TIN TỨC</item>
+        <item>Phim nước ngoài|PHIM</item>
+        <item>Nhạc rock, pop nước ngoài|NHẠC</item>
+        <item>Phim dã sử|PHIM TRUYỀN HÌNH</item>
+        <item>Chính trị, quốc hội|TIN TỨC</item>
+        <item>Bài hát nổi tiếng, bài hát nổi tiếng của Nhật (bài hát enka)|NHẠC</item>
+        <item>Câu hỏi|TRÒ CHƠI</item>
+        <item>Xếp hạng, nhạc theo yêu cầu|NHẠC</item>
+        <item>Bình thường, thông thường|TIN TỨC</item>
+        <item>Mua sắm, kinh doanh đặt hàng qua thư|MUA SẮM</item>
+        <item>Bóng đá|THỂ THAO</item>
+        <item>Hiệu ứng đặc biệt|GIA ĐÌNH_TRẺ EM</item>
+        <item>Chương trình đặc biệt, tài liệu|TIN TỨC</item>
+        <item>Phóng sự đặc biệt|TIN TỨC</item>
+        <item>Tin thể thao|THỂ THAO</item>
+        <item>Sumo, thể thao đối kháng|THỂ THAO</item>
+        <item>Nói chuyện tổng hợp|GIẢI TRÍ</item>
+        <item>Tham quan tổng hợp|GIẢI TRÍ</item>
+        <item>Phóng sự giao thông|TIN TỨC</item>
+        <item>Chuyến đi, câu cá, giải trí ngoài trời|ĐỘNG VẬT HOANG DÃ</item>
+        <item>Sinh viên đại học, thi cử|GIÁO DỤC</item>
+        <item>Tổng hợp thời tiết|TIN TỨC</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB in Brazil to canonical genre -->
+    <string-array name="genre_mapping_isdb_br">
+        <item>Biografia|NEWS</item>
+        <item>Culinária|LIFE_STYLE</item>
+        <item>Documentário|NEWS</item>
+        <item>Educativo|EDUCATION</item>
+        <item>Erótico|MOVIES</item>
+        <item>Esporte|SPORTS</item>
+        <item>Filme|MOVIES</item>
+        <item>Chương trình trò chơi|TRÒ CHƠI</item>
+        <item>Humorístico|COMEDY</item>
+        <item>Infantil|FAMILY_KIDS</item>
+        <item>Informação|LIFE_STYLE</item>
+        <item>Jornalismo|NEWS</item>
+        <item>Minissérie|DRAMA</item>
+        <item>Moda|LIFE_STYLE</item>
+        <item>Nhạc|NHẠC</item>
+        <item>Premiação|ENTERTAINMENT</item>
+        <item>Chương trình thực tế|GIẢI TRÍ</item>
+        <item>Religioso|LIFE_STYLE</item>
+        <item>Reportagem|NEWS</item>
+        <item>Nông thôn|PHONG CÁCH SỐNG</item>
+        <item>Saúde|LIFE_STYLE</item>
+        <item>Série|DRAMA</item>
+        <item>Série/seriado|DRAMA</item>
+        <item>Chương trình|GIẢI TRÍ</item>
+        <item>Telejornais|NEWS</item>
+        <item>Televendas|SHOPPING</item>
+        <item>Turismo|TRAVEL</item>
+        <item>Variedade|ENTERTAINMENT</item>
+        <item>Thính phòng|GIẢI TRÍ</item>
+        <item>Giải thưởng|GIẢI TRÍ</item>
+        <item>Tiểu sử|TIN TỨC</item>
+        <item>Trẻ em|GIA ĐÌNH_TRẺ EM</item>
+        <item>Trẻ em|GIA ĐÌNH_TRẺ EM</item>
+        <item>Hài hước|HÀI KỊCH</item>
+        <item>Nấu ăn|PHONG CÁCH SỐNG</item>
+        <item>Đồng quê|PHONG CÁCH SỐNG</item>
+        <item>Thảo luận/phỏng vấn|TIN TỨC</item>
+        <item>Thảo luận|TIN TỨC</item>
+        <item>Tài liệu|TIN TỨC</item>
+        <item>Giáo dục|GIÁO DỤC</item>
+        <item>Giáo dục|GIÁO DỤC</item>
+        <item>Dịch vụ kỹ thuật|KHOA HỌC KỸ THUẬT</item>
+        <item>Khiêu dâm|PHIM</item>
+        <item>Thời trang|PHONG CÁCH SỐNG</item>
+        <item>Phụ nữ|GIẢI TRÍ</item>
+        <item>Chương trình trò chơi|TRÒ CHƠI</item>
+        <item>Sức khỏe|PHONG CÁCH SỐNG</item>
+        <item>Hài hước|HÀI KỊCH</item>
+        <item>Thông tin|PHONG CÁCH SỐNG</item>
+        <item>Phỏng vấn|TIN TỨC</item>
+        <item>Báo chí|TIN TỨC</item>
+        <item>Hậu trường|GIẢI TRÍ</item>
+        <item>Phim truyền hình ngắn|TRUYỀN HÌNH</item>
+        <item>Phim bộ|TRUYỀN HÌNH</item>
+        <item>Phim|PHIM</item>
+        <item>Phim|PHIM</item>
+        <item>Âm nhạc|GIẢI TRÍ</item>
+        <item>Tin tức|TIN TỨC</item>
+        <item>Trúng thưởng|MUA SẮM</item>
+        <item>Xổ số|MUA SẮM</item>
+        <item>Xổ số, bán hàng trên truyền hình, trúng thưởng|MUA SẮM</item>
+        <item>Chương trình thực tế|GIẢI TRÍ</item>
+        <item>Tôn giáo|PHONG CÁCH SỐNG</item>
+        <item>Phóng sự|TIN TỨC</item>
+        <item>Phóng sự|TIN TỨC</item>
+        <item>Nông thôn|PHONG CÁCH SỐNG</item>
+        <item>Phim truyền hình|TRUYỀN HÌNH</item>
+        <item>Phim truyền hình / Chương trình TV|TRUYỀN HÌNH</item>
+        <item>Chương trình|GIẢI TRÍ</item>
+        <item>Kịch truyền hình|TRUYỀN HÌNH</item>
+        <item>Thể thao|THỂ THAO</item>
+        <item>Thể thao|THỂ THAO</item>
+        <item>Bán hàng từ xa|MUA SẮM</item>
+        <item>Bán hàng trên truyền hình|MUA SẮM</item>
+        <item>Du lịch|DU LỊCH</item>
+        <item>Du lịch|DU LỊCH</item>
+        <item>Tin tức TV|TIN TỨC</item>
+        <item>Tạp kỹ|GIẢI TRÍ</item>
+        <item>Chương trình tạp kỹ|GIẢI TRÍ</item>
+    </string-array>
+</resources>

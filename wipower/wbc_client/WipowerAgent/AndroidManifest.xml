@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2014 Qualcomm Technologies, Inc.  All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.quicinc.wipoweragent" android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="18" android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher_rezence"
+        android:label="@string/app_name" android:theme="@android:style/Theme.Holo.Light">
+        <uses-library android:name="com.quicinc.wbc"
+            android:required="false" />
+
+        <activity android:name="com.quicinc.wipoweragent.WipowerAgentActivity"
+            android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="WipowerAgentReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.quicinc.wbc.action.SHOW_BLUETOOTH_NEEDED_UI_DIALOG" />
+                <action android:name="com.quicinc.wbc.action.WIPOWER_ICON_ENABLE" />
+                <action android:name="com.quicinc.wbc.action.WIPOWER_ICON_DISABLE" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="WipowerAgentService" android:exported="false" />
+
+    </application>
+
+</manifest>

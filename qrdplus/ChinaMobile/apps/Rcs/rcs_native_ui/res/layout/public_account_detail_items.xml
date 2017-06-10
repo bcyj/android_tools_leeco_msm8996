@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2014 pci-suntektech Technologies, Inc.  All Rights Reserved.
+     pci-suntektech Technologies Proprietary and Confidential.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp" >
+
+    <TextView
+        android:id="@+id/introduction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center"
+        android:paddingLeft="16dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/text_shadow_color_light_bold"
+        android:text="@string/func_intro"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="@dimen/padding_small"
+        android:layout_marginRight="@dimen/padding_small"
+        android:background="@color/text_shadow_color_light_bold" />
+
+
+    <TextView
+        android:id="@+id/intro_content"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:gravity="left|center"
+        android:paddingLeft="16dip"
+        android:paddingRight="10dp"
+        android:maxLines="4"
+        android:textColor="@color/public_account_intro"
+        android:lineSpacingExtra="3dp"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/padding_small"
+        android:layout_marginLeft="@dimen/padding_small"
+        android:layout_marginRight="@dimen/padding_small"
+        android:background="@color/text_shadow_color_light_bold" />
+
+    <TextView
+        android:id="@+id/history_message"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:gravity="left|center"
+        android:onClick="onClick"
+        android:paddingLeft="16dip"
+        android:paddingRight="10dp"
+        android:textColor="@android:color/black"
+        android:text="@string/his_msg"
+        android:textSize="18sp" />
+
+    <View
+        android:id="@+id/conver_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/padding_medium"
+        android:layout_marginRight="@dimen/padding_medium"
+        android:background="@color/text_shadow_color_light_bold" />
+
+      <TextView
+        android:id="@+id/conversation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:gravity="left|center"
+        android:onClick="onClick"
+        android:paddingLeft="16dip"
+        android:paddingRight="10dp"
+        android:text="@string/conversation"
+        android:textColor="@android:color/black"
+        android:visibility="gone"
+        android:textSize="18sp" />
+    <View
+        android:id="@+id/conver_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/padding_medium"
+        android:layout_marginRight="@dimen/padding_medium"
+        android:background="@color/text_shadow_color_light_bold" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:gravity="left|center"
+            android:onClick="onClick"
+            android:paddingLeft="16dip"
+            android:paddingRight="10dp"
+            android:text="@string/rcs_public_account_receive_msg"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/cb_receive_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="10dp" />
+    </RelativeLayout>
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/padding_medium"
+        android:layout_marginRight="@dimen/padding_medium"
+        android:background="@color/text_shadow_color_light_bold" />
+
+      <TextView
+        android:id="@+id/message_empty"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:gravity="left|center"
+        android:onClick="onClick"
+        android:paddingLeft="16dip"
+        android:paddingRight="10dp"
+        android:text="@string/msg_empty"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/padding_small"
+        android:layout_marginLeft="@dimen/padding_small"
+        android:layout_marginRight="@dimen/padding_small"
+        android:background="@color/text_shadow_color_light_bold" />
+
+      <TextView
+        android:id="@+id/complain"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:gravity="left|center"
+        android:onClick="onClick"
+        android:paddingLeft="16dip"
+        android:paddingRight="10dp"
+        android:text="@string/complain"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+</LinearLayout>

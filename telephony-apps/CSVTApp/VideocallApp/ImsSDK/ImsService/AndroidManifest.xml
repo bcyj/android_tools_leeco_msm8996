@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.qti.ims.internal.telephony"
+    android:sharedUserId="android.uid.phone"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <permission
+        android:name="com.qualcomm.qti.ims.imssdk"
+        android:protectionLevel="signatureOrSystem" />
+
+    <application>
+        <service
+            android:name=".ImsCallService"
+            android:enabled="true"
+            android:exported="true"
+            android:process="com.android.phone"
+            android:permission="com.qualcomm.qti.ims.imssdk">
+            <intent-filter>
+
+                <!--
+                     These are the interfaces supported by the service, which
+                     you can bind to.
+                -->
+                <action android:name="com.qualcomm.qti.ims.internal.telephony.imscallservice" />
+            </intent-filter>
+        </service>
+
+        <uses-library android:name="org.codeaurora.imslibrary" />
+    </application>
+
+</manifest>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- application name and title of error dialogs-->
+    <string name="app_name">"Soundrekorder"</string>
+    <string name="folder_name">"Aufnahme"</string>
+    <!-- Screen title before and during recording -->
+    <string name="record_your_message">"Nachricht aufnehmen"</string>
+    <!-- Screen title after recording -->
+    <string name="message_recorded">"Nachricht aufgezeichnet"</string>
+    <!-- Screen title while playing back a recording -->
+    <string name="review_message">"Nachricht erneut anhören"</string>
+    <!-- Label shown during recording -->
+    <string name="recording">"Aufnahme"</string>
+    <!-- Label shown when recording is paused -->
+    <string name="recording_paused">Pause</string>
+    <!-- Label shown when the recording is stopped for a reason other than the user stopping it (e.g. the sd card was removed) -->
+    <string name="recording_stopped">"Aufnahme beendet"</string>
+    <!-- label shown when there is not enough space to record something -->
+    <string name="storage_is_full">"Speicher ist voll"</string>
+    <!-- label shown when the recording has reached maximum allowed file size -->
+    <string name="max_length_reached">"Maximale Länge erreicht"</string>
+    <!-- label shown when there is no sd card available to record to [CHAR LIMIT=30] -->
+    <string name="insert_sd_card" product="nosdcard">"USB-Speicher bereitstellen"</string>
+    <!-- label shown when there is no sd card available to record to -->
+    <string name="insert_sd_card" product="default">"SD-Karte einlegen"</string>
+    <!-- label shown when there is more than 1 minute but less than 9 minutes of space left to record -->
+    <string name="min_available">"<xliff:g id="MINUTES">%d</xliff:g> Min. verfügbar"</string>
+    <!-- label shown when there is less than 1 minute of space left to record -->
+    <string name="sec_available">"<xliff:g id="SECONDS">%d</xliff:g> Sek. verfügbar"</string>
+
+    <!-- button to accept the current recording and return it to the caller -->
+    <string name="accept">"Fertig"</string>
+    <!-- button to discard the current recording and return to the caller -->
+    <string name="discard">"Verwerfen"</string>
+    <!-- acknowlegement button in a number of dialogs -->
+    <string name="button_ok">"OK"</string>
+    <!-- Do not translate. Format of the timer that shows how much has been recorded so far -->
+    <string name="timer_format" translatable="false"><xliff:g id="format">%02d:%02d</xliff:g></string>
+    <!-- label shown before the user has recorded anything -->
+    <string name="press_record">Drücken Sie auf: 0-MIC 1-Rx 2-Tx+Rx 3-AMR 4-EVRC 5-QCELP
+6-AAC_MP4 9-AMR-WB A-AMR-WB-3GPP, und drücken Sie die Aufnahmetaste</string>
+    <string name="press_record2">Aufnahmetaste drücken</string>
+    <!-- label shown before the user has recorded anything -SSR support added-->
+    <string name="press_record_ssr">Drücken Sie auf: 0-MIC 1-Rx 2-Tx+Rx 3-AMR 4-EVRC 5-QCELP
+6-AAC_MP4 7-AAC_SSR 8-LPCM_SSR 9-AMR-WB A-AMR-WB-3GPP, und drücken Sie die Aufnahmetaste</string>
+   
+    <!-- the name under which recordings will be visible in the media database is formatted like this --> 
+    <string name="audio_db_title_format"><xliff:g id="format">JJJJ-MM-TT SS:mm:ss</xliff:g></string>
+    <!-- all recordings will show up in the media database with this \'artist\' name -->
+    <string name="audio_db_artist_name">"Ihre Aufnahmen"</string>
+    <!-- all recordings will show up in the media database with this \'album\' name -->
+    <string name="audio_db_album_name">"Audioaufnahmen"</string>
+    <!-- all recordings will show up in the media database in a playlist with this name -->
+    <string name="audio_db_playlist_name">"Meine Aufnahmen"</string>
+   
+    <!-- shown as the message in a dialog when an error occured because of an error accessing the sd card [CHAR LIMIT=NONE] -->
+    <string name="error_sdcard_access" product="nosdcard">"Kein Zugriff auf USB-Speicher möglich"</string>
+    <!-- shown as the message in a dialog when an error occured because of an error accessing the sd card -->
+    <string name="error_sdcard_access" product="default">"Kein Zugriff auf SD-Karte möglich"</string>
+    <!-- shown as the message in a dialog when the app encountered an unspecified internal error -->
+    <string name="error_app_internal">"Interner Anwendungsfehler"</string>
+    <!-- shown as the message in a dialog when the app encountered and unsupported format -->
+    <string name="error_app_unsupported">Nicht unterstütztes Format</string>
+    <!-- shown as the message in a dialog when the recording could not be added to the media database -->
+    <string name="error_mediadb_new_record">"Aufgenommener Audioinhalt kann nicht gespeichert werden."</string>
+    <!-- shown as the message in a dialog when the recording cannot be started while in call -->
+    <string name="error_mediadb_incall">Diese Option wird nur während aktiver Anrufe unterstützt</string>
+    <!-- shown as the message in a dialog when voice call recording is started for AAC format -->
+    <string name="error_mediadb_aacincall">AAC-Anrufaufzeichnung wird nicht unterstützt</string>
+    <!-- Label shown during recording -->
+    <string name="recording_now">Aufzeichnung läuft...</string>
+    <!-- shown as the message in a dialog when the recording file is saved successfully -->
+    <string name="file_saved">Datei wurde gespeichert</string>
+    <!-- shown as the message in a dialog when the recording file is discarded -->
+    <string name="file_discard">Datei wurde verworfen</string>
+    <!-- shown as the dialog title when user selects recording format -->
+    <string name="format_setting">Dateityp</string>
+    <string name="format_setting_aac_item">AAC</string>
+    <string name="format_setting_amr_item">AMR</string>
+    <string name="format_setting_3gpp_item">3GPP</string>
+    <string name="format_setting_wav_item">WAV</string>
+    <string name="storage_setting">Speicherort</string>
+    <string name="storage_setting_sdcard_item">SD-Karte</string>
+    <string name="storage_setting_local_item">Telefonspeicher</string>
+    <string name="no_phonestorage">Telefonspeicher deaktiviert</string>
+    <string name="keyboard">Tastatur</string>
+    <string name="file_deleted">Datei wurde gelöscht!</string>
+    <string name="in_call_record_error">Aufzeichnungsfehler während Anruf.</string>
+</resources>

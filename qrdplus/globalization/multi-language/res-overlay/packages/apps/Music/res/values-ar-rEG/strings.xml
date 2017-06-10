@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution.
+ * Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- used in various places to indicate there is one song for a given artist or album -->
+    <string name="onesong">"أغنية واحدة"</string>
+    <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
+    <plurals name="Nsongs">
+        <item quantity="other">"<xliff:g id="COUNT">%d</xliff:g> من الأغاني"</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other">"<xliff:g id="COUNT_FOR_ARTIST">%2$d</xliff:g> من إجمالي <xliff:g id="TOTAL_COUNT">%1$d</xliff:g> من الأغاني"</item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+        <!-- number of albums is one -->
+        <item quantity="one">"ألبوم واحد"</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other">"<xliff:g id="COUNT">%d</xliff:g> من الألبومات"</item>
+    </plurals>
+
+    <!--
+    This string is used as the format string in a String.format call,
+    and 5 additional arguments are available for printing:
+    1 - hours
+    2 - minutes
+    3 - minutes%60
+    4 - seconds
+    5 - second%60
+    -->
+    <skip/>
+    <!-- Do not translate. Duration format for duration < 1 hour -->
+    <string translatable="false" name="durationformatshort"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    <!-- Do not translate. Duration format for duration >= 1 hour -->
+    <string translatable="false" name="durationformatlong"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    <!-- Menu item that takes the user back to the top level screen of the music player -->
+    <string name="goto_start">"المكتبة"</string>
+    <!-- Menu item that switches the music player in to party shuffle mode -->
+    <string name="party_shuffle">"ترتيب عشوائي جماعي"</string>
+    <!-- Menu item that switches the music player out of party shuffle mode -->
+    <string name="party_shuffle_off">"إيقاف الترتيب العشوائي الجماعي"</string>
+    <!-- Menu item that clear all playlists mode -->
+    <string name="clear_all_playlists">مسح كل قوائم التشغيل</string>
+    <!-- Menu item that deletes the currently selected item, which might be a single song, or a collection of songs.
+         The user will be prompted to confirm before deletion actually takes place -->
+    <string name="delete_item">"حذف"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in shuffle mode -->
+    <string name="shuffle_all">"ترتيب عشوائي للكل"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in list order -->
+    <string name="play_all">"تشغيل الكل"</string>
+    <!-- Menu item to play song in music -->
+    <string name="open_in_music">فتح في الموسيقى</string>
+    <!-- Menu item to share audio or video -->
+    <string name="share">"مشاركة"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc">"هل تريد حذف كل الأغاني بواسطة <xliff:g id="ARTIST">%s</xliff:g> من بطاقة SD نهائيًا؟"</string>
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc_nosdcard">"هل تريد حذف كل الأغاني بواسطة <xliff:g id="ARTIST">%s</xliff:g> من وحدة تخزين USB نهائيًا؟"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc">"هل تريد حذف الألبوم بأكمله \"<xliff:g id="ALBUM">%s</xliff:g>\"من بطاقة SD نهائيًا؟"</string>
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc_nosdcard">"هل تريد حذف الألبوم بأكمله \"<xliff:g id="ALBUM">%s</xliff:g>\" من وحدة تخزين USB نهائيًا؟"</string>
+
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc">"هل تريد حذف \"<xliff:g id="SONG">%s</xliff:g>\" من بطاقة SD نهائيًا؟"</string>
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc_nosdcard">"هل تريد حذف \"<xliff:g id="SONG">%s</xliff:g>\" من وحدة تخزين USB نهائيًا؟"</string>
+
+    <!-- Delete confirmation dialog, confirmation button text -->
+    <string name="delete_confirm_button_text">"موافق"</string>
+    <!-- Toast confirming that song(s) was/were deleted. -->
+    <plurals name="NNNtracksdeleted">
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">"تم حذف أغنية واحدة"</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other">"تم حذف <xliff:g id="SONGS_TO_DELETE">%d</xliff:g> من الأغاني."</item>
+    </plurals>
+
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning">"جارٍ فحص بطاقة SD..."</string>
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning_nosdcard">"جارٍ فحص وحدة تخزين USB..."</string>
+
+    <!-- title of the "current playlist" screen when not in party shuffle mode -->
+    <string name="nowplaying_title">"يجري الآن تشغيل"</string>
+    <!-- title of the "current playlist" screen when in party shuffle mode-->
+    <string name="partyshuffle_title">"ترتيب عشوائي جماعي"</string>
+    <!-- Artist screen title -->
+    <string name="artists_title">"الفنانون"</string>
+    <!-- Category label on Library screen -->
+    <string name="albums_menu">"الألبومات"</string>
+    <!-- Albums screen title -->
+    <string name="albums_title">"الألبومات"</string>
+    <!-- Category label on Library screen -->
+    <string name="tracks_menu">"الأغاني"</string>
+    <!-- Songs screen title -->
+    <string name="tracks_title">"الأغاني"</string>
+    <!-- Category label on Library screen -->
+    <string name="folder_menu">مجلد</string>
+    <!-- Folder screen title -->
+    <string name="folders_title">مجلد</string>
+    <!-- Category label on Library screen -->
+    <string name="playlists_menu">"قوائم التشغيل"</string>
+    <!-- Playlists screen title -->
+    <string name="playlists_title">"قوائم التشغيل"</string>
+    <!-- Videos screen title -->
+    <string name="videos_title">"مقاطع الفيديو"</string>
+    <!-- All media screen title -->
+    <string name="all_title">"كل الوسائط"</string>
+    <!-- Category label on Library screen -->
+    <string name="browse_menu">"الفنانون"</string>
+    <!-- Library screen, menu item -->
+    <string name="search_title">"بحث"</string>
+    <!-- Title of screen when there are no songs, or if the SD card is busy -->
+    <string name="no_tracks_title">"ليس هناك أغاني"</string>
+    <!-- Title of screen when there are no videos, or if the SD card is busy -->
+    <string name="no_videos_title">"ليس هناك أي مقاطع فيديو"</string>
+    <!-- Title of screen when there are no playlists, or if the SD card is busy -->
+    <string name="no_playlists_title">"لا قوائم تشغيل"</string>
+    <!-- Playlist context menu item to delete the selected playlist. -->
+    <string name="delete_playlist_menu">"حذف"</string>
+    <!-- Playlist context menu item to edit the selected playlist -->
+    <string name="edit_playlist_menu">تحرير</string>
+    <!-- Playlist context menu item to rename the selected playlist-->
+    <string name="rename_playlist_menu">"إعادة تسمية"</string>
+    <!-- Dialog box message shown when clearing all playlists-->
+    <string name="clear_all_playlists_message">هل تريد مسح كل قوائم التشغيل؟</string>
+    <!-- Dialog box message shown when deleting a playlist-->
+    <string name="delete_playlist_message">هل تريد حذف \"<xliff:g id="name">%s</xliff:g>\"؟</string>
+    <!-- Dialog box button -->
+    <string name="delete_playlist_button_ok">"موافق"</string>
+    <string name="delete_playlist_button_cancel">إلغاء</string>
+    <!-- Transient popup message shown after deleting a playlist -->
+    <string name="playlist_deleted_message">"تم حذف قائمة التشغيل."</string>
+    <!-- Transient popup message shown after renaming a playlist -->
+    <string name="playlist_renamed_message">"تمت إعادة تسمية قائمة التشغيل."</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in list view -->
+    <string name="recentlyadded">"تمت إضافتها حديثًا"</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in title bar of songs list -->
+    <string name="recentlyadded_title">"تمت إضافتها حديثًا"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in list view -->
+    <string name="podcasts_listitem">"مواد الوسائط"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in title bar of songs list -->
+    <string name="podcasts_title">"مواد الوسائط"</string>
+    <!-- all recordings will show up in the media database in a playlist with thiis name -->
+    <string name="audio_db_playlist_name">"تسجيلاتي"</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title">"لا بطاقة SD"</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title_nosdcard">"ليس هناك وحدة تخزين USB"</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message">"لم يتم إدراج بطاقة SD في الهاتف."</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message_nosdcard">"لا تتوفر وحدة تخزين USB في هاتفك."</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title">"بطاقة SD غير متوفرة"</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title_nosdcard">"وحدة تخزين USB غير متوفرة"</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message">"بطاقة SD مشغولة."</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message_nosdcard">"وحدة تخزين USB مشغولة."</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title">"خطأ في بطاقة SD"</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title_nosdcard">"خطأ في وحدة تخزين USB"</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message">"تمت مصادفة خطأ على بطاقة SD."</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message_nosdcard">"تمت مصادفة خطأ في وحدة تخزين USB."</string>
+    <!-- Default name of artist that doesn\'t have a name in the metadata -->
+    <string name="unknown_artist_name">"فنان غير معروف"</string>
+    <!-- Default name of album that doesn\'t have a name in the metadata -->
+    <string name="unknown_album_name">"ألبوم غير معروف"</string>
+    <!-- Default name of folder that doesn\'t have a path in the metadata -->
+    <string name="unknown_folder_name">مسار غير معروف</string>
+    <!-- Default name of folder that doesn\'t have a count in the metadata -->
+    <string name="unknown_folder_count">عدد غير معروف</string>
+    <!-- Toast after turning shuffle on -->
+    <string name="shuffle_on_notif">"تم تشغيل الترتيب العشوائي."</string>
+    <!-- Toast after turning shuffle off -->
+    <string name="shuffle_off_notif">"تم إيقاف الترتيب العشوائي."</string>
+    <!-- Toast after turning repeat off -->
+    <string name="repeat_off_notif">"تم إيقاف التكرار."</string>
+    <!-- Toast after turning single repeat on -->
+    <string name="repeat_current_notif">"تكرار الأغنية الحالية."</string>
+    <!-- Toast after turning repeat all on -->
+    <string name="repeat_all_notif">"تكرار كل الأغاني."</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu">"استخدام كنغمة رنين للهاتف"</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short">"استخدام كنغمة رنين"</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set">"تم تعيين \"<xliff:g id="NAME">%s</xliff:g>\" كنغمة رنين للهاتف."</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu_1">"استخدام كنغمة رنين للفتحة 1"</string>
+    <string name="ringtone_menu_2">"استخدام كنغمة رنين للفتحة 2"</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short_1">"استخدام كنغمة رنين 1"</string>
+    <string name="ringtone_menu_short_2">"استخدام كنغمة رنين 2"</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_1">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" تعيين كنغمة رنين للفتحة 1.</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_2">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" تعيين كنغمة رنين للفتحة 2.</string>
+    <!-- Context menu item -->
+    <string name="play_selection">"تشغيل"</string>
+    <!-- Context menu item -->
+    <string name="add_to_playlist">"إضافة إلى قائمة التشغيل"</string>
+    <!-- Context menu item -->
+    <string name="queue">"قائمة التشغيل الحالية"</string>
+    <!-- Context menu item -->
+    <string name="new_playlist">"جديد"</string>
+    <!-- Template for newly created playlist name -->
+    <string name="new_playlist_name_template">"قائمة تشغيل جديدة <xliff:g id="NUMBER">%d</xliff:g>"</string>
+    <!-- Toasts after adding song(s) to playlists -->
+    <plurals name="NNNtrackstoplaylist">
+        <!-- message shown when one song was added -->
+        <item quantity="one">"تمت إضافة أغنية واحدة إلى قائمة التشغيل."</item>
+        <!-- message shown when zero or more than one song was added -->
+        <item quantity="other">"تمت إضافة <xliff:g id="NUMBER">%d</xliff:g> من الأغاني إلى قائمة التشغيل."</item>
+    </plurals>
+    <!-- Toast after selecting an empty playlist -->
+    <string name="emptyplaylist">"قائمة التشغيل المحددة فارغة."</string>
+    <!-- Button name when saving a playlist -->
+    <string name="create_playlist_create_text">"حفظ"</string>
+    <!-- Button name when saving a playlist and the new playlist will overwrite an existing one -->
+    <string name="create_playlist_overwrite_text">"استبدال"</string>
+    <!-- Dialog box title -->
+    <string name="service_start_error_title">"مشكلة في التشغيل"</string>
+    <!-- Dialog box message -->
+    <string name="service_start_error_msg">"تعذر تشغيل الأغنية."</string>
+    <!-- Dialog box button -->
+    <string name="service_start_error_button">"موافق"</string>
+    <!-- Time span edit options that appear when editing system playlist "Recently added" -->
+    <!-- Used to indicate the number of weeks the "recently added" playlist covers in a selector widget -->
+    <string-array name="weeklist">
+        <item>"أسبوع واحد"</item>
+        <item>"أسبوعان"</item>
+        <item>"3 أسابيع"</item>
+        <item>"4 أسابيع"</item>
+        <item>"5 أسابيع"</item>
+        <item>"6 أسابيع"</item>
+        <item>"7 أسابيع"</item>
+        <item>"8 أسابيع"</item>
+        <item>"9 أسابيع"</item>
+        <item>"10 أسابيع"</item>
+        <item>"11 أسبوعًا"</item>
+        <item>"12 أسبوعًا"</item>
+    </string-array>
+    <!-- Button name in time span picker -->
+    <string name="weekpicker_set">"تم"</string>
+    <!-- Title of time span picker -->
+    <string name="weekpicker_title">"تعيين الوقت"</string>
+    <!-- Do not translate. Background color for currently dragged item in playlist edit mode. -->
+    <color name="dragndrop_background">#e0103010</color>
+    <!-- Do not translate. Background color for albums in the artists list view. -->
+    <color name="expanding_child_background">#ff404040</color>
+
+    <!-- menu item to save the current list as a new playlist -->
+    <string name="save_as_playlist">"حفظ كقائمة تشغيل"</string>
+    <!-- menu item to clear the current playlist -->
+    <string name="clear_playlist">"محو قائمة التشغيل"</string>
+
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicbrowserlabel">"موسيقى"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicshortcutlabel">"قائمة تشغيل الموسيقى"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediaplaybacklabel">"موسيقى"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="videobrowserlabel">"مقاطع الفيديو"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediapickerlabel">"موسيقى"</string>
+
+    <!-- Shown as a transient message whenever a file fails to play -->
+    <string name="playback_failed">"لا يتيح المشغل استخدام هذا النوع من الملفات الصوتية."</string>
+    <!-- Shown as a transient message whenever a file fails to open -->
+    <string name="open_failed">معذرةً، يتعذر فتح الملف.</string>
+
+    <!-- Text for the "cancel" button in the "delete" and "create playlist" confirmation dialogs -->
+    <string name="cancel">"إلغاء"</string>
+
+    <!-- context menu item to remove the selected item from the playlist -->
+    <string name="remove_from_playlist">"إزالة من قائمة التشغيل"</string>
+
+    <!-- shown when connecting to a music stream, before it starts playing -->
+    <string name="streamloadingtext">"جارٍ الاتصال بـ <xliff:g id="HOST">%s</xliff:g>…"</string>
+
+    <!-- title of contextual music search menu -->
+    <string name="mediasearch">"بحث عن <xliff:g id="TERM">%s</xliff:g> باستخدام:"</string>
+
+    <!-- Shown in the title bar while the list of artists is being retrieved in the background -->
+    <string name="working_artists">"الفنانون..."</string>
+    <!-- Shown in the title bar while the list of albums is being retrieved in the background -->
+    <string name="working_albums">"الألبومات…"</string>
+    <!-- Shown in the title bar while the list of songs is being retrieved in the background -->
+    <string name="working_songs">"أغاني..."</string>
+    <!-- Shown in the title bar while the list of folders is being retrieved in the background -->
+    <string name="working_folders">مجلدات\u2026</string>
+    <!-- Shown in the title bar while the list of playlists is being retrieved in the background -->
+    <string name="working_playlists">"قوائم التشغيل…"</string>
+
+    <!-- Shown in the music picker while loading the music database. -->
+    <string name="loading">"جارٍ التحميل…"</string>
+    <!-- Menu in music picker to sort the list by track/song name. -->
+    <string name="sort_by_track">"المسارات"</string>
+    <!-- Menu in music picker to sort the list by album name. -->
+    <string name="sort_by_album">"الألبومات"</string>
+    <!-- Menu in music picker to sort the list by artist name. -->
+    <string name="sort_by_artist">"الفنانون"</string>
+    <!--  Title of the music picker activity. -->
+    <string name="music_picker_title">"اختيار مقطع صوتي موسيقي"</string>
+
+    <!-- The string used to describe Music as a searchable item within system search settings. -->
+    <string name="search_settings_description">"الفنانون والألبومات والمقاطع الصوتية"</string>
+
+    <!-- Shown in the search box as a hint -->
+    <string name="search_hint">"بحث في الموسيقى"</string>
+    <string name="search_hint_video">البحث عن فيديو</string>
+
+    <!--The fast scroll thumb will show one character from this string depending on the position in the list -->
+    <string name="fast_scroll_alphabet">" أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي"</string>
+
+    <!-- Text shown on widget when first loaded -->
+    <string name="widget_initial_text">"المس لاختيار الموسيقى."</string>
+
+    <!-- Menu text for the item controlling the audio effects panel [CHAR LIMIT=15] -->
+    <string name="effectspanel">"التأثيرات الصوتية"</string>
+
+    <string name="duplicate_playlist_name_alert">توجد قائمة تشغيل بالفعل باسم \"<xliff:g id="name">%s</xliff:g>\". يرجى تحديد اسم مختلف.</string>
+    <string name="same_playlist_name_alert">لم يتم تغيير اسم قائمة التشغيل \"<xliff:g id="name">%s</xliff:g>\". يرجى تحديد اسم آخر.</string>
+    <string name="button_ok">"موافق"</string>
+    <string name="list_empty">لا تضم قائمة التشغيل أي مقاطع موسيقية.</string>
+
+    <!-- Shown when video is played after disable Gallery app from Settings -->
+    <string name="enable_gallery_app">لا يمكن تشغيل الفيديو، رجاءً قم بتمكين تطبيق معرض الصور من الإعدادات.</string>
+    <string name="close_music">"إنهاء"</string>
+    <string name="delete_video_item_message">هل تريد حذف \"<xliff:g id="name">%s</xliff:g>\"؟</string>
+    <string name="video_deleted_message">تم حذف ملف الفيديو.</string>
+
+    <!-- Menu item that takes the user link to net to see more music -->
+    <string name="more_music">مزيد من الموسيقى</string>
+    <!-- Menu item that takes the user link to net to see more video -->
+    <string name="more_video">مزيد من مقاطع الفيديو</string>
+    <!--gesture control playback status-->
+    <string name="music_gesture_play">"تشغيل/إيقاف الصوت مؤقتًا"</string>
+    <string name="music_gesture_prev">"تشغيل المقطع السابق"</string>
+    <string name="music_gesture_next">"تشغيل المقطع التالي"</string>
+
+    <!-- DRM Related Strings -->
+    <string name="no_permission_for_drm">"عذرًا، تتعذر مشاركة ملف DRM‏ "</string>
+    <string name="drm_license_info">معلومات ترخيص DRM</string>
+    <string name="drm_ringtone_error">يتعذر تعيين ملفات CD/SD كنغمة رنين</string>
+
+</resources>

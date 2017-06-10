@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+ android:id="@+id/dialog_camera_ctl_group"
+			android:layout_height="wrap_content"
+			android:layout_width="380px"
+			android:orientation="vertical"
+			android:background="#00000000"
+			android:paddingTop="16px"
+			android:paddingBottom="6px"
+			android:gravity="center_horizontal">
+			<LinearLayout android:id="@+id/dialog_contrast_ctl_group"
+				android:layout_height="75px"
+				android:layout_width="fill_parent"
+				android:orientation="horizontal"
+				android:gravity="center_vertical">
+				<ImageView android:id="@+id/dialog_btn_contrast"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:src="@drawable/cmcc_vtcall_icon_contrast"
+					android:layout_marginLeft="10px"
+					android:layout_marginRight="22px"/>
+				<SeekBar android:id="@+id/dialog_contrast_val_seek"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:paddingRight="22px"
+					android:max="150"
+					android:progress="75"
+					/>
+			</LinearLayout>
+			<LinearLayout android:id="@+id/dialog_bright_ctl_group"
+				android:layout_height="75px"
+				android:layout_width="fill_parent"
+				android:orientation="horizontal"
+				android:gravity="center_vertical">
+				<ImageView android:id="@+id/dialog_btn_bright"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:src="@drawable/cmcc_vtcall_icon_bright"
+					android:layout_marginLeft="10px"
+					android:layout_marginRight="22px"/>
+				<SeekBar android:id="@+id/dialog_bright_val_seek"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:paddingRight="22px"
+					android:max="150"
+					android:progress="75" />
+			</LinearLayout>
+			<LinearLayout android:id="@+id/screen_bright_ctl_group"
+				android:layout_height="75px"
+				android:layout_width="fill_parent"
+				android:orientation="horizontal"
+				android:gravity="center_vertical">
+				<ImageView android:id="@+id/btn_screen_bright"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:src="@drawable/cmcc_vtcall_icon_screen_bright"
+					android:layout_marginLeft="10px"
+					android:layout_marginRight="22px"/>
+				<SeekBar android:id="@+id/screen_bright_val_seek"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:paddingRight="22px"
+					android:max="150"
+					android:progress="75"/>
+			</LinearLayout>
+</LinearLayout>

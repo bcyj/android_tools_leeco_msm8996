@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Category mapping from ATSC to canonical genre -->
+    <string-array name="genre_mapping_atsc">
+        <item>શિક્ષણ|શિક્ષણા</item>
+        <item>મનોરંજન|મનોરંજન</item>
+        <item>મૂવી|મૂવીઝ</item>
+        <item>સમાચાર|સમાચાર</item>
+        <item>ધાર્મિક|જીવન_શૈલી</item>
+        <item>સ્પોર્ટ્સ|સ્પોર્ટ્સ</item>
+        <item>અન્ય|અન્ય</item>
+        <item>એક્શન|મૂવીઝ</item>
+        <item>જાહેરાત|અન્ય</item>
+        <item>એનિમેટેડ|ફેમિલિ_કીડ્સ</item>
+        <item>સાહિત્ય સંગ્રહ|નાટક</item>
+        <item>ઑટોમોબાઇલ|અન્ય</item>
+        <item>એવોર્ડ્સ|મનોરંજન</item>
+        <item>બેસબોલ|સ્પોર્ટ્સ</item>
+        <item>બાસ્કેટબોલ|સ્પોર્ટ્સ</item>
+        <item>બુલેટિન|અન્ય</item>
+        <item>વ્યવસાય|અન્ય</item>
+        <item>શાસ્ત્રીય|સંગીત</item>
+        <item>કૉલેજ|શિક્ષણ</item>
+        <item>સ્પર્ધા|અન્ય</item>
+        <item>કૉમેડી|કૉમેડી</item>
+        <item>કૉમેન્ટરી|અન્ય</item>
+        <item>સંગીત જલસો|સંગીત</item>
+        <item>ગ્રાહક|અન્ય</item>
+        <item>કન્ટેમ્પરરિ|અન્ય</item>
+        <item>ક્રાઇમ|મૂવીઝ</item>
+        <item>નૃત્ય|મનોરંજના</item>
+        <item>ડૉક્યુમેન્ટરી|સમાચાર</item>
+        <item>નાટક|નાટક</item>
+        <item>પ્રાથમિક|શિક્ષણ</item>
+        <item>અશ્લીલ|મૂવીઝ</item>
+        <item>વ્યાયામા|સ્પોર્ટ્સ</item>
+        <item>કાલ્પનિક|મૂવીઝ</item>
+        <item>ખેતર|અન્ય</item>
+        <item>ફેશન|જીવન_શૈલી</item>
+        <item>ફિક્શન|કલા</item>
+        <item>ભોજન|જીવન_શૈલી</item>
+        <item>ફૂટબોલ|સ્પોર્ટ્સ</item>
+        <item>વિદેશ|અન્ય</item>
+        <item>ફંડ રેઝર|અન્ય</item>
+        <item>રમત/ક્વિઝ|ગેમિંગ</item>
+        <item>ગાર્ડન|જીવન_શૈલી</item>
+        <item>ગોલ્ફ|સ્પોર્ટ્સ</item>
+        <item>સરકાર|અન્ય</item>
+        <item>આરોગ્ય|જીવન_શૈલી</item>
+        <item>હાઇ સ્કૂલ|શિક્ષણ</item>
+        <item>ઇતિહાસ|શિક્ષણ</item>
+        <item>શોખ|જીવન_શૈલી</item>
+        <item>હૉકી|સ્પોર્ટ્સ</item>
+        <item>ઘર|જીવન_શૈલી</item>
+        <item>હૉરર|મૂવીઝ</item>
+        <item>માહિતી|સમાચાર</item>
+        <item>સૂચના|અન્ય</item>
+        <item>આંતરરાષ્ટ્રીય|અન્ય</item>
+        <item>ઇન્ટરવ્યૂ|અન્ય</item>
+        <item>ભાષા|શિક્ષણ</item>
+        <item>કાનૂની|અન્ય</item>
+        <item>જીવન|અન્ય</item>
+        <item>સ્થાનિક|અન્ય</item>
+        <item>ગણિત|શિક્ષણ</item>
+        <item>મેડિકલ|અન્ય</item>
+        <item>મીટિંગ|અન્ય</item>
+        <item>લશ્કર|અન્ય</item>
+        <item>મિનિસીરીઝ|નાટક</item>
+        <item>સંગીત|સંગીત</item>
+        <item>રહસ્ય|મૂવીઝ</item>
+        <item>રાષ્ટ્રીય|અન્ય</item>
+        <item>કુદરત|પ્રાણી_વન્યજીવન</item>
+        <item>પોલીસ|અન્ય</item>
+        <item>રાજકારણ|અન્ય</item>
+        <item>પ્રીમિયર|પ્રીમિયર</item>
+        <item>અગાઉથી રેકોર્ડ કરેલ|અન્ય</item>
+        <item>ઉત્પાદન|અન્ય</item>
+        <item>વ્યવસાયિક|અન્ય</item>
+        <item>સાર્વજનિક|અન્ય</item>
+        <item>રેસિંગ|સ્પોર્ટ્સ</item>
+        <item>વાંચન|કલા</item>
+        <item>સમારકામ|અન્ય</item>
+        <item>પુનરાવર્તન|અન્ય</item>
+        <item>સમીક્ષા|અન્ય</item>
+        <item>રોમાંસ|મૂવીઝ</item>
+        <item>વિજ્ઞાન|ટેક_વિજ્ઞાન</item>
+        <item>સિરીઝ|નાટક</item>
+        <item>સેવા|અન્ય</item>
+        <item>શોપિંગ|શોપિંગ</item>
+        <item>સોપ ઓપેરા|નાટક</item>
+        <item>વિશેષ|અન્ય</item>
+        <item>રહસ્યમય|મૂવીઝ</item>
+        <item>ચર્ચા|મનોરંજન</item>
+        <item>ટેક્નિકલ|ટેક_વિજ્ઞાન</item>
+        <item>ટેનિસ|સ્પોર્ટ્સ</item>
+        <item>યાત્રા|યાત્રા</item>
+        <item>વિવિધ|મનોરંજન</item>
+        <item>વિડિયો|કલા</item>
+        <item>હવામાન|સમાચાર</item>
+        <item>પશ્ચિમી|અન્ય</item>
+        <item>કલા|કલા</item>
+        <item>ઑટો રેસિંગ|સ્પોર્ટ્સ</item>
+        <item>એવિએશન|સ્પોર્ટ્સ</item>
+        <item>બાયોગ્રાફી|સમાચાર</item>
+        <item>બોટિંગ|સ્પોર્ટ્સ</item>
+        <item>બૉલિંગ|સ્પોર્ટ્સ</item>
+        <item>બોક્સિંગ|સ્પોર્ટ્સ</item>
+        <item>કાર્ટુન|ફેમિલિ_કિડ્સ</item>
+        <item>બાળકો|ફેમિલિ_કિડ્સ</item>
+        <item>ક્લાસિક ફિલ્મ|મૂવીઝ</item>
+        <item>સમુદાય|અન્ય</item>
+        <item>એન્જીનિયરિંગ|ટેક_વિજ્ઞાન</item>
+        <item>દેશ સંગીત|સંગીત</item>
+        <item>કોર્ટ|અન્ય</item>
+        <item>એક્સ્ટ્રીમ રમતો|સ્પોર્ટ્સ</item>
+        <item>કૌટુંબિક|ફેમિલિ_કિડ્સ</item>
+        <item>નાણાકીય|સમાચાર</item>
+        <item>જિમ્નેસ્ટિક્સ|સ્પોર્ટ્સ</item>
+        <item>મુખ્ય સમાચાર|સમાચાર</item>
+        <item>હોર્સ રેસિંગ|સ્પોર્ટ્સ</item>
+        <item>શિકાર/ફિશિંગ/આઉટડોર્સ|પ્રાણી_વન્યજીવન</item>
+        <item>સ્વતંત્ર|અન્ય</item>
+        <item>જાઝ|સંગીત</item>
+        <item>મેગેઝિન|સમાચાર</item>
+        <item>મોટરસાયકલ રેસિંગ|સ્પોર્ટ્સ</item>
+        <item>સંગીત/ફિલ્મ/પુસ્તકો|અન્ય</item>
+        <item>સમાચાર-આંતરરાષ્ટ્રીય|સમાચાર</item>
+        <item>સમાચાર-સ્થાનિક|સમાચાર</item>
+        <item>સમાચાર-રાષ્ટ્રીય|સમાચાર</item>
+        <item>સમાચાર-પ્રાદેશિક|સમાચાર</item>
+        <item>ઓલામ્પિક્સ|સ્પોર્ટ્સ</item>
+        <item>મૂળ|મૂવીઝ</item>
+        <item>પર્ફોર્મિંગ આર્ટ્સ|કલા</item>
+        <item>પાળતુ/પ્રાણીઓ|પ્રાણી_વન્યજીવન</item>
+        <item>પૉપ|સંગીત</item>
+        <item>રોક &amp; રોલ|સંગીત</item>
+        <item>સાઇન્સ-ફિક્શન|મૂવીઝ</item>
+        <item>સ્વ સુધારણા|શિક્ષણ</item>
+        <item>સિટકોમ|નાટક</item>
+        <item>સ્પોર્ટ્સ|સ્કેટિંગ</item>
+        <item>સ્કીઇંગ|સ્પોર્ટ્સ</item>
+        <item>સોકર|સ્પોર્ટ્સ</item>
+        <item>ટ્રેક/ફીલ્ડ|સ્પોર્ટ્સ</item>
+        <item>સત્ય|અન્ય</item>
+        <item>વોલીબોલ|સ્પોર્ટ્સ</item>
+        <item>કુસ્તી|સ્પોર્ટ્સ</item>
+    </string-array>
+
+    <!-- Category mapping from DVB to canonical genre -->
+    <string-array name="genre_mapping_dvb">
+        <item>મૂવી/નાટક|મૂવીઝ</item>
+        <item>ડિટેક્ટિ/થ્રિલર|મૂવીઝ</item>
+        <item>સાહસ/વેસ્ટર્ન/યુદ્ધ|મૂવીઝ</item>
+        <item>સાઇન્સ ફિક્શન/કાલ્પનિક/હોરર|મૂવીઝ</item>
+        <item>કૉમેડી|કૉમેડી</item>
+        <item>સોપ/મેલોડ્રામા/લોકકથાઓ|નાટક</item>
+        <item>રોમાંસ|મૂવીઝ</item>
+        <item>ગંભીર/શાસ્ત્રીય/ધાર્મિક/ઐતિહાસિક મૂવી/નાટક|મૂવીઝ</item>
+        <item>એડલ્ટ મૂવી/ડ્રામા|મૂવીઝ</item>
+        <item>સમાચાર/વર્તમાન બાબતો|સમાચાર</item>
+        <item>સમાચાર/હવામાન રિપોર્ટ|સમાચાર</item>
+        <item>સમાચાર સામયિક|સમાચાર</item>
+        <item>ડૉક્યુમેન્ટરી|સમાચાર</item>
+        <item>ચર્ચા/ઇન્ટરવ્યૂ/વાદવિવાદ|સમાચાર</item>
+        <item>શો/ગેમ શો|મનોરંજન</item>
+        <item>ગેમ શો/ક્વિઝ/કૉન્ટેસ્ટ|ગેમિંગ</item>
+        <item>વિવિધ શો|મનોરંજન</item>
+        <item>ટોક શો|મનોરંજન</item>
+        <item>સ્પોર્ટ્સ|સ્પોર્ટ્સ</item>
+        <item>વિશેષ ઘટનાઓ (ઓલમ્પિક ગેમ્સ, વિશ્વ કપ વગેરે)|સ્પોર્ટ્સ</item>
+        <item>સ્પોર્ટ્સ મેગેઝિન્સ|સ્પોર્ટ્સ</item>
+        <item>ફૂટબોલ/સોકર|સ્પોર્ટ્સ</item>
+        <item>ટેનિસ/સ્ક્વોશ|સ્પોર્ટ્સ</item>
+        <item>ટીમ સ્પોર્ટ્સ (ફૂટબોલ સિવાયની)|સ્પોર્ટ્સ</item>
+        <item>એથ્લેટિક્સ|સ્પોર્ટ્સ</item>
+        <item>મોટર સ્પોર્ટ|સ્પોર્ટ્સ</item>
+        <item>વૉટર સ્પોર્ટ|સ્પોર્ટ્સ</item>
+        <item>વિંટર સ્પોર્ટ્સ|સ્પોર્ટ્સ</item>
+        <item>અશ્વારોહણ|સ્પોર્ટ્સ</item>
+        <item>માર્શલ સ્પોર્ટ્સ|સ્પોર્ટ્સ</item>
+        <item>બાળકોના/યુવા કાર્યક્રમો|ફેમિલિ_કિડ્સ</item>
+        <item>પ્રી-સ્કૂલ બાળકોના કાર્યક્રમો|ફેમિલિ_કિડ્સ</item>
+        <item>6 થી14 માટેના મનોરંજન કાર્યક્રમો|ફેમિલિ_કિડ્સ</item>
+        <item>10 થી16 માટેના મનોરંજન કાર્યક્રમો|ફેમિલિ_કિડ્સ</item>
+        <item>માહિતીપ્રદ/શૈક્ષણિક/શાળા કાર્યક્રમો|ફેમિલિ_કિડ્સ</item>
+        <item>કાર્ટુન/કઠપૂતળીઓ|ફેમિલિ_કિડ્સ</item>
+        <item>સંગીત/બેલે/નૃત્ય|સંગીત</item>
+        <item>રોક/પૉપ|સંગીત</item>
+        <item>ગંભીર સંગીત/શાસ્ત્રીય સંગીત|સંગીત</item>
+        <item>લોક/પરંપરાગત સંગીત|સંગીત</item>
+        <item>જાઝ|સંગીત</item>
+        <item>સંગીત/ઓપેરા|સંગીત</item>
+        <item>બૅલે|મનોરંજન</item>
+        <item>કલા/સંસ્કૃતિ|કલા</item>
+        <item>પર્ફોર્મિંગ આર્ટ્સ|કલા</item>
+        <item>ફાઇન આર્ટ્સ|કલા</item>
+        <item>ધર્મ|જીવન_શૈલી</item>
+        <item>લોકપ્રિય સંસ્કૃતિ/પરંપરાગત કલા|જીવન_શૈલી</item>
+        <item>સાહિત્ય|કલા</item>
+        <item>ફિલ્મ/સિનેમા|કલા</item>
+        <item>પ્રાયોગિક ફિલ્મ/વિડિયો|કલા</item>
+        <item>પ્રસારણ/પ્રેસ|કલા</item>
+        <item>સમાચાર મીડિયા|કલા</item>
+        <item>કલા/કલ્ચર મેગેઝિન્સ|કલા</item>
+        <item>ફેશન|જીવન_શૈલી</item>
+        <item>સામાજિક/રાજકીય મુદ્દાઓ/અર્થશાસ્ત્ર|અન્ય</item>
+        <item>મેગેઝિન્સ/રિપોર્ટ્સ/ડૉક્યૂમેન્ટરી|સમાચાર</item>
+        <item>અર્થશાસ્ત્ર/સામાજિક સલાહકાર|અન્ય</item>
+        <item>નોંધપાત્ર લોકો|અન્ય</item>
+        <item>શિક્ષણ/વિજ્ઞાન/હકીકતલક્ષી વિષયો|શિક્ષણ</item>
+        <item>કુદરત/પ્રાણીઓ/પર્યાવરણ|પ્રાણી_વન્યજીવન</item>
+        <item>ટેક્નોલોજી/કુદરતી વિજ્ઞાન|ટેક_વિજ્ઞાન</item>
+        <item>દવા/શરીરવિજ્ઞાન/મનોવિજ્ઞાન|ટેક_વિજ્ઞાન</item>
+        <item>વિદેશી દેશો/અભિયાનો|શિક્ષણ</item>
+        <item>સામાજિક/આધ્યાત્મિક વિજ્ઞાન|ટેક_વિજ્ઞાન</item>
+        <item>વધુ શિક્ષણ|શિક્ષણ</item>
+        <item>ભાષા|શિક્ષણ</item>
+        <item>ફુરસદના શોખ|જીવન_શૈલી</item>
+        <item>પ્રવાસન/પ્રવાસ|પ્રવાસ</item>
+        <item>હસ્તકલા|જીવન_શૈલી</item>
+        <item>મોટરિંગ|જીવન_શૈલી</item>
+        <item>તંદુરસ્તી અને આરોગ્ય|જીવન_શૈલી</item>
+        <item>રસોઈ|જીવન_શૈલી</item>
+        <item>જાહેરાત/ખરીદી|ખરીદી</item>
+        <item>બાગકામ|જીવન_શૈલી</item>
+        <item>મૂળ ભાષા|અન્ય</item>
+        <item>શ્વેત અને શ્યામ|અન્ય</item>
+        <item>અપ્રકાશિત|અન્ય</item>
+        <item>જીવંત પ્રસારણ|અન્ય</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB to canonical genre -->
+    <string-array name="genre_mapping_isdb">
+        <item>એનિમેશન|મૂવીઝ</item>
+        <item>બેસબોલ|સ્પોર્ટ્સ</item>
+        <item>બાલ ગીત|સંગીત</item>
+        <item>શાસ્ત્રીય, ઓપેરા|સંગીત</item>
+        <item>કૉકિંગ વિવિધ|મનોરંજન</item>
+        <item>કોમેડી પ્રોગ્રામ|મનોરંજન</item>
+        <item>કોમિક વાર્તા, મનોરંજન|મનોરંજન</item>
+        <item>કમ્પ્યુટર, ટીવી ગેમ્સ|ટેક_વિજ્ઞાન</item>
+        <item>વાતચીત, ભાષાઓ|શિક્ષણ</item>
+        <item>નૃત્ય, બૅલે|મનોરંજન</item>
+        <item>ચર્ચા, કૉન્ફરન્સ|સમાચાર</item>
+        <item>અર્થશાસ્ત્ર, બજારનો અહેવાલ|સમાચાર</item>
+        <item>શૈક્ષણિક સમસ્યા|શિક્ષણ</item>
+        <item>ઇવેન્ટ્સ|મનોરંજન</item>
+        <item>ફેશન|જીવન_શૈલી</item>
+        <item>લોક સંગીત, વિશ્વ સંગીત|સંગીત</item>
+        <item>રમત|ગેમિંગ</item>
+        <item>બાગકામ, પાળતુ, હસ્તકળા|જીવન_શૈલી</item>
+        <item>ગોલ્ફ|સ્પોર્ટ્સ</item>
+        <item>ગપસપ/ટેબ્લોઇડ શો|મનોરંજન</item>
+        <item>મદિરા, કૉકિંગ|જીવન_શૈલી</item>
+        <item>આરોગ્ય, તબીબી સારવાર|જીવન_શૈલી</item>
+        <item>શોખ/શિક્ષણ|જીવન_શૈલી</item>
+        <item>ઘોડાદોડ, જાહેર રેસ|સ્પોર્ટ્સ</item>
+        <item>જાપાનીઝ એનિમેશન|ફેમિલિ_કિડ્સ</item>
+        <item>જાપાનીઝ લોકગીત, જાપાની પરંપરાગત સંગીત|સંગીત</item>
+        <item>જાપાનીઝ ચેસ (શોગી) અને "જાઓ"|ગેમિંગ</item>
+        <item>જાપાનીઝ નાટકો|નાટક</item>
+        <item>જાપાની મૂવીઝ|મૂવીઝ</item>
+        <item>જાપાનીઝ રોક, પૉપ સંગીત|સંગીત</item>
+        <item>જાઝ, ફ્યુઝન|સંગીત</item>
+        <item>જુનિયર હાઇ સ્કૂલ અને હાઇ સ્કૂલ વિદ્યાર્થીઓ|શિક્ષણ</item>
+        <item>કાબુકી, શાસ્ત્રીય નાટક|નાટક</item>
+        <item>કરાઓકે, કલાપ્રેમી ગાયન સ્પર્ધાઓ|સંગીત</item>
+        <item>આજીવન શિક્ષણ, યોગ્યતાઓ|શિક્ષણ</item>
+        <item>નાના બાળકો, શાળાના બાળકો|શિક્ષણ</item>
+        <item>લાઇવ કૉન્સર્ટ|સંગીત</item>
+        <item>લિવિંગ, ઘર|જીવન_શૈલી</item>
+        <item>સ્થાનિક કાર્યક્રમ|સમાચાર</item>
+        <item>માહ-જોંગ, પિનબોલ રમતો|ગેમિંગ</item>
+        <item>મેરેથોન, એથ્લેટિક સ્પોર્ટ્સ, સ્વિમિંગ|સ્પોર્ટ્સ</item>
+        <item>મરીન સ્પોર્ટ્સ, વિંટર સ્પોર્ટ્સ|સ્પોર્ટ્સ</item>
+        <item>આધુનિક નાટક, પશ્ચિમી શૈલીના નાટક|નાટક</item>
+        <item>મોટર સ્પોર્ટ્સ|સ્પોર્ટ્સ</item>
+        <item>સંગીત|સંગીત</item>
+        <item>સંગીત, કલા, ઔદ્યોગિક આર્ટ|કલા</item>
+        <item>સંગીત વિવિધ|મનોરંજન</item>
+        <item>સમાચાર વિશ્લેષણ|સમાચાર</item>
+        <item>ઓલમ્પિક, આંતરરાષ્ટ્રીય રમતો|સ્પોર્ટ્સ</item>
+        <item>અન્ય બોલ રમતો|સ્પોર્ટ્સ</item>
+        <item>વિદેશી એનિમેશન|ફેમિલિ_કિડ્સ</item>
+        <item>વિદેશી નાટકો|નાટક</item>
+        <item>વિદેશી, આંતરરાષ્ટ્રીય રિપોર્ટ|સમાચાર</item>
+        <item>વિદેશી મૂવીઝ|મૂવીઝ</item>
+        <item>વિદેશી રોક, પૉપ સંગીત|સંગીત</item>
+        <item>પીરિયડ ડ્રામાઝ|નાટક</item>
+        <item>રાજનીતિ, રાષ્ટ્રીય વિધાનસભા|સમાચાર</item>
+        <item>લોકપ્રિય ગીતો, જાપાની લોકપ્રિય ગીતો (ઇન્કા ગીતો)|સંગીત</item>
+        <item>ક્વિઝ|ગેમિંગ</item>
+        <item>રેંકિંગ, સંગીતની વિનંતી|સંગીત</item>
+        <item>નિયમિત, સામાન્ય|સમાચાર</item>
+        <item>ખરીદી, મેલ-ઓર્ડર વ્યવસાય|ખરીદી</item>
+        <item>સોકર|સ્પોર્ટ્સ</item>
+        <item>વિશેષ પ્રભાવો|ફેમિલિ_કિડ્સ</item>
+        <item>વિશેષ કાર્યક્રમ, ડૉક્યૂમેન્ટરી|સમાચાર</item>
+        <item>વિશેષ અહેવાલ|સમાચાર</item>
+        <item>સ્પોર્ટ્સ સમાચાર|સ્પોર્ટ્સ</item>
+        <item>સુમો, કૉમ્બેટિવ સ્પોર્ટ્સ|સ્પોર્ટ્સ</item>
+        <item>વાતચીત વિવિધ|મનોરંજન</item>
+        <item>ટૂર વિવિધ|મનોરંજન</item>
+        <item>ટ્રાફિક અહેવાલ|સમાચાર</item>
+        <item>પ્રવાસ, માછીમારી, આઉટડોર મનોરંજન|પ્રાણી_વન્યજીવન</item>
+        <item>યુનિવર્સિટી વિદ્યાર્થીઓ, પરીક્ષાઓ|શિક્ષણ</item>
+        <item>હવામાન અહેવાલ|સમાચાર</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB in Brazil to canonical genre -->
+    <string-array name="genre_mapping_isdb_br">
+        <item>બાયોગ્રે
+ફી|સમાચાર</item>
+        <item>Culinária|LIFE_STYLE</item>
+        <item>ડૉક્યુમેન્ટરી|સમાચાર</item>
+        <item>શિક્ષણ|શિક્ષણા</item>
+        <item>અશ્લીલ|મૂવીઝ</item>
+        <item>ઇસ્પોર્ટ|સ્પોર્ટ્સ</item>
+        <item>ફિલ્મ|મૂવીઝ</item>
+        <item>રમતના શો|ગેમિંગ</item>
+        <item>Humorístico|રમૂજી</item>
+        <item>ઇન્ફેન્ટિલ
+|FAMILY_KIDS</item>
+        <item>Informação|LIFE_STYLE</item>
+        <item>જર્મલિઝમો|સમાચાર</item>
+        <item>મિનિસીરીઝ|નાટક</item>
+        <item>Moda|LIFE_STYLE</item>
+        <item>સંગીત|સંગીત</item>
+        <item>Premiação|મનોરંજન</item>
+        <item>રિઅલિટી શો|મનોરંજન</item>
+        <item>ધાર્મિક|LIFE_STYLE</item>
+        <item>Reportagem|સમાચાર</item>
+        <item>ગ્રામ્ય|LIFE_STYLE</item>
+        <item>Saúde|LIFE_STYLE</item>
+        <item>Série|નાટક</item>
+        <item>Série/seriado|નાટક</item>
+        <item>શો|મનોરંજન</item>
+        <item>Telejornais|સમાચાર</item>
+        <item>Televendas|ખરીદી</item>
+        <item>Turismo|પર્યટન</item>
+        <item>Variedade|મનોરંજન</item>
+        <item>ઑડિટોરિયમ|મનોરંજન</item>
+        <item>એવોર્ડ્સ|મનોરંજન</item>
+        <item>બાયોગ્રાફી|સમાચાર</item>
+        <item>બાળક|FAMILY_KIDS</item>
+        <item>બાળકો|ફેમિલિ_કિડ્સ</item>
+        <item>Comical|રમૂજી</item>
+        <item>રસોઈ|LIFE_STYLE</item>
+        <item>દેશ|LIFE_STYLE</item>
+        <item>ચર્ચા/ઇન્ટરવ્યૂ|સમાચાર</item>
+        <item>ચર્ચા|સમાચાર</item>
+        <item>ડૉક્યુમેન્ટરી|સમાચાર</item>
+        <item>શિક્ષણ|શિક્ષણા</item>
+        <item>Educative|શિક્ષણ</item>
+        <item>એન્જિનિયરિંગ સેવાઓ
+|TECH_SCIENCE</item>
+        <item>Erotic|મૂવીઝ</item>
+        <item>ફેશન|જીવન_શૈલી</item>
+        <item>ફેમિનાઇન|મનોરંજન</item>
+        <item>રમતના શો|ગેમિંગ</item>
+        <item>આરોગ્ય|જીવન_શૈલી</item>
+        <item>વિનોદપૂર્ણ|રમૂજી</item>
+        <item>જાણકારી|LIFE_STYLE</item>
+        <item>ઇન્ટરવ્યૂ|સમાચાર</item>
+        <item>પત્રકારિતા
+|સમાચાર</item>
+        <item>નિર્માઁણ|મનોરંજન</item>
+        <item>મિનિ-સીરીઝ|નાટક</item>
+        <item>મિનિસીરીઝ|નાટક</item>
+        <item>મોવી (ફિલ્મ)|મૂવીઝ</item>
+        <item>મૂવી|મૂવીઝ</item>
+        <item>સંગીત સંબંધિત|મનોરંજન</item>
+        <item>સમાચાર|સમાચાર</item>
+        <item>કિંમત|ખરીદી</item>
+        <item>રેફલ|ખરીદી</item>
+        <item>રેફલ, ટેલિવિઝન, વેચાણ, કિંમત|ખરીદી</item>
+        <item>રિઅલિટી શો|મનોરંજન</item>
+        <item>ધાર્મિક|જીવન_શૈલી</item>
+        <item>રિપોર્ટિંગ|સમાચાર</item>
+        <item>રિપોર્ટ|સમાચાર</item>
+        <item>ગ્રામ્ય|LIFE_STYLE</item>
+        <item>સિરીઝ|નાટક</item>
+        <item>સીરીઝ / ટીવી શો|નાટક</item>
+        <item>શો|મનોરંજન</item>
+        <item>સોપ ઓપેરા|નાટક</item>
+        <item>સ્પોર્ટ|સ્પોર્ટ્સ</item>
+        <item>સ્પોર્ટ્સ|સ્પોર્ટ્સ</item>
+        <item>ટેલિસેલ્સ|ખરીદી</item>
+        <item>ટેલિવિઝન સેલ્સ|ખરીદી</item>
+        <item>પ્રવાસન|પર્યટન</item>
+        <item>યાત્રા|યાત્રા</item>
+        <item>ટીવી સમાચાર|સમાચાર</item>
+        <item>વિવિધ|મનોરંજન</item>
+        <item>વિવિધ શો|મનોરંજન</item>
+    </string-array>
+</resources>

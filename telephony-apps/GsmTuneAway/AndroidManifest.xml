@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2013, Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.gsmtuneaway"
+    android:sharedUserId="android.uid.phone"
+    >
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application android:process="com.android.phone">
+
+        <receiver android:name=".GsmTuneAwayReceiver"
+            android:label="GsmTuneAwayReceiver">
+         <intent-filter>
+           <action android:name="android.intent.action.BOOT_COMPLETED"/>
+           <action android:name="android.intent.action.ANY_DATA_STATE"/>
+         </intent-filter>
+       </receiver>
+
+    </application>
+
+</manifest>

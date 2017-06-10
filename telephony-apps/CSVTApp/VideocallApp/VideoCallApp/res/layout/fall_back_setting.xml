@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<!-- Call card hold call related information -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical">
+
+    <RadioGroup android:id="@+id/fallback_group_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:checkedButton="@+id/fallback_group_checked_button" >
+
+        <RadioButton android:id="@+id/fallback_manually"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/fallback_manually_txt" />
+
+        <RadioButton android:id="@+id/fallback_auto_voice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:focusable="false"
+            android:text="@string/fallback_auto_voice_txt" />
+
+        <RadioButton android:id="@+id/fallback_auto_reject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:focusable="false"
+            android:text="@string/fallback_auto_reject_txt" />
+
+    </RadioGroup>
+
+</LinearLayout>

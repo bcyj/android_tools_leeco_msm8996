@@ -1,0 +1,191 @@
+/*****************************************************************************
+  @FILE     sns_sam_qmd.idl
+
+  @BRIEF    Message definition for QMD.
+
+  @DESCRIPTION
+  This file defines QMI messages provided to clients interested in 
+  Qualcomm Motion Detection (QMD) related algorithm services. 
+  The algorithms include
+  AMD - Absolute Motion Detection, 
+  VMD (vehicle motion detection) and
+  RMD (relative motion detection).
+
+  Copyright (c) 2010-2013 Qualcomm Technologies, Inc.  All Rights Reserved
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+
+include "sns_common_v01.idl";
+
+revision 3;
+
+/** ENUMs are for reference only, uint8 is used instead */
+
+//! @ENUM   SNS_SAM_MOTION_STATE_ENUM
+enum {
+  SNS_SAM_MOTION_UNKNOWN    = 0,
+  SNS_SAM_MOTION_REST       = 1,
+  SNS_SAM_MOTION_MOVE       = 2
+} sns_sam_motion_state_e;
+
+
+struct {
+  uint32 var_thresh;
+  /**< Accel Variance thresold, we declare motion if the sum of variances on all axes exceed this , Q16, in m^2/s^4*/
+  uint32 var_win_len;
+  /**< time period over which the variance is computed, in Q16 seconds */
+} sns_qmd_config_s;
+
+//============================================================================
+/** @COMMAND SNS_SAM_QMD_ENABLE
+    @BRIEF This command enables a QMD algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_QMD_ENABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint32                           report_period;
+  /**< Unit of seconds, Q16; value of 0 means reporting on new event only */ 
+
+  optional sns_qmd_config_s config;
+  /**< configuration options for this instance of the QMD algorithm, some 
+  instances of QMD algorithms may not support this configuration parameters. 
+  In such cases, their behaviour shall default to the behavious of the 
+  algorithm is this optional parameter was omitted from the request */
+
+
+  //! @VERSION 1.3
+  optional sns_suspend_notification_s notify_suspend;
+  /**< Identifies if indications for this request should be sent
+       when the processor is in suspend state.
+
+       If this field is not specified, default value will be set to
+       notify_suspend->proc_type                  = SNS_PROC_APPS
+       notify_suspend->send_indications_during_suspend  = FALSE
+
+       This field does not have any bearing on error indication
+       messages, which will be sent even during suspend.
+    */
+
+} sns_sam_qmd_enable_req_msg;
+
+//! @MSG     SNS_SAM_QMD_ENABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  mandatory uint8                            instance_id;
+  /**<
+    Instance ID is assigned by SAM.
+    The client shall use this instance ID for future messages associated with
+    this algorithm instance.
+  */
+} sns_sam_qmd_enable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_QMD_DISABLE
+    @BRIEF This command disables a QMD algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_QMD_DISABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+} sns_sam_qmd_disable_req_msg;
+
+//! @MSG     SNS_SAM_QMD_DISABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  mandatory uint8                            instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+} sns_sam_qmd_disable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_QMD_REPORT
+    @BRIEF Report containing QMD algorithm output
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_QMD_REPORT_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+  mandatory uint32                           timestamp;
+  /**< Timestamp of input used to generate the algorithm output  */
+  mandatory sns_sam_motion_state_e           state;
+  /**< Motion state output of QMD algorithm instance.  */
+} sns_sam_qmd_report_ind_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_QMD_GET_REPORT
+    @BRIEF This command fetches latest report output of QMD algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_QMD_GET_REPORT_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+} sns_sam_qmd_get_report_req_msg;
+
+//! @MSG     SNS_SAM_QMD_GET_REPORT_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  mandatory uint8                            instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+  mandatory uint32                           timestamp;
+  /**< Timestamp of input used to generate the algorithm output  */
+  mandatory sns_sam_motion_state_e           state;
+  /**< Motion state output of QMD algorithm instance.  */
+} sns_sam_qmd_get_report_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_QMD_ERROR
+    @BRIEF Asynchronous error indication for a QMD algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_QMD_ERROR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//============================================================================
+
+message {
+  mandatory uint8                            error;
+  /**< Sensor1 error code.  */
+  mandatory uint8                            instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+} sns_sam_qmd_error_ind_msg;
+

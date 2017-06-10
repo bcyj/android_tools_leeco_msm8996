@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2013 Mimer Information Technology AB, info@mimer.com -->
+<MimerSQLReplace>
+ <!-- Query run during Contacts startup in 4.1, replaced of he same reason the nearly identical 
+      query was replaced in 4.0. The difference from that is that the expression _id IN default_directory
+      has two levels of paranthesises here, while there were only one in 4.0 -->
+  
+
+
+
+  
+  
+   
+
+
+
+
+
+
+
+
+<!-- BEGIN - CTS test case -->
+<!-- android.provider.cts.ContactsContract_ContactsTest#testMarkAsContacted
+
+     - Fixed in new translator
+
+<fromSQL id="GOCO4166" statement="UPDATE contacts SET times_contacted= ifnull(times_contacted,?)? WHERE _id=?">
+
+	UPDATE contacts SET times_contacted= coalesce(times_contacted,?)+? WHERE "_id"=?
+
+</fromSQL>
+
+<!- - android.provider.cts.ContactsContract_ContactsTest#testMarkAsContacted
+<fromSQL id="GOCO4167" statement="UPDATE raw_contacts SET times_contacted= ifnull(times_contacted,?)?  WHERE contact_id=?">
+
+	UPDATE raw_contacts SET times_contacted= coalesce(times_contacted,?)+?  WHERE contact_id=?
+
+</fromSQL>
+ -->
+
+<!-- android.provider.cts.ContactsContract_StatusUpdatesTest#testInsertStatus -->
+<fromSQL id="GOCO4168" statement="INSERT OR REPLACE  INTO presence(presence_contact_id, protocol, im_handle, chat_capability, presence_raw_contact_id, presence_data_id, custom_protocol, mode) VALUES(?, ?, ?, ?, ?, ?, ?, ?);">
+
+	insert {replace} into "presence"("presence_contact_id","protocol","im_handle","chat_capability","presence_raw_contact_id","presence_data_id","custom_protocol","mode")  values(?,?,?,coalesce(?, 0),?,?,?,?)
+
+</fromSQL>
+
+<!-- END - CTS test case -->
+
+
+
+
+<!-- BEGIN - Using new translator - 4.2.2 -->
+
+<!-- BEGIN - App launch -->
+
+
+<!-- END - App launch -->
+
+
+<!-- END - Message app -compose message - when user type anything -->
+
+
+<!--	Begin Phone App -->
+
+
+
+
+<!-- End Phone App -->
+
+
+
+
+
+<!-- END - Using new translator - 4.2.2 -->
+
+
+
+
+<!-- Startup of Contacs -->
+<!-- Performance -->
+<fromSQL id="GOCO4198" statement="SELECT sort_key AS name, phonebook_bucket AS bucket, phonebook_label AS label, COUNT(*) AS count FROM view_contacts LEFT OUTER JOIN agg_presence ON (_id = agg_presence.presence_contact_id) LEFT OUTER JOIN status_updates contacts_status_updates ON (status_update_id=contacts_status_updates.status_update_data_id) WHERE ((_id IN default_directory)) GROUP BY bucket, label ORDER BY bucket, name COLLATE PHONEBOOK">
+select sort_key as name,phonebook_bucket as bucket,phonebook_label as label,COUNT(*) as count from view_contacts left join agg_presence on (("_id" = agg_presence.presence_contact_id)) left join status_updates contacts_status_updates on ((status_update_id = contacts_status_updates.status_update_data_id)) where (("_id" in (select * from default_directory))) group by bucket,label order by bucket,label,name collate CURRENT_COLLATION_2
+</fromSQL>
+
+
+<!-- Optimize delete of Contacts -->
+<!-- Performance -->
+<fromSQL id="GOCO41100" statement="SELECT sort_key AS name, phonebook_bucket AS bucket, phonebook_label AS label, COUNT(*) AS count FROM view_contacts LEFT OUTER JOIN agg_presence ON (_id = agg_presence.presence_contact_id) WHERE ((1)) GROUP BY bucket, label ORDER BY bucket, name COLLATE PHONEBOOK">
+ select sort_key as name,phonebook_bucket as bucket,phonebook_label as label,COUNT(*) as count
+ from view_contacts
+ left join agg_presence on (("_id" = agg_presence.presence_contact_id))
+ where ((:1:i1))
+ group by bucket,label
+ order by bucket,label,name collate current_collation_2
+</fromSQL>
+
+
+<!-- Contacts sync - Optimized the query from total node cost of 13,36,000 to 1500.-->
+<!-- Performance -->
+<fromSQL id="CMCO412" translateOnLoad="false" statement="SELECT _id FROM contacts WHERE (name_raw_contact_id NOT NULL AND name_raw_contact_id NOT IN (SELECT _id FROM raw_contacts)) OR (photo_id NOT NULL AND photo_id NOT IN (SELECT _id FROM data))">
+
+ select "_id" from contacts
+ where (name_raw_contact_id is not null 
+        and not exists( select "_id" from raw_contacts where "_id" = name_raw_contact_id))
+       or (photo_id is not null and not exists( select "_id" from data where "_id" = photo_id));
+
+</fromSQL>
+
+<!-- Contacts sync - Optimized the query from total node cost of 2,55,530 to 1515.-->
+<!-- Performance -->
+<fromSQL id="CMCO413" translateOnLoad="false" statement="SELECT raw_contacts.contact_id FROM raw_contacts WHERE account_id = ?1 AND raw_contacts.contact_id NOT IN (    SELECT raw_contacts.contact_id    FROM raw_contacts    WHERE account_id != ?1)">
+
+select rc1.contact_id 
+from raw_contacts rc1
+where (rc1.account_id = :1:i1) and 
+        not exists( select rc2.contact_id from raw_contacts rc2 where ( (rc2.account_id &lt;&gt; :1:i1) 
+                        and rc1.contact_id = rc2.contact_id))
+ 
+</fromSQL>
+
+<!-- This explicit cast is wrong since contact_id is a BIGINT -->
+<fromSQL id="CMCO414" statement="DELETE FROM search_index WHERE contact_id=CAST(? AS int)">
+delete from search_index where contact_id = :1:i1
+</fromSQL>
+
+<!-- Begin 4.4 -->
+
+<!-- End 4.4 -->
+
+
+<!-- Qualcomm Technologies replacers -->
+
+
+</MimerSQLReplace>

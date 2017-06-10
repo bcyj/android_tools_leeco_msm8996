@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Choices for the "Reminder method" spinner.
+         These must be kept in sync with the reminder_methods_values array.
+         [CHAR LIMIT=10]
+    -->
+    <string-array name="reminder_methods_labels">
+        <item>اطلاع</item>
+        <item>ای میل</item>
+        <item>SMS</item>
+        <item>الارم</item>
+    </string-array>
+
+    <!-- This maps reminder_methods_labels to internal constants. -->
+    <integer-array name="reminder_methods_values" translatable="false">
+        <item>1</item>  <!-- METHOD_ALERT -->
+        <item>2</item>  <!-- METHOD_EMAIL -->
+        <item>3</item>  <!-- METHOD_SMS -->
+        <item>4</item>  <!-- METHOD_ALARM -->
+    </integer-array>
+
+    <!-- Choices for the "Reminder minutes" spinner.
+         These must be kept in sync with the reminder_minutes_values array.
+         For consistency, the format should match what
+         EventViewUtils.constructReminderLabel() generates.  (TODO: eliminate
+         this and just generate the list from reminder_minutes_values?)
+         [CHAR LIMIT=15]
+    -->
+    <string-array name="reminder_minutes_labels">
+        <item>0 منٹ</item>
+        <item>1 منٹ</item>
+        <item>5 منٹ</item>
+        <item>10 منٹ</item>
+        <item>15 منٹ</item>
+        <item>20 منٹ</item>
+        <item>25 منٹ</item>
+        <item>30 منٹ</item>
+        <item>45 منٹ</item>
+        <item>1 گھنٹہ</item>
+        <item>2 گھنٹے</item>
+        <item>3 گھنٹے</item>
+        <item>12 گھنٹے</item>
+        <item>24 گھنٹے</item>
+        <item>2 دن</item>
+        <item>1 ہفتہ</item>
+    </string-array>
+
+    <integer-array name="reminder_minutes_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+        <item>120</item>
+        <item>180</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>2880</item>
+        <item>10080</item>
+    </integer-array>
+
+  <!-- Choices for the "Reminder minutes" spinner in the settings.
+         These must be kept in sync with the preferences_default_reminder_values array.
+         [CHAR LIMIT=12]
+    -->
+       <string-array name="preferences_default_reminder_labels">
+        <item>کوئی نہیں</item>
+        <item>0 منٹ</item>
+        <item>1 منٹ</item>
+        <item>5 منٹ</item>
+        <item>10 منٹ</item>
+        <item>15 منٹ</item>
+        <item>20 منٹ</item>
+        <item>25 منٹ</item>
+        <item>30 منٹ</item>
+        <item>45 منٹ</item>
+        <item>1 گھنٹہ</item>
+        <item>2 گھنٹے</item>
+        <item>3 گھنٹے</item>
+        <item>12 گھنٹے</item>
+        <item>24 گھنٹے</item>
+        <item>2 دن</item>
+        <item>1 ہفتہ</item>
+    </string-array>
+
+    <string-array name="preferences_default_reminder_values" translatable="false">
+        <item>"-1"</item>
+        <item>"0"</item>
+        <item>"1"</item>
+        <item>"5"</item>
+        <item>"10"</item>
+        <item>"15"</item>
+        <item>"20"</item>
+        <item>"25"</item>
+        <item>"30"</item>
+        <item>"45"</item>
+        <item>"60"</item>
+        <item>"120"</item>
+        <item>"180"</item>
+        <item>"720"</item>
+        <item>"1440"</item>
+        <item>"2880"</item>
+        <item>"10080"</item>
+    </string-array>
+
+    <string-array name="preferences_week_start_day_labels">
+        <item>ڈیفالٹ مقامیت</item>
+        <item>ہفتہ</item>
+        <item>اتوار</item>
+        <item>پیر</item>
+    </string-array>
+
+    <string-array name="preferences_week_start_day_values" translatable="false">
+        <item>"-1"</item>
+        <item>"7"</item>
+        <item>"1"</item>
+        <item>"2"</item>
+    </string-array>
+
+
+
+    <string-array name="availability">
+        <item>مصروف</item>
+        <item>دستیاب</item>
+        <item>عارضی</item>
+    </string-array>
+
+    <!-- This maps reminder_methods_labels to internal constants. -->
+    <integer-array name="availability_values" translatable="false">
+        <item>0</item>  <!-- Busy -->
+        <item>1</item>  <!-- Available -->
+        <item>2</item>  <!-- Tentative -->
+    </integer-array>
+
+    <string-array name="visibility">
+        <item>ڈیفالٹ</item>
+        <item>نجی</item>
+        <item>عوامی</item>
+    </string-array>
+
+    <string-array name="ordinal_labels">
+        <item>پہلا</item>
+        <item>دوسرا</item>
+        <item>تیسرا</item>
+        <item>چوتھا</item>
+        <item>آخری</item>
+    </string-array>
+
+    <!-- Invitation responses -->
+    <string-array name="response_labels1">
+        <item>کوئی جواب نہیں</item>
+        <item>ہاں</item>
+        <item>شاید</item>
+        <item>نہیں</item>
+    </string-array>
+
+    <!-- The corresponding indices are defined in DeleteEventHelper.java -->
+    <!-- This is a list of choices displayed when the user deletes an event.
+         It only is shown when deleting a recurring event.
+    -->
+    <skip/>
+    <string-array name="delete_repeating_labels">
+        <item>صرف یہ ایونٹ</item>
+        <item>یہ اور مستقبل کے ایونٹس</item>
+        <item>تمام ایونٹس</item>
+    </string-array>
+
+    <!-- DO NOT TRANSLATE These values need to correspond to the indices
+         defined in DeleteEventHelper.java-->
+    <integer-array name="delete_repeating_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+
+    <!-- The corresponding indices are defined in DeleteEventHelper.java -->
+    <!-- This is the same array as above (the "delete_repeating_labels" array,
+         except that the first element "Only this event" is removed.  This
+         array exists to work-around a bug in the CalendarProvider and sync
+         code where you can\'t delete one instance of a repeating event that
+         was created on the phone until that event has been synced to the server.
+     -->
+    <skip/>
+    <string-array name="delete_repeating_labels_no_selected">
+        <item>یہ اور مستقبل کے ایونٹس</item>
+        <item>تمام ایونٹس</item>
+    </string-array>
+
+    <!-- The corresponding array indices are defined in EventInfoActivity.java -->
+    <skip/>
+    <!-- The list of choices displayed in a dialog box when the user wants to
+    respond to an invitation that repeats. -->
+    <string-array name="change_response_labels">
+        <!-- The choice for responding to only one instance of a repeating event -->
+        <item>صرف یہ ایونٹ</item>
+        <!-- The choice for responding to all instances of a repeating event -->
+        <item>سلسلے میں تمام ایونٹس</item>
+    </string-array>
+
+    <!-- Strings for buttons in drop down menu -->
+    <string-array name="buttons_list">
+        <item>دن</item>
+        <item>ہفتہ</item>
+        <item>مہینہ</item>
+        <item>ایجنڈا</item>
+        <item>سال</item>
+    </string-array>
+
+    <!-- Experimental options for skipping reminders. [CHAR LIMIT = 37] -->
+    <string-array name="preferences_skip_reminders_labels">
+        <!-- Default choice -->
+        <item>مسترد کرنے پر ہی</item>
+        <!-- Second option, for skipping reminders to events not yet responded to. -->
+        <item>اگر مسترد کیا یا جواب نہ دیا</item>
+    </string-array>
+
+    <string-array name="preferences_skip_reminders_values" translatable="false">
+        <item>declined</item>
+        <item>not_responded</item>
+    </string-array>
+
+    <!-- Recurrence picker: How events are to be repeated.  [CHAR LIMIT = 20] -->
+    <string-array name="recurrence_freq">
+        <item>روزانہ دوہرائیں</item>
+        <item>ہفتہ وار دوہرائیں</item>
+        <item>ماہانہ دوہرائیں</item>
+        <item>سالانہ دوہرائیں</item>
+    </string-array>
+
+    <!-- The following sets of strings describe a monthly recurring event, which will repeat
+         on the Nth WEEKDAY of every month. For example, the 3rd Monday of every month, or
+         the last Sunday. These are set up like this to resolve any gender-matching issues
+         that were present in some languages.
+     -->
+    <!-- Repeat a monthly event on the same nth day of every Sunday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_sun">
+        <item>ہر پہلے اتوار کو</item>
+        <item>ہر دوسرے اتوار کو</item>
+        <item>ہر تیسرے اتوار کو</item>
+        <item>ہر چوتھے اتوار کو</item>
+        <item>ہر آخری اتوار کو</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Monday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_mon">
+        <item>ہر پہلے پیر کو</item>
+        <item>ہر دوسرے پیر کو</item>
+        <item>ہر تیسرے پیر کو</item>
+        <item>ہر چوتھے پیر کو</item>
+        <item>ہر آخری پیر کو</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Tuesday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_tues">
+        <item>ہر پہلے منگل کو</item>
+        <item>ہر دوسرے منگل کو</item>
+        <item>ہر تیسرے منگل کو</item>
+        <item>ہر چوتھے منگل کو</item>
+        <item>ہر آخری منگل کو</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Wednesday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_wed">
+        <item>ہر پہلے بدھ کو</item>
+        <item>ہر دوسرے بدھ کو</item>
+        <item>ہر تیسرے بدھ کو</item>
+        <item>ہر چوتھے بدھ کو</item>
+        <item>ہر آخری بدھ کو</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Thursday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_thurs">
+        <item>ہر پہلی جمعرات کو</item>
+        <item>ہر دوسری جمعرات کو</item>
+        <item>ہر تیسری جمعرات کو</item>
+        <item>ہر چوتھی جمعرات کو</item>
+        <item>ہر آخری جمعرات کو</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Friday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_fri">
+        <item>ہر پہلے جمعے کو</item>
+        <item>ہر دوسرے جمعے کو</item>
+        <item>ہر تیسرے جمعے کو</item>
+        <item>ہر چوتھے جمعے کو</item>
+        <item>ہر آخری جمعے کو</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Saturday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_sat">
+        <item>ہر پہلے ہفتہ کو</item>
+        <item>ہر دوسرے ہفتہ کو</item>
+        <item>ہر تیسرے ہفتہ کو</item>
+        <item>ہر چوتھے ہفتہ کو</item>
+        <item>ہر آخری ہفتہ کو</item>
+    </string-array>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015, Qualcomm Technologies, Inc. All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<checkitem xmlns:android="http://schemas.android.com/apk/res/android"
+    label="Max backlight brightness" function="maxBrightnessGet" expect="255" expect_type="3"
+    summary_values="@array/on_off_values" summary_labels="@array/on_off_labels">
+    <dialog title="@string/dialog_edit_label">
+        <view info="Max backlight brightness">
+            <edit function="maxBrightnessGet" />
+        </view>
+        <positive label="@android:string/ok" function="maxBrightnessSet"
+            params="(EditContent)" delay_millis="5000" />
+        <negative label="@android:string/cancel" />
+    </dialog>
+</checkitem>

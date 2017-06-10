@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+* Copyright (c) 2014 Qualcomm Technologies, Inc.
+* All Rights Reserved.
+* Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:baselineAligned="false"
+    android:gravity="center_vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="96px"
+    android:background="@android:drawable/status_bar_item_background"
+    >
+
+   <ImageView android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="4px"
+        android:layout_marginRight="6px" />
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       >
+       <!-- The appearance of these 2 lines of text matches the other
+             kinds of notifications (see status_bar_latest_event.xml).
+             TODO: There should probably be common styles for these, though. -->
+	 <Chronometer android:id="@+id/txtchrmter"
+           android:textStyle="bold"
+           android:textSize="27px"
+           android:textAppearance="@style/TextAppearanceNotification"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:singleLine="true"
+           android:text="@string/notification_ongoing_call_format"
+           />
+       <TextView android:id="@+id/txtname"
+           android:textSize="14px"
+           android:textAppearance="@style/TextAppearanceNotification"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:singleLine="true"
+           />
+   </LinearLayout>
+
+</LinearLayout>

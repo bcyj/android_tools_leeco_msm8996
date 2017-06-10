@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2014 pci-suntektech Technologies, Inc.  All Rights Reserved.
+     pci-suntektech Technologies Proprietary and Confidential.
+-->
+<com.suntek.mway.rcs.nativeui.ui.RcsNotificationListItem xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/activatedBackgroundIndicator"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:paddingBottom="8dip"
+    android:paddingTop="8dip" >
+
+    <QuickContactBadge
+        android:id="@+id/avatar"
+        style="?android:attr/quickContactBadgeStyleWindowLarge"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+        android:layout_marginLeft="16dip" />
+
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_marginLeft="8dip"
+        android:layout_marginRight="5dip"
+        android:layout_toRightOf="@+id/avatar"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_below="@+id/from"
+        android:layout_marginLeft="8dip"
+        android:layout_toLeftOf="@+id/date"
+        android:layout_toRightOf="@+id/avatar"
+        android:ellipsize="end"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/avatar"
+        android:layout_marginLeft="8dip"
+        android:layout_marginTop="4dip"
+        android:layout_toRightOf="@+id/avatar"
+        android:paddingLeft="24dip"
+        android:paddingRight="24dip"
+        android:text="@string/accept"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/decline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/accept"
+        android:layout_toRightOf="@+id/accept"
+        android:paddingLeft="24dip"
+        android:paddingRight="24dip"
+        android:text="@string/decline"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</com.suntek.mway.rcs.nativeui.ui.RcsNotificationListItem>

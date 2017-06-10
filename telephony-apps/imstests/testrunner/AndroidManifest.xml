@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.qti.imstestrunner"
+    android:sharedUserId="android.uid.phone"
+>
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <!-- <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> -->
+    <protected-broadcast android:name="android.intent.action.TEST_MODE" />
+    <application
+        android:name="ImsTestRunner"
+        android:persistent="true"
+    >
+        <receiver
+            android:name="com.qualcomm.qti.imstestrunner.OnBootReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.qcom.imstestrunner" />
+                <!-- <action android:name="android.intent.action.BOOT_COMPLETED"></action> -->
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".FakeImsResponseService"
+            android:enabled="true"
+            android:exported="false"
+            android:process="com.android.phone"
+            >
+            <!-- <intent-filter>
+                <action android:name="com.qcom.imstestrunner.TEST_MODE" />
+            </intent-filter> -->
+        </service>
+    </application>
+
+</manifest>

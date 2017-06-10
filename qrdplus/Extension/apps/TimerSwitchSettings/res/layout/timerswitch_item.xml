@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2014 Qualcomm Technologies, Inc. All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution, Apache license notifications and license are retained
+     for attribution purposes only.
+
+     Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dc="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/switch_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal|top"
+    android:background="@drawable/item_background"
+    android:clickable="true" >
+    <TextView
+        android:id="@+id/label"
+        android:hint="@string/label"
+        android:textAppearance="?android:attr/textAppearance"
+        android:textStyle="bold"
+        android:textColor="@color/dark_green_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:singleLine="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+        <com.android.timerswitch.widget.TextTime
+            android:id="@+id/digital_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/medium_light"
+            android:textSize="@dimen/switch_time_font_size"
+            android:baselineAligned="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            dc:format12Hour="@string/switch_time_12_hours_format"
+            dc:format24Hour="@string/clock_24_hours_format"/>
+        <Space
+            android:layout_height="match_parent"
+            android:layout_width="0dip"
+            android:layout_weight="1"/>
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/onoff"
+            android:thumbTextPadding="10dp"
+            android:layout_gravity="center_vertical|end"/>
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <ImageView
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingRight="8dp"
+            android:paddingEnd="8dp"
+            android:paddingLeft="8dp"
+            android:paddingStart="8dp"
+            android:contentDescription="@string/reset_switch"
+            android:src="@drawable/ic_reset"
+            android:layout_gravity="top|end" />
+        <LinearLayout
+            android:id="@+id/expand_area"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/collapse_expand_height"
+            android:layout_gravity="bottom" >
+           <CheckBox
+                android:id="@+id/repeat_onoff"
+                android:text="@string/switch_repeat"
+                android:layout_height="48dip"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@color/clock_time_grey"
+                android:layout_gravity="center_vertical|start"
+                style="@style/body" />
+            <LinearLayout
+                android:id="@+id/repeat_days"
+                android:layout_width="match_parent"
+                android:layout_height="48dip"
+                android:layout_gravity="top"
+                android:orientation="horizontal"
+                android:visibility="gone">
+                <!-- Day buttons are put here programatically -->
+            </LinearLayout>
+
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/collapse_expand"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/collapse_expand_height"
+            android:contentDescription="@string/collapse_switch"
+            android:layout_gravity="bottom" >
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="48dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_expand_down"
+                android:layout_gravity="start|center_vertical"
+                android:contentDescription="@string/expand_switch" />
+            <View
+                android:id="@+id/hairline"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_width="wrap_content"
+                android:background="#28ffffff"
+                android:layout_gravity="bottom" />
+            <com.android.timerswitch.widget.EllipsizeLayout
+                android:id="@+id/summary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="48dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginRight="104dp"
+                android:layout_marginEnd="104dp"
+                android:gravity="center_vertical" >
+                <TextView android:id="@+id/daysOfWeek"
+                      android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      style="@style/switch_label_bold"
+                      android:ellipsize="none"
+                      android:singleLine="true" />
+            </com.android.timerswitch.widget.EllipsizeLayout>
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>

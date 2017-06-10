@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Names of packages and authorities that are common to all apps
+    and read from resources -->
+
+    <!-- Permissions label for reading attachments -->
+    <string name="permission_read_attachment_label">"Basahin ang mga attachment sa email"</string>
+    <!-- Permissions description for reading attachments -->
+    <string name="permission_read_attachment_desc">"Binibigyang-daan ang app na basahin ang iyong mga attachment sa email."</string>
+    <!-- Permissions label for accessing the main provider -->
+    <string name="permission_access_provider_label">"I-access ang data ng provider ng email"</string>
+    <!-- Permissions description for accessing the main provider -->
+    <string name="permission_access_provider_desc">"Binibigyang-daan ang application na i-access ang database ng iyong email, kabilang ang mga natanggap na mensahe, naipadalang mensahe, username, at password."</string>
+
+    <!-- Name of application on Home screen -->
+    <string name="app_name">"Email"</string>
+
+    <!-- Actions will be used as buttons and in menu items -->
+    <skip/>
+
+    <!--  Menu item used to create a new quick response [CHAR_LIMIT=16] -->
+    <string name="create_action">"Lumikha ng bago"</string>
+
+    <!-- Message informing user when a list that would contain quick responses
+            is empty [CHAR_LIMIT=80] -->
+    <string name="quick_responses_empty_view">"Walang mga mabilisang pagtugon."</string>
+    <!-- Menu item -->
+    <string name="account_settings_action">"Mga setting ng account"</string>
+    <!-- The next set of strings are used in local display and may be localized. -->
+    <!-- In the UI, the inbox will be displayed with this name -->
+    <string name="mailbox_name_display_inbox">"Inbox"</string>
+    <!-- In the UI, the outbox will be displayed with this name -->
+    <string name="mailbox_name_display_outbox">"Outbox"</string>
+    <!-- In the UI, the drafts will be displayed with this name -->
+    <string name="mailbox_name_display_drafts">"Mga Draft"</string>
+    <!-- In the UI, the trash will be displayed with this name -->
+    <string name="mailbox_name_display_trash">"Basurahan"</string>
+    <!-- In the UI, the sent will be displayed with this name -->
+    <string name="mailbox_name_display_sent">"Ipinadala"</string>
+    <!-- In the UI, the junk will be displayed with this name -->
+    <string name="mailbox_name_display_junk">"Basura"</string>
+    <!-- In the UI, the starred will be displayed with this name -->
+    <string name="mailbox_name_display_starred">"May Bituin"</string>
+    <!-- In the UI, the unread will be displayed with this name [CHAR LIMIT=15] -->
+    <string name="mailbox_name_display_unread">"Hindi pa nabasa"</string>
+
+    <!-- Title of debug screen -->
+    <string name="debug_title">"Debug"</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_debug_logging_label" translatable="false">
+        Enable extra debug logging?</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_verbose_logging_label" translatable="false">
+        Enable exchange logging?</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_file_logging_label" translatable="false">
+        Enable sd card logging?</string>
+    <!-- Do Not Translate.  Button label, shown only on debug screen -->
+    <string name="debug_clear_webview_cache" translatable="false">
+        Clear WebView cache</string>
+    <!-- Do Not Translate. Button label. Shown only on debug screen -->
+    <string name="debug_clear_migration_state" translatable="false">Clear migration state</string>
+    <!-- Do Not Translate.  Checkbox label, shown on debug screen. -->
+    <string name="debug_force_one_minute_refresh_label" translatable="false">
+        Force 1-minute refresh for POP/IMAP</string>
+    <!-- Do Not Translate.  Checkbox label, shown on debug screen. -->
+    <string name="debug_enable_strict_mode_label" translatable="false">
+        Enable strict mode (with logging)</string>
+
+
+    <!-- Label shown in the account selector to select "Combined view", which contains
+         Combined Inbox, Combined Outbox, etc. [CHAR LIMIT=30] -->
+    <string name="mailbox_list_account_selector_combined_view">"Pinagsamang pagtingin"</string>
+
+    <!-- Header for forwarded original messages -->
+    <string name="message_compose_fwd_header_fmt">\n\n"-------- Orihinal na Mensahe --------\nPaksa: <xliff:g id="SUBJECT">%1$s</xliff:g>\nMula kay: <xliff:g id="SENDER">%2$s</xliff:g>\nPara kay: <xliff:g id="TO">%3$s</xliff:g>\nCC: <xliff:g id="CC_0">%4$s</xliff:g>\n\n"</string>
+    <!-- Title for dialog containing list of quick responses that user may insert
+            into message body. [CHAR_LIMIT=30] -->
+    <string name="message_compose_insert_quick_response_list_title">"Ipasok ang mabilisang tugon"</string>
+    <!-- Menu item for inserting quick responses into email compose activity. [CHAR_LIMIT=30] -->
+    <string name="message_compose_insert_quick_response_menu_title">"Ipasok ang mabilisang tugon"</string>
+    <!-- Toast upon using "send" when one or more attachments will need to be background loaded
+      [CHAR LIMIT=none]-->
+    <string name="message_view_attachment_background_load">"Ida-download ang isa o higit pang mga attachment sa iyong ipinasang mensahe bago ang pagpapadala."</string>
+
+    <!-- String used in place of a message that could not be properly decoded (e.g. bad base64
+         data was received.) [CHAR LIMIT=none] -->
+    <string name="message_decode_error">"Nagkaroon ng isang error habang dine-decode ang mensahe."</string>
+
+    <!-- Notification ticker when a forwarded attachment couldn\'t be sent [CHAR LIMIT=none] -->
+    <string name="forward_download_failed_ticker">"Hindi makapagpasa ng isa o higit pang mga attachment."</string>
+    <!-- Notification title when a forwarded attachment couldn\'t be sent [CHAR LIMIT=30]-->
+    <string name="forward_download_failed_title">"Hindi napasa ang attachment"</string>
+
+    <!-- Notification ticker when email account authentication fails [CHAR LIMIT=none] -->
+    <string name="login_failed_ticker">"Hindi matagumpay ang pag-signin ng <xliff:g id="ACCOUNT_NAME">%s</xliff:g>."</string>
+    <!-- Notification title when email account authentication fails [CHAR LIMIT=30]-->
+    <string name="login_failed_title">"Hindi makapag-sign in"</string>
+
+    <!-- Title of screen when setting up new email account [CHAR LIMIT=45] -->
+    <string name="account_setup_basics_title">"Setup ng account"</string>
+    <!-- Title of screen when trying to get oauth authentication -->
+    <string name="oauth_authentication_title">"Humihiling ng pahintulot"</string>
+    <!-- Title of screen to choose with authentication to use -->
+    <string name="sign_in_title">"Mag-sign in"</string>
+
+    <!-- Warning if there is a problem authenticating with oauth -->
+    <string name="oauth_error_description">"Hindi mapatotohanan"</string>
+    <!-- Warning label displayed when the email address or password are incorrect -->
+    <string name="password_warning_label">"Mali ang email address o ang password"</string>
+    <!-- Label displayed to confirm what email address we are trying to validate -->
+    <string name="email_confirmation_label">"Email address:"</string>
+    <!-- Headline of screen when setting up new email account (large text over divider)
+        [CHAR LIMIT=none] -->
+    <string name="account_setup_basics_headline">"Email account"</string>
+    <!-- On "Set up email" screen, enthusiastic welcome message. -->
+    <string name="accounts_welcome">"Mase-set up mo ang iyong account sa ilang hakbang lang."</string>
+    <!-- On "Set up email" screen, hint for account email address text field -->
+    <string name="account_setup_basics_email_label">"Email address"</string>
+
+    <!-- Label between OAuth and password authentication, indicating the user must do one or the other [CHAR LIMIT=40] -->
+    <string name="or_label">"O KAYA"</string>
+    <!-- Label for signing in with Google using OAuth -->
+    <string name="sign_in_with_google">"Mag-sign in sa Google"</string>
+    <!-- On "Set up email" screen, hint for account email password text field, should be uppercase where applicable -->
+    <string name="account_setup_basics_password_label">"PASSWORD"</string>
+    <!-- hint for account email password text field -->
+    <string name="password_hint">"Password"</string>
+    <!--  On the "Setup up email" screen, label indicating what service we are signed in with [CHAR LIMIT=40] -->
+    <string name="signed_in_with_service_label">"Naka-sign in gamit ang %s"</string>
+    <!-- Label for the authentication section, should be uppercase where applicable [CHAR LIMIT=20] -->
+    <string name="authentication_label">"PAGPAPATOTOO"</string>
+    <!-- Label for the add authentication icon [CHAR LIMIT=40] -->
+    <string name="add_authentication_label">"Magdagdag ng pagpapatotoo"</string>
+    <!-- Label for the add authentication icon [CHAR LIMIT=40] -->
+    <string name="clear_authentication_label">"I-clear ang pagpapatotoo"</string>
+    <!-- Button name on "Set up email" screen, with action underlined using html [CHAR LIMIT=20] -->
+    <string name="account_setup_basics_manual_setup_action">"Manwal na setup"</string>
+    <!-- Toast when we can\'t build a URI from the given email & password -->
+    <!-- Note, the error message in the toast is purposefully vague, because I *don\'t* know
+        exactly what\'s wrong. -->
+    <string name="account_setup_username_password_toast">"Mag-type ng wastong email address at password."</string>
+    <!-- Title of dialog shown when a duplicate account is created -->
+    <string name="account_duplicate_dlg_title">"Duplicate na account"</string>
+    <!-- Message of dialog shown when a duplicate account is created.  The display name of
+         the duplicate account is displayed. -->
+    <string name="account_duplicate_dlg_message_fmt">"Ginagamit mo na ang username na ito para sa account na \"<xliff:g id="DUPLICATE">%s</xliff:g>\"."</string>
+
+    <!-- On check-settings screen, this is the initially-displayed message. -->
+    <string name="account_setup_check_settings_retr_info_msg">"Binabawi ang impormasyon ng account…"</string>
+    <!-- Appears on screen while system is checking incoming server settings -->
+    <string name="account_setup_check_settings_check_incoming_msg">"Pinapatunayan ang mga setting ng server…"</string>
+    <!-- Appears on screen while system is checking outgoing server settings -->
+    <string name="account_setup_check_settings_check_outgoing_msg">"Pinapatunayan ang mga setting ng smtp…"</string>
+        <!-- Appears on screen while system is creating the account -->
+    <string name="account_setup_creating_account_msg">"Nililikha ang account..."</string>
+
+    <!-- Headline text that appears on "Confirm account type" screen [CHAR LIMIT=none] -->
+    <string name="account_setup_ab_headline">"Kumpirmahin ang uri ng account"</string>
+    <!-- Explanatory text that appears on the "Confirm account type" screen [CHAR LIMIT=none] -->
+    <string name="account_setup_ab_instructions_format">"Ipinahiwatig mo na ginagamit ng <xliff:g id="EMAIL">%1$s</xliff:g> ang <xliff:g id="USERPROTOCOL">%2$s</xliff:g>, ngunit maaaring gamitin ng account ang <xliff:g id="PROVIDERPROTOCOL">%3$s</xliff:g>"</string>
+
+    <!-- Text that appears on "Set up email" screen after successfully setting up an account
+        [CHAR LIMIT=none] -->
+    <string name="account_setup_names_headline">"Naka-set up na ang iyong account at paparating na ang email!"</string>
+    <!-- On "Set up email" screen, label of text field -->
+    <string name="account_setup_names_account_name_label">"Bigyan ng pangalan ang account na ito (opsyonal)"</string>
+    <!-- On "Set up email" screen, label of text field -->
+    <string name="account_setup_names_user_name_label">"Iyong pangalan (na ipinapakita sa mga papalabas na mensahe)"</string>
+
+    <!-- Headline for the the account type selector (IMAP or POP3 or EAS) [CHAR LIMIT=none] -->
+    <string name="account_setup_account_type_headline">"Uri ng account"</string>
+    <!-- "Add new email account" screen, text that appears on screen -->
+    <string name="account_setup_account_type_instructions">"Anong uri ng account ito?"</string>
+
+    <!-- "Incoming server settings" screen, headline (text over divider) [CHAR LIMIT=none] -->
+    <string name="account_setup_incoming_headline">"Mga setting ng papasok na server"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_username_label">"USERNAME"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_password_label">"PASSWORD"</string>
+    <!-- "Incoming server settings" screen, label for text field -->
+    <string name="account_setup_password_subheading">"Password"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_server_label">"SERVER"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_port_label">"PORT"</string>
+    <!-- "Incoming server settings" screen, label for pop-up menu, should be uppercase where applicable -->
+    <string name="account_setup_incoming_security_label">"URI NG SEGURIDAD"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an unencrypted session -->
+    <string name="account_setup_incoming_security_none_label">"Wala"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session on the selected port, accepting all SSL certificates -->
+    <string name="account_setup_incoming_security_ssl_trust_certificates_label">"SSL/TLS (Tanggapin ang lahat ng certificate)"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session on the selected port, including SSL certificate
+        checks -->
+    <string name="account_setup_incoming_security_ssl_label">"SSL/TLS"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session overlaid on a plain text session using the selected
+        port, accepting all SSL certificates -->
+    <string name="account_setup_incoming_security_tls_trust_certificates_label">"STARTTLS (tanggapin ang lahat ng certificate)"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session overlaid on a plain text session on the selected
+        port, including SSL certificate checks -->
+    <string name="account_setup_incoming_security_tls_label">"STARTTLS"</string>
+    <!-- "Incoming server settings" screen, label for pop-up menu -->
+    <string name="account_setup_incoming_delete_policy_label">"Tanggalin ang email mula sa server"</string>
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <string name="account_setup_incoming_delete_policy_never_label">"Hindi kailanman"</string>
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <string name="account_setup_incoming_delete_policy_delete_label">"Kapag nagtanggal ako mula sa Inbox"</string>
+    <!-- "Incoming server settings" screen, label for setting IMAP path prefix: -->
+    <string name="account_setup_incoming_imap_path_prefix_label">"Prefix ng path ng IMAP"</string>
+    <!-- "Incoming server settings" screen, hint for setting IMAP path prefix: -->
+    <string name="account_setup_incoming_imap_path_prefix_hint">"Opsyonal"</string>
+
+    <!-- "Outgoing server settings" screen, headline (text over divider) [CHAR LIMIT=none] -->
+    <string name="account_setup_outgoing_headline">"Mga setting ng papalabas na server"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_smtp_server_label">"SMTP SERVER"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_port_label">"PORT"</string>
+    <!-- On "Outgoing server settings" screen, label for pop-up menu, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_security_label">"URI NG SEGURIDAD"</string>
+    <!-- On "Outgoing server settings" screen, label for check box, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_require_login_label">"Hingin ang pag-signin"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable-->
+    <string name="account_setup_outgoing_username_label">"USERNAME"</string>
+
+    <!-- On "Exchange" setup screen, a heading title for the current client certificate, should be uppercase where applicable [CHAR LIMIT=50] -->
+    <string name="account_setup_exchange_certificate_title">"CERTIFICATE NG CLIENT"</string>
+    <!-- On "Exchange" setup screen, a button label to include a client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_select_certificate">"Piliin"</string>
+    <!-- On "Exchange" setup screen, a button label to include a client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_use_certificate">"Gamitin ang certificate ng client"</string>
+    <!-- On "Exchange" setup screen, a button label to remove the currently used client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_remove_certificate">"Alisin"</string>
+    <!-- On "Exchange" setup screen, placeholder text to indicate no client
+         certificate is used [CHAR LIMIT=50] -->
+    <string name="account_setup_exchange_no_certificate">"Wala"</string>
+    <!-- On "Exchange" setup screen, the exchange device-id label, should be uppercase where applicable [CHAR LIMIT=30] -->
+    <string name="account_setup_exchange_device_id_label">"MOBILE DEVICE ID"</string>
+
+    <!-- In Account setup options screen, Activity headline [CHAR LIMIT=none] -->
+    <string name="account_setup_options_headline">"Mga pagpipilian sa account"</string>
+    <!-- In Account setup options screen, label for email check frequency selector -->
+    <string name="account_setup_options_mail_check_frequency_label">"Dalas ng pag-sync:"</string>
+    <!-- In Account setup options & Account Settings screens, label for email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_never">"Hindi kailanman"</string>
+    <!-- In Account setup options & Account Settings screens, label for email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_push">"Awtomatiko (Itulak)"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_5min">"Tuwing 5 minuto"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_10min">"Tuwing 10 minuto"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_15min">"Tuwing 15 minuto"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_30min">"Tuwing 30 minuto"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_1hour">"Oras-oras"</string>
+    <!-- In Account setup options & Account Settings screens, check box for new-mail notification -->
+    <string name="account_setup_options_notify_label">"I-notify ako kapag may dumating na email"</string>
+    <!-- In Account setup options screen, optional check box to also sync contacts -->
+    <string name="account_setup_options_sync_contacts_label">"I-sync ang mga contact mula sa account na ito"</string>
+    <!-- In Account setup options screen, optional check box to also sync contacts -->
+    <string name="account_setup_options_sync_calendar_label">"I-sync ang kalendaryo mula sa account na ito"</string>
+    <!-- In Account setup options screen, check box to sync email -->
+    <string name="account_setup_options_sync_email_label">"I-sync ang email mula sa account na ito"</string>
+    <!-- In Account setup options screen, check box to auto-download attachments  [CHAR LIMIT=none] -->
+    <string name="account_setup_options_background_attachments_label">"Awtomatikong i-download ang mga attachment kapag nakakonekta sa Wi-Fi"</string>
+    <!-- Dialog title when "setup" could not finish -->
+    <string name="account_setup_failed_dlg_title">"Hindi matapos"</string>
+    <!-- In Account setup options screen, label for email lookback selector -->
+    <string name="account_setup_options_mail_window_label">"Mag-sync ng mga email mula sa:"</string>
+    <!-- In account setup options & account settings screens (exchange), sync window length; this
+        implies loading a \'reasonable\' number of messages [CHAR LIMIT=25] -->
+    <string name="account_setup_options_mail_window_auto">"Awtomatiko"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1day">"Nakaraang araw"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_3days">"Nakaraang tatlong araw"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1week">"Nakaraang linggo"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_2weeks">"Nakaraang dalawang linggo"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1month">"Nakaraang buwan"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_all">"Lahat"</string>
+    <!-- Per-mailbox sync window setting.  This means "use the account\'s sync window setting" [CHAR LIMIT=40] -->
+    <string name="account_setup_options_mail_window_default">"Gamitin account default"</string>
+
+    <!-- "Setup could not finish" dialog text; e.g., Username or password incorrect -->
+    <string name="account_setup_failed_dlg_auth_message">"Hindi tama ang username o password."</string>
+
+    <!-- Account setup autodiscover auth failure dialog title. This is shown when autodiscover hits
+        an "access denied" server error, which could imply incorrect username/password or that no
+        autodiscover service has been configured for the domain [CHAR LIMIT=40] -->
+    <string name="account_setup_autodiscover_dlg_authfail_title">"Problema sa pag-setup ng account"</string>
+    <!-- Account setup autodiscover auth failure dialog message. This is shown when autodiscover hits
+        an "access denied" server error, which could imply incorrect username/password or that no
+        autodiscover service has been configured for the domain [CHAR LIMIT=NONE] -->
+    <string name="account_setup_autodiscover_dlg_authfail_message">"Kumpirmahing tama ang username, password, at mga setting ng account."</string>
+
+    <!-- An error message presented to the user when the server\'s identity
+         cannot be established or trusted [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_dlg_certificate_message">"Hindi makakonekta nang ligtas sa server."</string>
+    <!-- An error message presented to the user when the server\'s identity
+         cannot be established or trusted [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Hindi makakonekta nang ligtas sa server.\n(<xliff:g id="ERROR">%s</xliff:g>)"</string>
+    <!-- An error message presented to the user when the server requires a
+         client certificate to connect [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_certificate_required">"Kinakailangan ng certificate ng client. Nais mo bang kumonekta sa server gamit ang isang certificate ng client?"</string>
+    <!-- An error message presented to the user when the certificate they
+         specified for connecting to a server is inaccessible [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_certificate_inaccessible">"Di-wasto o hindi naa-access ang certificate."</string>
+
+    <!-- Dialog text for ambiguous setup failure; server error/bad credentials [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_check_credentials_message">"Tumugon ang server nang may error. Suriin ang iyong username at password, pagkatapos ay subukang muli."</string>
+
+    <!-- "Setup could not finish" dialog text; e.g., Cannot connect to server -->
+    <string name="account_setup_failed_dlg_server_message">"Hindi makakonekta sa server."</string>
+    <!-- "Setup could not finish" dialog text; e.g., Cannot connect to server\n(Connection timed out) -->
+    <string name="account_setup_failed_dlg_server_message_fmt">"Hindi makakonekta sa server.\n(<xliff:g id="ERROR">%s</xliff:g>)"</string>
+
+    <!-- Additional diagnostic text when TLS was required but the server doesn\'t support it -->
+    <string name="account_setup_failed_tls_required">"Kinakailangan ang TLS ngunit hindi suportado ng server."</string>
+    <!-- Additional diagnostic text when server does not support any of our authentication methods -->
+    <string name="account_setup_failed_auth_required">"Hindi sinusuportahan ng server ang mga pamamaraan sa pagpapatotoo."</string>
+    <!-- Additional diagnostic text when server connection failed due to security error -->
+    <string name="account_setup_failed_security">"Hindi makapagbukas ng koneksyon sa server dahil sa error sa seguridad."</string>
+    <!-- Additional diagnostic text when server connection failed due to io error (connection) -->
+    <string name="account_setup_failed_ioerror">"Hindi makapagbukas ng koneksyon sa server."</string>
+    <!-- Additional diagnostic text when server connection failed due to our inability to support a
+         required EAS protocol version [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_protocol_unsupported">"Nag-type ka ng maling address ng server o nangangailangan ang server ng bersyon ng protocol na hindi sinusuportahan ng Email."</string>
+    <!-- Additional diagnostic text when server access was denied; the user should contact the
+         administrator of the server for more information [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_access_denied">"Wala kang pahintulot na mag-sync sa server na ito. Makipag-ugnay sa administrator ng iyong server para sa higit pang impormasyon."</string>
+
+    <!-- Dialog title when validation requires security provisioning (e.g. support
+         for device lock PIN, or remote wipe.) and we ask the user permission before continuing -->
+    <string name="account_setup_security_required_title">"Pangangasiwa ng remote na seguridad"</string>
+    <!-- Additional diagnostic text when validation requires security provisioning (e.g. support
+         for device lock PIN, or remote wipe.) and we ask the user permission before continuing.
+         [CHAR LIMIT=none] -->
+    <string name="account_setup_security_policies_required_fmt">"Kinakailangan ng server na <xliff:g id="SERVER">%s</xliff:g> na payagan mo itong malayuang kontrolin ang ilang tampok sa seguridad ng iyong Android device. Gusto mo bang tapusing i-set up ang account na ito?"</string>
+    <!-- Additional diagnostic text when validation failed due to required provisioning not
+         being supported [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_security_policies_unsupported">"Nangangailangan ang server na ito ng mga tampok sa seguridad na hindi sinusuportahan ng iyong Android device, kabilang ang: <xliff:g id="ERROR">%s</xliff:g>"</string>
+    <!-- Warning given to users when they request disabling device administration (i.e. that their
+         administered accounts will be deleted) [CHAR LIMIT=none] -->
+    <string name="disable_admin_warning">"BABALA: Ang pag-deactivate sa awtoridad ng Email app na pangasiwaan ang iyong device ay magtatanggal sa lahat ng email account na nangangailangan nito, kasama ang email, mga contact, mga kaganapan sa kalendaryo, at iba pang data ng mga ito."</string>
+
+    <!-- Dialog shown when the account requires some amount of device security provisioning,
+         just before jumping into system settings such as Device Policy grant, PIN/password,
+         or encryption setup.  [CHAR_LIMIT=40] -->
+    <string name="account_security_dialog_title">"Update sa seguridad"</string>
+    <!-- Additional diagnostic text when the account requires some amount of device security
+         provisioning, just before jumping into system settings such as Device Policy grant,
+         PIN/password, or encryption setup.  [CHAR LIMIT=none] -->
+    <string name="account_security_dialog_content_fmt">"Kinakailangan ng <xliff:g id="ACCOUNT">%s</xliff:g> na i-update mo ang iyong mga setting ng seguridad."</string>
+
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_unsupported_ticker_fmt">"Hindi ma-sync ang account na \"<xliff:g id="ACCOUNT">%s</xliff:g>\" dahil sa mga kinakailangan sa seguridad."</string>
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_needed_ticker_fmt">"Kinakailangan ng account na \"<xliff:g id="ACCOUNT">%s</xliff:g>\" ng update sa mga setting ng seguridad."</string>
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_changed_ticker_fmt">"Binago ng account na \"<xliff:g id="ACCOUNT">%s</xliff:g>\" ang mga setting ng seguridad nito; walang kinakailangang pagkilos ng user."</string>
+    <!-- Notification content title when device security required [CHAR_LIMIT=30] -->
+    <string name="security_notification_content_update_title">"Kailangan update sa seguridad"</string>
+    <!-- Notification content title when device security policies have changed [CHAR_LIMIT=36] -->
+    <string name="security_notification_content_change_title">"Nabago patakaran sa seguridad"</string>
+    <!-- Notification content title when device security policies cannot be met [CHAR_LIMIT=30] -->
+    <string name="security_notification_content_unsupported_title">"Di masunod patakaran seguridad"</string>
+    <!-- Title of the activity that dispatches changes to device security.  Not normally seen. -->
+    <string name="account_security_title">"Seguridad ng device"</string>
+    <!-- Additional diagnostic text when the email app asserts control of the phone.
+        [CHAR LIMIT=none] -->
+    <string name="account_security_policy_explanation_fmt">"Kinakailangan ng server na <xliff:g id="SERVER">%s</xliff:g> na payagan mo itong malayuang kontrolin ang ilang tampok sa seguridad ng iyong Android device."</string>
+
+    <!-- "Setup could not finish" dialog action button -->
+    <string name="account_setup_failed_dlg_edit_details_action">"I-edit ang mga detalye"</string>
+
+    <!-- Notification ticker when device password is getting ready to expire [CHAR_LIMIT=80] -->
+    <string name="password_expire_warning_ticker_fmt">"Kinakailangan ng \"<xliff:g id="ACCOUNT">%s</xliff:g>\" na palitan mo ang PIN o password ng iyong lock screen."</string>
+    <!-- Notification content title when device password is getting ready to expire
+            [CHAR_LIMIT=30] -->
+    <string name="password_expire_warning_content_title">"Expire passw. pag-lock screen"</string>
+
+    <!-- Notification ticker when device password has expired [CHAR_LIMIT=80] -->
+    <string name="password_expired_ticker">"Nag-expire na ang iyong PIN o password sa pag-lock ng screen."</string>
+    <!-- Notification content title when device password has expired [CHAR_LIMIT=28] -->
+    <string name="password_expired_content_title">"Expire na passw. pg-lock scr"</string>
+
+    <!-- Dialog title if device pin/password is going to expire soon. [CHAR_LIMIT=40] -->
+    <string name="password_expire_warning_dialog_title">"Nag-e-expire password pag-lock ng screen"</string>
+    <!-- Dialog content device pin/password is going to expire soon. [CHAR_LIMIT=none] -->
+    <string name="password_expire_warning_dialog_content_fmt">"Kailangan mong baguhin ang iyong PIN o password para sa screen ng lock sa lalong madaling panahon, o mabubura ang data para sa <xliff:g id="ACCOUNT">%s</xliff:g>. Nais mo ba itong baguhin ngayon?"</string>
+
+    <!-- Dialog title if device pin/password has already expired. [CHAR_LIMIT=40] -->
+    <string name="password_expired_dialog_title">"Nag-expire na password pag-lock screen"</string>
+    <!-- Dialog content device pin/password has already expired. [CHAR_LIMIT=none] -->
+    <string name="password_expired_dialog_content_fmt">"Binubura ang data para sa <xliff:g id="ACCOUNT">%s</xliff:g> mula sa iyong device. Maipapanumbalik mo ito sa pamamagitan ng pagbabago sa iyong PIN o password para sa screen ng lock. Nais mo ba itong baguhin ngayon?"</string>
+
+    <!-- On AccountSettingsXL, dialog text if you try to exit in/out/eas fragment (server settings)
+         without checking/saving [CHAR LIMIT=none]-->
+    <string name="account_settings_exit_server_settings">"Itapon ang hindi naka-save na mga pagbabago?"</string>
+
+    <!-- On Settings screen, setting option name -->
+    <!-- Title of account preference for downloading attachments in background [CHAR LIMIT=32] -->
+    <string name="account_settings_background_attachments_label">"Mag-download ng mga attachment"</string>
+    <!-- Summary of account preference for downloading attachments in background [CHAR LIMIT=64] -->
+    <string name="account_settings_background_attachments_summary">"Awto i-download mga attachment sa mga bagong mensahe sa Wi-Fi"</string>
+    <string name="account_settings_notify_label">"Mga notification sa email"</string>
+    <!-- On Settings screen, summary line when called via AccountManager for Exchange accounts
+        [CHAR LIMIT=50] -->
+    <string name="account_settings_summary">"Dalas ng pag-sync, mga notification, atbp."</string>
+    <!-- On Settings screen, setting summary text -->
+    <string name="account_settings_notify_summary">"Magpadala ng notification kapag may dumating na email"</string>
+    <!-- On Settings screen, setting option name and title of dialog box that opens -->
+    <string name="account_settings_mail_check_frequency_label">"Dalas ng pag-sync"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_incoming_label">"Mga setting ng papasok"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_incoming_summary">"Mga setting ng username, password, at ibang papasok na server"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_outgoing_label">"Mga setting ng papalabas"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_outgoing_summary">"Mga setting ng username, password, at ibang papalabas na server"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_enforced_label">"Ipinapatupad na mga patakaran"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_enforced_summary">"Wala"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_unsupported_label">"Mga hindi sinusuportahang patakaran"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_unsupported_summary">"Wala"</string>
+    <!-- On Settings screen, label for button that attempts to sync the account -->
+    <string name="account_settings_retry_label">"Magtangkang i-sync"</string>
+    <!-- On Settings screen, summmary for button that attempts to sync an account [CHAR LIMIT=64] -->
+    <string name="account_settings_retry_summary">"Pumindot dito upang i-sync ang account na ito"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_description_label">"Pangalan ng account"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_name_label">"Iyong pangalan"</string>
+    <!-- On Settings screen, setting option name. Allows user to modify saved quick responses
+        for insertion in message body. [CHAR_LIMIT=24]-->
+    <string name="account_settings_edit_quick_responses_label">"Mga mabilisang tugon"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_edit_quick_responses_summary">"I-edit tekstong madalas mong pinapasok kapag nagsusulat ng email"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_notifications">"Mga setting ng notification"</string>
+    <!-- On Settings screen, section heading for data usage [CHAR LIMIT=70] -->
+    <string name="account_settings_data_usage">"Paggamit ng data"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_policies">"Mga patakaran sa seguridad"</string>
+
+    <string name="system_folders_title">"Mga folder ng system"</string>
+    <string name="system_folders_trash_title">"Folder ng basura"</string>
+    <string name="system_folders_trash_summary">"Piliin ang folder ng basura ng iyong server"</string>
+    <string name="system_folders_trash_dlg">"Piliin ang folder ng basura ng iyong server"</string>
+    <string name="system_folders_sent_title">"Folder ng mga ipinadalang item"</string>
+    <string name="system_folders_sent_summary">"Piliin ang folder ng mga ipinadalang item ng iyong server"</string>
+    <string name="system_folders_sent_dlg">"Piliin ang folder ng mga ipinadalang item ng iyong server"</string>
+
+    <!-- On settings screen, dialog heading informing user to create or edit a quick response -->
+    <string name="edit_quick_response_dialog">"Mabilisang tugon"</string>
+    <!-- On settings screen, edit quick response dialog\'s "save" button -->
+    <string name="save_action">"I-save"</string>
+
+    <!-- On settings screen, sync contacts check box label [CHAR LIMIT=20]-->
+    <string name="account_settings_sync_contacts_enable">"I-sync ang mga contact"</string>
+    <!-- On settings screen, sync contacts summary text [CHAR LIMIT=35] -->
+    <string name="account_settings_sync_contacts_summary">"Sync ang contact sa account na ito"</string>
+    <!-- On settings screen, sync calendar check box label [CHAR LIMIT=20]-->
+        <string name="account_settings_sync_calendar_enable">"I-sync ang kalendaryo"</string>
+    <!-- On settings screen, sync calendar summary text [CHAR LIMIT=50] -->
+    <string name="account_settings_sync_calendar_summary">"I-sync ang kalendaryo ng kaganapan para sa account"</string>
+    <!-- On settings screen, sync email check box label [CHAR LIMIT=20]-->
+    <string name="account_settings_sync_email_enable">"I-sync ang email"</string>
+    <!-- On settings screen, sync email summary text [CHAR LIMIT=35] -->
+    <string name="account_settings_sync_email_summary">"I-sync ang email sa account na ito"</string>
+
+    <!-- On Settings screen, vibrate pop-up menu label -->
+    <string name="label_notification_vibrate_title">"I-vibrate"</string>
+
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_ringtone">"Pumili ng ringtone"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_servers">"Mga setting ng server"</string>
+
+    <!-- Mailbox settings activity title [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_activity_title">"Mga pagpipilian sa pag-sync"</string>
+    <!-- Mailbox settings activity title, with the target folder name [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_activity_title_with_mailbox">"Mga pagpipilian sa pag-sync (<xliff:g id="MAILBOXX_NAME">%s</xliff:g>)"</string>
+    <!-- On mailbox settings screen: Whether to sync this mailbox when the account syncs. -->
+    <string name="mailbox_settings_sync_enabled_label">"I-sync ang folder na ito"</string>
+    <!-- On mailbox settings screen: Explanatory text for what it means to "sync this folder". -->
+    <string name="mailbox_settings_sync_enabled_summary">"Ida-download ang mga mensahe kapag nakakonekta"</string>
+    <!-- On mailbox settings screen: Mailbox sync window (the number of days to synchronize email for) setting label [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_mailbox_sync_window_label">"Mga araw ng mail na isi-sync"</string>
+
+    <!-- Message that appears when adding a T-Online account -->
+    <string name="provider_note_t_online">"Bago i-set up ng email account na ito, bisitahin ang T-Online website at lumikha ng password para sa access sa POP3 email."</string>
+
+    <!-- Short name of Microsoft Exchange account type; used by AccountManager -->
+    <string name="exchange_eas_name" translatable="false">Exchange</string>
+    <!-- Long name of Microsoft Exchange account type; used by AccountManager -->
+    <string name="exchange_name_alternate">"Microsoft Exchange ActiveSync"</string>
+
+    <!-- Message that appears if the AccountManager cannot create the system Account -->
+    <string name="system_account_create_failed">"Hindi malikha ang account. Subukang muli."</string>
+
+    <!-- Strings that support the DeviceAdmin / DevicePolicyManager API -->
+    <!-- Name of the DeviceAdmin (seen in settings & in user confirmation screen) -->
+    <string name="device_admin_label">"Email"</string>
+    <!-- Long-form description of the DeviceAdmin (2nd line in settings & in user conf. screen) -->
+    <string name="device_admin_description">"Pinapagana ang mga patakaran sa seguridad na partikular sa server"</string>
+
+    <!-- A policy disallowing the user of the device\'s camera [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_camera">"Wag payag paggamit ng camera ng device"</string>
+    <!-- A policy requiring a device lock screen password [CHAR LIMIT=50] -->
+    <string name="policy_require_password">"Hilingin ang password ng device"</string>
+    <!-- A policy disallowing the reuse of recent passwords [CHAR LIMIT=50] -->
+    <string name="policy_password_history">"Paghigpitan gamit muli dating password"</string>
+    <!-- A policy that forces a password to expire after a set period of time [CHAR LIMIT=50] -->
+    <string name="policy_password_expiration">"Hinging mag-expire ang mga password"</string>
+    <!-- A policy requiring a maximum amount of time the device can sit idle before the lock screen
+        is activated [CHAR LIMIT=50] -->
+    <string name="policy_screen_timeout">"Hilingin idle device i-lock screen nito"</string>
+    <!-- A policy limiting the number of old calendar events synced [CHAR LIMIT=50] -->
+    <string name="policy_calendar_age">"Limitahan ang bilang ng mga kaganapan sa kalendaryo na sini-sync"</string>
+    <!-- A policy limiting the number of emails synced [CHAR LIMIT=50] -->
+    <string name="policy_email_age">"Limitahan ang bilang ng mga email na sini-sync"</string>
+
+    <!-- The four strings below represent "quick responses" which the user can insert into a
+        message being composed with just a couple of taps.  These four responses MUST be defined,
+        but need not include a string (i.e. they are optional).  Further, the responses can be
+        customized as necessary by the translator, in case one or more of these is inappropriate in
+        a particular locale or if there are better options available. -->
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_1">"Salamat!"</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_2">"Magaling sa akin!"</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_3">"Babasahin ko ito sa ibang pagkakataon at babalik sa iyo."</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_4">"Magtakda tayo ng pulong upang talakayin ito."</string>
+
+    <!-- This is shown when a user responds to a meeting invitation [CHAR LIMIT=none]-->
+    <string name="confirm_response">"Ipinapadala ang tugon…"</string>
+
+    <!-- Used by AccountManager -->
+    <!-- Account type name as used by AccountManager UI (IMAP is not translatable) [CHAR LIMIT=30] -->
+    <string name="imap_name">Personal (IMAP)</string>
+    <!-- Account type name as used by AccountManager UI (POP3 is not translatable) [CHAR LIMIT=30] -->
+    <string name="pop3_name">Personal (POP3)</string>
+
+    <!-- Displayed when the user must pick his server\'s trash folder from a list [CHAR LIMIT 30]-->
+    <string name="trash_folder_selection_title">"Piliin server trash folder sa <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
+    <!-- Displayed when the user must pick his server\'s sent items folder from a list [CHAR LIMIT 30]-->
+    <string name="sent_folder_selection_title">"Piliin server sent items folder sa <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
+    <string name="account_waiting_for_folders_msg">"Nilo-load ang listahan ng folder…"</string>
+
+    <!-- Feedback uri to be used when feedback is enabled -->
+    <string name="email_feedback_uri" translatable="false"/>
+
+    <string name="account_manager_type_exchange" translatable="false">com.android.exchange</string>
+    <string name="account_manager_type_pop3" translatable="false">com.android.email.pop3</string>
+    <string name="account_manager_type_imap" translatable="false">com.android.email.imap</string>
+    <string name="account_manager_type_legacy_imap" translatable="false">com.android.email.imap</string>
+    <string name="intent_exchange_action" translatable="false">com.android.email.EXCHANGE_INTENT</string>
+    <string name="intent_exchange_cert_action" translatable="false">com.android.email.EXCHANGE_REQUEST_CERT</string>
+    <string name="intent_exchange_package" translatable="false">com.android.exchange</string>
+    <string name="intent_account_manager_entry" translatable="false">com.android.email.activity.setup.ACCOUNT_MANAGER_ENTRY</string>
+    <string name="intent_force_create_email_account" translatable="false">com.android.email.FORCE_CREATE_ACCOUNT</string>
+    <string name="intent_create_email_account" translatable="false">com.android.email.CREATE_NEW_ACCOUNT</string>
+    <string name="authority_email_provider" translatable="false">com.android.email.provider</string>
+    <string name="authority_conversation_provider" translatable="false">com.android.email.conversation.provider</string>
+    <string name="authority_account_cache_provider" translatable="false">com.android.email.accountcache</string>
+    <string name="protocol_legacy_imap" translatable="false">imap</string>
+    <string name="protocol_imap" translatable="false">imap</string>
+    <string name="protocol_pop3" translatable="false">pop3</string>
+    <string name="protocol_eas" translatable="false">eas</string>
+
+    <!-- Content Provider Authority for Eml Attachments -->
+    
+
+    <!-- Provider name for widgets -->
+    <string name="widget_provider" translatable="false">com.android.email.provider.WidgetProvider</string>
+
+    <string name="print_job_name" translatable="false">Email - <xliff:g id="subject">%1$s</xliff:g></string>
+
+    <!-- This message indicates no quick responses exist to choose from -->
+    <string name="no_quick_responses">"Walang available"</string>
+
+    <!-- Activity name of the compose activity that should be reconciled -->
+    <!-- Do not disable the compose activity even there isn\'t any account.
+    <string name="reconciliation_compose_activity_name" translatable="false">com.android.email.activity.ComposeActivityEmail</string>
+    -->
+    <string name="reconciliation_compose_activity_name" translatable="false"/>
+
+    <!-- Gmail name for redirecting during account setup -->
+    <string name="gmail_name">"Gmail"</string>
+
+    <!-- Name for preference entry which leads to the per-folder sync settings activity -->
+    <string name="folder_sync_settings_pref_title">"Mga setting ng pag-sync sa folder"</string>
+
+    <!-- In Account setup options & Account Settings screens, Email sync size option. -->
+    <string name="account_settings_sync_size_enable">I-configure laki ng sync bawat mail</string>
+    <string name="account_settings_sync_size_enable_summary">Upang i-save ang data, maaari mong I-configure laki ng sync bawat mail ng account</string>
+    <string name="account_settings_sync_size_label">Pumili ng laki ng pag-sync</string>
+    <string name="account_settings_sync_size_category_label">Mga setting ng laki ng pag-sync</string>
+
+    <string name="account_setup_options_mail_sync_size_all">Lahat</string>
+    <string name="account_setup_options_mail_sync_size_20k">20KB</string>
+    <string name="account_setup_options_mail_sync_size_100k">100KB</string>
+    <string name="account_setup_options_mail_sync_size_200k">200KB</string>
+    <string name="account_setup_options_mail_sync_size_500k">500KB</string>
+    <string name="account_setup_options_mail_sync_size_1M">1MB</string>
+
+    <!-- Customize Email account\'s signature -->
+    <string name="default_email_signature"/>
+
+    <!--Delete email account -->
+    <string name="remove_email_account">"Alisin ang account"</string>
+    <string name="remove_email_account_continue">"MAGPATULOY"</string>
+    <string name="remove_email_account_message">Pupunta ka sa app na Mga Setting, kung saan maaari kang mag-alis ng Mga Account</string>
+</resources>

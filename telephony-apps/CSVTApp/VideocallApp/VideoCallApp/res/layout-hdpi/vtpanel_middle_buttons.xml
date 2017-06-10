@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/middle_buttons"
+    android:layout_width="fill_parent"
+    android:layout_height="51dp"
+    android:layout_gravity="center"
+    android:background="@null"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <!-- Open KeyPad -->
+    <FrameLayout
+        android:id="@+id/btnOpenKeyboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp" >
+
+        <ImageButton
+            android:id="@+id/btn_open_keyboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/video_call_keypad_button_selector_open"
+            android:background="@null"
+            android:gravity="center" />
+    </FrameLayout>
+    <!-- Cancel MO -->
+    <FrameLayout
+        android:id="@+id/btnCallingEndcall"
+        android:layout_width="250dp"
+        android:layout_height="51dp"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="0dp"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/btn_calling_end_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_end_call" />
+    </FrameLayout>
+
+    <!-- Close KeyPad -->
+    <FrameLayout
+        android:id="@+id/btnCloseKeyboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp" >
+
+        <ImageButton
+            android:id="@+id/btn_close_keyboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/video_call_keypad_button_selector_close"
+            android:background="@null"/>
+    </FrameLayout>
+
+    <!-- End Call -->
+    <FrameLayout
+        android:id="@+id/btnEndCall"
+        android:layout_width="250dp"
+        android:layout_height="51dp"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="0dp" >
+
+        <Button
+            android:id="@+id/btn_end_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_end_call" />
+    </FrameLayout>
+
+</RelativeLayout>

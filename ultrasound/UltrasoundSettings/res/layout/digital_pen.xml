@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---/**************************************************************************
+* @file       digital_pen.xml
+* @brief      Has layout specs for digital pen activity
+*
+*  Copyright (C) 2011-2014 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  **************************************************************************-->
+
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content">
+<TableLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:stretchColumns="1"
+  android:title="@string/DigitalPenSettings">
+  <!-- Enable/Disable and start_on_reboot -->
+  <TableRow>
+    <CheckBox android:id="@+id/status"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/digital_pen_status_title" />
+  </TableRow>
+  <TableRow>
+    <CheckBox android:id="@+id/start_on_boot"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/start_on_boot_title" />
+  </TableRow>
+  <TableRow>
+    <TextView
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="10dip"
+       android:text="@string/choose_file_title"
+    />
+    <Spinner
+       android:id="@+id/choose_file_spinner"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:prompt="@string/choose_file_title"
+    />
+  </TableRow>
+  <TableRow>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_xml_file_title"
+    />
+    <Spinner
+        android:id="@+id/choose_xml_file_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+    />
+  </TableRow>
+  <!-- Private Params -->
+  <TableRow>
+    <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/txtdspver"
+       android:text="@string/dsp_version_title">
+    </TextView>
+    <EditText
+       android:layout_height="wrap_content"
+       android:id="@+id/edtdspver"
+       android:inputType="text|number|numberDecimal|numberSigned"
+       android:layout_width="fill_parent">
+    </EditText>
+  </TableRow>
+  <!-- Debug Params -->
+  <TableRow>
+    <CheckBox android:id="@+id/debug"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/debug_title" />
+  </TableRow>
+  <TableRow>
+    <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/txtfile"
+       android:text="@string/frame_file_title">
+    </TextView>
+    <EditText
+       android:layout_height="wrap_content"
+       android:id="@+id/edtfile"
+       android:inputType="text"
+       android:layout_width="fill_parent">
+    </EditText>
+  </TableRow>
+  <TableRow>
+    <CheckBox android:id="@+id/timestamp"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      android:text="@string/timestamp_title" />
+  </TableRow>
+  <TableRow>
+    <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/txtcount"
+       android:text="@string/frame_count_title">
+    </TextView>
+    <EditText
+       android:layout_height="wrap_content"
+       android:id="@+id/edtcount"
+       android:inputType="number|numberDecimal|numberSigned"
+       android:layout_width="fill_parent">
+    </EditText>
+  </TableRow>
+  <!-- Common Params -->
+  <TableRow>
+    <TextView
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="10dip"
+       android:text="@string/frame_file_format_title"
+    />
+    <Spinner
+       android:id="@+id/spinnerformat"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:prompt="@string/frame_file_format_title"
+    />
+  </TableRow>
+  <!-- Calib Params -->
+  <TableRow>
+    <CheckBox android:id="@+id/calib"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/calib_title" />
+  </TableRow>
+  <TableRow>
+    <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/txtcoordfile"
+       android:text="@string/coord_file_title">
+    </TextView>
+    <EditText
+       android:layout_height="wrap_content"
+       android:id="@+id/edtcoordfile"
+       android:inputType="text"
+       android:layout_width="fill_parent">
+    </EditText>
+  </TableRow>
+  <TableRow>
+    <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/txtcoordcount"
+       android:text="@string/coord_count_title">
+    </TextView>
+    <EditText
+       android:layout_height="wrap_content"
+       android:id="@+id/edtcoordcount"
+       android:inputType="number|numberDecimal|numberSigned"
+       android:layout_width="fill_parent">
+    </EditText>
+  </TableRow>
+  <TableRow>
+    <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/txttimeout"
+       android:text="@string/timeout_title">
+    </TextView>
+    <EditText
+       android:layout_height="wrap_content"
+       android:id="@+id/edttimeout"
+       android:inputType="number|numberDecimal|numberSigned"
+       android:layout_width="fill_parent">
+    </EditText>
+  </TableRow>
+  <TableRow>
+    <Button
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/clr_persist"
+       android:text="@string/clr_persist"
+    />
+  </TableRow>
+</TableLayout>
+</ScrollView>
+
+

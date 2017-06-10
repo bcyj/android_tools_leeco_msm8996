@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!--
+/**
+ * Copyright (c) 2009, The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Name of the status bar as seen in the applications info settings page. [CHAR LIMIT=12] -->
+    <string name="app_label">စနစ္ UI</string>
+
+    <!-- The text for the button in the notification window-shade that clears
+         all of the currently visible notifications. [CHAR LIMIT=10]-->
+    <string name="status_bar_clear_all_button">ရွင္းပစ္ပါ</string>
+
+    <!-- Title shown in recents popup for removing an application from the list -->
+    <string name="status_bar_recent_remove_item_title">စာရင္းမွ ဖယ္ရွားပါ</string>
+
+    <!-- Title shown in recents popup for inspecting an application\'s properties -->
+    <string name="status_bar_recent_inspect_item_title">အက္ပ္ အခ်က္အလက္မ်ား</string>
+
+    <string name="status_bar_recent_clear_all_text">အားလံုးကုိရွင္းပစ္ပါ</string>
+    <string name="status_bar_recent_task_manager_text">လုပ္ေဆာင္ခ်က္ မန္ေနဂ်ာ</string>
+
+    <!-- Message shown in the middle of the screen after clicking on the recent apps button
+         when there are no recent apps to show. Also used for accessibility. [CHAR LIMIT=45]-->
+    <string name="status_bar_no_recent_apps">မၾကာေသးမီက ဤတြင္ေပၚလာေသာ သင္၏ စခရင္မ်ား</string>
+
+    <!-- Content description for the button to dismiss Recent Apps (only present on large
+         devices) -->
+    <string name="status_bar_accessibility_dismiss_recents">မၾကာေသးမီက အက္ပ္မ်ားအား ဖယ္ထုတ္မည္</string>
+
+    <!-- Message that is read when you enter recent apps in TalkBack -->
+    <plurals name="status_bar_accessibility_recent_apps">
+        <item quantity="one">ၿခံဳၾကည့္မႈ ထဲက မ်က္ႏွာျပင္ ၁ ခု</item>
+        <item quantity="other">ၿခံဳၾကည့္မႈ ထဲက မ်က္ႏွာျပင္ %d ခု</item>
+    </plurals>
+
+    <!-- The label in the bar at the top of the status bar when there are no notifications
+         showing.  [CHAR LIMIT=40]-->
+    <string name="status_bar_no_notifications_title">အေၾကာင္းၾကားခ်က္မ်ား မရွိ</string>
+
+    <!-- The label for the group of notifications for ongoing events in the opened version of
+         the status bar.  An ongoing call is the prime example of this.  The MP3 music player
+         might be another example.   [CHAR LIMIT=40] -->
+    <string name="status_bar_ongoing_events_title">လက္ရွိအသံုးျပဳမႈ</string>
+
+    <!-- The label for the group of notifications for recent events in the opened version of
+         the status bar.  Recently received text messsages (SMS), emails, calendar alerts, etc.
+         [CHAR LIMIT=40] -->
+    <string name="status_bar_latest_events_title">အေၾကာင္းၾကားခ်က္မ်ား။</string>
+
+    <!-- When the battery is low, this is displayed to the user in a dialog.  The title of the low battery alert.  [CHAR LIMIT=NONE]-->
+    <string name="battery_low_title">ဘက္ထရီ အားနည္းေန</string>
+
+    <!-- A message that appears when the battery level is getting low in a dialog.  This is
+        appened to the subtitle of the low battery alert.  "percentage" is the percentage of battery
+        remaining [CHAR LIMIT=none]-->
+    <string name="battery_low_percent_format"><xliff:g id="percentage">%s</xliff:g> က်န္ေသးသည္</string>
+
+    <!-- Same as battery_low_percent_format, with a notice about battery saver if on. [CHAR LIMIT=none]-->
+    <string name="battery_low_percent_format_saver_started"><xliff:g id="percentage">%s</xliff:g> က်န္ေသးသည္။ ဘတၳရီအား ေခြ်တာသည့္အရာကုိ ဖြင့္ထားသည္။</string>
+
+    <!-- A message that appears when a USB charger is plugged in and the device does not
+    support charging on it.  That is, a charger that fits into the USB port and goes into
+    a wall socket, not into a computer. (This happens because some devices require more
+    current than the USB spec allows.  [CHAR LIMIT=NONE] -->
+    <string name="invalid_charger">လက္ရွိ USB အားသြင္းျခင္း အသံုးမျပဳႏိုင္ပါ \\n ေပးထားေသာအားသြင္းကိရိယာကိုသာ အသံုးျပဳပါ</string>
+
+    <!-- First line of invalid_charger, used in the notification form.  [CHAR LIMIT=NONE]-->
+    <string name="invalid_charger_title">USB အားသြင္းမႈ မပံ့ပိုးပါ။</string>
+
+    <!-- Second line of invalid_charger, used in the notification form.  [CHAR LIMIT=NONE]-->
+    <string name="invalid_charger_text">ေပးခဲ့သည့္ အားသြင္းစက္ကိုသာ အသံုးျပဳပါ</string>
+
+    <!-- When the battery is low, this is the label of the button to go to the
+         power usage activity to find out what drained the battery.  [CHAR LIMIT=30] -->
+    <string name="battery_low_why">ဆက္တင္မ်ား</string>
+
+    <!-- Battery saver confirmation dialog title [CHAR LIMIT=NONE]-->
+    <string name="battery_saver_confirmation_title">ဘက္ထရီ ေခြ်တာမႈကို ဖြင့္ရမလား?</string>
+
+    <!-- Battery saver confirmation dialog ok text [CHAR LIMIT=40]-->
+    <string name="battery_saver_confirmation_ok">ဖြင့္ပါ</string>
+
+    <!-- Battery saver notification action [CHAR LIMIT=NONE]-->
+    <string name="battery_saver_start_action">ဘက္ထရီ ေခြ်တာမႈကို ဖြင့္ပါ</string>
+
+    <!-- Name of the button that links to the Settings app. [CHAR LIMIT=NONE] -->
+    <string name="status_bar_settings_settings_button">ဆက္တင္မ်ား</string>
+
+    <!-- Name of the button that links to the Wifi settings screen. [CHAR LIMIT=NONE] -->
+    <string name="status_bar_settings_wifi_button">ဝိုင္-ဖိုင္</string>
+
+    <!-- Label in the system panel for airplane mode (all radios are turned off)[CHAR LIMIT=30] -->
+    <string name="status_bar_settings_airplane">ေလယာဥ္ပ်ံေပၚအသံုးျပဳေသာစနစ္</string>
+
+    <!-- Label in system panel saying the device will use the orientation sensor to rotate [CHAR LIMIT=30] -->
+    <string name="status_bar_settings_auto_rotation">စခရင္အလိုအေလ်ာက္လွည့္</string>
+
+    <!-- Abbreviation / label for mute brightness mode button. Should be all caps. [CHAR LIMIT=6] -->
+    <string name="status_bar_settings_mute_label">MUTE</string>
+
+    <!-- Abbreviation / label for automatic brightness mode button. Should be all caps. [CHAR LIMIT=6] -->
+    <string name="status_bar_settings_auto_brightness_label">AUTO</string>
+
+    <!-- Label in system panel saying the device will show notifications [CHAR LIMIT=30] -->
+    <string name="status_bar_settings_notifications">အသိေပးခ်က္မ်ား</string>
+
+    <!-- Separator for PLMN and SPN in network name. -->
+    <string name="status_bar_network_name_separator" translatable="false">|</string>
+
+    <!-- Network connection string for Bluetooth Reverse Tethering -->
+    <string name="bluetooth_tethered">ဘလူးတုသ္မွတစ္ဆင့္ ခ်ိတ္ဆက္ျခင္း</string>
+    <!-- Title of a button to open the settings for input methods [CHAR LIMIT=30] -->
+    <string name="status_bar_input_method_settings_configure_input_methods">ထည့္သြင္းနည္းမ်ား သတ္မွတ္ျခင္း</string>
+
+    <!-- Label of a toggle switch to disable use of the physical keyboard in favor of the IME. [CHAR LIMIT=25] -->
+    <string name="status_bar_use_physical_keyboard">ခလုတ္ပါဝင္ေသာ ကီးဘုတ္</string>
+
+    <!-- Prompt for the USB device permission dialog [CHAR LIMIT=80] -->
+    <string name="usb_device_permission_prompt"><xliff:g id="APPLICATION">%1$s</xliff:g>အပလီေကးရွင္းအား USB ပစၥည္းကို ခ်ိတ္ဆက္ရန္ခြင့္ျပဳမည္လား</string>
+
+    <!-- Prompt for the USB accessory permission dialog [CHAR LIMIT=80] -->
+    <string name="usb_accessory_permission_prompt"><xliff:g id="APPLICATION">%1$s</xliff:g> အပလီေကးရွင္းကို USB တြဲဖက္ပစၥည္းမ်ားအား ဝင္ေရာက္ၾကည့္႐ႈရန္ခြင့္ျပဳသည္</string>
+
+    <!-- Prompt for the USB device confirm dialog [CHAR LIMIT=80] -->
+    <string name="usb_device_confirm_prompt"><xliff:g id="ACTIVITY">%1$s</xliff:g> အား USB ပစၥည္း ခ်ိတ္ဆက္ေနစဥ္္ ဖြင့္မည္လား</string>
+
+    <!-- Prompt for the USB accessory confirm dialog [CHAR LIMIT=80] -->
+    <string name="usb_accessory_confirm_prompt"><xliff:g id="ACTIVITY">%1$s</xliff:g> အား USB တြဲဖက္ပစၥည္း ခ်ိတ္ဆက္ထားစဥ္္ ဖြင့္မည္</string>
+
+    <!-- Prompt for the USB accessory URI dialog [CHAR LIMIT=80] -->
+    <string name="usb_accessory_uri_prompt">ဤ USB ပစၥည္းႏွင့္ဘယ္အပလီေကးရွင္းမွ အလုပ္မလုပ္ပါ။ ပိုမိုသိရန္ <xliff:g id="URL">%1$s</xliff:g>တြင္ ေလ့လာပါ</string>
+
+    <!-- Title for USB accessory dialog.  Used when the name of the accessory cannot be determined.  [CHAR LIMIT=50] -->
+    <string name="title_usb_accessory">USB တြဲဖက္ပစၥည္းမ်ား</string>
+
+    <!-- View button label for USB dialogs.  [CHAR LIMIT=15] -->
+    <string name="label_view">ျမင္ကြင္း</string>
+
+    <!-- Checkbox label for USB device dialogs.  [CHAR LIMIT=50] -->
+    <string name="always_use_device">ဤ USB ပစၥည္းမ်ားအတြက္ ပံုေသအတိုင္း အသံုးျပဳပါ။</string>
+
+    <!-- Checkbox label for USB accessory dialogs.  [CHAR LIMIT=50] -->
+    <string name="always_use_accessory">ဤ USB အပိုပစၥည္းမ်ားအတြက္ ပံုေသအတိုင္း အသံုးျပဳပါ။</string>
+
+    <!-- Title of confirmation dialog for USB debugging -->
+    <string name="usb_debugging_title">USB အမွားရွာေဖြျပင္ဆင္ျခင္း ခြင့္ျပဳပါမည္လား?</string>
+
+    <!-- Message of confirmation dialog for USB debugging -->
+    <string name="usb_debugging_message">ဤကြန္ျပဴတာရဲ႕ RSA လက္ေဗြရာမွာ:\\n<xliff:g id="fingerprint">%1$s</xliff:g> ျဖစ္ပါသည္</string>
+
+    <!-- Option to always allow USB debugging from the attached computer -->
+    <string name="usb_debugging_always">ဤကြန္ျပဴတာမွ အၿမဲခြင့္ျပဳရန္</string>
+
+    <!-- Checkbox label for application compatibility mode ON (zooming app to look like it\'s running
+         on a phone).  [CHAR LIMIT=25] -->
+    <string name="compat_mode_on">ဖန္သားျပင္ျပည့္ ခ်ဲ႕ျခင္း</string>
+
+    <!-- Checkbox label for application compatibility mode OFF (normal mode on tablets).
+         [CHAR LIMIT=25] -->
+    <string name="compat_mode_off">ဖန္သားျပင္အျပည့္ဆန္႔ျခင္း</string>
+
+    <!-- Notification ticker displayed when a screenshot is being saved to the Gallery. [CHAR LIMIT=30] -->
+    <string name="screenshot_saving_ticker">ဖန္သားျပင္ဓါတ္ပံုသိမ္းစဥ္..</string>
+    <!-- Notification title displayed when a screenshot is being saved to the Gallery. [CHAR LIMIT=50] -->
+    <string name="screenshot_saving_title">ဖန္သားျပင္ဓါတ္ပံု႐ိုက္ျခင္းအား သိမ္းဆည္းပါမည္</string>
+    <!-- Notification text displayed when a screenshot is being saved to the Gallery. [CHAR LIMIT=100] -->
+    <string name="screenshot_saving_text">ဖန္သားျပင္ဓါတ္ပံု႐ိုက္ျခင္းအား သိမ္းဆည္းၿပီးပါၿပီ</string>
+    <!-- Notification title displayed when a screenshot is saved to the Gallery. [CHAR LIMIT=50] -->
+    <string name="screenshot_saved_title">ဖန္သားျပင္ဓါတ္ပံု႐ိုက္ျခင္းအား ဖမ္းယူၿပီး</string>
+    <!-- Notification text displayed when a screenshot is saved to the Gallery. [CHAR LIMIT=100] -->
+    <string name="screenshot_saved_text">သင့္ဖန္သားျပင္ဓါတ္ပံု႐ိုက္ျခင္းအား ၾကည့္႐ႈရန္ ထိပါ</string>
+    <!-- Notification title displayed when we fail to take a screenshot. [CHAR LIMIT=50] -->
+    <string name="screenshot_failed_title">ဖန္သားျပင္ဓါတ္ပံု႐ိုက္ျခင္းအား မဖမ္းစီးႏိုင္ပါ</string>
+    <!-- Notification text displayed when we fail to take a screenshot. [CHAR LIMIT=100] -->
+    <string name="screenshot_failed_text">မ်က္ႏွာျပင္လွ်ပ္တျပက္ပံုကို မ႐ုိက္ႏိုင္ခဲ့ပါ၊ သိုေလွာင္မႈ ေနရာ အကန္႔အသတ္ ရွိေန၍ သို႔မဟုတ္ အက္ပ္ သို႔မဟုတ္ သင္၏ အဖြဲ႔အစည္းက ခြင့္မျပဳ၍ ျဖစ္ႏိုင္သည္။</string>
+
+    <!-- Title for the USB function chooser in UsbPreferenceActivity. [CHAR LIMIT=30] -->
+    <string name="usb_preference_title">USB ဖိုင္ေျပာင္း ေရြးမႈမ်ား</string>
+    <!-- Label for the MTP USB function in UsbPreferenceActivity. [CHAR LIMIT=50] -->
+    <string name="use_mtp_button_title">မီဒီယာပေလရာအေနျဖင့္ တပ္ဆင္ရန္ (MTP)</string>
+    <!-- Label for the PTP USB function in UsbPreferenceActivity. [CHAR LIMIT=50] -->
+    <string name="use_ptp_button_title">ကင္မရာအေနျဖင့္ တပ္ဆင္ရန္ (PTP)</string>
+    <!-- Label for the installer CD image option in UsbPreferenceActivity. [CHAR LIMIT=50] -->
+    <string name="installer_cd_button_title">Mac အတြက္ Andriod ဖိုင္ေျပာင္းအက္ပ္ကို ထည့္ပါ</string>
+
+    <!-- Content description of the back button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_back">ေနာက္သို႔</string>
+    <!-- Content description of the home button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_home">ပင္မစာမ်က္ႏွာ</string>
+    <!-- Content description of the menu button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_menu">မီႏူး</string>
+    <!-- Content description of the recents button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_recent">ၿခံဳၾကည့္မႈ</string>
+    <!-- Content description of the search button for accessibility. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_search_light">ရွာေဖြပါ</string>
+    <!-- Content description of the camera button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_camera_button">ကင္မရာ</string>
+    <!-- Content description of the phone button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_button">ဖုန္း</string>
+    <!-- Content description of the unlock button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_unlock_button">ေသာ့ဖြင့္ပါ</string>
+    <!-- Click action label for accessibility for the unlock button. [CHAR LIMIT=NONE] -->
+    <string name="unlock_label">ေသာ့ဖြင့္ပါ</string>
+    <!-- Click action label for accessibility for the phone button. [CHAR LIMIT=NONE] -->
+    <string name="phone_label">ဖုန္းကို ဖြင့္ပါ</string>
+    <!-- Click action label for accessibility for the phone button. [CHAR LIMIT=NONE] -->
+    <string name="camera_label">ကင္မရာ ဖြင့္ပါ</string>
+
+    <!-- Content description of the compatibility zoom button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_compatibility_zoom_button">အံ့ဝင္ေသာ ခ်ဳံ႕ခ်ဲ႕ခလုတ္</string>
+
+    <!-- Content description of picture of the compatibility zoom example for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_compatibility_zoom_example">စခရင္ငယ္မွ အႀကီးသို႔ ခ်ဲ႕</string>
+
+    <!-- Content description of the bluetooth icon when connected for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_bluetooth_connected">ဘလူးတုသ္ ခ်ိတ္ဆက္ထားသည္။</string>
+    <!-- Content description of the bluetooth icon when connecting for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_bluetooth_disconnected">ဘလူးတုသ္ခ်ိတ္ဆက္မႈ ျပတ္ေတာက္သည္</string>
+
+    <!-- Content description of the battery when no battery for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_battery">ဘက္ထရီ မရွိပါ။</string>
+    <!-- Content description of the battery when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_one_bar">ဘက္ထရီ တစ္ဘား။</string>
+    <!-- Content description of the battery when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_two_bars">ဘက္ထရီ ႏွစ္ဘား။</string>
+     <!-- Content description of the battery when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_three_bars">ဘက္ထရီ သံုးဘား။</string>
+    <!-- Content description of the battery when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_full">ဘက္ထရီ အျပည့္။</string>
+
+    <!-- Content description of the phone signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_phone">ဖုန္းလိုင္း မရွိပါ။</string>
+    <!-- Content description of the phone signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_one_bar">ဖုန္းလိုင္း တစ္ဘား။</string>
+    <!-- Content description of the phone signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_two_bars">ဖုန္းလိုင္း ႏွစ္ဘား။</string>
+    <!-- Content description of the phone signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_three_bars">ဖုန္းလိုင္း သံုးဘား။</string>
+    <!-- Content description of the phone signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_signal_full">ဖုန္းလိုင္း အျပည့္။</string>
+
+    <!-- Content description of the data signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_data">ေဒတာ မရွိပါ။</string>
+    <!-- Content description of the data signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_one_bar">ေဒတာ တစ္ဘား။</string>
+    <!-- Content description of the data signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_two_bars">ေဒတာ ႏွစ္ဘား။</string>
+    <!-- Content description of the data signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_three_bars">ေဒတာ သံုးဘား။</string>
+    <!-- Content description of the data signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_signal_full">ေဒတာအခ်က္ျပမႈ အျပည့္</string>
+
+    <!-- Content description of the WIFI signal when WIFI is disabled for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_off">ဝိုင္ဖိုင္ မရွိ</string>
+    <!-- Content description of the WIFI signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_wifi">ဝိုင္ဖိုင္ ခ်ိတ္ဆက္ထားမႈ မရွိပါ။</string>
+    <!-- Content description of the WIFI signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_one_bar">ဝိုင္ဖိုင္ တစ္ဘား။</string>
+    <!-- Content description of the WIFI signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_two_bars">ဝိုင္ဖိုင္ ႏွစ္ဘား။</string>
+    <!-- Content description of the WIFI signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_three_bars">ဝိုင္ဖိုင္ သံုးဘား။</string>
+    <!-- Content description of the WIFI signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_signal_full">ဝိုင္ဖိုင္အခ်က္ျပမႈ အျပည့္။</string>
+
+    <!-- Content description of the wifi label showing what we are connected to. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_name"><xliff:g id="WIFI">%s</xliff:g> သို႔ ခ်ိတ္ဆက္ထားသည္။</string>
+
+    <!-- Content description of the bluetooth label showing what we are connected to. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_bluetooth_name"><xliff:g id="BLUETOOTH">%s</xliff:g> သို႔ ခ်ိတ္ဆက္ထားသည္။</string>
+
+
+    <!-- Content description of the WiMAX signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_wimax">ဝိုက္မက္စ္ မရွိပါ</string>
+    <!-- Content description of the WiMAX signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_one_bar">ဝိုက္မက္စ္ တစ္ဘား။</string>
+    <!-- Content description of the WiMAX signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_two_bars">ဝိုင္မက္စ္ ႏွစ္ဘား။</string>
+    <!-- Content description of the WiMAX signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_three_bars">ဝိုင္မက္စ္ သံုးဘား။</string>
+    <!-- Content description of the WiMAX signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_signal_full">ဝိုင္မက္စ္ အျပည့္ရွိ။</string>
+
+    <!-- Content description of an item with no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_signal">အခ်က္ျပမႈ မရွိပါ။</string>
+    <!-- Content description of an item with no signal and no connection for accessibility (not shown on the screen) [CHAR LIMIT=NONE] -->
+    <string name="accessibility_not_connected">ခ်ိတ္ဆက္မထားပါ။</string>
+    <!-- Content description of an item with zero signal bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_zero_bars">ဝ ဘား။</string>
+    <!-- Content description of an item with one signal bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_one_bar">၁ ဘား။</string>
+    <!-- Content description of an item with two signal bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_two_bars">၂ ဘား။</string>
+    <!-- Content description of an item with three signal bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_three_bars">၃ ဘား။</string>
+    <!-- Content description of an item with full signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_signal_full">အခ်က္ျပမႈ အျပည့္။</string>
+
+    <!-- Content description of an item that is turned on for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_on">ဖြင့္။</string>
+    <!-- Content description of an item that is turned off for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_off">ပိတ္။</string>
+    <!-- Content description of an item that is connected for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_connected">ဆက္သြယ္ထားၿပီး</string>
+    <!-- Content description of an item that is connecting for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_connecting">ခ်ိတ္ဆက္ထားသည္။</string>
+
+    <!-- Content description of the data connection type GPRS for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_gprs">GPRS</string>
+
+    <!-- Content description of the data connection type 1x for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_1x">၁ X</string>
+
+    <!-- Content description of the data connection type HSPA and its variants for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_hspa">ျမန္ႏႈန္းျမင့္အခ်က္အလက္ပို႔လႊတ္ခ်က္ (HSPA)</string>
+
+    <!-- Content description of the data connection type 3G for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_3g">3G</string>
+
+    <!-- Content description of the data connection type 3.5G for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_3.5g">3.5G</string>
+
+    <!-- Content description of the data connection type 4G for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_4g">4G</string>
+
+    <!-- Content description of the data connection type LTE for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_lte">ျမန္ႏႈန္းျမင့္လိုင္း</string>
+
+    <!-- Content description of the data connection type CDMA for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_cdma">CDMA</string>
+
+    <!-- Content description of the roaming data connection type for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_roaming">ကြန္ရက္ျပင္ပေဒတာအသံုးျပဳျခင္း</string>
+
+    <!-- Content description of the data connection type Edge for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_edge">EDGE</string>
+
+    <!-- Content description of the data connection type WiFi for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_wifi">ဝိုင္-ဖိုင္</string>
+
+    <!-- Content description of the data connection with no SIM for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_sim">ဆင္းကတ္မရွိပါ။</string>
+
+    <!-- Content description of the bluetooth tethering icon for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_bluetooth_tether">ဘလူးတုသ္မွတစ္ဆင့္ျပန္လည္ခ်ိတ္ဆက္ျခင္း</string>
+
+    <!-- Content description of the airplane mode icon for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_airplane_mode">ေလယာဥ္ပ်ံေပၚအသံုးျပဳေသာစနစ္။</string>
+
+    <!-- Content description of the battery level icon for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_battery_level">ဘက္ထရီ <xliff:g id="NUMBER">%d</xliff:g> ရာခိုင္ႏႈန္း။</string>
+
+    <!-- Content description of the button for showing a settings panel in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_settings_button">စနစ္ဆက္တင္မ်ား</string>
+
+    <!-- Content description of the button for showing a notifications panel in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_notifications_button">အေၾကာင္းၾကားခ်က္မ်ား။</string>
+
+    <!-- Content description of the button for removing a notification in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_remove_notification">သတိေပးခ်က္အား ဖယ္ရွားျခင္း။</string>
+
+    <!-- Content description of the enabled GPS icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_gps_enabled">GPS သံုးစြဲႏိုင္သည္</string>
+
+    <!-- Content description of the acquiring GPS icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_gps_acquiring">GPS ဖမ္းယူေနသည္။</string>
+
+    <!-- Content description of the TeleTypewriter(TTY) enabled icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_tty_enabled">TeleTypewriter ရရွိသည္။</string>
+
+    <!-- Content description of the ringer vibrate icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_ringer_vibrate">တုန္ခါျခင္း ဖုန္းျမည္သံ</string>
+
+    <!-- Content description of the ringer silent icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_ringer_silent">ဖုန္းျမည္သံပိတ္သည္။</string>
+
+    <!-- Content description of the cast icon in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_casting">@string/quick_settings_casting</string>
+
+    <!-- Content description to tell the user that this button will remove an application from recents -->
+    <string name="accessibility_recents_item_will_be_dismissed"><xliff:g id="APP">%s</xliff:g> ကို ပယ္လိုက္ရန္။</string>
+    <!-- Content description to tell the user an application has been removed from recents -->
+    <string name="accessibility_recents_item_dismissed"><xliff:g id="APP">%s</xliff:g> ထုတ္ထားသည္။</string>
+    <!-- Content description to tell the user an application has been launched from recents -->
+    <string name="accessibility_recents_item_launched"><xliff:g id="APP">%s</xliff:g> ကို စတင္ေနသည္။</string>
+    <!-- Content description to tell the user a notification has been removed from the notification shade -->
+    <string name="accessibility_notification_dismissed">အေၾကာင္းၾကားခ်က္ကိုဖယ္ရွားၿပီး</string>
+
+    <!-- Content description for the notification shade panel (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_notification_shade">အ​ေၾကာင္းၾကားစာအကြက္</string>
+    <!-- Content description for the quick settings panel (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_quick_settings">အျမန္လုပ္ အျပင္အဆင္</string>
+    <!-- Content description for the lock screen (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_lock_screen">မ်က္ႏွာျပင္ ေသာ့ပိတ္ရန္</string>
+    <!-- Content description for the settings button in the status bar header. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_settings">ဆက္တင္မ်ား</string>
+    <!-- Content description for the recent apps panel (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_desc_recent_apps">ၿခံဳၾကည့္မႈ။</string>
+
+    <!-- Content description of the user tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_user">သံုးစြဲသူ <xliff:g id="user" example="John Doe">%s</xliff:g>။</string>
+    <!-- Content description of the wifi tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_wifi"><xliff:g id="signal" example="Three bars">%1$s</xliff:g>.</string>
+    <!-- Announcement made when the wifi is turned off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_wifi_changed_off">၀ိုင္ဖိုင္ ပိတ္ထား။</string>
+    <!-- Announcement made when the wifi is turned on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_wifi_changed_on">၀ိုင္ဖိုင္ ဖြင့္ထား။</string>
+    <!-- Content description of the mobile data tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_mobile">မိုဘိုင္း <xliff:g id="SIGNAL">%1$s</xliff:g>. <xliff:g id="TYPE">%2$s</xliff:g>. <xliff:g id="NETWORK">%3$s</xliff:g>.</string>
+    <!-- Content description of the battery tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_battery">ဘက္ထရီ <xliff:g id="STATE">%s</xliff:g>။</string>
+    <!-- Content description of the airplane mode tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_airplane_off">ေလယာဥ္ မုဒ္ ပိတ္ထား။</string>
+    <!-- Content description of the airplane mode tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_airplane_on">ေလယာဥ္ မုဒ္ကို ဖြင့္ထား။</string>
+    <!-- Announcement made when the airplane mode changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_airplane_changed_off">ေလယာဥ္ မုဒ္ကို ပိတ္ထားလိုက္ၿပီ။</string>
+    <!-- Announcement made when the airplane mode changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_airplane_changed_on">ေလယာဥ္ မုဒ္ကို ဖြင့္ထားလိုက္ၿပီ။</string>
+    <!-- Content description of the mobile data tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_data_off">မုိဘုိင္း ေဒတာ ပိတ္ထားသည္။</string>
+    <!-- Content description of the mobile data tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_data_on">မုိဘုိင္း ေဒတာ ဖြင့္ထားသည္။</string>
+    <!-- Content description of the roaming tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_roaming_off">အျခားေဒသ ကြန္ယက္ကုိ သံုးျခင္း ပိတ္ထားသည္။</string>
+    <!-- Content description of the roaming tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_roaming_on">အျခားေဒသ ကြန္ယက္ကုိ သံုးျခင္း ဖြင့္ထားသည္။</string>
+    <!-- Content description of the bluetooth tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_off">ဘလူးတုသ္ ပိတ္ထား.</string>
+    <!-- Content description of the bluetooth tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_on">ဘလူးတုသ္ ဖြင့္ထား။</string>
+    <!-- Content description of the bluetooth tile in quick settings when connecting (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_connecting">ဘလူးတုသ္ ခ်ိတ္ဆက္ေန။</string>
+    <!-- Content description of the bluetooth tile in quick settings when connected (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_connected">ဘလူးတုသ္ ခ်ိတ္ဆက္ထား။</string>
+    <!-- Announcement made when the bluetooth is turned off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_changed_off">ဘလူးတုသ္ ပိတ္ထား။</string>
+    <!-- Announcement made when the bluetooth is turned on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_bluetooth_changed_on">ဘလူးတုသ္ ဖြင့္ထား။</string>
+    <!-- Content description of the location tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_off">တည္ေနရာ သတင္းပို႔မႈ ပိတ္ရန္။</string>
+    <!-- Content description of the location tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_on">တည္ေနရာ သတင္းပို႔မႈ ဖြင့္ရန္။</string>
+    <!-- Announcement made when the location tile changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_changed_off">တည္ေနရာ သတင္းပို႔မႈ ပိတ္ထား။</string>
+    <!-- Announcement made when the location tile changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_changed_on">တည္ေနရာ သတင္းပို႔မႈ ဖြင့္ထား။</string>
+    <!-- Content description of the alarm tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_alarm">ႏိႈးစက္ေပးထားေသာ အခ်ိန္ <xliff:g id="TIME">%s</xliff:g>။</string>
+    <!-- Content description of quick settings detail panel close button (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_close">ေဘာင္ကြက္ ပိတ္ရန္။</string>
+    <!-- Content description of zen mode time condition plus button (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_more_time">အခ်ိန္ တိုး</string>
+    <!-- Content description of zen mode time condition minus button (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_less_time">အခ်ိန္ ေလွ်ာ့</string>
+    <!-- Content description of the flashlight tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_off">ဖလက္ရွ္မီး ပိတ္ထား</string>
+    <!-- Content description of the flashlight tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_on">ဖလက္ရွ္မီး ဖြင့္ထား။</string>
+    <!-- Announcement made when the flashlight state changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_changed_off">ဖလက္ရွ္မီး ပိတ္ထားသည္။</string>
+    <!-- Announcement made when the flashlight state changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_changed_on">ဖလက္ရွ္မီး ဖြင့္ထားသည္။</string>
+    <!-- Announcement made when the color inversion state changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_color_inversion_changed_off">အေရာင္ ေျပာင္းျပန္လွန္မႈ ပိတ္ထား။</string>
+    <!-- Announcement made when the color inversion state changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_color_inversion_changed_on">အေရာင္ ေျပာင္းျပန္လွန္မႈ ဖြင့္ထား။</string>
+    <!-- Announcement made when the hotspot state changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_hotspot_changed_off">မိုဘိုင္း ေဟာ့စေပါ့ ပိတ္ထား။</string>
+    <!-- Announcement made when the hotspot state changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_hotspot_changed_on">မိုဘိုင္း ေဟာ့စေပါ့ ဖြင့္ထား။</string>
+    <!-- Announcement made when the screen stopped casting (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_casting_turned_off">စခရင္ ကက္စ္တင္း ရပ္လိုက္ၿပီ။</string>
+
+    <!-- Content description of the display brightness slider (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_brightness">ေတာက္ပမႈကို ျပရန္</string>
+
+    <!-- Title of dialog shown when 2G-3G data usage has exceeded limit and has been disabled. [CHAR LIMIT=48] -->
+    <string name="data_usage_disabled_dialog_3g_title">2G-3G ေဒတာ ပိတ္ထား</string>
+    <!-- Title of dialog shown when 4G data usage has exceeded limit and has been disabled. [CHAR LIMIT=48] -->
+    <string name="data_usage_disabled_dialog_4g_title">4G ေဒတာ ပိတ္ထား</string>
+    <!-- Title of dialog shown when mobile data usage has exceeded limit and has been disabled. [CHAR LIMIT=48] -->
+    <string name="data_usage_disabled_dialog_mobile_title">ဆယ္လူလာ ေဒတာကို ပိတ္ထား</string>
+    <!-- Title of dialog shown when data usage has exceeded limit and has been disabled. [CHAR LIMIT=48] -->
+    <string name="data_usage_disabled_dialog_title">ေဒတာ ပိတ္ထား</string>
+    <!-- Body of dialog shown when data usage has exceeded limit and has been disabled. [CHAR LIMIT=NONE] -->
+    <string name="data_usage_disabled_dialog">သင္၏ ကိရိယာသည္ သင္က သတ္မွတ္ခဲ့သည့္ ကန္႔သတ္ခ်က္ကို ျပည့္မီသြား၍ ပိတ္သြားသည္။ \\n\\n၄င္းကို ျပန္ၿပီး ဖြင့္မႈအတြက္ သင္၏ စီမံေပးသူ ထံမွ ေငြေတာင္းခံ လာႏိုင္ပါသည္။</string>
+    <!-- Dialog button indicating that data connection should be re-enabled. [CHAR LIMIT=28] -->
+    <string name="data_usage_disabled_dialog_enable">ေဒတာ ဖြင့္ေပးရန္</string>
+
+    <!-- Text to display underneath the graphical signal strength meter when
+         no connection is available. [CHAR LIMIT=20] -->
+    <string name="status_bar_settings_signal_meter_disconnected">
+        အင္တာနက္မရွိ
+    </string>
+
+    <!-- Text to display underneath the graphical signal strength meter when
+         it is displaying Wi-Fi status and Wi-Fi is connected to a network
+         whose SSID is not available.
+         [CHAR LIMIT=20] -->
+    <string name="status_bar_settings_signal_meter_wifi_nossid">၀ိုင္-ဖိုင္ ခ်ိတ္ဆက္ထားသည္</string>
+
+    <!-- Notification text: when GPS is getting a fix [CHAR LIMIT=50] -->
+    <string name="gps_notification_searching_text">GPS အားရွာေဖြသည္</string>
+
+    <!-- Notification text: when GPS has found a fix [CHAR LIMIT=50] -->
+    <string name="gps_notification_found_text">GPS မွတည္ေနရာကိုအတည္ျပဳသည္</string>
+
+    <!-- Accessibility text describing the presence of active location requests by one or more apps -->
+    <string name="accessibility_location_active">တည္ေနရာျပ ေတာင္းဆိုခ်က္မ်ား အသက္ဝင္ရန္</string>
+
+    <!-- Content description of the clear button in the notification panel for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_clear_all">အသိေပးခ်က္အားလံုးအား ဖယ္ရွားျခင္း။</string>
+
+    <!-- Content description of button in notification inspector for system settings relating to
+         notifications from this application [CHAR LIMIT=NONE] -->
+    <string name="status_bar_notification_inspect_item_title">အသိေပးခ်က္ ဆက္တင္မ်ား</string>
+
+    <!-- Content description of button in notification inspetor for application-provided settings
+         for its own notifications [CHAR LIMIT=NONE] -->
+    <string name="status_bar_notification_app_settings_title"><xliff:g id="app_name" example="Calendar">%s</xliff:g> ဆက္တင္မ်ား</string>
+
+    <!-- Description of the button in the phone-style notification panel that controls auto-rotation, when auto-rotation is on. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_off">စခရင္ အလိုအေလ်ာက္ လွည့္သြားပါမည္</string>
+
+    <!-- Description of the button in the phone-style notification panel that controls auto-rotation, when auto-rotation is off. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_on_landscape">ဖန္သားျပင္ အေနအထားက အလ်ားလိုက္အျဖစ္ ပံုေသ လုပ္ထားပါသည္</string>
+
+    <!-- Description of the button in the phone-style notification panel that controls auto-rotation, when auto-rotation is off. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_on_portrait">ဖန္သားျပင္ အေနအထားက ေဒါင္လိုက္အျဖစ္ ပံုေသ လုပ္ထားပါသည္</string>
+
+    <!-- Announcement made when the screen is rotating automatically again (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_off_changed">ယခုေတာ့ မ်က္ႏွာျပင္သည္ အလိုအေလ်ာက္ လည္ေနမည္။</string>
+
+    <!-- Announcement made when the rotation lock state changes to landscape only (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_on_landscape_changed">မ်က္ႏွာျပင္ အေနအထားကို ေဘးတိုက္ အျဖစ္ ေသာ့ခ်ထားသည္။</string>
+
+    <!-- Announcement made when the rotation lock state changes to portrait only (not shown on the screen).  [CHAR LIMIT=NONE] -->
+    <string name="accessibility_rotation_lock_on_portrait_changed">မ်က္ႏွာျပင္ အေနအထားကို ေဒါင္လိုက္ အျဖစ္ ေသာ့ခ်ထားသည္။</string>
+
+    <!-- Name of the K-release easter egg: a display case for all our tastiest desserts. [CHAR LIMIT=30] -->
+    <string name="dessert_case">မုန္႔ထည့္ေသာ ပံုး</string>
+
+    <!-- Name of the launcher shortcut icon that allows dreams to be started immediately [CHAR LIMIT=20] -->
+    <string name="start_dreams">ေဒးဒရင္းမ္</string>
+
+    <!-- Textual description of Ethernet connections -->
+    <string name="ethernet_label">အီသာနက္</string>
+
+    <!-- QuickSettings: Airplane mode [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_airplane_mode_label">ေလယာဥ္္ပ်ံေပၚအသံုးျပဳေသာစနစ္</string>
+    <!-- QuickSettings: Mobile data [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_mobile_data_label">မိုဘိုင်းဖုန်း အချက်အလက်</string>
+    <!-- QuickSettings: Roaming [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_roaming_label">လှည့်လည်စဉ်ဖုန်းသုံးခြင်း</string>
+    <!-- QuickSettings: Battery Charging [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_battery_charging_label">အားသြင္းေနစဥ္, <xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g></string>
+    <!-- QuickSettings: Battery Charged [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_battery_charged_label">အားသြင္းၿပီးပါၿပီ</string>
+    <!-- QuickSettings: Bluetooth [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_bluetooth_label">ဘလူးတုသ္</string>
+    <!-- QuickSettings: Bluetooth (Multiple) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_bluetooth_multiple_devices_label">ဘလူးတုသ္ (<xliff:g id="number">%d</xliff:g> စက္မ်ား)</string>
+    <!-- QuickSettings: Bluetooth (Off) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_bluetooth_off_label">ဘလူးတုသ္ ပိတ္ထားရန္</string>
+    <!-- QuickSettings: Bluetooth detail panel, text when there are no items [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_bluetooth_detail_empty_text">တြဲဖက္ထားသည့္ ကိရိယာမ်ား မရွိ</string>
+    <!-- QuickSettings: Brightness [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_brightness_label">အလင္းေတာက္ပမႈ</string>
+    <!-- QuickSettings: Rotation Unlocked [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rotation_unlocked_label">ေအာ္တို-လည္</string>
+    <!-- QuickSettings: Rotation Locked [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rotation_locked_label">လည္မႈ ေသာ့ပိတ္ထား</string>
+    <!-- QuickSettings: Locked to Portrait [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rotation_locked_portrait_label">ေဒါင္လိုက္</string>
+    <!-- QuickSettings: Locked to Landscape [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rotation_locked_landscape_label">ေဘးတိုက္</string>
+    <!-- QuickSettings: IME [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_ime_label">ထည့္သြင္းရန္နည္းလမ္း</string>
+    <!-- QuickSettings: Location [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_label">တည္ေနရာ</string>
+    <!-- QuickSettings: Location (Off) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_off_label">တည္ေနရာျပမႈ မရွိ</string>
+    <!-- QuickSettings: Media device [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_media_device_label">မီဒီယာ စက္ပစၥည္း</string>
+    <!-- QuickSettings: RSSI [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rssi_label">RSSI</string>
+    <!-- QuickSettings: RSSI (No network) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_rssi_emergency_only">အေရးေပၚေခၚဆိုမႈမ်ားသာ</string>
+    <!-- QuickSettings: Settings [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_settings_label">ဆက္တင္မ်ား</string>
+    <!-- QuickSettings: Time [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_time_label">အခ်ိန္</string>
+    <!-- QuickSettings: User [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_user_label">ကြ်ႏု္ပ္</string>
+    <!-- QuickSettings: Title of the user detail panel [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_user_title">အသံုးျပဳသူ</string>
+    <!-- QuickSettings: Label on the item for adding a new user [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_user_new_user">အသံုးျပဳသူ အသစ္</string>
+    <!-- QuickSettings: Wifi [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_label">ဝိုင္ဖိုင္</string>
+    <!-- QuickSettings: Wifi (Not connected) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_not_connected">ခ်ိတ္ဆက္မထားပါ</string>
+    <!-- QuickSettings: Wifi (No network) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_no_network">ကြန္ရက္မရွိပါ</string>
+    <!-- QuickSettings: Wifi (Off) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_off_label">ဝိုင္ဖိုင္ပိတ္ရန္</string>
+    <!-- QuickSettings: Wifi detail panel, text when there are no items [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_wifi_detail_empty_text">သိမ္းဆည္းထား ကြန္ရက္မ်ား မရွိ</string>
+    <!-- QuickSettings: Cast title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cast_title">ကာစ္တ္ မ်က္ႏွာျပင္</string>
+    <!-- QuickSettings: Cast detail panel, status text when casting [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_casting">ကက္စ္တင္း</string>
+    <!-- QuickSettings: Cast detail panel, default device name [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cast_device_default_name">အမည္မတပ္ ကိရိယာ</string>
+     <!-- QuickSettings: Cast detail panel, default device description [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cast_device_default_description">ကက္စ္လုပ္ရန္ အသင့္ ရွိေနၿပီ</string>
+    <!-- QuickSettings: Cast detail panel, text when there are no items [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cast_detail_empty_text">ကိရိယာမ်ား မရွိ</string>
+    <!-- QuickSettings: Brightness dialog title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_brightness_dialog_title">အလင္းေတာက္ပမႈ</string>
+    <!-- QuickSettings: Brightness dialog auto brightness button [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_brightness_dialog_auto_brightness_label">အလိုအေလ်ာက္</string>
+    <!-- QuickSettings: Apn switch button label [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_apn_switch_label">APN ေျပာင္းျခင္း</string>
+    <!-- QuickSettings: Label for the toggle that controls whether display inversion is enabled. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_inversion_label">အေရာင္မ်ားကို ေျပာင္းျပန္ လုပ္ပစ္ရန္</string>
+    <!-- QuickSettings: Label for the toggle that controls whether display color correction is enabled. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_color_space_label">အေရာင္ မွန္ကန္ေစျခင္း အေျခအေန</string>
+    <!-- QuickSettings: Control panel: Label for button that navigates to settings. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_more_settings">ေနာက္ထပ္ ဆက္တင္မ်ား</string>
+    <!-- QuickSettings: Control panel: Label for button that dismisses control panel. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_done">လုပ္ၿပီးပါၿပီ</string>
+    <!-- QuickSettings: Control panel: Label for connected device. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_connected">ခ်ိတ္ဆက္ထား</string>
+    <!-- QuickSettings: Control panel: Label for a connected Wi-Fi access point when the connection is established by a Wi-Fi assistant application. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_connected_via_wfa">Wi\u2011Fi လက္ေထာက္မွတဆင့္ ခ်ိတ္ဆက္ထားသည္</string>
+    <!-- QuickSettings: Control panel: Label for connecting device. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_connecting">ခ်ိတ္ဆက္ေန...</string>
+    <!-- QuickSettings: Tethering. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_tethering_label">တြဲခ်ီေပးျခင္း</string>
+    <!-- QuickSettings: Hotspot. [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_hotspot_label">ေဟာ့စေပါ့</string>
+    <!-- QuickSettings: Notifications [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_notifications_label">အေၾကာင္းၾကားခ်က္မ်ား</string>
+    <!-- QuickSettings: Flashlight [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_flashlight_label">ဖလက္ရွ္မီး</string>
+    <!-- QuickSettings: Cellular detail panel title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_title">ဆယ္လူလာ ေဒတာ</string>
+    <!-- QuickSettings: Cellular detail panel, data usage title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_data_usage">ေဒတာ သံုးစြဲမႈ</string>
+    <!-- QuickSettings: Cellular detail panel, remaining data title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_remaining_data">က်န္ရွိ ေဒတာ</string>
+    <!-- QuickSettings: Cellular detail panel, over limit title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_over_limit">ကန္႔သတ္ခ်က္ ေက်ာ္လြန္ေနသည္</string>
+    <!-- QuickSettings: Cellular detail panel, data used format string [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_data_used"><xliff:g id="DATA_USED">%s</xliff:g> သံုးထား</string>
+    <!-- QuickSettings: Cellular detail panel, data limit format string [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_data_limit"><xliff:g id="DATA_LIMIT">%s</xliff:g> ကန္႔သတ္ခ်က္</string>
+    <!-- QuickSettings: Cellular detail panel, data warning format string [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_cellular_detail_data_warning"><xliff:g id="DATA_LIMIT">%s</xliff:g> သတိေပးခ်က္</string>
+    <!-- QuickSettings: Dds [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_dds_sub">ကတ္ <xliff:g id="number">%d</xliff:g> ေဒတာ</string>
+    <string name="quick_settings_data_off">ေဒတာ ပိတ္ထားသည္</string>
+
+    <!-- Recents: The empty recents string. [CHAR LIMIT=NONE] -->
+    <string name="recents_empty_message">မၾကာေသးမီက သင့္စခရင္မ်ား ဤမွာ ေပၚလာၾကမည္</string>
+    <!-- Recents: The info panel app info button string. [CHAR LIMIT=NONE] -->
+    <string name="recents_app_info_button_label">အပလီေကးရွင္း အင္ဖို</string>
+    <!-- Recents: The screen pinning button. [CHAR LIMIT=NONE] -->
+    <string name="recents_lock_to_app_button_label">ဖန္သားျပင္ကုိ တြဲျခင္း</string>
+    <!-- Recents: Temporary string for the button in the recents search bar. [CHAR LIMIT=NONE] -->
+    <string name="recents_search_bar_label">ရွာေဖြပါ</string>
+    <!-- Recents: Launch error string. [CHAR LIMIT=NONE] -->
+    <string name="recents_launch_error_message"><xliff:g id="အက္ပ္" example="Calendar">%s</xliff:g> ကို မစႏိုင္ပါ။</string>
+
+
+    <!-- Expanded Status Bar Header: Battery Charged [CHAR LIMIT=40] -->
+    <string name="expanded_header_battery_charged">အားသြင္းၿပီးပါၿပီ</string>
+
+    <!-- Expanded Status Bar Header: Charging, no known time [CHAR LIMIT=40] -->
+    <string name="expanded_header_battery_charging">အားသြင္းေန</string>
+
+    <!-- Expanded Status Bar Header: Charging, showing time left until charged [CHAR LIMIT=40] -->
+    <string name="expanded_header_battery_charging_with_time"><xliff:g id="charging_time" example="2 hrs 25 min">%s</xliff:g> ျပည့္သည့္ အထိ</string>
+
+    <!-- Expanded Status Bar Header: Not charging [CHAR LIMIT=40] -->
+    <string name="expanded_header_battery_not_charging">အားသြင္းမေနပါ</string>
+
+    <!-- Glyph to be overlaid atop the battery when the level is extremely low. Do not translate. -->
+    <string name="battery_meter_very_low_overlay_symbol">!</string>
+
+    <!-- Shows up when there is a user SSL CA Cert installed on the
+         device.  Indicates to the user that SSL traffic can be intercepted.
+         If the text fits on one line (~14 chars), it should start with a
+         linebreak to position it correctly.  [CHAR LIMIT=45] -->
+    <string name="ssl_ca_cert_warning">ကြန္ရက္ကို\\n ေစာင့္ၾကည့္စစ္ေဆးခံရႏိုင္သည္</string>
+
+    <!-- Description of the unlock target in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_target_search">ရွာေဖြရန္</string>
+    <!-- Description of the up direction in which one can to slide the handle in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_up"><xliff:g id="target_description" example="Unlock">%s</xliff:g> အတြက္ အေပၚကို ပြတ္ဆြဲပါ။</string>
+    <!-- Description of the left direction in which one can to slide the handle in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_left"><xliff:g id="target_description" example="Unlock">%s</xliff:g> အတြက္ ဖယ္ဘက္ကို ပြတ္ဆြဲပါ</string>
+
+    <!-- Zen mode: No interruptions title, with a warning about alarms. [CHAR LIMIT=60] -->
+    <string name="zen_no_interruptions_with_warning">ၾကားျဖတ္ဝင္မႈမ်ား မရွိခဲ့။ ႏႈိးစက္ပင္ မရွိခဲ့။</string>
+
+    <!-- Zen mode: No interruptions. [CHAR LIMIT=40] -->
+    <string name="zen_no_interruptions">ၾကားျဖတ္ဝင္မႈ ခြင့္မျပဳရန္</string>
+
+    <!-- Zen mode: Only important interruptions. [CHAR LIMIT=40] -->
+    <string name="zen_important_interruptions">ဦးစားေပး ၾကားျဖတ္ဝင္မႈမ်ား သာလွ်င္</string>
+
+    <!-- Zen mode: Next alarm information - just a time. [CHAR LIMIT=40] -->
+    <string name="zen_alarm_information_time">သင္၏ ေနာက္ ႏႈိးစက္၏ အခ်ိန္မွာ<xliff:g id="ALARM_TIME">%s</xliff:g></string>
+
+    <!-- Zen mode: Next alarm information - day and time. [CHAR LIMIT=40] -->
+    <string name="zen_alarm_information_day_time">သင္၏ ေနာက္ ႏႈိးစက္မွာ <xliff:g id="ALARM_DAY_AND_TIME">%s</xliff:g></string>
+
+    <!-- Zen mode: Next alarm warning. [CHAR LIMIT=40] -->
+    <string name="zen_alarm_warning">သင္သည္ သင္၏ <xliff:g id="ALARM_TIME">%s</xliff:g> ႏႈိးစက္ကို ၾကားရမည္ မဟုတ္</string>
+
+    <!-- Text for overflow card on Keyguard when there is not enough space for all notifications on Keyguard. [CHAR LIMIT=1] -->
+    <string name="keyguard_more_overflow_text">+<xliff:g id="NUMBER_OF_NOTIFICATIONS">%d</xliff:g></string>
+
+    <!-- An explanation for the visual speed bump in the notifications, which will appear when you click on it. [CHAR LIMIT=50] -->
+    <string name="speed_bump_explanation">အေရးပါမႈ နည္းသည့္ အေၾကာင္းၾကားခ်က္မ်ား ေအာက္မွာ</string>
+
+    <!-- Shows to explain the double tap interaction with notifications: After tapping a notification on Keyguard, this will explain users to tap again to launch a notification. [CHAR LIMIT=60] -->
+    <string name="notification_tap_again">ဖြင့္ရန္ ထပ္ၿပီး ထိပါ</string>
+
+    <!-- Shows when people have pressed the unlock icon to explain how to unlock. [CHAR LIMIT=60] -->
+    <string name="keyguard_unlock">ေသာ့ဖြင့္ရန္ အေပၚသို႔ ပြတ္ဆြဲပါ</string>
+
+    <!-- Shows when people have clicked at the left edge of the screen to explain how to open the phone. In right-to-left languages, this is the opposite direction. [CHAR LIMIT=60] -->
+    <string name="phone_hint">ဖုန္း အတြက္ ညာသို႔ ပြတ္ဆြဲပါ</string>
+
+    <!-- Shows when people have clicked at the right edge of the screen to explain how to open the phone. In right-to-left languages, this is the opposite direction. [CHAR LIMIT=60] -->
+    <string name="camera_hint">ကင္မရာ အတြက္ ဘယ္သို႔ ပြတ္ဆြဲပါ</string>
+
+    <!-- Interruption level: None. [CHAR LIMIT=20] -->
+    <string name="interruption_level_none">မရွိ</string>
+
+    <!-- Interruption level: Priority. [CHAR LIMIT=20] -->
+    <string name="interruption_level_priority">ဦးစားေပးမႈ</string>
+
+    <!-- Interruption level: All. [CHAR LIMIT=20] -->
+    <string name="interruption_level_all">အားလံုး</string>
+
+    <!-- Indication on the keyguard that is shown when the device is charging. [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_charging_time">(<xliff:g id="CHARGING_TIME_LEFT">%s</xliff:g> အျပည့္ အထိ) အားသြင္းေန</string>
+
+    <!-- Related to user switcher --><skip/>
+
+    <!-- Accessibility label for the button that opens the user switcher. -->
+    <string name="accessibility_multi_user_switch_switcher">အသံုးျပဳသူကို ေျပာင္းလဲရန္</string>
+
+    <!-- Accessibility label for the button that opens the user switcher and announces the current user. -->
+    <string name="accessibility_multi_user_switch_switcher_with_current">အသံုးျပဳသူကို ေျပာင္းရန္၊ လက္ရွိ အသံုးျပဳသူ <xliff:g id="CURRENT_USER_NAME">%s</xliff:g></string>
+
+    <!-- Accessibility label for the button that opens the quick contact of the user. -->
+    <string name="accessibility_multi_user_switch_quick_contact">ပ႐ိုဖိုင္ကို ျပရန္</string>
+
+    <!-- Label for the adding a new user in the user switcher [CHAR LIMIT=35] -->
+    <string name="user_add_user">သံုးသူ ထပ္ထည့္ရန္</string>
+
+    <!-- Name for a freshly added user [CHAR LIMIT=30] -->
+    <string name="user_new_user_name">အသံုးျပဳသူသစ္</string>
+
+    <!-- Name for the guest user [CHAR LIMIT=35] -->
+    <string name="guest_nickname">ဧည့္သည္</string>
+
+    <!-- Label for adding a new guest in the user switcher [CHAR LIMIT=35] -->
+    <string name="guest_new_guest">ဧည့္သည္ကို ထည့္ေပးရန္</string>
+
+    <!-- Label for exiting and removing the  guest session in the user switcher [CHAR LIMIT=35] -->
+    <string name="guest_exit_guest">ဧည့္သည္ကို ဖယ္ထုတ္ရန္</string>
+
+    <!-- Title of the confirmation dialog when exiting guest session [CHAR LIMIT=NONE] -->
+    <string name="guest_exit_guest_dialog_title">ဧည့္သည္ကို ဖယ္ထုတ္လိုက္ရမလား?</string>
+
+    <!-- Message of the confirmation dialog when exiting guest session [CHAR LIMIT=NONE] -->
+    <string name="guest_exit_guest_dialog_message">ဤခ်ိတ္ဆက္မႈ ထဲက အက္ပ္ မ်ား အားလံုး ႏွင့္ ေဒတာကို ဖ်က္ပစ္မည္။</string>
+
+    <!-- Label for button in confirmation dialog when exiting guest session [CHAR LIMIT=35] -->
+    <string name="guest_exit_guest_dialog_remove">ဖယ္ထုတ္ပါ</string>
+
+    <!-- Title of the notification when resuming an existing guest session [CHAR LIMIT=NONE] -->
+    <string name="guest_wipe_session_title">ျပန္လာတာ ႀကိဳဆိုပါသည္၊ ဧည့္သည္!</string>
+
+    <!-- Message of the notification when resuming an existing guest session [CHAR LIMIT=NONE] -->
+    <string name="guest_wipe_session_message">သင္သည္ သင္၏ ခ်ိတ္ဆက္မႈကို ဆက္ျပဳလုပ္ လိုပါသလား?</string>
+
+    <!-- Notification when resuming an existing guest session: Action that starts a new session [CHAR LIMIT=35] -->
+    <string name="guest_wipe_session_wipe">အစမွ ျပန္စပါ</string>
+
+    <!-- Notification when resuming an existing guest session: Action that continues with the current session [CHAR LIMIT=35] -->
+    <string name="guest_wipe_session_dontwipe">ဟုတ္ကဲ့၊ ဆက္လုပ္ပါ</string>
+
+    <!-- Title for add user confirmation dialog [CHAR LIMIT=30] -->
+    <string name="user_add_user_title" msgid="2108112641783146007">အသံုးျပဳသူ အသစ္ကို ထည့္ရမလား?</string>
+
+    <!-- Message for add user confirmation dialog - short version. [CHAR LIMIT=none] -->
+    <string name="user_add_user_message_short" msgid="1511354412249044381">သင္က အသံုးျပဳသူ အသစ္ တစ္ဦးကို ထည့္ေပးလိုက္လွ်င္၊ ထိုသူသည္ ၄င္း၏ ေနရာကို သတ္မွတ္စီစဥ္ရန္ လိုအပ္မည္။\\n\\n အသံုးျပဳသူ မည္သူမဆို က်န္အသံုးျပဳသူ အားလံုးတို႔အတြက္ အက္ပ္ မ်ားကို မြမ္းမံေပးႏိုင္သည္။ </string>
+
+
+    <!-- Battery saver notification title. [CHAR LIMIT=60]-->
+    <string name="battery_saver_notification_title">ဘက္ထရီ ေခြ်တာသူ ဖြင့္ထား</string>
+
+    <!-- Battery saver notification text. [CHAR LIMIT=60] -->
+    <string name="battery_saver_notification_text">လုပ္ကိုင္မႈကို ေလွ်ာ့ခ်လ်က္ ေနာက္ခံ ေဒတာကို ကန္႔သတ္သည္</string>
+
+    <!-- Battery saver notification action text. [CHAR LIMIT=60] -->
+    <string name="battery_saver_notification_action_text">ဘက္ထရီ ေခြ်တာမႈကို ပိတ္ထားရန္</string>
+
+    <!-- Battery level for expanded quick settings [CHAR LIMIT=2] -->
+    <string name="battery_level_template"><xliff:g id="LEVEL">%d</xliff:g>%%</string>
+
+    <!-- Text shown in place of notification contents when the notification is hidden on a secure lockscreen -->
+    <string name="notification_hidden_text">အေၾကာင္းအရာမ်ား ဝွက္ထား</string>
+
+    <!-- Media projection permission dialog warning text. [CHAR LIMIT=NONE] -->
+    <string name="media_projection_dialog_text"><xliff:g id="APP_SEEKING_PERMISSION">%s</xliff:g> က သင္၏ မ်က္ႏွာျပင္ ေပၚမွာ ျပသထားသည့္ အရာတိုင္းကို စတင္ ဖမ္းယူမည္။</string>
+
+    <!-- Media projection permission dialog permanent grant check box. [CHAR LIMIT=NONE] -->
+    <string name="media_projection_remember_text">ေနာက္ထပ္ မျပပါႏွင့္</string>
+
+    <!-- The text to clear all notifications. [CHAR LIMIT=60] -->
+    <string name="clear_all_notifications_text">အားလံုး ရွင္းပစ္ပါ</string>
+
+    <!-- Media projection permission dialog action text. [CHAR LIMIT=60] -->
+    <string name="media_projection_action_text">ယခု စတင္ပါ</string>
+
+    <!-- Text which is shown in the notification shade when there are no notifications. [CHAR LIMIT=30] -->
+    <string name="empty_shade_text">အေၾကာင္းၾကားခ်က္မ်ား မရွိ</string>
+
+    <!-- Task Manager -->
+    <string name="tasklistview_title">လုပ္ေဆာင္ခ်က္ မန္ေနဂ်ာ</string>
+    <string name="message_switch_fail">ဤလုပ္ေဆာင္ခ်က္သုိ႔ မေျပာင္းႏုိင္ပါ၊ ၾကားခံ မရွိေသာေၾကာင့္ ျဖစ္သည္။</string>
+    <string name="tasklist_killall">အားလံုးကုိ သတ္ပါ</string>
+    <string name="tasklist_stopall">အားလံုးကို ရပ္ပစ္ပါ</string>
+    <string name="tasklist_stop">"ရပ်ရန်"</string>
+    <string name="tasklist_memory_usage">"အလြတ္/စုစုေပါင္း မွတ္ဥာဏ္ - [<xliff:g id="number">%s</xliff:g>] / [<xliff:g id="name">%s</xliff:g>]"</string>
+    <string name="message_keep_one_launcher">မူလ လႈပ္ရွားမႈတစ္ခုကုိ အနည္းဆံုး ထားရွိသင့္သည္!</string>
+
+    <!-- Footer device owned text [CHAR LIMIT=50] -->
+    <string name="device_owned_footer">ကိရိယာကို ေစာင့္ၾကပ္ ႏိုင္ပါသည္</string>
+
+    <!-- Footer profile owned text [CHAR LIMIT=50] -->
+    <string name="profile_owned_footer">ပ႐ိုဖိုင္ကို ေစာင့္ၾကပ္ႏိုင္သည္</string>
+
+    <!-- Footer vpn present text [CHAR LIMIT=50] -->
+    <string name="vpn_footer">ကြန္ရက္ကို ေစာင့္ၾကည့္ႏိုင္ပါသည္</string>
+
+    <!-- Monitoring dialog title for device owned devices [CHAR LIMIT=35] -->
+    <string name="monitoring_title_device_owned">ကိရိယာကို ေစာင့္ၾကည့္ျခင္း</string>
+
+    <!-- Monitoring dialog title for profile owned devices [CHAR LIMIT=35] -->
+    <string name="monitoring_title_profile_owned">ပ႐ိုဖိုင္ ေစာင့္ၾကည့္ျခင္း</string>
+
+    <!-- Monitoring dialog title for normal devices  [CHAR LIMIT=35]-->
+    <string name="monitoring_title">ကြန္ရက္ကို ေစာင့္ၾကပ္ျခင္း</string>
+
+    <!-- Monitoring dialog disable vpn button [CHAR LIMIT=30] -->
+    <string name="disable_vpn">VPN ကို ပိတ္ထားရန္</string>
+
+    <!-- Monitoring dialog disconnect vpn button [CHAR LIMIT=30] -->
+    <string name="disconnect_vpn">VPN ကို အဆက္ျဖတ္ရန္</string>
+
+    <!-- Monitoring dialog device owner body text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_device_owned">ဤစက္ပစၥည္းကို စီမံခန္႔ခြဲသူ:\\n<xliff:g id="ORGANIZATION">%1$s</xliff:g>\\n\\nသင့္အက္ဒ္မင္သည္ သင့္စက္ပစၥည္းႏွင့္ အီးေမးမ်ား၊ အက္ပ္ မ်ား ႏွင့္ လံုၿခံဳသည့္ဝက္ဘ္ဆိုက္ အပါအဝင္ ကြန္ရက္ လႈပ္ရွားမႈမ်ားကို ေစာင့္ၾကည့္ႏိုင္သည္။\\n\\nေနာက္ထပ္အခ်က္အလက္မ်ားအတြက္၊ သင့္အက္ဒ္မင္ကို ဆက္သြယ္ပါ။</string>
+
+    <!-- Monitoring dialog non-legacy VPN text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_vpn">သင္ \\<xliff:g id="APPLICATION">%1$s</xliff:g>\\ ကို VPN စတင္သံုးခြင့္ေပးလိုက္သည္။ \\n\\n ဤ အက္ပ္ သည္ သင့္စက္ပစၥည္းႏွင့္ အီးေမးမ်ား၊ အက္ပ္ မ်ား ႏွင့္ လံုၿခံဳသည့္ဝက္ဘ္ဆိုက္ အပါအဝင္ ကြန္ရက္ လႈပ္ရွားမႈမ်ားကို ေစာင့္ၾကည့္ႏိုင္သည္။</string>
+
+    <!-- Monitoring dialog legacy VPN text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_legacy_vpn">VPN (\\<xliff:g id="APPLICATION">%1$s</xliff:g>\\) ကို သင္ခ်ိတ္ဆက္မိ၏။\\n\\nသင့္ VPN ဝန္ေဆာင္မႈေပးသူသည္ သင့္စက္ပစၥည္းႏွင့္ အီးေမးမ်ား၊ အက္ပ္ မ်ား ႏွင့္ လံုၿခံဳသည့္ဝက္ဘ္ဆိုက္ အပါအဝင္ ကြန္ရက္ လႈပ္ရွားမႈမ်ားကို ေစာင့္ၾကည့္ႏိုင္သည္။</string>
+
+    <!-- Monitoring dialog non-legacy VPN with device owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_vpn_device_owned">ဤကိရိယာကို စီမံကြပ္ကဲသူမွာ:\\n<xliff:g id="ORGANIZATION">%1$s</xliff:g>\\n\\nသင္၏ စီမံအုပ္ခ်ဳပ္သူက သင္၏ ကြန္ရက္ လႈပ္ရွားမႈကို၊ အီးေမးလ္မ်ား၊ အက္ပ္ မ်ား ႏွင့္ လံုၿခံဳသည့္ ဝက္ဘ္ဆိုက္မ်ား အပါအဝင္ကို၊ ေစာင့္ၾကပ္ ႏိုင္ပါသည္။ အခ်က္အလက္မ်ား ပိုၿပီး ရယူရန္၊ သင္၏ စီမံအုပ္ခ်ဳပ္သူကို ဆက္သြယ္ပါ။\\n\\nထို႔အျပင္ သင္သည္ \\<xliff:g id="APPLICATION">%2$s</xliff:g>\\ အား VPN ခ်ိတ္ဆက္မႈ စဖြင့္လုပ္ကိုင္ရန္ ခြင့္ျပဳခဲ့သည္။ ဤ  အက္ပ္ကပါ သင္၏ ကြန္ရက္ လႈပ္ရွားမႈကို ေစာင့္ၾကည့္ႏိုင္ပါသည္။</string>
+
+    <!-- Monitoring dialog legacy VPN with device owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_legacy_vpn_device_owned">ဤကိရိယာကို စီမံကြပ္ကဲသူမွာ:\\n<xliff:g id="ORGANIZATION">%1$s</xliff:g>\\n\\nသင္၏  စီမံအုပ္ခ်ဳပ္သူက သင္၏ ကြန္ရက္ လႈပ္ရွားမႈကို၊ အီးေမးလ္မ်ား၊ အက္ပ္ မ်ား ႏွင့္ လံုၿခံဳသည့္ ဝက္ဘ္ဆိုက္မ်ား အပါအဝင္ကို၊ ေစာင့္ၾကပ္ ႏိုင္ပါသည္။ အခ်က္အလက္မ်ား ပိုၿပီး ရယူရန္၊ သင္၏ စီမံအုပ္ခ်ဳပ္သူကို ဆက္သြယ္ပါ။\\n\\nထို႔အျပင္၊ သင္သည္ VPN  (\\<xliff:g id="APPLICATION">%2$s</xliff:g>\\) သို႔ ခ်ိတ္ဆက္ထားသည္။ သင္၏ VPN ဝန္ေဆာင္မႈကို စီမံေပးသူကပါ ကြန္ရက္ လႈပ္ရွားမႈမ်ားကို ေစာင့္ၾကည့္ႏိုင္ေသးသည္။</string>
+
+    <!-- Monitoring dialog profile owner body text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_profile_owned">ဤပ႐ိုဖိုင္ကို စီမံကြပ္ကဲေပးသူ:\\n<xliff:g id="ORGANIZATION">%1$s</xliff:g>\\n\\nသင္၏ စီမံအုပ္ခ်ဳပ္သူသည္ သင္၏ ကိရိယာ ႏွင့္ ကြန္ရက္ လႈပ္ရွားမႈမ်ားကို၊ အီးေမးလ္မ်ား၊ အက္ပ္ မ်ား ႏွင့္ လံုၿခံဳသည့္ ဝက္ဘ္ဆိုက္မ်ား အပါအဝင္ကို၊ ေစာင့္ၾကပ္ႏိုင္သည္။ \\n\\n ေနာက္ထပ္ သိလိုလွ်င္၊ သင္၏ စီမံအုပ္ခ်ဳပ္သူကို ဆက္သြယ္ပါ။</string>
+
+    <!-- Monitoring dialog device and profile owner body text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_device_and_profile_owned">ဤကိရိယာကို စီမံကြပ္ကဲေပးသူ:\\n<xliff:g id="ORGANIZATION_0">%1$s</xliff:g>\\nသင့္ ပ႐ိုဖိုင္ကို စီမံကြပ္ကဲေပးသူ:\\n<xliff:g id="ORGANIZATION_1">%2$s</xliff:g>\\n\\nသင္၏ စီမံအုပ္ခ်ဳပ္သူသည္ သင္၏ ကိရိယာ ႏွင့္ ကြန္ရက္ လႈပ္ရွားမႈမ်ားကို၊ အီးေမးလ္မ်ား၊ အက္ပ္ မ်ား ႏွင့္ လံုၿခံဳသည့္ ဝက္ဘ္ဆိုက္မ်ား အပါအဝင္ကို၊ ေစာင့္ၾကပ္ႏိုင္သည္။\\n\\nေနာက္ထပ္ သိလိုလွ်င္၊ သင္၏ စီမံအုပ္ခ်ဳပ္သူကို ဆက္သြယ္ပါ။</string>
+
+    <!-- Monitoring dialog non-legacy VPN with profile owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_vpn_profile_owned">ပ႐ိုဖိုင္ကို စီမံေပးသူ:\\n<xliff:g id="ORGANIZATION">%1$s</xliff:g>\\n\\nသင့္ စီမံအုပ္ခ်ဳပ္သူက သင့္ ကိရိယာ ႏွင့္ ကြန္ရက္ လႈပ္ရွားမႈကို၊ အီးေမးလ္မ်ား၊ အက္ပ္ မ်ား ႏွင့္ လံုၿခံဳသည့္ ဝက္ဘ္ဆိုက္မ်ား အပါအဝင္၊ ေစာင့္ၾကပ္ႏိုင္သည္။ ထပ္ သိလိုလွ်င္၊ သင့္ စီမံအုပ္ခ်ဳပ္သူကို ဆက္သြယ္ပါ။\\n\\n သင္သည္ \\<xliff:g id="APPLICATION">%2$s</xliff:g>\\ အား VPN ခ်ိတ္ဆက္မႈ ထူေထာင္ခြင့္ ေပးခဲ့သည္။ ဤအက္ပ္ကပါ ကြန္ရက္ လႈပ္ရွားမႈကို ေစာင့္ၾကပ္ႏိုင္သည္။</string>
+
+    <!-- Monitoring dialog legacy VPN with profile owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_legacy_vpn_profile_owned">ပ႐ိုဖိုင္ကို စီမံေပးသူ:\\n<xliff:g id="ORGANIZATION">%1$s</xliff:g>\\n\\nသင့္စီမံအုပ္ခ်ဳပ္သူက သင့္ ကိရိယာ ႏွင့္ ကြန္ရက္ လႈပ္ရွားမႈ၊ အီးေမးလ္မ်ား၊ အက္ပ္ မ်ား ႏွင့္ လံုၿခံဳသည့္ ဝက္ဘ္ဆိုက္မ်ား အပါအဝင္ကို ေစာင့္ၾကပ္ႏိုင္သည္။ ထပ္ သိလိုလွ်င္၊ သင့္စီမံအုပ္ခ်ဳပ္သူကို ဆက္သြယ္ပါ။\\n\\nသင္သည္ VPN (\\<xliff:g id="APPLICATION">%2$s</xliff:g>\\) သို႔ပါ ခ်ိတ္ထားသည္။ သင္၏ VPN စီမံေပးသူကပါ ကြန္ရက္ လႈပ္ရွားမႈကို ေစာင့္ၾကပ္ႏိုင္သည္။</string>
+
+    <!-- Monitoring dialog non-legacy VPN with device and profile owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_vpn_device_and_profile_owned">ကိရိယာကို စီမံေပးသူ:\\n<xliff:g id="ORGANIZATION_0">%1$s</xliff:g>\\nသင့္ပ႐ိုဖိုင္ကို စီမံေပးသူ:\\n<xliff:g id="ORGANIZATION_1">%2$s</xliff:g>\\n\\nသင့္စီမံအုပ္ခ်ဳပ္သူသည္ သင့္ ကိရိယာ ႏွင့္ ကြန္ရက္ လႈပ္ရွားမႈ၊ အီးေမးလ္မ်ား၊ အက္ပ္ မ်ား ႏွင့္ လံုၿခံဳသည့္ ဝက္ဘ္ဆိုက္မ်ား အပါအဝင္ကို ေစာင့္ၾကပ္ႏိုင္သည္။\\n\\nသင္သည္ \\<xliff:g id="APPLICATION">%3$s</xliff:g>\\အား VPN ခ်ိတ္ဆက္မႈ ထူေထာင္ခြင့္ ေပးခဲ့သည္။ ဤအက္ပ္ကပါ ကြန္ရက္ လႈပ္ရွားမႈကို ေစာင့္ၾကပ္ႏိုင္သည္။</string>
+
+    <!-- Monitoring dialog legacy VPN with device and profile owner text [CHAR LIMIT=400] -->
+    <string name="monitoring_description_legacy_vpn_device_and_profile_owned">ဤကိရိယာ စီမံေပးသူ:\\n<xliff:g id="ORGANIZATION_0">%1$s</xliff:g>\\nသင့္ ပ႐ိုဖိုင္ စီမံေပးသူ:\\n<xliff:g id="ORGANIZATION_1">%2$s</xliff:g>\\n\\n စီမံအုပ္ခ်ဳပ္သူသည္ သင့္ ကိရိယာ ႏွင့္ ကြန္ရက္ လႈပ္ရွားမႈ၊ အီးေမးလ္မ်ား၊ အက္ပ္ မ်ား ႏွင့္ လံုၿခံဳသည့္ ဝက္ဘ္ဆိုက္မ်ား အပါအဝင္ကို ေစာင့္ၾကပ္ႏိုင္သည္။\\n\\nထပ္ သိလိုလွ်င္၊ သင့္စီမံအုပ္ခ်ဳပ္သူကို ဆက္သြယ္ပါ။ သင္သည္ VPN (\\<xliff:g id="APPLICATION">%3$s</xliff:g>\\) သို႔ပါ ခ်ိတ္ထားသည္။ သင္၏ VPN စီမံေပးသူကပါ ကြန္ရက္ လႈပ္ရွားမႈကို ေစာင့္ၾကပ္ႏိုင္သည္။</string>
+
+    <!-- Indication on the keyguard that appears when the user disables trust agents until the next time they unlock manually. [CHAR LIMIT=NONE] -->
+    <string name="keyguard_indication_trust_disabled">သင္က လက္ျဖင့္ ေသာ့မဖြင့္မခ်င္း ကိရိယာမွာ ေသာ့ပိတ္လ်က္ ရွိေနမည္</string>
+
+    <!-- Title of notification educating the user about enabling notifications on the lockscreen. [CHAR LIMIT=40] -->
+    <string name="hidden_notifications_title">အေၾကာင္းၾကားခ်က္မ်ား ျမန္ျမန္ရရန္</string>
+
+    <!-- Body of notification educating the user about enabling notifications on the lockscreen. [CHAR LIMIT=60] -->
+    <string name="hidden_notifications_text">မဖြင့္ခင္ ၄င္းတို႔ကို ၾကည့္ပါ</string>
+
+    <!-- Cancel action for notification educating the user about enabling notifications on the lockscreen. [CHAR LIMIT=20] -->
+    <string name="hidden_notifications_cancel">မလိုအပ္ပါ</string>
+
+    <!-- continue action for notification educating the user about enabling notifications on the lockscreen. [CHAR LIMIT=20] -->
+    <string name="hidden_notifications_setup">သတ္မွတ္ရန္</string>
+
+    <!-- Accessibility string for current zen mode and selected exit condition. A template that simply concatenates existing mode string and the current condition description. [CHAR LIMIT=20] -->
+    <string name="zen_mode_and_condition"><xliff:g id="ZEN_MODE">%1$s</xliff:g>။ <xliff:g id="EXIT_CONDITION">%2$s</xliff:g></string>
+    <string name="high_definiation_voice">(HD)</string>
+
+    <!-- Screen pinning dialog title. -->
+    <string name="screen_pinning_title">ဖန္သားျပင္ကုိ တြဲၿပီးျဖစ္သည္</string>
+    <!-- Screen pinning dialog description. -->
+    <string name="screen_pinning_description">၎ကုိ တြဲထားျခင္းမွ ျဖဳတ္သည္အထိ ျမင္ေနရမည္။ တြဲထားျခင္းကုိ ျဖဳတ္ရန္ ေနာက္သုိ႔ႏွင့္ အက်ဥ္းကုိ ထိၿပီး တၿပိဳင္တည္း ကုိင္ထားပါ။</string>
+    <!-- Screen pinning dialog description when in accessibility mode. -->
+    <string name="screen_pinning_description_accessible">၎ကုိ တြဲထားျခင္းမွ ျဖဳတ္သည္အထိ ျမင္ေနရမည္။ တြဲထားျခင္းကုိ ျဖဳတ္ရန္ ေနာက္သုိ႔႔ႏွင့္ အက်ဥ္းကုိ ထိၿပီး ကုိင္ထားပါ။</string>
+    <!-- Screen pinning positive response. -->
+    <string name="screen_pinning_positive">ရပါၿပီ</string>
+    <!-- Screen pinning negative response. -->
+    <string name="screen_pinning_negative">မလိုအပ္ပါ</string>
+
+    <!-- Hide quick settings tile confirmation title -->
+    <string name="quick_settings_reset_confirmation_title"><xliff:g id="tile_label" example="Hotspot">%1$s</xliff:g> ကုိဝွက္ထားမည္လား?</string>
+
+    <!-- Hide quick settings tile confirmation message -->
+    <string name="quick_settings_reset_confirmation_message">ဆက္တင္ထဲတြင္ ၎ကုိ ေနာက္တစ္ႀကိမ္ ျပန္ဖြင့္သည့္အခါ ျပန္ေပၚလာလိမ့္မည္။</string>
+
+    <!-- Hide quick settings tile confirmation button -->
+    <string name="quick_settings_reset_confirmation_button">ေဖ်ာက္ထားမည္</string>
+</resources>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.borqs.videocall" android:versionCode="1"
+      android:versionName="1.0.0">
+
+    <permission android:description="@string/perm_videocall_camera_desc"
+        android:label="@string/perm_videocall_camera_label"
+        android:name="com.qti.permission.VT_CAMERA"
+        android:protectionLevel="signatureOrSystem"/>
+
+    <uses-permission android:name="com.qti.permission.VT_CAMERA"/>
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+	<uses-permission android:name="android.permission.CALL_PHONE"/>
+	<uses-permission android:name="android.permission.READ_CONTACTS"/>
+	<uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.SEND_SMS"/>
+	<uses-permission android:name="android.permission.WRITE_SMS"/>
+	<uses-permission android:name="android.permission.READ_SMS"/>
+	<uses-permission android:name="android.permission.STATUS_BAR" />
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER"/>
+    <uses-permission android:name="android.permission.DEVICE_POWER"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="org.codeaurora.permission.ACCESS_CSVT_SERVICE" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <uses-permission android:name="com.qualcomm.permission.INTERFACE_RADIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+	<application android:name="VideoCallApp"
+		android:icon="@drawable/launch_vt_icon"
+		 android:label="@string/app_name"
+		android:description="@string/artTheme" >
+		<uses-library android:name="videocallapi" android:required="true">
+        </uses-library>
+		<activity android:name="VideoCallScreen"
+			android:label="@string/phoneIconLabel"
+            android:configChanges="orientation|keyboardHidden"
+			android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
+			android:screenOrientation="nosensor"
+			android:launchMode="singleInstance">
+			<intent-filter>
+				<action
+					android:name="com.borqs.videocall.action.LaunchVideoCallScreen" />
+				<action
+					android:name="art.videocall.action.LaunchVideoCallScreen" />
+				<category
+					android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:label="@string/makeVideoCall">
+                <action android:name="android.intent.action.VIEW" />
+<!--                <action android:name="android.intent.action.DIAL" />-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tel" />
+            </intent-filter>
+            <!--intent-filter android:icon="@drawable/launch_vt_icon" android:priority="0">
+                <action android:name="android.intent.action.CALL_PRIVILEGED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="tel" />
+            </intent-filter-->
+        </activity>
+
+        <activity
+            android:name="FallBackSetting"
+            android:theme="@android:style/Theme.Holo.DialogWhenLarge"
+            android:label="@string/fallback_setting_label"
+            android:screenOrientation="nosensor">
+            <intent-filter>
+                <action android:name="com.borqs.videocall.FallBackSetting" />
+                <category android:name="android.intent.category.MAIN" />
+				<category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="VTCallForwardOptions"
+            android:label="@string/labelVTCF"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@android:style/Theme.Holo.Light.DialogWhenLarge">
+            <intent-filter>
+                <action android:name="com.borqs.videocall.VTCallForwardOptions" />
+                <category android:name="android.intent.category.MAIN" />
+				<category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="VTImageReplaceSetting"
+            android:label="@string/image_replace_setting_label">
+        </activity>
+
+	   <activity
+            android:name="FallBackAlertDialog"
+            android:theme="@android:style/Theme.Holo.Light.DialogWhenLarge"
+			android:screenOrientation="nosensor">
+        </activity>
+	   <activity
+            android:name="GeneralModeAlertDialog"
+			android:theme="@android:style/Theme.Holo.Light.DialogWhenLarge">
+        </activity>
+		<activity android:name="FlyingModeAlertDialog"
+                        android:theme="@android:style/Theme.Holo.Light.DialogWhenLarge">
+        </activity>
+
+        <activity
+            android:name="VTImageReplaceSetting"
+            android:theme="@android:style/Theme.Holo.Light.DialogWhenLarge"
+            android:label="@string/image_replace_setting_label"
+            android:screenOrientation="nosensor">
+            <intent-filter>
+                <action android:name="com.borqs.videocall.VTImageReplaceSetting" />
+                <category android:name="android.intent.category.MAIN" />
+				<category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="WaitingFallBackDialog"
+            android:configChanges="orientation|keyboardHidden"
+		android:label="@string/waiting_fallback_label"
+		android:theme="@android:style/Theme.Holo.Light.DialogWhenLarge">
+        </activity>
+
+		<service android:name="VTService" android:exported="true" />
+		<service android:name="IPServerService" android:exported="true" />
+		<receiver android:name="IPServerReceiver">
+			<intent-filter>
+				<action
+					android:name="com.borqs.videocall.action.StartupVTIpConnect" />
+				<action
+					android:name="com.borqs.videocall.action.ShutdownVTIpConnect" />
+				<category
+					android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</receiver>
+
+		<receiver android:name="VTCallReceiver">
+			<intent-filter>
+				<action android:name="borqs.intent.action.NEW_CSVT_RINGING_CONNECTION" />
+				<action android:name="com.borqs.videocall.action.StopVTCall" />
+				<action android:name="com.borqs.videocall.action.answerCall" />
+				<action android:name="org.codeaurora.PowerKeyDown.Mute" />
+				<action android:name="com.borqs.videocall.action.clearMissedVTCall" />
+				<category
+					android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+			<intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+		</receiver>
+
+		<receiver android:name="com.borqs.videocall.VideoCallScreen$VTIncomingCallReceiver">
+			<intent-filter>
+                <action android:name="qualcomm.intent.action.NEW_CSVT_RINGING_CONNECTION" />
+				<category
+					android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+		</receiver>
+
+		<!--receiver android:name="VTNotificationReceiver">
+			<intent-filter>
+				<action android:name="com.borqs.videocall.action.CloseNotification" />
+				<category
+					android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+
+			<intent-filter>
+				<action android:name="com.borqs.videocall.action.UpdateNotification" />
+				<category
+					android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</receiver-->
+
+
+			<activity
+            android:name="VTCallFeatureSetting"
+            android:theme="@android:style/Theme.Holo.Light.DialogWhenLarge"
+            android:label="@string/video_call_setting"
+            android:screenOrientation="nosensor">
+            <intent-filter>
+                <action
+					android:name="com.borqs.videocall.action.LaunchVideoCallSettingsScreen" />
+                 <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="VTGsmUmtsAdditionalCallOptions"
+                android:label="@string/labelGSMMore"
+                android:configChanges="orientation|screenSize|keyboardHidden"
+                android:theme="@android:style/Theme.Holo.Light.DialogWhenLarge">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

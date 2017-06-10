@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- used in various places to indicate there is one song for a given artist or album -->
+    <string name="onesong">"Wimbo 1"</string>
+    <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
+    <plurals name="Nsongs">
+        <item quantity="other">"Nyimbo <xliff:g id="COUNT">%d</xliff:g>"</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other">"<xliff:g id="COUNT_FOR_ARTIST">%2$d</xliff:g>ya nyimbo <xliff:g id="TOTAL_COUNT">%1$d</xliff:g>"</item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+        <!-- number of albums is one -->
+        <item quantity="one">"Albamu 1"</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other">"Albamu <xliff:g id="COUNT">%d</xliff:g>"</item>
+    </plurals>
+
+    <!--
+    This string is used as the format string in a String.format call,
+    and 5 additional arguments are available for printing:
+    1 - hours
+    2 - minutes
+    3 - minutes%60
+    4 - seconds
+    5 - second%60
+    -->
+    <skip/>
+    <!-- Do not translate. Duration format for duration < 1 hour -->
+    <string translatable="false" name="durationformatshort"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    <!-- Do not translate. Duration format for duration >= 1 hour -->
+    <string translatable="false" name="durationformatlong"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    <!-- Menu item that takes the user back to the top level screen of the music player -->
+    <string name="goto_start">"Maktaba"</string>
+    <!-- Menu item that switches the music player in to party shuffle mode -->
+    <string name="party_shuffle">"Mchanganyiko wa karamu"</string>
+    <!-- Menu item that switches the music player out of party shuffle mode -->
+    <string name="party_shuffle_off">"Kichangaya pati kimeondolewa"</string>
+    <!-- Menu item that clear all playlists mode -->
+    <string name="clear_all_playlists">Futa orodha zote za kucheza</string>
+    <!-- Menu item that deletes the currently selected item, which might be a single song, or a collection of songs.
+         The user will be prompted to confirm before deletion actually takes place -->
+    <string name="delete_item">"Futa"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in shuffle mode -->
+    <string name="shuffle_all">"Changanya zote"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in list order -->
+    <string name="play_all">"Cheza zote"</string>
+    <!-- Menu item to play song in music -->
+    <string name="open_in_music">Fungua katika muziki</string>
+    <!-- Menu item to share audio or video -->
+    <string name="share">Shiriki</string>
+
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc">"Futa kabisa nyimbo zote za <xliff:g id="ARTIST">%s</xliff:g> kutoka hifadhi ya kadi ya SD?"</string>
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc_nosdcard">"Futa kabisa nyimbo zote za <xliff:g id="ARTIST">%s</xliff:g> kutoka hifadhi ya USB?"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc">"Futa kabisa albamu nzima \"<xliff:g id="ALBUM">%s</xliff:g>\" kutoka kwa kadi ya SD?"</string>
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc_nosdcard">"Futa kabisa albamu nzima \"<xliff:g id="ALBUM">%s</xliff:g>\" kutoka kwa hifadhi ya USB?"</string>
+
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc">"Futa kabisa \"<xliff:g id="SONG">%s</xliff:g>\" kutoka kwa kadi ya SD?"</string>
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc_nosdcard">"Futa kabisa \"<xliff:g id="SONG">%s</xliff:g>\" kutoka hifadhi ya USB?"</string>
+
+    <!-- Delete confirmation dialog, confirmation button text -->
+    <string name="delete_confirm_button_text">"Sawa"</string>
+    <!-- Toast confirming that song(s) was/were deleted. -->
+    <plurals name="NNNtracksdeleted">
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">"Wimbo 1 ulifutwa."</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other">"Nyimbo <xliff:g id="SONGS_TO_DELETE">%d</xliff:g> zilifutwa."</item>
+    </plurals>
+
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning">"Inachuja kadi ya SD"</string>
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning_nosdcard">"Inachanganua hifadhi ya USB..."</string>
+
+    <!-- title of the "current playlist" screen when not in party shuffle mode -->
+    <string name="nowplaying_title">"Inacheza sasa hivi"</string>
+    <!-- title of the "current playlist" screen when in party shuffle mode-->
+    <string name="partyshuffle_title">"Kichanganya pati"</string>
+    <!-- Artist screen title -->
+    <string name="artists_title">"Wasanii"</string>
+    <!-- Category label on Library screen -->
+    <string name="albums_menu">"Albamu"</string>
+    <!-- Albums screen title -->
+    <string name="albums_title">"Albamu"</string>
+    <!-- Category label on Library screen -->
+    <string name="tracks_menu">"Nyimbo"</string>
+    <!-- Songs screen title -->
+    <string name="tracks_title">"Nyimbo"</string>
+    <!-- Category label on Library screen -->
+    <string name="folder_menu">Folda</string>
+    <!-- Folder screen title -->
+    <string name="folders_title">Folda</string>
+    <!-- Category label on Library screen -->
+    <string name="playlists_menu">"Orodha za kucheza"</string>
+    <!-- Playlists screen title -->
+    <string name="playlists_title">"Orodha za kucheza"</string>
+    <!-- Videos screen title -->
+    <string name="videos_title">"Video"</string>
+    <!-- All media screen title -->
+    <string name="all_title">"Midia zote"</string>
+    <!-- Category label on Library screen -->
+    <string name="browse_menu">"Wasanii"</string>
+    <!-- Library screen, menu item -->
+    <string name="search_title">"Tafuta"</string>
+    <!-- Title of screen when there are no songs, or if the SD card is busy -->
+    <string name="no_tracks_title">"Hakuna nyimbo"</string>
+    <!-- Title of screen when there are no videos, or if the SD card is busy -->
+    <string name="no_videos_title">"Hakuna video"</string>
+    <!-- Title of screen when there are no playlists, or if the SD card is busy -->
+    <string name="no_playlists_title">"Hakuna orodha za kucheza"</string>
+    <!-- Playlist context menu item to delete the selected playlist. -->
+    <string name="delete_playlist_menu">"Futa"</string>
+    <!-- Playlist context menu item to edit the selected playlist -->
+    <string name="edit_playlist_menu">"Hariri"</string>
+    <!-- Playlist context menu item to rename the selected playlist-->
+    <string name="rename_playlist_menu">"Ipe jina jipya"</string>
+    <!-- Dialog box message shown when clearing all playlists-->
+    <string name="clear_all_playlists_message">Je, unataka kufuta orodha zote za kucheza?</string>
+    <!-- Dialog box message shown when deleting a playlist-->
+    <string name="delete_playlist_message">Je, unataka kufuta \"<xliff:g id="name">%s</xliff:g>\"?</string>
+    <!-- Dialog box button -->
+    <string name="delete_playlist_button_ok">Sawa</string>
+    <string name="delete_playlist_button_cancel">Ghairi</string>
+    <!-- Transient popup message shown after deleting a playlist -->
+    <string name="playlist_deleted_message">"Orodha ya kucheza imefutwa"</string>
+    <!-- Transient popup message shown after renaming a playlist -->
+    <string name="playlist_renamed_message">"Orodha ya kucheza imepewa jina jipya la."</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in list view -->
+    <string name="recentlyadded">"Iliyoongezwa karibuni"</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in title bar of songs list -->
+    <string name="recentlyadded_title">"Iliyoongezwa karibuni"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in list view -->
+    <string name="podcasts_listitem">"Podikasti"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in title bar of songs list -->
+    <string name="podcasts_title">"Podikasti"</string>
+    <!-- all recordings will show up in the media database in a playlist with thiis name -->
+    <string name="audio_db_playlist_name">Rekodi zangu</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title">"Hakuna kadi ya SD"</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title_nosdcard">"Hakuna hifadhi ya USB"</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message">"Simu yako haijaingizwa kadi ya SD."</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message_nosdcard">"Simu yako haina hifadhi ya USB."</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title">"Kadi ya SD haipatikani"</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title_nosdcard">"Hifadhi ya USB haipatikani"</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message">"Kadi yako ya SD ina shughuli"</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message_nosdcard">"Hifadhi yako ya USB ina shughuli."</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title">"Hitilafu ya kadi ya SD"</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title_nosdcard">"Hitilafu ya hifadhi ya USB"</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message">"Hitilafu imetokea kwenye kadi yako ya SD."</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message_nosdcard">"Hitilafu imetokea kwenye hifadhi yako ya USB."</string>
+    <!-- Default name of artist that doesn\'t have a name in the metadata -->
+    <string name="unknown_artist_name">"Msanii Asiyejulikana"</string>
+    <!-- Default name of album that doesn\'t have a name in the metadata -->
+    <string name="unknown_album_name">"Allbamu isiyojulikana"</string>
+    <!-- Default name of folder that doesn\'t have a path in the metadata -->
+    <string name="unknown_folder_name">Njia isiyojulikana</string>
+    <!-- Default name of folder that doesn\'t have a count in the metadata -->
+    <string name="unknown_folder_count">Hesabu lisilojulikana</string>
+    <!-- Toast after turning shuffle on -->
+    <string name="shuffle_on_notif">"Kichanganya kimefunguliwa"</string>
+    <!-- Toast after turning shuffle off -->
+    <string name="shuffle_off_notif">"Kuchanganya kumezimwa."</string>
+    <!-- Toast after turning repeat off -->
+    <string name="repeat_off_notif">"Umeondoa kurudia"</string>
+    <!-- Toast after turning single repeat on -->
+    <string name="repeat_current_notif">"Inarudia wimbo huu"</string>
+    <!-- Toast after turning repeat all on -->
+    <string name="repeat_all_notif">"Inarudia nyimbo zote."</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu">"Tumia kama mkirizo"</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short">"Tumia kama mlio"</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set">"\"<xliff:g id="NAME">%s</xliff:g>\" weka kama mlio wa simu."</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu_1">Tumia kama mlio wa sloti 1</string>
+    <string name="ringtone_menu_2">Tumia kama mlio wa sloti 2</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short_1">Tumia kama mlio 1</string>
+    <string name="ringtone_menu_short_2">Tumia kama mlio 2</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_1">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" weka kama mlio wa sloti 1.</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_2">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" weka kama mlio wa sloti 2.</string>
+    <!-- Context menu item -->
+    <string name="play_selection">"Cheza"</string>
+    <!-- Context menu item -->
+    <string name="add_to_playlist">"Ongeza kwenye Orodha ya kucheza"</string>
+    <!-- Context menu item -->
+    <string name="queue">"Orodha ya kucheza ya sasa"</string>
+    <!-- Context menu item -->
+    <string name="new_playlist">"Mpya"</string>
+    <!-- Template for newly created playlist name -->
+    <string name="new_playlist_name_template">"Orodha Mpya ya Kucheza <xliff:g id="NUMBER">%d</xliff:g>"</string>
+    <!-- Toasts after adding song(s) to playlists -->
+    <plurals name="NNNtrackstoplaylist">
+        <!-- message shown when one song was added -->
+        <item quantity="one">"Wimbo 1 umeongeza kwenye orodha ya kucheza."</item>
+        <!-- message shown when zero or more than one song was added -->
+        <item quantity="other">"Nyimbo <xliff:g id="NUMBER">%d</xliff:g> zimeongezwa kwenye orodha ya kucheza."</item>
+    </plurals>
+    <!-- Toast after selecting an empty playlist -->
+    <string name="emptyplaylist">"Orodha ya kucheza uliyocchagua haina chochote"</string>
+    <!-- Button name when saving a playlist -->
+    <string name="create_playlist_create_text">"Hifadhi"</string>
+    <!-- Button name when saving a playlist and the new playlist will overwrite an existing one -->
+    <string name="create_playlist_overwrite_text">"Hifadhi upya"</string>
+    <!-- Dialog box title -->
+    <string name="service_start_error_title">"Hitalafu ya kucheza tena"</string>
+    <!-- Dialog box message -->
+    <string name="service_start_error_msg">"Wimbo haukuweza kuchezwa."</string>
+    <!-- Dialog box button -->
+    <string name="service_start_error_button">"Sawa"</string>
+    <!-- Time span edit options that appear when editing system playlist "Recently added" -->
+    <!-- Used to indicate the number of weeks the "recently added" playlist covers in a selector widget -->
+    <string-array name="weeklist">
+        <item>"Wiki 1"</item>
+        <item>"Wiki 2"</item>
+        <item>"Wiki tatu"</item>
+        <item>"Wiki 4"</item>
+        <item>"Wiki 5"</item>
+        <item>"Wiki 6"</item>
+        <item>"Wiki 7"</item>
+        <item>"Wiki 8"</item>
+        <item>"Wiki 9"</item>
+        <item>"Wiki 10"</item>
+        <item>"Wiki 11"</item>
+        <item>"Wiki 12"</item>
+    </string-array>
+    <!-- Button name in time span picker -->
+    <string name="weekpicker_set">GOTOKA</string>
+    <!-- Title of time span picker -->
+    <string name="weekpicker_title">"Rekebisha muda"</string>
+    <!-- Do not translate. Background color for currently dragged item in playlist edit mode. -->
+    <color name="dragndrop_background">#e0103010</color>
+    <!-- Do not translate. Background color for albums in the artists list view. -->
+    <color name="expanding_child_background">#ff404040</color>
+
+    <!-- menu item to save the current list as a new playlist -->
+    <string name="save_as_playlist">"Hifadhi kama orodha ya kucheza"</string>
+    <!-- menu item to clear the current playlist -->
+    <string name="clear_playlist">"Futa orodha ya kuchezesha"</string>
+
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicbrowserlabel">"Muziki"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicshortcutlabel">"Orodha ya kucheza muziki"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediaplaybacklabel">"Muziki"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="videobrowserlabel">"Video"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediapickerlabel">"Muziki"</string>
+
+    <!-- Shown as a transient message whenever a file fails to play -->
+    <string name="playback_failed">"Santuri haihimili aina hii ya faili ya sauti."</string>
+    <!-- Shown as a transient message whenever a file fails to open -->
+    <string name="open_failed">Samahani, haiwezi kufungua faili</string>
+
+    <!-- Text for the "cancel" button in the "delete" and "create playlist" confirmation dialogs -->
+    <string name="cancel">"Ghairi"</string>
+
+    <!-- context menu item to remove the selected item from the playlist -->
+    <string name="remove_from_playlist">"Ondoa kwenye orodha ya kucheza"</string>
+
+    <!-- shown when connecting to a music stream, before it starts playing -->
+    <string name="streamloadingtext">"Inaunganisha kwa <xliff:g id="HOST">%s</xliff:g>…"</string>
+
+    <!-- title of contextual music search menu -->
+    <string name="mediasearch">"Tafuta <xliff:g id="TERM">%s</xliff:g> kwa kutumia:"</string>
+
+    <!-- Shown in the title bar while the list of artists is being retrieved in the background -->
+    <string name="working_artists">"Wasanii..."</string>
+    <!-- Shown in the title bar while the list of albums is being retrieved in the background -->
+    <string name="working_albums">"Albamu…"</string>
+    <!-- Shown in the title bar while the list of songs is being retrieved in the background -->
+    <string name="working_songs">"Nyimbo.."</string>
+    <!-- Shown in the title bar while the list of folders is being retrieved in the background -->
+    <string name="working_folders">Folda\u2026</string>
+    <!-- Shown in the title bar while the list of playlists is being retrieved in the background -->
+    <string name="working_playlists">"Orodha za kucheza…"</string>
+
+    <!-- Shown in the music picker while loading the music database. -->
+    <string name="loading">"Inapakia…"</string>
+    <!-- Menu in music picker to sort the list by track/song name. -->
+    <string name="sort_by_track">"Nyimbo"</string>
+    <!-- Menu in music picker to sort the list by album name. -->
+    <string name="sort_by_album">"Albamu"</string>
+    <!-- Menu in music picker to sort the list by artist name. -->
+    <string name="sort_by_artist">"Wasanii"</string>
+    <!--  Title of the music picker activity. -->
+    <string name="music_picker_title">"Chagua wimbo"</string>
+
+    <!-- The string used to describe Music as a searchable item within system search settings. -->
+    <string name="search_settings_description">"Wasanii, albamu na traki"</string>
+
+    <!-- Shown in the search box as a hint -->
+    <string name="search_hint">"Tafuta Muziki"</string>
+    <string name="search_hint_video">Tafuta Video</string>
+
+    <!--The fast scroll thumb will show one character from this string depending on the position in the list -->
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+
+    <!-- Text shown on widget when first loaded -->
+    <string name="widget_initial_text">"Gusa ili kuchagua muziki."</string>
+
+    <!-- Menu text for the item controlling the audio effects panel [CHAR LIMIT=15] -->
+    <string name="effectspanel">"Madoido ya sauti"</string>
+
+    <string name="duplicate_playlist_name_alert">Tayari kuna orodha ya kucheza inayoitwa \"<xliff:g id="name">%s</xliff:g>\". Tafadhali chagua jina tofauti.</string>
+    <string name="same_playlist_name_alert">Jina la orodha ya kucheza \"<xliff:g id="name">%s</xliff:g>\" halijabailishwa. Tafadhali chagua jina tofauti.</string>
+    <string name="button_ok">Sawa</string>
+    <string name="list_empty">Hakuna muziki katika orodha ya kucheza.</string>
+
+    <!-- Shown when video is played after disable Gallery app from Settings -->
+    <string name="enable_gallery_app">Video haiwezi kuchezwa, tafadhali wezesha programu ya Galari kutoka Mipangilio.</string>
+    <string name="close_music">"Mwisho"</string>
+    <string name="delete_video_item_message">Je, unataka kufuta \"<xliff:g id="name">%s</xliff:g>\"?</string>
+    <string name="video_deleted_message">Faili ya video imefutwa.</string>
+
+    <!-- Menu item that takes the user link to net to see more music -->
+    <string name="more_music">Muziki Zaidi</string>
+    <!-- Menu item that takes the user link to net to see more video -->
+    <string name="more_video">Video Zaidi</string>
+    <!--gesture control playback status-->
+    <string name="music_gesture_play">"Cheza/simamisha sikizi"</string>
+    <string name="music_gesture_prev">"Cheza wimbo wa awali"</string>
+    <string name="music_gesture_next">"Cheza wimbo unaofuata"</string>
+
+    <!-- DRM Related Strings -->
+    <string name="no_permission_for_drm">"Samahani, faili ya Drm haiwezi kushirikishwa"</string>
+    <string name="drm_license_info">Maelezo ya leseni ya Drm</string>
+    <string name="drm_ringtone_error">Huwezi kuweka faili za CD/SD kama mlio</string>
+
+</resources>

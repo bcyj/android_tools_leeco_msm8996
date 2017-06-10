@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2013 Mimer Information Technology AB, info@mimer.com -->
+<MimerSQLReplace>
+
+<!-- Begin 4.4 -->
+<!-- After parameterization, SUM(CASE flagRead WHEN :2:i2 THEN :3:i3 ELSE :4:i4 END) gives an "Operand not numeric" error -->
+<fromSQL id="GOEM441"
+		statement="SELECT mailboxKey, SUM(CASE flagRead WHEN 0 THEN 1 ELSE 0 END), SUM(CASE flagSeen WHEN 0 THEN 1 ELSE 0 END)
+FROM Message
+WHERE accountKey = ?
+GROUP BY mailboxKey">
+select mailboxKey,SUM(case flagRead when :2:i2  then cast(:3:i3 as integer) else cast(:4:i4 as integer) end),SUM(case flagSeen when :5:i5 then cast(:6:i6 as integer) else cast(:7:i7 as integer) end) from Message where (accountKey = :1:i1) group by mailboxKey
+	</fromSQL>
+
+
+<!-- group_concat() doesn't take CLOB data -->
+<fromSQL id="GOEM443"
+		statement="SELECT _id AS _id,serverId AS persistentId,'content://com.android.email.provider/uifolder/' || _id AS folderUri,displayName AS name,flags&amp;1 AS hasChildren,CASE WHEN (flags&amp;16) !=0 THEN 8 ELSE 0 END AS capabilities,3 AS syncWindow,'content://com.android.email.provider/uimessages/' || _id AS conversationListUri,'content://com.android.email.provider/uisubfolders/' || _id AS childFoldersListUri,NULL AS unseenCount,unreadCount AS unreadCount,CASE WHEN totalCount&lt;0 OR type=3 OR type=4 OR type=6 THEN messageCount ELSE totalCount END AS totalCount,'content://com.android.email.provider/uirefresh/' || _id AS refreshUri,uiSyncStatus AS syncStatus,uiLastSyncResult AS lastSyncResult,CASE type WHEN 0 THEN 2 WHEN 3 THEN 4 WHEN 4 THEN 8 WHEN 5 THEN 16 WHEN 6 THEN 32 WHEN 7 THEN 64 WHEN 9 THEN 128 WHEN 10 THEN 2048 WHEN 8 THEN 4097 ELSE 1 END AS type,CASE type WHEN 0 THEN 2130837570 WHEN 3 THEN 2130837566 WHEN 4 THEN 2130837574 WHEN 5 THEN 2130837578 WHEN 6 THEN 2130837586 WHEN 9 THEN 2130837582 ELSE -1 END AS iconResId,NULL AS notificationIconResId,NULL AS bgColor,NULL AS fgColor,'content://com.android.email.provider/uiloadmore/' || _id AS loadMoreUri,hierarchicalName AS hierarchicalDesc,NULL AS lastMessageTimestamp,case when parentKey=-1 then NULL else 'content://com.android.email.provider/uifolder/' || parentKey end AS parentUri,(SELECT group_concat(fromList) FROM (SELECT fromList FROM Message WHERE mailboxKey=Mailbox._id AND flagRead=0 GROUP BY fromList ORDER BY timeStamp DESC)) AS unreadSenders FROM Mailbox WHERE parentKey =? ORDER BY CASE type WHEN 0 THEN 0 WHEN 3 THEN 1 WHEN 4 THEN 2 WHEN 5 THEN 3 WHEN 6 THEN 4 WHEN 7 THEN 5 ELSE 10 END ,displayName COLLATE LOCALIZED ASC">
+SELECT
+    "_id"                             AS "_id",
+    serverId                          AS persistentId,
+    :2:i2||"_id"                      AS folderUri,
+    displayName                       AS name,
+    compatibility.bitand(flags,:3:i3) AS hasChildren,
+    CASE
+        WHEN ((compatibility.bitand(flags,:4:i4)) &lt;&gt; :5:i5)
+        THEN :6:i6
+        ELSE :7:i7
+    END            AS capabilities,
+    :8:i8          AS syncWindow,
+    :9:i9||"_id"   AS conversationListUri,
+    :10:i10||"_id" AS childFoldersListUri,
+    NULL           AS unseenCount,
+    unreadCount    AS unreadCount,
+    CASE
+        WHEN (totalCount &lt; :11:i11)
+        OR  (type = :12:i12)
+        OR  (type = :13:i13)
+        OR  (type = :14:i14)
+        THEN messageCount
+        ELSE totalCount
+    END              AS totalCount,
+    :15:i15||"_id"   AS refreshUri,
+    uiSyncStatus     AS syncStatus,
+    uiLastSyncResult AS lastSyncResult,
+    CASE type
+        WHEN :16:i16
+        THEN :17:i17
+        WHEN :18:i18
+        THEN :19:i19
+        WHEN :20:i20
+        THEN :21:i21
+        WHEN :22:i22
+        THEN :23:i23
+        WHEN :24:i24
+        THEN :25:i25
+        WHEN :26:i26
+        THEN :27:i27
+        WHEN :28:i28
+        THEN :29:i29
+        WHEN :30:i30
+        THEN :31:i31
+        WHEN :32:i32
+        THEN :33:i33
+        ELSE :34:i34
+    END AS type,
+    CASE type
+        WHEN :35:i35
+        THEN :36:i36
+        WHEN :37:i37
+        THEN :38:i38
+        WHEN :39:i39
+        THEN :40:i40
+        WHEN :41:i41
+        THEN :42:i42
+        WHEN :43:i43
+        THEN :44:i44
+        WHEN :45:i45
+        THEN :46:i46
+        ELSE :47:i47
+    END              AS iconResId,
+    NULL             AS notificationIconResId,
+    NULL             AS bgColor,
+    NULL             AS fgColor,
+    :48:i48||"_id"   AS loadMoreUri,
+    hierarchicalName AS hierarchicalDesc,
+    NULL             AS lastMessageTimestamp,
+    CASE
+        WHEN (parentKey = :49:i49)
+        THEN NULL
+        ELSE :50:i50||parentKey
+    END AS parentUri,
+    (
+        SELECT
+            group_concat(fromListString)
+        FROM
+            (
+                SELECT
+                    substring(fromList from 1 for 256) as fromListString
+                FROM
+                    MESSAGE
+                WHERE
+                    (
+                        mailboxKey = Mailbox."_id")
+                AND (
+                        flagRead = :51:i51)
+                GROUP BY
+                    fromListString
+                ORDER BY
+                    TIMESTAMP DESC)) AS unreadSenders
+FROM
+    Mailbox
+WHERE
+    (
+        parentKey = :1:i1)
+ORDER BY
+    CASE type
+        WHEN :52:i52
+        THEN :53:i53
+        WHEN :54:i54
+        THEN :55:i55
+        WHEN :56:i56
+        THEN :57:i57
+        WHEN :58:i58
+        THEN :59:i59
+        WHEN :60:i60
+        THEN :61:i61
+        WHEN :62:i62
+        THEN :63:i63
+        ELSE :64:i64
+    END,
+    displayName collate current_collation_2
+
+</fromSQL>
+
+<!-- End 4.4 -->
+
+<!-- Qualcomm Technologies JB replaceser -->
+
+
+<!-- Begin 4.4 -->
+<!-- Very long parameter in "? AS attachments" which was truncated -->
+<fromSQL id="QAEM441"
+		statement="SELECT Message._id AS _id,syncServerId AS serverMessageId,'content://com.android.email.provider/uimessage/' || Message._id AS messageUri,'content://com.android.email.provider/uimessage/' || Message._id AS conversationId,subject AS subject,snippet AS snippet,fromList AS fromAddress,toList AS toAddresses,ccList AS ccAddresses,bccList AS bccAddresses,replyToList AS replyToAddress,timeStamp AS dateReceivedMs,htmlContent AS bodyHtml,textContent AS bodyText,NULL AS bodyEmbedsExternalResources,0 AS refMessageId,CASE WHEN (flags&amp;1048576) !=0 THEN 1 WHEN (flags&amp;2097152) !=0 THEN 3 WHEN (flags&amp;1) !=0 THEN 2 WHEN (flags&amp;2) !=0 THEN 4 ELSE 0 END AS draftType,0 AS appendRefMessageContent,flagAttachment AS hasAttachments,'content://com.android.email.provider/uiattachments/2009?MessageLoaded=true' AS attachmentListUri,CASE WHEN (flags&amp;4) !=0 THEN 16 ELSE 0 END AS messageFlags,'0' AS alwaysShowImages,flagRead AS read,flagSeen AS seen,flagFavorite AS starred,NULL AS quotedTextStartPos,? AS attachments,NULL AS customFrom,'content://com.android.email.provider/uiaccount/' || accountKey AS messageAccountUri,NULL AS eventIntentUri,null AS spamWarningString,0 AS spamWarningLevel,0 AS spamWarningLinkType,null AS viaDomain,NULL AS isSending,flagLoaded AS messageFlagLoaded,'content://com.android.email.provider/uimessageloadmore/' || Message._id AS messageLoadMoreUri FROM Message LEFT JOIN Body ON messageKey=Message._id WHERE Message._id=?">
+select Message."_id" as "_id",syncServerId as serverMessageId,:3:i3||Message."_id" as messageUri,:4:i4||Message."_id" as conversationId,subject as subject,snippet as snippet,fromList as fromAddress,toList as toAddresses,ccList as ccAddresses,bccList as bccAddresses,replyToList as replyToAddress,timeStamp as dateReceivedMs,htmlContent as bodyHtml,textContent as bodyText,null as bodyEmbedsExternalResources,:5:i5 as refMessageId,case  when ((compatibility.bitand(flags,:6:i6)) &lt;&gt; :7:i7) then :8:i8  when ((compatibility.bitand(flags,:9:i9)) &lt;&gt; :10:i10) then :11:i11  when ((compatibility.bitand(flags,:12:i12)) &lt;&gt; :13:i13) then :14:i14  when ((compatibility.bitand(flags,:15:i15)) &lt;&gt; :16:i16) then :17:i17 else :18:i18 end as draftType,:19:i19 as appendRefMessageContent,flagAttachment as hasAttachments,:20:i20 as attachmentListUri,case  when ((compatibility.bitand(flags,:21:i21)) &lt;&gt; :22:i22) then :23:i23 else :24:i24 end as messageFlags,:25:i25 as alwaysShowImages,flagRead as read,flagSeen as seen,flagFavorite as starred,null as quotedTextStartPos,cast(:1:i1 as nvarchar(500)) as attachments,null as customFrom,:26:i26||accountKey as messageAccountUri,null as eventIntentUri,null as spamWarningString,:27:i27 as spamWarningLevel,:28:i28 as spamWarningLinkType,null as viaDomain,null as isSending,flagLoaded as messageFlagLoaded,:29:i29||Message."_id" as messageLoadMoreUri from Message left join Body on (messageKey = Message."_id") where (Message."_id" = :2:i2)
+
+
+
+</fromSQL>
+
+
+<!-- End 4.4 -->
+
+
+</MimerSQLReplace>

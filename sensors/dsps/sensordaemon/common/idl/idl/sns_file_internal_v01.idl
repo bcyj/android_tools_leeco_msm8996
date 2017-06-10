@@ -1,0 +1,141 @@
+/*****************************************************************************
+  @FILE     sns_file_internal.idl
+
+  @BRIEF    Interface to the file service on the apps processor.
+
+  @DESCRIPTION
+  Debug module provides file I/O operations for the DSPS to be performed on
+  the application processor.
+
+*****************************************************************************/
+include "sns_common_v01.idl";
+
+revision 1;
+
+const SNS_FILE_MAX_FILENAME_SIZE = 512;
+/**<  maximum number of characters in the name of a file to be opened/created */
+const SNS_FILE_MAX_MODE_SIZE = 4;
+/**<  maximum number of characters that may be included in the 'mode' field */
+const SNS_FILE_MAX_BUF_SIZE = 512;
+/**<  maximum size (in bytes) that may be written through a single write request */
+
+//============================================================================
+/** @COMMAND SNS_FILE_OPEN
+    @BRIEF This command opens a file file
+*/
+//============================================================================
+
+//! @MSG     SNS_FILE_OPEN_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory char path_name<SNS_FILE_MAX_FILENAME_SIZE>;
+  /**< Path to the file to be created/opened.  See ANSI C fopen.  Only accepts
+       alphanumeric characters and forward slashes.  Will not create new
+       directories. */
+  mandatory char mode<SNS_FILE_MAX_MODE_SIZE>;
+  /**< Mode with which to open the file.  See ANSI C fopen. */
+} sns_file_open_req_msg;
+
+//! @MSG     SNS_FILE_OPEN_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//! @BRIEF   This command is used to open a file file
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s   resp = 2;
+  optional int64 fildes;
+  /**< File descriptor of opened file */
+} sns_file_open_resp_msg;
+
+//============================================================================
+/** @COMMAND SNS_FILE_WRITE
+    @BRIEF This command writes to a file file at the current file offset,
+      per ANSI C fwrite.
+*/
+//============================================================================
+
+//! @MSG     SNS_FILE_WRITE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory int64 fildes;
+  /**< File descriptor, as returned in sns_file_open_resp_msg */
+  mandatory uint8 buf<SNS_FILE_MAX_BUF_SIZE>;
+  /**< Data to write */
+} sns_file_write_req_msg;
+
+//! @MSG     SNS_FILE_WRITE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s   resp = 2;
+  optional uint32 bytes_written;
+  /**< Number of bytes written by the write operation */
+} sns_file_write_resp_msg;
+
+//============================================================================
+/** @COMMAND SNS_FILE_CLOSE
+    @BRIEF This command closes a file file, and flushes buffers to disk
+      per ANSI C fclose.
+*/
+//============================================================================
+
+//! @MSG     SNS_FILE_CLOSE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory int64 fildes;
+  /**< File descriptor, as returned in sns_file_open_resp_msg */
+} sns_file_close_req_msg;
+
+//! @MSG     SNS_FILE_CLOSE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s   resp = 2;
+} sns_file_close_resp_msg;
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_FILE_INTERNAL_SVC {
+  //! @ID SNS_COMMON_CANCEL
+   sns_common_cancel_req_msg	       SNS_FILE_INTERNAL_CANCEL_REQ,
+   sns_common_cancel_resp_msg	       SNS_FILE_INTERNAL_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_COMMON_VERSION
+   sns_common_version_req_msg	       SNS_FILE_INTERNAL_VERSION_REQ,
+   sns_common_version_resp_msg	     SNS_FILE_INTERNAL_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_FILE_OPEN
+   sns_file_open_req_msg             SNS_FILE_INTERNAL_OPEN_REQ,
+   sns_file_open_resp_msg            SNS_FILE_INTERNAL_OPEN_RESP
+   = 0x02;
+
+  //! @ID SNS_FILE_WRITE
+   sns_file_write_req_msg            SNS_FILE_INTERNAL_WRITE_REQ,
+   sns_file_write_resp_msg           SNS_FILE_INTERNAL_WRITE_RESP
+   = 0x03;
+
+  //! @ID SNS_FILE_CLOSE
+   sns_file_close_req_msg            SNS_FILE_INTERNAL_CLOSE_REQ,
+   sns_file_close_resp_msg           SNS_FILE_INTERNAL_CLOSE_RESP
+   = 0x04;
+
+} = SNS_QMI_SVC_ID_36;
+
+

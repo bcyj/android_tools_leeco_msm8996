@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---/******************************************************************************
+* @file    AndrooidManifest.xml
+* @brief   Gets generated when creating any activity using android sdk
+           Provides the permissions required by the activity and activity name
+*  Coppyright (C) 2009,2014 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   package="com.qualcomm.qualcommsettings"
+   android:sharedUserId="android.uid.system">
+
+   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+   <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+   <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+   <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+   <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+   <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+   <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
+   <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+   <uses-permission android:name="android.permission.NFC" />
+
+   <application android:icon="@drawable/icon">
+      <uses-library
+         android:name="com.qualcomm.qcrilhook"></uses-library>
+      <uses-library
+         android:name="com.qualcomm.qcnvitems"></uses-library>
+
+      <receiver android:name=".Dun_Autoboot"
+         android:enabled="true"
+         android:exported="false"
+         android:label="Dun_Autoboot">
+         <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+         </intent-filter>
+      </receiver>
+
+      <service android:name="DunService"></service>
+
+      <activity android:name="QualcommSettings"
+         android:label="@string/QualcommSettings">
+         <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+         </intent-filter>
+      </activity>
+      <activity android:name="DataUsage"
+         android:label="@string/data_usage_title">
+      </activity>
+      <activity android:name="SetCdmaSubSrc"
+         android:label="@string/set_cdma_sub_src_title"
+         android:windowSoftInputMode="stateHidden|adjustResize">
+         <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.DEFAULT" />
+         </intent-filter>
+      </activity>
+      <activity android:name="VoiceCallFeatures"
+         android:label="@string/voice_call_features_title">
+      </activity>
+      <activity android:name="MultiSimSettings"
+         android:label="@string/multi_sim_settings_title"
+         android:windowSoftInputMode="stateHidden|adjustResize">
+         <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.DEFAULT" />
+         </intent-filter>
+      </activity>
+      <activity android:name="CdmaNwkAvoidance"
+         android:label="@string/cdma_nwk_avoidance_title">
+      </activity>
+      <activity android:name="AvoidanceList"
+         android:label="@string/avoidance_list_title">
+      </activity>
+      <receiver android:name=".CdmaNwkAvoidance$OutgoingCallReceiver">
+         <intent-filter>
+            <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+         </intent-filter>
+      </receiver>
+   </application>
+</manifest>

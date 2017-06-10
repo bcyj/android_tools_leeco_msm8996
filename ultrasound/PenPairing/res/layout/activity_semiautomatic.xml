@@ -1,0 +1,39 @@
+<!---/**************************************************************************
+*  Copyright (C) 2013 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/semiautomatic_relative_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:keepScreenOn="true"
+    tools:context=".SemiAutomatic" >
+
+    <TextView
+        android:id="@+id/semiautomatic_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/semiautomatic_text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ProgressBar
+         android:id="@+id/semiautomatic_progress_bar"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_centerHorizontal="true"
+         android:layout_below="@+id/semiautomatic_text_view"
+         style="@android:style/Widget.ProgressBar.Large"
+         android:visibility="invisible" />
+
+    <View
+        android:id="@+id/semiautomatic_circle_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/circle" />
+
+</RelativeLayout>

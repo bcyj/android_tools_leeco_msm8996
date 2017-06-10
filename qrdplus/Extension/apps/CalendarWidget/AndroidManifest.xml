@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2013, Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.qti.calendarwidget"
+    android:versionCode="1"
+    android:versionName="1.1">
+
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="15" />
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
+
+    <application android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher">
+
+        <activity android:name=".ChooseDateActivity"
+            android:theme="@style/Theme.ChooseDateDialog"
+            android:excludeFromRecents="true" />
+
+        <activity android:name=".NoAccountAlert"
+            android:theme="@android:style/Theme.Holo.Light.Dialog" />
+
+        <receiver android:name=".CalendarWidget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="com.qualcomm.qti.calendarwidget.goto_today" />
+                <action android:name="com.qualcomm.qti.calendarwidget.date_changed" />
+                <action android:name="com.qualcomm.qti.calendarwidget.refresh" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_CHANGED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+
+        <service android:name=".CalendarWidget$DateService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"
+            android:exported="false" />
+
+        <service android:name=".CalendarWidget$CommonService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"
+            android:exported="false" />
+
+        <service android:name=".CalendarWidget$WeekNumberService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015, Qualcomm Technologies, Inc. All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<group xmlns:android="http://schemas.android.com/apk/res/android"
+    label="@string/group_ct_label" carrier="ChinaTelecom">
+    <child label="@string/child_apn_settings_label">
+        <dialog title="@string/child_apn_settings_label"
+            message="">
+            <positive label="@string/dialog_edit_label">
+                <intent type="activity" action="android.settings.APN_SETTINGS">
+                    <extra key="subscription" value="0" />
+                </intent>
+            </positive>
+            <negative label="@android:string/cancel" />
+        </dialog>
+    </child>
+    <child label="@string/child_remove_unused_pdn_label">
+        <dialog message="">
+            <positive label="@android:string/ok" />
+        </dialog>
+    </child>
+</group>

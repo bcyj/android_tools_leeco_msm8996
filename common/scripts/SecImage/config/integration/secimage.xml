@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+===============================================================================
+
+  Copyright (c) 2014 Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+
+===============================================================================
+-->
+
+<tns:secimage xmlns:tns="http://www.qualcomm.com/secimage"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.qualcomm.com/secimage ../xsd/secimage.xsd">
+
+    <metadata>
+        <chipset>default</chipset>
+        <version>1.2</version>
+    </metadata>
+    <!--
+        The default properties for all images. These properties maybe overriden
+        per image in the 'images' section below as needed.
+
+        max_cert_size: Maximum size (in bytes) of one certificate.
+        key_size: Size (in bits) of the key used for signing.
+        num_certs_in_certchain: Number of certificates in the certificate chain.
+        num_root_certs: Number of root certificates in the certificate chain.
+    -->
+    <general_properties>
+        <max_cert_size>2048</max_cert_size>
+        <key_size>2048</key_size>
+        <num_certs_in_certchain>3</num_certs_in_certchain>
+        <num_root_certs>1</num_root_certs>
+    </general_properties>
+
+    <!-- Image configurations used by secimage to parse the image files. -->
+    <parsegen>
+
+        <!--
+            Contains a list of 'image_type' blocks that associate an id to an
+            image configuration. These blocks contain the information needed to
+            correctly parse the corresponding file type.
+        -->
+        <image_types_list>
+
+            <!--
+                Contains the config data needed to correctly parse an image.
+                This block contains configuration for a mbn file with a 80 byte
+                header and no preamble.
+
+                id: ID for this particular block. This id should be unique.
+            -->
+            <image_type id='mbn_80b'>
+                <!-- Type of file format -->
+                <file_type>mbn</file_type>
+
+                <!--
+                    Configuration specific to the mbn format
+
+                    header_size: Size of the mbn header (in bytes).
+                    preamble_size (optional): Size of the preamble if it exists.
+                        If the preamble does not exist, skip this value.
+                    has_magic_num: Flag whether the mbn contains magic cookie.
+                        (Used by SBL image which contains a magic num in its
+                        byte stream.)
+                    ota_enabled: Flag: the image should be padded for ota.
+                -->
+                <mbn_properties>
+                    <header_size>80</header_size>
+                    <has_magic_num>false</has_magic_num>
+                    <ota_enabled>false</ota_enabled>
+                </mbn_properties>
+            </image_type>
+
+            <!--
+                This block contains configuration for a mbn file with a 80 byte
+                header, 10k preamble, magic number and ota enabled.
+            -->
+            <image_type id='mbn_80b_pbl_ota'>
+                <file_type>mbn</file_type>
+                <mbn_properties>
+                    <header_size>80</header_size>
+                    <preamble_size>10</preamble_size>
+                    <has_magic_num>true</has_magic_num>
+                    <ota_enabled>false</ota_enabled>
+                    <page_size>0</page_size>
+                    <num_of_pages>0</num_of_pages>
+                    <min_size_with_pad>256</min_size_with_pad>
+                </mbn_properties>
+            </image_type>
+
+            <!--
+                This block contains configuration for a mbn file with a 40 byte
+                header and no preamble.
+            -->
+            <image_type id='mbn_40b'>
+                <file_type>mbn</file_type>
+                <mbn_properties>
+                    <header_size>40</header_size>
+                    <has_magic_num>false</has_magic_num>
+                    <ota_enabled>false</ota_enabled>
+                </mbn_properties>
+            </image_type>
+
+            <!--
+                This block contains configuration for an elf file containing a
+                hash table.
+            -->
+            <image_type id='elf_has_ht'>
+                <!-- Type of file format -->
+                <file_type>elf</file_type>
+
+                <!--
+                    Configuration specific to the elf format
+
+                    has_hash_table: Flag whether the elf contains a hash table.
+                    image_type: ID for the image type.
+                    serial_num (optional): Serial number to be inserted in the
+                        elf image. If the elf should not embed the serial
+                        number, skip this value.
+                -->
+                <elf_properties>
+                    <has_hash_table>true</has_hash_table>
+                    <image_type>0</image_type>
+                </elf_properties>
+            </image_type>
+
+            <!--
+                This block contains configuration for an elf file not containing
+                any hash table.
+            -->
+            <image_type id='elf_no_ht'>
+                <file_type>elf</file_type>
+                <elf_properties>
+                    <has_hash_table>false</has_hash_table>
+                    <image_type>0</image_type>
+                </elf_properties>
+            </image_type>
+
+            <!--
+                This block contains configuration for an elf wrapped mbn (ewm).
+            -->
+            <image_type id='elf_wrapped_mbn'>
+                <!-- Type of file format -->
+                <file_type>ewm</file_type>
+
+                <!--
+                Configuration specific to the ewm format
+
+                image_entry: Entry for the image.
+                relocatable: Allows PIL to relocate the segment in the heap instead
+                    of loading the segment at the compiled-in physical address.
+                header_size: Size of the mbn header (in bytes).
+                preamble_size (optional): Size of the preamble if it exists. If
+                    the preamble does not exist, skip this value.
+                has_magic_num: Flag whether the mbn contains magic cookie. (Used
+                    by SBL image which contains a magic num in its byte stream.)
+                ota_enabled: Flag whether the image should be padded for ota.
+                -->
+                <ewm_properties>
+                    <image_entry>0x01200000</image_entry>
+                    <relocatable>false</relocatable>
+                </ewm_properties>
+
+                <elf_properties>
+                    <has_hash_table>false</has_hash_table>
+                    <image_type>0</image_type>
+                </elf_properties>
+
+                <mbn_properties>
+                    <header_size>80</header_size>
+                    <has_magic_num>false</has_magic_num>
+                    <ota_enabled>false</ota_enabled>
+                </mbn_properties>
+            </image_type>
+        </image_types_list>
+    </parsegen>
+
+    <!-- Signing configurations used by secimage. -->
+    <signing>
+        <!--
+            The selected signer for signing. Supported signer are:
+
+            local: use local signer with test keys
+            csms: generate tosign file for csms upload (first run)
+                  package csms output zip to form signed image (second run)
+            cass: use cass signer with production key
+        -->
+        <selected_signer>local</selected_signer>
+
+        <!--
+            The default signing attributes for all images. These properties
+            maybe overriden per image in the 'images' section below as needed.
+
+            msm_part: jtag_id for signing. (in hex)
+            oem_id: oem_id for signing. (in hex)
+            model_id: model_id for signing. (in hex)
+            debug: debug_id for signing. (in hex)
+            exponent: exponent value used in attestation key generation.
+        -->
+        <default_attributes>
+            <msm_part>0x00000000</msm_part>
+            <oem_id>0x0000</oem_id>
+            <model_id>0x0000</model_id>
+            <debug>0x0000000000000002</debug>
+            <exponent>3</exponent>
+        </default_attributes>
+
+        <signer_attributes>
+
+            <local_signer_attributes>
+
+                <openssl_config_inputs>
+                    <attestation_certificate_extensions_path>./../../resources/openssl/v3_attest.ext</attestation_certificate_extensions_path>
+                    <ca_certificate_extensions_path>./../../resources/openssl/v3.ext</ca_certificate_extensions_path>
+                    <openssl_configfile_path>./../../resources/openssl/opensslroot.cfg</openssl_configfile_path>
+                </openssl_config_inputs>
+
+                <cert_configs_list>
+                    <selected_cert_config>default</selected_cert_config>
+
+                    <cert_config id='default'>
+                        <root_cert>
+                            <use_preexisting_cert>false</use_preexisting_cert>
+                            <params_list>
+                                <cert_param>C=US</cert_param>
+                                <cert_param>ST=California</cert_param>
+                                <cert_param>L=San Diego</cert_param>
+                                <cert_param>OU=General Use Test Key (for testing only)</cert_param>
+                                <cert_param>OU=CDMA Technologies</cert_param>
+                                <cert_param>O=SecTools</cert_param>
+                                <cert_param>CN=Generated Test Root CA</cert_param>
+                            </params_list>
+                        </root_cert>
+
+                        <attest_ca_cert>
+                            <use_preexisting_cert>false</use_preexisting_cert>
+                            <params_list>
+                                <cert_param>C   =   US        </cert_param>
+                                <cert_param>ST  =   California</cert_param>
+                                <cert_param>L   =   San Diego </cert_param>
+                                <cert_param>O   =   SecTools  </cert_param>
+                                <cert_param>CN  =   Generated Test Attestation CA</cert_param>
+                            </params_list>
+                        </attest_ca_cert>
+
+                        <attest_cert>
+                            <use_preexisting_cert>false</use_preexisting_cert>
+                            <params_list>
+                                <cert_param>C = US</cert_param>
+                                <cert_param>ST= California</cert_param>
+                                <cert_param>L = San Diego</cert_param>
+                                <cert_param>O = SecTools</cert_param>
+                                <cert_param>CN= SecTools Test User</cert_param>
+                            </params_list>
+                        </attest_cert>
+                    </cert_config>
+                </cert_configs_list>
+            </local_signer_attributes>
+        </signer_attributes>
+    </signing>
+
+    <encryption>
+        <selected_encryptor>unified_encryption</selected_encryptor>
+        <!-- If using file interface to provide keys for encryption in unified encryption scheme, ensure that the relative path
+             is provided for all three binary key files.
+        -->
+        <unified_encryption>
+            <use_file_interface>true</use_file_interface>
+            <L1_encryption_key>./../../resources/unified_encryption_test_keys/l1_key.bin</L1_encryption_key>
+            <L2_encryption_key>./../../resources/unified_encryption_test_keys/l2_key.bin</L2_encryption_key>
+            <L3_encryption_key>./../../resources/unified_encryption_test_keys/l3_key.bin</L3_encryption_key>
+        </unified_encryption>
+    </encryption>
+
+    <post_process>
+        <pil_splitter>$(META_BUILD)/common/tools/misc/pil-splitter.py</pil_splitter>
+    </post_process>
+
+    <images_list>
+        <image sign_id="sbl1" name="sbl1.mbn" image_type="elf_has_ht">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000000</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="sbl1_mbn" name="sbl1.mbn" image_type="mbn_80b">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000000</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="emmcbld" name="MPRG*.mbn" image_type="elf_has_ht">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000003</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="emmcbld_mbn" name="MPRG*.mbn" image_type="mbn_80b">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000003</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="apps" name="apps.mbn" image_type="elf_has_ht">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x000000000000000E</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="tz" name="tz.mbn" image_type="elf_has_ht">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000007</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="qhee" name="hyp.mbn" image_type="elf_has_ht">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000015</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="appsbl" name="emmc_appsboot.mbn" image_type="elf_has_ht">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000009</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="rpm" name="rpm.mbn" image_type="elf_has_ht">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x000000000000000A</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="mba" name="mba.mbn" image_type="elf_has_ht">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000001</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="mba_mbn" name="mba.mbn" image_type="mbn_80b">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000001</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="mba_ewm" name="mba.mbn" image_type="elf_wrapped_mbn">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000001</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="qdsp6sw" name="qdsp6sw.mbn" image_type="elf_has_ht">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000002</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="wcnss" name="wcnss.mbn" image_type="elf_has_ht">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x000000000000000D</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="vss" name="venus.mbn" image_type="elf_has_ht">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x000000000000000E</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="sdi" name="sdi.mbn" image_type="elf_has_ht">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000012</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="sdi_mbn" name="sdi.mbn" image_type="mbn_40b">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000012</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="adsp" name="dsp*.mbn" image_type="elf_has_ht">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>dummy</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000004</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+        <image sign_id="pmic" name="pmic.mbn" image_type="elf_has_ht">
+            <general_properties_overrides></general_properties_overrides>
+            <post_process_commands></post_process_commands>
+            <meta_build_location>$(FILE_TYPE:download_file, ATTR:cmm_file_var, VAR:PMIC_BINARY)</meta_build_location>
+
+            <signing_attributes_overrides>
+                <sw_id>0x0000000000000016</sw_id>
+            </signing_attributes_overrides>
+        </image>
+
+    </images_list>
+
+</tns:secimage>

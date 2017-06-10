@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2014 pci-suntektech Technologies, Inc.  All Rights Reserved.
+     pci-suntektech Technologies Proprietary and Confidential.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_account_main_background_color" >
+
+    <RelativeLayout
+        android:id="@+id/contact_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:background="@color/beige"
+        android:padding="16dp" >
+
+        <ImageView
+            android:id="@+id/img_photo"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/padding_micro"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/public_account" />
+
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_medium"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/img_photo"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_name"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/img_photo"
+            android:textColor="@color/text_shadow_color_light_bold"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/text_uuid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_company"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/img_photo"
+            android:textColor="@color/text_shadow_color_light_bold"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/text_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_uuid"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/img_photo"
+            android:textColor="@color/text_shadow_color_light_bold"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <include layout="@layout/public_account_detail_items"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contact_msg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/public_account_bar_background_color"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+        <Button
+            android:id="@+id/btn_follow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/public_account_bar_background_color"
+            android:onClick="onClick"
+            android:text="@string/follow"
+            android:textColor="@android:color/white"
+            android:scaleType="center"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</RelativeLayout>

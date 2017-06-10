@@ -1,0 +1,79 @@
+/*****************************************************************************
+  @FILE     sns_sam_common.idl
+
+  @BRIEF    Common IDL file for algorithm services on the sensors subsystem
+
+  @COPYRIGHT
+  Copyright (c) 2013-2014 Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Confidential and Proprietary
+
+*****************************************************************************/
+include "sns_common_v01.idl";
+
+revision 2;
+
+//!============================================================================
+/** @COMMAND SNS_SAM_GET_ALGO_ATTRIBUTES
+    @BRIEF This command requests the attributes of the algorithm service
+
+    This command shall only be used by algorithm services.
+*/
+//!============================================================================
+//! @MSG     SNS_SAM_GET_ALGO_ATTRIBUTES_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+message { /* empty body */ } sns_sam_get_algo_attrib_req_msg;
+
+//reporting types
+enum {
+   SNS_SAM_PERIODIC_REPORT = 0x01, /**< Can report at client specified report rate */
+   SNS_SAM_ASYNC_REPORT    = 0x02, /**< Can report on every event */
+   SNS_SAM_SYNC_REPORT     = 0x04, /**< Can report at sample rate */
+   SNS_SAM_ONE_SHOT_REPORT = 0x08  /**< Can report at event and deactivate itself */
+} sns_sam_report_e;
+
+//! @MSG     SNS_SAM_GET_ALGO_ATTRIBUTES_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+message {
+  mandatory sns_common_resp_s resp = 2;
+
+  mandatory uint32            algorithm_revision;
+  /**< Revision number of the algorithm implemented by the service */
+
+  mandatory sns_proc_type_e   proc_type;
+  /**< ID of the processor on which the algorithm is running */
+
+  mandatory uint32            supported_reporting_modes;
+  /**< Bitmask of all reporting modes supported by algorithm.
+       See sns_sam_report_e for reporting options */
+
+  mandatory int32             min_report_rate;
+  /**< Minimum report rate supported by algorithm (in Hz, Q16) */
+
+  mandatory int32             max_report_rate;
+  /**< Maximum report rate supported by algorithm (in Hz, Q16) */
+
+  mandatory int32             min_sample_rate;
+  /**< Minimum sample rate supported by algorithm (in Hz, Q16) */
+
+  mandatory int32             max_sample_rate;
+  /**< Maximum sample rate supported by algorithm (in Hz, Q16) */
+
+  mandatory uint32            max_batch_size;
+  /**< The maximum batch size (in reports) supported by this service,
+       as if it were the only service active on the system.
+       Will never return more than this many samples in one series of
+       batched indications.
+       Returns 0, if batching is not supported */
+
+  mandatory int32             power;
+  /**< Power estimate for algorithm (in mA, Q16) */
+
+  optional uint64             sensorUID;
+  /**< SSC Unique identifier for this sensor */
+
+  optional uint32            reserved_batch_size;
+  /**< The mimimum guaranteed batch size for this service.  Shared amongst
+       all clients. If max_batch_size is '0', this field shall be ignored. */
+} sns_sam_get_algo_attrib_resp_msg;

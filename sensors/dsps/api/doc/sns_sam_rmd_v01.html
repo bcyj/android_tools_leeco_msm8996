@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+<title>Service definition for RMD (Relative Motion Detector)
+            algorithm service.
+
+
+Common IDL file for the sensors subsystem
+
+Message definition for QMD.
+
+</title>
+<link rel="stylesheet" type="text/css" href="qmi.css" />
+</head>
+
+<body>
+<h1>Service definition for RMD (Relative Motion Detector)<br> algorithm service.<br><br><br>Common IDL file for the sensors subsystem<br><br>Message definition for QMD.
+</h1>
+ Defines common structures and types used by the sensors messages.<br><br><br> Copyright (c) 2010 Qualcomm Technologies, Inc. All Rights Reserved. <br> Qualcomm Technologies Proprietary and Confidential.<br><br><br><br> This file defines QMD messages used by QMD-related algorithm services,<br> including AMD (absolute motion detection), VMD (vehicle motion detection),<br> and RMD (relative motion detection).<br><br> As prerequisite, the sensor algorithm must use the common Interface<br> defined in the Sensor Algorithms framework.<br><br> The messages defined herin will be passed to the Sensor framework using<br> the sensor1_write() API.
+<h1>Service Type</h1>
+<ul><li>QMI service type <b>SNS_SAM_RMD_SVC_ID</b><li>Version <b>01</b></ul>
+<h1><a name='Messages'>Messages</a></h1>
+<table class = 'tlv'><tr class='head'><th>Command</th><th>ID</th><th>Messages</th><th>Description</th></tr>
+<tr><td class='l'><a href='#SNS_COMMON_CANCEL'>SNS_COMMON_CANCEL</a></td><td></td><td class='l'></td><td class='l'>This command cancel all requests from a client to any sensor service This shall be the first message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_COMMON_VERSION'>SNS_COMMON_VERSION</a></td><td></td><td class='l'></td><td class='l'>This command requests the version of the sensor service This shall be the second message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SAM_ALGO_ENABLE'>SAM_ALGO_ENABLE</a></td><td>0x02</td><td class='l'></td><td class='l'>This command enables a sensor algorithm. </td></tr>
+<tr><td class='l'><a href='#SAM_ALGO_DISABLE'>SAM_ALGO_DISABLE</a></td><td>0x03</td><td class='l'></td><td class='l'>This command disables a sensor algorithm. </td></tr>
+<tr><td class='l'><a href='#SAM_ALGO_REPORT'>SAM_ALGO_REPORT</a></td><td>0x05</td><td class='l'></td><td class='l'>Output report from a sensor algorithm. </td></tr>
+<tr><td class='l'><a href='#SAM_ALGO_GET_REPORT'>SAM_ALGO_GET_REPORT</a></td><td>0x04</td><td class='l'></td><td class='l'>This command fetches latest report output from a sensor algorithm. </td></tr>
+<tr><td class='l'><a href='#SAM_ALGO_ERROR'>SAM_ALGO_ERROR</a></td><td>0x06</td><td class='l'></td><td class='l'>Asynchronous error report from a sensor algorithm. </td></tr>
+<tr><td class='l'><a href='#SAM_ALGO_CANCEL'>SAM_ALGO_CANCEL</a></td><td>0x00</td><td class='l'></td><td class='l'>This command cancels all requests to the algorithm service. </td></tr>
+<tr><td class='l'><a href='#SAM_ALGO_VERSION'>SAM_ALGO_VERSION</a></td><td>0x01</td><td class='l'></td><td class='l'>This command requests algorithm service version. </td></tr>
+</table>
+<br><br>
+<br><br><table class='sep'><tr><td></td></tr></table>
+<h2>Additional Information</h2>None
+
+</body>

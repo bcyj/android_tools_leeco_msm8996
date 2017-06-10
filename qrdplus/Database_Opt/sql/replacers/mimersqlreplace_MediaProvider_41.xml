@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2013 Mimer Information Technology AB, info@mimer.com -->
+<!-- Mimer SQL replacement for Media provider runtime queries in Android 4.1 -->
+<MimerSQLReplace>
+  <fromSQL id="GOME411" statement="DELETE FROM log WHERE rowid IN (SELECT rowid FROM log ORDER BY time DESC LIMIT 500,-1);">
+    delete from log where "_id" in(select "_id" from log order by "time" desc offset :1:i1);
+  </fromSQL>
+	
+  <fromSQL id="GOME412" statement="INSERT INTO audio_genres_map(audio_id, genre_id) VALUES(?, ?);">
+	insert {IGNORE} into audio_genres_map(audio_id,genre_id) values(?,?)
+  </fromSQL>
+
+  <fromSQL id="GOME413" statement="SELECT _id, _data, format, date_modified FROM files WHERE (_data LIKE ?1 AND lower(_data)=lower(?1))">
+	select "_id","_data", format, date_modified from files where ("_data" like cast(:1 as nvarchar(256)) and (("_data") = (:1)collate current_collation_2))
+  </fromSQL>
+
+
+<!-- BEGIN - CTS Test-->
+<fromSQL id="GOME414" statement="SELECT album_art._data AS album_art, artist_key, audio.album_id AS _id, count(CASE WHEN artist_id==? THEN ? ELSE NULL END) AS numsongs_by_artist, album_key, album, count(*) AS numsongs, artist, artist, MIN(year) AS minyear, MAX(year) AS maxyear FROM audio LEFT OUTER JOIN album_art ON audio.album_id=album_art.album_id WHERE (is_music=? AND audio.album_id IN (SELECT album_id FROM artists_albums_map WHERE artist_id=?)) GROUP BY audio.album_id">
+
+	select "album_art"."_data" as "album_art","artist_key","audio"."album_id" as "_id",
+		count(case  when ("artist_id" = ?) then cast(? as nvarchar(128)) else null end) as "numsongs_by_artist","album_key","album",
+		count(*) as "numsongs","artist","artist",min("year") as "minyear",MAX("year") as "maxyear" 
+	from "audio" left join "album_art" on ("audio"."album_id" = "album_art"."album_id") 
+	where (("is_music" = ?) and "audio"."album_id" 
+		in(select "album_id" 
+		  from "artists_albums_map" 
+		  where ("artist_id" = ?))) 
+	group by "audio"."album_id"	
+
+
+</fromSQL> 
+<!-- END - CTS Test-->
+
+<!-- BEGIN - Using new translator - 4.2.2-->
+
+<!-- END - Using new translator - 4.2.2-->
+<!-- START - Using new translator 4.3 -->
+
+  <fromSQL id="GOME415" statement="DELETE FROM log WHERE rowid IN (SELECT rowid FROM log ORDER BY rowid DESC LIMIT 500,-1);">
+    delete from log where "_id" in(select "_id" from log order by "time" desc offset :1:i1);
+  </fromSQL>
+	
+<!-- END - Using new translator 4.3 -->
+
+<!-- Qualcomm Technologies JB replaceser -->
+
+<!-- Delete a song from the music list of Music app, "SET play_order=play_order-1" is incorrectly translated to "SET play_order=play_order?" -->
+ <fromSQL id="QUME411"
+	    statement="UPDATE audio_playlists_map SET play_order=play_order? WHERE playlist_id=? AND play_order&gt;?">
+
+UPDATE audio_playlists_map SET play_order=play_order + (?) WHERE playlist_id=? AND play_order&gt;?
+ </fromSQL>
+
+</MimerSQLReplace>

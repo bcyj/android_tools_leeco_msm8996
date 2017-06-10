@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/******************************************************************************
+*  Copyright (c) 2013 Qualcomm Technologies, Inc.  All Rights Reserved.
+*  Qualcomm Technologies Proprietary and Confidential.
+*******************************************************************************
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:id="@+id/textViewer"
+            style="@style/MonitorText"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/monitor_background"
+            android:enabled="false"
+            android:gravity="center"
+            android:onClick="labelClicked"
+            android:orientation="vertical"
+            android:textIsSelectable="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="30dp" >
+
+            <Button
+                android:id="@+id/encryptButton"
+                style="@style/ButtonText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/blue_button_layout"
+                android:enabled="false"
+                android:text="@string/encryptButton"
+                android:textSize="22dp" />
+
+            <Button
+                android:id="@+id/decryptButton"
+                style="@style/ButtonText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/green_button_layout"
+                android:enabled="false"
+                android:text="@string/decryptButton"
+                android:textSize="22dp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/optionButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/helpButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/info_icon" />
+
+            <Button
+                android:id="@+id/powerOnButton"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/start_button" />
+
+            <Button
+                android:id="@+id/settingsButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/settings_button" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

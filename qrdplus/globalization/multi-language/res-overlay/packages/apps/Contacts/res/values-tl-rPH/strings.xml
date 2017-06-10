@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!-- Copyright (C) 2006 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Application name used in Settings/Apps. Default label for activities
+         that don\'t specify a label. -->
+    <string name="applicationLabel">"Mga Contact"</string>
+
+    <!-- Title for the activity that launches Contacts.  This is the name
+         used in the Launcher icon. -->
+    <string name="launcherActivityLabel">"Mga Contact"</string>
+
+    <!-- Directory partition name -->
+    <string name="contactsList">"Mga Contact"</string>
+
+    <!-- Name of activity that allows users to create shortcuts on the home screen to a contact.
+         This shows up in a list of things like bookmark, folder, music playlist, etc -->
+    <string name="shortcutContact">"Contact"</string>
+
+    <!-- Name of activity that allows users to create shortcuts on the home screen to dial a contact.
+         This shows up in a list of things like bookmark, folder, music playlist, etc -->
+    <string name="shortcutDialContact">"Direktang pag-dial"</string>
+
+    <!-- Name of activity that allows users to create shortcuts on the home screen to message (SMS) a contact.
+         This shows up in a list of things like bookmark, folder, music playlist, etc -->
+    <string name="shortcutMessageContact">"Direktang mensahe"</string>
+
+    <!-- Activity title when the user is selecting a contact for a shortcut. -->
+    <string name="shortcutActivityTitle">"Pumili ng shortcut sa contact"</string>
+
+    <!-- Activity title when the user is selecting a contact for a direct dial shortcut. -->
+    <string name="callShortcutActivityTitle">"Pumili ng tatawagang numero"</string>
+
+    <!-- Activity title when the user is selecting a contact for a direct message shortcut. -->
+    <string name="messageShortcutActivityTitle">"Pumili ng numero na padadalhan ng mensahe"</string>
+
+    <!-- Activity title when the user is selecting a contact.  [CHAR LIMIT=128] -->
+    <string name="contactPickerActivityTitle">"Pumili ng isang contact"</string>
+
+    <!-- Entry that prompts user to select a newly created contact.  [CHAR LIMIT=30] -->
+    <string name="header_entry_contact_list_adapter_header_title">"Gumawa ng bagong contact"</string>
+
+    <!-- Title for the activity that shows only starred contacts -->
+    <string name="starredList">"Naka-star"</string>
+
+    <!-- Title for the activity that shows only frequently contacted contacts -->
+    <string name="frequentList">"Madalas"</string>
+
+    <!-- Title for the activity that shows a mix of starred contacts and frequently contacted
+         contacts. -->
+    <string name="strequentList">"Mga Paborito"</string>
+
+    <!-- The title bar when viewing the contact details activity -->
+    <string name="viewContactTitle">"Mga detalye ng contact"</string>
+
+    <!-- The description presented to the user in the Intent choose when there are multiple activities that allow
+         editing a contact. This string represents the built in way to edit the contact. -->
+    <string name="editContactDescription">"I-edit ang contact"</string>
+
+    <!-- The description presented to the user in the Intent choose when there are multiple activities that allow
+         creating a new contact. This string represents the built in way to create the contact. -->
+    <string name="insertContactDescription">"Lumikha ng contact"</string>
+
+    <!-- The description presented to the user in the Intent choose when there are multiple activities that allow
+         editing a group. This string represents the built in way to edit the group. [CHAR LIMIT=NONE] -->
+    <string name="editGroupDescription">"I-edit ang pangkat"</string>
+
+    <!-- The description presented to the user in the Intent choose when there are multiple activities that allow
+         creating a new group. This string represents the built in way to create the group. [CHAR LIMIT=NONE] -->
+    <string name="insertGroupDescription">"Lumikha ng pangkat"</string>
+
+    <!-- The tab label for the contact detail activity that displays information about the contact [CHAR LIMIT=15] -->
+    <string name="contactDetailAbout">"Tungkol sa"</string>
+
+    <!-- The tab label for the contact detail activity that displays information about the contact [CHAR LIMIT=15] -->
+    <string name="contactDetailUpdates">"Mga Update"</string>
+
+    <!-- Hint text in the search box when the user hits the Search key while in the contacts app -->
+    <string name="searchHint">"Maghanap ng mga contact"</string>
+
+    <!-- Menu item used to view the details for a specific contact -->
+    <string name="menu_viewContact">"Tingnan ang contact"</string>
+
+    <!-- Menu item used to add a star to a contact, which makes that contact show up at the top of favorites -->
+    <string name="menu_addStar">"Idagdag sa mga paborito"</string>
+
+    <!-- Menu item used to remove a star from a contact, making the contact no longer show up at the top of favorites -->
+    <string name="menu_removeStar">"Alisin mula sa mga paborito"</string>
+
+    <!-- Description of what happens when you click on the unstar MenuItem. [CHAR LIMIT=NONE] -->
+    <string name="description_action_menu_remove_star">"Inalis sa mga paborito"</string>
+    <!-- Description of what happens when you click on the star MenuItem. [CHAR LIMIT=NONE] -->
+    <string name="description_action_menu_add_star">"Idinagdag sa mga paborito"</string>
+
+    <!-- Menu item used to edit a specific contact -->
+    <string name="menu_editContact">"I-edit"</string>
+
+    <!-- Menu item used to insert a contact from scanning QR-code -->
+    <string name="menu_insertContactFromQrcod">insert</string>
+
+    <!-- Menu item used to delete a specific contact -->
+    <string name="menu_deleteContact">"Tanggalin"</string>
+
+    <!-- Menu item used to create a contact shortcut when viewing contact details. [CHAR LIMIT=30] -->
+    <string name="menu_create_contact_shortcut">"Ilagay sa Home screen"</string>
+
+    <!-- Menu item used to call a specific contact when viewing the details of that contact. -->
+    <string name="menu_call">"Tawagan ang contact"</string>
+
+    <!-- Menu item used to send an SMS or MMS message to a specific phone number or a contacts default phone number -->
+    <string name="menu_sendSMS">"Mag-text sa contact"</string>
+
+    <!-- Menu item that splits an item from the contact detail into a separate aggregate -->
+    <string name="menu_splitAggregate">"Hiwalay"</string>
+
+    <!-- Menu item that edits the currently selected group [CHAR LIMIT=30] -->
+    <string name="menu_editGroup">"I-edit"</string>
+
+    <!-- Menu item that deletes the currently selected group [CHAR LIMIT=30] -->
+    <string name="menu_deleteGroup">"Tanggalin"</string>
+
+    <string name="menu_moveGroupMembers">Ilipat ang mga miyembro ng pangkat</string>
+
+    <!-- Menu item (in the action bar) that creates a new contact [CHAR LIMIT=30] -->
+    <string name="menu_new_contact_action_bar">"Magdagdag ng Contact"</string>
+
+    <!-- Menu item (in the action bar) that creates a new group [CHAR LIMIT=30] -->
+    <string name="menu_new_group_action_bar">"Magdagdag ng Pangkat"</string>
+
+    <!-- Title of the confirmation dialog for separating contacts into multiple instances [CHAR LIMIT=26] -->
+    <string name="splitConfirmation_title">"Ihiwalay ang contact?"</string>
+
+    <!-- Confirmation dialog for separating contacts into multiple instances [CHAR LIMIT=NONE] -->
+    <string name="splitConfirmation">"Paghihiwa-hiwalayin ang contact na ito patungo sa maramihang contact."</string>
+
+    <!-- Menu item that joins an aggregate with another aggregate -->
+    <string name="menu_joinAggregate">"Sumali"</string>
+
+    <!-- Heading of the Join Contact screen -->
+    <string name="titleJoinContactDataWith">"Sumali sa mga contact"</string>
+
+    <!-- Info blurb on the Join Contact screen [CHAR LIMIT=NONE]-->
+    <string name="blurbJoinContactDataWith">"Piliin ang contact na gusto mong isama sa/kay <xliff:g id="NAME">%s</xliff:g>:"</string>
+
+    <!-- An item in the Join Contact activity that opens up the full contact A-Z list -->
+    <string name="showAllContactsJoinItem">"Ipakita ang lahat ng mga contact"</string>
+
+    <!-- List separator for the Join Contact list: Suggestions -->
+    <string name="separatorJoinAggregateSuggestions">"Mga iminumungkahing contact"</string>
+
+    <!-- List separator for the Join Contact list: A-Z -->
+    <string name="separatorJoinAggregateAll">"Lahat ng mga contact"</string>
+
+    <!-- Toast shown after two contacts have been joined by a user action -->
+    <string name="contactsJoinedMessage">"Mga pinagsamang contact"</string>
+
+    <string name="importConfirmation_title">Import mga contact?</string>
+
+    <!-- Menu item that opens the Options activity for a given contact [CHAR LIMIT=15] -->
+    <string name="menu_set_ring_tone">"Itakda ang ringtone"</string>
+
+    <!-- Menu item that opens the Options activity for a given contact [CHAR LIMIT=30] -->
+    <string name="menu_redirect_calls_to_vm">"Lahat ng tawag sa voicemail"</string>
+
+    <!-- Warning dialog contents after users selects to delete a ReadOnly contact. [CHAR LIMIT=NONE] -->
+    <string name="readOnlyContactWarning">"Hindi ka makakapagtanggal ng mga contact mula sa mga read-only na account, ngunit maitatago mo ang mga ito sa iyong mga listahan ng mga contact."</string>
+
+    <!-- Warning dialog contents after users selects to delete a contact with ReadOnly and Writable sources. -->
+    <string name="readOnlyContactDeleteConfirmation">"Naglalaman ang contact na ito ng impormasyon mula sa maramihang account. Itatago ang impormasyon mula sa mga account na read-only sa mga listahan ng iyong mga contact, hindi tatanggalin."</string>
+
+    <!-- Warning dialog contents after users selects to delete a contact with multiple Writable sources. -->
+    <string name="multipleContactDeleteConfirmation">"Tatanggalin ng pagtanggal sa account na ito ang impormasyon mula sa maramihang account."</string>
+
+    <!-- Confirmation dialog contents after users selects to delete a Writable contact. -->
+    <string name="deleteConfirmation">"Tatanggalin ang contact na ito."</string>
+
+    <!-- Menu item to indicate you want to stop editing a contact and NOT save the changes you\'ve made [CHAR LIMIT=30] -->
+    <string name="menu_discard">"I-discard ang mga pagbabago"</string>
+
+    <!-- Message displayed in a toast when you try to view the details of a contact that
+         for some reason doesn\'t exist anymore. [CHAR LIMIT=NONE]-->
+    <string name="invalidContactMessage">"Hindi umiiral ang contact."</string>
+
+    <!-- Message displayed in a toast after you create a contact shortcut in the launcher [CHAR LIMIT=NONE]-->
+    <string name="createContactShortcutSuccessful">"Idinagdag sa Home screen ang widget ng contact."</string>
+
+    <!-- When picking a contact from a list of all contacts there is an entry at the top of the
+         list that allows the user to create a new contact, which this string is used for -->
+    <string name="pickerNewContactHeader">"Lumikha ng bagong contact"</string>
+
+    <!-- Text for a "create new contact" button on the bottom of the contact picker screen.
+         The text will be all capitalized.
+         [CHAR LIMIT=30] -->
+    <string name="pickerNewContactText">"Lumikha ng bagong contact"</string>
+
+    <!-- The order of the items below is important, don\'t reorder without changing EditContactActivity.java -->
+    <skip/>
+    <!-- The labels that are under the otherLabelsGroup when editing a contact. [CHAR LIMIT=20] -->
+    <string-array name="otherLabels">
+        <!-- An organization associated with a contact -->
+        <item>"Samahan"</item>
+        <!-- A note associated with a contact -->
+        <item>"Tandaan"</item>
+    </string-array>
+
+    <!-- Description in the dialog that appears if there are no pictures from which to create an icon for a contact -->
+    <string name="photoPickerNotFoundText" product="tablet">"Walang available na mga larawan sa tablet."</string>
+    <!-- Description in the dialog that appears if there are no pictures from which to create an icon for a contact -->
+    <string name="photoPickerNotFoundText" product="default">"Walang mga larawan ang available sa telepono."</string>
+
+    <!-- Description used in the attach photo Intent from third party apps [CHAR LIMIT=50] -->
+    <string name="attach_photo_dialog_title">"Larawan ng contact"</string>
+
+    <!-- Title of the dialog used to set a custom label for a contact detail, like a phone number or email address.
+         For example, this may be used to set a phone number\'s label to "Vaction house" -->
+    <string name="customLabelPickerTitle">"Custom na pangalan ng label"</string>
+
+    <!-- Check box label that allows calls to the contact to be sent directly to voicemail -->
+    <string name="send_to_voicemail_checkbox">"Ipadala ang mga tawag nang direkta sa voicemail"</string>
+
+    <!-- The menu item that allows you to remove a photo from a contact [CHAR LIMIT=50] -->
+    <string name="removePhoto">"Alisin ang larawan"</string>
+
+    <!-- The text displayed when the contacts list is empty while displaying all contacts [CHAR LIMIT=NONE] -->
+    <string name="noContacts">"Walang mga contact."</string>
+
+    <!-- The text displayed when the groups list is empty while displaying all groups [CHAR LIMIT=NONE] -->
+    <string name="noGroups">"Walang mga pangkat."</string>
+
+    <!-- The text displayed when the groups list is empty and no accounts are set on the device while displaying all groups [CHAR LIMIT=NONE] -->
+    <string name="noAccounts">"Upang lumikha ng mga pangkat kailangan mo ng isang account."</string>
+
+    <!-- The text displayed when there are no members in the group while displaying the group detail page [CHAR LIMIT=40] -->
+    <string name="emptyGroup">"Walang mga tao sa pangkat na ito."</string>
+
+    <!-- The text displayed to instruct users to add members to a group (when viewing a group detail page for a group with no members) [CHAR LIMIT=50] -->
+    <string name="addPeopleToGroup">"Upang magdagdag ng ilan, i-edit ang pangkat."</string>
+
+    <!-- Displayed in a spinner dialog after the user creates a contact and it\'s being saved to the database -->
+    <string name="savingContact">"Nagse-save ng contact…"</string>
+
+    <!-- Toast displayed when a contact is saved [CHAR LIMIT=NONE] -->
+    <string name="contactSavedToast">"Na-save ang contact."</string>
+    <!-- Toast displayed when a contact is deleted [CHAR LIMIT=NONE] -->
+    <string name="contactDeletedToast">"Inaalis mga Contact."</string>
+
+    <!-- Toast displayed when saving a contact failed. [CHAR LIMIT=NONE] -->
+    <string name="contactSavedErrorToast">"Hindi ma-save ang mga pagbabago sa contact."</string>
+
+    <!-- Toast displayed when saving a contact to sim card failed -->
+    <string name="contactSavedToSimCardError">May mali, Pag-load ng Sim Contacts</string>
+    <string name="airplane_mode_on">Error, naka-on ang Airplane mode!</string>
+    <string name="number_anr_too_long">May mali, Numero ay masyadong mahaba.</string>
+    <string name="email_address_too_long">May mali, Email Address ay masyadong mahaba.</string>
+    <string name="sim_card_full">May mali, Sim Card ay puno.</string>
+    <string name="tag_too_long">May mali, Pangalan ng contact ay masyadong mahaba.</string>
+    <string name="no_phone_number">Pakilagay ang numero ng telepono.</string>
+    <string name="invalid_phone_number">Error, di-wasto ang Numero.</string>
+    <string name="invalid_number_type">Error, Di-wasto ang uri ng Numero.</string>
+    <string name="no_phone_number_or_email">Mangyaring magpasok ng numero ng telepono o email address.</string>
+    <string name="memory_card_full">Error, halos puno na ang Memory.</string>
+    <!-- Toast displayed when a group is saved [CHAR LIMIT=NONE] -->
+    <string name="groupSavedToast">"Na-save ang pangkat."</string>
+
+    <!-- Toast displayed when saving a group failed [CHAR LIMIT=NONE] -->
+    <string name="groupSavedErrorToast">"Hindi ma-save ang mga pagbabago sa pangkat."</string>
+
+    <!-- Displayed at the top of the contacts showing the total number of contacts visible when "Only contacts with phones" is selected -->
+    <plurals name="listTotalPhoneContacts">
+        <item quantity="one">"1 contact na may numero ng telepono"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%d</xliff:g> (na) contact na may mga numero ng telepono"</item>
+    </plurals>
+
+    <!-- Displayed at the top of the contacts showing the zero as total number of contacts visible when "Only contacts with phones" is selected [CHAR LIMIT=64]-->
+    <string name="listTotalPhoneContactsZero">"Walang mga contact na may mga numero ng telepono"</string>
+
+    <!-- Displayed at the top of the contacts showing the total number of contacts found when "Only contacts with phones" not selected [CHAR LIMIT=30] -->
+    <plurals name="listFoundAllContacts">
+        <item quantity="one">"1 ang nakita"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%d</xliff:g> ang nakita"</item>
+    </plurals>
+
+    <!-- Displayed at the top of the contacts showing the zero total number of contacts found when "Only contacts with phones" not selected. [CHAR LIMIT=30] -->
+    <string name="listFoundAllContactsZero">"Walang mga contact"</string>
+
+    <!-- Displayed at the top of the contacts showing the total number of contacts found when typing search query -->
+    <plurals name="searchFoundContacts">
+        <item quantity="one">"1 ang nakita"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%d</xliff:g> ang nakita"</item>
+    </plurals>
+
+    <!-- The title of "all contacts" tab. [CHAR LIMIT=14] -->
+    <string name="all_contacts_tab_label">"Lahat ng Contact"</string>
+
+    <!-- The title of "favorites" tab. [CHAR LIMIT=14] -->
+    <string name="favorites_tab_label">"Mga Paborito"</string>
+
+    <!-- The title of "groups" tab. [CHAR LIMIT=14] -->
+    <string name="contacts_groups_label">"Mga Pangkat"</string>
+
+    <!-- Action string for calling back a number in the call log -->
+    <string name="callBack">"Tumawag pabalik"</string>
+
+    <!-- Action string for calling a number in the call log again -->
+    <string name="callAgain">"Tawagan muli"</string>
+
+    <!-- Action string for returning a missed call in the call log -->
+    <string name="returnCall">"Pabalik na tawag"</string>
+
+    <!-- Dialog message when prompting before creating a contact. Includes
+         the email address, e.g. "Add xyz@foo.com to contacts?" -->
+    <string name="add_contact_dlg_message_fmt">"Idagdag ang \"<xliff:g id="EMAIL">%s</xliff:g>\" sa mga contact?"</string>
+
+    <!-- String describing the Contact Photo Image
+
+         Used by AccessibilityService to announce the purpose of the view.
+    -->
+    <string name="description_contact_photo">"larawan ng contact"</string>
+
+    <!-- String describing the Contact Editor Plus button
+
+         Used by AccessibilityService to announce the purpose of the button.
+    -->
+    <string name="description_plus_button">"plus"</string>
+    <!-- Message in progress bar while exporting contact list to a file "(current number) of (total number) contacts" The order of "current number" and "total number" cannot be changed (like "total: (total number), current: (current number)")-->
+    <string name="exporting_contact_list_progress">"<xliff:g id="CURRENT_NUMBER">%s</xliff:g> ng <xliff:g id="TOTAL_NUMBER">%s</xliff:g> (na) contact"</string>
+
+    <!-- The string used to describe Contacts as a searchable item within system search settings. -->
+    <string name="search_settings_description">"Mga pangalan ng iyong mga contact"</string>
+
+    <!-- Shown as a toast when the user taps on a QuickContact icon, and no application
+         was found that could perform the selected action. [CHAR LIMIT=NONE] -->
+    <string name="quickcontact_missing_app">"Walang natagpuang app na mangangasiwa sa pagkilos na ito."</string>
+    <!-- Content description for the transparent views around the visible section of QuickContacts.
+         Clicking this view causes Quick Contacts to close. [CHAR LIMIT=NONE] -->
+    <string name="quickcontact_transparent_view_description">"I-click upang bumalik sa nakaraang screen"</string>
+
+    <!-- When a contact has no data, we prompt the user to add a phone number for the contact. [CHAR LIMIT=40] -->
+    <string name="quickcontact_add_phone_number">"Magdagdag ng numero ng telepono"</string>
+    <!-- When a contact has no data, we prompt the user to add an email for the contact. [CHAR LIMIT=40] -->
+    <string name="quickcontact_add_email">"Magdagdag ng email"</string>
+
+    <!-- Shown as a toast when the user attempts an action (add contact, edit
+         contact, etc) and no application was found that could perform that
+         action. [CHAR LIMIT=NONE] -->
+    <string name="missing_app">"Walang nakitang app na gagawa sa aksyong ito."</string>
+
+    <!-- The menu item to share the currently viewed contact [CHAR LIMIT=30] -->
+    <string name="menu_share">"Ibahagi"</string>
+
+    <!-- The menu item to add the the currently viewed contact to your contacts [CHAR LIMIT=30] -->
+    <string name="menu_add_contact">"Idagdag sa mga contact"</string>
+
+    <!-- Dialog title when picking the application to share a contact with. -->
+    <string name="share_via">"Ibahagi ang contact sa pamamagitan ng"</string>
+
+    <!-- Title for the disambiguation dialog that requests the user choose an account for the new group to be created under [CHAR LIMIT=NONE] -->
+    <string name="dialog_new_group_account">"Lumikha ng pangkat sa ilalim ng account"</string>
+
+    <string name="title_move_members">Ilipat ang mga miyembro</string>
+    <string name="message_add_members">Magdagdag ng mga miyembro...</string>
+    <string name="message_move_members">Maglipat ng mga miyembro...</string>
+    <string name="cancel_operation">Kinansela ang operasyon.</string>
+    <string name="message_can_not_move_members">Hindi maililipat ang mga miyembro</string>
+
+    <!-- Generic action string for starting an audio chat. Used by AccessibilityService to announce the purpose of the view. [CHAR LIMIT=NONE] -->
+    <string name="audio_chat">"Voice chat"</string>
+    <!-- Generic action string for starting a video chat. Used by AccessibilityService to announce the purpose of the view. [CHAR LIMIT=NONE] -->
+    <string name="video_chat">"Video chat"</string>
+
+    <!-- Title for the list of all contact details that come from third-party sources (including a corporate directory) [CHAR LIMIT=20] -->
+    <string name="connections">"Mga Koneksyon"</string>
+
+    <!-- Label of the button to open the "add connection" popup where the user can invite a contact to other social networks or services [CHAR LIMIT=32] -->
+    <string name="add_connection_button">"Magdagdag ng koneksyon"</string>
+
+    <!-- Section title for the page containing the contact\'s social updates on the contact card (this abbreviated version of "Recent updates" is used when "updates" is already shown as the title of the page) [CHAR LIMIT=20]-->
+    <string name="recent" msgid="2062236709538790412">"Kamakailan"</string>
+
+    <!-- Section title for the page containing the contact\'s social updates on the contact card [CHAR LIMIT=20]-->
+    <string name="recent_updates" msgid="2018245636796411442">"Mga kamakailang update"</string>
+
+    <!-- String describing which account type a contact came from when editing it -->
+    <string name="account_type_format">"<xliff:g id="SOURCE">%1$s</xliff:g> contact"</string>
+
+    <!-- String describing which account a contact came from when editing it -->
+    <string name="from_account_format"><xliff:g id="source" example="user@gmail.com">%1$s</xliff:g></string>
+
+    <!-- Checkbox asking the user if they want to display a particular photo for a contact -->
+    <string name="use_photo_as_primary">"Gamitin ang larawang ito"</string>
+
+    <!-- Text used to explain that a contact cannot be edited from the People application since the data is read only [CHAR LIMIT=40] -->
+    <string name="contact_read_only">"Hindi maaaring i-edit mula sa app na ito."</string>
+
+    <!-- Text used to explain that a group cannot be edited since the data is read only [CHAR LIMIT=40] -->
+    <string name="group_read_only">"Hindi maaaring i-edit sa device na ito."</string>
+
+    <!-- An option in the \'Contact photo\' dialog, if there is no photo yet [CHAR LIMIT=50] -->
+    <string name="take_photo">"Kumuha ng larawan"</string>
+
+    <!-- An option in the \'Contact photo\' dialog, if there is already a photo [CHAR LIMIT=50] -->
+    <string name="take_new_photo">"Kumuha ng bagong larawan"</string>
+
+    <!-- An option in the \'Contact photo\' dialog, if there is no photo yet [CHAR LIMIT=50] -->
+    <string name="pick_photo">"Pumili ng larawan"</string>
+
+    <!-- An option in the \'Contact photo\' dialog, if there is already a photo [CHAR LIMIT=50] -->
+    <string name="pick_new_photo">"Pumili ng bagong larawan"</string>
+
+    <!-- Text shown in the contacts app while the background process updates contacts after a locale change [CHAR LIMIT=300] -->
+    <string name="locale_change_in_progress">"Ina-update ang listahan ng contact upang maipakita ang pagbabago ng wika."</string>
+
+    <!-- Text shown in the contacts app while the background process updates contacts after a system upgrade [CHAR LIMIT=300] -->
+    <string name="upgrade_in_progress">"Ina-update ang listahan ng contact."</string>
+
+    <!-- Text shown in the contacts app if the background process updating contacts fails because of memory shortage [CHAR LIMIT=300] -->
+    <string name="upgrade_out_of_memory">"Nasa proseso ng pag-upgrade ang mga contact. \n\nNangangailangan ng tinatayang <xliff:g id="SIZE_IN_MEGABYTES">%s</xliff:g> MB ng panloob na storage ang proseso ng pag-upgrade.\n\nPumili ng isa sa mga sumusunod na pagpipilian:"</string>
+
+    <!-- Button shown in the contacts app if the background process updating contacts fails because of memory shortage [CHAR LIMIT=50] -->
+    <string name="upgrade_out_of_memory_uninstall">"I-uninstall ang ilang application"</string>
+
+    <!-- Button shown in the contacts app if the background process updating contacts fails because of memory shortage [CHAR LIMIT=50] -->
+    <string name="upgrade_out_of_memory_retry">"Muling subukan ang i-upgrade"</string>
+
+    <!-- Title shown in the search result activity of contacts app while searching.  [CHAR LIMIT=20] -->
+    <string name="search_results_searching">"Naghahanap…"</string>
+
+    <!-- Label to display only selection in multiple picker -->
+    <string name="menu_display_selected">"Ipakita ang napili"</string>
+
+    <!-- Label to display all recipients in multiple picker -->
+    <string name="menu_display_all">"Ipakita lahat"</string>
+
+    <!-- Label to select all contacts in multiple picker -->
+    <string name="menu_select_all">"Piliin lahat"</string>
+
+    <!-- Label to clear all selection in multiple picker -->
+    <string name="menu_select_none">"Alisin sa pagkakapili ang lahat"</string>
+
+    <!-- The add field button shown in the editor under each editable Raw Contact [CHAR LIMIT=30] -->
+    <string name="add_field">"Magdagdag ng ibang field"</string>
+
+    <!-- The button to add another entry of a specific data type (i.e. email, phone, address) to a contact in the Raw Contact Editor [CHAR LIMIT=22] -->
+    <string name="add_new_entry_for_section">"Magdagdag ng bago"</string>
+
+    <!-- The button to add an organization field to a contact in the Raw Contact Editor [CHAR LIMIT=22] -->
+    <string name="add_organization">"Magdagdag ng samahan"</string>
+
+    <!-- The button to add an organization field to a contact in the Raw Contact Editor [CHAR LIMIT=12] -->
+    <string name="event_edit_field_hint_text">"Petsa"</string>
+
+    <!-- The button to add an organization field to a contact in the Raw Contact Editor [CHAR LIMIT=15] -->
+    <string name="group_edit_field_hint_text">"Pangalan ng pangkat"</string>
+
+    <!-- String describing the Star/Favorite checkbox
+
+         Used by AccessibilityService to announce the purpose of the view.
+    -->
+    <string name="description_star">"paborito"</string>
+
+    <!-- The title of the Edit-Contact screen -->
+    <string name="edit_contact">"I-edit ang Contact"</string>
+
+    <!-- Shows how many contacts have been merged. The value 1 is not shown but should be translated
+         anyway if we change our mind later -->
+    <plurals name="merge_info">
+        <item quantity="one">"hindi pinagsama"</item>
+        <item quantity="other">"pinagsama mula sa <xliff:g id="COUNT">%0$d</xliff:g> (na) pinagmumulan"</item>
+    </plurals>
+
+    <!-- The message in a confirmation dialog shown when the user selects a
+        contact aggregation suggestion in Contact editor. [CHAR LIMIT=512]-->
+    <string name="aggregation_suggestion_join_dialog_message">"Isama ang kasalukuyang contact sa piniling contact?"</string>
+
+    <!-- The message in a confirmation dialog shown when the user selects a
+        contact aggregation suggestion in Contact editor. [CHAR LIMIT=512]-->
+    <string name="aggregation_suggestion_edit_dialog_message">"Lumipat sa pag-edit ng napiling contact? Kokopyahin ang impormasyong ipinasok mo sa ngayon."</string>
+
+    <!-- The button that creates a local copy of a corporate contact. [CHAR LIMIT=40]-->
+    <string name="menu_copyContact">"Kopyahin sa Aking Mga Contact"</string>
+
+    <!-- The button that adds a contact to the predefined group "My Contacts" (as this is
+         mostly interesting for Google-contacts, this should have the same description as the
+         function of GMail/Contacts on the Web
+         [CHAR LIMIT=40] -->
+    <string name="add_to_my_contacts">"Idagdag sa Aking Mga Contact"</string>
+
+    <!-- The description of the directory where the contact was found [CHAR LIMIT=100]-->
+    <string name="contact_directory_description">"Direktoryo na <xliff:g id="TYPE">%1$s</xliff:g>"</string>
+
+    <!-- Contact list filter indicating that the list shows groups chosen by the user [CHAR LIMIT=64] -->
+    <string name="list_filter_custom">"Custom"</string>
+
+    <!-- Title of the settings activity [CHAR LIMIT=64] -->
+    <string name="activity_title_settings">Mga setting</string>
+
+    <!-- Menu item for the settings activity [CHAR LIMIT=64] -->
+    <string name="menu_settings" msgid="377929915873428211">Mga setting</string>
+
+    <!-- Menu item for invoking contextual help [CHAR LIMIT=64] -->
+    <string name="menu_help">"Tulong"</string>
+
+    <!-- The preference section title for contact display options [CHAR LIMIT=128] -->
+    <string name="preference_displayOptions">"Mga pagpipilian sa pagpapakita"</string>
+
+    <!-- Text used to show a organization that has both a company and title. This is used in the Detail-View
+    of a Contact. This is mostly about the formatting of the two elements, so it should be kept small [CHAR LIMIT=79] -->
+    <string name="organization_company_and_title"><xliff:g id="company" example="Technical Program Manager">%2$s</xliff:g>, <xliff:g id="company" example="Google Inc.">%1$s</xliff:g></string>
+
+    <!-- Title shown for the phone number when the number tries to call on a device that it not a phone [CHAR LIMIT=30] -->
+    <string name="non_phone_caption">"Numero ng telepono"</string>
+
+    <!-- Button to add a phone number to contacts [CHAR LIMIT=25] -->
+    <string name="non_phone_add_to_contacts">"Idagdag sa mga contact"</string>
+
+    <!-- Title of the activity that allows the user to confirm the addition of a detail to 1 existing contact [CHAR LIMIT=25] -->
+    <string name="activity_title_confirm_add_detail">"Idagdag sa contact"</string>
+
+    <!-- Button to close without add a phone number to contacts [CHAR LIMIT=25] -->
+    <string name="non_phone_close">"Isara"</string>
+
+    <!-- Format string that combines the name and the phonetic name for the widget. if the phonetic name is empty, only the display name is used instead [CHAR LIMIT=25] -->
+    <string name="widget_name_and_phonetic"><xliff:g id="display_name" example="John Huber">%1$s</xliff:g> (<xliff:g id="phonetic_name">%2$s</xliff:g>)</string>
+
+    <!-- Checkbox whether to provide a year for a birthday [CHAR LIMIT=30] -->
+    <string name="date_year_toggle">"Magbigay ng taon"</string>
+
+    <!-- Label for the widget that shows picture and social status of a contact [CHAR LIMIT=20] -->
+    <string name="social_widget_label">"Contact"</string>
+
+    <!-- Message of widget while it is loading data [CHAR LIMIT=20] -->
+    <string name="social_widget_loading">"Naglo-load…"</string>
+
+    <!-- Button shown on the main contacts screen when there are no contacts on the device.
+    Creates a new contact. [CHAR LIMIT=128] -->
+    <string name="contacts_unavailable_create_contact">"Lumikha ng bagong contact"</string>
+
+    <!-- Button shown on the main contacts screen when there are no contacts on the device.
+    Navigates to account setup [CHAR LIMIT=128] -->
+    <string name="contacts_unavailable_add_account">"Mag-sign in sa isang account"</string>
+
+    <!-- Button shown on the main contacts screen when there are no contacts on the device.
+    Initiates a contact import dialog [CHAR LIMIT=128] -->
+    <string name="contacts_unavailable_import_contacts">"Mag-import ng mga contact"</string>
+
+    <!-- Title of the dialog that allows creation of a contact group [CHAR LIMIT=128] -->
+    <string name="create_group_dialog_title">"Lumikha ng bagong pangkat"</string>
+
+    <!-- An item in the popup list of groups that triggers creation of a contact group [CHAR LIMIT=128] -->
+    <string name="create_group_item_label">"Lumikha ng bagong pangkat"</string>
+
+    <!-- Shows how many groups are from the specified account [CHAR LIMIT=15] -->
+    <plurals name="num_groups_in_account">
+        <item quantity="one">"1 pangkat"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%0$d</xliff:g> (na) pangkat"</item>
+    </plurals>
+
+    <!-- Confirmation message of the dialog that allows deletion of a contact group  [CHAR LIMIT=256] -->
+    <string name="delete_group_dialog_message">"Tanggalin ang pangkat na \"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\"? (Hindi tatanggalin ang mismong mga contact.)"</string>
+
+    <!-- Subtitle of the group detail page that describes how many people are in the current group [CHAR LIMIT=30] -->
+    <plurals name="num_contacts_in_group">
+        <item quantity="one">"<xliff:g id="COUNT_0">%1$d</xliff:g> (na) tao mula sa <xliff:g id="ACCOUNT_TYPE">%2$s</xliff:g>"</item>
+        <item quantity="other">"<xliff:g id="COUNT_0">%1$d</xliff:g> (na) tao mula sa <xliff:g id="ACCOUNT_TYPE">%2$s</xliff:g>"</item>
+    </plurals>
+
+    <!-- Subtitle of a group (in the group list) that describes how many people are in the current group [CHAR LIMIT=30] -->
+    <plurals name="group_list_num_contacts_in_group">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> (na) tao"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> (na) tao"</item>
+    </plurals>
+
+    <!-- Toast displayed when the user creates a new contact and attempts to join it
+      with another before entering any data  [CHAR LIMIT=256] -->
+    <string name="toast_join_with_empty_contact">"I-type ang pangalan ng contact bago isama sa isa pa."</string>
+
+    <!-- Option displayed in context menu to copy long pressed item to clipboard [CHAR LIMIT=64] -->
+    <string name="copy_text">"Kopyahin sa clipboard"</string>
+
+    <!-- Option displayed in context menu to set long pressed item as default contact method [CHAR LIMIT=64] -->
+    <string name="set_default">"Itakda ang default"</string>
+
+    <!-- Option displayed in context menu to clear long pressed item as default contact method [CHAR LIMIT=64] -->
+    <string name="clear_default">"I-clear ang default"</string>
+
+    <string name="edit_before_call">I-edit numero bago tumawag</string>
+    <!-- Toast shown when text is copied to the clipboard [CHAR LIMIT=64] -->
+    <string name="toast_text_copied">"Kinopya ang teksto"</string>
+
+    <!-- Contents of the alert dialog when the user hits the Cancel button in the editor [CHAR LIMIT=128] -->
+    <string name="cancel_confirmation_dialog_message">"Itapon ang iyong mga pagbabago?"</string>
+
+    <!-- Description of a call log entry, made of a call type and a date -->
+    <string name="call_type_and_date">
+        <xliff:g id="call_type" example="Friends">%1$s</xliff:g>  <xliff:g id="call_short_date" example="Friends">%2$s</xliff:g>
+    </string>
+
+    <!-- Text displayed in place of the display name for the contact that represents the user\'s
+      personal profile entry [CHAR LIMIT=64] -->
+    <string name="profile_display_name">"I-set up ang aking profile"</string>
+
+    <!-- Label to instruct the user to type in a contact\'s name to add the contact as a member of the current group. [CHAR LIMIT=64] -->
+    <string name="enter_contact_name">"I-type ang pangalan ng tao"</string>
+
+    <!-- Hint text in the group name box in the edit group view. [CHAR LIMIT=20]-->
+    <string name="group_name_hint">"Pangalan ng pangkat"</string>
+
+    <!-- Header label in the contact editor for a profile that is local to the device only (and not associated with any account) [CHAR LIMIT=25] -->
+    <string name="local_profile_title">"Aking lokal na profile"</string>
+
+    <!-- Header label in the contact editor for a profile that comes from an external third-party app whose name is given by source [CHAR LIMIT=20] -->
+    <string name="external_profile_title">"Aking <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g> na profile"</string>
+
+    <!-- Toast shown when the app starts showing all contacts regardless of its current
+         contact filter state. [CHAR LIMIT=64] -->
+    <string name="toast_displaying_all_contacts">"Ipinapakita ang lahat ng contact"</string>
+
+    <!-- Message in the standard "no account" prompt that encourages the user to add a Google account before continuing to use the People app [CHAR LIMIT=NONE] -->
+    <string name="no_account_prompt">"Mas mahusay na gumagana ang Mga Contact kapag may Google Account.\n\n• I-access mula sa anumang web browser.\n• Secure na i-back up ang iyong mga contact."</string>
+
+    <!-- Message in the standard "no account" prompt that encourages the user to add any account (non Google-specific) before continuing to use the People app [CHAR LIMIT=NONE] -->
+    <string name="generic_no_account_prompt">"Panatilihing ligtas ang iyong mga contact kahit na mawala mo ang iyong telepono: mag-synchronize sa isang online na serbisyo."</string>
+
+    <!-- Title of the screen that encourages the user to add any account (non Google-specific) for a better Contacts app experience [CHAR LIMIT=20] -->
+    <string name="generic_no_account_prompt_title">"Magdagdag ng account"</string>
+
+    <!-- Message in the contact editor prompt that notifies the user that the newly created contact will not be saved to any account, and prompts addition of an account [CHAR LIMIT=NONE] -->
+    <string name="contact_editor_prompt_zero_accounts">"Hindi maba-back up ang iyong bagong contact. Magdagdag ng account na nagba-back up ng mga contact online?"</string>
+
+    <!-- Message in the contact editor prompt that asks the user if it\'s okay to save the newly created contact to the account shown. [CHAR LIMIT=NONE] -->
+    <string name="contact_editor_prompt_one_account">"Masi-synchronize ang iyong bagong contact sa <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>."</string>
+
+    <!-- Message in the contact editor prompt that asks the user which account they want to save the newly created contact to. [CHAR LIMIT=NONE] -->
+    <string name="contact_editor_prompt_multiple_accounts">"Masi-synchronize mo ang iyong bagong contact sa isa sa iyong mga sumusunod na account. Alin ang gusto mong gamitin?"</string>
+
+    <!-- Title of the ContactEditorActivity when creating a new contact. The char
+         limit is short and cannot be increased, since this needs to be displayed in a single line
+         at a pre-determined text size. [CHAR LIMIT=20] -->
+    <string name="contact_editor_title_new_contact">"Dagdag bago contact"</string>
+
+    <!-- Title of the ContactEditorActivity when editing a contact that already exists. The char
+         limit is short and cannot be increased, since this needs to be displayed in a single line
+         at a pre-determined text size. [CHAR LIMIT=20] -->
+    <string name="contact_editor_title_existing_contact">"I-edit ang contact"</string>
+
+    <!-- Button label to indicate that the user wants to save the newly created contact locally (instead of backing it up online) [CHAR LIMIT=20] -->
+    <string name="keep_local">"Panatilihing lokal"</string>
+
+    <!-- Button label to prompt the user to add an account (when there are 0 existing accounts on the device) [CHAR LIMIT=30] -->
+    <string name="add_account">+ ACCOUNT</string>
+
+    <!-- Button label to prompt the user to add another account (when there are already existing accounts on the device) [CHAR LIMIT=30] -->
+    <string name="add_new_account">"Magdagdag ng bagong account"</string>
+    <string name="select_all">"Lahat"</string>
+    <string name="menu_sendViaSMS">"Ipadala ang contact via SMS"</string>
+    <!-- Confirmation dialog title after users selects to delete a contact. [CHAR LIMIT=25]-->
+    <string name="deleteConfirmation_title">"Tanggalin ang contact?"</string>
+    <string name="import_sim_contacts_title">Ini-import ang mga contact sa SIM</string>
+    <string name="import_sim_contacts_message">Nag-i-import ng mga contact mula sa sim\u2026</string>
+    <plurals name="ContactMultiImportConfirmation">
+        <item quantity="one">%d contact ang ii-import.</item>
+        <item quantity="other">%d (na) contact ang ii-import.</item>
+    </plurals>
+    <string name="import_finish">"Tapos na ang pag-import"</string>
+    <plurals name="import_progress">
+        <item quantity="one">%d contact ang na-import</item>
+        <item quantity="other">%d (na) contact ang na-import</item>
+    </plurals>
+    <plurals name="contacts_selected">
+        <item quantity="one">%d contact ang pinili</item>
+        <item quantity="other">%d (na) contact ang pinili</item>
+    </plurals>
+    <string name="too_many_contacts_add_to_group">Masyadong maraming contact, dapat mas kaunti ito sa <xliff:g id="count">%d</xliff:g></string>
+    <!-- Multi Delete Contacts related strings -->
+    <plurals name="ContactMultiDeleteConfirmation">
+        <item quantity="one">%d contact ang tatanggalin.</item>
+        <item quantity="other">%d (na) contact ang tatanggalin.</item>
+    </plurals>
+    <string name="delete_contacts_title">"Tanggalin mga Contact"</string>
+    <string name="delete_contacts_message">Nagtatanggal ng Mga Contact\u2026</string>
+    <string name="delete_termination">"Ang pagtanggal ay pagwawakas"</string>
+    <!-- Menu item shown only when the special debug mode is enabled, which is used to send all contacts database files via email.  [CHAR LIMI=NONE] -->
+    <string name="menu_export_database">"I-export ang mga file ng database"</string>
+
+    <!-- add for MemoryStatusActivity -->
+    <string name="menu_memory_status">Katayuan ng memory</string>
+    <string name="memory_status_title">Katayuan ng memory</string>
+    <string name="memory_size">Kabuuan:</string>
+    <string name="memory_available">"Available"</string>
+    <string name="memory_used">Ginagamit:</string>
+    <string name="calculating_status_now">Kinakalkula ang Katayuan ngayon...</string>
+    <string name="contact_detail_picture_description">"Larawan. Piliin upang palitan"</string>
+
+    <!-- Content description for the button that adds a new contact
+         [CHAR LIMIT=NONE] -->
+    <string name="action_menu_add_new_contact_button">"magdagdag ng bagong contact"</string>
+    <!-- Button Label to see more on an ExpandingEntryCardView [CHAR LIMIT=40] -->
+    <string name="expanding_entry_card_view_see_more">"Tumingin nang higit pa"</string>
+    <!-- Button Label to see less on an ExpandingEntryCardView [CHAR LIMIT=40] -->
+    <string name="expanding_entry_card_view_see_less">"Tumingin nang mas kaunti"</string>
+    <!-- Button Label to see all on an ExpandingEntryCardView [CHAR LIMIT=40] -->
+    <string name="expanding_entry_card_view_see_all">"Tingnan lahat"</string>
+
+    <!-- Title of recent card. [CHAR LIMIT=60] -->
+    <string name="recent_card_title">"Kamakailan"</string>
+
+    <!-- Title of recent card. [CHAR LIMIT=40] -->
+    <string name="about_card_title">"Tungkol dito"</string>
+
+    <!-- Title of sms action entry. [CHAR LIMIT=60] -->
+    <string name="send_message">"Magpadala ng mensahe"</string>
+
+    <!-- Toast that appears when you are copying a directory contact into your personal contacts -->
+    <string name="toast_making_personal_copy">"Gumagawa ng personal na kopya..."</string>
+    <!-- Timestamp string for interactions from yesterday. [CHAR LIMIT=40] -->
+    <string name="yesterday">"Kahapon"</string>
+    <string name="tomorrow">"Bukas"</string>
+    <!-- Timestamp string for interactions from today. [CHAR LIMIT=40] -->
+    <string name="today">"Ngayon"</string>
+    <!-- Text for an event starting on the current day with a start and end time.
+         For ex, "Today at 5:00pm-6:00pm" [CHAR LIMIT=NONE] -->
+    <string name="today_at_time_fmt">"Ngayong <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
+    <!-- Text for an event starting on the next day with a start and end time.
+         For ex, "Tomorrow at 5:00pm-6:00pm" [CHAR LIMIT=NONE] -->
+    <string name="tomorrow_at_time_fmt">"Bukas nang <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
+    <!-- Format string for a date and time description.  For ex:
+         "April 19, 2012, 3:00pm - 4:00pm" [CHAR LIMIT=NONE] -->
+    <string name="date_time_fmt">"<xliff:g id="date">%s</xliff:g>, <xliff:g id="time_interval">%s</xliff:g>"</string>
+    <!-- Title for untitled calendar interactions [CHAR LIMIT=40] -->
+    <string name="untitled_event">"(Kaganapang walang pamagat)"</string>
+
+    <!-- Name of the button in the date/time picker to accept the date/time change [CHAR LIMIT=15] -->
+    <string name="date_time_set">"Itakda"</string>
+
+    <!-- Header for the IM entry [CHAR LIMIT=40] -->
+    <string name="header_im_entry">"IM"</string>
+    <!-- Header for the Organization entry [CHAR LIMIT=40] -->
+    <string name="header_organization_entry">"Organisasyon"</string>
+    <!-- Header for the Nickname entry [CHAR LIMIT=40] -->
+    <string name="header_nickname_entry">"Palayaw"</string>
+    <!-- Header for the Note entry [CHAR LIMIT=40] -->
+    <string name="header_note_entry">"Tala"</string>
+    <!-- Header for the Website entry [CHAR LIMIT=40] -->
+    <string name="header_website_entry">"Website"</string>
+    <!-- Header for the Event entry [CHAR LIMIT=40] -->
+    <string name="header_event_entry">"Kaganapan"</string>
+    <!-- Header for the Relation entry [CHAR LIMIT=40] -->
+    <string name="header_relation_entry">"Kaugnayan"</string>
+
+    <!-- Content description for directions secondary button [CHAR LIMIT=NONE] -->
+    <string name="content_description_directions">"mga direksyon sa lokasyon"</string>
+
+    <!-- Content description for recent sms interaction [CHAR LIMIT=NONE] -->
+    <string name="content_description_recent_sms">"kamakailang sms. <xliff:g id="MESSAGE_DETAILS">%s</xliff:g>. i-click upang tumugon"</string>
+
+    <!-- Header for the Relation entry [CHAR LIMIT=NONE] -->
+    <string name="content_description_recent_call_type_incoming">"incoming"</string>
+    <!-- Header for the Relation entry [CHAR LIMIT=NONE] -->
+    <string name="content_description_recent_call_type_outgoing">"papalabas"</string>
+    <!-- Header for the Relation entry [CHAR LIMIT=NONE] -->
+    <string name="content_description_recent_call_type_missed">"hindi nasagot"</string>
+
+    <!-- Content description for recent sms interaction [CHAR LIMIT=NONE] -->
+    <string name="content_description_recent_call">"kamakailang tawag. <xliff:g id="CALL_DETAILS">%s</xliff:g>. i-click upang tumawag"</string>
+
+    <!-- File Authority for the photo picker -->
+    <string name="photo_file_provider_authority" translatable="false">com.android.contacts.files</string>
+
+    <!-- Prefix for messages that you sent [CHAR LIMIT=40] -->
+    <string name="message_from_you_prefix">"Ikaw: <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
+
+    <string name="menu_copyTo">"Kopyahin sa "</string>
+    <string name="no_empty_email_in_usim">"Puno na ang email, hindi nakopya ang ilang talaan "</string>
+    <string name="add_to_white">Idagdag sa whitelist</string>
+    <string name="add_to_black">Idagdag sa blacklist</string>
+    <string name="voicemail">"Voicemail"</string>
+    <string name="select_call_title">Pumili ng mga log ng tawag</string>
+    <string name="delete_call_title">"Tanggalin call logs"</string>
+    <string name="delete_call_message">"Tinatanggal call logs..."</string>
+    <string name="delete_call_alert">Sigurado kang tanggalin ang piniling call logs?</string>
+    <string name="title_del_call">"Tanggalin"</string>
+    <string name="title_add_members">"Idagdag mga miyembro"</string>
+</resources>

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+-/******************************************************************************
+* @file       main.xml
+* @brief      Layout xml for large screen devices
+* Description Layout file for devices that have width with at least 720 dp
+*  Copyright (C) 2014 Qualcomm Technologies, Inc.  All Rights Reserved.
+*  Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <ScrollView
+        android:id="@+id/scrollContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true" >
+
+        <LinearLayout
+            android:id="@+id/topLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <ToggleButton
+                android:id="@+id/toggleButtonEnable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ui_element_margin"
+                android:onClick="onClickEnableButton"
+                android:textOff="@string/digital_pen_enable_off"
+                android:textOn="@string/digital_pen_enable_on" />
+
+            <TextView
+                android:id="@+id/textViewVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ui_element_margin"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ui_element_margin"
+                android:text="@string/off_screen_mode_radio_header"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <RadioButton
+                    android:id="@+id/radioOffScreenDisabled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ui_element_margin"
+                    android:checked="true"
+                    android:onClick="onClickRadioOffScreenMode"
+                    android:text="@string/off_screen_mode_disabled" />
+
+                <RadioButton
+                    android:id="@+id/radioOffScreenDuplicate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ui_element_margin"
+                    android:onClick="onClickRadioOffScreenMode"
+                    android:text="@string/off_screen_mode_duplicate" />
+            </RadioGroup>
+
+            <Switch
+                android:id="@+id/switchSmarterStand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ui_element_margin"
+                android:text="@string/switch_smarter_stand"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollContainer2"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent" >
+        <LinearLayout
+            android:id="@+id/topLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ui_element_margin"
+                android:text="@string/off_screen_location_radio_header"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:visibility="gone" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" >
+
+                <RadioButton
+                    android:id="@+id/radioOffScreenLocationLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ui_element_margin"
+                    android:checked="true"
+                    android:onClick="onClickRadioOffScreenLocation"
+                    android:text="@string/off_screen_location_left"
+                    android:visibility="gone" />
+
+                <RadioButton
+                    android:id="@+id/radioOffScreenLocationRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ui_element_margin"
+                    android:onClick="onClickRadioOffScreenLocation"
+                    android:text="@string/off_screen_location_right"
+                    android:visibility="gone" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ui_element_margin"
+                android:text="@string/power_mode_radio_header"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <RadioButton
+                    android:id="@+id/radioPowerModeAccuracy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ui_element_margin"
+                    android:checked="true"
+                    android:onClick="onClickRadioPowerMode"
+                    android:text="@string/power_mode_accuracy" />
+
+                <RadioButton
+                    android:id="@+id/radioPowerModePower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ui_element_margin"
+                    android:onClick="onClickRadioPowerMode"
+                    android:text="@string/power_mode_power" />
+            </RadioGroup>
+
+            <Switch
+                android:id="@+id/switchStopPenOnScreenOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ui_element_margin"
+                android:text="@string/switch_stop_pen_on_screen_off"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Switch
+                android:id="@+id/switchStartPenOnBoot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ui_element_margin"
+                android:text="@string/switch_start_pen_on_boot"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollContainer3"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent" >
+         <LinearLayout
+            android:id="@+id/topLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+             <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textViewInRangeDistanceLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ui_element_margin"
+                    android:text="@string/touch_range_header"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/editTextInRangeDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/textViewInRangeDistanceLabel"
+                    android:layout_toRightOf="@id/textViewInRangeDistanceLabel"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+            </RelativeLayout>
+
+            <Switch
+                android:id="@+id/switchOnScreenHover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ui_element_margin"
+                android:text="@string/on_screen_hover"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textViewOnScreenHoverMaxDistanceLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ui_element_margin"
+                    android:text="@string/hover_max_distance"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/editTextOnScreenHoverMaxDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/textViewOnScreenHoverMaxDistanceLabel"
+                    android:layout_toRightOf="@id/textViewOnScreenHoverMaxDistanceLabel"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+            </RelativeLayout>
+
+            <Switch
+                android:id="@+id/switchOnScreenHoverIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ui_element_margin"
+                android:text="@string/show_hover_icon"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Switch
+                android:id="@+id/switchOffScreenHover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ui_element_margin"
+                android:text="@string/off_screen_hover"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textViewOffScreenHoverMaxDistanceLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ui_element_margin"
+                    android:text="@string/hover_max_distance"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/editTextOffScreenHoverMaxDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/textViewOffScreenHoverMaxDistanceLabel"
+                    android:layout_toRightOf="@id/textViewOffScreenHoverMaxDistanceLabel"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+            </RelativeLayout>
+
+            <Switch
+                android:id="@+id/switchOffScreenHoverIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ui_element_margin"
+                android:text="@string/show_hover_icon"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+         </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+       android:id="@+id/scrollContainer4"
+       android:layout_width="wrap_content"
+       android:layout_height="fill_parent" >
+
+        <LinearLayout
+           android:id="@+id/topLayout4"
+           android:layout_width="wrap_content"
+           android:layout_height="fill_parent"
+           android:orientation="vertical" >
+
+            <Switch
+                android:id="@+id/switchEraserEnable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ui_element_margin"
+                android:text="@string/eraser_enable"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textViewEraserIndexLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ui_element_margin"
+                    android:text="@string/eraser_index_header"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/editTextEraserIndex"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/textViewEraserIndexLabel"
+                    android:layout_toRightOf="@id/textViewEraserIndexLabel"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ui_element_margin"
+                android:text="@string/eraser_behavior_radio_header"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <RadioButton
+                    android:id="@+id/radioEraserBehaviorHold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ui_element_margin"
+                    android:checked="true"
+                    android:onClick="onClickRadioEraserBehavior"
+                    android:text="@string/eraser_behavior_hold" />
+
+                <RadioButton
+                    android:id="@+id/radioEraserBehaviorToggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ui_element_margin"
+                    android:onClick="onClickRadioEraserBehavior"
+                    android:text="@string/eraser_behavior_toggle" />
+            </RadioGroup>
+
+         </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

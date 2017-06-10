@@ -1,0 +1,431 @@
+/*****************************************************************************
+  @FILE     sns_sam_orientation.idl
+
+  @BRIEF    Message definition for Orientation.
+
+  @DESCRIPTION
+  This file defines messages provided to clients to use
+  Orientation algorithm services.
+
+  @COPYRIGHT
+  Copyright (c) 2011-2014 Qualcomm Technologies, Inc.  All Rights Reserved
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+include "sns_sam_common_v01.idl";
+
+revision 7;
+
+const SNS_SAM_ORIENTATION_SUID = 0x26f3f887f69de6ee;
+
+const SNS_SENSOR_ACCURACY_UNRELIABLE = 0;  /**< Sensor accuracy is unreliable. */
+const SNS_SENSOR_ACCURACY_LOW        = 1;  /**< Sensor accuracy is low. */
+const SNS_SENSOR_ACCURACY_MEDIUM     = 2;  /**< Sensor accuracy is medium. */
+const SNS_SENSOR_ACCURACY_HIGH       = 3;  /**< Sensor accuracy is high. */
+
+const SNS_SAM_ORIENTATION_MAX_REPORTS_IN_BATCH = 42;
+/**< Maximum number of reports in a batch indication. This is set
+     based on the maximum payload size supported by the transport framework.
+*/
+
+struct {
+  float rotation_vector[4];
+   /**< Rotation vector values; unitless, float.*/
+  float gravity[3];
+  /**< Gravity vector along axis x/y/z; units: m/s/s; SAE coordinate frame. */
+  float lin_accel[3];
+  /**< Linear acceleration along axis x/y/z; units: m/s/s; SAE coordinate frame. */
+  uint8 rotation_vector_accuracy;
+  /**< Rotation vector accuracy:
+     SNS_SENSOR_ACCURACY_UNRELIABLE = 0,
+     SNS_SENSOR_ACCURACY_LOW        = 1,
+     SNS_SENSOR_ACCURACY_MEDIUM     = 2,
+     SNS_SENSOR_ACCURACY_HIGH       = 3 */
+  uint8 gravity_accuracy;
+  /**< Gravity accuracy:
+       SNS_SENSOR_ACCURACY_UNRELIABLE = 0,
+       SNS_SENSOR_ACCURACY_LOW        = 1,
+       SNS_SENSOR_ACCURACY_MEDIUM     = 2,
+       SNS_SENSOR_ACCURACY_HIGH       = 3 */
+  uint8 coordinate_system;
+  /**< Coordinate system used in the output:
+       0 = Android (East/North/Up) - default
+       1 = SAE (North/East/Down) */
+} sns_sam_orientation_result_s;
+
+//============================================================================
+/** @COMMAND SNS_SAM_ORIENTATION_ENABLE
+    @BRIEF This command enables a Orientation algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_ORIENTATION_ENABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint32  report_period;
+  /**< Report period in seconds; Q16 format. This determines the algorithm
+       output report rate. Specify 0 to report at the sampling rate.
+  */
+  optional uint32   sample_rate;
+  /**< Sample rate in Hz; Q16 format.
+     If the sample rate is less than the report rate, it is set to the report
+       rate.
+  */
+  optional uint8 coordinate_sys;
+  /**< Coordinate system used in the output:
+       0 = Android (East/North/Up) - default
+       1 = SAE (North/East/Down)*/
+
+  //! @VERSION 1.2
+  optional sns_suspend_notification_s notify_suspend;
+  /**< Identifies whether indications for this request are to be sent
+       when the processor is in the Suspend state.
+
+       If this field is not specified, the default value is set to:
+       notify_suspend->proc_type                  = SNS_PROC_APPS
+       notify_suspend->send_indications_during_suspend  = FALSE
+
+       This field does not have any bearing on error indication
+       messages, which are sent even during Suspend.
+    */
+} sns_sam_orientation_enable_req_msg;
+
+//! @MSG     SNS_SAM_ORIENTATION_ENABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s  resp = 2;
+  optional uint8               instance_id;
+  /**<
+    Instance ID, which is assigned by the SAM.
+    The client must use this instance ID for future messages associated with
+    the current algorithm instance.
+  */
+} sns_sam_orientation_enable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_ORIENTATION_DISABLE
+    @BRIEF This command disables a Orientation algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_ORIENTATION_DISABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8  instance_id;
+  /**< Identifies the algorithm instance.  */
+} sns_sam_orientation_disable_req_msg;
+
+//! @MSG     SNS_SAM_ORIENTATION_DISABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s  resp = 2;
+  /**< Common response message. */
+  optional uint8               instance_id;
+  /**< Identifies the algorithm instance.  */
+} sns_sam_orientation_disable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_ORIENTATION_REPORT
+    @BRIEF Report containing the Orientation algorithm output.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_ORIENTATION_REPORT_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                     instance_id;
+  /**< Identifies the algorithm instance.  */
+  mandatory uint32                    timestamp;
+  /**< Timestamp of the input used to generate the algorithm output. */
+  mandatory sns_sam_orientation_result_s  result;
+  /**< Output of the orientation algorithm instance. */
+} sns_sam_orientation_report_ind_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_ORIENTATION_GET_REPORT
+    @BRIEF This command fetches latest report output of a Orientation algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_ORIENTATION_GET_REPORT_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8  instance_id;
+  /**< Identifies the algorithm instance.  */
+} sns_sam_orientation_get_report_req_msg;
+
+//! @MSG     SNS_SAM_ORIENTATION_GET_REPORT_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s         resp = 2;
+  /**< Common response message. */
+  optional uint8                      instance_id;
+  /**< Identifies the algorithm instance.  */
+  optional uint32                     timestamp;
+  /**< Timestamp of the input used to generate the algorithm output. */
+  optional sns_sam_orientation_result_s  result;
+  /**< Output of the Orientation algorithm instance. */
+} sns_sam_orientation_get_report_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_ORIENTATION_ERROR
+    @BRIEF Asynchronous error indication for an Orientation algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_ORIENTATION_ERROR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//============================================================================
+
+message {
+  mandatory uint8  error;
+  /**< Sensor1 error code. */
+  mandatory uint8  instance_id;
+  /**< Identifies the algorithm instance.  */
+} sns_sam_orientation_error_ind_msg;
+
+
+//! @VERSION 1.3
+//============================================================================
+/** @COMMAND SNS_SAM_ORIENTATION_BATCH
+    @BRIEF This command handles batch mode for a Orientation algorithm.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+    @DESCRIPTION Set the batch period for an active algorithm stream.
+                 A subsequent request may update or disable the batch period;
+                 all batched output will be sent prior to the response message.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_ORIENTATION_BATCH_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8 instance_id;
+  /**< Identifies the algorithm instance.  */
+
+  mandatory int32 batch_period;
+  /**< Specifies the interval over which reports are to be batched, in seconds;
+       Q16 format. If AP is in suspend and notify_suspend is FALSE, undelivered
+       reports will be batched in circular FIFO and delivered upon wakeup.
+       - P = 0 -- Disable batching
+       - P > 0 -- Enable batching
+    */
+
+  optional sns_batch_req_type_e req_type;
+  /**< Field no longer supported in version 7 and later.  Functionality can be
+       approximated using the notify_suspend flag in the ENABLE_REQ message.  Max
+       buffer depth is returned in GET_ATTRIBUTES_RESP.
+
+       Optional request type:
+       - 0 -– Do not wake the client from Suspend when the buffer is full (default)
+       - 1 -– Wake the client from Suspend when the buffer is full
+       - 2 –- Use to get the maximum buffer depth. This does not enable/disable batching.
+           instance_id and batch_period are ignored for this request type.
+    */
+} sns_sam_orientation_batch_req_msg;
+
+//! @MSG     SNS_SAM_ORIENTATION_BATCH_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s resp = 2;
+  /**< Common response message. */
+
+  optional uint8 instance_id;
+  /**< Identifies the algorithm instance.  */
+
+  optional uint32 max_batch_size;
+  /**< Maximum supported batch size. */
+
+  optional uint32 timestamp;
+  /**< Timestamp when the batch request was processed, in SSC ticks. */
+} sns_sam_orientation_batch_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_ORIENTATION_BATCH_REPORT
+    @BRIEF Report containing a batch of algorithm outputs.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_ORIENTATION_BATCH_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8 instance_id;
+  /**< Identifies the algorithm instance.  */
+
+  mandatory uint32 first_report_timestamp;
+  /**< Timestamp of the input used to generate the first algorithm output in
+       the batch, in SSC ticks. */
+
+  mandatory uint16 timestamp_offsets<SNS_SAM_ORIENTATION_MAX_REPORTS_IN_BATCH>;
+  /**< Offsets from the timestamp of the previous report in the batch. */
+
+  mandatory sns_sam_orientation_result_s reports<SNS_SAM_ORIENTATION_MAX_REPORTS_IN_BATCH>;
+  /**< Orientation algorithm output reports. */
+
+  //! @VERSION 1.4
+  optional uint8 ind_type;
+  /**< Optional batch indication type:
+       - SNS_BATCH_ONLY_IND -- Standalone batch indication, not part of a back-to-back indication stream
+       - SNS_BATCH_FIRST_IND -- First indication in a stream of back-to-back indications
+       - SNS_BATCH_INTERMEDIATE_IND -- Intermediate indication in a stream of back-to-back indications
+       - SNS_BATCH_LAST_IND -- Last indication in a stream of back-to-back indications
+    */
+
+} sns_sam_orientation_batch_ind_msg;
+
+//! @VERSION 1.4
+//============================================================================
+/** @COMMAND SNS_SAM_ORIENT_UPDATE_BATCH_PERIOD
+    @BRIEF This command updates active batch period for a Orientation
+           algorithm when batching is ongoing.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+    @DESCRIPTION Messages deprecated and no longer supported in version 7 and
+                 later.  Functionality can be approximated using two clients and
+                 the notify_suspend flag in the ENABLE_REQ message.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_ORIENT_UPDATE_BATCH_PERIOD_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8 instance_id;
+  /**< Identifies the algorithm instance.  */
+
+  mandatory int32 active_batch_period;
+  /**< Specifies the new interval (in seconds, Q16 format) over which reports
+       are to be batched when the client processor is awake. This only takes
+       effect if batching is ongoing:
+       - P > 0 -- Override the active batch period set in the batch enable request
+       - P = 0 -- Switch to the active batch period set in the batch enable request
+    */
+} sns_sam_orient_update_batch_period_req_msg;
+
+//! @MSG     SNS_SAM_ORIENT_UPDATE_BATCH_PERIOD_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s resp = 2;
+  /**< Common response message. */
+
+  optional uint8 instance_id;
+  /**< Identifies the algorithm instance.  */
+
+  optional uint32 timestamp;
+  /**< Timestamp when the batch request was processed, in SSC ticks. */
+} sns_sam_orient_update_batch_period_resp_msg;
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_SAM_ORIENTATION_SVC {
+  //! @ID SNS_COMMON_CANCEL
+  sns_common_cancel_req_msg            SNS_SAM_ORIENTATION_CANCEL_REQ,
+  sns_common_cancel_resp_msg           SNS_SAM_ORIENTATION_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_COMMON_VERSION
+  sns_common_version_req_msg           SNS_SAM_ORIENTATION_VERSION_REQ,
+  sns_common_version_resp_msg          SNS_SAM_ORIENTATION_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SAM_ORIENTATION_ENABLE
+  sns_sam_orientation_enable_req_msg       SNS_SAM_ORIENTATION_ENABLE_REQ,
+  sns_sam_orientation_enable_resp_msg      SNS_SAM_ORIENTATION_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_SAM_ORIENTATION_DISABLE
+  sns_sam_orientation_disable_req_msg      SNS_SAM_ORIENTATION_DISABLE_REQ,
+  sns_sam_orientation_disable_resp_msg     SNS_SAM_ORIENTATION_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_SAM_ORIENTATION_GET_REPORT
+  sns_sam_orientation_get_report_req_msg   SNS_SAM_ORIENTATION_GET_REPORT_REQ,
+  sns_sam_orientation_get_report_resp_msg  SNS_SAM_ORIENTATION_GET_REPORT_RESP
+    = 0x04;
+
+  //! @ID SNS_SAM_ORIENTATION_REPORT
+  sns_sam_orientation_report_ind_msg       SNS_SAM_ORIENTATION_REPORT_IND
+    = 0x05;
+
+  //! @ID SNS_SAM_ORIENTATION_ERROR
+  sns_sam_orientation_error_ind_msg        SNS_SAM_ORIENTATION_ERROR_IND
+    = 0x06;
+
+  //! @ID SNS_SAM_ORIENTATION_BATCH
+  sns_sam_orientation_batch_req_msg        SNS_SAM_ORIENTATION_BATCH_REQ,
+  sns_sam_orientation_batch_resp_msg       SNS_SAM_ORIENTATION_BATCH_RESP
+    = 0x21;
+
+  //! @ID SNS_SAM_ORIENTATION_BATCH_REPORT
+  sns_sam_orientation_batch_ind_msg        SNS_SAM_ORIENTATION_BATCH_IND
+    = 0x22;
+
+  //! @ID SNS_SAM_ORIENT_UPDATE_BATCH_PERIOD
+  sns_sam_orient_update_batch_period_req_msg  SNS_SAM_ORIENT_UPDATE_BATCH_PERIOD_REQ,
+  sns_sam_orient_update_batch_period_resp_msg SNS_SAM_ORIENT_UPDATE_BATCH_PERIOD_RESP
+    = 0x23;
+
+  //! @ID SNS_SAM_GET_ALGO_ATTRIBUTES
+  sns_sam_get_algo_attrib_req_msg          SNS_SAM_ORIENT_GET_ATTRIBUTES_REQ,
+  sns_sam_get_algo_attrib_resp_msg         SNS_SAM_ORIENT_GET_ATTRIBUTES_RESP
+    = 0x24;
+
+} = SNS_QMI_SVC_ID_23;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+*/
+
+//============================================================================
+// End of Module
+//============================================================================

@@ -1,0 +1,133 @@
+/*****************************************************************************
+  @FILE     sns_diag_dsps.idl
+
+  @BRIEF    Interface to the diag module on the DSPS processor
+
+  @DESCRIPTION
+  Diag module on DSPS processor receives log and debug masks and controls
+  log and debug message processing accordingly
+
+*****************************************************************************/
+include "sns_common_v01.idl";
+
+revision 3;
+
+/****************************************************************************
+ *  @BRIEF  Constants
+ ****************************************************************************/
+const SNS_DIAG_MAX_OPTIONS = 16;   //!< max # of options in an options msg
+
+
+/** structure containing log mask information.
+    On DSPS QMI IDL type table should not be empty */
+struct {
+  uint64 mask;
+  /**< 64 bit mask indicating which diag elements are enabled */
+} sns_diag_mask_s;
+
+/** structure defininig debug options and their values */
+struct {
+  uint32 option; //!< option to set value for. Opaque;- NOT enumerated in IDL
+  uint64 value;  //!< option value to be set. Opaque;- NOT enumerated in IDL
+} sns_diag_debug_options;
+
+//!============================================================================
+/** @COMMAND SNS_DIAG_SET_DEBUG_OPTIONS
+    @BRIEF This command sets generic debug options
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//!============================================================================
+
+//! @MSG     SNS_DIAG_SET_DEBUG_OPTIONS
+//! @TYPE    Request
+message {
+  mandatory  sns_diag_debug_options options<SNS_DIAG_MAX_OPTIONS>;
+  /**< Options array */
+} sns_diag_set_debug_options_req_msg;
+
+//! @MSG     SNS_DIAG_SET_DEBUG_OPTIONS
+//! @TYPE    Response
+message {
+   mandatory sns_common_resp_s resp = 2;
+  /**< response indicating whether the request suceeded or failed */
+} sns_diag_set_debug_options_resp_msg;
+
+//!============================================================================
+/** @COMMAND SNS_DIAG_SET_LOG_MASK
+    @BRIEF This command sets the log mask for sensors diag module on DSPS
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//!============================================================================
+
+//! @MSG     SNS_DIAG_SET_LOG_MASK_REQ
+//! @TYPE    Request
+message {
+  mandatory sns_diag_mask_s log_mask;
+  /**< log mask indicating which log packets are enabled */
+  optional  sns_diag_mask_s log_mask_ext;
+  /**< mask for enabling logs with extended IDs (64 and beyond) */
+} sns_diag_set_log_mask_req_msg;
+
+//! @MSG     SNS_DIAG_SET_LOG_MASK_RESP
+//! @TYPE    Response
+message {
+   mandatory sns_common_resp_s resp = 2;
+  /**< response indicating whether the request suceeded or failed */
+} sns_diag_set_log_mask_resp_msg;
+
+//!============================================================================
+/** @COMMAND SNS_DIAG_SET_DEBUG_MASK
+    @BRIEF This command sets the debug mask for sensors diag module on DSPS
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//!============================================================================
+
+//! @MSG     SNS_DIAG_SET_DEBUG_MASK_REQ
+//! @TYPE    Request
+message {
+   mandatory sns_diag_mask_s debug_mask;
+   /**< debug mask indicating which debug messages are enabled */
+} sns_diag_set_debug_mask_req_msg;
+
+//! @MSG     SNS_DIAG_SET_DEBUG_MASK_RESP
+//! @TYPE    Response
+message {
+   mandatory sns_common_resp_s resp = 2;
+  /**< response indicating whether the request suceeded or failed */
+} sns_diag_set_debug_mask_resp_msg;
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_DIAG_DSPS_SVC {
+   //! @ID SNS_COMMON_CANCEL
+   sns_common_cancel_req_msg   SNS_DIAG_DSPS_CANCEL_REQ,
+   sns_common_cancel_resp_msg  SNS_DIAG_DSPS_CANCEL_RESP
+   = 0x00;
+
+   //! @ID SNS_COMMON_VERSION
+   sns_common_version_req_msg   SNS_DIAG_DSPS_VERSION_REQ,
+   sns_common_version_resp_msg  SNS_DIAG_DSPS_VERSION_RESP
+   = 0x01;
+
+   //! @ID SNS_DIAG_SET_LOG_MASK
+   sns_diag_set_log_mask_req_msg   SNS_DIAG_SET_LOG_MASK_REQ,
+   sns_diag_set_log_mask_resp_msg  SNS_DIAG_SET_LOG_MASK_RESP
+   = 0x02;
+
+   //! @ID SNS_DIAG_SET_DEBUG_MASK
+   sns_diag_set_debug_mask_req_msg   SNS_DIAG_SET_DEBUG_MASK_REQ,
+   sns_diag_set_debug_mask_resp_msg  SNS_DIAG_SET_DEBUG_MASK_RESP
+   = 0x03;
+
+   //! @ID SNS_DIAG_SET_DEBUG_OPTIONS
+   sns_diag_set_debug_options_req_msg   SNS_DIAG_SET_DEBUG_OPTIONS_REQ,
+   sns_diag_set_debug_options_resp_msg  SNS_DIAG_SET_DEBUG_OPTIONS_RESP
+   = 0x04;
+} = SNS_QMI_SVC_ID_8;

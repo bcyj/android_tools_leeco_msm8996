@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2014 Qualcomm Technologies, Inc.  All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+
+  Not a Contribution.
+  Apache license notifications and license are retained
+  for attribution purposes only.
+  -->
+
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.qcom.gsma.services.nfc"
+      android:sharedUserId="com.gsma.services">
+
+    <permission android:label="Control NFC card emulation"
+                android:protectionLevel="dangerous"
+                android:name="com.gsma.services.nfc.permission.TRANSACTION_EVENT">
+    </permission>
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="com.gsma.services.nfc.permission.TRANSACTION_EVENT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="com.android.nfc.permission.NFCEE_ADMIN" />
+    <uses-permission android:name="com.android.nfc.action.ALLOW_NFC_ENABLE" />
+
+    <application android:label="GsmaService">
+com.android.nfc_extras com.android.qcom.nfc_extras com.gsma.services.nfc
+        <uses-library android:name="com.gsma.services.nfc" android:required="true" />
+        <uses-library android:name="com.android.nfc_extras" android:required="true" />
+        <uses-library android:name="com.android.qcom.nfc_extras" android:required="true" />
+        <uses-library android:name="com.android.nfc.helper" android:required="true" />
+
+
+
+    <activity android:name="com.qcom.gsma.services.nfc.GsmaService" />
+        <service android:enabled="true"
+                 android:name=".GsmaService"
+                 android:process=":remote"
+                 android:permission="com.gsma.services.nfc.permission.TRANSACTION_EVENT">
+            <intent-filter>
+                <action android:name="com.gsma.services.nfc.IGsmaService" />
+            </intent-filter>
+        </service>
+        <receiver android:name=".StartGsmaService">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
+
+

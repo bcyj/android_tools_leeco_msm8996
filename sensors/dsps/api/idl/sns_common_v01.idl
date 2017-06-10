@@ -1,0 +1,259 @@
+/*****************************************************************************
+  @FILE     sns_common_v01.idl
+
+  @BRIEF    Common IDL file for the sensors subsystem
+
+  @DESCRIPTION
+  Defines common structures and types used by the sensors messages.
+
+  @COPYRIGHT
+  Copyright (c) 2010-2014 Qualcomm Technologies, Inc.  All Rights Reserved
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+
+
+revision 11;
+
+
+//!============================================================================
+//! Sensor Service IDs
+//!============================================================================
+
+const SNS_SMGR_SVC_ID               = 0;  /**< Sensor manager. */
+const SNS_PM_SVC_ID                 = 1;  /**< Power manager. */
+const SNS_SMR_DSPS_SVC_ID           = 2;  /**< Sensor message router on the DSPS. */
+const SNS_REG_SVC_ID                = 3;  /**< Sensor registry -- legacy. */
+const SNS_SAM_AMD_SVC_ID            = 4;  /**< Algorithm: Absolute motion detection. */
+const SNS_SAM_RMD_SVC_ID            = 5;  /**< Algorithm: Relative motion detection. */
+const SNS_SAM_VMD_SVC_ID            = 6;  /**< Algorithm: Vehicle motion detection. */
+const SNS_DEBUG_SVC_ID              = 7;  /**< Sensors debug interface on the DSPS. */
+const SNS_DIAG_DSPS_SVC_ID          = 8;  /**< Sensors diagnostics interface on the DSPS. */
+const SNS_SAM_FNS_SVC_ID            = 9;  /**< Face and Shake service on the applications processor. */
+const SNS_SAM_BTE_SVC_ID            = 10; /**< Algorithm: Bring to ear. */
+const SNS_SAM_QUAT_SVC_ID           = 11; /**< Algorithm: Quaternion. */
+const SNS_SAM_GRAVITY_SVC_ID        = 12; /**< Algorithm: Gravity. */
+const SNS_SMGR_INTERNAL_SVC_ID      = 13; /**< SMGR internal service. */
+const SNS_DEBUG_INTERNAL_SVC_ID     = 14; /**< Debug internal service. */
+const SNS_REG2_SVC_ID               = 15; /**< Sensor registry V02. */
+const SNS_SAM_MAG_CAL_SVC_ID        = 16; /**< Algorithm: Mag Calibration */
+const SNS_SAM_FILTERED_MAG_SVC_ID   = 17; /**< Algorithm: Filtered magnetic vector. */
+const SNS_SAM_ROTATION_VECTOR_SVC_ID= 18; /**< Algorithm: Rotation vector. */
+const SNS_SAM_QUATERNION_SVC_ID     = 19; /**< Algorithm: Gyro-based quaternion. */
+const SNS_SAM_GRAVITY_VECTOR_SVC_ID = 20; /**< Algorithm: Gravity vector. */
+const SNS_SAM_SENSOR_THRESH_SVC_ID  = 21; /**< Algorithm: Sensor threshold. */
+const SNS_TIME_SVC_ID               = 22; /**< Sensors time service. */
+const SNS_SAM_ORIENTATION_SVC_ID    = 23; /**< Algorithm: Orientation. */
+const SNS_TIME2_SVC_ID              = 24; /**< Sensors time service V02. */
+const SNS_SAM_BASIC_GESTURES_SVC_ID = 25; /**< Algorithm: Basic gestures. */
+const SNS_SAM_TAP_SVC_ID            = 26; /**< Algorithm: Tap. */
+const SNS_SAM_FACING_SVC_ID         = 27; /**< Algorithm: Facing. */
+const SNS_SAM_INTEG_ANGLE_SVC_ID    = 28; /**< Algorithm: Integrated angle. */
+const SNS_SAM_GYRO_TAP_SVC_ID       = 29; /**< Algorithm: Gyro assisted Tap. */
+const SNS_SAM_GYRO_TAP2_SVC_ID      = 30; /**< Algorithm: Gyro assisted Tap V2. */
+const SNS_OEM_1_SVC_ID              = 31; /**< Reserved for OEM use. */
+const SNS_OEM_2_SVC_ID              = 32; /**< Reserved for OEM use. */
+const SNS_OEM_3_SVC_ID              = 33; /**< Reserved for OEM use. */
+const SNS_SAM_GYROBUF_SVC_ID        = 34; /**< Algorithm: Gyrobuf algorithm (EIS). */
+const SNS_SAM_GYROINT_SVC_ID        = 35; /**< Algorithm: Gyroint algorithm (EIS). */
+const SNS_FILE_INTERNAL_SVC_ID      = 36; /**< Sensors file internal interface */
+const SNS_SAM_PED_SVC_ID            = 37; /**< Algorithm: Pedometer. */
+const SNS_SAM_PAM_SVC_ID            = 38; /**< Algorithm: Pedestrian activity monitor. */
+const SNS_SAM_MODEM_SCN_SVC_ID      = 39; /**< Algorithm: Detect modem scenarios. */
+const SNS_SAM_SMD_SVC_ID            = 40; /**< Algorithm: Significant motion detector. */
+const SNS_SAM_CMC_SVC_ID            = 41; /**< Algorithm: Coarse motion classifier. */
+const SNS_SAM_DISTANCE_BOUND_SVC_ID = 42; /**< Algorithm: Distance bound. */
+const SNS_SAM_GAME_ROTATION_VECTOR_SVC_ID = 43; /**< Algorithm: Game rotation vector. */
+const SNS_SMGR_RESTRICTED_SVC_ID    = 44; /**< SMGR restricted service. */
+const SNS_SAM_PED_ALIGNMENT_SVC_ID  = 45; /**< Algorithm: Pedestrian alignment. */
+const SNS_SAM_TILT_DETECTOR_SVC_ID  = 46; /**< Algorithm: Tilt detector. */
+const SNS_SAM_INTERNAL_PED_SVC_ID   = 47; /**< Internal algorithm: Core pedometer. */
+const SNS_SAM_DPC_SVC_ID            = 48; /**< Device Position Classifier */
+const SNS_SAM_EVENT_GATED_SENSOR_SVC_ID  = 49; /**< Event Gated Sensor Service */
+
+
+//!============================================================================
+//! Internal QMI Service IDs - Do not use for SMR or sensor1 requests
+//!============================================================================
+
+const SNS_QMI_SVC_ID_0 = 256;
+const SNS_QMI_SVC_ID_1 = 257;
+const SNS_QMI_SVC_ID_2 = 258;
+const SNS_QMI_SVC_ID_3 = 259;
+const SNS_QMI_SVC_ID_4 = 260;
+const SNS_QMI_SVC_ID_5 = 261;
+const SNS_QMI_SVC_ID_6 = 262;
+const SNS_QMI_SVC_ID_7 = 263;
+const SNS_QMI_SVC_ID_8 = 264;
+const SNS_QMI_SVC_ID_9 = 265;
+const SNS_QMI_SVC_ID_10 = 266;
+const SNS_QMI_SVC_ID_11 = 267;
+const SNS_QMI_SVC_ID_12 = 268;
+const SNS_QMI_SVC_ID_13 = 269;
+const SNS_QMI_SVC_ID_14 = 270;
+const SNS_QMI_SVC_ID_15 = 271;
+const SNS_QMI_SVC_ID_16 = 272;
+const SNS_QMI_SVC_ID_17 = 273;
+const SNS_QMI_SVC_ID_18 = 274;
+const SNS_QMI_SVC_ID_19 = 275;
+const SNS_QMI_SVC_ID_20 = 276;
+const SNS_QMI_SVC_ID_21 = 277;
+const SNS_QMI_SVC_ID_22 = 278;
+const SNS_QMI_SVC_ID_23 = 279;
+const SNS_QMI_SVC_ID_24 = 280;
+const SNS_QMI_SVC_ID_25 = 281;
+const SNS_QMI_SVC_ID_26 = 282;
+const SNS_QMI_SVC_ID_27 = 283;
+const SNS_QMI_SVC_ID_28 = 284;
+const SNS_QMI_SVC_ID_29 = 285;
+const SNS_QMI_SVC_ID_30 = 286;
+const SNS_QMI_SVC_ID_31 = 287;
+const SNS_QMI_SVC_ID_32 = 288;
+const SNS_QMI_SVC_ID_33 = 289;
+const SNS_QMI_SVC_ID_34 = 290;
+const SNS_QMI_SVC_ID_35 = 291;
+const SNS_QMI_SVC_ID_36 = 292;
+const SNS_QMI_SVC_ID_37 = 293;
+const SNS_QMI_SVC_ID_38 = 294;
+const SNS_QMI_SVC_ID_39 = 295;
+const SNS_QMI_SVC_ID_40 = 296;
+const SNS_QMI_SVC_ID_41 = 297;
+const SNS_QMI_SVC_ID_42 = 298;
+const SNS_QMI_SVC_ID_43 = 299;
+const SNS_QMI_SVC_ID_44 = 300;
+const SNS_QMI_SVC_ID_45 = 301;
+const SNS_QMI_SVC_ID_46 = 302;
+const SNS_QMI_SVC_ID_47 = 303;
+const SNS_QMI_SVC_ID_48 = 304;
+const SNS_QMI_SVC_ID_49 = 305;
+
+//! @VERSION 1.5
+//!============================================================================
+//! Batch indication types
+//!============================================================================
+const SNS_BATCH_ONLY_IND         = 0;
+/**< Standalone batch indication. Not part of a back-to-back indication stream. */
+const SNS_BATCH_FIRST_IND        = 1;
+/**< First indication in a stream of back-to-back indications. */
+const SNS_BATCH_INTERMEDIATE_IND = 2;
+/**< Intermediate indication in a stream of back-to-back indications. */
+const SNS_BATCH_LAST_IND         = 3;
+/**< Last indication in a stream of back-to-back indications. */
+
+//!============================================================================
+//! Common structures
+//!============================================================================
+
+const SNS_RESULT_SUCCESS = 0;
+const SNS_RESULT_FAILURE = 1;
+
+struct {
+  /** This structure shall be the first element of every response message */
+
+  uint8 sns_result_t; 
+  /**< 0 == SUCCESS; 1 == FAILURE
+     A result of FAILURE indicates that any data contained in the response
+     should not be used (other than sns_err_t) to determine the type of error. */
+  uint8 sns_err_t; /**< See sensor1_error_e in sensor1.h */
+} sns_common_resp_s;
+
+//!============================================================================
+//! Common enums
+//!============================================================================
+
+//! @VERSION 1.4
+enum {
+  SNS_BATCH_NO_WAKE_UP=0,
+  /**< Use to enable/disable batching. This
+       does not awaken the client from Suspend when the buffer is full. */
+  SNS_BATCH_WAKE_UPON_FIFO_FULL,
+  /**< Use to enable/disable batching. This
+       awakens the client from Suspend when the buffer is full. */
+  SNS_BATCH_GET_MAX_FIFO_SIZE
+  /**< Use to get the maximum buffer depth. This
+       does not enable/disable batching. */
+} sns_batch_req_type_e;
+
+//!============================================================================
+//! Common messages, used by all serivces.
+//!============================================================================
+
+//!============================================================================
+/** @COMMAND SNS_COMMON_CANCEL
+    @BRIEF Cancels all requests from a client to any sensor service.
+    This must be the first message of any sensor service.
+*/
+//!============================================================================
+
+//! @MSG     SNS_COMMON_CANCEL_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+message { /* empty body */ } sns_common_cancel_req_msg;
+
+//! @MSG     SNS_SMGR_CANCEL_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+message {
+  mandatory sns_common_resp_s resp = 2;
+  /**< Common response message. */
+} sns_common_cancel_resp_msg;
+
+//!============================================================================
+/** @COMMAND SNS_COMMON_VERSION
+    @BRIEF Requests the version of the sensor service.
+    This must be the second message of any sensor service.
+*/
+//!============================================================================
+//! @MSG     SNS_COMMON_VERSION_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+message { /* empty body */ } sns_common_version_req_msg;
+
+//! @MSG     SNS_COMMON_VERSION_RESP
+//! @TYPE    Request
+//! @SENDER  Service
+message {
+  mandatory sns_common_resp_s resp = 2;
+  /**< Common message response. */
+
+  mandatory uint32            interface_version_number;
+  /**< Version number of the interface supported by the service. */
+
+  mandatory uint16            max_message_id;
+  /**< Maximum message ID supported by this service. */
+} sns_common_version_resp_msg;
+
+//! @VERSION 1.2
+//!============================================================================
+//! Common enums
+//!============================================================================
+
+/** Identify the processor type.
+  */
+enum {
+  SNS_PROC_APPS=0, /**< Application processor. */
+  SNS_PROC_SSC,    /**< Snapdragon sensors core processor(DSPS/ADSP). */
+  SNS_PROC_MODEM   /**< Modem processor. */
+} sns_proc_type_e;
+
+
+struct {
+  sns_proc_type_e         proc_type;
+  /**< Defines the processor to monitor for suspend.
+       This is typically the processor from which the
+       request message originated.
+  */
+
+  boolean                 send_indications_during_suspend;
+  /**< Defines whether indications for this request are to be sent when the
+       processor is in the Suspend state:
+       - If send_indications_during_suspend=1 or TRUE, indications
+         will be sent for this request when the processor is in the Suspend state
+         (such indications may awaken the processor from Suspend).
+
+      - If send_indications_during_suspend=0 or FALSE, some indications 
+        will not be sent for this request when the processor is in the Suspend state.
+        The list of indications not sent are defined by the message in question.
+   */
+
+} sns_suspend_notification_s;

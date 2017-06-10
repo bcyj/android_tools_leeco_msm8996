@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: qmi
+Description: QMI library
+Version: @VERSION@
+Libs: -L${libdir} -lqmi_client_qmux -lqmi -lqmiidl -lqmiservices -lqcci_legacy
+Cflags: -I${includedir}/qmi

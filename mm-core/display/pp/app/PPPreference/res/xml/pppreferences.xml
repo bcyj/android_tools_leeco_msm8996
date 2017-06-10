@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- @file pppreferences.xml
+     @brief preferences used in the PPPreference activity
+     Copyright (C) 2012 Qualcomm Technologies, Inc.
+     All Rights Reserved. QUALCOMM  Proprietary and Confidential.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="pp_checkbox"
+        android:summary="Enable or disable PP features"
+        android:title="Enable PostProcessing"
+        android:defaultValue="false"
+        />
+
+    <SeekBarPreference
+        android:key="hue"
+        android:title="Hue"
+        android:summary="Sets the hue value"
+        android:defaultValue="180"
+        android:max="360"
+        android:dependency="pp_checkbox"
+        />
+
+    <SeekBarPreference
+        android:key="saturation"
+        android:title="Saturation"
+        android:summary="Sets the saturation value"
+        android:defaultValue="180"
+        android:max="360"
+        android:dependency="pp_checkbox"
+        />
+
+    <SeekBarPreference
+        android:key="intensity"
+        android:title="Intensity"
+        android:summary="Sets the intensity value"
+        android:defaultValue="270"
+        android:max="510"
+        android:dependency="pp_checkbox"
+        />
+
+    <SeekBarPreference
+        android:key="contrast"
+        android:title="Contrast"
+        android:summary="Sets the contrast value"
+        android:defaultValue="180"
+        android:max="360"
+        android:dependency="pp_checkbox"
+        />
+
+</PreferenceScreen>

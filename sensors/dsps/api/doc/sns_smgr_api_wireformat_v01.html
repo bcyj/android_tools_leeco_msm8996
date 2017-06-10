@@ -1,0 +1,934 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+<title>SNS_SMGR (Sensors Manager) API</title>
+<link rel="stylesheet" type="text/css" href="qmi_idl_wiredoc.css" />
+</head>
+
+<body>
+<h1>SNS_SMGR (Sensors Manager) API
+</h1>
+ The SMGR API defines messages which provide SMGR services to its clients.<br> The SMGR services include getting all or single sensor information, and<br> retrieving sensor samples, delivering calibration factors, and receiving sensor status.<br> To get services, the clients must utilize these messages through the sensor API.
+
+<h1>Service Type</h1>
+<ul>
+<li>QMI service type <b>SNS_QMI_SVC_ID_0</b>
+<li>Version <b>01</b>
+</ul>
+<h1><a name='Messages'>Messages</a></h1>
+<table class = 'tlv'><tr class='head'><th>Command</th><th>ID</th><th>Messages</th><th>Description</th></tr>
+<tr><td class='l'><a href='#SNS_COMMON_CANCEL'>SNS_COMMON_CANCEL</a></td><td>0x0000</td><td class='l'><a href="#SNS_COMMON_CANCEL_REQ">SNS_COMMON_CANCEL_REQ</a></br><a href="#SNS_SMGR_CANCEL_RESP">SNS_SMGR_CANCEL_RESP</a></br></td><td class='l'>This command cancel all requests from a client to any sensor service This shall be the first message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_COMMON_VERSION'>SNS_COMMON_VERSION</a></td><td>0x0001</td><td class='l'><a href="#SNS_COMMON_VERSION_REQ">SNS_COMMON_VERSION_REQ</a></br><a href="#SNS_COMMON_VERSION_RESP">SNS_COMMON_VERSION_RESP</a></br></td><td class='l'>This command requests the version of the sensor service This shall be the second message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_REPORT'>SNS_SMGR_REPORT</a></td><td>0x0002</td><td class='l'><a href="#SNS_SMGR_REPORT_REQ">SNS_SMGR_REPORT_REQ</a></br><a href="#SNS_SMGR_REPORT_RESP">SNS_SMGR_REPORT_RESP</a></br></td><td class='l'>This command requests sensor periodic report for sensor sampling </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_REPORT_IND'>SNS_SMGR_REPORT_IND</a></td><td>0x0003</td><td class='l'><a href="#SNS_SMGR_REPORT_IND">SNS_SMGR_REPORT_IND</a></br></td><td class='l'>This command requests sensor periodic report for sensor sampling </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_CAL'>SNS_SMGR_CAL</a></td><td>0x0004</td><td class='l'><a href="#SNS_SMGR_CAL_REQ">SNS_SMGR_CAL_REQ</a></br><a href="#SNS_SMGR_CAL_RESP">SNS_SMGR_CAL_RESP</a></br></td><td class='l'>This command sets dynamic or auto generated calibrate factors of a sensor. </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_ALL_SENSOR_INFO'>SNS_SMGR_ALL_SENSOR_INFO</a></td><td>0x0005</td><td class='l'><a href="#SNS_SMGR_ALL_SENSOR_INFO_REQ">SNS_SMGR_ALL_SENSOR_INFO_REQ</a></br><a href="#SNS_SMGR_ALL_SENSOR_INFO_RESP">SNS_SMGR_ALL_SENSOR_INFO_RESP</a></br></td><td class='l'>This command sends all sensor info request and get all sensor IDs and short sensor names. </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_SINGLE_SENSOR_INFO'>SNS_SMGR_SINGLE_SENSOR_INFO</a></td><td>0x0006</td><td class='l'><a href="#SNS_SMGR_SINGLE_SENSOR_INFO_REQ">SNS_SMGR_SINGLE_SENSOR_INFO_REQ</a></br><a href="#SNS_SMGR_SINGLE_SENSOR_INFO_RESP">SNS_SMGR_SINGLE_SENSOR_INFO_RESP</a></br></td><td class='l'>This command sends single sensor info request and gets all the detailed information of the sensor </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_SENSOR_TEST'>SNS_SMGR_SENSOR_TEST</a></td><td>0x0007</td><td class='l'><a href="#SNS_SMGR_SENSOR_TEST_REQ">SNS_SMGR_SENSOR_TEST_REQ</a></br><a href="#SMGR_SENSOR_TEST_RESP">SMGR_SENSOR_TEST_RESP</a></br></td><td class='l'>This command requests all-sensor test. These message are defined for future use, so the messages WON'T be supported. </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_SENSOR_POWER_STATUS'>SNS_SMGR_SENSOR_POWER_STATUS</a></td><td>0x0008</td><td class='l'><a href="#SNS_SMGR_SENSOR_POWER_STATUS_REQ">SNS_SMGR_SENSOR_POWER_STATUS_REQ</a></br><a href="#SNS_SMGR_SENSOR_POWER_STATUS_RESP">SNS_SMGR_SENSOR_POWER_STATUS_RESP</a></br></td><td class='l'>This command requests sensor power status. These message are defined for future use, so the messages WON'T be supported. </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_SENSOR_POWER_STATUS_IND'>SNS_SMGR_SENSOR_POWER_STATUS_IND</a></td><td>0x0009</td><td class='l'><a href="#SNS_SMGR_SENSOR_POWER_STATUS_IND">SNS_SMGR_SENSOR_POWER_STATUS_IND</a></br></td><td class='l'>This command requests sensor power status. These message are defined for future use, so the messages WON'T be supported. </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_SENSOR_POWER_CONTROL'>SNS_SMGR_SENSOR_POWER_CONTROL</a></td><td>0x000A</td><td class='l'><a href="#SNS_SMGR_SENSOR_POWER_CONTROL_REQ">SNS_SMGR_SENSOR_POWER_CONTROL_REQ</a></br><a href="#SMGR_SENSOR_POWER_CONTROL_RESP">SMGR_SENSOR_POWER_CONTROL_RESP</a></br></td><td class='l'>This command requests sensor power control. These message are defined for future use, so the messages WON'T be supported. </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_SENSOR_STATUS'>SNS_SMGR_SENSOR_STATUS</a></td><td>0x000B</td><td class='l'><a href="#SNS_SMGR_SENSOR_STATUS_REQ">SNS_SMGR_SENSOR_STATUS_REQ</a></br><a href="#SNS_SMGR_SENSOR_STATUS_RESP">SNS_SMGR_SENSOR_STATUS_RESP</a></br></td><td class='l'>This command requests sensor status which tells if the sensor is active, idle, or only one client is left for the sensor. Currently SMGR only supports one client at a time. So This feature is limited. </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_SENSOR_STATUS_IND'>SNS_SMGR_SENSOR_STATUS_IND</a></td><td>0x000C</td><td class='l'><a href="#SNS_SMGR_SENSOR_STATUS_IND">SNS_SMGR_SENSOR_STATUS_IND</a></br></td><td class='l'>This command requests sensor status which tells if the sensor is active, idle, or only one client is left for the sensor. Currently SMGR only supports one client at a time. This feature is limited. </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_SINGLE_SENSOR_TEST'>SNS_SMGR_SINGLE_SENSOR_TEST</a></td><td>0x000D</td><td class='l'><a href="#SNS_SMGR_SINGLE_SENSOR_TEST_REQ">SNS_SMGR_SINGLE_SENSOR_TEST_REQ</a></br><a href="#SNS_SMGR_SINGLE_SENSOR_TEST_RESP">SNS_SMGR_SINGLE_SENSOR_TEST_RESP</a></br><a href="#SNS_SMGR_SINGLE_SENSOR_TEST_IND">SNS_SMGR_SINGLE_SENSOR_TEST_IND</a></br></td><td class='l'>This command requests single sensor test. Currently only single sensor self-test is supported. </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_BUFFERING'>SNS_SMGR_BUFFERING</a></td><td>0x0021</td><td class='l'><a href="#SNS_SMGR_BUFFERING_REQ">SNS_SMGR_BUFFERING_REQ</a></br><a href="#SNS_SMGR_BUFFERING_RESP">SNS_SMGR_BUFFERING_RESP</a></br></td><td class='l'> This command requests sensor data to be sampled and buffered up to be sent together </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_BUFFERING_IND'>SNS_SMGR_BUFFERING_IND</a></td><td>0x0022</td><td class='l'><a href="#SNS_SMGR_BUFFERING_IND">SNS_SMGR_BUFFERING_IND</a></br></td><td class='l'>This command requests sensor data to be sampled and buffered up </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_BUFFERING_QUERY'>SNS_SMGR_BUFFERING_QUERY</a></td><td>0x0023</td><td class='l'><a href="#SNS_SMGR_BUFFERING_QUERY_REQ">SNS_SMGR_BUFFERING_QUERY_REQ</a></br><a href="#SNS_SMGR_BUFFERING_QUERY_RESP">SNS_SMGR_BUFFERING_QUERY_RESP</a></br></td><td class='l'>This command allows the client to request sensor samples from the SMGR current buffer. Often combined with requesting a buffering report with the report rate set to SNS_SMGR_BUFFERING_REPORT_RATE_NONE. </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_BUFFERING_QUERY_IND'>SNS_SMGR_BUFFERING_QUERY_IND</a></td><td>0x0024</td><td class='l'><a href="#SNS_SMGR_BUFFERING_QUERY_IND">SNS_SMGR_BUFFERING_QUERY_IND</a></br></td><td class='l'>Sensor Buffering Report Message sent to a client at the reporting rate. </td></tr>
+</table>
+<br><br>
+<h4>Description of  REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_COMMON_CANCEL'></a><a href='#Messages'>SNS_COMMON_CANCEL</a></h2>
+This command cancel all requests from a client to any sensor service<br><br> This shall be the first message of any sensor service.
+<h4>Message ID</h4>
+0x0000
+<h3><a name="SNS_COMMON_CANCEL_REQ"></a><a href='#Messages'>SNS_COMMON_CANCEL_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SMGR_CANCEL_RESP"></a><a href='#Messages'>SNS_SMGR_CANCEL_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_COMMON_CANCEL REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_COMMON_VERSION'></a><a href='#Messages'>SNS_COMMON_VERSION</a></h2>
+This command requests the version of the sensor service<br><br> This shall be the second message of any sensor service.
+<h4>Message ID</h4>
+0x0001
+<h3><a name="SNS_COMMON_VERSION_REQ"></a><a href='#Messages'>SNS_COMMON_VERSION_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_COMMON_VERSION_RESP"></a><a href='#Messages'>SNS_COMMON_VERSION_RESP</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>interface_version_number</td><td>4</td><td class='l'>The version number of the interface supported by the service </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_message_id</td><td>2</td><td class='l'>The maximum message ID supported by this service </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_COMMON_VERSION REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_REPORT'></a><a href='#Messages'>SNS_SMGR_REPORT</a></h2>
+This command requests sensor periodic report for sensor sampling
+<h4>Message ID</h4>
+0x0002
+<h3><a name="SNS_SMGR_REPORT_REQ"></a><a href='#Messages'>SNS_SMGR_REPORT_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ReportId</td><td>1</td><td class='l'>The report ID assigned by a client to distinguish this report among its<br> reports </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>Action</td><td>1</td><td class='l'>Defines if this report is to be added or deleted.<ul><li>01 - SNS_SMGR_REPORT_ACTION_ADD<li>02 - SNS_SMGR_REPORT_ACTION_DELETE<li>All other values defined as SNS_SMGR_REPORT_ACTION_XXXX style are reserved</ul> for future use<br> When SNS_SMGR_REPORT_ACTION_ADD is used and the same report ID is already added,<br> the old one will be replaced by the new report request.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ReportRate</td><td>2</td><td class='l'>Defines reporting rate. This value shall be within the sensor capacity which<br> can be identified by using SNS_SMGR_SINGLE_SENSOR_INFO message. When this parameter<br> is 0, 20Hz will be used as the default.<br> If a value greater than SNS_SMGR_SAMPLING_RATE_INVERSION_POINT is given, then this<br> parameter will be treated as a report period, in milliseconds. This allows a client<br> to sample the sensor at a rate less than 1 Hz. It is not recommended to sample any<br> sensor but environmental sensors at a rate less than 1 Hz. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>BufferFactor</td><td>1</td><td class='l'>This parameter is defined for future use and is NOT implemented.<br> This value shall be set to 0 </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x05</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>Item_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- SensorId<ul><li>DataType<li>Sensitivity<li>Decimation<li>MinSampleRate<li>StationaryOption<li>DoThresholdTest<li>ThresholdOutsideMinMax<li>ThresholdDelta<li>ThresholdAllAxes<li>ThresholdMinMax</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SensorId</td><td>1</td><td class='l'>Defines the sensor that this configuration pertains to. The sensor can be<br> one of following<br>: - 00 - SNS_SMGR_ID_ACCEL<ul><li>10 - SNS_SMGR_ID_GYRO<li>20 - SNS_SMGR_ID_MAG<li>30 - SNS_SMGR_ID_PRESSURE<li>40 - SNS_SMGR_ID_PROX_LIGHT<li>50 - SNS_SMGR_ID_HUMIDITY<li>60 - SNS_SMGR_ID_RGB<li>70 - SNS_SMGR_ID_SAR<li>80 - SNS_SMGR_ID_HALL_EFFECT<li>90 - SNS_SMGR_ID_HEART_RATE<li>220 - SNS_SMGR_ID_STEP_EVENT<li>222 - SNS_SMGR_ID_STEP_COUNT<li>224 - SNS_SMGR_ID_SMD<li>226 - SNS_SMGR_ID_GAME_ROTATION_VECTOR<li>228 - SNS_SMGR_ID_IR_GESTURE<li>230 - SNS_SMGR_ID_TAP<li>240-249 - SNS_SMGR_ID_OEM_SENSOR_XX<li>All other values defined as SNS_SMGR_ID_XXXX style are reserved for future use</ul> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>DataType</td><td>1</td><td class='l'>Defines sensor data type which classifies if the data type is primary<br> or secondary.<ul><li>00 - SNS_SMGR_DATA_TYPE_PRIMARY<li>01 - SNS_SMGR_DATA_TYPE_SECONDARY<li>All other values defined as SNS_SMGR_DATA_TYPE_XXXX style are reserved for future use</ul> This parameter identifies the sensor data type.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Sensitivity</td><td>1</td><td class='l'>This parameter is defined for future use and is NOT implemented.<br> This value shall be set to 0.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Decimation</td><td>1</td><td class='l'>Defines decimation option for this item in this report<ul><li>01 - SNS_SMGR_DECIMATION_RECENT_SAMPLE<li>03 - SNS_SMGR_DECIMATION_FILTER<li>All other values defined as SNS_SMGR_DECIMATION_XXXX style are reserved</ul> for future use<br> The SNS_SMGR_DECIMATION_FILTER option can used only for accelerometer and<br> gyro sensor type to reduce data noise.<br> When SNS_SMGR_DECIMATION_FILTER option is set, multiple samples could be<br> used for one report.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>MinSampleRate</td><td>2</td><td class='l'>This parameter is defined for future use and is NOT implemented.<br> This value shall be set to 0. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>StationaryOption</td><td>1</td><td class='l'>This parameter is defined for future use and is NOT implemented.<br> This value shall be set to 0. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>DoThresholdTest</td><td>1</td><td class='l'>This parameter is defined for future use and is NOT implemented.<br> This value shall be set to 0. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ThresholdOutsideMinMax</td><td>1</td><td class='l'>This parameter is defined for future use and is NOT implemented.<br> This value shall be set to 0. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ThresholdDelta</td><td>1</td><td class='l'>This parameter is defined for future use and is NOT implemented.<br> This value shall be set to 0. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ThresholdAllAxes</td><td>1</td><td class='l'>This parameter is defined for future use and is NOT implemented.<br> This value shall be set to 0. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ThresholdMinMax</td><td>8</td><td class='l'>This parameter is defined for future use and is NOT implemented.<br> This value shall be set to 0. </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>cal_sel_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- cal_sel</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>cal_sel</td><td>Var</td><td class='l'>Defines the calibration option to be used. The index of the cal sel should match<br> to the index of the Item parameter.<ul><li>00 - SNS_SMGR_CAL_SEL_FULL_CAL which refers applying factory calibration factors</ul> (if available) and auto calibration factors(if available) on to the raw data<ul><li>01 - SNS_SMGR_CAL_SEL_FACTORY_CAL which refers applying factory calibration factors</ul> (if available) on to the raw data<ul><li>02 - SNS_SMGR_CAL_SEL_RAW<li>All other values defined as SNS_SMGR_CAL_SEL_XXXX style are reserved for future use</ul> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SrcModule</td><td>1</td><td class='l'>For sensor internal use only.<br> Defines the source module that is sending this message.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x12</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SampleQuality_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- SampleQuality</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SampleQuality</td><td>Var</td><td class='l'>Specifies the desired quality of sensor data<ul><li>SNS_SMGR_SAMPLE_QUALITY_ACCURATE_TIMESTAMP - High accuracy for sample timestamp.</ul> Delivery sampling rate may be up to twice the requested sampling rate,<br> and may also result in higher report rate.<br> Clients are recommended to specify 50, 100, or 200Hz sampling rates to<br> minimize the chance of increase in sampling rate.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x13</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>5</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>proc_type</td><td>4</td><td class='l'>Defines the processor to monitor for suspend.<br> This would typically be the processor on which the<br> request message originated from.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>send_indications_during_suspend</td><td>1</td><td class='l'>Defines if indications for this request should be sent when the<br> processor is in suspend state.<ul><li>if send_indications_during_suspend=1 or TRUE, then indications</ul> will be sent for this request when processor is in suspend state<br> (Such indications may wake up the processor from suspend).<br><ul><li>if send_indications_during_suspend=0 or FALSE, then some indications </ul> will not be sent for this request when the processor is in suspend state.<br> The list of indications not sent will be defined by the message in question.<br> </td></tr>
+
+</table>
+<h3><a name="SNS_SMGR_REPORT_RESP"></a><a href='#Messages'>SNS_SMGR_REPORT_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ReportId</td><td>1</td><td class='l'>The report ID assigned by a client to distinguish this report among its reports </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>AckNak</td><td>1</td><td class='l'>Defines whether this response is Acknowledgement or Negative Acknowledgement<ul><li>00 - SNS_SMGR_RESPONSE_ACK_SUCCESS<li>01 - SNS_SMGR_RESPONSE_ACK_MODIFIED some parameters in the request are modified<li>02 - SNS_SMGR_RESPONSE_NAK_RESOURCES<li>03 - SNS_SMGR_RESPONSE_NAK_REPORT_ID Can't find report to delete<li>04 - SNS_SMGR_RESPONSE_NAK_NO_ITEMS no item is supplied or the item is</ul> deleted by SMGR because of wrong parameters<ul><li>05 - SNS_SMGR_RESPONSE_NAK_UNK_ACTION when the action value is other than</ul> add or delete<ul><li>All other values defined as SNS_SMGR_RESPONSE_ACK/NAK_XXXX style are reserved</ul> for future use<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x05</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ReasonPair_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- ItemNum<ul><li>Reason</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ItemNum</td><td>1</td><td class='l'>The Item parameter number in the request msg </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Reason</td><td>1</td><td class='l'>Defines reason codes<br>: - 00 - SNS_SMGR_REASON_NULL<ul><li>10 - SNS_SMGR_REASON_DEFAULT_RATE<li>12 - SNS_SMGR_REASON_DEFAULT_DECIM<li>15 - SNS_SMGR_REASON_UNKNOWN_SENSOR<li>16 - SNS_SMGR_REASON_FAILED_SENSOR<li>17 - SNS_SMGR_REASON_OTHER_FAILURE<li>18 - SNS_SMGR_REASON_SAMPLING_RATE<li>19 - SNS_SMGR_REASON_SAMPLE_QUALITY_NORMAL<li>All other values defined as SNS_SMGR_REASON_XXXX style are reserved for future use</ul> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SMGR_REPORT REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_REPORT_IND'></a><a href='#Messages'>SNS_SMGR_REPORT_IND</a></h2>
+This command requests sensor periodic report for sensor sampling
+<h4>Message ID</h4>
+0x0003
+<h3><a name="SNS_SMGR_REPORT_IND"></a><a href='#Messages'>SNS_SMGR_REPORT_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ReportId</td><td>1</td><td class='l'>The report ID assigned by a client to distinguish this report among its<br> reports </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>status</td><td>1</td><td class='l'>Defines the status. Non-zero code notifies that this report is canceled<ul><li>00 - SNS_SMGR_REPORT_OK<li>01 - SNS_SMGR_REPORT_CANCEL_RESOURCE<li>02 - SNS_SMGR_REPORT_CANCEL_FAILURE<li>All other values defined as SNS_SMGR_REPORT_XXXX style are reserved for</ul> future use<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>CurrentRate</td><td>2</td><td class='l'>The current reporting rate that is the sampling rate of the first item.<br> If this value is greater than SNS_SMGR_SAMPLING_RATE_INVERSION_POINT,<br> then it should be interpreted as the current period, in milliseconds. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>Item_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- SensorId<ul><li>DataType<li>ItemData<li>TimeStamp<li>ItemFlags<li>ItemQuality<li>ItemSensitivity</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SensorId</td><td>1</td><td class='l'>Defines the sensor that this configuration pertains to. Refer to the<br> Sensor ID table defined under "Define sensor identifier" .<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>DataType</td><td>1</td><td class='l'>Defines sensor data type which classifies if the data type is primary<br> or secondary.<ul><li>00 - SNS_SMGR_DATA_TYPE_PRIMARY<li>01 - SNS_SMGR_DATA_TYPE_SECONDARY<li>All other values defined as SNS_SMGR_DATA_TYPE_XXXX style are reserved</ul> for future use<br> This parameter identifies the sensor data type.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ItemData</td><td>12</td><td class='l'>For 3-axis items such as accelerometer, gyro, and magnetometer,<br> words [0] to [2] are XYZ. For other items, only the first<br> word is used. The units are defined as following<br>: - ACCEL : m/s2<ul><li>GYRO : rad/s<li>MAG : Gauss<li>PRESSURE : hPa<li>PROX : FAR=0, NEAR=1. Note: still in Q16 format<li>LIGHT : lx<li>TEMPERATURE : Celsius<li>HUMIDITY : percentage in Q16<li>RGB : Raw ADC counts : X = Red, Y = Green, Z = Blue<li>SAR : FAR=0, NEAR=non negative number indicating the sensor touched<li>HALL_EFFECT : Mag Field present=1, Mag Field not present=0<li>HEART_RATE : X, Y, Z = Heart rate in bpm/Unitless raw data from the sensor<li>CT_C : X = Color temperature in Q16 (deg Kelvin), Y = Raw ADC counts</ul> for Clear data, Z = Reserved<ul><li>STEP : 1 - a step is detected<li>STEP_COUNT : number of steps taken<li>SMD : 1 - SMD was detected<li>GAME_ROTATION_VECTOR : quaternion values (Q16)<li>IR_GESTURE : (revision 10: Sensor ID defined, but not used)<li>DOUBLE-TAP/PRIMARY </ul>: - SINGLE-TAP/SECONDARY: Dimension-less (raw) value indicating the source of<br> the tap event, relative to the device. (Consider the<br> device as a point mass located at the origin (0,0,0)<br> of the Cartesian coordinate system.)<br><br> 0 = no tap event, 1 = tap from +X axis, 2 = tap from -X axis,<br> 3 = tap from +Y axis, 4 = tap from -Y axis, 5 = tap from +Z axis,<br> 6 = tap from -Z axis, 7 = tap along X axis, 8 = tap along Y axis,<br> 9 = tap along Z axis, 10 = tap event (unknown axis)<br><ul><li>OEM_SENSOR : (OEM-defined)</ul> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>TimeStamp</td><td>4</td><td class='l'>The timestamp when the sample is made in ticks. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ItemFlags</td><td>1</td><td class='l'>Defines the item flags. This bit flags have meanings following<br>: - 00 - Normal<ul><li>08 - SNS_SMGR_ITEM_FLAG_INVALID<li>16 - SNS_SMGR_ITEM_FLAG_FAC_CAL : Factory calibration data was applied<li>32 - SNS_SMGR_ITEM_FLAG_AUTO_CAL: Auto calibration data was applied<li>All other values defined as SNS_SMGR_ITEM_FLAG_XXXX style are reserved</ul> for future use<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ItemQuality</td><td>1</td><td class='l'>Defines the item quality which is associated with the ItemFlags.<ul><li>00 - SNS_SMGR_ITEM_QUALITY_CURRENT_SAMPLE<li>05 - SNS_SMGR_ITEM_QUALITY_FILTERED<li>10 - SNS_SMGR_ITEM_QUALITY_INVALID_FAILED_SENSOR<li>11 - SNS_SMGR_ITEM_QUALITY_INVALID_NOT_READY<li>13 - SNS_SMGR_ITEM_QUALITY_INTERPOLATED<li>14 - SNS_SMGR_ITEM_QUALITY_INTERPOLATED_FILTERED<li>All other values defined as SNS_SMGR_ITEM_QUALITY_XXXX style are reserved</ul> for future use<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ItemSensitivity</td><td>1</td><td class='l'>This field is defined for future use and is NOT implemented.<br> Any value in this field shall not be referenced.<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SamplingRate_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- SamplingRate</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SamplingRate</td><td>Var</td><td class='l'>Specifies the frequency at which sensor is actually sampled. This value<br> is expressed in Q16 format and in unit of Hz.<br> </td></tr>
+
+</table>
+<h4>Description of SNS_SMGR_REPORT_IND</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_CAL'></a><a href='#Messages'>SNS_SMGR_CAL</a></h2>
+This command sets dynamic or auto generated calibrate factors of a sensor.
+<h4>Message ID</h4>
+0x0004
+<h3><a name="SNS_SMGR_CAL_REQ"></a><a href='#Messages'>SNS_SMGR_CAL_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>usage</td><td>1</td><td class='l'>Defines the usage of the calibration data in this request message.<ul><li>00 - SNS_SMGR_CAL_DYNAMIC<li>02 - SNS_SMGR_CAL_FACTORY<li>All other values defined as SNS_SMGR_CAL_XXX style are reserved for</ul> future use<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SensorId</td><td>1</td><td class='l'>Defines the sensor that this configuration pertains to. Refer to the<br> Sensor ID table defined under "Define sensor identifier" .<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>DataType</td><td>1</td><td class='l'>Defines sensor data type which classifies if the data type is primary<br> or secondary.<ul><li>00 - SNS_SMGR_DATA_TYPE_PRIMARY<li>01 - SNS_SMGR_DATA_TYPE_SECONDARY<li>All other values defined as SNS_SMGR_DATA_TYPE_XXXX style are reserved</ul> for future use<br> This parameter identifies the sensor data type.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ZeroBias_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- ZeroBias</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ZeroBias</td><td>Var</td><td class='l'> The value must be Q16 format (16 bits for integer part, 16 bits for decimal<br> part), indicating the zero bias that is to be added (in nominal engineering<br> units)<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x05</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ScaleFactor_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- ScaleFactor</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ScaleFactor</td><td>Var</td><td class='l'> The value must be Q16 format, a multiplier that indicates scale factor need<br> to be multiplied to current data .<br> For example, enter 1.01 if the scaling is 1% less aggressive or 0.95 if it<br> is 5% more aggressive.<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>CompensationMatrix_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- CompensationMatrix</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>CompensationMatrix</td><td>Var</td><td class='l'> The Compensation Matrix, if present to calibrate sensor data for.<br> If the Compensation Matrix is supplied, the ScaleFactor above are ignored.<br> The calibrated sample (Sc) is computed as<br> Sc = (Sr - Bias)*CM<br> where <br>: Sc = Calibrated sensor sample<br> Sr = Read sensor sample<br> CM = Compensation Matrix (from this message)<br> Bias = Zero Bias (from this message)<br><br> Matrix elements are in Q16 format in row major order ie<br>: CM = CM0 CM1 CM2<br> CM3 CM4 CM5<br> CM6 CM7 CM8<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>CalibrationAccuracy</td><td>4</td><td class='l'>Calibration Accuracy. The interpretation of this field is<br> implementation dependant. A guiding rule though, is that higher<br> accuracies are better with 0 meaning complete unreliability.<br> </td></tr>
+
+</table>
+<h3><a name="SNS_SMGR_CAL_RESP"></a><a href='#Messages'>SNS_SMGR_CAL_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SMGR_CAL REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_ALL_SENSOR_INFO'></a><a href='#Messages'>SNS_SMGR_ALL_SENSOR_INFO</a></h2>
+This command sends all sensor info request and get all sensor IDs and<br> short sensor names.
+<h4>Message ID</h4>
+0x0005
+<h3><a name="SNS_SMGR_ALL_SENSOR_INFO_REQ"></a><a href='#Messages'>SNS_SMGR_ALL_SENSOR_INFO_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SMGR_ALL_SENSOR_INFO_RESP"></a><a href='#Messages'>SNS_SMGR_ALL_SENSOR_INFO_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SensorInfo_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- SensorID<ul><li>SensorShortName_len<li>SensorShortName</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SensorID</td><td>1</td><td class='l'>Defines the sensor that this configuration pertains to. Refer to the<br> Sensor ID table defined under "Define sensor identifier" .<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SensorShortName_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- SensorShortName</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SensorShortName</td><td>Var</td><td class='l'>The value is a short sensor name<br>: "ACCEL"<br> "GYRO"<br> "MAG"<br> "PROX_LIGHT"<br> "PRESSURE"<br> "HUMIDITY"<br> "RGB"<br> "SAR"<br> "HALL_EFFECT"<br> "HEART_RATE"<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SMGR_ALL_SENSOR_INFO REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_SINGLE_SENSOR_INFO'></a><a href='#Messages'>SNS_SMGR_SINGLE_SENSOR_INFO</a></h2>
+This command sends single sensor info request and gets all the detailed<br> information of the sensor
+<h4>Message ID</h4>
+0x0006
+<h3><a name="SNS_SMGR_SINGLE_SENSOR_INFO_REQ"></a><a href='#Messages'>SNS_SMGR_SINGLE_SENSOR_INFO_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SensorID</td><td>1</td><td class='l'>see #define SNS_SMGR_ID_XXX_XXX </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SMGR_SINGLE_SENSOR_INFO_RESP"></a><a href='#Messages'>SNS_SMGR_SINGLE_SENSOR_INFO_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>data_type_info_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- SensorID<ul><li>DataType<li>SensorName_len<li>SensorName<li>VendorName_len<li>VendorName<li>Version<li>MaxSampleRate<li>IdlePower<li>MaxPower<li>MaxRange<li>Resolution</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SensorID</td><td>1</td><td class='l'>Defines the sensor that this configuration pertains to. Refer to the<br> Sensor ID table defined under "Define sensor identifier" .<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>DataType</td><td>1</td><td class='l'>Defines sensor data type which classifies if the data type is primary<br> or secondary.<ul><li>00 - SNS_SMGR_DATA_TYPE_PRIMARY<li>01 - SNS_SMGR_DATA_TYPE_SECONDARY<li>All other values defined as SNS_SMGR_IDSNS_SMGR_DATA_TYPE_XXXX style are</ul> reserved for future use<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SensorName_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- SensorName</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SensorName</td><td>Var</td><td class='l'>The model name of the sensor<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>VendorName_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- VendorName</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>VendorName</td><td>Var</td><td class='l'>The vendor name of the sensor </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Version</td><td>4</td><td class='l'>The version of sensor module </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>MaxSampleRate</td><td>2</td><td class='l'>The maximum freq value that the sensor can stream </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>IdlePower</td><td>2</td><td class='l'>Power consumption in uA when the sensor is in IDLE mode </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>MaxPower</td><td>2</td><td class='l'>Power consumption in uA when the sensor is in operation mode </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>MaxRange</td><td>4</td><td class='l'>The maximum range that the sensor can support in nominal engineering units.<br> This value is represented by Q16 format </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Resolution</td><td>4</td><td class='l'>The resolution that the sensor uses in nominal engineering units.<br> This value is represented by Q16 format </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>num_buffered_reports_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- num_buffered_reports</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>num_buffered_reports</td><td>Var</td><td class='l'>The max number of reports that can be buffered for this data type </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>op_mode</td><td>4</td><td class='l'>Sensor's current operating mode </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x12</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>suid_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- suid</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>suid</td><td>Var</td><td class='l'>64-bit Unique ID for this sensor </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x13</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>supported_odr_list_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- odrs_len<ul><li>odrs</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>odrs_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- odrs</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>odrs</td><td>Var</td><td class='l'></td></tr>
+
+</table>
+<h4>Description of SNS_SMGR_SINGLE_SENSOR_INFO REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_SENSOR_TEST'></a><a href='#Messages'>SNS_SMGR_SENSOR_TEST</a></h2>
+This command requests all-sensor test.<br> These message are defined for future use, so the messages WON'T be supported.
+<h4>Message ID</h4>
+0x0007
+<h3><a name="SNS_SMGR_SENSOR_TEST_REQ"></a><a href='#Messages'>SNS_SMGR_SENSOR_TEST_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SMGR_SENSOR_TEST_RESP"></a><a href='#Messages'>SMGR_SENSOR_TEST_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>result_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- SensorID<ul><li>BusCanAccessSensor<li>CanCommandSensor<li>CanReadSensorStatus<li>CanReadSensorData<li>DataShowsNoise<li>CanReadFactoryCalibrationROM<li>ValidSelfTestReport<li>CanReceiveInterrupt</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SensorID</td><td>1</td><td class='l'>see #define SNS_SMGR_ID_XXX_XXX </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>BusCanAccessSensor</td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>CanCommandSensor</td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>CanReadSensorStatus</td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>CanReadSensorData</td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>DataShowsNoise</td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>CanReadFactoryCalibrationROM</td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ValidSelfTestReport</td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>CanReceiveInterrupt</td><td>1</td><td class='l'></td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SMGR_SENSOR_TEST REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_SENSOR_POWER_STATUS'></a><a href='#Messages'>SNS_SMGR_SENSOR_POWER_STATUS</a></h2>
+This command requests sensor power status.<br> These message are defined for future use, so the messages WON'T be supported.
+<h4>Message ID</h4>
+0x0008
+<h3><a name="SNS_SMGR_SENSOR_POWER_STATUS_REQ"></a><a href='#Messages'>SNS_SMGR_SENSOR_POWER_STATUS_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ReportId</td><td>1</td><td class='l'>ID assigned by client to distinguish client's reports </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>Action</td><td>1</td><td class='l'>SNS_SMGR_POWER_STATUS_ADD =0 ,Add;<br> SNS_SMGR_POWER_STATUS_DEL =1, Delete </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SMGR_SENSOR_POWER_STATUS_RESP"></a><a href='#Messages'>SNS_SMGR_SENSOR_POWER_STATUS_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SMGR_SENSOR_POWER_STATUS REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_SENSOR_POWER_STATUS_IND'></a><a href='#Messages'>SNS_SMGR_SENSOR_POWER_STATUS_IND</a></h2>
+This command requests sensor power status.<br> These message are defined for future use, so the messages WON'T be supported.
+<h4>Message ID</h4>
+0x0009
+<h3><a name="SNS_SMGR_SENSOR_POWER_STATUS_IND"></a><a href='#Messages'>SNS_SMGR_SENSOR_POWER_STATUS_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ReportId</td><td>1</td><td class='l'>ID assigned by client to distinguish client's reports </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>PowerStatus_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- SensorID<ul><li>PowerAction<li>ActiveTimeStamp<li>LowPowerTimeStamp<li>CycleCount</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SensorID</td><td>1</td><td class='l'>see #define SNS_SMGR_ID_XXX_XXX </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>PowerAction</td><td>1</td><td class='l'>see #define SNS_SMGR_POWER_STATE_XXX </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ActiveTimeStamp</td><td>4</td><td class='l'>Timestamp when state changed to Active </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>LowPowerTimeStamp</td><td>4</td><td class='l'>Timestamp when state changed to Low</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>CycleCount</td><td>4</td><td class='l'>Number of power state change between on and off since last report</td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SMGR_SENSOR_POWER_STATUS_IND</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_SENSOR_POWER_CONTROL'></a><a href='#Messages'>SNS_SMGR_SENSOR_POWER_CONTROL</a></h2>
+This command requests sensor power control.<br> These message are defined for future use, so the messages WON'T be supported.
+<h4>Message ID</h4>
+0x000A
+<h3><a name="SNS_SMGR_SENSOR_POWER_CONTROL_REQ"></a><a href='#Messages'>SNS_SMGR_SENSOR_POWER_CONTROL_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SensorID</td><td>1</td><td class='l'>See #define SNS_SMGR_ID_XXX_XXX; Defines the sensor that this configuration<br> pertains to.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>Action</td><td>1</td><td class='l'>SNS_SMGR_POWER_CTRL_AUTO =0 automatic control (default)<br> SNS_SMGR_POWER_CTRL_ACTIVE =1 active state - command the max power state<br> SNS_SMGR_POWER_CTRL_IDLE =2 idle state - command to low power state<br> SNS_SMGR_POWER_CTRL_OFF =3 = off - not possible in 8660 DSPS<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SMGR_SENSOR_POWER_CONTROL_RESP"></a><a href='#Messages'>SMGR_SENSOR_POWER_CONTROL_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SMGR_SENSOR_POWER_CONTROL REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_SENSOR_STATUS'></a><a href='#Messages'>SNS_SMGR_SENSOR_STATUS</a></h2>
+This command requests sensor status which tells if the sensor is active,<br> idle, or only one client is left for the sensor. Currently SMGR only supports<br> one client at a time. So This feature is limited.
+<h4>Message ID</h4>
+0x000B
+<h3><a name="SNS_SMGR_SENSOR_STATUS_REQ"></a><a href='#Messages'>SNS_SMGR_SENSOR_STATUS_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SensorID</td><td>1</td><td class='l'>Defines the sensor that this configuration pertains to. Refer to the<br> Sensor ID table defined under "Define sensor identifier" .<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ReqDataTypeNum</td><td>1</td><td class='l'>How many data types client monitors and requests sampling data, this<br> is used by SMGR to tell if there is only one client left. When the number<br> of request items drop to this number, SMGR will send<br> SNS_SMGR_SENSOR_STATUS_ONE_CLIENT indication for the sensor </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>Action</td><td>1</td><td class='l'>SNS_SMGR_SENSOR_STATUS_ADD = 0, Add;<br> SNS_SMGR_SENSOR_STATUS_DEL = 1, Delete<br> All other values defined as SNS_SMGR_SENSOR_STATUS_XXXX style are reserved<br> for future use<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SMGR_SENSOR_STATUS_RESP"></a><a href='#Messages'>SNS_SMGR_SENSOR_STATUS_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SensorID</td><td>1</td><td class='l'>Defines the sensor that this configuration pertains to. Refer to the<br> Sensor ID table defined under "Define sensor identifier" .<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SMGR_SENSOR_STATUS REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_SENSOR_STATUS_IND'></a><a href='#Messages'>SNS_SMGR_SENSOR_STATUS_IND</a></h2>
+This command requests sensor status which tells if the sensor is active,<br> idle, or only one client is left for the sensor. Currently SMGR only supports<br> one client at a time. This feature is limited.
+<h4>Message ID</h4>
+0x000C
+<h3><a name="SNS_SMGR_SENSOR_STATUS_IND"></a><a href='#Messages'>SNS_SMGR_SENSOR_STATUS_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SensorID</td><td>1</td><td class='l'>Defines the sensor that this configuration pertains to. Refer to the<br> Sensor ID table defined under "Define sensor identifier" .<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SensorState</td><td>1</td><td class='l'>Defines the sensor status for this indication. The status can be one of<br> following<br>: - 00 - SNS_SMGR_SENSOR_STATUS_UNKNOWN<ul><li>01 - SNS_SMGR_SENSOR_STATUS_IDLE<li>02 - SNS_SMGR_SENSOR_STATUS_ACTIVE<li>03 - SNS_SMGR_SENSOR_STATUS_ONE_CLIENT<li>All other values defined as SNS_SMGR_SENSOR_STATUS_XXXX style are reserved</ul> for future use<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>TimeStamp</td><td>4</td><td class='l'>The timestamp when state is changed </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>PerProcToalClients_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- PerProcToalClients</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>PerProcToalClients</td><td>Var</td><td class='l'>Total clients per processor indexed by the constants defined above </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>MaxFreqPerProc_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- MaxFreqPerProc</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>MaxFreqPerProc</td><td>Var</td><td class='l'>Max frequency of data requested by clients on each processor<br> Units of Hz, Q16 format<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x12</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>MaxUpdateRatePerProc_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- MaxUpdateRatePerProc</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>MaxUpdateRatePerProc</td><td>Var</td><td class='l'>Max update rate of data requested by clients on each processor<br> Units of Hz, Q16 format<br> </td></tr>
+
+</table>
+<h4>Description of SNS_SMGR_SENSOR_STATUS_IND</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_SINGLE_SENSOR_TEST'></a><a href='#Messages'>SNS_SMGR_SINGLE_SENSOR_TEST</a></h2>
+This command requests single sensor test.<br> Currently only single sensor self-test is supported.
+<h4>Message ID</h4>
+0x000D
+<h4>Version introduced</h4>
+Major - 1, Minor - 3
+<h3><a name="SNS_SMGR_SINGLE_SENSOR_TEST_REQ"></a><a href='#Messages'>SNS_SMGR_SINGLE_SENSOR_TEST_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SensorID</td><td>1</td><td class='l'>Defines the sensor that this configuration pertains to.<br> The sensor ID is defined as SNS_SMGR_ID_XXXX style.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>DataType</td><td>1</td><td class='l'>Defines sensor data type which classifies if the data type is primary<br> or secondary.<ul><li>00 - SNS_SMGR_DATA_TYPE_PRIMARY<li>01 - SNS_SMGR_DATA_TYPE_SECONDARY</ul> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>TestType</td><td>4</td><td class='l'>Defines the type of test to be executed.<ul><li>00 - SNS_SMGR_TEST_SELF<li>All other values defined as SNS_SMGR_TEST_XXXX style are reserved</ul> for future use<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SaveToRegistry</td><td>1</td><td class='l'>Specifies whether calibration data generated during the test should be<br> saved to sensors registry.<br> This applies only to sensors which generate calibration data as part of<br> factory test.<br> Default behavior is TRUE (save calibration data to sensors registry).<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ApplyCalNow</td><td>1</td><td class='l'>Specifies whether calibration data should take affect immediately, rather<br> than after reboot.<br> This applies only to sensors which generate calibration data as part of<br> factory test.<br> Default behavior is TRUE (apply calibration data immediately).<br> </td></tr>
+
+</table>
+<h3><a name="SNS_SMGR_SINGLE_SENSOR_TEST_RESP"></a><a href='#Messages'>SNS_SMGR_SINGLE_SENSOR_TEST_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SensorID</td><td>1</td><td class='l'>Defines the sensor that this configuration pertains to.<br> The sensor ID is defined as SNS_SMGR_ID_XXXX style.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>DataType</td><td>1</td><td class='l'>Defines sensor data type which classifies if the data type is primary<br> or secondary.<ul><li>00 - SNS_SMGR_DATA_TYPE_PRIMARY<li>01 - SNS_SMGR_DATA_TYPE_SECONDARY</ul> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x05</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>TestType</td><td>4</td><td class='l'>Defines the type of test to be executed.<ul><li>00 - SNS_SMGR_TEST_SELF<li>All other values are reserved for future use</ul> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x06</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>TestStatus</td><td>4</td><td class='l'>Identifies test status </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SMGR_SINGLE_SENSOR_TEST_IND"></a><a href='#Messages'>SNS_SMGR_SINGLE_SENSOR_TEST_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SensorID</td><td>1</td><td class='l'>Defines the sensor that this configuration pertains to.<br> The sensor ID is defined as SNS_SMGR_ID_XXXX style.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>DataType</td><td>1</td><td class='l'>Defines sensor data type which classifies if the data type is primary<br> or secondary<ul><li>00 - SNS_SMGR_DATA_TYPE_PRIMARY<li>01 - SNS_SMGR_DATA_TYPE_SECONDARY</ul> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>TestType</td><td>4</td><td class='l'>Defines the type of test to be executed.<ul><li>00 - SNS_SMGR_TEST_SELF<li>All other values are reserved for future use</ul> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>TestResult</td><td>4</td><td class='l'>Indicates test result </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ErrorCode</td><td>1</td><td class='l'>Test-specific error code </td></tr>
+
+</table>
+<h4>Description of SNS_SMGR_SINGLE_SENSOR_TEST</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_BUFFERING'></a><a href='#Messages'>SNS_SMGR_BUFFERING</a></h2>
+ This command requests sensor data to be sampled and buffered up to be sent together
+<h4>Message ID</h4>
+0x0021
+<h3><a name="SNS_SMGR_BUFFERING_REQ"></a><a href='#Messages'>SNS_SMGR_BUFFERING_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ReportId</td><td>1</td><td class='l'>The report ID assigned by client to be used for identifying corresponding<br> response and indication messages<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>Action</td><td>1</td><td class='l'>Specifies the action to be carried out for this report<ul><li>SNS_SMGR_BUFFERING_ACTION_ADD<li>SNS_SMGR_BUFFERING_ACTION_DELETE<li>All other values will be rejected.</ul> An existing report will be replaced by a new report of the same ID.<br> This includes Periodic Report. It is advisable for clients to use different<br> sets of IDs for Buffering reports and Periodic reports.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ReportRate</td><td>4</td><td class='l'>Specifies the desired reporting rate expressed in Q16 format and in unit of Hz.<br> This is only meaningful when paired with SNS_SMGR_BUFFERING_ACTION_ADD<br> To indicate no periodic reports, use SNS_SMGR_BUFFERING_REPORT_RATE_NONE.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>Item_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- SensorId<ul><li>DataType<li>Decimation<li>Calibration<li>SamplingRate<li>SampleQuality</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SensorId</td><td>1</td><td class='l'>Identifies the sensor to be sampled for data. The valid sensors are<br>: - SNS_SMGR_ID_ACCEL<ul><li>SNS_SMGR_ID_GYRO<li>SNS_SMGR_ID_MAG<li>SNS_SMGR_ID_PRESSURE<li>SNS_SMGR_ID_PROX_LIGHT<li>SNS_SMGR_ID_HUMIDITY<li>SNS_SMGR_ID_RGB<li>SNS_SMGR_ID_SAR<li>SNS_SMGR_ID_HALL_EFFECT<li>SNS_SMGR_ID_HEART_RATE<li>SNS_SMGR_ID_STEP_EVENT<li>SNS_SMGR_ID_STEP_COUNT<li>SNS_SMGR_ID_SMD<li>SNS_SMGR_ID_GAME_ROTATION_VECTOR<li>SNS_SMGR_ID_IR_GESTURE<li>SNS_SMGR_ID_TAP<li>SNS_SMGR_OEM_SENSOR_XX<li>All other values defined as SNS_SMGR_ID_XXXX style are reserved for future use</ul> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>DataType</td><td>1</td><td class='l'>Identifies which data type of the specified sensor is being requested.<ul><li>SNS_SMGR_DATA_TYPE_PRIMARY<li>SNS_SMGR_DATA_TYPE_SECONDARY<li>All other values defined as SNS_SMGR_DATA_TYPE_XXXX style are reserved for</ul> future use<br> This parameter identifies the sensor data type.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Decimation</td><td>1</td><td class='l'>Specifies decimation option for samples belonging to this item<ul><li>SNS_SMGR_DECIMATION_RECENT_SAMPLE<li>SNS_SMGR_DECIMATION_FILTER<li>All other values will be rejected.</ul> The SNS_SMGR_DECIMATION_FILTER option is only applicable for ACCEL, GYRO,<br> and MAG sensor types to reduce data noise. When SNS_SMGR_DECIMATION_FILTER<br> option is specified, multiple samples could be used for one report.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Calibration</td><td>1</td><td class='l'>Specifies how raw data is to be calibrated<ul><li>SNS_SMGR_CAL_SEL_FULL_CAL<li>SNS_SMGR_CAL_SEL_FACTORY_CAL<li>SNS_SMGR_CAL_SEL_RAW<li>All other values will be rejected</ul> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SamplingRate</td><td>2</td><td class='l'>Specifies the frequency at which sensor is sampled.<br> This value shall be within the sensor capacity, .<br> expressed in integer format and in unit of Hz.<br> Values outside of sensor capacity will be rejected.<br> If this value is greater than SNS_SMGR_SAMPLING_RATE_INVERSION_POINT,<br> then it will be interpreted as the sampling period, in milliseconds. This<br> allows a client to sample the sensor at a rate less than 1 Hz. It is not<br> recommended to sample any sensor but environmental sensors at a rate less<br> than 1 Hz.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SampleQuality</td><td>2</td><td class='l'>Specifies the desired quality of sensor data<ul><li>SNS_SMGR_SAMPLE_QUALITY_ACCURATE_TIMESTAMP - High accuracy for sample timestamp.</ul> Delivery sampling rate may be up to twice the requested sampling rate,<br> and may also result in higher report rate.<br> Clients are recommended to specify 50, 100, or 200Hz sampling rates to<br> minimize the chance of increase in sampling rate.<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>5</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>proc_type</td><td>4</td><td class='l'>Defines the processor to monitor for suspend.<br> This would typically be the processor on which the<br> request message originated from.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>send_indications_during_suspend</td><td>1</td><td class='l'>Defines if indications for this request should be sent when the<br> processor is in suspend state.<ul><li>if send_indications_during_suspend=1 or TRUE, then indications</ul> will be sent for this request when processor is in suspend state<br> (Such indications may wake up the processor from suspend).<br><ul><li>if send_indications_during_suspend=0 or FALSE, then some indications </ul> will not be sent for this request when the processor is in suspend state.<br> The list of indications not sent will be defined by the message in question.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SrcModule</td><td>1</td><td class='l'>For sensor internal use only.<br> Defines the source module that is sending this message.<br> </td></tr>
+
+</table>
+<h3><a name="SNS_SMGR_BUFFERING_RESP"></a><a href='#Messages'>SNS_SMGR_BUFFERING_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ReportId</td><td>1</td><td class='l'>The ID corresponding to a Buffering request </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>AckNak</td><td>1</td><td class='l'>Defines whether this response is Acknowledgement or Negative Acknowledgement<ul><li>SNS_SMGR_RESPONSE_ACK_SUCCESS - the request has been accepted<li>SNS_SMGR_RESPONSE_ACK_MODIFIED - some parameters in the request are modified<li>SNS_SMGR_RESPONSE_NAK_RESOURCES - no resources to service the request<li>SNS_SMGR_RESPONSE_NAK_REPORT_ID - no such report to be deleted<li>SNS_SMGR_RESPONSE_NAK_NO_ITEMS - no valid items were sent in request<li>SNS_SMGR_RESPONSE_NAK_UNK_ACTION - invalid Action field in request<li>SNS_SMGR_RESPONSE_NAK_INTERNAL_ERR - unspecified error</ul> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x12</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ReasonPair_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- ItemNum<ul><li>Reason</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ItemNum</td><td>1</td><td class='l'>The Item parameter number in the request msg </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Reason</td><td>1</td><td class='l'>Defines reason codes<br>: - 00 - SNS_SMGR_REASON_NULL<ul><li>10 - SNS_SMGR_REASON_DEFAULT_RATE<li>12 - SNS_SMGR_REASON_DEFAULT_DECIM<li>15 - SNS_SMGR_REASON_UNKNOWN_SENSOR<li>16 - SNS_SMGR_REASON_FAILED_SENSOR<li>17 - SNS_SMGR_REASON_OTHER_FAILURE<li>18 - SNS_SMGR_REASON_SAMPLING_RATE<li>19 - SNS_SMGR_REASON_SAMPLE_QUALITY_NORMAL<li>All other values defined as SNS_SMGR_REASON_XXXX style are reserved for future use</ul> </td></tr>
+
+</table>
+<h4>Description of SNS_SMGR_BUFFERING REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_BUFFERING_IND'></a><a href='#Messages'>SNS_SMGR_BUFFERING_IND</a></h2>
+This command requests sensor data to be sampled and buffered up
+<h4>Message ID</h4>
+0x0022
+<h3><a name="SNS_SMGR_BUFFERING_IND"></a><a href='#Messages'>SNS_SMGR_BUFFERING_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ReportId</td><td>1</td><td class='l'>The ID corresponding to a Buffering request </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>Indices_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- SensorId<ul><li>DataType<li>FirstSampleIdx<li>SampleCount<li>FirstSampleTimestamp<li>SamplingRate</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SensorId</td><td>1</td><td class='l'>Identifies the sensor to which the samples belong. This shall match one of<br> the requested sensors.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>DataType</td><td>1</td><td class='l'>Identifies the data type of the specified sensor to which the samples belong.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>FirstSampleIdx</td><td>1</td><td class='l'>Index into Samples data of the first sample belonging to this<br> SensorId/DataType pair.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SampleCount</td><td>1</td><td class='l'>Number of samples belonging to this SensorId/DataType pair.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>FirstSampleTimestamp</td><td>4</td><td class='l'>Timestamp of first sample belonging to this SensorId/DataType pair. (in SSC ticks)<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SamplingRate</td><td>4</td><td class='l'>Specifies the frequency at which sensor is actually sampled. This value<br> is expressed in Q16 format and in unit of Hz.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>Samples_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- Data<ul><li>TimeStampOffset<li>Flags<li>Quality</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Data</td><td>12</td><td class='l'>Each sample can have up to SNS_SMGR_SENSOR_DIMENSION words, each word<br> is in Q16 format and in the units specific to the sensor/data type pair.<br> For 3-axis samples, Data[0], Data[1], and Data[2] are X, Y, and Z axis,<br> respectively. For others, only Data[0] has valid measurement.<ul><li>ACCEL/PRIMARY : 3 axes, each in meter/second squared (m/s2)<li>GYRO/PRIMARY : 3 axes, each in radian/second (rad/s)<li>MAG/PRIMARY : 3 axes, each in Gauss<li>PRESSURE/PRIMARY : 1 axis, in hectopascal (hPa)<li>PROX/PRIMARY : 1 axis, FAR=0, NEAR=1<li>RGB/PRIMARY : 3 axis, X axis = raw Red counts, Y axis = raw Green counts,</ul> Z axis = raw Blue counts<ul><li>SAR/PRIMARY : 1 axis, FAR=0, NEAR=non negative number indicating the sensor touched<li>HALL_EFFECT/PRIMARY : 1 axis, Mag Field present=1, Mag Field not present=0<li>HEART_RATE/PRIMARY : 3 axes, X is heart rate in bpm / each is unitless raw data from sensor<li>HEART_RATE/SECONDARY : 3 axes, each is unitless raw data from sensor<li>ACCEL/SECONDARY : 1 axis, in Celsius<li>GYRO/SECONDARY : 1 axis, in Celsius<li>MAG/SECONDARY : 1 axis, in Celsius<li>PRESSURE/SECONDARY : 1 axis, in Celsius<li>PROX/SECONDARY : 1 axis, in Lux<li>RGB/SECONDARY : 3 axis, X axis = Color temperature in Q16 (deg Kelvin),</ul> Y axis = raw Clear counts , Z axis = Reserved<ul><li>IR_GESTURE : (revision 10: Sensor ID defined, but not used)<li>DOUBLE-TAP/PRIMARY </ul>: - SINGLE-TAP/SECONDARY: Dimension-less (raw) value indicating the source of the tap<br> event, relative to the device. (Consider the device as a<br> point mass located at the origin (0,0,0)<br> of the Cartesian coordinate system.)<br><br> 0 = no tap event, 1 = tap from +X axis, 2 = tap from -X axis,<br> 3 = tap from +Y axis, 4 = tap from -Y axis, 5 = tap from +Z axis,<br> 6 = tap from -Z axis, 7 = tap along X axis, 8 = tap along Y axis,<br> 9 = tap along Z axis, 10 = tap event (unknown axis)<br><ul><li>OEM_SENSOR : (OEM-defined)</ul> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>TimeStampOffset</td><td>2</td><td class='l'>The offset from timestamps of previous sample in report (in SSC ticks).<br> Note: The maximum timestamp offset that can be portrayed with this<br> field is a little less than 2 seconds. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Flags</td><td>1</td><td class='l'>Status flags of this sample.<ul><li>raw data<li>SNS_SMGR_ITEM_FLAG_INVALID<li>SNS_SMGR_ITEM_FLAG_FAC_CAL : Factory calibration data was applied<li>SNS_SMGR_ITEM_FLAG_AUTO_CAL: Auto calibration data was applied<li>All other values defined as SNS_SMGR_ITEM_FLAG_XXXX style are reserved</ul> for future use<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Quality</td><td>1</td><td class='l'>Quality of this sample.<ul><li>SNS_SMGR_ITEM_QUALITY_CURRENT_SAMPLE<li>SNS_SMGR_ITEM_QUALITY_FILTERED<li>SNS_SMGR_ITEM_QUALITY_INTERPOLATED<li>SNS_SMGR_ITEM_QUALITY_INTERPOLATED_FILTERED<li>SNS_SMGR_ITEM_QUALITY_INVALID_FAILED_SENSOR<li>SNS_SMGR_ITEM_QUALITY_INVALID_NOT_READY<li>All other values defined as SNS_SMGR_ITEM_QUALITY_XXXX style are reserved</ul> for future use<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>IndType</td><td>1</td><td class='l'>Optional batch indication type<br> SNS_BATCH_ONLY_IND - Standalone batch indication. Not part of a back to<br> back indication stream<br> SNS_BATCH_FIRST_IND - First indication in stream of back to back indications<br> SNS_BATCH_INTERMEDIATE_IND - Intermediate indication in stream of back to<br> back indications<br> SNS_BATCH_LAST_IND - Last indication in stream of back to back indications<br> </td></tr>
+
+</table>
+<h4>Description of SNS_SMGR_BUFFERING_IND</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_BUFFERING_QUERY'></a><a href='#Messages'>SNS_SMGR_BUFFERING_QUERY</a></h2>
+This command allows the client to request sensor samples from<br> the SMGR current buffer. Often combined with requesting a buffering<br> report with the report rate set to SNS_SMGR_BUFFERING_REPORT_RATE_NONE.
+<h4>Message ID</h4>
+0x0023
+<h3><a name="SNS_SMGR_BUFFERING_QUERY_REQ"></a><a href='#Messages'>SNS_SMGR_BUFFERING_QUERY_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>QueryId</td><td>2</td><td class='l'>The ID corresponding to a Buffering request<br> The lower 8-bit value is the ReportId of the Buffering request initiated<br> by same client<br> The upper 8-bit value is the transaction ID assigned by client for each query<br> Query response and indications for this request shall carry this QueryId<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SensorId</td><td>1</td><td class='l'>Identifies the sensor from which to collect data. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>DataType</td><td>1</td><td class='l'>Identifies the data type of the specified sensor </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>8</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>TimePeriod</td><td>8</td><td class='l'>Specify the start and end of the time period within which to collect samples.<ul><li>TimePeriod[0] is timestamp of the start of the time period<li>TimePeriod[1] is timestamp of the end of the time period</ul> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SrcModule</td><td>1</td><td class='l'>For sensor internal use only.<br> Defines the source module that is sending this message.<br> </td></tr>
+
+</table>
+<h3><a name="SNS_SMGR_BUFFERING_QUERY_RESP"></a><a href='#Messages'>SNS_SMGR_BUFFERING_QUERY_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>QueryId</td><td>2</td><td class='l'>The ID corresponding to a Query request </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>AckNak</td><td>1</td><td class='l'>Defines whether this response is Acknowledgement or Negative Acknowledgement<ul><li>SNS_SMGR_RESPONSE_ACK_SUCCESS - the request has been accepted<li>SNS_SMGR_RESPONSE_NAK_RESOURCES - no resources to service the request<li>SNS_SMGR_RESPONSE_NAK_REPORT_ID - report not found for given ID<li>SNS_SMGR_RESPONSE_NAK_QUERY_ID - same request already received<li>SNS_SMGR_RESPONSE_NAK_TIME_PERIOD - the start of time period is not greater</ul> than end of time periodic<ul><li>SNS_SMGR_RESPONSE_NAK_SENSOR_ID - requested sensor ID/data type is not in</ul> Buffering request<ul><li>SNS_SMGR_RESPONSE_NAK_INTERNAL_ERR - unspecified error</ul> </td></tr>
+
+</table>
+<h4>Description of SNS_SMGR_BUFFERING_QUERY REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_BUFFERING_QUERY_IND'></a><a href='#Messages'>SNS_SMGR_BUFFERING_QUERY_IND</a></h2>
+Sensor Buffering Report Message sent to a client at the reporting rate.
+<h4>Message ID</h4>
+0x0024
+<h3><a name="SNS_SMGR_BUFFERING_QUERY_IND"></a><a href='#Messages'>SNS_SMGR_BUFFERING_QUERY_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>QueryId</td><td>2</td><td class='l'>The ID corresponding to a Query request </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>FirstSampleTimestamp</td><td>4</td><td class='l'>Timestamp of first sample belonging to this SensorId/DataType pair.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>SamplingRate</td><td>4</td><td class='l'>Specifies the actual frequency at which requested sensor is sampled.<br> This value is expressed in Q16 format and in unit of Hz. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>Samples_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- Data<ul><li>TimeStampOffset<li>Flags<li>Quality</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Data</td><td>12</td><td class='l'>Each sample can have up to SNS_SMGR_SENSOR_DIMENSION words, each word<br> is in Q16 format and in the units specific to the sensor/data type pair.<br> For 3-axis samples, Data[0], Data[1], and Data[2] are X, Y, and Z axis,<br> respectively. For others, only Data[0] has valid measurement.<ul><li>ACCEL/PRIMARY : 3 axes, each in meter/second squared (m/s2)<li>GYRO/PRIMARY : 3 axes, each in radian/second (rad/s)<li>MAG/PRIMARY : 3 axes, each in Gauss<li>PRESSURE/PRIMARY : 1 axis, in hectopascal (hPa)<li>PROX/PRIMARY : 1 axis, FAR=0, NEAR=1<li>RGB/PRIMARY : 3 axis, X axis = raw Red counts, Y axis = raw Green counts,</ul> Z axis = raw Blue counts<ul><li>SAR/PRIMARY : 1 axis, FAR=0, NEAR=non negative number indicating the sensor touched<li>HALL_EFFECT/PRIMARY : 1 axis, Mag Field present=1, Mag Field not present=0<li>HEART_RATE/PRIMARY : 3 axes, X is heart rate in bpm / each is unitless raw data from sensor<li>HEART_RATE/SECONDARY : 3 axes, each is unitless raw data from sensor<li>ACCEL/SECONDARY : 1 axis, in Celsius<li>GYRO/SECONDARY : 1 axis, in Celsius<li>MAG/SECONDARY : 1 axis, in Celsius<li>PRESSURE/SECONDARY : 1 axis, in Celsius<li>PROX/SECONDARY : 1 axis, in Lux<li>RGB/SECONDARY : 3 axis, X axis = Color temperature in Q16 (deg Kelvin),</ul> Y axis = raw Clear counts , Z axis = Reserved<ul><li>IR_GESTURE : (revision 10: Sensor ID defined, but not used)<li>DOUBLE-TAP/PRIMARY </ul>: - SINGLE-TAP/SECONDARY: Dimension-less (raw) value indicating the source of the tap<br> event, relative to the device. (Consider the device as a<br> point mass located at the origin (0,0,0)<br> of the Cartesian coordinate system.)<br><br> 0 = no tap event, 1 = tap from +X axis, 2 = tap from -X axis,<br> 3 = tap from +Y axis, 4 = tap from -Y axis, 5 = tap from +Z axis,<br> 6 = tap from -Z axis, 7 = tap along X axis, 8 = tap along Y axis,<br> 9 = tap along Z axis, 10 = tap event (unknown axis)<br><ul><li>OEM_SENSOR : (OEM-defined)</ul> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>TimeStampOffset</td><td>2</td><td class='l'>The offset from timestamps of previous sample in report (in SSC ticks).<br> Note: The maximum timestamp offset that can be portrayed with this<br> field is a little less than 2 seconds. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Flags</td><td>1</td><td class='l'>Status flags of this sample.<ul><li>raw data<li>SNS_SMGR_ITEM_FLAG_INVALID<li>SNS_SMGR_ITEM_FLAG_FAC_CAL : Factory calibration data was applied<li>SNS_SMGR_ITEM_FLAG_AUTO_CAL: Auto calibration data was applied<li>All other values defined as SNS_SMGR_ITEM_FLAG_XXXX style are reserved</ul> for future use<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Quality</td><td>1</td><td class='l'>Quality of this sample.<ul><li>SNS_SMGR_ITEM_QUALITY_CURRENT_SAMPLE<li>SNS_SMGR_ITEM_QUALITY_FILTERED<li>SNS_SMGR_ITEM_QUALITY_INTERPOLATED<li>SNS_SMGR_ITEM_QUALITY_INTERPOLATED_FILTERED<li>SNS_SMGR_ITEM_QUALITY_INVALID_FAILED_SENSOR<li>SNS_SMGR_ITEM_QUALITY_INVALID_NOT_READY<li>All other values defined as SNS_SMGR_ITEM_QUALITY_XXXX style are reserved</ul> for future use<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SMGR_BUFFERING_QUERY_IND</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+\appendix
+\chapter{Additional Information}
+\section{@FOOTER}
+\newline
+Our sensor API is the greatest!
+\section{@FOOTER}
+\newline
+Our sensor API is the greatest!

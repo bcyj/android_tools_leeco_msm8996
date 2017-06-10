@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Category mapping from ATSC to canonical genre -->
+    <string-array name="genre_mapping_atsc">
+        <item>शिक्षण|शिक्षण</item>
+        <item>मनोरंजन|मनोरंजन</item>
+        <item>चित्रपट|चित्रपट</item>
+        <item>बातम्‍या|बातम्‍या</item>
+        <item>धार्मिक|जीवनशैली</item>
+        <item>क्रिडा|क्रिडा</item>
+        <item>अन्‍य|अन्‍य</item>
+        <item>क्रिया|चित्रपट</item>
+        <item>जाहिरात|अन्‍य</item>
+        <item>अॅनिमेटेड|कुटुंब_लहान मुले</item>
+        <item>साहित्‍यसंग्रह|नाटक</item>
+        <item>ऑटोमोबाईल|अन्‍य</item>
+        <item>पुरस्‍कार|करमणूक</item>
+        <item>बेसबॉल|क्रिडा</item>
+        <item>बास्‍केटबॉल|क्रिडा</item>
+        <item>बुलेटिन|अन्‍य</item>
+        <item>व्‍यवसाय|अन्‍य</item>
+        <item>शास्‍त्रीय|संगीत</item>
+        <item>कॉलेज|शिक्षण</item>
+        <item>लढाई|अन्‍य</item>
+        <item>विनोदी|विनोदी</item>
+        <item>समालोचन|अन्‍य</item>
+        <item>मैफल|संगीत</item>
+        <item>ग्रा‍हक|अन्‍य</item>
+        <item>समकालीन|अन्‍य</item>
+        <item>गुन्‍‍हा|चित्रपट</item>
+        <item>नृत्‍य|करमणूक</item>
+        <item>माहितीपट|बातम्‍या</item>
+        <item>नाटक|नाटक</item>
+        <item>प्राथमिक|शिक्षण</item>
+        <item>श्रुंगारिक साहित्‍य|चित्रपट</item>
+        <item>व्‍यायाम|क्रिडा</item>
+        <item>काल्‍पनिक|चित्रपट</item>
+        <item>फार्म|अन्‍य</item>
+        <item>फॅशन|जीवनशैली</item>
+        <item>काल्‍पनिक|कला</item>
+        <item>अन्‍न|जीवनशैली</item>
+        <item>फुटबॉल|क्रिडा</item>
+        <item>विदेशी|अन्‍य</item>
+        <item>निधी उभारणारा|अन्‍य</item>
+        <item>खेळ/प्रश्‍नमंजुषा|गेमिंग</item>
+        <item>बाग|जीवनशैली</item>
+        <item>गोल्‍फ|क्रिडा</item>
+        <item>शासन|अन्‍य</item>
+        <item>आरोग्‍य|जीवनशैली</item>
+        <item>उच्‍च माध्‍यमिक शाळा|शिक्षण</item>
+        <item>इतिहास|शिक्षण</item>
+        <item>छंद|जीवनशैली</item>
+        <item>हॉकी|क्रिडा</item>
+        <item>घर|जीवनशैली</item>
+        <item>भयपट|चित्रपट</item>
+        <item>माहिती|बातम्‍या</item>
+        <item>सूचना|अन्‍य</item>
+        <item>आंतरराष्‍ट्रीय|अन्‍य</item>
+        <item>मुलाखत|अन्‍य</item>
+        <item>भाषा|शिक्षण</item>
+        <item>कायदेविषयक|अन्‍य</item>
+        <item>थेट|इतर</item>
+        <item>स्‍थानिक|अन्‍य</item>
+        <item>गणित|शिक्षण</item>
+        <item>वैद्यकीय|अन्‍य</item>
+        <item>मीटिंग|अन्‍य</item>
+        <item>लष्‍करी|अन्‍य</item>
+        <item>लघुमालिका|नाटक</item>
+        <item>संगीत|संगीत</item>
+        <item>रहस्‍य|चित्रपट</item>
+        <item>राष्‍ट्रीय|अन्‍य</item>
+        <item>निसर्ग|वन्यजीव</item>
+        <item>पोलीस|अन्‍य</item>
+        <item>राजकारण|अन्‍य</item>
+        <item>प्रिमियर|प्रिमियर</item>
+        <item>आधीच रेकॉर्ड केलेले|अन्‍य</item>
+        <item>उत्‍पादन|अन्‍य</item>
+        <item>व्‍यावसायिक|अन्‍य</item>
+        <item>सार्वजनिक|अन्‍य</item>
+        <item>शर्यत|क्रिडा</item>
+        <item>वाचन|कला</item>
+        <item>दुरूस्‍ती|अन्‍य</item>
+        <item>पुनरावृत्‍ती|अन्‍य</item>
+        <item>पुनरावलोकन|अन्‍य</item>
+        <item>प्रणय|चित्रपट</item>
+        <item>विज्ञान|तंत्रज्ञानिक विज्ञान</item>
+        <item>मालिका|नाटक</item>
+        <item>सेवा|अन्‍य</item>
+        <item>खरेदी|खरेदी</item>
+        <item>धारावाहिक संगीत नाटक|नाटक</item>
+        <item>खास|अन्‍य</item>
+        <item>रहस्‍य|चित्रपट</item>
+        <item>वार्तालाप|करमणूक</item>
+        <item>तांत्रिक|तंत्रज्ञानिक विज्ञान</item>
+        <item>टेनिस|क्रिडा</item>
+        <item>प्रवास|प्रवास</item>
+        <item>विविधता|करमणूक</item>
+        <item>व्हिडिओ|कला</item>
+        <item>हवामान|बातम्‍या</item>
+        <item>पाश्‍चात्‍य|अन्‍य</item>
+        <item>कला|कला</item>
+        <item>वाहनांची शर्यत|क्रिडा</item>
+        <item>विमान चालन|क्रिडा</item>
+        <item>जीवनपट|बातम्या</item>
+        <item>बोटिंग|क्रिडा</item>
+        <item>बॉलिंग|क्रिडा</item>
+        <item>बॉक्सिंग|क्रिडा</item>
+        <item>कार्टून|कुटुंब_लहान मुले</item>
+        <item>मुले|कुटुंब_लहान मुले</item>
+        <item>अभिजात फिल्‍म|चित्रपट</item>
+        <item>समुदाय|अन्‍य</item>
+        <item>संगणक|तंत्रज्ञानिक विज्ञान</item>
+        <item>देश संगीत|संगीत</item>
+        <item>कोर्ट|अन्‍य</item>
+        <item>मेहनती क्रिडा|क्रिडा</item>
+        <item>कुटुंब|कुटुंब_लहान मुले</item>
+        <item>आर्थिक|बातम्‍या</item>
+        <item>जिम्नॅस्टिक्स|क्रिडा</item>
+        <item>ठळक बातम्‍या|बातम्‍या</item>
+        <item>घोडस्‍वारी शर्यत|क्रिडा</item>
+        <item>शिकार/मासेमारी/आउटडोअर्स|प्राणी
+_वन्यजीवन</item>
+        <item>स्‍वतंत्र|अन्य</item>
+        <item>जॅझ|संगीत</item>
+        <item>मॅगझिन|बातम्‍या</item>
+        <item>मोटारसायकल शर्यत|क्रिडा</item>
+        <item>संगीत/फिल्‍म/पुस्‍तके|अन्‍य</item>
+        <item>बातम्‍या-आंतरराष्‍ट्रीय|बातम्‍या</item>
+        <item>बातम्‍या-स्‍थानिक|बातम्‍या</item>
+        <item>बातम्‍या-राष्‍ट्रीय|बातम्‍या</item>
+        <item>बातम्‍या-प्रादेशिक|बातम्‍या</item>
+        <item>ओलिम्पिक्‍स|क्रिडा</item>
+        <item>मूळ|चित्रपट</item>
+        <item>कला सादर करणे|कला</item>
+        <item>पाळीव प्राणी/प्राणी|प्राणी_वन्यजीवन</item>
+        <item>पॉप|संगीत</item>
+        <item>रॉक आणि रोल|संगीत</item>
+        <item>वैज्ञानिक-कल्पनारम्य|चित्रपट</item>
+        <item>स्‍वयं सुधारणा|शिक्षण</item>
+        <item>सिटकॉम|ड्रामा</item>
+        <item>स्‍केटिंग|क्रिडा</item>
+        <item>स्‍काइंग|क्रिडा</item>
+        <item>सॉकर|क्रिडा</item>
+        <item>ट्रॅक/क्षेत्र|क्रिडा</item>
+        <item>सत्‍य|अन्‍य</item>
+        <item>व्‍हॉलीबॉल|क्रिडा</item>
+        <item>कुस्‍ती|क्रिडा</item>
+    </string-array>
+
+    <!-- Category mapping from DVB to canonical genre -->
+    <string-array name="genre_mapping_dvb">
+        <item>चित्रपट/नाटक|चित्रपट</item>
+        <item>गुप्‍तहेर/रोमांचक|चित्रपट</item>
+        <item>साहसी/पाश्‍चात्‍य/युद्ध|चित्रपट</item>
+        <item>विज्ञान कथित गोष्‍ट/कल्‍पनारम्‍य/भयावह|चित्रपट</item>
+        <item>विनोदी|विनोदी</item>
+        <item>धारावाहिक/भावनाक्षोभ करणारे आनंदपर्यवसायी नाटक/फोल्‍कलोरिक|नाटक</item>
+        <item>प्रणय|चित्रपट</item>
+        <item>गंभीर/अभिजात/धार्मिक/ऐतिहासिक चित्रपट/नाटक|चित्रपट</item>
+        <item>प्रौढांचे चित्रपट/नाटक|चित्रपट</item>
+        <item>बातम्‍या/चालू घडामोडी|बातम्‍या</item>
+        <item>बातम्‍या/हवामान अहवाल|बातम्‍या</item>
+        <item>बातम्‍या मॅगझिन|बातम्‍या</item>
+        <item>माहितीपट|बातम्‍या</item>
+        <item>चर्चा/मुलाखत/वादविवाद|बातम्‍या</item>
+        <item>शो/गेम शो|करमणूक</item>
+        <item>गेम शो/प्रश्‍नमंजुषा/स्‍पर्धा|गेमिंग</item>
+        <item>विविध शो|करमणूक</item>
+        <item>टॉक शो|करमणूक</item>
+        <item>क्रिडा|क्रिडा</item>
+        <item>खास इव्‍हेंट्स (ओलिम्पिक खेळ, विश्‍व चषक इ.)|क्रिडा</item>
+        <item>क्रिडा मॅगझिन्‍स|क्रिडा</item>
+        <item>फूटबॉल/सॉकर|क्रिडा</item>
+        <item>टेनिस/स्‍क्‍वॉश|क्रिडा</item>
+        <item>संघ क्रिडा (फूटबॉल सोडून)|क्रिडा</item>
+        <item>अॅथलेटिक्स|क्रिडा</item>
+        <item>मोटर खेळ|क्रिडा</item>
+        <item>पाण्‍याचे खेळ|क्रिडा</item>
+        <item>हिवाळी खेळ|क्रिडा</item>
+        <item>घोडस्‍वार|क्रिडा</item>
+        <item>मार्शल खेळ|क्रिडा</item>
+        <item>मुलांचा/युवा कार्यक्रम|कुटुंब_लहान मुले</item>
+        <item>शाळेतील मुलांचे कार्यक्रम|कुटुंब_लहान मुले</item>
+        <item>6 ते 14 साठी करमणूक कार्यक्रम|कुटुंब_लहान मुले</item>
+        <item>10 ते 16 साठी करमणूक कार्यक्रम|कुटुंब_लहान मुले</item>
+        <item>माहितीपूर्ण/शैक्षणिक/शालेय कार्यक्रम|कुटुंब_लहान मुले</item>
+        <item>कार्टून्‍स/कठपुतळ्या|कुटुंब_लहान मुले</item>
+        <item>संगीत/नृत्‍यनाट्य/नृत्‍य|संगीत</item>
+        <item>रॉक/पॉप|संगीत</item>
+        <item>गंभीर संगीत/शास्‍त्रीय संगीत|संगीत</item>
+        <item>लोकसाहित्‍य/पारंपारिक संगीत|संगीत</item>
+        <item>जॅझ|संगीत</item>
+        <item>सांगितिक/संगीत नाटक|संगीत</item>
+        <item>नृत्‍यनाट्य|करमणूक</item>
+        <item>कला/संस्‍कृती|कला</item>
+        <item>कला सादर करणे|कला</item>
+        <item>ललित कला|कला</item>
+        <item>धर्म|जीवनशैली</item>
+        <item>प्रसिद्ध संस्‍कृती/पारंपारिक कला|जीवनशैली</item>
+        <item>साहित्‍य|कला</item>
+        <item>फिल्‍म/सिनेमा|कला</item>
+        <item>प्रायोगिक फिल्‍म/व्हिडिओ|कला</item>
+        <item>प्रसारण/पत्रकार|कला</item>
+        <item>नवीन मिडिया|कला</item>
+        <item>कला/संस्‍कृती मॅगझिन्‍स|कला</item>
+        <item>फॅशन|जीवनशैली</item>
+        <item>सामाजिक/राजकीय समस्‍या/अर्थशास्‍त्र|अन्‍य</item>
+        <item>मॅगझिन्‍स/अहवाल/माहितीपट|बातम्‍या</item>
+        <item>अर्थशास्‍त्र/सामाजिक सल्लागार|अन्य</item>
+        <item>उल्लेखनीय लोक|अन्‍य</item>
+        <item>शिक्षण/विज्ञान/वास्‍तविक विषय|शिक्षण</item>
+        <item>निसर्ग/प्राणी/पर्यावरण|प्राणी_वन्यजीवन</item>
+        <item>तंत्रज्ञान/नैसर्गिक विज्ञान|तंत्रज्ञानिक विज्ञान</item>
+        <item>औषध/शरीरशास्त्र/मानसशास्‍त्र|तंत्रज्ञानिक विज्ञान</item>
+        <item>विदेश/शोधमोहिमा|शिक्षण</item>
+        <item>सामाजिक/आध्‍यात्मिक विज्ञान|तंत्रज्ञानिक विज्ञान</item>
+        <item>पुढील शिक्षण|शिक्षण</item>
+        <item>भाषा|शिक्षण</item>
+        <item>आरामाचे छंद|जीवनशैली</item>
+        <item>पर्यटन/प्रवास|प्रवास</item>
+        <item>हस्तकला|जीवनशैली</item>
+        <item>मोटरिंग|जीवनशैली</item>
+        <item>तंदुरुस्ती आणि आरोग्‍य|जीवनशैली</item>
+        <item>स्‍वयंपाक|जीवनशैली</item>
+        <item>जाहिरात/खरेदी|खरेदी</item>
+        <item>बागकाम|जीवनशैली</item>
+        <item>मूळ भाषा|अन्य</item>
+        <item>काळे आणि सफेद|अन्य</item>
+        <item>अप्रकाशित|अन्य</item>
+        <item>थेट प्रक्षेपण|अन्य</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB to canonical genre -->
+    <string-array name="genre_mapping_isdb">
+        <item>अॅनिमेशन|चित्रपट</item>
+        <item>बेसबॉल|क्रिडा</item>
+        <item>मुलांची गाणी|संगीत</item>
+        <item>क्‍लासिक, संगीत नाटक|संगीत</item>
+        <item>कॉकिंग वैविधता|करमणूक</item>
+        <item>विनोदी कार्यक्रम|करमणूक</item>
+        <item>कॉमिक कथा, करमणूक|करमणूक</item>
+        <item>संगणक, टीव्‍ही खेळ|तंत्रज्ञानिक विज्ञान</item>
+        <item>संभाषण, भाषा|शिक्षण</item>
+        <item>नृत्‍य, नृत्‍यनाट्य|करमणूक</item>
+        <item>चर्चा, कॉन्‍फरन्‍स|बातम्‍या</item>
+        <item>अर्थशास्‍त्र, मार्केट अहवाल|बातम्‍या</item>
+        <item>शैक्षणिक समस्‍या|शिक्षण</item>
+        <item>इव्‍हेंट्स|करमणूक</item>
+        <item>फॅशन|जीवनशैली</item>
+        <item>लोकसंगीत, जागतिक संगीत|संगीत</item>
+        <item>खेळ|गेमिंग</item>
+        <item>बागकाम, पाळीव प्राणी, हस्‍तकला|जीवनशैली</item>
+        <item>गोल्‍फ|क्रिडा</item>
+        <item>गप्‍पा/वृत्तपत्र शो|करमणूक</item>
+        <item>खवय्या, स्वयंपाक|जीवनशैली</item>
+        <item>आरोग्‍य, वैद्यकीय चिकित्‍सा|जीवनशैली</item>
+        <item>छंद/शिक्षण|जीवनशैली</item>
+        <item>अश्‍व शर्यत, सार्वजनिक शर्यत|क्रिडा</item>
+        <item>जपानी अॅनिमेशन|कुटुंब_लहान मुले</item>
+        <item>जपानी बलाद, जपानी पारंपारिक संगीत|संगीत</item>
+        <item>जपानी बुद्धिबळ (शोगि) आणि "जा"|गेमिंग</item>
+        <item>जपानी नाटके|नाटक</item>
+        <item>जपानी चित्रपट|चित्रपट</item>
+        <item>जपानी रॉक, पॉप संगीत|संगीत</item>
+        <item>जॅझ, फ्युजन|संगीत</item>
+        <item>कनिष्ठ हायस्‍कूल आणि हायस्‍कूल विद्यार्थी|शिक्षण</item>
+        <item>काबुकि, शास्‍त्रीय नाटक|नाटक</item>
+        <item>काराओके, नवोदित गायन स्पर्धा|संगीत</item>
+        <item>आजन्‍म शिक्षण, पात्रता|शिक्षण</item>
+        <item>लहान मुलं, शालेय मुलं|शिक्षण</item>
+        <item>थेट मैफिल|संगीत</item>
+        <item>दिवाणखाना, घर|जीवनशैली</item>
+        <item>स्‍थानिक कार्यक्रम|बातम्‍या</item>
+        <item>माह-जोंग, पिनबॉल खेळ|गेमिंग</item>
+        <item>मॅरेथॉन, अॅथलेटिक खेळ, पोहणे|क्रिडा</item>
+        <item>समुद्री खेळ, हिवाळी खेळ|क्रिडा</item>
+        <item>आधुनिक नाटक, पाश्‍चात्‍य-
+शैली नाटक|नाटक</item>
+        <item>मोटर खेळ|क्रिडा</item>
+        <item>सांगितिक|संगीत</item>
+        <item>संगीत, कला, औद्योगिक कला|कला</item>
+        <item>संगीत वैविधता|करमणूक</item>
+        <item>बातम्‍या विश्‍लेषण|बातम्‍या</item>
+        <item>ओलिम्पिक, आंतरराष्‍ट्रीय खेळ|क्रिडा</item>
+        <item>इतर बॉल खेळ|क्रिडा</item>
+        <item>विदेशी अॅनिमेशन|कुटुंब_लहान मुले</item>
+        <item>विदेशी नाटके|नाटक</item>
+        <item>विदेशी, आंतरराष्‍ट्रीय अहवाल|बातम्‍या</item>
+        <item>विदेशी चित्रपट|चित्रपट</item>
+        <item>विदेशी रॉक, पॉप संगीत|संगीत</item>
+        <item>कालावधी नाटके|नाटक</item>
+        <item>राजकारण, राष्‍ट्रीय विधानसभा|बातम्‍या</item>
+        <item>लोकप्रिय गाणी, जपानी लोकप्रिय गाणी (एंका गाणी)|संगीत</item>
+        <item>प्रश्‍नमंजुषा|गेमिंग</item>
+        <item>क्रमवारी, संगीत विनंती|संगीत</item>
+        <item>नियमित, सामान्‍य|बातम्‍या</item>
+        <item>खरेदी, मेल-क्रमाने व्‍यवसाय|खरेदी</item>
+        <item>सॉकर|क्रिडा</item>
+        <item>खास प्रभाव|कुटुंब_लहान मुले</item>
+        <item>खास कार्यक्रम, माहितीपट|बातम्‍या</item>
+        <item>खास अहवाल|बातम्‍या</item>
+        <item>क्रिडा बातम्‍या|क्रिडा</item>
+        <item>सुमो, आक्रमक क्रिडा|क्रिडा</item>
+        <item>बोल विविधता|करमणूक</item>
+        <item>पर्यटन विविधता|करमणूक</item>
+        <item>ट्रॅफिक अहवाल|बातम्‍या</item>
+        <item>सहल, मच्छिमारी, आउटडोअर करमणूक|प्राणी_वन्यजीवन</item>
+        <item>विद्यापीठ विद्यार्थी, परीक्षा|शिक्षण</item>
+        <item>हवामान अहवाल|बातम्‍या</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB in Brazil to canonical genre -->
+    <string-array name="genre_mapping_isdb_br">
+        <item>बायोग्रफिआ|बातम्या</item>
+        <item>Culinária|जीवनशैली</item>
+        <item>Documentário|बातम्‍या</item>
+        <item>Educativo|शिक्षण</item>
+        <item>Erótico|चित्रपट</item>
+        <item>Esporte|क्रिडा</item>
+        <item>Filme|चित्रपट</item>
+        <item>गेम शो|गेमिंग</item>
+        <item>Humorístico|विनोदी</item>
+        <item>इन्फेंटिल|कौटुंबिक्_लहान मुले</item>
+        <item>Informação|जीवनशैली</item>
+        <item>Jornalismo|बातम्या</item>
+        <item>Minissérie|नाटक</item>
+        <item>Moda|जीवनशैली</item>
+        <item>सांगितिक|संगीत</item>
+        <item>Premiação|मनोरंजन</item>
+        <item>रिअॅलिटी शो|मनोरंजन</item>
+        <item>Religioso|जीवनशैली</item>
+        <item>Reportagem|बातम्या</item>
+        <item>ग्रामीण|जीवनशैली</item>
+        <item>Saúde|जीवनशैली</item>
+        <item>Série|नाटक</item>
+        <item>Série/seriado|नाटक</item>
+        <item>शो|मनोरंजन</item>
+        <item>Telejornais|बातम्या</item>
+        <item>Televendas|खरेदी</item>
+        <item>Turismo|प्रवास</item>
+        <item>Variedade|मनोरंजन</item>
+        <item>Auditorium|मनोरंजन</item>
+        <item>पुरस्‍कार|करमणूक</item>
+        <item>जीवनपट|बातम्या</item>
+        <item>मुले|कौटुंबिक_लहान मुले</item>
+        <item>मुले|कुटुंब_लहान मुले</item>
+        <item>Comical|विनोदी</item>
+        <item>स्‍वयंपाक|जीवनशैली</item>
+        <item>देश|जीवनशैली</item>
+        <item>चर्चा/मुलाखत|बातम्‍या</item>
+        <item>चर्चा|बातम्‍या</item>
+        <item>माहितीपट|बातम्‍या</item>
+        <item>शिक्षण|शिक्षण</item>
+        <item>Educative|शिक्षण</item>
+        <item>अभियांत्रिकी सेवा|तंत्रज्ञानिक विज्ञान</item>
+        <item>श्रुंगारिक साहित्‍य|चित्रपट</item>
+        <item>फॅशन|जीवनशैली</item>
+        <item>स्त्री प्रभावित|मनोरंजन</item>
+        <item>गेम शो|गेमिंग</item>
+        <item>आरोग्‍य|जीवनशैली</item>
+        <item>विनोदी|विनोदपट</item>
+        <item>माहिती|जीवनशैली</item>
+        <item>मुलाखत|बातम्या</item>
+        <item>पत्रकारिता|बातम्या</item>
+        <item>निर्मिती|मनोरंजन</item>
+        <item>लघु-मालिका|नाटक</item>
+        <item>लघुमालिका|नाटक</item>
+        <item>चित्रपट (फिल्म)|चित्रपट</item>
+        <item>चित्रपट|चित्रपट</item>
+        <item>संगीतमय|मनोरंजन</item>
+        <item>बातम्‍या|बातम्‍या</item>
+        <item>प्रायझिंग|खरेदी</item>
+        <item>रॅफल|खरेदी</item>
+        <item>रॅफल/टेलिव्हिजन विक्री, प्रायझिंग|खरेदी</item>
+        <item>रिअॅलिटी शो|मनोरंजन</item>
+        <item>धार्मिक|जीवनशैली</item>
+        <item>रिपोर्टिंग|बातम्या</item>
+        <item>रिपोर्ट|बातम्या</item>
+        <item>ग्रामीण|जीवनशैली</item>
+        <item>मालिका|नाटक</item>
+        <item>मालिका / TV शो|नाटक</item>
+        <item>शो|मनोरंजन</item>
+        <item>सोप ओपेरा|नाटक</item>
+        <item>क्रिडा|क्रिडा</item>
+        <item>क्रिडा|क्रिडा</item>
+        <item>टेलिविक्री|खरेदी</item>
+        <item>टेलिव्हिजन विक्री|खरेदी</item>
+        <item>पर्यटन|प्रवास</item>
+        <item>प्रवास|प्रवास</item>
+        <item>TV बातम्या|बातम्या</item>
+        <item>विविधता|करमणूक</item>
+        <item>विविध शो|मनोरंजन</item>
+    </string-array>
+</resources>

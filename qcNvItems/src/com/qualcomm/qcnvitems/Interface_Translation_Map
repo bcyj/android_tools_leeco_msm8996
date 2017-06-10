@@ -1,0 +1,152 @@
+# Old (NV)					|	New (QMI)
+# ----------------------------------------------------------------------------------------------------
+
+# Classes
+SidNidPair					-->	SidNid # in QmiItemTypes
+VocodeSetting					-->	PreferredVoiceSo # in QmiItemTypes
+AutoAnswer					-->	AutoAnswer #in QmiItemTypes
+CdmaChannels					<--	CdmaChannels #in QmiItemTypes
+AmrStatus					<--	AmrStatus #in QmiItemTypes
+
+# NAS
+updateAkey(String)				<--	updateAkey(String)
+
+Threegpp2Info get3gpp2SubscriptionInfo()	<--	Threegpp2Info get3gpp2SubscriptionInfo()
+set3gpp2SubscriptionInfo(Threegpp2Info)		<--	set3gpp2SubscriptionInfo(Threegpp2Info)
+
+String getNamName()				<--	String getNamName()
+
+String getAnalogHomeSid()			-->	int getAnalogHomeSid() # deprecated
+setAnalogHomeSid()				-->	setAnalogHomeSid(int) # deprecated
+
+String getDirectoryNumber()			<-->	String getDirectoryNumber() # MDN appears to be same as NvDirNumber
+setDirectoryNumber(String)			<-->	setDirectoryNumber(String) # MDN appears to be same as NvDirNumber
+
+String getNvDirNumber()				<-->	NV private String getNvDirNumber() # See getDirectoryNumber()--redundant
+setNvDirNumber(String)				<-->	NV private setNvDirNumber(String) # See setDirectoryNumber()--redundant
+
+SidNidPair[] getHomeSidNid()			-->	SidNid getHomeSidNid()
+setHomeSidNid(SidNidPair[])			-->	setHomeSidNid(SidNid)
+
+SidNidPair[][] getSidNid()			<-->	NV private SidNidPair[][] getSidNid()
+setSidNid(SidNidPair[][])			<-->	NV private setSidNid(SidNidPair[][])
+
+MinImsi getMinImsi()				<--	MinImsi getMinImsi()
+setMinImsi(MinImsi)				<--	setMinImsi(MinImsi)
+
+String getImsiNumber()				-->	String getMinImsiNumber()
+setImsiNumber(String)				-->	setMinImsiNumber(String)
+
+String getImsiMcc()				<-->	String getImsiMcc()
+setImsiMcc(String)				<-->	setImsiMcc(String)
+
+String getImsi1112				-->	String getImsi11_12()
+setImsi1112(String)				-->	setImsi11_12(String)
+
+String[] getMin1()				-->	NV private String[] getImsiMin1()
+setMin1(String[])				-->	NV private setImsiMin1(String[])
+
+String[] getMin2()				-->	NV private String[] getImsiMin2()
+setMin2(String[])				-->	NV private setImsiMin2(String[])
+
+TrueImsi getTrueImsi()				<--	TrueImsi getTrueImsi()
+setTrueImsi(TrueImsi)				<--	setTrueImsi(TrueImsi)
+
+String getTrueImsiNumber()			<--	String getTrueImsiNumber()
+setTrueImsiNumber(String)			<--	setTrueImsiNumber(String)
+
+String getImsiTMcc()				-->	String getTrueImsiMcc()
+setImsiTMcc(String)				-->	setTrueImsiMcc(String)
+
+String getImsiT1112()				-->	String getTrueImsi11_12()
+setImsiT1112(String)				-->	setTrueImsi11_12(String)
+
+String[] getImsiTs1()				-->	NV private String[] getTrueImsiS1()
+setImsiTs1(String[])				-->	NV private setTrueImsiS1(String[])
+
+String[] getImsiTs2()				-->	NV private String[] getTrueImsiS2()
+setImsiTs2(String[])				-->	NV private setTrueImsiS2(String[])
+
+String getImsiTAddrNum()			-->	short getTrueImsiAddrNum()
+setImsiTAddrNum(String)				-->	setTrueImsiAddrNum(short)
+
+CdmaChannels getCdmaChannels()			<--	CdmaChannels getCdmaChannels()
+setCdmaChannels(CdmaChannels)			<--	setCdmaChannels(CdmaChannels)
+
+String[] getPcdmaCh()				-->	int[] getPrimaryCdmaChannels()
+setPcdmach(String[])				-->	setPrimaryCdmaChannels(int[])
+
+String[] getScdmach()				-->	int[] getSecondaryCdmaChannels()
+setScdmach(String[])				-->	setSecondaryCdmaChannels(int[])
+
+
+String getMobCaiRev()				-->	short getMobCaiRev()
+setMobCaiRev(String)				-->	setMobCaiRev(short) #deprecated ?
+
+
+short getRtreConfig()				<--	short getRtreConfig()
+setRtreConfig(short)				<--	setRtreConfig(short)
+
+# VOICE
+VoiceConfig getVoiceConfig()			<--	VoiceConfig getVoiceConfig()
+setVoiceConfig(VoiceConfig)			<--	setVoiceConfig(VoiceConfig)
+
+AutoAnswer getAutoAnswerRings()			-->	AutoAnswer getAutoAnswerStatus() # not fully implemented by QMI
+setAutoAnswerRings(byte)			-->	setAutoAnswerStatus(AutoAnswer) # not fully implemented by QMI
+
+disableAutoAnswer()				-->	disableAutoAnswer()
+enableAutoAnswer()				<--	enableAutoAnswer() # QMI does not have number of rings right now
+
+String getAirCount()				-->	TimerCount getAirTimerCount()
+setAirCount(String)				-->	setAirTimerCount(TimerCount)
+
+String getRoamCount()				-->	TimerCount getRoamTimerCount()
+setRoamCount(String)				-->	setRoamTimerCount(TimerCount)
+
+short getCurrentTtyMode()			<--	short getCurrentTtyMode()
+setCurrentTtyMode(short)			<--	setCurrentTtyMode(short)
+
+VocodeSetting getPrefVoiceSo()			-->	PreferredVoiceSo getPreferredVoiceSo()
+setPrefVoiceSo(VocodeSetting)			-->	setPreferredVoiceSo(PreferredVoiceSo)
+
+AmrStatus getAmrStatus()			<--	AmrStatus getAmrStatus()
+
+short getVoicePrivacyPref()			<--	short getVoicePrivacyPref()
+
+# DMS
+String getFtmMode()				<--	String getFtmMode() # unimplemented
+
+String getSoftwareVersion()			<--	String getSoftwareVersion() # unimplemented
+
+updateServiceProgrammingCode(String)		<--	updateServiceProgrammingCode(String) # unimplemented
+
+String[] getDeviceSerialNumbers()		<--	String[] getDeviceSerialNumbers # unimplemented
+
+Boolean getSpcChangeEnabled()			<-->	Boolean getSpcChangeEnabled()
+setSpcChangeEnabled(Boolean)			<-->	setSpcChangeEnabled(Boolean)
+
+# WDS
+String getDsDefaultBaudRate()			-->	String getBaudRate()
+setDsDefaultBaudRate(String)			-->	setBaudRate(String)
+
+# Miscellaneous & Unknown
+String getEmailGateway()			<-->	String getEmailGateway()
+setEmailGateway(String)				<-->	setEmailGateway(String)
+
+String[] getEccList()				<-->	String[] getEccList()
+setEccList(String[])				<-->	setEccList(String[])
+
+String getSecCode()				-->	String getSecurityCode()
+setSecCode(String)				-->	setSecurityCode(String)
+
+String getLockCode()				<-->	String getLockCode()
+setLockCode(String)				<-->	setLockCode(String)
+
+String getGpsOnePdeAddress()			<-->	String getGpsOnePdeAddress()
+setGpsOnePdeAddress(String)			<-->	setGpsOnePdeAddress(String)
+
+String getGpsOnePdePort()			<-->	String getGpsOnePdePort()
+setGpsOnePdePort(String)			<-->	setGpsOnePdePort(String)
+
+# TODO:
+# implement permissions in ServiceProgramming if possible via Android

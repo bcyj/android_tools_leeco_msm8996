@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2012-2013, Qualcomm Technologies, Inc.  All Rights Reserved.
+    Qualcomm Technologies Proprietary and Confidential.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.datamonitor"
+    android:versionCode="1"
+    android:versionName="1.0"
+    android:sharedUserId="android.uid.system" >
+    <uses-sdk android:minSdkVersion="14" />
+    <!--
+         Define this permission to enforce access control on the caller
+         to toggle the network through the action of "traffic.action.ACTION_NETWORK_TOOGLE".
+    -->
+    <permission android:name="datamonitor.permission.ACCESS_NETWORK_TOGGLE_CONTROL" />
+
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--
+         Add this permission to receive the broadcast
+         "com.android.server.action.NETWORK_STATS_UPDATED"
+    -->
+    <uses-permission
+        android:name="android.permission.READ_NETWORK_USAGE_HISTORY" />
+    <!--
+         Add application DataWidgetApp to register a
+         BroadcastReceiver ddynamically. The broadcast
+         "com.android.server.action.NETWORK_STATS_UPDATED"
+         add the flag Intent.FLAG_RECEIVER_REGISTERED_ONLY,
+         the static BroadcastReceiver can not receive this
+         kind of broadcast.
+      -->
+    <application
+        android:name=".DataWidgetApp"
+        android:icon="@drawable/monitor"
+        android:label="@string/widget_traffic" >
+        <receiver
+            android:label="@string/widget_traffic"
+            android:permission="datamonitor.permission.ACCESS_NETWORK_TOGGLE_CONTROL"
+            android:name=".DataWidget">
+            <intent-filter >
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" >
+                </action>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" >
+                </action>
+                <action android:name="android.net.conn.MOBILE_CONNECTIVITY_CHANGE" >
+                </action>
+                <action android:name="traffic.action.ACTION_NETWORK_TOOGLE" >
+                </action>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget" >
+            </meta-data>
+        </receiver>
+    </application>
+
+</manifest>

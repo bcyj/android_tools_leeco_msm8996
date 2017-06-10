@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+        Copyright (c) 2013 Qualcomm Technologies, Inc.  All Rights Reserved.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="qualcomm.android.LEDFlashlight"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <application
+        android:icon="@drawable/flashlight_off"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".LEDGestureActivity"
+            android:label="@string/gesture_control_torch"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <receiver android:name="LEDWidget"
+                  android:permission="android.permission.CAMERA" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="org.codeaurora.snapcam.action.CLOSE_FLASHLIGHT" />
+                <action android:name="android.intent.action.FAST_BOOT_START" />
+                <action android:name="qualcomm.android.LEDFlashlight.LEDUpdate" />
+                <action android:name="com.android.LEDFlashlight.processKilled" />
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/ledcontroller_widget" />
+        </receiver>
+    </application>
+
+</manifest>

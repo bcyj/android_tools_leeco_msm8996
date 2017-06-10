@@ -1,0 +1,89 @@
+##############################################################################
+#######   Configuration file for the digital pen calibration library   #######
+##############################################################################
+
+# Max allowed distance (mm) of pen from calibration point
+# before reporting that the pen is not on the point.
+# Note that the system is not yet calibrated so the distance
+# measurement is only approximate.
+max_distance_to_point = 20
+
+# Max root mean squared error (mm) of calibration equations.
+# Above it, the calibration fails.
+max_rmse = 0.5
+# Min speed of sound relative to standard speed of sound (20*sqrt(296)).
+# Below it, the calibration fails.
+min_speed_factor = 0.97        # 333.77 m/s
+# Max speed of sound relative to standard speed of sound (20*sqrt(296)).
+# Above it, the calibration fails.
+max_speed_factor = 1.03        # 354.42 m/s
+# Max allowed channel offset (mm).
+# If the absolute value is above it, the calibration fails.
+max_offset = 100
+
+# Timeouts for error reporting (seconds).
+timeout_no_pen = 3         # No pen detected
+timeout_not_pen_down = 3   # Pen down switch is not pressed
+timeout_peak2rms = 3       # Low signal quality
+timeout_multipath = 3      # Multipath detected
+timeout_not_on_point = 3   # Pen is too far from the calibration point
+timeout_spur = 0.25        # Strong interference detected
+timeout_power = 0.25       # Low signal level
+
+# Per channel thresholds.
+# channelX_peak2rms_threshold - minimum peak to RMS ratio.
+#            frames which have a lower value are discarded.
+#            Also used for pen detection.
+#
+# channelX_multipath_threshold - minimum ratio between highest peak
+#            and second highest peak.
+#            frames which have a lower value are discarded.
+#
+# channelX_power_threshold - threshold for reporting low signal level (dB FS)
+
+num_channels = 6      # Number of channels including LF
+channel0_peak2rms_threshold = 5.5
+channel0_multipath_threshold = 1.3
+channel0_power_threshold = -70
+
+channel1_peak2rms_threshold = 5.5
+channel1_multipath_threshold = 1.3
+channel1_power_threshold = -70
+
+channel2_peak2rms_threshold = 5.5
+channel2_multipath_threshold = 1.3
+channel2_power_threshold = -70
+
+channel3_peak2rms_threshold = 5.5
+channel3_multipath_threshold = 1.3
+channel3_power_threshold = -70
+
+channel4_peak2rms_threshold = 5.5
+channel4_multipath_threshold = 1.3
+channel4_power_threshold = -70
+
+channel5_peak2rms_threshold = 5.5
+channel5_multipath_threshold = 1.3
+channel5_power_threshold = -90
+
+# Number of frames to collect at each point
+# before moving on to the next point.
+frames_per_point = 700
+
+# Number of calibration points.
+num_calib_points = 4
+
+# Point positions in mm relative to the coordinate system of the microphones.
+# Usually, the origin is at the bottom left microphone
+# and X grows to the right, Y grows upwards.
+point1.x = 236
+point1.y = 34
+
+point2.x = 236
+point2.y = 134
+
+point3.x = 110
+point3.y = 134
+
+point4.x = 110
+point4.y = 30

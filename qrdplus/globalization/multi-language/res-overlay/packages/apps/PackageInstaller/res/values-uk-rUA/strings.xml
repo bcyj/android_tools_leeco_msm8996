@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"Програма встановлення пакета"</string>
+    <string name="next">"Далі"</string>
+    <string name="install">"Установити"</string>
+    <string name="done">"Готово"</string>
+    <!-- TODO REMOVE LATER -->
+    <string name="security_settings_desc">"Дозволити цій програмі:"</string>
+    <string name="cancel">"Скасувати"</string>
+    <string name="unknown">"Невідомо"</string>
+    <string name="installing">"Встановлення…"</string>
+    <string name="install_done">"Додаток установлено."</string>
+    <!-- Message for installing a new app that requires some permissions [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question">"Установити цей додаток? Він отримає такі дозволи:"</string>
+    <!-- Message for installing a new app that does not require permissions [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_no_perms">"Установити цей додаток? Йому не потрібні спеціальні дозволи."</string>
+    <!-- Message for updating an existing app [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_update">"Дійсно встановити оновлення для цієї наявної програми? Існуючі дані втрачено не буде. Оновлена програма отримає доступ до:"</string>
+    <!-- Message for updating an existing system app [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_update_system">"Дійсно встановити оновлення для цієї вбудованої програми? Існуючі дані втрачено не буде. Оновлена програма отримає доступ до:"</string>
+    <!-- Message for updating an existing app, no permissions [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_update_no_perms">"Хочете встановити оновлення для наявної програми? Ваші наявні дані не зникнуть. Спеціальний доступ не потрібен."</string>
+    <!-- Message for updating an existing system app, no permissions [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_update_system_no_perms">"Хочете встановити оновлення для цієї вбудованої програми? Ваші наявні дані не зникнуть. Спеціальний доступ не потрібен."</string>
+    <string name="install_failed">"Додаток не встановлено."</string>
+    <!-- Reason displayed when installation fails because the installation package itself is invalid
+        in some way (e.g., corrupt) [CHAR LIMIT=100] -->
+    <string name="install_failed_invalid_apk">"Імовірно, пакет пошкоджено."</string>
+    <!-- Reason displayed when installation fails because the package an existing package is
+        installed with a conflicting package author signature [CHAR LIMIT=100] -->
+    <string name="install_failed_inconsistent_certificates">"Існуючий пакет із такою ж назвою з несумісним підписом уже встановлено."</string>
+    <!-- Reason displayed when installation fails because the package specifies a minimum compatible
+        OS version that is newer than our current OS version. [CHAR LIMIT=100] -->
+    <string name="install_failed_older_sdk">"Пакет працює лише на новіших версіях Android."</string>
+    <!-- Reason displayed when installation fails because the package specifies it is compatible
+        only with a CPU that the current tablet doesn\'t have. [CHAR LIMIT=100] -->
+    <string name="install_failed_cpu_abi_incompatible" product="tablet">"Ця програма не сумісна з вашим планшетним ПК."</string>
+    <!-- Reason displayed when installation fails because the package specifies it is compatible
+        only with a CPU that the current TV doesn\'t have. [CHAR LIMIT=100] -->
+    <string name="install_failed_cpu_abi_incompatible" product="tv">Ця програма
+несумісна з вашим телевізором.</string>
+    <!-- Reason displayed when installation fails because the package specifies it is compatible
+        only with a CPU that the current phone doesn\'t have. [CHAR LIMIT=100] -->
+    <string name="install_failed_cpu_abi_incompatible" product="default">"Ця програма не сумісна з вашим телефоном."</string>
+    <!-- Reason displayed when installation fails because the package was deleted during the
+        installation process. [CHAR LIMIT=100] -->
+    <string name="install_failed_file_not_found">"Указаний пакет було видалено до ще закінчення процесу встановлення."</string>
+    <!-- Reason displayed when installation fails because the package could not be verified
+        because the package verifier rejected it. [CHAR LIMIT=100] -->
+    <string name="install_failed_verify_failed">"Пакет не пройшов перевірку та не може бути встановлений."</string>
+    <!-- Reason displayed when installation fails because the package could not be verified
+        before the internal system timer expired. [CHAR LIMIT=100] -->
+    <string name="install_failed_verify_timeout">"Під час спроби перевірки цього пакета виникла затримка. Повторіть спробу встановити його пізніше."</string>
+    <!-- Message presented when an application could not be installed on the tablet for some reason. [CHAR LIMIT=100] -->
+    <string name="install_failed_msg" product="tablet">"Програму <xliff:g id="APP_NAME">%1$s</xliff:g> неможливо встановити у вашому планшетному ПК."</string>
+    <!-- Message presented when an application could not be installed on the TV for some reason. [CHAR LIMIT=100] -->
+    <string name="install_failed_msg" product="tv">Програму <xliff:g id="app_name">%1$s</xliff:g> неможливо встановити на вашому телевізорі.</string>
+    <!-- Message presented when an application could not be installed on the phone for some reason. [CHAR LIMIT=100] -->
+    <string name="install_failed_msg" product="default">"Програму <xliff:g id="APP_NAME">%1$s</xliff:g> неможливо встановити у вашому телефоні."</string>
+    <string name="launch">"Відкр."</string>
+    <string name="unknown_apps_dlg_title">"Встановл. заблок."</string>
+    <!-- Message presented in a dialog box when a package is requested to be installed, but the "Allow unknown applications" checkbox is not enabled. [CHAR LIMIT=100] -->
+    <string name="unknown_apps_dlg_text" product="tablet">"Задля безпеки на вашому планшеті заблоковане встановлення додатків із невідомих джерел."</string>
+    <!-- Message presented in a dialog box when a package is requested to be installed, but the "Allow unknown applications" checkbox is not enabled. [CHAR LIMIT=100] -->
+    <string name="unknown_apps_dlg_text" product="tv">Із міркувань безпеки на телевізорі налаштовано блокування встановлення програм, отриманих із невідомих джерел.</string>
+    <!-- Message presented in a dialog box when a package is requested to be installed, but the "Allow unknown applications" checkbox is not enabled. [CHAR LIMIT=100] -->
+    <string name="unknown_apps_dlg_text" product="default">"Задля безпеки на вашому телефоні заблоковане встановлення додатків із невідомих джерел."</string>
+    <!-- Message presented in a dialog box when the device administrator restricts the installation of apps from unknown sources. [CHAR LIMIT=none] -->
+    <string name="unknown_apps_admin_dlg_text">Ваш адміністратор не дозволяє встановлювати програми з невідомих джерел</string>
+
+    <string name="ok">"OK"</string>
+    <string name="settings">"Налаштування"</string>
+    <!-- Title of dialog asking user if they would allow an application to be an install source. -->
+    <string name="allow_source_dlg_title">"Нове джерело для програм"</string>
+    <!-- Message of dialog asking user if they would allow an application to be an install source. -->
+    <string name="allow_source_dlg_text">"<xliff:g id="APP_NAME">%1$s</xliff:g> хоче встановити інші програми. \n\nДозволити це зараз і надалі?"</string>
+    <string name="manage_applications">"Керувати програмами"</string>
+    <string name="dlg_app_replacement_title">"Замінити програму?"</string>
+    <string name="dlg_app_replacement_statement">"Програма, яку ви встановлюєте, замінить іншу програму.\n\nУсі попередні дані користувача буде збережено."</string>
+    <!-- Dialog attributes when replacing system app -->
+    <string name="dlg_sys_app_replacement_statement">"Це системна програма.\n\nУсі попередні дані користувача буде збережено."</string>
+    <string name="out_of_space_dlg_title">"Недостат. місця"</string>
+    <string name="out_of_space_dlg_text">"Програму <xliff:g id="APP_NAME">%1$s</xliff:g> неможливо встановити. Звільніть місце та повторіть спробу."</string>
+    <!-- strings related to uninstall activity -->
+    <string name="dlg_ok">"OK"</string>
+    <string name="app_not_found_dlg_title">"Програму не знайдено"</string>
+    <string name="app_not_found_dlg_text">"Програму не знайдено в списку встановлених програм."</string>
+    <string name="uninstall_application_title">"Видалити програму"</string>
+    <string name="uninstall_update_title">"Видалити оновлення"</string>
+    <string name="uninstall_activity_text">"Дія <xliff:g id="ACTIVITY_NAME">%1$s</xliff:g> є частиною такої програми:"</string>
+    <string name="uninstall_application_text">"Видалити цю програму?"</string>
+    <string name="uninstall_application_text_all_users">"Хочете видалити цю програму для "<b>"всіх"</b>" користувачів? Програму та її дані буде видалено для "<b>"всіх"</b>" користувачів цього пристрою."</string>
+    <string name="uninstall_application_text_user">"Видалити цей додаток для користувача <xliff:g id="USERNAME">%1$s</xliff:g>?"</string>
+    <string name="uninstall_update_text">"Замінити цю програму на заводську версію?"</string>
+    <string name="uninstalling">"Видалення..."</string>
+    <string name="uninstall_done">"Видалення завершено."</string>
+    <string name="uninstall_failed">"Видалення не здійснено."</string>
+    <!-- String presented to the user when uninstalling a package failed because the target package
+        is a current device administrator [CHAR LIMIT=80] -->
+    <string name="uninstall_failed_device_policy_manager">"Неможливо видалити. Цей пакет є активним адміністратором пристрою."</string>
+    <!-- String presented to the user when uninstalling a package failed because a profile owner
+         has marked the the target package as not able to be uninstalled [CHAR LIMIT=80] -->
+    <string name="uninstall_blocked_profile_owner">"Цей додаток не можна видалити – він потрібен для профілю користувача <xliff:g id="USERNAME">%1$s</xliff:g>."</string>
+    <!-- String presented to the user when uninstalling a package failed because a device owner
+         has marked the the target package as not able to be uninstalled [CHAR LIMIT=80] -->
+    <string name="uninstall_blocked_device_owner">"Цей додаток не можна видалити – не дозволяє адміністратор пристрою."</string>
+    <!-- String on a button that leads to the "device administrator" configuration setting where a
+        user will be able to disable the device administrator in order to uninstall
+        it. [CHAR LIMIT=50] -->
+    <string name="manage_device_administrators">"Керувати адміністраторами пристрою"</string>
+    <string name="uninstall_failed_msg">"Програму <xliff:g id="APP_NAME">%1$s</xliff:g> неможливо видалити."</string>
+
+    <!-- Dialog attributes to indicate parse errors -->
+    <string name="Parse_error_dlg_title">"Помилка аналізу"</string>
+    <string name="Parse_error_dlg_text">"Під час аналізу пакету виникла помилка."</string>
+
+    <!-- Tab label for new permissions being added to an existing app [CHAR LIMIT=20] -->
+    <string name="newPerms">"Нові"</string>
+    <!-- Tab label for all permissions of an app being installed [CHAR LIMIT=20] -->
+    <string name="allPerms">"Усі"</string>
+    <!-- Tab label for permissions related to user privacy [CHAR LIMIT=20] -->
+    <string name="privacyPerms">"Конфіденційність"</string>
+    <!-- Tab label for permissions related to device behavior [CHAR LIMIT=20] -->
+    <string name="devicePerms">"Доступ до пристрою"</string>
+
+    <!-- Body text for new tab when there are no new permissions [CHAR LIMIT=NONE] -->
+    <string name="no_new_perms">"Для цього оновлення не потрібні нові дозволи."</string>
+
+    <string name="grant_confirm_question">"Надати перелічені нижче дозволи? Програма отримає доступ до:"</string>
+    <string name="app_install_location_title">"Бажане місце встановлення"</string>
+    <!-- Apps on SD installation location options in ApplicationSettings -->
+    <string-array name="app_install_location_entries">
+        <item>"Дозвольте виріш. системі"</item>
+        <item>"Внутрішня пам\'ять пристрою"</item>
+        <item>"Знімна карта SD"</item>
+    </string-array>
+</resources>

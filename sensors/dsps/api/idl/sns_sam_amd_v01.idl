@@ -1,0 +1,72 @@
+/*****************************************************************************
+  @FILE     sns_sam_amd.idl
+
+  @BRIEF    Service definition for AMD (Absolute Motion Detector)
+            algorithm service.
+
+  @COPYRIGHT
+  Copyright (c) 2010-2014 Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Confidential and Proprietary
+
+*****************************************************************************/
+include "sns_sam_common_v01.idl";
+include "sns_sam_qmd_v01.idl";
+
+revision 5;
+
+const SNS_SAM_AMD_SUID = 0x5aae08a59dbd3ba4;
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_SAM_AMD_SVC {
+  //! @ID SNS_COMMON_CANCEL
+  sns_common_cancel_req_msg        SNS_SAM_AMD_CANCEL_REQ,
+  sns_common_cancel_resp_msg       SNS_SAM_AMD_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_COMMON_VERSION
+  sns_common_version_req_msg       SNS_SAM_AMD_VERSION_REQ,
+  sns_common_version_resp_msg      SNS_SAM_AMD_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SAM_QMD_ENABLE
+  sns_sam_qmd_enable_req_msg       SNS_SAM_AMD_ENABLE_REQ,
+  sns_sam_qmd_enable_resp_msg      SNS_SAM_AMD_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_SAM_QMD_DISABLE
+  sns_sam_qmd_disable_req_msg      SNS_SAM_AMD_DISABLE_REQ,
+  sns_sam_qmd_disable_resp_msg     SNS_SAM_AMD_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_SAM_QMD_GET_REPORT
+  sns_sam_qmd_get_report_req_msg   SNS_SAM_AMD_GET_REPORT_REQ,
+  sns_sam_qmd_get_report_resp_msg  SNS_SAM_AMD_GET_REPORT_RESP
+    = 0x04;
+
+  //! @ID SNS_SAM_QMD_REPORT
+  sns_sam_qmd_report_ind_msg       SNS_SAM_AMD_REPORT_IND
+    = 0x05;
+
+  //! @ID SNS_SAM_QMD_ERROR
+  sns_sam_qmd_error_ind_msg        SNS_SAM_AMD_ERROR_IND
+    = 0x06;
+
+  //! @ID SNS_SAM_GET_ALGO_ATTRIBUTES
+  sns_sam_get_algo_attrib_req_msg  SNS_SAM_AMD_GET_ATTRIBUTES_REQ,
+  sns_sam_get_algo_attrib_resp_msg SNS_SAM_AMD_GET_ATTRIBUTES_RESP
+    = 0x24;
+
+} = SNS_QMI_SVC_ID_4;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+*/
+
+//============================================================================
+// End of Module
+//============================================================================

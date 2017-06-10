@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+<!--
+     Copyright (C) 2012-2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- The name of the app -->
+    <string name="app_name">ఫైల్ నిర్వాహికి</string>
+    <!-- The description of the app -->
+    <string name="app_description">CyanogenMod ఫైల్ నిర్వాహికి</string>
+
+    <!-- Human readable sizes -->
+    <string name="size_bytes">"B"</string>
+    <string name="size_kilobytes">kB</string>
+    <string name="size_megabytes">"MB"</string>
+    <string name="size_gigabytes">"GB"</string>
+
+    <!-- Date/time format order (%1$s: date; %2$s: time) -->
+    <string name="datetime_format_order">%1$s %2$s</string>
+
+    <!-- Devices types -->
+    <string name="device_blockdevice">బ్లాక్ పరికరం</string>
+    <string name="device_characterdevice">క్యారెక్టర్ పరికరం</string>
+    <string name="device_namedpipe">పేర్కొన్న పైప్</string>
+    <string name="device_domainsocket">డొమైన్ సాకెట్</string>
+
+    <!-- Mount Point States -->
+    <string name="mount_point_readonly">RO</string>
+    <string name="mount_point_readwrite">RW</string>
+
+    <!-- Default buttons -->
+    <string name="ok" translatable="false">@android:string/ok</string>
+    <string name="cancel" translatable="false">@android:string/cancel</string>
+    <string name="yes">అవును</string>
+    <string name="no">కాదు</string>
+    <string name="all">అన్నీ</string>
+    <string name="overwrite">తిరిగి వ్రాయి</string>
+    <string name="select">"ఎంచుకోండి"</string>
+
+    <!-- The root directory name -->
+    <string name="root_directory_name"><![CDATA[<రూట్ ఫోల్డర్>]]></string>
+    <!-- The search result name -->
+    <string name="search_result_name">శోధించు: <xliff:g id="terms">%1$s</xliff:g></string>
+
+    <!-- Loading waiting message -->
+    <string name="loading_message">"లోడ్ చేస్తోంది…"</string>
+    <!-- Computing message -->
+    <string name="computing_message" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Computing new line message -->
+    <string name="computing_message_ln" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Cancelled message -->
+    <string name="cancelled_message">రద్దు అయ్యింది.</string>
+    <!-- Error message -->
+    <string name="error_message">లోపం.</string>
+    <!-- Copy text content description -->
+    <string name="copy_text_cd">టెక్స్ట్‌ను క్లిప్‌బోర్డ్‌కు కాపీ చేయడానికి ట్యాప్ చేయండి</string>
+    <!-- Copy text content message -->
+    <string name="copy_text_msg">టెక్స్ట్ క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది</string>
+
+    <!-- Warning dialog title -->
+    <string name="warning_title">హెచ్చరిక</string>
+    <!-- Error dialog title -->
+    <string name="error_title">లోపం గుర్తించబడింది</string>
+    <!-- Confirm operation dialog title -->
+    <string name="confirm_operation">ఆపరేషన్‌ను నిర్ధారించు</string>
+    <!-- Confirm overwrite dialog title -->
+    <string name="confirm_overwrite">అతివ్యాప్తిని నిర్ధారించు</string>
+    <!-- Confirm deletion dialog title -->
+    <string name="confirm_deletion">తొలగింపును నిర్ధారించు</string>
+
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Title -->
+    <string name="msgs_change_to_prompt_access_mode_title">మార్పును నిర్ధారించు</string>
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Message -->
+    <string name="msgs_change_to_prompt_access_mode_msg">రూట్ ప్రాప్యత మోడ్‌లో అమలు చేయడం సాధ్యం కాదు. సురక్షిత మోడ్‌కు మారుతోంది.\n\nఈ మార్పును వర్తింపజేయాలా?</string>
+
+    <!-- A console couldn\'t be created - Without privileges, the app won\'t work -->
+    <string name="msgs_cant_create_console">విధి కోసం అవసరమైన అధికారాలను పొందలేకపోయింది.</string>
+    <!-- The message shown when an allocation of a privileged console fails, and a non
+         privileged is allocated -->
+    <string name="msgs_privileged_console_alloc_failed">రూట్ ప్రాప్యత మోడ్‌లో అమలు చేయడం సాధ్యం కాదు. సురక్షిత మోడ్‌కు మారుతోంది.</string>
+    <!-- The selected setting was not applied or stored -->
+    <string name="msgs_settings_save_failure">సెట్టింగ్‌ను వర్తింపజేయడం లేదా నిల్వ చేయడం సాధ్యపడదు.</string>
+    <!-- The initial directory has an invalid or inaccessible reference -->
+    <string name="msgs_settings_invalid_initial_directory">ప్రాథమిక ఫోల్డర్ \'<xliff:g id="initial_dir">%1$s</xliff:g>\' చెల్లదు. రూట్ ఫోల్డర్‌కు మారుతోంది.</string>
+    <!-- Root is not available message -->
+    <string name="root_not_available_msg">ఈ పరికరంలో రూట్ అందుబాటులో లేదు. ఈ ఆపరేషన్‌ను అమలు చేయడం సాధ్యపడదు.</string>
+
+    <!-- Success -->
+    <string name="msgs_success">ఆపరేషన్ విజయవంతంగా పూర్తి చేయబడింది.</string>
+    <!-- Unknown error -->
+    <string name="msgs_unknown">లోపం గుర్తించబడింది. ఆపరేషన్ విజయవంతం కాలేదు.</string>
+    <!-- When an operation requires elevated privileged (normally caused for the use of a
+         non-privileged console) -->
+    <string name="msgs_insufficient_permissions">ఈ ఆపరేషన్ కోసం ఉన్నత అనుమతులు కావాలి. రూట్ ప్రాప్యత మోడ్‌కు మార్చి ప్రయత్నించండి.</string>
+    <!-- When an operation fails because the device has run out of storage. -->
+    <string name="msgs_no_disk_space">పరికరంలో ఎటువంటి ఖాళీ ప్రదేశం లేనందున ఈ చర్య విఫలమైంది.</string>
+    <!-- The file or directory was not found -->
+    <string name="msgs_file_not_found">ఫైల్ లేదా ఫోల్డర్ కనుగొనబడలేదు.</string>
+    <!-- The command reference couldn\'t be created (not found or invalid definition)
+         (normally caused by a development error) -->
+    <string name="msgs_command_not_found">ఆపరేషన్ యొక్క ఆదేశం కనుగొనబడలేదు లేదా చెల్లని నిర్వచనాన్ని కలిగి ఉంది.</string>
+    <!-- I/O exception -->
+    <string name="msgs_io_failed">చదవడం/వ్రాయడం విఫలమైంది.</string>
+    <!-- Operation timeout detected -->
+    <string name="msgs_operation_timeout">ఆపరేషన్ గడువు ముగిసింది.</string>
+    <!-- The operation returns an invalid exit code -->
+    <string name="msgs_operation_failure">ఆపరేషన్ విఫలమైంది.</string>
+    <!-- A console couldn\'t be allocated -->
+    <string name="msgs_console_alloc_failure">అంతర్గత లోపం సంభవించింది.</string>
+    <!-- An operation can\'t be cancelled -->
+    <string name="msgs_operation_can_not_be_cancelled">ఆపరేషన్‌ను రద్దు చేయలేరు.</string>
+    <!-- The operation requieres mount the file system prior to execute the command -->
+    <string name="msgs_read_only_filesystem">ఫైల్ సిస్టమ్ చదవడానికి మాత్రమే అందుబాటులో ఉంది. ఆపరేషన్‌ను ప్రయత్నించడానికి ముందు ఫైల్ సిస్టమ్‌ను చదువు-వ్రాయి వలె మౌంట్ చేయడానికి ప్రయత్నించండి.</string>
+    <!-- Illegal argument (normally caused by a development error when calling internal api) -->
+    <string name="msgs_illegal_argument">చట్టవ్యతిరేక వాదన. ఆవాహన విఫలమైంది.</string>
+    <!-- The operation will cause inconsistencies -->
+    <string name="msgs_unresolved_inconsistencies">ఆపరేషన్ కారణంగా అసమానతలు ఏర్పడే కారణం ఉన్నందున అనుమతించబడలేదు.</string>
+    <!-- Operation not permitted in current directory -->
+    <string name="msgs_operation_not_allowed_in_current_directory">ప్రస్తుత ఫోల్డర్‌లో ఆపరేషన్ అనుమతించబడదు.\n\nగమ్యస్థాన ఫోల్డర్ అనేది మూలం యొక్క ఉప ఫోల్డర్ లేదా మూలం వలె ఉండకూడదు.</string>
+
+    <!-- The advice message prior to exit the app -->
+    <string name="msgs_push_again_to_exit">నిష్క్రమించడానికి మళ్లీ నొక్కండి.</string>
+
+    <!-- There is no registered app that can handle the mime-type -->
+    <string name="msgs_not_registered_app">ఎంచుకున్న ఫైల్ రకాన్ని నిర్వహించడానికి నమోదు చేసిన అప్లికేషన్ లేదు.</string>
+
+    <!-- Overwrite files? -->
+    <string name="msgs_overwrite_files">కొన్ని ఫైల్‌లు ఇప్పటికే గమ్యస్థాన ఫోల్డర్‌లో ఉన్నాయి.\n\nఅతివ్యాప్తి చేయాలా?</string>
+
+    <!-- The association of an action to the app failed -->
+    <string name="msgs_action_association_failed">చర్యను అప్లికేషన్‌కు అనుబంధించడం విఫలమైంది.</string>
+
+    <!-- An operation requires elevated privileged. Ask the user. -->
+    <string name="advise_insufficient_permissions">ఆపరేషన్ కోసం ఉన్నత అధికారాలు అవసరం.\n\nమీరు రూట్ ప్రాప్యత మోడ్‌కు మార్చాలనుకుంటున్నారా?</string>
+
+    <!-- The parent directory of the current directory in navigation view -->
+    <string name="parent_dir">పేరెంట్ ఫోల్డర్</string>
+    <!-- External storage descripton -->
+    <string name="external_storage">బాహ్య నిల్వ</string>
+    <!-- Usb storage descripton -->
+    <string name="usb_storage">"USB నిల్వ"</string>
+
+    <!-- ActionBar Buttons - FileSystem -->
+    <string name="actionbar_button_filesystem_cd">ఫైల్ సిస్టమ్ సమాచారం</string>
+    <!-- ActionBar Buttons - Sort Mode -->
+    <string name="actionbar_button_sort_mode_cd">క్రమబద్ధీకరణ మోడ్</string>
+    <!-- ActionBar Buttons - Layout Mode -->
+    <string name="actionbar_button_layout_mode_cd">లేఅవుట్ మోడ్</string>
+    <!-- ActionBar Buttons - Other View Options -->
+    <string name="actionbar_button_other_view_options_cd">ఇతర వీక్షణ ఎంపికలు</string>
+    <!-- ActionBar Buttons - Done -->
+    <string name="actionbar_button_selection_done_cd">"పూర్తయింది"</string>
+    <!-- ActionBar Buttons - Actions -->
+    <string name="actionbar_button_actions_cd">చర్యలు</string>
+    <!-- ActionBar Buttons - Search -->
+    <string name="actionbar_button_search_cd">"శోధించు"</string>
+    <!-- ActionBar Buttons - Overflow -->
+    <string name="actionbar_button_overflow_cd">"మరిన్ని ఎంపికలు"</string>
+    <!-- ActionBar Buttons - Storage volumes -->
+    <string name="actionbar_button_storage_cd">నిల్వ వాల్యూమ్‌లు</string>
+    <!-- ActionBar Buttons - Save -->
+    <string name="actionbar_button_save_cd">"సేవ్ చేయి"</string>
+    <!-- ActionBar Buttons - Print -->
+    <string name="actionbar_button_print_cd">"ముద్రించు"</string>
+
+    <!-- Navigation View - Sort - Sort by name (ascending) -->
+    <string name="sort_by_name_asc">పేరు ద్వారా \u25B2</string>
+    <!-- Navigation View - Sort - Sort by name (descending) -->
+    <string name="sort_by_name_desc">పేరు ద్వారా \u25BC</string>
+    <!-- Navigation View - Sort - Sort by date (ascending) -->
+    <string name="sort_by_date_asc">తేదీ ద్వారా \u25B2</string>
+    <!-- Navigation View - Sort - Sort by date (descending) -->
+    <string name="sort_by_date_desc">తేదీ ద్వారా \u25BC</string>
+    <!-- Navigation View - Sort - Sort by size (ascending) -->
+    <string name="sort_by_size_asc">పరిమాణంవారీగా \u25B2</string>
+    <!-- Navigation View - Sort - Sort by size (descending) -->
+    <string name="sort_by_size_desc">పరిమాణంవారీగా \u25BC</string>
+    <!-- Navigation View - Sort - Sort by type (ascending) -->
+    <string name="sort_by_type_asc">రకంవారీగా \u25B2</string>
+    <!-- Navigation View - Sort - Sort by type (descending) -->
+    <string name="sort_by_type_desc">రకంవారీగా \u25BC</string>
+
+    <!-- Navigation View - Layout - Icons -->
+    <string name="layout_icons">చిహ్నాలు</string>
+    <!-- Navigation View - Layout - Simple -->
+    <string name="layout_simple">సులభమైనది</string>
+    <!-- Navigation View - Layout - Details -->
+    <string name="layout_details">వివరాలు</string>
+
+    <!-- Navigation View - View - Show folders first -->
+    <string name="cm_filemanager_show_dirs_first">ఫోల్డర్‌లను ముందుగా చూపు</string>
+    <!-- Navigation View - View - Show hidden files option -->
+    <string name="cm_filemanager_show_hidden">దాచిన ఫైల్‌లను చూపు</string>
+    <!-- Navigation View - View - Show system files option -->
+    <string name="cm_filemanager_show_system">సిస్టమ్ ఫైల్‌లను చూపు</string>
+    <!-- Navigation View - View - Show symlinks option -->
+    <string name="cm_filemanager_show_symlinks">సిమ్‌లింక్‌లను చూపు</string>
+
+    <!-- Filesystem Info (no data). Dialog title -->
+    <string name="filesystem_info_warning_title">సమాచారం లేదు</string>
+    <!-- Filesystem Info (no data). Dialog message -->
+    <string name="filesystem_info_warning_msg">ఫైల్ సిస్టమ్ కోసం సమాచారం అందుబాటులో లేదు.</string>
+    <!-- Filesystem Info - Filesystem couldn\'t be mounted -->
+    <string name="filesystem_info_cant_be_mounted_msg">ఫైల్ సిస్టమ్‌ను మౌంట్/అన్‌మౌంట్ చేయలేరు.</string>
+    <!-- Filesystem Info - Not allowed message -->
+    <string name="filesystem_info_mount_not_allowed_msg">సురక్షిత మోడ్‌లో ఫైల్ సిస్టమ్ మౌంటింగ్ ఆపరేషన్‌లు అనుమతించబడవు. రూట్ ప్రాప్యత మోడ్‌కు మార్చడానికి ట్యాప్ చేయండి.</string>
+    <!-- Filesystem Info - Mount failed -->
+    <string name="filesystem_info_mount_failed_msg">ఫైల్ సిస్టమ్ మౌంటింగ్ ఆపరేషన్ విఫలమైంది. SD కార్డ్‌ల వంటి కొన్ని ఫైల్ సిస్టమ్‌లు మౌంట్/అన్‌మౌంట్ చేయబడవు ఎందుకంటే అవి చదవడానికి-మాత్రమే ఫైల్ సిస్టమ్‌ల వలె అంతర్నిర్మితంగా ఉన్నాయి.</string>
+    <!-- Filesystem Info Dialog - Title -->
+    <string name="filesystem_info_dialog_title">ఫైల్ సిస్టమ్ సమాచారం</string>
+    <!-- Filesystem Info Dialog - Tab - Info -->
+    <string name="filesystem_info_dialog_tab_info">"సమాచారం"</string>
+    <!-- Filesystem Info Dialog - Tab - Disk Usage -->
+    <string name="filesystem_info_dialog_tab_disk_usage">డిస్క్ ఉపయోగం</string>
+    <!-- Filesystem Info Dialog - Status Label -->
+    <string name="filesystem_info_dialog_status">స్థితి:</string>
+    <!-- Filesystem Info Dialog - Mount Point Label -->
+    <string name="filesystem_info_dialog_mount_point">మౌంట్ పాయింట్:</string>
+    <!-- Filesystem Info Dialog - Device Label -->
+    <string name="filesystem_info_dialog_device">పరికరం:</string>
+    <!-- Filesystem Info Dialog - Type Label -->
+    <string name="filesystem_info_dialog_type">రకం:</string>
+    <!-- Filesystem Info Dialog - Options Label -->
+    <string name="filesystem_info_dialog_options">ఎంపికలు:</string>
+    <!-- Filesystem Info Dialog - Dump/Pass Label -->
+    <string name="filesystem_info_dialog_dump_pass">డంప్ / పాస్:</string>
+    <!-- Filesystem Info Dialog - Virtual Label -->
+    <string name="filesystem_info_dialog_virtual">వర్చువల్:</string>
+    <!-- Filesystem Info Dialog - Total Disk Usage -->
+    <string name="filesystem_info_dialog_total_disk_usage">మొత్తం:</string>
+    <!-- Filesystem Info Dialog - Used Disk Usage -->
+    <string name="filesystem_info_dialog_used_disk_usage">ఉపయోగించినవి:</string>
+    <!-- Filesystem Info Dialog - Free Disk Usage -->
+    <string name="filesystem_info_dialog_free_disk_usage">ఉచితం:</string>
+
+    <!-- Fso Properties - Not allowed message -->
+    <string name="fso_properties_permissions_not_allowed_msg">సురక్షిత మోడ్‌లో అనుమతుల ఆపరేషన్‌లు అనుమతించబడవు. రూట్ ప్రాప్యత మోడ్‌కు మార్చడానికి ట్యాప్ చేయండి.</string>
+    <!-- Fso Properties - Failed to change owner to fso -->
+    <string name="fso_properties_failed_to_change_owner_msg">యజమాని మార్పు ఆపరేషన్ విఫలమైంది.\n\nభద్రతా కారణాల దృష్ట్యా, SD కార్డ్‌ల వంటి కొన్ని సిస్టమ్ ఫైల్‌లు యాజమాన్య మార్పును అనుమతించవు.</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_group_msg">సమూహ మార్పు ఆపరేషన్ విఫలమైంది.\n\nభద్రతా కారణాల దృష్ట్యా, SD కార్డ్‌ల వంటి కొన్ని సిస్టమ్ ఫైల్‌లు సమూహ మార్పును అనుమతించవు.</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_permission_msg">అనుమతుల మార్పు ఆపరేషన్ విఫలమైంది.\n\nభద్రతా కారణాల దృష్ట్యా, SD కార్డ్‌ల వంటి కొన్ని సిస్టమ్ ఫైల్‌లు అనుమతుల మార్పును అనుమతించవు.</string>
+    <!-- Fso Properties Dialog - Title -->
+    <string name="fso_properties_dialog_title">లక్షణాలు</string>
+    <!-- Fso Properties Dialog - Tab - Info -->
+    <string name="fso_properties_dialog_tab_info">"సమాచారం"</string>
+    <!-- Fso Properties Dialog - Tab - Permissions -->
+    <string name="fso_properties_dialog_tab_permissions">"అనుమతులు"</string>
+    <!-- Fso Properties Dialog - Name Label -->
+    <string name="fso_properties_dialog_name">పేరు:</string>
+    <!-- Fso Properties Dialog - Parent Folder Label -->
+    <string name="fso_properties_dialog_parent">పేరెంట్:</string>
+    <!-- Fso Properties Dialog - Type Label -->
+    <string name="fso_properties_dialog_type">రకం:</string>
+    <!-- Fso Properties Dialog - Category Label -->
+    <string name="fso_properties_dialog_category">వర్గం:</string>
+    <!-- Fso Properties Dialog - Link Label -->
+    <string name="fso_properties_dialog_link">లింక్:</string>
+    <!-- Fso Properties Dialog - Size Label -->
+    <string name="fso_properties_dialog_size">పరిమాణం:</string>
+    <!-- Fso Properties Dialog - Contains Label -->
+    <string name="fso_properties_dialog_contains">కలిగి ఉంటుంది:</string>
+    <!-- Fso Properties Dialog - Last Accessed Time Label -->
+    <string name="fso_properties_dialog_last_accessed_date">ప్రాప్యత చేయబడింది:</string>
+    <!-- Fso Properties Dialog - Last Modified Time Label -->
+    <string name="fso_properties_dialog_last_modified_date">సవరించబడింది:</string>
+    <!-- Fso Properties Dialog - Last Changed Time -->
+    <string name="fso_properties_dialog_last_changed_date">మార్చబడింది:</string>
+    <!-- Fso Properties Dialog - Owner Label -->
+    <string name="fso_properties_dialog_owner">యజమాని:</string>
+    <!-- Fso Properties Dialog - Group Label -->
+    <string name="fso_properties_dialog_group">సమూహం:</string>
+    <!-- Fso Properties Dialog - Others Label -->
+    <string name="fso_properties_dialog_others">ఇతరాలు:</string>
+    <!-- Fso Properties Dialog - Special Label -->
+    <string name="fso_properties_dialog_special" translatable="false">S</string>
+    <!-- Fso Properties Dialog - Read Label -->
+    <string name="fso_properties_dialog_read" translatable="false">R</string>
+    <!-- Fso Properties Dialog - Write Label -->
+    <string name="fso_properties_dialog_write" translatable="false">W</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_execute" translatable="false">X</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_folder_items" translatable="false"><xliff:g id="folders">%1$s</xliff:g> / <xliff:g id="files">%2$s</xliff:g></string>
+    <!-- Fso Properties Dialog - Skip media scan -->
+    <string name="fso_properties_dialog_include_in_media_scan">మీడియా స్కాన్‌ను దాటవేయి:</string>
+    <string name="fso_failed_to_allow_media_scan">మీడియా స్కానింగ్‌ను అనుమతించడం విఫలమైంది</string>
+    <string name="fso_failed_to_prevent_media_scan">మీడియా స్కానింగ్‌ను నివారించడం విఫలమైంది</string>
+    <string name="fso_delete_nomedia_dir_title">.nomedia డైరెక్టరీని తొలగించు</string>
+    <string name="fso_delete_nomedia_dir_body">ఈ డైరెక్టరీలో .nomedia డైరెక్టరీ ఉంది.\n\nమీరు దీనిని మరియు దీని మొత్తం కంటెంట్‌లను తొలగించాలనుకుంటున్నారా?</string>
+    <string name="fso_delete_nomedia_non_empty_title">.nomedia ఫైల్‌ను తొలగించు</string>
+    <string name="fso_delete_nomedia_non_empty_body">ఈ డైరెక్టరీలో ఖాళీగా-లేని .nomedia ఫైల్ ఉంది.\n\nమీరు దీనిని తొలగించాలనుకుంటున్నారా?</string>
+
+    <!-- History - History activity title -->
+    <string name="history">"చరిత్ర"</string>
+    <!-- History - The history is empty -->
+    <string name="msgs_history_empty">చరిత్ర ఖాళీగా ఉంది.</string>
+    <!-- History - The history reference is not in the actual history list -->
+    <string name="msgs_history_unknown">తెలియని చరిత్ర అంశం.</string>
+
+    <!-- Search - Search activity title -->
+    <string name="search">ఫలితాలను శోధించు</string>
+    <!-- Search - Search hint message -->
+    <string name="search_hint">మీ శోధనను టైప్ చేయండి</string>
+    <!-- Search - Voice search hint message -->
+    <string name="search_voice_hint">మీ శోధనను చెప్పండి</string>
+    <!-- Search - Search error message -->
+    <string name="search_error_msg">శోధిస్తున్నప్పుడు లోపం సంభవించింది. ఫలితాలు కనుగొనబడలేదు.</string>
+    <!-- Search - Search no results message -->
+    <string name="search_no_results_msg">ఫలితాలు కనుగొనబడలేదు.</string>
+    <!-- Search - Number of items found in directory -->
+    <string name="search_found_items_in_directory"><xliff:g id="path">%2$s</xliff:g>లో <xliff:g id="items">%1$s</xliff:g></string>
+    <!-- Search - Search query terms -->
+    <string name="search_terms">&lt;b&gt;నిబంధనలు:&lt;/b&gt; <xliff:g id="terms">%1$s</xliff:g></string>
+    <!-- Search - Confirm search -->
+    <string name="search_few_characters_title">శోధనను నిర్ధారించండి</string>
+    <!-- Search - Some terms of the search are too small. The operation could be very costly -->
+    <string name="search_few_characters_msg">కొన్ని శోధన పదాల్లో తక్కువ సంఖ్యలో అక్షరాలు ఉన్నాయి. ఆపరేషన్ కోసం సమయం మరియు సిస్టమ్ వనరులను ఎక్కువగా ఉపయోగించాల్సి ఉంటుంది.\n\nమీరు కొనసాగించాలనుకుంటున్నారా?</string>
+    <!-- Search - Searching dialog title -->
+    <string name="searching">దయచేసి నిరీక్షించండి\u2026</string>
+    <!-- Search - Searching label -->
+    <string name="searching_action_label">శోధన పురోగతిలో ఉంది</string>
+
+    <!-- Picker Activity -->
+    <string name="picker" translatable="false">@string/app_name</string>
+    <!-- Picker Activity - Dialog title -->
+    <string name="picker_title">ఫైల్‌ను ఎంచుకోండి</string>
+    <string name="directory_picker_title">డైరెక్టరీని ఎంచుకోండి</string>
+
+    <!-- Editor - Editor activity title -->
+    <string name="editor">ఎడిటర్</string>
+    <!-- Editor - Invalid file message -->
+    <string name="editor_invalid_file_msg">చెల్లని ఫైల్.</string>
+    <!-- Editor - File not found message -->
+    <string name="editor_file_not_found_msg">ఫైల్ దొరకలేదు.</string>
+    <!-- Editor - File size exceed the limit -->
+    <string name="editor_file_exceed_size_msg">ఫైల్ ఈ పరికరంలో తెరవలేనంత పెద్దదిగా ఉంది.</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog title -->
+    <string name="editor_dirty_ask_title">నిష్క్రమణను నిర్ధారించండి</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog message -->
+    <string name="editor_dirty_ask_msg">సేవ్ చేయని మార్పులు ఉన్నాయి.\n\nసేవ్ చేయకుండా నిష్క్రమించాలా?</string>
+    <!-- Editor - Save operation success -->
+    <string name="editor_successfully_saved">ఫైల్ విజయవంతంగా సేవ్ చేయబడింది.</string>
+    <!-- Editor - Read-only file mode -->
+    <string name="editor_read_only_mode">ఫైల్ చదవడానికి-మాత్రమే మోడ్‌లో తెరవబడింది.</string>
+    <!-- Editor - Dumping message -->
+    <string name="dumping_message">హెక్స్ డంప్‌ను రూపొందిస్తోంది\u2026</string>
+    <!-- Editor - Displaying -->
+    <string name="displaying_message">ప్రదర్శిస్తోంది\u2026</string>
+
+    <!-- Bookmarks - Bookmarks activity title -->
+    <string name="bookmarks">బుక్‌మార్క్‌లు</string>
+    <!-- Bookmarks - Bookmark name - Home -->
+    <string name="bookmarks_home">"హోమ్"</string>
+    <!-- Bookmarks - Bookmark name - Root folder -->
+    <string name="bookmarks_root_folder">రూట్ ఫోల్డర్</string>
+    <!-- Bookmarks - Bookmark name - System folder -->
+    <string name="bookmarks_system_folder">సిస్టమ్ ఫోల్డర్</string>
+    <!-- Bookmarks - Bookmark name - Secure storage -->
+    <string name="bookmarks_secure">సురక్షిత నిల్వ</string>
+    <!-- Bookmarks - Bookmark name - Remote storage -->
+    <string name="bookmarks_remote">రిమోట్ నిల్వ</string>
+    <!-- Bookmarks - Bookmark name - Button - Initial directory content description -->
+    <string name="bookmarks_button_config_cd">ప్రాథమిక ఫోల్డర్‌ను సెట్ చేయండి.</string>
+    <!-- Bookmarks - Bookmark name - Button - Remove bookmark content description -->
+    <string name="bookmarks_button_remove_bookmark_cd">బుక్‌మార్క్‌ను తీసివేయండి.</string>
+    <!-- Bookmarks - Bookmarks - Actions - Bookmark successfully added -->
+    <string name="bookmarks_msgs_add_success">బుక్‌మార్క్ విజయవంతంగా జోడించబడింది.</string>
+
+    <!-- Initial directory dialog title -->
+    <string name="initial_directory_dialog_title">ప్రాథమిక ఫోల్డర్</string>
+    <!-- Initial directory label -->
+    <string name="initial_directory_label">ప్రాథమిక ఫోల్డర్‌ను ఎంచుకోండి:</string>
+    <!-- Initial directory is relative -->
+    <string name="initial_directory_relative_msg">సంబంధిత పథాలు అనుమతించబడవు.</string>
+    <!-- Initial directory error message -->
+    <string name="initial_directory_error_msg">ప్రాథమిక ఫోల్డర్‌ను సేవ్ చేస్తున్నప్పుడు లోపం సంభవించింది.</string>
+
+    <!-- Menu - Navigation - Search -->
+    <string name="menu_search">"శోధించు"</string>
+    <!-- Menu - Navigation - Settings -->
+    <string name="menu_settings">"సెట్టింగ్‌లు"</string>
+    <!-- Menu - History - Clear history -->
+    <string name="menu_clear_history">చరిత్రను తొలగించు</string>
+    <!-- Menu - Editor - No suggestions -->
+    <string name="menu_no_suggestions">సూచనలు లేవు</string>
+    <!-- Menu - Editor - Word wrap -->
+    <string name="menu_word_wrap">వోర్డ్ వ్రాప్</string>
+    <!-- Menu - Editor - Sintax highlight -->
+    <string name="menu_syntax_highlight">సింటాక్స్ హైలైట్</string>
+
+    <!-- Regular expression for create copy action -->
+    <string name="create_copy_regexp"><xliff:g id="name">%1$s</xliff:g> - <xliff:g id="extension">%2$s</xliff:g>ను కాపీ చేయి</string>
+    <!-- Regular expression for new compressed file -->
+    <string name="create_new_compress_file_regexp"><xliff:g id="name">%1$s</xliff:g> - కొత్త<xliff:g id="extension">%2$s</xliff:g></string>
+
+    <!-- Waiting dialog - Performing operation message -->
+    <string name="waiting_dialog_msg">ఆపరేషన్ అమలు అవుతోంది\u2026</string>
+    <!-- Waiting dialog - Copying title -->
+    <string name="waiting_dialog_copying_title">కాపీ చేస్తోంది\u2026</string>
+    <!-- Waiting dialog - Copying message -->
+    <string name="waiting_dialog_copying_msg">&lt;b&gt;&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>నుండి&lt;br/&gt;&lt;b&gt;&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g>కు</string>
+    <!-- Waiting dialog - Moving title -->
+    <string name="waiting_dialog_moving_title">తరలిస్తోంది\u2026</string>
+    <!-- Waiting dialog - Moving message -->
+    <string name="waiting_dialog_moving_msg">&lt;b&gt;&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>నుండి&lt;br/&gt;&lt;b&gt;&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g>కు</string>
+    <!-- Waiting dialog - Deleting title -->
+    <string name="waiting_dialog_deleting_title">తొలగిస్తోంది\u2026</string>
+    <!-- Waiting dialog - Deleting message -->
+    <string name="waiting_dialog_deleting_msg">&lt;b&gt;ఫైల్&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_extracting_title">"సంగ్రహిస్తోంది…"</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_extracting_msg">&lt;b&gt;ఫైల్&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_compressing_title">కుదిస్తోంది\u2026</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_compressing_msg">&lt;b&gt;ఫైల్&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Initializing the dialog -->
+    <string name="waiting_dialog_analizing_msg"><![CDATA[<b>విశ్లేషిస్తోంది\u2026</b>]]></string>
+    <!-- Extracting - Success message -->
+    <string name="msgs_extracting_success">సంగ్రహణ ఆపరేషన్ విజయవంతంగా పూర్తయింది. డేటా <xliff:g id="destination">%1$s</xliff:g>కు సంగ్రహించబడింది.</string>
+    <!-- Compressing - Success message -->
+    <string name="msgs_compressing_success">కుదింపు ఆపరేషన్ విజయవంతంగా పూర్తయింది. డేటా <xliff:g id="destination">%1$s</xliff:g>కు కుదించబడింది.</string>
+
+    <!-- Actions Dialog - Title -->
+    <string name="actions_dialog_title">చర్యలు</string>
+    <!-- Actions Dialog - Menu - Properties of current folder -->
+    <string name="actions_menu_properties_current_folder">లక్షణాలు</string>
+    <!-- Actions Dialog - Menu - Refresh -->
+    <string name="actions_menu_refresh">"రీఫ్రెష్ చేయండి"</string>
+    <!-- Actions Dialog - Menu - New directory -->
+    <string name="actions_menu_new_directory">కొత్త ఫోల్డర్</string>
+    <!-- Actions Dialog - Menu - New file -->
+    <string name="actions_menu_new_file">కొత్త ఫైల్</string>
+    <!-- Actions Dialog - Menu - Select all -->
+    <string name="actions_menu_select_all">అన్నీ ఎంపిక చేయండి</string>
+    <!-- Actions Dialog - Menu - Deselect all -->
+    <string name="actions_menu_deselect_all">అన్నింటి ఎంపికను తొలగించండి</string>
+    <!-- Actions Dialog - Menu - Select -->
+    <string name="actions_menu_select">"ఎంచుకోండి"</string>
+    <!-- Actions Dialog - Menu - Deselect -->
+    <string name="actions_menu_deselect">ఎంపిక తీసివేయి</string>
+    <!-- Actions Dialog - Menu - Copy/Paste selection -->
+    <string name="actions_menu_paste_selection">ఎంపికను ఇక్కడ కాపీ చేయి</string>
+    <!-- Actions Dialog - Menu - Move selection -->
+    <string name="actions_menu_move_selection">ఎంపికను ఇక్కడకు తరలించు</string>
+    <!-- Actions Dialog - Menu - Delete selection -->
+    <string name="actions_menu_delete_selection">ఎంపికను తొలగించు</string>
+    <!-- Actions Dialog - Menu - Compress selection -->
+    <string name="actions_menu_compress_selection">ఎంపికను కుదించు</string>
+    <!-- Actions Dialog - Menu - Create link -->
+    <string name="actions_menu_create_link">లింక్‌ను సృష్టించండి</string>
+    <!-- Actions Dialog - Menu - Open -->
+    <string name="actions_menu_open">"తెరువు"</string>
+    <!-- Actions Dialog - Menu - Open with -->
+    <string name="actions_menu_open_with">"దీనితో తెరువు"</string>
+    <!-- Actions Dialog - Menu - Execute -->
+    <string name="actions_menu_execute">"అమలు చేయి"</string>
+    <!-- Actions Dialog - Menu - Send -->
+    <string name="actions_menu_send">"పంపు"</string>
+    <!-- Actions Dialog - Menu - Send selection -->
+    <string name="actions_menu_send_selection">ఎంపికను పంపు</string>
+    <!-- Actions Dialog - Menu - Compress -->
+    <string name="actions_menu_compress">కుదించు</string>
+    <!-- Actions Dialog - Menu - Extract -->
+    <string name="actions_menu_extract">సంగ్రహించండి</string>
+    <!-- Actions Dialog - Menu - Delete -->
+    <string name="actions_menu_delete">"తొలగించు"</string>
+    <!-- Actions Dialog - Menu - Rename -->
+    <string name="actions_menu_rename">"పేరు మార్చండి"</string>
+    <!-- Actions Dialog - Menu - Create copy -->
+    <string name="actions_menu_create_copy">కాపీని సృష్టించండి</string>
+    <!-- Actions Dialog - Menu - Properties -->
+    <string name="actions_menu_properties">లక్షణాలు</string>
+    <!-- Actions Dialog - Menu - Add to bookmarks -->
+    <string name="actions_menu_add_to_bookmarks">బుక్‌మార్క్‌లను జోడించు</string>
+    <!-- Actions Dialog - Menu - Add shortcut -->
+    <string name="actions_menu_add_shortcut">సత్వరమార్గాన్ని జోడించండి</string>
+    <!-- Actions Dialog - Menu - Open parent folder -->
+    <string name="actions_menu_open_parent_folder">పేరెంట్‌ను తెరువు</string>
+    <!-- Actions Dialog - Menu - Compute checksum -->
+    <string name="actions_menu_compute_checksum">చెక్‌సమ్‌ను గణించు</string>
+    <!-- Actions Dialog - Menu - Print -->
+    <string name="actions_menu_print">"ముద్రించు"</string>
+    <!-- Actions Dialog - Menu - Set as home -->
+    <string name="actions_menu_set_as_home">హోమ్‌గా సెట్ చేయి</string>
+
+    <!-- Actions - Ask user prior to do an undone operation. Dialog message -->
+    <string name="actions_ask_undone_operation_msg">ఈ చర్యను చర్యరద్దు చేయలేరు. మీరు కొనసాగిస్తారా?</string>
+
+    <!-- Enter Name Dialog - Label -->
+    <string name="input_name_dialog_label">పేరు:</string>
+    <!-- Enter Name Dialog - Message - Empty name -->
+    <string name="input_name_dialog_message_empty_name">పేరు ఖాళీగా ఉండకూడదు.</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_path_name">చెల్లని పేరు. అక్షరాలు \'<xliff:g id="invalid_characters">%1$s</xliff:g>\' అనుమతించబడవు.</string>
+    <!-- Enter Name Dialog - Message - Invalid name length -->
+    <string name="input_name_dialog_message_invalid_name_length">ఫైల్ పేరు చాలా పెద్దదిగా ఉంది, దయచేసి 255 లేదా అంతకంటే తక్కువ అక్షరాలను ప్రయత్నించండి.</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_name">చెల్లని పేరు. పేర్లుగా \'.\' మరియు \'..\' అనుమతించబడవు.</string>
+    <!-- Enter Name Dialog - Message - Name exists -->
+    <string name="input_name_dialog_message_name_exists">పేరు ఇప్పటికే ఉపయోగంలో ఉంది.</string>
+
+    <!-- Associations Dialog - Title -->
+    <string name="associations_dialog_title">అనుబంధాలు</string>
+    <!-- Associations Dialog - Remember the user action -->
+    <string name="associations_dialog_remember">ఎంపికను గుర్తుంచుకో</string>
+    <!-- Associations Dialog - Open with Title -->
+    <string name="associations_dialog_openwith_title">"దీనితో తెరువు"</string>
+    <!-- Associations Dialog - Open action (button title) -->
+    <string name="associations_dialog_openwith_action">తెరువు</string>
+    <!-- Associations Dialog - Send with Title -->
+    <string name="associations_dialog_sendwith_title">దీనితో పంపు</string>
+    <!-- Associations Dialog - Send action (button title) -->
+    <string name="associations_dialog_sendwith_action">పంపు</string>
+
+    <!-- Inline Autocomplete Widget - Tab message nothing to complete -->
+    <string name="inline_autocomplete_tab_nothing_to_complete_msg">పూర్తి చేయడానికి ఏమీ లేదు.</string>
+
+    <!-- Execution console - Title -->
+    <string name="execution_console_title">కన్సోల్</string>
+    <!-- Execution console - The script name label -->
+    <string name="execution_console_script_name_label">స్క్రిప్ట్:</string>
+    <!-- Execution console - The script execution time label -->
+    <string name="execution_console_script_execution_time_label">సమయం:</string>
+    <!-- Execution console - The script exit code label -->
+    <string name="execution_console_script_exitcode_label">నిష్క్రమణ కోడ్:</string>
+    <!-- Execution console - The script execution time seconds string -->
+    <string name="execution_console_script_execution_time_text"><xliff:g id="seconds">%1$s</xliff:g> సెకను.</string>
+
+    <!-- Compute checksum - Title -->
+    <string name="compute_checksum_title">చెక్‌సమ్‌ను గణించు</string>
+    <!-- Compute checksum - The file name label -->
+    <string name="compute_checksum_filename_label">ఫైల్:</string>
+    <!-- Compute checksum - The MD5 label -->
+    <string name="compute_checksum_md5_label" translatable="false">MD5:</string>
+    <!-- Compute checksum - The SHA1 label -->
+    <string name="compute_checksum_sha1_label" translatable="false">SHA-1:</string>
+    <!-- Compute checksum - The computing checksum message-->
+    <string name="compute_checksum_computing_checksum_msg">చెక్‌సమ్‌ను గణిస్తోంది\u2026</string>
+
+    <!-- Mime/Types - Folder -->
+    <string name="mime_folder">ఫోల్డర్</string>
+    <!-- Mime/Types - Symlink -->
+    <string name="mime_symlink">సిమ్‌లింక్</string>
+    <!-- Mime/Types - Unknown -->
+    <string name="mime_unknown">"తెలియదు"</string>
+
+    <!--  Filetime formats -->
+    <string name="filetime_format_mode_system">సిస్టమ్-నిర్వచించినది</string>
+    <string name="filetime_format_mode_locale">లొకేల్-నిర్వచించనది</string>
+    <string name="filetime_format_mode_ddMMyyyy_HHmmss">dd/mm/yyyy hh:mm:ss</string>
+    <string name="filetime_format_mode_MMddyyyy_HHmmss">mm/dd/yyyy hh:mm:ss</string>
+    <string name="filetime_format_mode_yyyyMMdd_HHmmss">yyyy-mm-dd hh:mm:ss</string>
+
+    <!-- Selection -->
+    <!-- For example "2 folders and 1 file selected." -->
+    <string name="selection_folders_and_files"><xliff:g id="folders">%1$s</xliff:g> మరియు <xliff:g id="files">%2$s</xliff:g> ఎంచుకోబడ్డాయి.</string>
+
+    <!-- Category descriptions -->
+    <string name="category_system">సిస్టం</string>
+    <string name="category_app">అప్లికేషన్</string>
+    <string name="category_binary">బైనరీ</string>
+    <string name="category_text">టెక్స్ట్</string>
+    <string name="category_document">పత్రం</string>
+    <string name="category_ebook">EBOOK</string>
+    <string name="category_mail">మెయిల్</string>
+    <string name="category_compress">కుదించు</string>
+    <string name="category_exec">అమలు చేయగల</string>
+    <string name="category_database">డేటాబేస్</string>
+    <string name="category_font">ఫాంట్</string>
+    <string name="category_image">చిత్రం</string>
+    <string name="category_audio">ఆడియో</string>
+    <string name="category_video">వీడియో</string>
+    <string name="category_security">భద్రత</string>
+    <string name="category_all">అన్నీ</string>
+
+    <!-- Compression - Compression modes dialog title -->
+    <string name="compression_mode_title">కుదింపు మోడ్</string>
+    <!-- Compression - Supported archive and compression modes -->
+    <string name="compression_mode_tar" translatable="false">Tar (tar)</string>
+    <string name="compression_mode_tar_gzip" translatable="false">Tar/gzip (tar.gz)</string>
+    <string name="compression_mode_tar_gzip2" translatable="false">Tar/gzip (tgz)</string>
+    <string name="compression_mode_tar_bzip" translatable="false">Tar/bzip (tar.bz2)</string>
+    <string name="compression_mode_gzip" translatable="false">Gzip (gz)</string>
+    <string name="compression_mode_bzip" translatable="false">Bzip (bz2)</string>
+    <string name="compression_mode_zip" translatable="false">Zip (zip)</string>
+
+    <!-- Shortcut. Failed to handle the shortcut -->
+    <string name="shortcut_failed_msg">సత్వరమార్గాన్ని నిర్వహించడం విఫలమైంది.</string>
+    <!-- Shortcut. The shortcut was created -->
+    <string name="shortcut_creation_success_msg">సత్వరమార్గాన్ని సృష్టించడం విజయవంతమైంది.</string>
+    <!-- Shortcut. The shortcut wasn\'t created -->
+    <string name="shortcut_creation_failed_msg">సత్వరమార్గాన్ని సృష్టించడం విఫలమైంది.</string>
+
+    <!-- Preferences title -->
+    <string name="pref">"సెట్టింగ్‌లు"</string>
+    <!-- Preferences - General title -->
+    <string name="pref_general">"సాధారణ సెట్టింగ్‌లు"</string>
+    <!-- Preferences - Search title -->
+    <string name="pref_search">శోధన ఎంపికలు</string>
+    <!-- Preferences - Storage title -->
+    <string name="pref_storage">నిల్వ ఎంపికలు</string>
+    <!-- Preferences - Editor title -->
+    <string name="pref_editor">ఎడిటర్ ఎంపికలు</string>
+    <!-- Preferences - Themes title -->
+    <string name="pref_themes">థీమ్‌లు</string>
+    <!-- Preferences - About title -->
+    <string name="pref_about">"గురించి"</string>
+    <!-- Preferences - About summary -->
+    <string name="pref_about_summary">ఫైల్ నిర్వాహికి v<xliff:g id="version">%1$s</xliff:g>\nకాపీరైట్ \u00A9 2012–2014 The CyanogenMod Project</string>
+
+    <!-- Preferences - General - Behaviour category -->
+    <string name="pref_general_behaviour_category">సాధారణ</string>
+    <!-- Preferences - General - Case sensitive sort and navigating title -->
+    <string name="pref_case_sensitive_sort">కేస్-సెన్సిటివ్</string>
+    <!-- Preferences - General - Case sensitive sort and navigating summary -->
+    <string name="pref_case_sensitive_sort_summary">శోధన ఫలితాలను నావిగేట్ చేస్తున్నప్పుడు లేదా క్రమబద్ధీకరిస్తున్నప్పుడు కేస్‌ను పరిగణించాలి</string>
+    <!-- Preferences - General - Filetime format mode title -->
+    <string name="pref_filetime_format_mode">తేదీ/సమయం ఆకృతి</string>
+    <!-- Preferences - General -Disk usage warning level title -->
+    <string name="pref_disk_usage_warning_level">డిస్క్ ఉపయోగ హెచ్చరిక</string>
+    <!-- Preferences - General - Disk usage warning level summary -->
+    <!-- FIXME Use "percent" instead of "%" symbol, because it make crash the app on getSummary
+         of ListPreference. This should be fixed in frameworks base prior to be added here. -->
+    <string name="pref_disk_usage_warning_level_summary" formatted="false">డిస్క్ ఉపయోగ విడ్జెట్‌లు <xliff:g id="level">%1$s</xliff:g> శాతం డిస్క్ నిల్వ ఖాళీని చేరుకున్నప్పుడు వేరే రంగు ప్రదర్శించబడుతుంది</string>
+    <!-- Preferences - General - Compute folder statistics title -->
+    <string name="pref_compute_folder_statistics">ఫోల్డర్ గణాంకాలను గణించండి</string>
+    <!-- Preferences - General - Compute folder statistics summary on -->
+    <string name="pref_compute_folder_statistics_on">హెచ్చరిక! ఫోల్డర్ గణాంకాల గణన కోసం సమయం మరియు సిస్టమ్ వనరులు అధికంగా ఉపయోగించబడతాయి</string>
+    <!-- Preferences - General - Display thumbs -->
+    <string name="pref_display_thumbs">"పరిదృశ్యం"</string>
+    <!-- Preferences - General - Display thumbs summary -->
+    <string name="pref_display_thumbs_summary">అప్లికేషన్‌లు, సంగీత ఫైల్‌లు, చిత్రాలు మరియు వీడియోల కోసం పరిదృశ్యం చిత్రాన్ని చూపుతుంది</string>
+    <!-- Preferences - General - Use flinger detection -->
+    <string name="pref_use_flinger">స్వైప్ సంజ్ఞలను ఉపయోగించండి</string>
+    <!-- Preferences - General - Use flinger detection summary -->
+    <string name="pref_use_flinger_summary">ఫైల్‌లు లేదా ఫోల్డర్‌లను తొలగించడం కోసం ఎడమ నుండి కుడివైపుకి స్వైప్ సంజ్ఞ గుర్తింపును ఉపయోగించండి</string>
+    <!-- Preferences - General - Advanced settings category -->
+    <string name="pref_general_advanced_settings_category">"అధునాతనం"</string>
+    <!-- Preferences - General - Access mode -->
+    <string name="pref_access_mode">ప్రాప్యత మోడ్</string>
+    <!-- Preferences - General - Safe mode -->
+    <string name="pref_access_mode_safe">"సురక్షిత మోడ్"</string>
+    <!-- Preferences - General - Safe mode summary -->
+    <string name="pref_access_mode_safe_summary">సురక్షిత మోడ్\n\nఅప్లికేషన్ అధికారాలు లేకుండా అమలు అవుతోంది మరియు ప్రాప్యత చేయగల ఫైల్ సిస్టమ్‌లు నిల్వ వాల్యూమ్‌లు (SD కార్డ్‌లు మరియు USB) మాత్రమే</string>
+    <!-- Preferences - General - Prompt user mode -->
+    <string name="pref_access_mode_prompt">ప్రాంప్ట్ వినియోగదారు మోడ్</string>
+    <!-- Preferences - General - Prompt user mode summary -->
+    <string name="pref_access_mode_prompt_summary">ప్రాంప్ట్ వినియోగదారు మోడ్\n\nఅప్లికేషన్ ఫైల్ సిస్టమ్‌కు పూర్తి ప్రాప్యతతో అమలు అవుతోంది, కానీ ఏవైనా అధికార చర్యలను అమలు చేయడానికి ముందు అనుమతిని అడుగుతుంది</string>
+    <!-- Preferences - General - Root access mode -->
+    <string name="pref_access_mode_root">రూట్ ప్రాప్యత మోడ్</string>
+    <!-- Preferences - General - Root access mode summary -->
+    <string name="pref_access_mode_root_summary">రూట్ ప్రాప్యత మోడ్\n\nహెచ్చరిక! మీ పరికరాన్ని బ్రేక్ చేయగల ఆపరేషన్‌లను ఈ మోడ్ అనుమతిస్తుంది. ఆపరేషన్ రక్షణకు సంబంధించి పూర్తి బాధ్యత మీదే</string>
+    <!-- Preferences - General - Restrict secondary users access title -->
+    <string name="pref_restrict_secondary_users_access_title">వినియోగదారుల ప్రాప్యత పరిమితం చేయబడింది</string>
+    <!-- Preferences - General - Restrict secondary users access summary -->
+    <string name="pref_restrict_secondary_users_access_summary">ద్వితీయ వినియోగదారులకు పూర్తి సిస్టమ్ ప్రాప్యతను పరిమితం చేయబడింది</string>
+    <!-- Preferences - Search - Results category -->
+    <string name="pref_search_results_category">"ఫలితాలు"</string>
+    <!-- Preferences - Search - Show relevance widget -->
+    <string name="pref_show_relevance_widget">సంబంధిత విడ్జెట్‌ను చూపు</string>
+    <!-- Preferences - Search - Highlight search terms -->
+    <string name="pref_highlight_terms">శోధన పదాలను హైలైట్ చేయి</string>
+    <!-- Preferences - Search - Sort results mode -->
+    <string name="pref_sort_search_results_mode">ఫలితాల మోడ్‌ను క్రమబద్ధీకరించు</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_none">క్రమబద్ధీకరణ లేదు</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_name">"పేరు ద్వారా"</string>
+    <!-- Preferences - Search - Sort results mode. Relevance -->
+    <string name="pref_sort_search_results_mode_relevance">సంబంధితం ద్వారా</string>
+    <!-- Preferences - Search - Privacity category -->
+    <string name="pref_search_privacity_category">"గోప్యత"</string>
+    <!-- Preferences - Search - Save search terms -->
+    <string name="pref_save_search_terms">శోధన పదాలను సేవ్ చేయి</string>
+    <!-- Preferences - Search - Save search terms summary on -->
+    <string name="pref_save_search_terms_on">శోధన పదాలు సేవ్ చేయబడతాయి మరియు భవిష్యత్ శోధనల కోసం సూచనల వలె ఉపయోగించబడతాయి</string>
+    <!-- Preferences - Search - Save search terms summary off -->
+    <string name="pref_save_search_terms_off">శోధన ఫలితాలు సేవ్ చేయబడవు</string>
+    <!-- Preferences - Search - Remove saved search terms -->
+    <string name="pref_remove_saved_search_terms">సేవ్ చేసిన శోధన ఫలితాలను తీసివేయి</string>
+    <!-- Preferences - Search - Remove saved search terms summary -->
+    <string name="pref_remove_saved_search_terms_summary">సేవ్ చేసిన శోధన ఫలితాలన్నింటినీ తీసివేయడానికి ట్యాప్ చేయండి</string>
+    <!-- Preferences - Search - Suggestions were truncated -->
+    <string name="pref_remove_saved_search_terms_msg">సేవ్ చేసిన శోధన ఫలితాలన్నీ తీసివేయబడ్డాయి</string>
+    <!-- Preferences - Storage - Secure Storage category -->
+    <string name="pref_secure_storage_category">సురక్షిత నిల్వ</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync title -->
+    <string name="pref_secure_storage_delayed_sync_title">సమకాలీకరణ జాప్యం</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync summary -->
+    <string name="pref_secure_storage_delayed_sync_summary">సురక్షిత ఫైల్ సిస్టమ్‌లను సమకాలీకరించడం అనేది వ్యయంతో కూడిన ఆపరేషన్. ప్రతి ఆపరేషన్ తర్వాత వేగవంతమైన ప్రతిస్పందనలను, ఫైల్ సిస్టమ్ ఉపయోగించని స్థితిలో ఉన్నప్పుడు సమకాలీకరణను అమలు చేయడాన్ని అనుమతించడం కోసం ఈ ఎంపికను ప్రారంభించండి, అప్లికేషన్ క్రాష్ అయినప్పుడు పెండింగ్‌లో ఉన్న సమాచారం సమకాలీకరించబడదు.</string>
+    <!-- Preferences - Storage - Secure Storage - Reset password title -->
+    <string name="pref_secure_storage_reset_password_title">పాస్‌వర్డ్ రీసెట్ చేయండి</string>
+    <!-- Preferences - Storage - Secure Storage - Delete storage title -->
+    <string name="pref_secure_storage_delete_storage_title">నిల్వని తొలగించు</string>
+    <!-- Preferences - Editor - Behaviour category -->
+    <string name="pref_editor_behaviour_category">ప్రవర్తన</string>
+    <!-- Preferences - Editor - No suggestions -->
+    <string name="pref_no_suggestions">సూచనలు లేవు</string>
+    <!-- Preferences - Editor - No suggestions summary -->
+    <string name="pref_no_suggestions_desc">ఫైల్‌ను సవరిస్తున్నప్పుడు నిఘంటువు సూచనలను ప్రదర్శించదు</string>
+    <!-- Preferences - Editor - Word wrap -->
+    <string name="pref_word_wrap">వోర్డ్ వ్రాప్</string>
+    <!-- Preferences - Editor - Hex dump -->
+    <string name="pref_hexdump">హెక్స్ డంప్ బైనరీ ఫైల్‌లు</string>
+    <!-- Preferences - Editor - Hex dump desc -->
+    <string name="pref_hexdump_desc">బైనరీ ఫైల్‌ను తెరుస్తున్నప్పుడు, ఫైల్ యొక్క హెక్స్ డంప్‌ను రూపొందించి, దానిని హెక్స్ వ్యూయర్‌లో తెరవండి</string>
+    <!-- Preferences - Editor - Syntax highlight category -->
+    <string name="pref_editor_syntax_highlight_category">సింటాక్స్ హైలైట్</string>
+    <!-- Preferences - Editor - Syntax highlight -->
+    <string name="pref_syntax_highlight">సింటాక్స్ హైలైట్</string>
+    <!-- Preferences - Editor - Syntax highlight summary -->
+    <string name="pref_syntax_highlight_desc">ఎడిటర్‌లో ప్రదర్శించిన ఫైల్ యొక్క సింటాక్స్‌ను హైలైట్ చేయండి (పైల్ రకానికి సింటాక్స్ హైలైట్ ప్రాసెసర్ అందుబాటులో ఉన్నప్పుడు మాత్రమే)</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme -->
+    <string name="pref_syntax_highlight_color_scheme">రంగు విధానం</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme summary -->
+    <string name="pref_syntax_highlight_color_scheme_desc">సింటాక్స్ హైలైట్ రంగు స్కీమ్‌ను ఎంచుకోండి</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme -->
+    <string name="pref_syntax_sh_use_theme_default">థీమ్ డిఫాల్ట్‌ను ఉపయోగించండి</string>
+    <!-- Preferences - Editor - Syntax highlight -Color Scheme summary -->
+    <string name="pref_syntax_sh_use_theme_default_desc">ప్రస్తుత థీమ్ యొక్క డిఫాల్ట్ సింటాక్స్ హైలైట్‌ను ఉపయోగించండి</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme - Items category -->
+    <string name="pref_editor_sh_item_category">ఐటెమ్‌లు</string>
+    <!-- Preferences - Themes - Themes selection category -->
+    <string name="pref_themes_selection_category">థీమ్‌లు</string>
+    <!-- Preferences - Themes - Set theme button -->
+    <string name="pref_themes_set_theme">థీమ్‌ని సెట్ చేయి</string>
+    <!-- Preferences - Themes - Confirmation message -->
+    <string name="pref_themes_confirmation">థీమ్ విజయవంతంగా వర్తింపజేయబడింది.</string>
+    <!-- Preferences - Themes - Theme not found message -->
+    <string name="pref_themes_not_found">థీమ్ కనుగొనబడలేదు.</string>
+
+    <!-- Preferences - Debug - Capture debug traces -->
+    <string name="pref_debug_traces">లాగ్ డీబగ్గింగ్ సమాచారం</string>
+
+    <!-- Themes - Default theme name -->
+    <string name="theme_default_name">లేత థీమ్</string>
+    <!-- Themes - Default theme description -->
+    <string name="theme_default_description">CyanogenMod ఫైల్ నిర్వాహికి కోసం లేత థీమ్.</string>
+    <!-- Themes - Default theme author -->
+    <string name="themes_author">CyanogenMod</string>
+
+    <!-- Navigation drawer -->
+    <string name="drawer_open">"నావిగేషన్ డ్రాయర్‌ను తెరవండి"</string>
+    <string name="drawer_close">"నావిగేషన్ డ్రాయర్‌ను మూసివేయండి"</string>
+
+    <!-- ColorPickerDialog -->
+    <!-- The text of the alpha slider control -->
+    <string name="color_picker_alpha_slider_text">ఆల్ఫా</string>
+    <!-- The label of the current color panel -->
+    <string name="color_picker_current_text">ప్రస్తుతం:</string>
+    <!-- The label of the new color panel -->
+    <string name="color_picker_new_text">కొత్తవి:</string>
+    <!-- The label of the color input -->
+    <string name="color_picker_color">రంగు:</string>
+
+    <!-- Android Syntax Highlight -->
+    <string name="ash_reset_color_scheme">డిఫాల్ట్ థీమ్ రంగు స్కీమ్‌ను పునరుద్ధరించండి</string>
+    <string name="ash_text">"వచనం పంపండి"</string>
+    <string name="ash_assignment">అస్సైన్‌మెంట్</string>
+    <string name="ash_singleline_comment">ఏక-పంక్తి వ్యాఖ్య</string>
+    <string name="ash_multiline_comment">బహుళ-పంక్తుల వ్యాఖ్య</string>
+    <string name="ash_keyword">కీలకపదం</string>
+    <string name="ash_quoted_string">కోట్ చేసిన స్ట్రింగ్</string>
+    <string name="ash_variable">చరాంకం</string>
+
+    <!-- Secure Storage -->
+    <!-- Secure Storage dialog title - Unlock -->
+    <string name="secure_storage_unlock_title">నిల్వను అన్‌లాక్ చేయి</string>
+    <!-- Secure Storage dialog title - Create -->
+    <string name="secure_storage_create_title">నిల్వను సృష్టించండి</string>
+    <!-- Secure Storage dialog title - Reset -->
+    <string name="secure_storage_reset_title">పాస్‌వర్డ్ రీసెట్ చేయండి</string>
+    <!-- Secure Storage dialog title - Delete -->
+    <string name="secure_storage_delete_title">నిల్వని తొలగించు</string>
+    <!-- Secure Storage unlock dialog message (secure storage exists) -->
+    <string name="secure_storage_unlock_key_prompt_msg">సురక్షిత నిల్వ ఫైల్ సిస్టమ్‌ను అన్‌లాక్ చేయడానికి పాస్‌వర్డ్‌ను టైప్ చేయండి.</string>
+    <!-- Secure Storage unlock dialog message (new secure storage) -->
+    <string name="secure_storage_unlock_key_new_msg">సురక్షిత నిల్వ ఫైల్ సిస్టమ్‌ను రక్షించడానికి పాస్‌వర్డ్‌ను టైప్ చేయండి.</string>
+    <!-- Secure Storage unlock dialog message (reset the current password) -->
+    <string name="secure_storage_unlock_key_reset_msg">సురక్షిత నిల్వ ఫైల్ సిస్టమ్‌ను రీసెట్ చేయడానికి ప్రస్తుత మరియు కొత్త పాస్‌వర్డ్‌లను టైప్ చేయండి.</string>
+    <!-- Secure Storage unlock dialog message (delete the secure storage) -->
+    <string name="secure_storage_unlock_key_delete_msg">సురక్షిత నిల్వ ఫైల్ సిస్టమ్‌ను తొలగించడానికి ప్రస్తుత పాస్‌వర్డ్‌ను టైప్ చేయండి.</string>
+    <!-- Secure Storage unlock dialog old key title -->
+    <string name="secure_storage_unlock_old_key_title">పాత పాస్‌వర్డ్:</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_new_key_title">కొత్త పాస్‌వర్డ్:</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_key_title">పాస్‌వర్డ్:</string>
+    <!-- Secure Storage unlock dialog repeat key title-->
+    <string name="secure_storage_unlock_repeat_title">పునరావృత పాస్‌వర్డ్:</string>
+    <!-- Secure Storage create button -->
+    <string name="secure_storage_create_button">"సృష్టించు"</string>
+    <!-- Secure Storage unlock button -->
+    <string name="secure_storage_unlock_button">"అన్‌లాక్ చేయి"</string>
+    <!-- Secure Storage reset button -->
+    <string name="secure_storage_reset_button">"రీసెట్ చేయి"</string>
+    <!-- Secure Storage delete button -->
+    <string name="secure_storage_delete_button">తొలగించు</string>
+    <!-- Secure Storage unlock failed toast -->
+    <string name="secure_storage_unlock_failed">నిల్వను అన్‌లాక్ చేయడం సాధ్యపడదు</string>
+    <!-- Secure Storage unlock validation, length -->
+    <string name="secure_storage_unlock_validation_length">పాస్‌వర్డ్‌లో తప్పనిసరిగా కనీసం <xliff:g id="characters">%1$d</xliff:g> అక్షరాలు ఉండాలి.</string>
+    <!-- Secure Storage unlock validation, equal -->
+    <string name="secure_storage_unlock_validation_equals">పాస్‌వర్డ్‌లు సరిపోలలేదు.</string>
+
+    <!-- Print messages -->
+    <!-- Unsupported document format -->
+    <string name="print_unsupported_document">మద్దతు లేని పత్రం ఆకృతి</string>
+    <!-- Unsupported image format -->
+    <string name="print_unsupported_image">మద్దతులేని చిత్రం ఆకృతి</string>
+    <!-- Print header -->
+    <string name="print_document_header">పత్రం: <xliff:g id="document_name">%1$s</xliff:g></string>
+    <!-- Print footer -->
+    <string name="print_document_footer"><xliff:g id="page_number">%1$s</xliff:g>వ పేజీ</string>
+
+    <!-- Security - Extract relative or absolute files -->
+    <string name="security_warning_extract">హెచ్చరిక!\n\nసంబంధిత లేదా ఖచ్చితమైన పథాలతో ఆర్కైవ్ ఫైల్‌ను సంగ్రహించడం వల్ల సిస్టమ్ పైల్‌లు అతివ్యాప్తి చెంది మీ పరికరానికి నష్టం కలగవచ్చు.\n\nమీరు కొనసాగిస్తారా?</string>
+
+    <!-- ChangeLog - Dialog title -->
+    <string name="changelog_title">మార్పు లాగ్</string>
+
+    <!-- Welcome Dialog - Title -->
+    <string name="welcome_title">స్వాగతం</string>
+    <!-- Welcome Dialog - Message -->
+    <string name="welcome_msg">CyanogenMod ఫైల్ నిర్వాహికిలోకి స్వాగతం.\n\nమీ పరికరాన్ని బ్రేక్ చేయగల ఫైల్ సిస్టమ్‌ను మరియు ఆపరేషన్‌లను విశ్లేషించడానికి చేయడానికి ఈ అప్లికేషన్ మిమ్మల్ని అనుమతిస్తుంది. నష్టాన్ని నివారించడానికి, అప్లికేషన్ సురక్షిత, తక్కువ-అధికార మోడ్‌లో ప్రారంభించబడుతుంది.\n\nమీరు సెట్టింగ్‌ల ద్వారా అధునాతన, పూర్తి-అధికార మోడ్‌ను ప్రాప్యత చేయవచ్చు. ఆపరేషన్ మీ సిస్టమ్‌ను బ్రేక్ చేయకుండా ఉండటానికి సంబంధించిన పూర్తి బాధ్యత మీరే వహించాలి.\n\nCyanogenMod బృందం</string>
+
+    <string name="easy_mode_type_icon">మూకాభినయ రకం కోసం చిహ్నం</string>
+    <string name="easy_mode_type_none">అన్ని ఫైల్‌లు</string>
+    <string name="easy_mode_type_images">చిత్రాలు</string>
+    <string name="easy_mode_type_videos">వీడియోలు</string>
+    <string name="easy_mode_type_music">సంగీతం</string>
+    <string name="easy_mode_type_documents">"పత్రాలు"</string>
+
+    <string name="activity_not_found_exception">ఈ ఫైల్‌ను తెరవడానికి అప్లికేషన్‌ను కనుగొనడం సాధ్యపడలేదు</string>
+    <string name="no_permission_for_drm">"క్షమించండి, DRM ఫైల్‌ని భాగస్వామ్యం చేయలేము"</string>
+    <string name="actions_menu_drm_license_info">Drm లైసెన్స్ సమాచారం</string>
+</resources>

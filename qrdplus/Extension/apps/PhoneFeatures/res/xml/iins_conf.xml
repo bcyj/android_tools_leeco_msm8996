@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2014 Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+ -->
+<!--
+  priority:
+    1. -1 means not allowed to set as primary card;
+    2. the bigger means has higher priority to set as primary card;
+    3. if don't match anyone, the priority will be -1;
+  app_type:
+    if app_type is not specified, means all APP type with the IIN can be matched.
+-->
+<iins>
+    <iin pattern="^(?!8986)" app_type="APPTYPE_SIM" priority="0" network="18" />
+    <iin pattern="^(?!8986)" app_type="APPTYPE_USIM" priority="1" network="20" />
+    <iin pattern="^898600" app_type="APPTYPE_SIM" priority="2" network="18" />
+    <iin pattern="^898602" app_type="APPTYPE_SIM" priority="2" network="18" />
+    <iin pattern="^898607" app_type="APPTYPE_SIM" priority="2" network="18" />
+    <iin pattern="^898600" app_type="APPTYPE_USIM" priority="3" network="20" />
+    <iin pattern="^898602" app_type="APPTYPE_USIM" priority="3" network="20" />
+    <iin pattern="^898607" app_type="APPTYPE_USIM" priority="3" network="20" />
+</iins>

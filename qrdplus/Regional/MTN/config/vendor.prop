@@ -1,0 +1,39 @@
+#
+# ADDITIONAL_FEATURE_PROPERTIES FOR MTN SPEC
+#
+####################################################
+#Set the current spec as MTN#
+persist.env.spec=MTN
+
+#for emergence call list(split by ',')
+ril.ecclist=911,*911,#911,112,08,110,999,118,119,112
+
+#set system language#
+persist.sys.language=en
+
+# system props for the cne module #
+# 4 - enable NSRM adb root;#
+# 1 – Only CnE is enabled; NSRM, FMC, and WQE are disabled#
+# 0 – Disables CnE  #
+persist.dpm.feature=4
+
+# Set Network mode option #
+persist.radio.default_network=9
+
+#set persist.cne.logging.qxdm value#
+persist.cne.logging.qxdm=3974
+
+#Ensures that GPS and USB do not interfere with the test#
+persist.cne.nsrm.bkg.evt=16371
+
+#Set gsm.operator.iso-country name#
+gsm.operator.iso-country=br
+
+#Set gsm.sim.operator.iso-country name#
+gsm.sim.operator.iso-country=br
+
+#Set the SIM model for DSDS. ssss - Single model, dsds - Dual model.#
+persist.radio.multisim.config=ssss
+
+#Set ril.subscription.type empty.#
+ril.subscription.types=

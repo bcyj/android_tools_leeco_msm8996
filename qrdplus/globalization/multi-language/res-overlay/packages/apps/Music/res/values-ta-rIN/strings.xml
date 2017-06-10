@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2013-2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution.
+ * Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- used in various places to indicate there is one song for a given artist or album -->
+    <string name="onesong">1 பாடல்</string>
+    <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
+    <plurals name="Nsongs">
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> பாடல்கள்</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other"><xliff:g id="count_for_artist">%2$d</xliff:g> / <xliff:g id="total_count">%1$d</xliff:g> பாடல்கள்</item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+        <!-- number of albums is one -->
+        <item quantity="one">1 ஆல்பம்</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ஆல்பங்கள்</item>
+    </plurals>
+
+    <!--
+    This string is used as the format string in a String.format call,
+    and 5 additional arguments are available for printing:
+    1 - hours
+    2 - minutes
+    3 - minutes%60
+    4 - seconds
+    5 - second%60
+    -->
+    <skip/>
+    <!-- Do not translate. Duration format for duration < 1 hour -->
+    <string translatable="false" name="durationformatshort"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    <!-- Do not translate. Duration format for duration >= 1 hour -->
+    <string translatable="false" name="durationformatlong"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    <!-- Menu item that takes the user back to the top level screen of the music player -->
+    <string name="goto_start">நூலகம்</string>
+    <!-- Menu item that switches the music player in to party shuffle mode -->
+    <string name="party_shuffle">பார்ட்டி குலை</string>
+    <!-- Menu item that switches the music player out of party shuffle mode -->
+    <string name="party_shuffle_off">பார்ட்டி குலை ஆஃப்</string>
+    <!-- Menu item that clear all playlists mode -->
+    <string name="clear_all_playlists">அனைத்து ப்ளேலிஸ்ட்களையும் அழி</string>
+    <!-- Menu item that deletes the currently selected item, which might be a single song, or a collection of songs.
+         The user will be prompted to confirm before deletion actually takes place -->
+    <string name="delete_item">நீக்கு</string>
+    <!-- Menu item to play back all the songs in the currently showing list in shuffle mode -->
+    <string name="shuffle_all">எல்லாம் குலை</string>
+    <!-- Menu item to play back all the songs in the currently showing list in list order -->
+    <string name="play_all">எல்லாம் இயக்கு</string>
+    <!-- Menu item to play song in music -->
+    <string name="open_in_music">மியூசிக்கில் திற</string>
+    <!-- Menu item to share audio or video -->
+    <string name="share">பங்கிடு</string>
+
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc">SD கார்டிலிருந்து <xliff:g id="artist">%s</xliff:g> இன் எல்லா பாடல்களையும் நிரந்தரமாக நீக்கவா?</string>
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc_nosdcard">USB சேமிப்பகத்திலிருந்து <xliff:g id="artist">%s</xliff:g> இன் எல்லா பாடல்களையும் நிரந்தரமாக நீக்கவா?</string>
+
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc">SD கார்டிலிருந்து முழு ஆல்பம் \"<xliff:g id="album">%s</xliff:g>\" ஐயும் நிரந்தரமாக நீக்கவா?</string>
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc_nosdcard">USB சேமிப்பகத்திலிருந்து முழு ஆல்பம் \"<xliff:g id="album">%s</xliff:g>\" ஐயும் நிரந்தரமாக நீக்கவா?</string>
+
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc">SD கார்டிலிருந்து \"<xliff:g id="song">%s</xliff:g>\" ஐ நிரந்தரமாக நீக்கவா?</string>
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc_nosdcard">USB சேமிப்பகத்திலிருந்து \"<xliff:g id="song">%s</xliff:g>\" ஐ நிரந்தரமாக நீக்கவா?</string>
+
+    <!-- Delete confirmation dialog, confirmation button text -->
+    <string name="delete_confirm_button_text">சரி</string>
+    <!-- Toast confirming that song(s) was/were deleted. -->
+    <plurals name="NNNtracksdeleted">
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">1 பாடல் நீக்கப்பட்டது.</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> பாடல்கள் நீக்கப்பட்டன.</item>
+    </plurals>
+
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning">SD கார்டை ஸ்கேன்செய்கிறது\u2026</string>
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning_nosdcard">USB சேமிப்பிடத்தை ஸ்கேன் செய்கிறது\u2026</string>
+
+    <!-- title of the "current playlist" screen when not in party shuffle mode -->
+    <string name="nowplaying_title">இயக்கத்தில்</string>
+    <!-- title of the "current playlist" screen when in party shuffle mode-->
+    <string name="partyshuffle_title">பார்ட்டி குலை</string>
+    <!-- Artist screen title -->
+    <string name="artists_title">கலைஞ.</string>
+    <!-- Category label on Library screen -->
+    <string name="albums_menu">ஆல்பங்கள்</string>
+    <!-- Albums screen title -->
+    <string name="albums_title">ஆல்பங்கள்</string>
+    <!-- Category label on Library screen -->
+    <string name="tracks_menu">பாடல்கள்</string>
+    <!-- Songs screen title -->
+    <string name="tracks_title">பாடல்கள்</string>
+    <!-- Category label on Library screen -->
+    <string name="folder_menu">கோப்புறை</string>
+    <!-- Folder screen title -->
+    <string name="folders_title">கோப்புறை</string>
+    <!-- Category label on Library screen -->
+    <string name="playlists_menu">இசைப்பட்டிய.</string>
+    <!-- Playlists screen title -->
+    <string name="playlists_title">இசைப்பட்டிய.</string>
+    <!-- Videos screen title -->
+    <string name="videos_title">வீடியோக்கள்</string>
+    <!-- All media screen title -->
+    <string name="all_title">எல்லா மீடியாக்கள்</string>
+    <!-- Category label on Library screen -->
+    <string name="browse_menu">கலைஞ.</string>
+    <!-- Library screen, menu item -->
+    <string name="search_title">தேடு</string>
+    <!-- Title of screen when there are no songs, or if the SD card is busy -->
+    <string name="no_tracks_title">பாடல்கள் இல்லை</string>
+    <!-- Title of screen when there are no videos, or if the SD card is busy -->
+    <string name="no_videos_title">வீடியோக்கள் இல்லை</string>
+    <!-- Title of screen when there are no playlists, or if the SD card is busy -->
+    <string name="no_playlists_title">இசைப்பட்டியல்கள் இல்லை</string>
+    <!-- Playlist context menu item to delete the selected playlist. -->
+    <string name="delete_playlist_menu">நீக்கு</string>
+    <!-- Playlist context menu item to edit the selected playlist -->
+    <string name="edit_playlist_menu">திருத்து</string>
+    <!-- Playlist context menu item to rename the selected playlist-->
+    <string name="rename_playlist_menu">மறுபெயரிடு</string>
+    <!-- Dialog box message shown when clearing all playlists-->
+    <string name="clear_all_playlists_message">நீங்கள் அனைத்து ப்ளேலிஸ்ட்களையும் அழிக்க விரும்புகிறீர்களா?</string>
+    <!-- Dialog box message shown when deleting a playlist-->
+    <string name="delete_playlist_message">\"<xliff:g id="name">%s</xliff:g>\" ஐ நீக்க வேண்டுமா?</string>
+    <!-- Dialog box button -->
+    <string name="delete_playlist_button_ok">சரி</string>
+    <string name="delete_playlist_button_cancel">ரத்துசெய்க</string>
+    <!-- Transient popup message shown after deleting a playlist -->
+    <string name="playlist_deleted_message">இசைப்பட்டியல் நீக்கப்பட்டது.</string>
+    <!-- Transient popup message shown after renaming a playlist -->
+    <string name="playlist_renamed_message">இசைப்பட்டியல் மறுபெயரிடப்பட்டது.</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in list view -->
+    <string name="recentlyadded">சமீபத்தில் சேர்த்தது</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in title bar of songs list -->
+    <string name="recentlyadded_title">சமீபத்தில் சேர்த்தது</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in list view -->
+    <string name="podcasts_listitem">பாட்காஸ்ட்ஸ்</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in title bar of songs list -->
+    <string name="podcasts_title">பாட்காஸ்ட்ஸ்</string>
+    <!-- all recordings will show up in the media database in a playlist with thiis name -->
+    <string name="audio_db_playlist_name">எனது பதிவுகள்</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title">SD அட்டை இல்லை</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title_nosdcard">USB சேமிப். இல்லை</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message">உங்கள் தொலைபேசியில் SD கார்டு செருகப்படவில்லை.</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message_nosdcard">உங்கள் தொலைபேசியில் USB சேமிப்பகம் இல்லை.</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title">SD அட்டை கிடைக்கவில்லை</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title_nosdcard">USB சேமிப்பிடம் கிடைக்கவி.</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message">உங்கள் SD கார்டு பணிமிகுதியாக உள்ளது.</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message_nosdcard">உங்கள் USB சேமிப்பகம் பணிமிகுதியாக உள்ளது.</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title">SD அட்டை பிழை</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title_nosdcard">USB சேமிப்பிடப் பிழை</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message">உங்கள் SD அட்டையில் ஒரு பிழை ஏற்பட்டது.</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message_nosdcard">உங்கள் USB சேமிப்பிடத்தில் ஒரு பிழை ஏற்பட்டது.</string>
+    <!-- Default name of artist that doesn\'t have a name in the metadata -->
+    <string name="unknown_artist_name">தெரியாத கலைஞர்</string>
+    <!-- Default name of album that doesn\'t have a name in the metadata -->
+    <string name="unknown_album_name">தெரியாத ஆல்பம்</string>
+    <!-- Default name of folder that doesn\'t have a path in the metadata -->
+    <string name="unknown_folder_name">தெரியாத பாதை</string>
+    <!-- Default name of folder that doesn\'t have a count in the metadata -->
+    <string name="unknown_folder_count">தெரியாத எண்ணிக்கை</string>
+    <!-- Toast after turning shuffle on -->
+    <string name="shuffle_on_notif">குலை ஆன் செய்யப்பட்டுள்ளது.</string>
+    <!-- Toast after turning shuffle off -->
+    <string name="shuffle_off_notif">குலை ஆஃப் செய்யப்பட்டுள்ளது.</string>
+    <!-- Toast after turning repeat off -->
+    <string name="repeat_off_notif">மீண்டும் மீண்டும் இயக்குதல் ஆஃப் செய்யப்பட்டுள்ளது.</string>
+    <!-- Toast after turning single repeat on -->
+    <string name="repeat_current_notif">தற்போதைய் பாடலை மீண்டும் மீண்டும் இயக்குகிறது.</string>
+    <!-- Toast after turning repeat all on -->
+    <string name="repeat_all_notif">எல்லா பாடல்களையும் மீண்டும் மீண்டும் இயக்குகிறது.</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu">தொலைபேசி ரிங்டோனாகப் பயன்.</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short">ரிங்டோனாக உபயோகி</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" தொலைபேசி ரிங்டோனாக அமை.</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu_1">ஸ்லாட் 1 ரிங்டோனாக.</string>
+    <string name="ringtone_menu_2">ஸ்லாட் 2 ரிங்டோனாக.</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short_1">ரிங்டோன் 1 ஆக பயன்.</string>
+    <string name="ringtone_menu_short_2">ரிங்டோன் 2 ஆக பயன்.</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_1">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" ஸ்லாட் 1 ரிங்டோனாக அமை.</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_2">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" ஸ்லாட் 2 ரிங்டோனாக அமை.</string>
+    <!-- Context menu item -->
+    <string name="play_selection">இயக்கு</string>
+    <!-- Context menu item -->
+    <string name="add_to_playlist">இசைப்பட்டியலில் சேர்</string>
+    <!-- Context menu item -->
+    <string name="queue">தற்போதைய இசைப்.</string>
+    <!-- Context menu item -->
+    <string name="new_playlist">புதியது</string>
+    <!-- Template for newly created playlist name -->
+    <string name="new_playlist_name_template">புதிய இசைப்பட்டியல் <xliff:g id="number">%d</xliff:g></string>
+    <!-- Toasts after adding song(s) to playlists -->
+    <plurals name="NNNtrackstoplaylist">
+        <!-- message shown when one song was added -->
+        <item quantity="one">1 பாடல் பிளேலிஸ்டில் சேர்க்கப்பட்டது.</item>
+        <!-- message shown when zero or more than one song was added -->
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> பாடல்கள் பிளேலிஸ்டில் சேர்க்கப்பட்டன.</item>
+    </plurals>
+    <!-- Toast after selecting an empty playlist -->
+    <string name="emptyplaylist">தேர்ந்தெடுத்த இசைப்பட்டியல் காலியாக உள்ளது.</string>
+    <!-- Button name when saving a playlist -->
+    <string name="create_playlist_create_text">சேமி</string>
+    <!-- Button name when saving a playlist and the new playlist will overwrite an existing one -->
+    <string name="create_playlist_overwrite_text">மேலெழுது</string>
+    <!-- Dialog box title -->
+    <string name="service_start_error_title">மறுஇயக்க சிக்கல்</string>
+    <!-- Dialog box message -->
+    <string name="service_start_error_msg">பாடலை இயக்க முடியவில்லை.</string>
+    <!-- Dialog box button -->
+    <string name="service_start_error_button">சரி</string>
+    <!-- Time span edit options that appear when editing system playlist "Recently added" -->
+    <!-- Used to indicate the number of weeks the "recently added" playlist covers in a selector widget -->
+    <string-array name="weeklist">
+        <item>1 வாரம்</item>
+        <item>2 வாரம்</item>
+        <item>3 வாரம்</item>
+        <item>4 வாரம்</item>
+        <item>5 வாரம்</item>
+        <item>6 வாரம்</item>
+        <item>7 வாரம்</item>
+        <item>8 வாரம்</item>
+        <item>9 வாரம்</item>
+        <item>10 வாரம்</item>
+        <item>11 வாரம்</item>
+        <item>12 வாரம்</item>
+    </string-array>
+    <!-- Button name in time span picker -->
+    <string name="weekpicker_set">முடிந்தது</string>
+    <!-- Title of time span picker -->
+    <string name="weekpicker_title">நேரம் அமை</string>
+    <!-- Do not translate. Background color for currently dragged item in playlist edit mode. -->
+    <color name="dragndrop_background">#e0103010</color>
+    <!-- Do not translate. Background color for albums in the artists list view. -->
+    <color name="expanding_child_background">#ff404040</color>
+
+    <!-- menu item to save the current list as a new playlist -->
+    <string name="save_as_playlist">இசைப்பட்டியலாக சேமி</string>
+    <!-- menu item to clear the current playlist -->
+    <string name="clear_playlist">இசைப்பட்டியலை அழி</string>
+
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicbrowserlabel">இசை</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicshortcutlabel">இசை இசைப்ப.</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediaplaybacklabel">இசை</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="videobrowserlabel">வீடியோக்கள்</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediapickerlabel">இசை</string>
+
+    <!-- Shown as a transient message whenever a file fails to play -->
+    <string name="playback_failed">பிளேயர் ஆடியோ கோப்பின் இவ்வகையை ஆதரிக்கவில்லை.</string>
+    <!-- Shown as a transient message whenever a file fails to open -->
+    <string name="open_failed">மன்னிக்கவும், கோப்பைத் திறக்க முடியவில்லை.</string>
+
+    <!-- Text for the "cancel" button in the "delete" and "create playlist" confirmation dialogs -->
+    <string name="cancel">ரத்துசெய்</string>
+
+    <!-- context menu item to remove the selected item from the playlist -->
+    <string name="remove_from_playlist">இசைப்ப. இருந்து அகற்று</string>
+
+    <!-- shown when connecting to a music stream, before it starts playing -->
+    <string name="streamloadingtext"><xliff:g id="host">%s</xliff:g> க்கு இணைக்கிறது\u2026</string>
+
+    <!-- title of contextual music search menu -->
+    <string name="mediasearch">இதைப் பயன்படுத்தி <xliff:g id="term" example="Beethoven">%s</xliff:g> ஐத் தேடு:</string>
+
+    <!-- Shown in the title bar while the list of artists is being retrieved in the background -->
+    <string name="working_artists">கலைஞ.\u2026</string>
+    <!-- Shown in the title bar while the list of albums is being retrieved in the background -->
+    <string name="working_albums">ஆல்பங்கள்\u2026</string>
+    <!-- Shown in the title bar while the list of songs is being retrieved in the background -->
+    <string name="working_songs">பாடல்கள்\u2026</string>
+    <!-- Shown in the title bar while the list of folders is being retrieved in the background -->
+    <string name="working_folders">கோப்புறைகள்\u2026</string>
+    <!-- Shown in the title bar while the list of playlists is being retrieved in the background -->
+    <string name="working_playlists">இசைப்பட்டிய.\u2026</string>
+
+    <!-- Shown in the music picker while loading the music database. -->
+    <string name="loading">ஏற்றுகிறது\u2026</string>
+    <!-- Menu in music picker to sort the list by track/song name. -->
+    <string name="sort_by_track">தடங்கள்</string>
+    <!-- Menu in music picker to sort the list by album name. -->
+    <string name="sort_by_album">ஆல்பங்கள்</string>
+    <!-- Menu in music picker to sort the list by artist name. -->
+    <string name="sort_by_artist">கலைஞ.</string>
+    <!--  Title of the music picker activity. -->
+    <string name="music_picker_title">இசைத் தடத்தைத் தேர்வுசெய்</string>
+
+    <!-- The string used to describe Music as a searchable item within system search settings. -->
+    <string name="search_settings_description">கலைஞர்கள், ஆல்பங்கள் மற்றும் தடங்கள்</string>
+
+    <!-- Shown in the search box as a hint -->
+    <string name="search_hint">இசையைத் தேடு</string>
+    <string name="search_hint_video">வீடியோ தேடுக</string>
+
+    <!--The fast scroll thumb will show one character from this string depending on the position in the list -->
+    <string name="fast_scroll_alphabet">\u0020ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+
+    <!-- Text shown on widget when first loaded -->
+    <string name="widget_initial_text">இசையைத் தேர்வுசெய்ய தொடுக.</string>
+
+    <!-- Menu text for the item controlling the audio effects panel [CHAR LIMIT=15] -->
+    <string name="effectspanel">ஒலி விளைவுகள்</string>
+
+    <string name="duplicate_playlist_name_alert">ஏற்கனவே பெயரிடப்பட்ட ஓர் இயக்கப்பட்டியல் உள்ளது \"<xliff:g id="name">%s</xliff:g>\". தயவு செய்து வேறொரு பெயரைத் தேர்ந்தெடுக்கவும்.</string>
+    <string name="same_playlist_name_alert">இயக்கப்பட்டியல் \"<xliff:g id="name">%s</xliff:g>\" பெயர் மாற்றப்படவில்லை. தயவுசெய்து வேறொரு பெயரைத் தேர்ந்தெடுக்கவும்.</string>
+    <string name="button_ok">சரி</string>
+    <string name="list_empty">பிளேலிஸ்டில் இசை எதுவுமில்லை.</string>
+
+    <!-- Shown when video is played after disable Gallery app from Settings -->
+    <string name="enable_gallery_app">வீடியோவை இயக்க முடியாது, அமைப்புகளிலிருந்து கேலரி செயலியை இயக்கவும்.</string>
+    <string name="close_music">"முடித்திடுக"</string>
+    <string name="delete_video_item_message">நீங்கள் இதை நீக்க விரும்புகிறீர்களா \" <xliff:g id="name">%s</xliff:g>\"?</string>
+    <string name="video_deleted_message">நிகழ்படக் கோப்புகள் நீக்கப்பட்டது.</string>
+
+    <!-- Menu item that takes the user link to net to see more music -->
+    <string name="more_music">மேலும் இசை</string>
+    <!-- Menu item that takes the user link to net to see more video -->
+    <string name="more_video">மேலும் நிகழ்படம்</string>
+    <!--gesture control playback status-->
+    <string name="music_gesture_play">"ஆடியோவை இயக்கு/இடைநிறுத்து"</string>
+    <string name="music_gesture_prev">"முந்தைய ட்ராக்கை இயக்கு"</string>
+    <string name="music_gesture_next">"அடுத்த ட்ராக்கை இயக்கு"</string>
+
+    <!-- DRM Related Strings -->
+    <string name="no_permission_for_drm">"மன்னிக்கவும், Drm கோப்பைப் பகிர முடியவில்லை"</string>
+    <string name="drm_license_info">Drm உரிமத் தகவல்</string>
+    <string name="drm_ringtone_error">CD/SD கோப்புகளை ரிங்டோனாக அமைக்க இயலாது</string>
+
+</resources>

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Category mapping from ATSC to canonical genre -->
+    <string-array name="genre_mapping_atsc">
+        <item>Eğitim|EĞİTİM</item>
+        <item>Eğlence|EĞLENCE</item>
+        <item>Film|FİLMLER</item>
+        <item>Haber|HABER</item>
+        <item>Din|YAŞAM_TARZI</item>
+        <item>Spor|SPOR</item>
+        <item>Diğer|DİĞERLERİ</item>
+        <item>Aksiyon|FİLMLER</item>
+        <item>Reklam|DİĞERLERİ</item>
+        <item>Animasyon|AİLE_ÇOCUKLAR</item>
+        <item>Antoloji|DRAMA</item>
+        <item>Otomobil|DİĞERLERİ</item>
+        <item>Ödüller|EĞLENCE</item>
+        <item>Beyzbol|SPOR</item>
+        <item>Basketbol|SPOR</item>
+        <item>Bülten|DİĞERLERİ</item>
+        <item>İş|DİĞERLERİ</item>
+        <item>Klasik|MÜZİK</item>
+        <item>Yüksekokul|EĞİTİM</item>
+        <item>Savaş|DİĞERLERİ</item>
+        <item>Komedi|KOMEDİ</item>
+        <item>Yorum|DİĞERLERİ</item>
+        <item>Konser|MÜZİK</item>
+        <item>Tüketici|DİĞERLERİ</item>
+        <item>Aktüel|DİĞERLERİ</item>
+        <item>Suç|FİLMLER</item>
+        <item>Dans|EĞLENCE</item>
+        <item>Belgesel|HABER</item>
+        <item>Drama|DRAMA</item>
+        <item>İlkokul|EĞİTİM</item>
+        <item>Erotik|FİLMLER</item>
+        <item>Egzersiz|SPOR</item>
+        <item>Fantezi|FİLMLER</item>
+        <item>Çiftlik|DİĞERLERİ</item>
+        <item>Moda|YAŞAM_TARZI</item>
+        <item>Hikaye|SANAT</item>
+        <item>Yiyecek|YAŞAM_TARZI</item>
+        <item>Amerikan Futbolu|SPOR</item>
+        <item>Yabancı|DİĞERLERİ</item>
+        <item>Yardım Toplayıcı|DİĞERLERİ</item>
+        <item>Oyun/Yarışma|OYUN</item>
+        <item>Bahçe|YAŞAM_TARZI</item>
+        <item>Golf|SPOR</item>
+        <item>Devlet|DİĞERLERİ</item>
+        <item>Sağlık|YAŞAM_TARZI</item>
+        <item>Lise|EĞİTİM</item>
+        <item>Tarih|EĞİTİM</item>
+        <item>Hobi|YAŞAM_TARZI</item>
+        <item>Hokey|SPOR</item>
+        <item>Ev|YAŞAM_TARZI</item>
+        <item>Korku|FİLMLER</item>
+        <item>Bilgi|HABER</item>
+        <item>Açıklama|DİĞERLERİ</item>
+        <item>Uluslararası|DİĞERLERİ</item>
+        <item>Röportaj|DİĞERLERİ</item>
+        <item>Dil|EĞİTİM</item>
+        <item>Hukuki|DİĞERLERİ</item>
+        <item>Canlı|DİĞERLERİ</item>
+        <item>Yerel|DİĞERLERİ</item>
+        <item>Matematik|EĞİTİM</item>
+        <item>Sağlık|DİĞERLERİ</item>
+        <item>Toplantı|DİĞERLERİ</item>
+        <item>Askeri|DİĞERLERİ</item>
+        <item>Mini Dizi|DRAMA</item>
+        <item>Müzik|MÜZİK</item>
+        <item>Gizem|FİLMLER</item>
+        <item>Ulusal|DİĞERLERİ</item>
+        <item>Doğa|HAYVAN_VAHŞİ_YAŞAM</item>
+        <item>Polis|DİĞERLERİ</item>
+        <item>Politika|DİĞERLERİ</item>
+        <item>Prömiyer|PRÖMİYER</item>
+        <item>Önceden Kaydedilmiş|DİĞERLERİ</item>
+        <item>Ürün|DİĞERLERİ</item>
+        <item>Profesyonel|DİĞERLERİ</item>
+        <item>Kamu|DİĞERLERİ</item>
+        <item>Yarış|SPOR</item>
+        <item>Okuma|SANAT</item>
+        <item>Onarım|DİĞERLERİ</item>
+        <item>Tekrar|DİĞERLERİ</item>
+        <item>Eleştiri|DİĞERLERİ</item>
+        <item>Romantik|FİLMLER</item>
+        <item>Bilim|TEKNİK_BİLİM</item>
+        <item>Dizi|DRAMA</item>
+        <item>Hizmet|DİĞERLERİ</item>
+        <item>Alışveriş|ALIŞVERİŞ</item>
+        <item>TV Dizisi|DRAMA</item>
+        <item>Özel|DİĞERLERİ</item>
+        <item>Gerilim|FİLMLER</item>
+        <item>Sohbet|EĞLENCE</item>
+        <item>Teknik|TEKNİK_BİLİM</item>
+        <item>Tenis|SPOR</item>
+        <item>Seyahat|SEYAHAT</item>
+        <item>Çeşitli|EĞLENCE</item>
+        <item>Video|SANAT</item>
+        <item>Hava Durumu|HABER</item>
+        <item>Batı|Diğerleri</item>
+        <item>Sanat|SANAT</item>
+        <item>Otomobil Yarışı|SPOR</item>
+        <item>Havacılık|SPOR</item>
+        <item>Biyografi|HABERLER</item>
+        <item>Tekne Gezintisi|SPOR</item>
+        <item>Bovling|SPOR</item>
+        <item>Boks|SPOR</item>
+        <item>Çizgi Film|AİLE_ÇOCUKLAR</item>
+        <item>Çocuklar|AİLE_ÇOCUKLAR</item>
+        <item>Klasik Film|FİLMLER</item>
+        <item>Topluluk|DİĞERLERİ</item>
+        <item>Bilgisayarlar|TEKNİK_BİLİM</item>
+        <item>Amerikan Folk Müziği|MÜZİK</item>
+        <item>Mahkeme|DİĞERLERİ</item>
+        <item>Tehlikeli Sporlar|SPOR</item>
+        <item>Aile|AİLE_ÇOCUKLAR</item>
+        <item>Finans|HABER</item>
+        <item>Jimnastik|SPOR</item>
+        <item>Haber Başlıkları|HABER</item>
+        <item>At Yarışı|SPOR</item>
+        <item>Avcılık/Balıkçılık/Dış Mekanlar|HAYVAN_VAHŞİ_YAŞAM</item>
+        <item>Bağımsız|DİĞERLERİ</item>
+        <item>Caz|MÜZİK</item>
+        <item>Magazin|HABER</item>
+        <item>Motosiklet Yarışı|SPOR</item>
+        <item>Müzik/Film/Kitap|DİĞERLER</item>
+        <item>Uluslararası Haber|HABER</item>
+        <item>Yerel Haber|HABER</item>
+        <item>Ulusal Haber|HABER</item>
+        <item>Bölgesel Haber|HABERLER</item>
+        <item>Olimpiyatlar|SPOR</item>
+        <item>Orijinal|FİLMLER</item>
+        <item>Sahne Sanatları|SANAT</item>
+        <item>Evcil Hayvanlar/Hayvanlar|HAYVAN_VAHŞİ_YAŞAM</item>
+        <item>Pop|MÜZİK</item>
+        <item>Rock &amp; Roll|MÜZİK</item>
+        <item>Bilim Kurgu|FİLMLER</item>
+        <item>Kişisel Gelişim|EĞİTİM</item>
+        <item>Durum Komedisi|DRAMA</item>
+        <item>Buz Pateni|SPOR</item>
+        <item>Kayak|SPOR</item>
+        <item>Futbol|SPOR</item>
+        <item>Parkur/Arazi|SPOR</item>
+        <item>Gerçek|DİĞERLERİ</item>
+        <item>Voleybol|SPOR</item>
+        <item>Güreş|SPOR</item>
+    </string-array>
+
+    <!-- Category mapping from DVB to canonical genre -->
+    <string-array name="genre_mapping_dvb">
+        <item>film/drama|FİLMLER</item>
+        <item>dedektif/gerilim|FİLMLER</item>
+        <item>macera/kovboy/savaş|FİLMLER</item>
+        <item>bilim kurgu/fantezi/korku|FİLMLER</item>
+        <item>komedi|KOMEDİ</item>
+        <item>dizi/melodram/folklorik|DRAMA</item>
+        <item>romantik|FİLMLER</item>
+        <item>ağır/klasik/dini/tarihi film/drama|FİLMLER</item>
+        <item>yetişkin filmi/drama|FİLMLER</item>
+        <item>haber/güncel gelişmeler|HABER</item>
+        <item>haber/hava durumu|HABER</item>
+        <item>haber magazin|HABER</item>
+        <item>belgesel|HABER</item>
+        <item>tartışma/röportaj/münazara|HABER</item>
+        <item>gösteri/yarışma programı|EĞLENCE</item>
+        <item>yarışma programı/yarışma/müsabaka|OYUN</item>
+        <item>eğlence programı|EĞLENCE</item>
+        <item>sohbet programı|EĞLENCE</item>
+        <item>spor|SPOR</item>
+        <item>özel etkinlikler (Olimpiyat Oyunları, Dünya Kupası vb.)|SPOR</item>
+        <item>spor programları|SPOR</item>
+        <item>amerikan futbolu/futbol|SPOR</item>
+        <item>tenis/duvar tenisi|SPOR</item>
+        <item>takım sporları (amerikan futbolu hariç)|SPOR</item>
+        <item>atletizm|SPOR</item>
+        <item>motor sporu|SPOR</item>
+        <item>su sporu|SPOR</item>
+        <item>kış sporları|SPOR</item>
+        <item>binicilik|SPOR</item>
+        <item>dövüş sporları|SPOR</item>
+        <item>çocuk/gençlik programları|AİLE_ÇOCUKLAR</item>
+        <item>okul öncesi çocuk programları|AİLE_ÇOCUKLAR</item>
+        <item>6 - 14 yaş için eğlence programları|AİLE_ÇOCUKLAR</item>
+        <item>10 - 16 yaş için eğlence programları|AİLE_ÇOCUKLAR</item>
+        <item>bilgilendirici/eğitim/okul programları|AİLE_ÇOCUKLAR</item>
+        <item>çizgi filmler/kuklalar|AİLE_ÇOCUKLAR</item>
+        <item>müzik/bale/dans|MÜZİK</item>
+        <item>rock/pop|MÜZİK</item>
+        <item>ağır müzik/klasik müzik|MÜZİK</item>
+        <item>halk müziği/geleneksel müzik|MÜZİK</item>
+        <item>caz|MÜZİK</item>
+        <item>müzikal/opera|MÜZİK</item>
+        <item>bale|EĞLENCE</item>
+        <item>sanat/kültür|SANAT</item>
+        <item>sahne sanatları|SANAT</item>
+        <item>güzel sanatlar|SANAT</item>
+        <item>din|YAŞAM_TARZI</item>
+        <item>popüler kültür/geleneksel sanatlar|YAŞAM_TARZI</item>
+        <item>edebiyat|SANAT</item>
+        <item>film/sinema|SANAT</item>
+        <item>deneysel film/video|SANAT</item>
+        <item>yayıncılık/basın|SANAT</item>
+        <item>yeni medya|SANAT</item>
+        <item>sanat/kültür dergileri|SANAT</item>
+        <item>moda|YAŞAM_TARZI</item>
+        <item>sosyal/politik meseleler/ekonomi|DİĞERLERİ</item>
+        <item>dergiler/raporlar/belgesel|HABER</item>
+        <item>ekonomi/sosyal danışma|DİĞERLERİ</item>
+        <item>dikkat çeken kişiler|DİĞERLERİ</item>
+        <item>eğitim/bilim/gerçeğe dayalı konular|EĞİTİM</item>
+        <item>doğa/hayvanlar/çevre|HAYVAN_VAHŞİ_YAŞAM</item>
+        <item>teknoloji/doğa bilimleri|TEKNİK_BİLİM</item>
+        <item>tıp/fizyoloji/psikoloji|TEKNİK_BİLİM</item>
+        <item>yabancı ülkeler/keşifler|EĞİTİM</item>
+        <item>sosyal/ruhsal bilimler|TEKNİK_BİLİM</item>
+        <item>ileri eğitim|EĞİTİM</item>
+        <item>diller|EĞİTİM</item>
+        <item>boş zaman hobileri|YAŞAM_TARZI</item>
+        <item>turizm/seyahat|SEYAHAT</item>
+        <item>el sanatları|YAŞAM_TARZI</item>
+        <item>araba kullanma|YAŞAM_TARZI</item>
+        <item>formda olma ve sağlık|YAŞAM_TARZI</item>
+        <item>yemek pişirme|YAŞAM_TARZI</item>
+        <item>reklam/alışveriş|ALIŞVERİŞ</item>
+        <item>bahçe işleri|YAŞAM_TARZI</item>
+        <item>orijinal dil|DİĞERLERİ</item>
+        <item>siyah beyaz|DİĞERLERİ</item>
+        <item>yayınlanmamış|DİĞERLERİ</item>
+        <item>canlı yayın|DİĞERLERİ</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB to canonical genre -->
+    <string-array name="genre_mapping_isdb">
+        <item>Animasyon|FİLMLER</item>
+        <item>Beyzbol|SPOR</item>
+        <item>Çocuk şarkısı|MÜZİK</item>
+        <item>Klasik, opera|MÜZİK</item>
+        <item>Yemek programı|EĞLENCE</item>
+        <item>Komedi programı|EĞLENCE</item>
+        <item>Komik hikaye, Eğlence|EĞLENCE</item>
+        <item>Bilgisayar, TV oyunları|TEKNİK_BİLİM</item>
+        <item>Görüşme, diller|EĞİTİM</item>
+        <item>Dans, Bale|EĞLENCE</item>
+        <item>Tartışma, konferans|HABER</item>
+        <item>Ekonomi, piyasa raporu|HABER</item>
+        <item>Eğitim sorunu|EĞİTİM</item>
+        <item>Etkinlikler|EĞLENCE</item>
+        <item>Moda|YAŞAM_TARZI</item>
+        <item>Halk müziği, dünya müziği|MÜZİK</item>
+        <item>Oyun|OYUN</item>
+        <item>Bahçe işleri, evcil hayvan, el sanatları|YAŞAM_TARZI</item>
+        <item>Golf|SPOR</item>
+        <item>Dedikodu/magazin programı|EĞLENCE</item>
+        <item>Gurme, yemek pişirme|YAŞAM_TARZI</item>
+        <item>Sağlık, tıbbi tedavi|YAŞAM_TARZI</item>
+        <item>Hobi/Eğitim|YAŞAM_TARZI</item>
+        <item>At yarışı, genel yarış|SPOR</item>
+        <item>Japon animeleri|AİLE_ÇOCUKLAR</item>
+        <item>Japon halk şarkısı, Japon geleneksel müziği|MÜZİK</item>
+        <item>Japon satrancı (shogi) ve "go"|OYUN</item>
+        <item>Japon dramaları|DRAMA</item>
+        <item>Japon filmleri|FİLMLER</item>
+        <item>Japon rock, pop müziği|MÜZİK</item>
+        <item>Caz, karışık|MÜZİK</item>
+        <item>Ortaokul ve lise öğrencileri|EĞİTİM</item>
+        <item>Kabuki, Klasik drama|DRAMA</item>
+        <item>Karaoke, amatör ses yarışmaları|MÜZİK</item>
+        <item>Ömür boyu eğitim, nitelikler|EĞİTİM</item>
+        <item>Küçük çocuklar, okul çocukları|EĞİTİM</item>
+        <item>Canlı konser|MÜZİK</item>
+        <item>Yaşam, ev|YAŞAM_TARZI</item>
+        <item>Yerel program|HABER</item>
+        <item>Mah-jong, pinball oyunları|OYUN</item>
+        <item>Maraton, atletizm sporları, yüzme|SPOR</item>
+        <item>Deniz sporları, kış sporları|SPOR</item>
+        <item>Modern drama, Batı tarzı drama|DRAMA</item>
+        <item>Motor sporları|SPOR</item>
+        <item>Müzikal|MÜZİK</item>
+        <item>Müzik, sanat, endüstriyel sanat|SANAT</item>
+        <item>Müzikli eğlence|EĞLENCE</item>
+        <item>Haber analizi|HABER</item>
+        <item>Olimpik, uluslararası oyunlar|SPOR</item>
+        <item>Diğer top oyunları|SPOR</item>
+        <item>Yabancı animasyon|AİLE_ÇOCUKLAR</item>
+        <item>Yabancı dramalar|DRAMA</item>
+        <item>Yabancı, uluslararası rapor|HABER</item>
+        <item>Yabancı filmler|FİLMLER</item>
+        <item>Yabancı rock, pop müzik|MÜZİK</item>
+        <item>Dönem dramaları|DRAMA</item>
+        <item>Politika, millet meclisi|HABER</item>
+        <item>Popüler şarkılar, Japon popüler şarkıları (enka şarkıları)|MÜZİK</item>
+        <item>Yarışma|OYUN</item>
+        <item>Müzik sıralama, isteme|MÜZİK</item>
+        <item>Normal, genel|HABER</item>
+        <item>Alışveriş, posta siparişi işi|ALIŞVERİŞ</item>
+        <item>Futbol|SPOR</item>
+        <item>Özel efektler|AİLE_ÇOCUKLAR</item>
+        <item>Özel program, belgesel|HABER</item>
+        <item>Özel rapor|HABER</item>
+        <item>Spor haberleri|HABER</item>
+        <item>Sumo, mücadele sporları|SPOR</item>
+        <item>Sohbet eğlencesi|EĞLENCE</item>
+        <item>Seyahat eğlencesi|EĞLENCE</item>
+        <item>Trafik raporu|HABER</item>
+        <item>Gezi, balıkçılık, dış mekan eğlencesi|HAYVAN_VAHŞİ_YAŞAM</item>
+        <item>Üniversite öğrencileri, sınavlar|EĞİTİM</item>
+        <item>Hava durumu|HABER</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB in Brazil to canonical genre -->
+    <string-array name="genre_mapping_isdb_br">
+        <item>Biografia|HABERLER</item>
+        <item>Culinária|YAŞAM_TARZI</item>
+        <item>Documentário|HABERLER</item>
+        <item>Educativo|EĞİTİM</item>
+        <item>Erótico|FİLMLER</item>
+        <item>Esporte|SPOR</item>
+        <item>Filme|FİLMLER</item>
+        <item>Game show|OYUN</item>
+        <item>Humorístico|KOMEDİ</item>
+        <item>Infantil|AİLE_ÇOCUKLAR</item>
+        <item>Informação|YAŞAM_TARZI</item>
+        <item>Jornalismo|HABERLER</item>
+        <item>Minissérie|DRAMA</item>
+        <item>Moda|YAŞAM_TARZI</item>
+        <item>Müzikal|MÜZİK</item>
+        <item>Premiação|EĞLENCE</item>
+        <item>Reality show|EĞLENCE</item>
+        <item>Religioso|YAŞAM_TARZI</item>
+        <item>Reportagem|HABERLER</item>
+        <item>Kırsal|YAŞAM_TARZI</item>
+        <item>Saúde|YAŞAM_TARZI</item>
+        <item>Série|DRAMA</item>
+        <item>Série/seriado|DRAMA</item>
+        <item>Show|EĞLENCE</item>
+        <item>Telejornais|HABERLER</item>
+        <item>Televendas|ALIŞVERİŞ</item>
+        <item>Turismo|SEYAHAT</item>
+        <item>Variedade|EĞLENCE</item>
+        <item>Oditoryum|EĞLENCE</item>
+        <item>Ödüller|EĞLENCE</item>
+        <item>Biyografi|HABERLER</item>
+        <item>Çocuk|AİLE_ÇOCUKLAR</item>
+        <item>Çocuklar|AİLE_ÇOCUKLAR</item>
+        <item>Komedi|KOMEDİ</item>
+        <item>Yemek|YAŞAM_TARZI</item>
+        <item>Country|YAŞAM_TARZI</item>
+        <item>Tartışma/röportaj|HABERLER</item>
+        <item>Tartışma|HABERLER</item>
+        <item>Belgesel|HABER</item>
+        <item>Eğitim|EĞİTİM</item>
+        <item>Öğretici|EĞİTİM</item>
+        <item>Mühendislik hizmetleri|TEKNOLOJİ_BİLİM</item>
+        <item>Erotik|FİLMLER</item>
+        <item>Moda|YAŞAM_TARZI</item>
+        <item>Feminen|EĞLENCE</item>
+        <item>Game show|OYUN</item>
+        <item>Sağlık|YAŞAM_TARZI</item>
+        <item>Mizah|KOMEDİ</item>
+        <item>Bilgi|YAŞAM_TARZI</item>
+        <item>Röportaj|HABERLER</item>
+        <item>Gazetecilik|HABERLER</item>
+        <item>Yapılışı|EĞLENCE</item>
+        <item>Mini dizi|DRAMA</item>
+        <item>Mini Dizi|DRAMA</item>
+        <item>Film|FİLM</item>
+        <item>Film|FİLMLER</item>
+        <item>Müzikal|EĞLENCE</item>
+        <item>Haber|HABER</item>
+        <item>Ödül|ALIŞVERİŞ</item>
+        <item>Çekiliş|ALIŞVERİŞ</item>
+        <item>Çekiliş, televizyon satışı, ödül|ALIŞVERİŞ</item>
+        <item>Reality show|EĞLENCE</item>
+        <item>Din|YAŞAM_TARZI</item>
+        <item>Habercilik|HABERLER</item>
+        <item>Haber|HABERLER</item>
+        <item>Kırsal|YAŞAM_TARZI</item>
+        <item>Dizi|DRAMA</item>
+        <item>Dizi / TV show|DRAMA</item>
+        <item>Show|EĞLENCE</item>
+        <item>Pembe dizi|DRAMA</item>
+        <item>Spor|SPOR</item>
+        <item>Spor|SPOR</item>
+        <item>Telesatış|ALIŞVERİŞ</item>
+        <item>Televizyon satışı|ALIŞVERİŞ</item>
+        <item>Turizm|SEYAHAT</item>
+        <item>Seyahat|SEYAHAT</item>
+        <item>TV haberleri|HABERLER</item>
+        <item>Çeşitli|EĞLENCE</item>
+        <item>Varyete gösterisi|EĞLENCE</item>
+    </string-array>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015, Qualcomm Technologies, Inc. All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<checkitem xmlns:android="http://schemas.android.com/apk/res/android"
+    label="Backlight brightness" function="brightnessGet" expect="102" expect_type="3">
+    <dialog title="@string/dialog_edit_label">
+        <view info="Backlight brightness">
+            <edit function="brightnessGet" />
+        </view>
+        <positive label="@android:string/ok" function="brightnessSet" params="(EditContent)"
+            delay_millis="2000" />
+        <negative label="@android:string/cancel" />
+    </dialog>
+</checkitem>

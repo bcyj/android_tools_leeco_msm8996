@@ -1,0 +1,2562 @@
+/*****************************************************************************
+  @FILE     sns_reg_api.idl
+
+  @BRIEF    Sensors Registry APIs
+
+  @DESCRIPTION
+  This file describes the messages which defines the Sensors Registry APIs.
+  These APIs allow clients to store and retrieve data in the registry through
+  the Sensors Registry Sevice.
+
+  The messages defined herin will be passed to the Sensor framework using
+  the sensor1_write() API.
+
+  @COPYRIGHT
+  Copyright (c) 2010-2014 Qualcomm Technologies, Inc.  All Rights Reserved
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+include "sns_common_v01.idl";
+
+/**
+ * Current version of the registry.  Must be incremented with each atomic change
+ * to the list of items contained by the registry.  Version '1' refers to the last
+ * version without versioning information.
+ */
+revision 32;
+
+/** Indication status code
+  */
+const SNS_REG_IND_STATUS_OK                      = 0;
+const SNS_REG_IND_STATUS_RD_ERR                  = 1;
+const SNS_REG_IND_STATUS_WR_ERR                  = 2;
+const SNS_REG_IND_STATUS_INVALID                 = 3;
+
+/** Constant declaration
+  */
+const SNS_REG_MAX_ITEM_BYTE_COUNT                = 8;
+const SNS_REG_MAX_GROUP_BYTE_COUNT               = 256;
+
+/** Group ID's for SMGR
+*/
+
+
+/** Group ID's required by SMGR for Accel Sensor
+*/
+const SNS_REG_SMGR_GROUP_ACCEL                   =  0;
+const SNS_REG_SMGR_GROUP_ACCEL_2                 =  1;
+const SNS_REG_SMGR_GROUP_ACCEL_3                 =  2;
+const SNS_REG_SMGR_GROUP_ACCEL_4                 =  3;
+const SNS_REG_SMGR_GROUP_ACCEL_5                 =  4;
+
+/** Group ID's required by SMGR for Gyro Sensor
+*/
+const SNS_REG_SMGR_GROUP_GYRO                    =  10;
+const SNS_REG_SMGR_GROUP_GYRO_2                  =  11;
+const SNS_REG_SMGR_GROUP_GYRO_3                  =  12;
+const SNS_REG_SMGR_GROUP_GYRO_4                  =  13;
+const SNS_REG_SMGR_GROUP_GYRO_5                  =  14;
+
+/** Group ID's required by SMGR for Mag Sensor
+*/
+const SNS_REG_SMGR_GROUP_MAG                     =  20;
+const SNS_REG_SMGR_GROUP_MAG_2                   =  21;
+const SNS_REG_SMGR_GROUP_MAG_3                   =  22;
+const SNS_REG_SMGR_GROUP_MAG_4                   =  23;
+const SNS_REG_SMGR_GROUP_MAG_5                   =  24;
+
+/** Group ID's required by SMGR for Pressure Sensor
+*/
+const SNS_REG_SMGR_GROUP_PRESSURE                =  30;
+const SNS_REG_SMGR_GROUP_PRESSURE_2              =  31;
+const SNS_REG_SMGR_GROUP_PRESSURE_3              =  32;
+const SNS_REG_SMGR_GROUP_PRESSURE_4              =  33;
+const SNS_REG_SMGR_GROUP_PRESSURE_5              =  34;
+
+/** Group ID's required by SMGR for ALS/Prox Sensor
+*/
+const SNS_REG_SMGR_GROUP_PROX_LIGHT              =  40;
+const SNS_REG_SMGR_GROUP_PROX_LIGHT_2            =  41;
+const SNS_REG_SMGR_GROUP_PROX_LIGHT_3            =  42;
+const SNS_REG_SMGR_GROUP_PROX_LIGHT_4            =  43;
+const SNS_REG_SMGR_GROUP_PROX_LIGHT_5            =  44;
+
+/** Group ID's for items not specific to any one sensor
+*/
+const SNS_REG_GROUP_SENSOR_TEST                  =  50;
+
+/** Group ID's required by SMGR for Humidity Sensor
+*/
+const SNS_REG_SMGR_GROUP_HUMIDITY                =  60;
+const SNS_REG_SMGR_GROUP_HUMIDITY_2              =  61;
+const SNS_REG_SMGR_GROUP_HUMIDITY_3              =  62;
+const SNS_REG_SMGR_GROUP_HUMIDITY_4              =  63;
+const SNS_REG_SMGR_GROUP_HUMIDITY_5              =  64;
+
+/** Group ID's required by SMGR for RGB Sensor
+*/
+const SNS_REG_SMGR_GROUP_RGB                     =  70;
+const SNS_REG_SMGR_GROUP_RGB_2                   =  71;
+const SNS_REG_SMGR_GROUP_RGB_3                   =  72;
+const SNS_REG_SMGR_GROUP_RGB_4                   =  73;
+const SNS_REG_SMGR_GROUP_RGB_5                   =  74;
+
+/** Group ID's required by SMGR for SAR Sensor
+*/
+const SNS_REG_SMGR_GROUP_SAR                     =  80;
+const SNS_REG_SMGR_GROUP_SAR_2                   =  81;
+const SNS_REG_SMGR_GROUP_SAR_3                   =  82;
+const SNS_REG_SMGR_GROUP_SAR_4                   =  83;
+const SNS_REG_SMGR_GROUP_SAR_5                   =  84;
+
+/** Group ID's required by SMGR for HALL Effect Sensor
+*/
+const SNS_REG_SMGR_GROUP_HALL_EFFECT             =  90;
+const SNS_REG_SMGR_GROUP_HALL_EFFECT_2           =  91;
+const SNS_REG_SMGR_GROUP_HALL_EFFECT_3           =  92;
+const SNS_REG_SMGR_GROUP_HALL_EFFECT_4           =  93;
+const SNS_REG_SMGR_GROUP_HALL_EFFECT_5           =  94;
+
+/** Group ID's required by SMGR for Heart Rate Sensor
+*/
+const SNS_REG_SMGR_GROUP_HEART_RATE              =  100;
+const SNS_REG_SMGR_GROUP_HEART_RATE_2            =  101;
+const SNS_REG_SMGR_GROUP_HEART_RATE_3            =  102;
+const SNS_REG_SMGR_GROUP_HEART_RATE_4            =  103;
+const SNS_REG_SMGR_GROUP_HEART_RATE_5            =  104;
+
+/** Group ID's required by device drivers. All group ID's used
+    by device drivers must start from 1000 onwards.
+*/
+
+/** Group ID's required by Accel device drivers
+*/
+const SNS_REG_DRIVER_GROUP_ACCEL                   =  1000;
+const SNS_REG_DRIVER_GROUP_ACCEL_2                 =  1001;
+const SNS_REG_DRIVER_GROUP_ACCEL_3                 =  1002;
+const SNS_REG_DRIVER_GROUP_ACCEL_4                 =  1003;
+const SNS_REG_DRIVER_GROUP_ACCEL_5                 =  1004;
+
+/** Group ID's required by Gyro device drivers
+*/
+const SNS_REG_DRIVER_GROUP_GYRO                    =  1010;
+const SNS_REG_DRIVER_GROUP_GYRO_2                  =  1011;
+const SNS_REG_DRIVER_GROUP_GYRO_3                  =  1012;
+const SNS_REG_DRIVER_GROUP_GYRO_4                  =  1013;
+const SNS_REG_DRIVER_GROUP_GYRO_5                  =  1014;
+
+/** Group ID's required by Mag device drivers
+*/
+const SNS_REG_DRIVER_GROUP_MAG                     =  1020;
+const SNS_REG_DRIVER_GROUP_MAG_2                   =  1021;
+const SNS_REG_DRIVER_GROUP_MAG_3                   =  1022;
+const SNS_REG_DRIVER_GROUP_MAG_4                   =  1023;
+const SNS_REG_DRIVER_GROUP_MAG_5                   =  1024;
+
+/** Group ID's required by pressure device drivers
+*/
+const SNS_REG_DRIVER_GROUP_PRESSURE                =  1030;
+const SNS_REG_DRIVER_GROUP_PRESSURE_2              =  1031;
+const SNS_REG_DRIVER_GROUP_PRESSURE_3              =  1032;
+const SNS_REG_DRIVER_GROUP_PRESSURE_4              =  1033;
+const SNS_REG_DRIVER_GROUP_PRESSURE_5              =  1034;
+
+/** Group ID's required by ALS/Prox device drivers
+*/
+const SNS_REG_DRIVER_GROUP_PROX_LIGHT              =  1040;
+const SNS_REG_DRIVER_GROUP_PROX_LIGHT_2            =  1041;
+const SNS_REG_DRIVER_GROUP_PROX_LIGHT_3            =  1042;
+const SNS_REG_DRIVER_GROUP_PROX_LIGHT_4            =  1043;
+const SNS_REG_DRIVER_GROUP_PROX_LIGHT_5            =  1044;
+
+/** Group IDs: IR Gesture
+*/
+const SNS_REG_DRIVER_GROUP_IR_GESTURE              =  1050;
+const SNS_REG_DRIVER_GROUP_IR_GESTURE_2            =  1051;
+const SNS_REG_DRIVER_GROUP_IR_GESTURE_3            =  1052;
+const SNS_REG_DRIVER_GROUP_IR_GESTURE_4            =  1053;
+const SNS_REG_DRIVER_GROUP_IR_GESTURE_5            =  1054;
+
+/** Group IDs: Tap
+*/
+const SNS_REG_DRIVER_GROUP_TAP                     =  1060;
+const SNS_REG_DRIVER_GROUP_TAP_2                   =  1061;
+const SNS_REG_DRIVER_GROUP_TAP_3                   =  1062;
+const SNS_REG_DRIVER_GROUP_TAP_4                   =  1063;
+const SNS_REG_DRIVER_GROUP_TAP_5                   =  1064;
+
+/** Group IDs: Humidity
+*/
+const SNS_REG_DRIVER_GROUP_HUMIDITY                =  1070;
+const SNS_REG_DRIVER_GROUP_HUMIDITY_2              =  1071;
+const SNS_REG_DRIVER_GROUP_HUMIDITY_3              =  1072;
+const SNS_REG_DRIVER_GROUP_HUMIDITY_4              =  1073;
+const SNS_REG_DRIVER_GROUP_HUMIDITY_5              =  1074;
+
+/** Group IDs: RGB
+*/
+const SNS_REG_DRIVER_GROUP_RGB                     =  1080;
+const SNS_REG_DRIVER_GROUP_RGB_2                   =  1081;
+const SNS_REG_DRIVER_GROUP_RGB_3                   =  1082;
+const SNS_REG_DRIVER_GROUP_RGB_4                   =  1083;
+const SNS_REG_DRIVER_GROUP_RGB_5                   =  1084;
+
+/** Group IDs: SAR
+*/
+const SNS_REG_DRIVER_GROUP_SAR                     =  1090;
+const SNS_REG_DRIVER_GROUP_SAR_2                   =  1091;
+const SNS_REG_DRIVER_GROUP_SAR_3                   =  1092;
+const SNS_REG_DRIVER_GROUP_SAR_4                   =  1093;
+const SNS_REG_DRIVER_GROUP_SAR_5                   =  1094;
+
+/** Group IDs: HALL EFFECT
+*/
+const SNS_REG_DRIVER_GROUP_HALL_EFFECT             =  1100;
+const SNS_REG_DRIVER_GROUP_HALL_EFFECT_2           =  1101;
+const SNS_REG_DRIVER_GROUP_HALL_EFFECT_3           =  1102;
+const SNS_REG_DRIVER_GROUP_HALL_EFFECT_4           =  1103;
+const SNS_REG_DRIVER_GROUP_HALL_EFFECT_5           =  1104;
+
+/** Group ID's required by Rotation Vector
+*/
+const SNS_REG_DRIVER_GROUP_GAME_RV                 =  1110;
+const SNS_REG_DRIVER_GROUP_GAME_RV_2               =  1111;
+const SNS_REG_DRIVER_GROUP_GAME_RV_3               =  1112;
+const SNS_REG_DRIVER_GROUP_GAME_RV_4               =  1113;
+const SNS_REG_DRIVER_GROUP_GAME_RV_5               =  1114;
+
+/** Group ID's required by Heart Rate
+*/
+const SNS_REG_DRIVER_GROUP_HEART_RATE              =  1200;
+const SNS_REG_DRIVER_GROUP_HEART_RATE_2            =  1201;
+const SNS_REG_DRIVER_GROUP_HEART_RATE_3            =  1202;
+const SNS_REG_DRIVER_GROUP_HEART_RATE_4            =  1203;
+const SNS_REG_DRIVER_GROUP_HEART_RATE_5            =  1204;
+
+/** Group ID's required by SAM for QMD algorithms */
+// Based on Accel
+const SNS_REG_SAM_GROUP_AMD                        =  2000;
+const SNS_REG_SAM_GROUP_VMD                        =  2001;
+const SNS_REG_SAM_GROUP_RMD                        =  2002;
+// Based on Gyro
+const SNS_REG_SAM_GROUP_GYRO_AMD                   =  2050;
+
+
+/** Group ID's required by SCM for Factory Calibration */
+const SNS_REG_SCM_GROUP_ACCEL_FAC_CAL_PARAMS       =  0;
+const SNS_REG_SCM_GROUP_GYRO_FAC_CAL_PARAMS        =  10;
+const SNS_REG_SCM_GROUP_MAG_FAC_CAL_PARAMS         =  20;
+
+/** Group ID's required by SCM for GYRO_CAL */
+const SNS_REG_SCM_GROUP_GYRO_CAL_ALGO                   = 2500;
+const SNS_REG_SCM_GROUP_GYRO_CAL                        = 2500;
+
+/** Group ID's required by SCM for Accel Sensor Dyanmic Bias Calibration
+*/
+const SNS_REG_SCM_GROUP_ACCEL_DYN_CAL_PARAMS              = 2600;
+
+/** Group ID's required by SCM for Gyro Sensor Dyanmic Bias Calibration
+*/
+const SNS_REG_SCM_GROUP_GYRO_DYN_CAL_PARAMS               = 2610;
+
+/** Group ID's required by SAM for filtering magnetic vector
+*/
+const SNS_REG_SAM_GROUP_FMV_PARAMS = 2620;
+
+/** Group ID's required by SAM for gravity vector
+*/
+const SNS_REG_SAM_GROUP_GRAVITY_VECTOR_PARAMS = 2630;
+
+/** Group ID's required by SAM for orientation
+*/
+const SNS_REG_SAM_GROUP_ORIENTATION_PARAMS = 2640;
+
+/** Group ID's required by SAM for Gyro Tap Algorithm
+*/
+const SNS_REG_SAM_GROUP_GYRO_TAP = 2650;
+
+/**  Group ID's required by SCM for ACCEL_CAL  */
+const SNS_REG_SCM_GROUP_ACCEL_CAL_ALGO                   = 2660;
+
+/** Group ID's required by SAM for Pedometer Algorithm  */
+const SNS_REG_SAM_GROUP_PED = 2670;
+
+/** Group ID's required by SAM for PAM Algorithm  */
+const SNS_REG_SAM_GROUP_PAM = 2680;
+
+/** Group IDs required by Sensor Single Image */
+const SNS_REG_GROUP_SSI_SMGR_CFG           = 2690;
+const SNS_REG_GROUP_SSI_SMGR_CFG_2         = 2691;
+const SNS_REG_GROUP_SSI_DRVID_MAP          = 2691; /**< UNUSED */
+const SNS_REG_GROUP_SSI_DEVINFO_ACCEL      = 2692;
+const SNS_REG_GROUP_SSI_DEVINFO_GYRO       = 2693;
+const SNS_REG_GROUP_SSI_DEVINFO_MAG        = 2694;
+const SNS_REG_GROUP_SSI_DEVINFO_PROX_LIGHT = 2695;
+const SNS_REG_GROUP_SSI_DEVINFO_PRESSURE   = 2696;
+const SNS_REG_GROUP_SSI_DEVINFO_IR_GESTURE = 2697;
+const SNS_REG_GROUP_SSI_DEVINFO_TAP        = 2698;
+const SNS_REG_GROUP_SSI_DEVINFO_HUMIDITY   = 2699;
+
+/** Group IDs required by SSI for sensor dependent registry configuration */
+const SNS_REG_GROUP_SSI_SENSOR_DEP_CFG0    = 2700;
+const SNS_REG_GROUP_SSI_SENSOR_DEP_CFG1    = 2701;
+
+/** Group IDs required by SSI for GPIO specific configuration
+ * The following value was added in revision 10. */
+const SNS_REG_GROUP_SSI_GPIO_CFG           = 2800;
+
+/** Group ID's required by SAM for Basic Gestures Algorithm  */
+const SNS_REG_SAM_GROUP_BASIC_GESTURES = 2900;
+
+/** Group ID's required by SAM for Facing Algorithm  */
+const SNS_REG_SAM_GROUP_FACING = 2910;
+
+/** Group ID's required by SAM for Quaternion Algorithm  */
+const SNS_REG_SAM_GROUP_QUATERNION = 2920;
+
+/** Group ID's required by SAM for Rotation Vector Algorithm  */
+const SNS_REG_SAM_GROUP_ROTATION_VECTOR = 2930;
+
+/** Group ID's required by SAM for Distance Bound Algorithm  */
+const SNS_REG_SAM_GROUP_DISTANCE_BOUND = 2940;
+
+/** Group ID's required by SAM for Coarse Motion Classifier (CMC) Algorithm  */
+const SNS_REG_SAM_GROUP_CMC = 2950;
+
+/** Group ID's required by SAM for Game Rotation Vector (GameRV) Algorithm  */
+const SNS_REG_SAM_GROUP_GAME_ROTATION_VECTOR = 2960;
+
+/** Group ID's required by SCM for QMAG_CAL */
+const SNS_REG_SCM_GROUP_QMAG_CAL_ALGO = 2970;
+const SNS_REG_SCM_GROUP_QMAG_CAL_STATE = 2971;
+
+/**Group ID's reqiored by SCM for MAG_DYN_CAL_PARAMS*/
+const SNS_REG_SCM_GROUP_MAG_DYN_CAL_PARAMS = 2980;
+
+/**Group ID's required by SAM for Significant Motion Detect algorithm*/
+const SNS_REG_SAM_GROUP_SMD = 2990;
+
+/** Group IDs required by Sensor Single Image. continued */
+const SNS_REG_GROUP_SSI_DEVINFO_RGB        = 3000;
+
+/** Group IDs required by Sensor Single Image. */
+const SNS_REG_GROUP_SSI_DEVINFO_SAR        = 3010;
+
+/** Group IDs required by Sensor Single Image. */
+const SNS_REG_GROUP_SSI_DEVINFO_HALL_EFFECT   = 3020;
+
+/** Group ID's required by SAM for Pedestrian Alignment Algorithm  */
+const SNS_REG_SAM_GROUP_PED_ALIGNMENT = 3030;
+
+/** Group IDs required by SAM for Tilt Detector Algorithm */
+const SNS_REG_SAM_GROUP_TILT_DETECTOR = 3040;
+
+/** Group IDs required by Sensor Single Image */
+const SNS_REG_GROUP_SSI_SMGR_CFG_3         = 3050;
+
+/** Group IDs required by Sensor Single Image. */
+const SNS_REG_GROUP_SSI_DEVINFO_HEART_RATE = 3060;
+
+/** Group ID's required by Registry Settings/Meta Data */
+const SNS_REG_GROUP_SETTINGS = 65535;
+
+
+/** Item ID's
+*/
+
+/** Item ID's corresponding to group SNS_REG_SMGR_GROUP_ACCEL_V01 & SNS_REG_SCM_GROUP_ACCEL_FAC_CAL_PARAMS (Group Id:0)
+*/
+const SNS_REG_ITEM_ACC_X_BIAS                     = 0;
+const SNS_REG_ITEM_ACC_Y_BIAS                     = 1;
+const SNS_REG_ITEM_ACC_Z_BIAS                     = 2;
+const SNS_REG_ITEM_ACC_X_SCALE                    = 3;
+const SNS_REG_ITEM_ACC_Y_SCALE                    = 4;
+const SNS_REG_ITEM_ACC_Z_SCALE                    = 5;
+
+/** Item ID's corresponding to group SNS_REG_SCM_GROUP_ACCEL_DYN_CAL (Group Id: 2600)
+Note: Temperature specific dynamic cal parameters defined later in this file*/
+
+const SNS_REG_ITEM_ACC_X_DYN_BIAS                 = 6;
+const SNS_REG_ITEM_ACC_Y_DYN_BIAS                 = 7;
+const SNS_REG_ITEM_ACC_Z_DYN_BIAS                 = 8;
+const SNS_REG_ITEM_ACC_X_DYN_SCALE                = 9;
+const SNS_REG_ITEM_ACC_Y_DYN_SCALE                = 10;
+const SNS_REG_ITEM_ACC_Z_DYN_SCALE                = 11;
+
+/** Item ID's corresponding to group SNS_REG_GROUP_SENSOR_TEST (Group Id: 50)
+*/
+const SNS_REG_ITEM_RAW_DATA_MODE                  = 50;
+const SNS_REG_ITEM_TEST_EN_FLAGS                  = 51;
+
+/** Item ID's corresponding to group SNS_REG_DRIVER_GROUP_PROX_LIGHT_V01 (Group Id: 1040)
+*/
+const SNS_REG_ITEM_ALP_VISIBLE_LIGHT_TRANS_RATIO  = 100;
+const SNS_REG_ITEM_ALP_IR_LIGHT_TRANS_RATIO       = 101;
+const SNS_REG_ITEM_ALP_DC_OFFSET                  = 102;
+const SNS_REG_ITEM_ALP_NEAR_THRESHOLD             = 103;
+const SNS_REG_ITEM_ALP_FAR_THRESHOLD              = 104;
+const SNS_REG_ITEM_ALP_PRX_FACTOR                 = 105;
+const SNS_REG_ITEM_ALP_ALS_FACTOR                 = 106;
+const SNS_REG_ITEM_ALP_DS1                        = 107;
+const SNS_REG_ITEM_ALP_DS2                        = 108;
+const SNS_REG_ITEM_ALP_DS3                        = 109;
+const SNS_REG_ITEM_ALP_DS4                        = 110;
+const SNS_REG_ITEM_ALP_DS5                        = 111;
+const SNS_REG_ITEM_ALP_DS6                        = 112;
+const SNS_REG_ITEM_ALP_DS7                        = 113;
+const SNS_REG_ITEM_ALP_DS8                        = 114;
+const SNS_REG_ITEM_ALP_DS9                        = 115;
+const SNS_REG_ITEM_ALP_DS10                       = 116;
+const SNS_REG_ITEM_ALP_DS11                       = 117;
+const SNS_REG_ITEM_ALP_DS12                       = 118;
+const SNS_REG_ITEM_ALP_DS13                       = 119;
+const SNS_REG_ITEM_ALP_DS14                       = 120;
+const SNS_REG_ITEM_ALP_DS15                       = 121;
+const SNS_REG_ITEM_ALP_DS16                       = 122;
+const SNS_REG_ITEM_ALP_DS17                       = 123;
+const SNS_REG_ITEM_ALP_DS18                       = 124;
+const SNS_REG_ITEM_ALP_DS19                       = 125;
+const SNS_REG_ITEM_ALP_DS20                       = 126;
+const SNS_REG_ITEM_ALP_DS21                       = 127;
+const SNS_REG_ITEM_ALP_DS22                       = 128;
+const SNS_REG_ITEM_ALP_DS23                       = 129;
+const SNS_REG_ITEM_ALP_DS24                       = 130;
+const SNS_REG_ITEM_ALP_DS25                       = 131;
+const SNS_REG_ITEM_ALP_DS26                       = 132;
+const SNS_REG_ITEM_ALP_DS27                       = 133;
+const SNS_REG_ITEM_ALP_DS28                       = 134;
+const SNS_REG_ITEM_ALP_DS29                       = 135;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_AMD_V01 (Group Id: 2000)
+*/
+const SNS_REG_ITEM_AMD_DEF_ACC_SAMP_RATE          = 200;
+const SNS_REG_ITEM_AMD_INT_CFG_PARAM1             = 201;
+const SNS_REG_ITEM_AMD_INT_CFG_PARAM2             = 202;
+const SNS_REG_ITEM_AMD_DEF_SENSOR_REPORT_RATE     = 203;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_VMD_V01 (Group Id: 2001)
+*/
+const SNS_REG_ITEM_VMD_DEF_ACC_SAMP_RATE          = 210;
+const SNS_REG_ITEM_VMD_INT_CFG_PARAM1             = 211;
+const SNS_REG_ITEM_VMD_INT_CFG_PARAM2             = 212;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_RMD_V01 (Group Id: 2002)
+*/
+const SNS_REG_ITEM_RMD_DEF_ACC_SAMP_RATE          = 220;
+const SNS_REG_ITEM_RMD_INT_CFG_PARAM1             = 221;
+const SNS_REG_ITEM_RMD_INT_CFG_PARAM2             = 222;
+const SNS_REG_ITEM_RMD_INT_CFG_PARAM3             = 223;
+const SNS_REG_ITEM_RMD_INT_CFG_PARAM4             = 224;
+const SNS_REG_ITEM_RMD_DEF_SENSOR_REPORT_RATE     = 225;
+
+/** Item ID's corresponding to group SNS_REG_SMGR_GROUP_GYRO & SNS_REG_SCM_GROUP_GYRO_FAC_CAL_PARAMS (Group Id: 10)
+*/
+const SNS_REG_ITEM_GYRO_X_BIAS                    = 300;
+const SNS_REG_ITEM_GYRO_Y_BIAS                    = 301;
+const SNS_REG_ITEM_GYRO_Z_BIAS                    = 302;
+const SNS_REG_ITEM_GYRO_X_SCALE                   = 303;
+const SNS_REG_ITEM_GYRO_Y_SCALE                   = 304;
+const SNS_REG_ITEM_GYRO_Z_SCALE                   = 305;
+
+/** Item ID's corresponding to group SNS_REG_SCM_GROUP_GYRO_DYN_CAL (Group Id: 2650)
+*/
+const SNS_REG_ITEM_GYRO_X_DYN_BIAS                = 306;
+const SNS_REG_ITEM_GYRO_Y_DYN_BIAS                = 307;
+const SNS_REG_ITEM_GYRO_Z_DYN_BIAS                = 308;
+const SNS_REG_ITEM_GYRO_X_DYN_SCALE               = 309;
+const SNS_REG_ITEM_GYRO_Y_DYN_SCALE               = 310;
+const SNS_REG_ITEM_GYRO_Z_DYN_SCALE               = 311;
+
+/** Item ID's corresponding to group SNS_REG_SCM_GROUP_MAG_FAC_CAL_PARAMS (Group Id: 20)
+*/
+const SNS_REG_ITEM_MAG_FAC_CAL_VERSION                  = 400;
+const SNS_REG_ITEM_MAG_FAC_CAL_BIAS_VALID               = 401;
+const SNS_REG_ITEM_MAG_FAC_CAL_CALIBRATION_MATRIX_VALID = 402;
+const SNS_REG_ITEM_MAG_X_FAC_BIAS                       = 403;
+const SNS_REG_ITEM_MAG_Y_FAC_BIAS                       = 404;
+const SNS_REG_ITEM_MAG_Z_FAC_BIAS                       = 405;
+const SNS_REG_ITEM_MAG_FAC_COMPENSATION_MATRIX_0_0      = 406;
+const SNS_REG_ITEM_MAG_FAC_COMPENSATION_MATRIX_0_1      = 407;
+const SNS_REG_ITEM_MAG_FAC_COMPENSATION_MATRIX_0_2      = 408;
+const SNS_REG_ITEM_MAG_FAC_COMPENSATION_MATRIX_1_0      = 409;
+const SNS_REG_ITEM_MAG_FAC_COMPENSATION_MATRIX_1_1      = 410;
+const SNS_REG_ITEM_MAG_FAC_COMPENSATION_MATRIX_1_2      = 411;
+const SNS_REG_ITEM_MAG_FAC_COMPENSATION_MATRIX_2_0      = 412;
+const SNS_REG_ITEM_MAG_FAC_COMPENSATION_MATRIX_2_1      = 413;
+const SNS_REG_ITEM_MAG_FAC_COMPENSATION_MATRIX_2_2      = 414;
+const SNS_REG_ITEM_MAG_FAC_ACCURACY                     = 415;
+
+/**  Item ID's corresponding to group SNS_REG_SCM_GROUP_GYRO_CAL (Group Id: 2500) */
+const SNS_REG_ITEM_GYRO_CAL_DEF_SAMP_RATE         = 500;
+const SNS_REG_ITEM_GYRO_CAL_DEF_NUM_SAMP          = 501;
+const SNS_REG_ITEM_GYRO_CAL_DEF_VAR_THOLD         = 502;
+const SNS_REG_ITEM_GYRO_CAL_DEF_ENABLE_ALGO       = 503;
+const SNS_REG_ITEM_GYRO_CAL_DEF_SENSOR_REPORT_RATE = 504;
+
+/**  Item ID's corresponding to group SNS_REG_SAM_GROUP_FMV_PARAMS (Group Id: 2620) */
+const SNS_REG_ITEM_FMV_TC_ACCURACY_0              = 600;
+const SNS_REG_ITEM_FMV_TC_ACCURACY_1              = 601;
+const SNS_REG_ITEM_FMV_TC_ACCURACY_2              = 602;
+const SNS_REG_ITEM_FMV_TC_ACCURACY_3              = 603;
+const SNS_REG_ITEM_FMV_TC_ACCURACY_4              = 604;
+const SNS_REG_ITEM_FMV_GYRO_GAP_THRESH            = 605;
+const SNS_REG_ITEM_FMV_MAG_GAP_FACTOR             = 606;
+const SNS_REG_ITEM_FMV_ROT_FOR_ZUPT               = 607;
+const SNS_REG_ITEM_FMV_MAX_MAG_INNOVATION         = 608;
+const SNS_REG_ITEM_FMV_DEF_SENSOR_REPORT_RATE     = 609;
+
+/** Item ID's corresponding to group SNS_REG_DRIVER_GROUP_ACCEL (Group Id: 1000) */
+const SNS_REG_DRIVER_ACCEL_X_ORIENT               = 700;
+const SNS_REG_DRIVER_ACCEL_Y_ORIENT               = 701;
+const SNS_REG_DRIVER_ACCEL_Z_ORIENT               = 702;
+
+/** Item ID's corresponding to group SNS_REG_DRIVER_GROUP_ACCEL (Group Id: 1001) */
+const SNS_REG_DRIVER_ACCEL2_X_ORIENT              = 720;
+const SNS_REG_DRIVER_ACCEL2_Y_ORIENT              = 721;
+const SNS_REG_DRIVER_ACCEL2_Z_ORIENT              = 722;
+
+/** Item ID's corresponding to group SNS_REG_DRIVER_GROUP_GYRO (Group Id: 1010) */
+const SNS_REG_DRIVER_GYRO_X_ORIENT                = 800;
+const SNS_REG_DRIVER_GYRO_Y_ORIENT                = 801;
+const SNS_REG_DRIVER_GYRO_Z_ORIENT                = 802;
+
+/** Item ID's corresponding to group SNS_REG_DRIVER_GROUP_MAG (Group Id: 1020) */
+const SNS_REG_DRIVER_MAG_X_ORIENT                 = 900;
+const SNS_REG_DRIVER_MAG_Y_ORIENT                 = 901;
+const SNS_REG_DRIVER_MAG_Z_ORIENT                 = 902;
+
+/**  Item ID's corresponding to group SNS_REG_SAM_GROUP_GRAVITY_VECTOR_PARAMS (Group Id: 2630) */
+const SNS_REG_ITEM_GRAVITY_VECTOR_INT_CFG_PARAM1     = 1000;
+const SNS_REG_ITEM_GRAVITY_VECTOR_INT_CFG_PARAM2     = 1001;
+const SNS_REG_ITEM_GRAVITY_VECTOR_INT_CFG_PARAM3     = 1002;
+const SNS_REG_ITEM_GRAVITY_VECTOR_INT_CFG_PARAM4     = 1003;
+const SNS_REG_ITEM_GRAVITY_VECTOR_INT_CFG_PARAM5     = 1004;
+const SNS_REG_ITEM_GRAVITY_VECTOR_DEF_SENSOR_REPORT_RATE = 1005;
+
+/**  Item ID's corresponding to group SNS_REG_SAM_GROUP_ORIENTATION_PARAMS (Group Id: 2640) */
+const SNS_REG_ITEM_ORIENTATION_INT_CFG_PARAM1        = 1100;
+const SNS_REG_ITEM_MAG_CAL_LAT_NUM_SAMPLES           = 1101;
+const SNS_REG_ITEM_FUSION_MIN_SAMP_RATE_HZ           = 1102;
+const SNS_REG_ITEM_ORIENTATION_DEF_SENSOR_REPORT_RATE = 1103;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_GYRO_AMD (Group Id: 2050)
+*/
+const SNS_REG_ITEM_GYRO_AMD_INT_CFG_PARAM1        = 1200;
+const SNS_REG_ITEM_GYRO_AMD_INT_CFG_PARAM2        = 1201;
+const SNS_REG_ITEM_GYRO_AMD_INT_CFG_PARAM3        = 1202;
+
+/** How many scenarios do we support for Gyro assisted Tap */
+const SNS_REG_MAX_GYRO_TAP_SCENARIOS              = 3;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_GYRO_TAP (Group Id: 2650) */
+const SNS_REG_GYRO_TAP_VERSION                   = 1300;
+const SNS_REG_GYRO_TAP_SCENARIO_0                = 1301;
+const SNS_REG_GYRO_TAP_FLAGS_0                   = 1302;
+const SNS_REG_GYRO_TAP_TIME_SECS_00              = 1303;
+const SNS_REG_GYRO_TAP_TIME_SECS_01              = 1304;
+const SNS_REG_GYRO_TAP_TIME_SECS_02              = 1305;
+const SNS_REG_GYRO_TAP_TIME_SECS_03              = 1306;
+const SNS_REG_GYRO_TAP_TIME_SECS_04              = 1307;
+const SNS_REG_GYRO_TAP_RATIO_00                  = 1308;
+const SNS_REG_GYRO_TAP_RATIO_01                  = 1309;
+const SNS_REG_GYRO_TAP_THRESH_00                 = 1310;
+const SNS_REG_GYRO_TAP_THRESH_01                 = 1311;
+const SNS_REG_GYRO_TAP_THRESH_02                 = 1312;
+const SNS_REG_GYRO_TAP_THRESH_03                 = 1313;
+const SNS_REG_GYRO_TAP_THRESH_04                 = 1314;
+const SNS_REG_GYRO_TAP_SCENARIO_1                = 1351;
+const SNS_REG_GYRO_TAP_FLAGS_1                   = 1352;
+const SNS_REG_GYRO_TAP_TIME_SECS_10              = 1353;
+const SNS_REG_GYRO_TAP_TIME_SECS_11              = 1354;
+const SNS_REG_GYRO_TAP_TIME_SECS_12              = 1355;
+const SNS_REG_GYRO_TAP_TIME_SECS_13              = 1356;
+const SNS_REG_GYRO_TAP_TIME_SECS_14              = 1357;
+const SNS_REG_GYRO_TAP_RATIO_10                  = 1358;
+const SNS_REG_GYRO_TAP_RATIO_11                  = 1359;
+const SNS_REG_GYRO_TAP_THRESH_10                 = 1360;
+const SNS_REG_GYRO_TAP_THRESH_11                 = 1361;
+const SNS_REG_GYRO_TAP_THRESH_12                 = 1362;
+const SNS_REG_GYRO_TAP_THRESH_13                 = 1363;
+const SNS_REG_GYRO_TAP_THRESH_14                 = 1364;
+const SNS_REG_GYRO_TAP_SCENARIO_2                = 1401;
+const SNS_REG_GYRO_TAP_FLAGS_2                   = 1402;
+const SNS_REG_GYRO_TAP_TIME_SECS_20              = 1403;
+const SNS_REG_GYRO_TAP_TIME_SECS_21              = 1404;
+const SNS_REG_GYRO_TAP_TIME_SECS_22              = 1405;
+const SNS_REG_GYRO_TAP_TIME_SECS_23              = 1406;
+const SNS_REG_GYRO_TAP_TIME_SECS_24              = 1407;
+const SNS_REG_GYRO_TAP_RATIO_20                  = 1408;
+const SNS_REG_GYRO_TAP_RATIO_21                  = 1409;
+const SNS_REG_GYRO_TAP_THRESH_20                 = 1410;
+const SNS_REG_GYRO_TAP_THRESH_21                 = 1411;
+const SNS_REG_GYRO_TAP_THRESH_22                 = 1412;
+const SNS_REG_GYRO_TAP_THRESH_23                 = 1413;
+const SNS_REG_GYRO_TAP_THRESH_24                 = 1414;
+
+/**   Item ID's corresponding to group SNS_REG_SCM_GROUP_ACCEL_CAL (Group Id: 2660)  */
+const SNS_REG_ITEM_ACCEL_CAL_DEF_SAMP_RATE         = 1500;
+const SNS_REG_ITEM_ACCEL_CAL_DEF_ENABLE_ALGO       = 1501;
+
+/** Item ID's corresponding to group SNS_REG_SCM_GROUP_ACCEL_DYN_CAL (Group Id: 2600)
+Continued - Temperature specific dynamic cal parameters */
+
+const SNS_REG_ITEM_ACC_DYN_CAL_HEADER		      = 1606;
+
+const SNS_REG_ITEM_ACC_DYN_CAL_TEMP_BIN_SIZE      = 1607;
+
+const SNS_REG_ITEM_ACC_DYN_CAL_VALID_FLAG_GROUP1  = 1608;
+const SNS_REG_ITEM_ACC_DYN_CAL_TEMP_MIN_GROUP1    = 1609;
+const SNS_REG_ITEM_ACC_X_DYN_BIAS_GROUP1          = 1610;
+const SNS_REG_ITEM_ACC_Y_DYN_BIAS_GROUP1          = 1611;
+const SNS_REG_ITEM_ACC_Z_DYN_BIAS_GROUP1          = 1612;
+const SNS_REG_ITEM_ACC_X_DYN_SCALE_GROUP1         = 1613;
+const SNS_REG_ITEM_ACC_Y_DYN_SCALE_GROUP1         = 1614;
+const SNS_REG_ITEM_ACC_Z_DYN_SCALE_GROUP1         = 1615;
+
+const SNS_REG_ITEM_ACC_DYN_CAL_VALID_FLAG_GROUP2  = 1616;
+const SNS_REG_ITEM_ACC_DYN_CAL_TEMP_MIN_GROUP2    = 1617;
+const SNS_REG_ITEM_ACC_X_DYN_BIAS_GROUP2          = 1618;
+const SNS_REG_ITEM_ACC_Y_DYN_BIAS_GROUP2          = 1619;
+const SNS_REG_ITEM_ACC_Z_DYN_BIAS_GROUP2          = 1620;
+const SNS_REG_ITEM_ACC_X_DYN_SCALE_GROUP2         = 1621;
+const SNS_REG_ITEM_ACC_Y_DYN_SCALE_GROUP2         = 1622;
+const SNS_REG_ITEM_ACC_Z_DYN_SCALE_GROUP2         = 1623;
+
+const SNS_REG_ITEM_ACC_DYN_CAL_VALID_FLAG_GROUP3  = 1624;
+const SNS_REG_ITEM_ACC_DYN_CAL_TEMP_MIN_GROUP3    = 1625;
+const SNS_REG_ITEM_ACC_X_DYN_BIAS_GROUP3          = 1626;
+const SNS_REG_ITEM_ACC_Y_DYN_BIAS_GROUP3          = 1627;
+const SNS_REG_ITEM_ACC_Z_DYN_BIAS_GROUP3          = 1628;
+const SNS_REG_ITEM_ACC_X_DYN_SCALE_GROUP3         = 1629;
+const SNS_REG_ITEM_ACC_Y_DYN_SCALE_GROUP3         = 1630;
+const SNS_REG_ITEM_ACC_Z_DYN_SCALE_GROUP3         = 1631;
+
+const SNS_REG_ITEM_ACC_DYN_CAL_VALID_FLAG_GROUP4  = 1632;
+const SNS_REG_ITEM_ACC_DYN_CAL_TEMP_MIN_GROUP4    = 1633;
+const SNS_REG_ITEM_ACC_X_DYN_BIAS_GROUP4          = 1634;
+const SNS_REG_ITEM_ACC_Y_DYN_BIAS_GROUP4          = 1635;
+const SNS_REG_ITEM_ACC_Z_DYN_BIAS_GROUP4          = 1636;
+const SNS_REG_ITEM_ACC_X_DYN_SCALE_GROUP4         = 1637;
+const SNS_REG_ITEM_ACC_Y_DYN_SCALE_GROUP4         = 1638;
+const SNS_REG_ITEM_ACC_Z_DYN_SCALE_GROUP4         = 1639;
+
+const SNS_REG_ITEM_ACC_DYN_CAL_VALID_FLAG_GROUP5  = 1640;
+const SNS_REG_ITEM_ACC_DYN_CAL_TEMP_MIN_GROUP5    = 1641;
+const SNS_REG_ITEM_ACC_X_DYN_BIAS_GROUP5          = 1642;
+const SNS_REG_ITEM_ACC_Y_DYN_BIAS_GROUP5          = 1643;
+const SNS_REG_ITEM_ACC_Z_DYN_BIAS_GROUP5          = 1644;
+const SNS_REG_ITEM_ACC_X_DYN_SCALE_GROUP5         = 1645;
+const SNS_REG_ITEM_ACC_Y_DYN_SCALE_GROUP5         = 1646;
+const SNS_REG_ITEM_ACC_Z_DYN_SCALE_GROUP5         = 1647;
+
+const SNS_REG_ITEM_ACC_DYN_CAL_VALID_FLAG_GROUP6  = 1648;
+const SNS_REG_ITEM_ACC_DYN_CAL_TEMP_MIN_GROUP6    = 1649;
+const SNS_REG_ITEM_ACC_X_DYN_BIAS_GROUP6          = 1650;
+const SNS_REG_ITEM_ACC_Y_DYN_BIAS_GROUP6          = 1651;
+const SNS_REG_ITEM_ACC_Z_DYN_BIAS_GROUP6          = 1652;
+const SNS_REG_ITEM_ACC_X_DYN_SCALE_GROUP6         = 1653;
+const SNS_REG_ITEM_ACC_Y_DYN_SCALE_GROUP6         = 1654;
+const SNS_REG_ITEM_ACC_Z_DYN_SCALE_GROUP6         = 1655;
+
+const SNS_REG_ITEM_ACC_DYN_CAL_VALID_FLAG_GROUP7  = 1656;
+const SNS_REG_ITEM_ACC_DYN_CAL_TEMP_MIN_GROUP7    = 1657;
+const SNS_REG_ITEM_ACC_X_DYN_BIAS_GROUP7          = 1658;
+const SNS_REG_ITEM_ACC_Y_DYN_BIAS_GROUP7          = 1659;
+const SNS_REG_ITEM_ACC_Z_DYN_BIAS_GROUP7          = 1660;
+const SNS_REG_ITEM_ACC_X_DYN_SCALE_GROUP7         = 1661;
+const SNS_REG_ITEM_ACC_Y_DYN_SCALE_GROUP7         = 1662;
+const SNS_REG_ITEM_ACC_Z_DYN_SCALE_GROUP7         = 1663;
+
+const SNS_REG_ITEM_ACC_DYN_CAL_VALID_FLAG_GROUP8  = 1664;
+const SNS_REG_ITEM_ACC_DYN_CAL_TEMP_MIN_GROUP8    = 1665;
+const SNS_REG_ITEM_ACC_X_DYN_BIAS_GROUP8          = 1666;
+const SNS_REG_ITEM_ACC_Y_DYN_BIAS_GROUP8          = 1667;
+const SNS_REG_ITEM_ACC_Z_DYN_BIAS_GROUP8          = 1668;
+const SNS_REG_ITEM_ACC_X_DYN_SCALE_GROUP8         = 1669;
+const SNS_REG_ITEM_ACC_Y_DYN_SCALE_GROUP8         = 1670;
+const SNS_REG_ITEM_ACC_Z_DYN_SCALE_GROUP8         = 1671;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_PED (Group Id: 2670) */
+const SNS_REG_ITEM_PED_DEF_STEP_THRESHOLD         = 1700;
+const SNS_REG_ITEM_PED_DEF_SWING_THRESHOLD        = 1701;
+const SNS_REG_ITEM_PED_DEF_STEP_PROB_THRESHOLD    = 1702;
+const SNS_REG_ITEM_PED_DEF_SENSOR_REPORT_RATE     = 1703;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_PAM (Group Id: 2680) */
+const SNS_REG_ITEM_PAM_INT_CFG_PARAM1             = 1800;
+const SNS_REG_ITEM_PAM_INT_CFG_PARAM2             = 1801;
+const SNS_REG_ITEM_PAM_INT_CFG_PARAM3             = 1802;
+const SNS_REG_ITEM_PAM_INT_CFG_PARAM4             = 1803;
+
+/** Item IDs corresponding to group SN_REG_GROUP_SSI_SMGR_CFG (Group Id: 2690) */
+const SNS_REG_ITEM_SSI_SMGR_MAJ_VER_NO                = 1900;
+const SNS_REG_ITEM_SSI_SMGR_MIN_VER_NO                = 1901;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_UUID_HIGH            = 1902;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_UUID_LOW             = 1903;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_OFF_TO_IDLE          = 1904;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_IDLE_TO_READY        = 1905;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_I2C_BUS              = 1906;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_REG_GROUP_ID         = 1907;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_CAL_PRI_GROUP_ID     = 1908;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_GPIO1                = 1909;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_GPIO2                = 1910;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_SENSOR_ID            = 1911;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_I2C_ADDRESS          = 1912;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_DATA_TYPE1           = 1913;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_DATA_TYPE2           = 1914;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_RELATED_SENSOR_INDEX = 1915;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_SENSITIVITY_DEFAULT  = 1916;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_FLAGS                = 1917;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_UUID_HIGH            = 1918;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_UUID_LOW             = 1919;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_OFF_TO_IDLE          = 1920;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_IDLE_TO_READY        = 1921;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_I2C_BUS              = 1922;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_REG_GROUP_ID         = 1923;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_CAL_PRI_GROUP_ID     = 1924;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_GPIO1                = 1925;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_GPIO2                = 1926;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_SENSOR_ID            = 1927;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_I2C_ADDRESS          = 1928;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_DATA_TYPE1           = 1929;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_DATA_TYPE2           = 1930;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_RELATED_SENSOR_INDEX = 1931;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_SENSITIVITY_DEFAULT  = 1932;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_FLAGS                = 1933;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_UUID_HIGH            = 1934;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_UUID_LOW             = 1935;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_OFF_TO_IDLE          = 1936;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_IDLE_TO_READY        = 1937;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_I2C_BUS              = 1938;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_REG_GROUP_ID         = 1939;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_CAL_PRI_GROUP_ID     = 1940;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_GPIO1                = 1941;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_GPIO2                = 1942;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_SENSOR_ID            = 1943;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_I2C_ADDRESS          = 1944;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_DATA_TYPE1           = 1945;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_DATA_TYPE2           = 1946;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_RELATED_SENSOR_INDEX = 1947;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_SENSITIVITY_DEFAULT  = 1948;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_FLAGS                = 1949;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_UUID_HIGH            = 1950;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_UUID_LOW             = 1951;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_OFF_TO_IDLE          = 1952;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_IDLE_TO_READY        = 1953;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_I2C_BUS              = 1954;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_REG_GROUP_ID         = 1955;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_CAL_PRI_GROUP_ID     = 1956;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_GPIO1                = 1957;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_GPIO2                = 1958;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_SENSOR_ID            = 1959;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_I2C_ADDRESS          = 1960;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_DATA_TYPE1           = 1961;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_DATA_TYPE2           = 1962;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_RELATED_SENSOR_INDEX = 1963;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_SENSITIVITY_DEFAULT  = 1964;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_FLAGS                = 1965;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_UUID_HIGH            = 1966;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_UUID_LOW             = 1967;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_OFF_TO_IDLE          = 1968;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_IDLE_TO_READY        = 1969;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_I2C_BUS              = 1970;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_REG_GROUP_ID         = 1971;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_CAL_PRI_GROUP_ID     = 1972;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_GPIO1                = 1973;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_GPIO2                = 1974;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_SENSOR_ID            = 1975;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_I2C_ADDRESS          = 1976;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_DATA_TYPE1           = 1977;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_DATA_TYPE2           = 1978;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_RELATED_SENSOR_INDEX = 1979;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_SENSITIVITY_DEFAULT  = 1980;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_FLAGS                = 1981;
+/** The following DEVICE_SELECT values added in revision 9.
+ * SSI_SMGR group revesion 1.1 */
+const SNS_REG_ITEM_SSI_SMGR_CFG0_DEVICE_SELECT        = 1982;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_DEVICE_SELECT        = 1983;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_DEVICE_SELECT        = 1984;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_DEVICE_SELECT        = 1985;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_DEVICE_SELECT        = 1986;
+
+/** Item IDs corresponding to group SNS_REG_GROUP_SSI_DEVINFO_ACCEL (Group Id: 2692) */
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_MIN_VER_NO = 2000;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_NUM_UUID_VALID = 2001;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG0_UUID_HIGH = 2002;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG0_UUID_LOW = 2003;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG0_OFF_TO_IDLE = 2004;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG0_IDLE_TO_READY = 2005;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG0_GPIO1 = 2006;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG0_REG_GROUP_ID = 2007;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG0_CAL_PRI_GROUP_ID = 2008;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG0_I2C_BUS = 2009;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG0_I2C_ADDRESS = 2010;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG0_SENSITIVITY_DEFAULT = 2011;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG0_FLAGS = 2012;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG1_UUID_HIGH = 2013;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG1_UUID_LOW = 2014;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG1_OFF_TO_IDLE = 2015;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG1_IDLE_TO_READY = 2016;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG1_GPIO1 = 2017;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG1_REG_GROUP_ID = 2018;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG1_CAL_PRI_GROUP_ID = 2019;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG1_I2C_BUS = 2020;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG1_I2C_ADDRESS = 2021;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG1_SENSITIVITY_DEFAULT = 2022;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG1_FLAGS = 2023;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG2_UUID_HIGH = 2024;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG2_UUID_LOW = 2025;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG2_OFF_TO_IDLE = 2026;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG2_IDLE_TO_READY = 2027;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG2_GPIO1 = 2028;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG2_REG_GROUP_ID = 2029;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG2_CAL_PRI_GROUP_ID = 2030;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG2_I2C_BUS = 2031;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG2_I2C_ADDRESS = 2032;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG2_SENSITIVITY_DEFAULT = 2033;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG2_FLAGS = 2034;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG3_UUID_HIGH = 2035;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG3_UUID_LOW = 2036;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG3_OFF_TO_IDLE = 2037;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG3_IDLE_TO_READY = 2038;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG3_GPIO1 = 2039;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG3_REG_GROUP_ID = 2040;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG3_CAL_PRI_GROUP_ID = 2041;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG3_I2C_BUS = 2042;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG3_I2C_ADDRESS = 2043;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG3_SENSITIVITY_DEFAULT = 2044;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG3_FLAGS = 2045;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG4_UUID_HIGH = 2046;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG4_UUID_LOW = 2047;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG4_OFF_TO_IDLE = 2048;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG4_IDLE_TO_READY = 2049;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG4_GPIO1 = 2050;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG4_REG_GROUP_ID = 2051;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG4_CAL_PRI_GROUP_ID = 2052;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG4_I2C_BUS = 2053;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG4_I2C_ADDRESS = 2054;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG4_SENSITIVITY_DEFAULT = 2055;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG4_FLAGS = 2056;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG5_UUID_HIGH = 2057;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG5_UUID_LOW = 2058;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG5_OFF_TO_IDLE = 2059;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG5_IDLE_TO_READY = 2060;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG5_GPIO1 = 2061;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG5_REG_GROUP_ID = 2062;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG5_CAL_PRI_GROUP_ID = 2063;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG5_I2C_BUS = 2064;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG5_I2C_ADDRESS = 2065;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG5_SENSITIVITY_DEFAULT = 2066;
+const SNS_REG_ITEM_SSI_DEVINFO_ACCEL_CFG5_FLAGS = 2067;
+
+/** Item IDs corresponding to group SNS_REG_GROUP_SSI_DEVINFO_GYRO (Group Id: 2693) */
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_MIN_VER_NO = 2100;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_NUM_UUID_VALID = 2101;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG0_UUID_HIGH = 2102;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG0_UUID_LOW = 2103;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG0_OFF_TO_IDLE = 2104;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG0_IDLE_TO_READY = 2105;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG0_GPIO1 = 2106;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG0_REG_GROUP_ID = 2107;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG0_CAL_PRI_GROUP_ID = 2108;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG0_I2C_BUS = 2109;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG0_I2C_ADDRESS = 2110;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG0_SENSITIVITY_DEFAULT = 2111;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG0_FLAGS = 2112;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG1_UUID_HIGH = 2113;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG1_UUID_LOW = 2114;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG1_OFF_TO_IDLE = 2115;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG1_IDLE_TO_READY = 2116;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG1_GPIO1 = 2117;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG1_REG_GROUP_ID = 2118;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG1_CAL_PRI_GROUP_ID = 2119;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG1_I2C_BUS = 2120;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG1_I2C_ADDRESS = 2121;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG1_SENSITIVITY_DEFAULT = 2122;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG1_FLAGS = 2123;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG2_UUID_HIGH = 2124;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG2_UUID_LOW = 2125;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG2_OFF_TO_IDLE = 2126;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG2_IDLE_TO_READY = 2127;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG2_GPIO1 = 2128;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG2_REG_GROUP_ID = 2129;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG2_CAL_PRI_GROUP_ID = 2130;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG2_I2C_BUS = 2131;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG2_I2C_ADDRESS = 2132;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG2_SENSITIVITY_DEFAULT = 2133;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG2_FLAGS = 2134;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG3_UUID_HIGH = 2135;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG3_UUID_LOW = 2136;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG3_OFF_TO_IDLE = 2137;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG3_IDLE_TO_READY = 2138;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG3_GPIO1 = 2139;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG3_REG_GROUP_ID = 2140;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG3_CAL_PRI_GROUP_ID = 2141;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG3_I2C_BUS = 2142;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG3_I2C_ADDRESS = 2143;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG3_SENSITIVITY_DEFAULT = 2144;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG3_FLAGS = 2145;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG4_UUID_HIGH = 2146;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG4_UUID_LOW = 2147;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG4_OFF_TO_IDLE = 2148;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG4_IDLE_TO_READY = 2149;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG4_GPIO1 = 2150;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG4_REG_GROUP_ID = 2151;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG4_CAL_PRI_GROUP_ID = 2152;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG4_I2C_BUS = 2153;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG4_I2C_ADDRESS = 2154;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG4_SENSITIVITY_DEFAULT = 2155;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG4_FLAGS = 2156;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG5_UUID_HIGH = 2157;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG5_UUID_LOW = 2158;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG5_OFF_TO_IDLE = 2159;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG5_IDLE_TO_READY = 2160;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG5_GPIO1 = 2161;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG5_REG_GROUP_ID = 2162;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG5_CAL_PRI_GROUP_ID = 2163;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG5_I2C_BUS = 2164;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG5_I2C_ADDRESS = 2165;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG5_SENSITIVITY_DEFAULT = 2166;
+const SNS_REG_ITEM_SSI_DEVINFO_GYRO_CFG5_FLAGS = 2167;
+
+/** Item IDs corresponding to group SNS_REG_GROUP_SSI_DEVINFO_MAG (Group Id: 2694) */
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_MIN_VER_NO = 2200;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_NUM_UUID_VALID = 2201;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG0_UUID_HIGH = 2202;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG0_UUID_LOW = 2203;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG0_OFF_TO_IDLE = 2204;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG0_IDLE_TO_READY = 2205;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG0_GPIO1 = 2206;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG0_REG_GROUP_ID = 2207;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG0_CAL_PRI_GROUP_ID = 2208;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG0_I2C_BUS = 2209;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG0_I2C_ADDRESS = 2210;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG0_SENSITIVITY_DEFAULT = 2211;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG0_FLAGS = 2212;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG1_UUID_HIGH = 2213;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG1_UUID_LOW = 2214;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG1_OFF_TO_IDLE = 2215;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG1_IDLE_TO_READY = 2216;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG1_GPIO1 = 2217;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG1_REG_GROUP_ID = 2218;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG1_CAL_PRI_GROUP_ID = 2219;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG1_I2C_BUS = 2220;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG1_I2C_ADDRESS = 2221;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG1_SENSITIVITY_DEFAULT = 2222;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG1_FLAGS = 2223;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG2_UUID_HIGH = 2224;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG2_UUID_LOW = 2225;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG2_OFF_TO_IDLE = 2226;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG2_IDLE_TO_READY = 2227;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG2_GPIO1 = 2228;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG2_REG_GROUP_ID = 2229;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG2_CAL_PRI_GROUP_ID = 2230;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG2_I2C_BUS = 2231;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG2_I2C_ADDRESS = 2232;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG2_SENSITIVITY_DEFAULT = 2233;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG2_FLAGS = 2234;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG3_UUID_HIGH = 2235;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG3_UUID_LOW = 2236;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG3_OFF_TO_IDLE = 2237;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG3_IDLE_TO_READY = 2238;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG3_GPIO1 = 2239;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG3_REG_GROUP_ID = 2240;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG3_CAL_PRI_GROUP_ID = 2241;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG3_I2C_BUS = 2242;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG3_I2C_ADDRESS = 2243;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG3_SENSITIVITY_DEFAULT = 2244;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG3_FLAGS = 2245;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG4_UUID_HIGH = 2246;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG4_UUID_LOW = 2247;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG4_OFF_TO_IDLE = 2248;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG4_IDLE_TO_READY = 2249;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG4_GPIO1 = 2250;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG4_REG_GROUP_ID = 2251;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG4_CAL_PRI_GROUP_ID = 2252;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG4_I2C_BUS = 2253;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG4_I2C_ADDRESS = 2254;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG4_SENSITIVITY_DEFAULT = 2255;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG4_FLAGS = 2256;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG5_UUID_HIGH = 2257;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG5_UUID_LOW = 2258;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG5_OFF_TO_IDLE = 2259;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG5_IDLE_TO_READY = 2260;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG5_GPIO1 = 2261;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG5_REG_GROUP_ID = 2262;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG5_CAL_PRI_GROUP_ID = 2263;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG5_I2C_BUS = 2264;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG5_I2C_ADDRESS = 2265;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG5_SENSITIVITY_DEFAULT = 2266;
+const SNS_REG_ITEM_SSI_DEVINFO_MAG_CFG5_FLAGS = 2267;
+
+/** Item IDs corresponding to group SNS_REG_GROUP_SSI_DEVINFO_PROX_LIGHT (Group Id: 2695) */
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_MIN_VER_NO = 2300;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_NUM_UUID_VALID = 2301;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG0_UUID_HIGH = 2302;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG0_UUID_LOW = 2303;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG0_OFF_TO_IDLE = 2304;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG0_IDLE_TO_READY = 2305;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG0_GPIO1 = 2306;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG0_REG_GROUP_ID = 2307;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG0_CAL_PRI_GROUP_ID = 2308;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG0_I2C_BUS = 2309;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG0_I2C_ADDRESS = 2310;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG0_SENSITIVITY_DEFAULT = 2311;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG0_FLAGS = 2312;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG1_UUID_HIGH = 2313;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG1_UUID_LOW = 2314;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG1_OFF_TO_IDLE = 2315;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG1_IDLE_TO_READY = 2316;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG1_GPIO1 = 2317;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG1_REG_GROUP_ID = 2318;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG1_CAL_PRI_GROUP_ID = 2319;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG1_I2C_BUS = 2320;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG1_I2C_ADDRESS = 2321;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG1_SENSITIVITY_DEFAULT = 2322;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG1_FLAGS = 2323;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG2_UUID_HIGH = 2324;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG2_UUID_LOW = 2325;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG2_OFF_TO_IDLE = 2326;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG2_IDLE_TO_READY = 2327;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG2_GPIO1 = 2328;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG2_REG_GROUP_ID = 2329;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG2_CAL_PRI_GROUP_ID = 2330;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG2_I2C_BUS = 2331;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG2_I2C_ADDRESS = 2332;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG2_SENSITIVITY_DEFAULT = 2333;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG2_FLAGS = 2334;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG3_UUID_HIGH = 2335;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG3_UUID_LOW = 2336;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG3_OFF_TO_IDLE = 2337;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG3_IDLE_TO_READY = 2338;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG3_GPIO1 = 2339;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG3_REG_GROUP_ID = 2340;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG3_CAL_PRI_GROUP_ID = 2341;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG3_I2C_BUS = 2342;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG3_I2C_ADDRESS = 2343;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG3_SENSITIVITY_DEFAULT = 2344;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG3_FLAGS = 2345;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG4_UUID_HIGH = 2346;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG4_UUID_LOW = 2347;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG4_OFF_TO_IDLE = 2348;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG4_IDLE_TO_READY = 2349;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG4_GPIO1 = 2350;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG4_REG_GROUP_ID = 2351;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG4_CAL_PRI_GROUP_ID = 2352;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG4_I2C_BUS = 2353;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG4_I2C_ADDRESS = 2354;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG4_SENSITIVITY_DEFAULT = 2355;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG4_FLAGS = 2356;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG5_UUID_HIGH = 2357;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG5_UUID_LOW = 2358;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG5_OFF_TO_IDLE = 2359;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG5_IDLE_TO_READY = 2360;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG5_GPIO1 = 2361;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG5_REG_GROUP_ID = 2362;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG5_CAL_PRI_GROUP_ID = 2363;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG5_I2C_BUS = 2364;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG5_I2C_ADDRESS = 2365;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG5_SENSITIVITY_DEFAULT = 2366;
+const SNS_REG_ITEM_SSI_DEVINFO_PROX_LIGHT_CFG5_FLAGS = 2367;
+
+/** Item IDs corresponding to group SNS_REG_GROUP_SSI_DEVINFO_PRESSURE (Group Id: 2696) */
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_MIN_VER_NO = 2400;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_NUM_UUID_VALID = 2401;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG0_UUID_HIGH = 2402;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG0_UUID_LOW = 2403;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG0_OFF_TO_IDLE = 2404;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG0_IDLE_TO_READY = 2405;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG0_GPIO1 = 2406;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG0_REG_GROUP_ID = 2407;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG0_CAL_PRI_GROUP_ID = 2408;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG0_I2C_BUS = 2409;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG0_I2C_ADDRESS = 2410;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG0_SENSITIVITY_DEFAULT = 2411;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG0_FLAGS = 2412;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG1_UUID_HIGH = 2413;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG1_UUID_LOW = 2414;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG1_OFF_TO_IDLE = 2415;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG1_IDLE_TO_READY = 2416;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG1_GPIO1 = 2417;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG1_REG_GROUP_ID = 2418;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG1_CAL_PRI_GROUP_ID = 2419;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG1_I2C_BUS = 2420;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG1_I2C_ADDRESS = 2421;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG1_SENSITIVITY_DEFAULT = 2422;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG1_FLAGS = 2423;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG2_UUID_HIGH = 2424;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG2_UUID_LOW = 2425;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG2_OFF_TO_IDLE = 2426;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG2_IDLE_TO_READY = 2427;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG2_GPIO1 = 2428;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG2_REG_GROUP_ID = 2429;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG2_CAL_PRI_GROUP_ID = 2430;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG2_I2C_BUS = 2431;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG2_I2C_ADDRESS = 2432;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG2_SENSITIVITY_DEFAULT = 2433;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG2_FLAGS = 2434;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG3_UUID_HIGH = 2435;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG3_UUID_LOW = 2436;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG3_OFF_TO_IDLE = 2437;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG3_IDLE_TO_READY = 2438;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG3_GPIO1 = 2439;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG3_REG_GROUP_ID = 2440;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG3_CAL_PRI_GROUP_ID = 2441;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG3_I2C_BUS = 2442;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG3_I2C_ADDRESS = 2443;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG3_SENSITIVITY_DEFAULT = 2444;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG3_FLAGS = 2445;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG4_UUID_HIGH = 2446;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG4_UUID_LOW = 2447;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG4_OFF_TO_IDLE = 2448;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG4_IDLE_TO_READY = 2449;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG4_GPIO1 = 2450;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG4_REG_GROUP_ID = 2451;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG4_CAL_PRI_GROUP_ID = 2452;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG4_I2C_BUS = 2453;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG4_I2C_ADDRESS = 2454;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG4_SENSITIVITY_DEFAULT = 2455;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG4_FLAGS = 2456;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG5_UUID_HIGH = 2457;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG5_UUID_LOW = 2458;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG5_OFF_TO_IDLE = 2459;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG5_IDLE_TO_READY = 2460;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG5_GPIO1 = 2461;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG5_REG_GROUP_ID = 2462;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG5_CAL_PRI_GROUP_ID = 2463;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG5_I2C_BUS = 2464;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG5_I2C_ADDRESS = 2465;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG5_SENSITIVITY_DEFAULT = 2466;
+const SNS_REG_ITEM_SSI_DEVINFO_PRESSURE_CFG5_FLAGS = 2467;
+
+/** Item IDs corresponding to group SNS_REG_GROUP_SSI_SENSOR_DEP_CFG0 (Group Id: 2700) */
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VER_NO        = 2500;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SENSOR_TYPE   = 2501;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_NEXT_GROUP_ID = 2502;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_UUID_HIGH0    = 2503;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_UUID_LOW0     = 2504;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID00 = 2505;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE00        = 2506;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE00       = 2507;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID01 = 2508;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE01        = 2509;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE01       = 2510;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID02 = 2511;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE02        = 2512;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE02       = 2513;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID03 = 2514;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE03        = 2515;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE03       = 2516;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_UUID_HIGH1    = 2517;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_UUID_LOW1     = 2518;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID10 = 2519;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE10        = 2520;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE10       = 2521;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID11 = 2522;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE11        = 2523;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE11       = 2524;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID12 = 2525;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE12        = 2526;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE12       = 2527;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID13 = 2528;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE13        = 2529;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE13       = 2530;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_UUID_HIGH2    = 2531;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_UUID_LOW2     = 2532;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID20 = 2533;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE20        = 2534;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE20       = 2535;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID21 = 2536;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE21        = 2537;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE21       = 2538;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID22 = 2539;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE22        = 2540;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE22       = 2541;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID23 = 2542;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE23        = 2543;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE23       = 2544;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_UUID_HIGH3    = 2545;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_UUID_LOW3     = 2546;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID30 = 2547;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE30        = 2548;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE30       = 2549;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID31 = 2550;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE31        = 2551;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE31       = 2552;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID32 = 2553;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE32        = 2554;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE32       = 2555;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID33 = 2556;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE33        = 2557;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE33       = 2558;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_UUID_HIGH4    = 2559;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_UUID_LOW4     = 2560;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID40 = 2561;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE40        = 2562;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE40       = 2563;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID41 = 2564;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE41        = 2565;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE41       = 2566;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID42 = 2567;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE42        = 2568;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE42       = 2569;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_REG_ITEM_ID43 = 2570;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_SIZE43        = 2571;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG0_VALUE43       = 2572;
+
+/** Item IDs corresponding to group SNS_REG_GROUP_SSI_SENSOR_DEP_CFG1 (Group Id: 2701) */
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VER_NO        = 2600;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SENSOR_TYPE   = 2601;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_NEXT_GROUP_ID = 2602;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_UUID_HIGH0    = 2603;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_UUID_LOW0     = 2604;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID00 = 2605;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE00        = 2606;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE00       = 2607;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID01 = 2608;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE01        = 2609;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE01       = 2610;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID02 = 2611;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE02        = 2612;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE02       = 2613;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID03 = 2614;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE03        = 2615;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE03       = 2616;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_UUID_HIGH1    = 2617;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_UUID_LOW1     = 2618;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID10 = 2619;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE10        = 2620;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE10       = 2621;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID11 = 2622;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE11        = 2623;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE11       = 2624;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID12 = 2625;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE12        = 2626;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE12       = 2627;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID13 = 2628;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE13        = 2629;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE13       = 2630;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_UUID_HIGH2    = 2631;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_UUID_LOW2     = 2632;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID20 = 2633;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE20        = 2634;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE20       = 2635;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID21 = 2636;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE21        = 2637;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE21       = 2638;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID22 = 2639;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE22        = 2640;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE22       = 2641;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID23 = 2642;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE23        = 2643;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE23       = 2644;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_UUID_HIGH3    = 2645;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_UUID_LOW3     = 2646;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID30 = 2647;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE30        = 2648;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE30       = 2649;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID31 = 2650;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE31        = 2651;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE31       = 2652;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID32 = 2653;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE32        = 2654;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE32       = 2655;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID33 = 2656;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE33        = 2657;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE33       = 2658;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_UUID_HIGH4    = 2659;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_UUID_LOW4     = 2660;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID40 = 2661;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE40        = 2662;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE40       = 2663;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID41 = 2664;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE41        = 2665;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE41       = 2666;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID42 = 2667;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE42        = 2668;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE42       = 2669;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_REG_ITEM_ID43 = 2670;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_SIZE43        = 2671;
+const SNS_REG_ITEM_SSI_SENSOR_DEP_CFG1_VALUE43       = 2672;
+
+/** Item ID's corresponding to group SNS_REG_GROUP_SSI_GPIO_CFG (Group Id: 2800)
+ * The following values were added in revision 10.*/
+const SNS_REG_ITEM_SSI_GPIO_CFG_VERSION_MAJOR   = 2700;
+const SNS_REG_ITEM_SSI_GPIO_CFG_VERSION_MINOR   = 2701;
+const SNS_REG_ITEM_SSI_GPIO_CFG_I2C_SDA_1       = 2702;
+const SNS_REG_ITEM_SSI_GPIO_CFG_I2C_SCL_1       = 2703;
+const SNS_REG_ITEM_SSI_GPIO_CFG_I2C_SDA_2       = 2704;
+const SNS_REG_ITEM_SSI_GPIO_CFG_I2C_SCL_2       = 2705;
+const SNS_REG_ITEM_SSI_GPIO_CFG_RESET           = 2706;
+const SNS_REG_ITEM_SSI_GPIO_CFG_TEST            = 2707;
+const SNS_REG_ITEM_SSI_GPIO_CFG_ACCEL_MD_INT    = 2708;
+const SNS_REG_ITEM_SSI_GPIO_CFG_ACCEL_DRDY_INT  = 2709;
+const SNS_REG_ITEM_SSI_GPIO_CFG_GYRO_DRDY_INT   = 2710;
+const SNS_REG_ITEM_SSI_GPIO_CFG_MAG_DRDY_INT    = 2711;
+const SNS_REG_ITEM_SSI_GPIO_CFG_ALSP_INT        = 2712;
+const SNS_REG_ITEM_SSI_GPIO_CFG_GEST_INT        = 2713;
+const SNS_REG_ITEM_SSI_GPIO_CFG_PRESS_INT       = 2714;
+const SNS_REG_ITEM_SSI_GPIO_CFG_SAR_INT         = 2715;
+const SNS_REG_ITEM_SSI_GPIO_CFG_FP_INT          = 2716;
+const SNS_REG_ITEM_SSI_GPIO_CFG_HALL_INT        = 2717;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_BASIC_GESTURES_V02 (Group Id: 2900)
+*/
+const SNS_REG_ITEM_BASIC_GESTURES_DEF_SENSOR_REPORT_RATE  = 2800;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_FACING_V02 (Group Id: 2910)
+*/
+const SNS_REG_ITEM_FACING_DEF_SENSOR_REPORT_RATE          = 2900;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_QUATERNION_V02 (Group Id: 2920)
+*/
+const SNS_REG_ITEM_QUATERNION_DEF_SENSOR_REPORT_RATE      = 3000;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_ROTATION_VECTOR_V02 (Group Id: 2930)
+*/
+const SNS_REG_ITEM_ROTATION_VECTOR_DEF_SENSOR_REPORT_RATE = 3100;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_DISTANCE_BOUND (Group Id: 2940) */
+const SNS_REG_ITEM_DISTANCE_BOUND_SPEEDBOUNDS_UNKNOWN     = 3200;
+const SNS_REG_ITEM_DISTANCE_BOUND_SPEEDBOUNDS_STATIONARY  = 3201;
+const SNS_REG_ITEM_DISTANCE_BOUND_SPEEDBOUNDS_INMOTION    = 3202;
+const SNS_REG_ITEM_DISTANCE_BOUND_SPEEDBOUNDS_FIDDLE      = 3203;
+const SNS_REG_ITEM_DISTANCE_BOUND_SPEEDBOUNDS_PEDESTRIAN  = 3204;
+const SNS_REG_ITEM_DISTANCE_BOUND_SPEEDBOUNDS_VEHICLE     = 3205;
+const SNS_REG_ITEM_DISTANCE_BOUND_SPEEDBOUNDS_WALK        = 3206;
+const SNS_REG_ITEM_DISTANCE_BOUND_SPEEDBOUNDS_RUN         = 3207;
+const SNS_REG_ITEM_DISTANCE_BOUND_SPEEDBOUNDS_BIKE        = 3208;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_CMC_V02 (Group Id: 2950)
+*/
+const SNS_REG_ITEM_CMC_DEF_SENSOR_REPORT_RATE = 3400;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_GAME_ROTATION_VECTOR_V02 (Group Id: 2960)
+*/
+const SNS_REG_ITEM_GAME_ROT_VEC_DEF_SENSOR_REPORT_RATE = 3500;
+
+/** Item IDs corresponding to group SNS_REG_GROUP_SSI_SMGR_CFG_2 (Group Id: 2691) */
+const SNS_REG_ITEM_SSI_SMGR_2_MAJ_VER_NO                = 3600;
+const SNS_REG_ITEM_SSI_SMGR_2_MIN_VER_NO                = 3601;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_UUID_HIGH            = 3602;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_UUID_LOW             = 3603;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_OFF_TO_IDLE          = 3604;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_IDLE_TO_READY        = 3605;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_I2C_BUS              = 3606;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_REG_GROUP_ID         = 3607;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_CAL_PRI_GROUP_ID     = 3608;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_GPIO1                = 3609;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_GPIO2                = 3610;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_SENSOR_ID            = 3611;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_I2C_ADDRESS          = 3612;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_DATA_TYPE1           = 3613;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_DATA_TYPE2           = 3614;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_RELATED_SENSOR_INDEX = 3615;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_SENSITIVITY_DEFAULT  = 3616;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_FLAGS                = 3617;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_UUID_HIGH            = 3618;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_UUID_LOW             = 3619;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_OFF_TO_IDLE          = 3620;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_IDLE_TO_READY        = 3621;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_I2C_BUS              = 3622;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_REG_GROUP_ID         = 3623;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_CAL_PRI_GROUP_ID     = 3624;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_GPIO1                = 3625;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_GPIO2                = 3626;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_SENSOR_ID            = 3627;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_I2C_ADDRESS          = 3628;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_DATA_TYPE1           = 3629;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_DATA_TYPE2           = 3630;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_RELATED_SENSOR_INDEX = 3631;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_SENSITIVITY_DEFAULT  = 3632;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_FLAGS                = 3633;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_UUID_HIGH            = 3634;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_UUID_LOW             = 3635;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_OFF_TO_IDLE          = 3636;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_IDLE_TO_READY        = 3637;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_I2C_BUS              = 3638;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_REG_GROUP_ID         = 3639;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_CAL_PRI_GROUP_ID     = 3640;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_GPIO1                = 3641;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_GPIO2                = 3642;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_SENSOR_ID            = 3643;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_I2C_ADDRESS          = 3644;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_DATA_TYPE1           = 3645;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_DATA_TYPE2           = 3646;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_RELATED_SENSOR_INDEX = 3647;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_SENSITIVITY_DEFAULT  = 3648;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_FLAGS                = 3649;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_UUID_HIGH            = 3650;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_UUID_LOW             = 3651;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_OFF_TO_IDLE          = 3652;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_IDLE_TO_READY        = 3653;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_I2C_BUS              = 3654;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_REG_GROUP_ID         = 3655;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_CAL_PRI_GROUP_ID     = 3656;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_GPIO1                = 3657;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_GPIO2                = 3658;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_SENSOR_ID            = 3659;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_I2C_ADDRESS          = 3660;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_DATA_TYPE1           = 3661;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_DATA_TYPE2           = 3662;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_RELATED_SENSOR_INDEX = 3663;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_SENSITIVITY_DEFAULT  = 3664;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_FLAGS                = 3665;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_UUID_HIGH            = 3666;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_UUID_LOW             = 3667;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_OFF_TO_IDLE          = 3668;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_IDLE_TO_READY        = 3669;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_I2C_BUS              = 3670;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_REG_GROUP_ID         = 3671;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_CAL_PRI_GROUP_ID     = 3672;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_GPIO1                = 3673;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_GPIO2                = 3674;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_SENSOR_ID            = 3675;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_I2C_ADDRESS          = 3676;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_DATA_TYPE1           = 3677;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_DATA_TYPE2           = 3678;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_RELATED_SENSOR_INDEX = 3679;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_SENSITIVITY_DEFAULT  = 3680;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_FLAGS                = 3681;
+
+const SNS_REG_ITEM_SSI_SMGR_CFG0_2_DEVICE_SELECT        = 3682;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_2_DEVICE_SELECT        = 3683;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_2_DEVICE_SELECT        = 3684;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_2_DEVICE_SELECT        = 3685;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_2_DEVICE_SELECT        = 3686;
+
+/** Item IDs corresponding to group SNS_REG_GROUP_SSI_DEVINFO_TAP (Group Id: 2697) */
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_MIN_VER_NO                = 3700;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_NUM_UUID_VALID            = 3701;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG0_UUID_HIGH            = 3702;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG0_UUID_LOW             = 3703;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG0_OFF_TO_IDLE          = 3704;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG0_IDLE_TO_READY        = 3705;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG0_GPIO1                = 3706;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG0_REG_GROUP_ID         = 3707;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG0_CAL_PRI_GROUP_ID     = 3708;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG0_I2C_BUS              = 3709;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG0_I2C_ADDRESS          = 3710;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG0_SENSITIVITY_DEFAULT  = 3711;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG0_FLAGS                = 3712;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG1_UUID_HIGH            = 3713;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG1_UUID_LOW             = 3714;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG1_OFF_TO_IDLE          = 3715;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG1_IDLE_TO_READY        = 3716;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG1_GPIO1                = 3717;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG1_REG_GROUP_ID         = 3718;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG1_CAL_PRI_GROUP_ID     = 3719;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG1_I2C_BUS              = 3720;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG1_I2C_ADDRESS          = 3721;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG1_SENSITIVITY_DEFAULT  = 3722;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG1_FLAGS                = 3723;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG2_UUID_HIGH            = 3724;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG2_UUID_LOW             = 3725;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG2_OFF_TO_IDLE          = 3726;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG2_IDLE_TO_READY        = 3727;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG2_GPIO1                = 3728;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG2_REG_GROUP_ID         = 3729;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG2_CAL_PRI_GROUP_ID     = 3730;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG2_I2C_BUS              = 3731;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG2_I2C_ADDRESS          = 3732;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG2_SENSITIVITY_DEFAULT  = 3733;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG2_FLAGS                = 3734;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG3_UUID_HIGH            = 3735;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG3_UUID_LOW             = 3736;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG3_OFF_TO_IDLE          = 3737;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG3_IDLE_TO_READY        = 3738;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG3_GPIO1                = 3739;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG3_REG_GROUP_ID         = 3740;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG3_CAL_PRI_GROUP_ID     = 3741;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG3_I2C_BUS              = 3742;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG3_I2C_ADDRESS          = 3743;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG3_SENSITIVITY_DEFAULT  = 3744;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG3_FLAGS                = 3745;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG4_UUID_HIGH            = 3746;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG4_UUID_LOW             = 3747;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG4_OFF_TO_IDLE          = 3748;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG4_IDLE_TO_READY        = 3749;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG4_GPIO1                = 3750;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG4_REG_GROUP_ID         = 3751;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG4_CAL_PRI_GROUP_ID     = 3752;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG4_I2C_BUS              = 3753;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG4_I2C_ADDRESS          = 3754;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG4_SENSITIVITY_DEFAULT  = 3755;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG4_FLAGS                = 3756;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG5_UUID_HIGH            = 3757;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG5_UUID_LOW             = 3758;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG5_OFF_TO_IDLE          = 3759;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG5_IDLE_TO_READY        = 3760;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG5_GPIO1                = 3761;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG5_REG_GROUP_ID         = 3762;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG5_CAL_PRI_GROUP_ID     = 3763;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG5_I2C_BUS              = 3764;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG5_I2C_ADDRESS          = 3765;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG5_SENSITIVITY_DEFAULT  = 3766;
+const SNS_REG_ITEM_SSI_DEVINFO_TAP_CFG5_FLAGS                = 3767;
+
+/** Item ID's corresponding to group SNS_REG_SCM_GROUP_QMAG_CAL_ALGO (Group Id: 2970) */
+const SNS_REG_ITEM_QMAG_CAL_VERSION                     = 3800;
+const SNS_REG_ITEM_QMAG_CAL_ENABLE_ALGO                 = 3801;
+const SNS_REG_ITEM_QMAG_CAL_ENABLE_SI_CAL               = 3802;
+const SNS_REG_ITEM_QMAG_CAL_ENABLE_HI_CAL               = 3803;
+const SNS_REG_ITEM_SAMPLE_RATE                          = 3804;
+const SNS_REG_ITEM_QMAG_CAL_REPORT_RATE                 = 3805;
+const SNS_REG_ITEM_QMAG_CAL_ENABLE_GYRO_ASSIST          = 3806;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_X_HI_PUBLISH         = 3807;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_Y_HI_PUBLISH         = 3808;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_Z_HI_PUBLISH         = 3809;
+const SNS_REG_ITEM_QMAG_CAL_ACCURACY_HI_PUBLISH         = 3810;
+const SNS_REG_ITEM_QMAG_CAL_RADIUS_HI_BUFF_0            = 3811;
+const SNS_REG_ITEM_QMAG_CAL_RADIUS_HI_BUFF_1            = 3812;
+const SNS_REG_ITEM_QMAG_CAL_RADIUS_HI_BUFF_2            = 3813;
+const SNS_REG_ITEM_QMAG_CAL_RADIUS_HI_BUFF_3            = 3814;
+const SNS_REG_ITEM_QMAG_CAL_RADIUS_HI_BUFF_4            = 3815;
+const SNS_REG_ITEM_QMAG_CAL_RADIUS_HI_BUFF_COUNT        = 3816;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_X_HI_BUFF_0          = 3817;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_X_HI_BUFF_1          = 3818;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_X_HI_BUFF_2          = 3819;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_X_HI_BUFF_3          = 3820;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_X_HI_BUFF_4          = 3821;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_Y_HI_BUFF_0          = 3822;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_Y_HI_BUFF_1          = 3823;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_Y_HI_BUFF_2          = 3824;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_Y_HI_BUFF_3          = 3825;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_Y_HI_BUFF_4          = 3826;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_Z_HI_BUFF_0          = 3827;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_Z_HI_BUFF_1          = 3828;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_Z_HI_BUFF_2          = 3829;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_Z_HI_BUFF_3          = 3830;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_Z_HI_BUFF_4          = 3831;
+const SNS_REG_ITEM_QMAG_CAL_OFFSET_HI_BUFF_COUNT        = 3832;
+const SNS_REG_ITEM_QMAG_CAL_ACCURACY_HI_BUFF_0          = 3833;
+const SNS_REG_ITEM_QMAG_CAL_ACCURACY_HI_BUFF_1          = 3834;
+const SNS_REG_ITEM_QMAG_CAL_ACCURACY_HI_BUFF_2          = 3835;
+const SNS_REG_ITEM_QMAG_CAL_ACCURACY_HI_BUFF_3          = 3836;
+const SNS_REG_ITEM_QMAG_CAL_ACCURACY_HI_BUFF_4          = 3837;
+const SNS_REG_ITEM_QMAG_CAL_ACCURACY_HI_BUFF_COUNT      = 3838;
+
+/**Item ID's corresponding to group SNS_REG_SCM_GROUP_MAG_DYN_CAL_PARAMS (Group Id: 2980)*/
+const SNS_REG_ITEM_MAG_DYN_CAL_VERSION                  = 3900;
+const SNS_REG_ITEM_MAG_DYN_CAL_BIAS_VALID               = 3901;
+const SNS_REG_ITEM_MAG_DYN_CAL_CALIBRATION_MATRIX_VALID = 3902;
+const SNS_REG_ITEM_MAG_X_DYN_BIAS                       = 3903;
+const SNS_REG_ITEM_MAG_Y_DYN_BIAS                       = 3904;
+const SNS_REG_ITEM_MAG_Z_DYN_BIAS                       = 3905;
+const SNS_REG_ITEM_MAG_DYN_COMPENSATION_MATRIX_0_0      = 3906;
+const SNS_REG_ITEM_MAG_DYN_COMPENSATION_MATRIX_0_1      = 3907;
+const SNS_REG_ITEM_MAG_DYN_COMPENSATION_MATRIX_0_2      = 3908;
+const SNS_REG_ITEM_MAG_DYN_COMPENSATION_MATRIX_1_0      = 3909;
+const SNS_REG_ITEM_MAG_DYN_COMPENSATION_MATRIX_1_1      = 3910;
+const SNS_REG_ITEM_MAG_DYN_COMPENSATION_MATRIX_1_2      = 3911;
+const SNS_REG_ITEM_MAG_DYN_COMPENSATION_MATRIX_2_0      = 3912;
+const SNS_REG_ITEM_MAG_DYN_COMPENSATION_MATRIX_2_1      = 3913;
+const SNS_REG_ITEM_MAG_DYN_COMPENSATION_MATRIX_2_2      = 3914;
+const SNS_REG_ITEM_MAG_DYN_ACCURACY                     = 3915;
+
+/** Item ID's corresponding to group SNS_REG_SCM_GROUP_QMAG_CAL_STATE (Group Id: 2971) */
+const SNS_REG_ITEM_QMAG_CAL_STATE_VERSION               = 4000;
+const SNS_REG_ITEM_QMAG_CAL_STATE_PUBLISH_OFFSET_X_HI   = 4001;
+const SNS_REG_ITEM_QMAG_CAL_STATE_PUBLISH_OFFSET_Y_HI   = 4002;
+const SNS_REG_ITEM_QMAG_CAL_STATE_PUBLISH_OFFSET_Z_HI   = 4003;
+const SNS_REG_ITEM_QMAG_CAL_STATE_PUBLISH_ACCURACY_HI   = 4004;
+const SNS_REG_ITEM_QMAG_CAL_STATE_PUBLISH_OFFSET_TIME   = 4005;
+const SNS_REG_ITEM_QMAG_CAL_STATE_PUBLISH_OFFSET_VALID  = 4006;
+
+/**Item ID's corresponding to group SNS_REG_SAM_SAM_GROUP_SMD (Group Id: 2990)*/
+const SNS_REG_ITEM_SMD_VERSION                          = 4100;
+const SNS_REG_ITEM_SMD_VAR_DEC_LAT                      = 4101;
+const SNS_REG_ITEM_SMD_MAX_LAT                          = 4102;
+const SNS_REG_ITEM_SMD_ACC_WIN_TIME                     = 4103;
+const SNS_REG_ITEM_SMD_PCOUNT_THRESH                    = 4104;
+const SNS_REG_ITEM_SMD_PTIME                            = 4105;
+const SNS_REG_ITEM_SMD_DELTA_RESET_TIME                 = 4106;
+const SNS_REG_ITEM_SMD_LACC_WIN_TIME                    = 4107;
+const SNS_REG_ITEM_SMD_STRANS_PROB_SM                   = 4108;
+const SNS_REG_ITEM_SMD_DETECT_THRESH                    = 4109;
+const SNS_REG_ITEM_SMD_EIGEN_THRESH                     = 4110;
+const SNS_REG_ITEM_SMD_ACC_NORM_SDEV_THRESH             = 4111;
+const SNS_REG_ITEM_SMD_SENSOR_REPORT_RATE               = 4112;
+const SNS_REG_ITEM_SMD_SAMP_RATE                        = 4113;
+
+/** Item IDs corresponding to group SNS_REG_GROUP_SSI_DEVINFO_HUMIDITY (Group Id: 2699) */
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_MIN_VER_NO                = 4200;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_NUM_UUID_VALID            = 4201;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG0_UUID_HIGH            = 4202;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG0_UUID_LOW             = 4203;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG0_OFF_TO_IDLE          = 4204;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG0_IDLE_TO_READY        = 4205;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG0_GPIO1                = 4206;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG0_REG_GROUP_ID         = 4207;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG0_CAL_PRI_GROUP_ID     = 4208;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG0_I2C_BUS              = 4209;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG0_I2C_ADDRESS          = 4210;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG0_SENSITIVITY_DEFAULT  = 4211;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG0_FLAGS                = 4212;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG1_UUID_HIGH            = 4213;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG1_UUID_LOW             = 4214;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG1_OFF_TO_IDLE          = 4215;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG1_IDLE_TO_READY        = 4216;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG1_GPIO1                = 4217;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG1_REG_GROUP_ID         = 4218;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG1_CAL_PRI_GROUP_ID     = 4219;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG1_I2C_BUS              = 4220;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG1_I2C_ADDRESS          = 4221;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG1_SENSITIVITY_DEFAULT  = 4222;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG1_FLAGS                = 4223;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG2_UUID_HIGH            = 4224;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG2_UUID_LOW             = 4225;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG2_OFF_TO_IDLE          = 4226;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG2_IDLE_TO_READY        = 4227;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG2_GPIO1                = 4228;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG2_REG_GROUP_ID         = 4229;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG2_CAL_PRI_GROUP_ID     = 4230;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG2_I2C_BUS              = 4231;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG2_I2C_ADDRESS          = 4232;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG2_SENSITIVITY_DEFAULT  = 4233;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG2_FLAGS                = 4234;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG3_UUID_HIGH            = 4235;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG3_UUID_LOW             = 4236;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG3_OFF_TO_IDLE          = 4237;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG3_IDLE_TO_READY        = 4238;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG3_GPIO1                = 4239;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG3_REG_GROUP_ID         = 4240;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG3_CAL_PRI_GROUP_ID     = 4241;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG3_I2C_BUS              = 4242;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG3_I2C_ADDRESS          = 4243;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG3_SENSITIVITY_DEFAULT  = 4244;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG3_FLAGS                = 4245;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG4_UUID_HIGH            = 4246;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG4_UUID_LOW             = 4247;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG4_OFF_TO_IDLE          = 4248;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG4_IDLE_TO_READY        = 4249;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG4_GPIO1                = 4250;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG4_REG_GROUP_ID         = 4251;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG4_CAL_PRI_GROUP_ID     = 4252;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG4_I2C_BUS              = 4253;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG4_I2C_ADDRESS          = 4254;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG4_SENSITIVITY_DEFAULT  = 4255;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG4_FLAGS                = 4256;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG5_UUID_HIGH            = 4257;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG5_UUID_LOW             = 4258;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG5_OFF_TO_IDLE          = 4259;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG5_IDLE_TO_READY        = 4260;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG5_GPIO1                = 4261;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG5_REG_GROUP_ID         = 4262;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG5_CAL_PRI_GROUP_ID     = 4263;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG5_I2C_BUS              = 4264;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG5_I2C_ADDRESS          = 4265;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG5_SENSITIVITY_DEFAULT  = 4266;
+const SNS_REG_ITEM_SSI_DEVINFO_HUMIDITY_CFG5_FLAGS                = 4267;
+
+
+/** Item IDs corresponding to group
+ *  SNS_REG_GROUP_SSI_DEVINFO_RGB (Group Id: 3000) */
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_MIN_VER_NO                     = 4300;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_NUM_UUID_VALID                 = 4301;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG0_UUID_HIGH                 = 4302;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG0_UUID_LOW                  = 4303;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG0_OFF_TO_IDLE               = 4304;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG0_IDLE_TO_READY             = 4305;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG0_GPIO1                     = 4306;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG0_REG_GROUP_ID              = 4307;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG0_CAL_PRI_GROUP_ID          = 4308;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG0_I2C_BUS                   = 4309;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG0_I2C_ADDRESS               = 4310;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG0_SENSITIVITY_DEFAULT       = 4311;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG0_FLAGS                     = 4312;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG1_UUID_HIGH                 = 4313;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG1_UUID_LOW                  = 4314;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG1_OFF_TO_IDLE               = 4315;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG1_IDLE_TO_READY             = 4316;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG1_GPIO1                     = 4317;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG1_REG_GROUP_ID              = 4318;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG1_CAL_PRI_GROUP_ID          = 4319;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG1_I2C_BUS                   = 4320;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG1_I2C_ADDRESS               = 4321;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG1_SENSITIVITY_DEFAULT       = 4322;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG1_FLAGS                     = 4323;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG2_UUID_HIGH                 = 4324;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG2_UUID_LOW                  = 4325;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG2_OFF_TO_IDLE               = 4326;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG2_IDLE_TO_READY             = 4327;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG2_GPIO1                     = 4328;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG2_REG_GROUP_ID              = 4329;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG2_CAL_PRI_GROUP_ID          = 4330;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG2_I2C_BUS                   = 4331;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG2_I2C_ADDRESS               = 4332;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG2_SENSITIVITY_DEFAULT       = 4333;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG2_FLAGS                     = 4334;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG3_UUID_HIGH                 = 4335;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG3_UUID_LOW                  = 4336;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG3_OFF_TO_IDLE               = 4337;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG3_IDLE_TO_READY             = 4338;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG3_GPIO1                     = 4339;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG3_REG_GROUP_ID              = 4340;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG3_CAL_PRI_GROUP_ID          = 4341;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG3_I2C_BUS                   = 4342;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG3_I2C_ADDRESS               = 4343;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG3_SENSITIVITY_DEFAULT       = 4344;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG3_FLAGS                     = 4345;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG4_UUID_HIGH                 = 4346;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG4_UUID_LOW                  = 4347;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG4_OFF_TO_IDLE               = 4348;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG4_IDLE_TO_READY             = 4349;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG4_GPIO1                     = 4350;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG4_REG_GROUP_ID              = 4351;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG4_CAL_PRI_GROUP_ID          = 4352;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG4_I2C_BUS                   = 4353;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG4_I2C_ADDRESS               = 4354;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG4_SENSITIVITY_DEFAULT       = 4355;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG4_FLAGS                     = 4356;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG5_UUID_HIGH                 = 4357;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG5_UUID_LOW                  = 4358;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG5_OFF_TO_IDLE               = 4359;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG5_IDLE_TO_READY             = 4360;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG5_GPIO1                     = 4361;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG5_REG_GROUP_ID              = 4362;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG5_CAL_PRI_GROUP_ID          = 4363;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG5_I2C_BUS                   = 4364;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG5_I2C_ADDRESS               = 4365;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG5_SENSITIVITY_DEFAULT       = 4366;
+const SNS_REG_ITEM_SSI_DEVINFO_RGB_CFG5_FLAGS                     = 4367;
+
+/** Item IDs corresponding to group
+ *  SNS_REG_GROUP_SSI_DEVINFO_IR_GESTURE (Group Id: 2697) */
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_MIN_VER_NO              = 4400;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_NUM_UUID_VALID          = 4401;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG0_UUID_HIGH          = 4402;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG0_UUID_LOW           = 4403;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG0_OFF_TO_IDLE        = 4404;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG0_IDLE_TO_READY      = 4405;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG0_GPIO1              = 4406;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG0_REG_GROUP_ID       = 4407;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG0_CAL_PRI_GROUP_ID   = 4408;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG0_I2C_BUS            = 4409;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG0_I2C_ADDRESS        = 4410;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG0_SENSITIVITY_DEFAULT= 4411;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG0_FLAGS              = 4412;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG1_UUID_HIGH          = 4413;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG1_UUID_LOW           = 4414;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG1_OFF_TO_IDLE        = 4415;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG1_IDLE_TO_READY      = 4416;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG1_GPIO1              = 4417;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG1_REG_GROUP_ID       = 4418;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG1_CAL_PRI_GROUP_ID   = 4419;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG1_I2C_BUS            = 4420;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG1_I2C_ADDRESS        = 4421;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG1_SENSITIVITY_DEFAULT= 4422;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG1_FLAGS              = 4423;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG2_UUID_HIGH          = 4424;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG2_UUID_LOW           = 4425;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG2_OFF_TO_IDLE        = 4426;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG2_IDLE_TO_READY      = 4427;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG2_GPIO1              = 4428;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG2_REG_GROUP_ID       = 4429;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG2_CAL_PRI_GROUP_ID   = 4430;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG2_I2C_BUS            = 4431;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG2_I2C_ADDRESS        = 4432;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG2_SENSITIVITY_DEFAULT= 4433;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG2_FLAGS              = 4434;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG3_UUID_HIGH          = 4435;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG3_UUID_LOW           = 4436;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG3_OFF_TO_IDLE        = 4437;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG3_IDLE_TO_READY      = 4438;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG3_GPIO1              = 4439;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG3_REG_GROUP_ID       = 4440;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG3_CAL_PRI_GROUP_ID   = 4441;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG3_I2C_BUS            = 4442;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG3_I2C_ADDRESS        = 4443;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG3_SENSITIVITY_DEFAULT= 4444;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG3_FLAGS              = 4445;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG4_UUID_HIGH          = 4446;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG4_UUID_LOW           = 4447;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG4_OFF_TO_IDLE        = 4448;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG4_IDLE_TO_READY      = 4449;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG4_GPIO1              = 4450;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG4_REG_GROUP_ID       = 4451;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG4_CAL_PRI_GROUP_ID   = 4452;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG4_I2C_BUS            = 4453;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG4_I2C_ADDRESS        = 4454;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG4_SENSITIVITY_DEFAULT= 4455;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG4_FLAGS              = 4456;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG5_UUID_HIGH          = 4457;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG5_UUID_LOW           = 4458;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG5_OFF_TO_IDLE        = 4459;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG5_IDLE_TO_READY      = 4460;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG5_GPIO1              = 4461;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG5_REG_GROUP_ID       = 4462;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG5_CAL_PRI_GROUP_ID   = 4463;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG5_I2C_BUS            = 4464;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG5_I2C_ADDRESS        = 4465;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG5_SENSITIVITY_DEFAULT= 4466;
+const SNS_REG_ITEM_SSI_DEVINFO_IR_GESTURE_CFG5_FLAGS              = 4467;
+
+/** Item IDs corresponding to group
+ *  SNS_REG_GROUP_SSI_DEVINFO_SAR(Group Id: 3010) */
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_MIN_VER_NO                     = 4500;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_NUM_UUID_VALID                 = 4501;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG0_UUID_HIGH                 = 4502;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG0_UUID_LOW                  = 4503;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG0_OFF_TO_IDLE               = 4504;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG0_IDLE_TO_READY             = 4505;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG0_GPIO1                     = 4506;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG0_REG_GROUP_ID              = 4507;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG0_CAL_PRI_GROUP_ID          = 4508;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG0_I2C_BUS                   = 4509;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG0_I2C_ADDRESS               = 4510;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG0_SENSITIVITY_DEFAULT       = 4511;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG0_FLAGS                     = 4512;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG1_UUID_HIGH                 = 4513;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG1_UUID_LOW                  = 4514;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG1_OFF_TO_IDLE               = 4515;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG1_IDLE_TO_READY             = 4516;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG1_GPIO1                     = 4517;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG1_REG_GROUP_ID              = 4518;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG1_CAL_PRI_GROUP_ID          = 4519;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG1_I2C_BUS                   = 4520;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG1_I2C_ADDRESS               = 4521;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG1_SENSITIVITY_DEFAULT       = 4522;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG1_FLAGS                     = 4523;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG2_UUID_HIGH                 = 4524;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG2_UUID_LOW                  = 4525;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG2_OFF_TO_IDLE               = 4526;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG2_IDLE_TO_READY             = 4527;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG2_GPIO1                     = 4528;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG2_REG_GROUP_ID              = 4529;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG2_CAL_PRI_GROUP_ID          = 4530;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG2_I2C_BUS                   = 4531;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG2_I2C_ADDRESS               = 4532;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG2_SENSITIVITY_DEFAULT       = 4533;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG2_FLAGS                     = 4534;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG3_UUID_HIGH                 = 4535;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG3_UUID_LOW                  = 4536;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG3_OFF_TO_IDLE               = 4537;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG3_IDLE_TO_READY             = 4538;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG3_GPIO1                     = 4539;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG3_REG_GROUP_ID              = 4540;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG3_CAL_PRI_GROUP_ID          = 4541;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG3_I2C_BUS                   = 4542;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG3_I2C_ADDRESS               = 4543;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG3_SENSITIVITY_DEFAULT       = 4544;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG3_FLAGS                     = 4545;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG4_UUID_HIGH                 = 4546;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG4_UUID_LOW                  = 4547;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG4_OFF_TO_IDLE               = 4548;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG4_IDLE_TO_READY             = 4549;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG4_GPIO1                     = 4550;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG4_REG_GROUP_ID              = 4551;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG4_CAL_PRI_GROUP_ID          = 4552;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG4_I2C_BUS                   = 4553;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG4_I2C_ADDRESS               = 4554;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG4_SENSITIVITY_DEFAULT       = 4555;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG4_FLAGS                     = 4556;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG5_UUID_HIGH                 = 4557;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG5_UUID_LOW                  = 4558;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG5_OFF_TO_IDLE               = 4559;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG5_IDLE_TO_READY             = 4560;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG5_GPIO1                     = 4561;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG5_REG_GROUP_ID              = 4562;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG5_CAL_PRI_GROUP_ID          = 4563;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG5_I2C_BUS                   = 4564;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG5_I2C_ADDRESS               = 4565;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG5_SENSITIVITY_DEFAULT       = 4566;
+const SNS_REG_ITEM_SSI_DEVINFO_SAR_CFG5_FLAGS                     = 4567;
+
+
+/** Item ID's corresponding to group SNS_REG_DRIVER_GROUP_IR_GESTURE_V02 (Group Id: 1050)
+*/
+const SNS_REG_ITEM_IR_GESTURE_DS1                 = 4600;
+const SNS_REG_ITEM_IR_GESTURE_DS2                 = 4601;
+const SNS_REG_ITEM_IR_GESTURE_DS3                 = 4602;
+const SNS_REG_ITEM_IR_GESTURE_DS4                 = 4603;
+const SNS_REG_ITEM_IR_GESTURE_DS5                 = 4604;
+const SNS_REG_ITEM_IR_GESTURE_DS6                 = 4605;
+const SNS_REG_ITEM_IR_GESTURE_DS7                 = 4606;
+const SNS_REG_ITEM_IR_GESTURE_DS8                 = 4607;
+const SNS_REG_ITEM_IR_GESTURE_DS9                 = 4608;
+const SNS_REG_ITEM_IR_GESTURE_DS10                = 4609;
+const SNS_REG_ITEM_IR_GESTURE_DS11                = 4610;
+const SNS_REG_ITEM_IR_GESTURE_DS12                = 4611;
+const SNS_REG_ITEM_IR_GESTURE_DS13                = 4612;
+const SNS_REG_ITEM_IR_GESTURE_DS14                = 4613;
+const SNS_REG_ITEM_IR_GESTURE_DS15                = 4614;
+const SNS_REG_ITEM_IR_GESTURE_DS16                = 4615;
+const SNS_REG_ITEM_IR_GESTURE_DS17                = 4616;
+const SNS_REG_ITEM_IR_GESTURE_DS18                = 4617;
+const SNS_REG_ITEM_IR_GESTURE_DS19                = 4618;
+const SNS_REG_ITEM_IR_GESTURE_DS20                = 4619;
+const SNS_REG_ITEM_IR_GESTURE_DS21                = 4620;
+const SNS_REG_ITEM_IR_GESTURE_DS22                = 4621;
+const SNS_REG_ITEM_IR_GESTURE_DS23                = 4622;
+const SNS_REG_ITEM_IR_GESTURE_DS24                = 4623;
+const SNS_REG_ITEM_IR_GESTURE_DS25                = 4624;
+const SNS_REG_ITEM_IR_GESTURE_DS26                = 4625;
+const SNS_REG_ITEM_IR_GESTURE_DS27                = 4626;
+const SNS_REG_ITEM_IR_GESTURE_DS28                = 4627;
+const SNS_REG_ITEM_IR_GESTURE_DS29                = 4628;
+const SNS_REG_ITEM_IR_GESTURE_DS30                = 4629;
+const SNS_REG_ITEM_IR_GESTURE_DS31                = 4630;
+const SNS_REG_ITEM_IR_GESTURE_DS32                = 4631;
+const SNS_REG_ITEM_IR_GESTURE_DS33                = 4632;
+const SNS_REG_ITEM_IR_GESTURE_DS34                = 4633;
+const SNS_REG_ITEM_IR_GESTURE_DS35                = 4634;
+const SNS_REG_ITEM_IR_GESTURE_DS36                = 4635;
+const SNS_REG_ITEM_IR_GESTURE_DS37                = 4636;
+const SNS_REG_ITEM_IR_GESTURE_DS38                = 4637;
+const SNS_REG_ITEM_IR_GESTURE_DS39                = 4638;
+const SNS_REG_ITEM_IR_GESTURE_DS40                = 4639;
+const SNS_REG_ITEM_IR_GESTURE_DS41                = 4640;
+const SNS_REG_ITEM_IR_GESTURE_DS42                = 4641;
+const SNS_REG_ITEM_IR_GESTURE_DS43                = 4642;
+const SNS_REG_ITEM_IR_GESTURE_DS44                = 4643;
+const SNS_REG_ITEM_IR_GESTURE_DS45                = 4644;
+const SNS_REG_ITEM_IR_GESTURE_DS46                = 4645;
+const SNS_REG_ITEM_IR_GESTURE_DS47                = 4646;
+const SNS_REG_ITEM_IR_GESTURE_DS48                = 4647;
+const SNS_REG_ITEM_IR_GESTURE_DS49                = 4648;
+const SNS_REG_ITEM_IR_GESTURE_DS50                = 4649;
+const SNS_REG_ITEM_IR_GESTURE_DS51                = 4650;
+const SNS_REG_ITEM_IR_GESTURE_DS52                = 4651;
+const SNS_REG_ITEM_IR_GESTURE_DS53                = 4652;
+const SNS_REG_ITEM_IR_GESTURE_DS54                = 4653;
+const SNS_REG_ITEM_IR_GESTURE_DS55                = 4654;
+const SNS_REG_ITEM_IR_GESTURE_DS56                = 4655;
+const SNS_REG_ITEM_IR_GESTURE_DS57                = 4656;
+const SNS_REG_ITEM_IR_GESTURE_DS58                = 4657;
+const SNS_REG_ITEM_IR_GESTURE_DS59                = 4658;
+const SNS_REG_ITEM_IR_GESTURE_DS60                = 4659;
+const SNS_REG_ITEM_IR_GESTURE_DS61                = 4660;
+const SNS_REG_ITEM_IR_GESTURE_DS62                = 4661;
+const SNS_REG_ITEM_IR_GESTURE_DS63                = 4662;
+const SNS_REG_ITEM_IR_GESTURE_DS64                = 4663;
+
+/** Item IDs corresponding to group
+ *  SNS_REG_GROUP_SSI_DEVINFO_HALL_EFFECT(Group Id: 3020) */
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_MIN_VER_NO                     = 4700;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_NUM_UUID_VALID                 = 4701;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG0_UUID_HIGH                 = 4702;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG0_UUID_LOW                  = 4703;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG0_OFF_TO_IDLE               = 4704;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG0_IDLE_TO_READY             = 4705;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG0_GPIO1                     = 4706;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG0_REG_GROUP_ID              = 4707;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG0_CAL_PRI_GROUP_ID          = 4708;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG0_I2C_BUS                   = 4709;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG0_I2C_ADDRESS               = 4710;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG0_SENSITIVITY_DEFAULT       = 4711;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG0_FLAGS                     = 4712;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG1_UUID_HIGH                 = 4713;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG1_UUID_LOW                  = 4714;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG1_OFF_TO_IDLE               = 4715;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG1_IDLE_TO_READY             = 4716;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG1_GPIO1                     = 4717;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG1_REG_GROUP_ID              = 4718;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG1_CAL_PRI_GROUP_ID          = 4719;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG1_I2C_BUS                   = 4720;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG1_I2C_ADDRESS               = 4721;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG1_SENSITIVITY_DEFAULT       = 4722;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG1_FLAGS                     = 4723;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG2_UUID_HIGH                 = 4724;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG2_UUID_LOW                  = 4725;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG2_OFF_TO_IDLE               = 4726;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG2_IDLE_TO_READY             = 4727;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG2_GPIO1                     = 4728;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG2_REG_GROUP_ID              = 4729;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG2_CAL_PRI_GROUP_ID          = 4730;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG2_I2C_BUS                   = 4731;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG2_I2C_ADDRESS               = 4732;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG2_SENSITIVITY_DEFAULT       = 4733;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG2_FLAGS                     = 4734;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG3_UUID_HIGH                 = 4735;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG3_UUID_LOW                  = 4736;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG3_OFF_TO_IDLE               = 4737;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG3_IDLE_TO_READY             = 4738;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG3_GPIO1                     = 4739;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG3_REG_GROUP_ID              = 4740;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG3_CAL_PRI_GROUP_ID          = 4741;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG3_I2C_BUS                   = 4742;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG3_I2C_ADDRESS               = 4743;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG3_SENSITIVITY_DEFAULT       = 4744;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG3_FLAGS                     = 4745;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG4_UUID_HIGH                 = 4746;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG4_UUID_LOW                  = 4747;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG4_OFF_TO_IDLE               = 4748;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG4_IDLE_TO_READY             = 4749;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG4_GPIO1                     = 4750;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG4_REG_GROUP_ID              = 4751;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG4_CAL_PRI_GROUP_ID          = 4752;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG4_I2C_BUS                   = 4753;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG4_I2C_ADDRESS               = 4754;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG4_SENSITIVITY_DEFAULT       = 4755;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG4_FLAGS                     = 4756;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG5_UUID_HIGH                 = 4757;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG5_UUID_LOW                  = 4758;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG5_OFF_TO_IDLE               = 4759;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG5_IDLE_TO_READY             = 4760;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG5_GPIO1                     = 4761;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG5_REG_GROUP_ID              = 4762;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG5_CAL_PRI_GROUP_ID          = 4763;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG5_I2C_BUS                   = 4764;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG5_I2C_ADDRESS               = 4765;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG5_SENSITIVITY_DEFAULT       = 4766;
+const SNS_REG_ITEM_SSI_DEVINFO_HALL_EFFECT_CFG5_FLAGS                     = 4767;
+
+/** Item ID's corresponding to group SNS_REG_DRIVER_GROUP_SAR (Group Id: 1090)
+    NOTE: Each driver defines how it uses *_DRIVER_SPECIFIC_* items. Check
+          the driver for proper usage instructions. */
+const SNS_REG_DRIVER_SAR_NUM_ELECTRODES                     =  4800;
+const SNS_REG_DRIVER_SAR_E0_BIAS                            =  4801;
+const SNS_REG_DRIVER_SAR_E0_THRESHOLD                       =  4802;
+const SNS_REG_DRIVER_SAR_E1_BIAS                            =  4803;
+const SNS_REG_DRIVER_SAR_E1_THRESHOLD                       =  4804;
+const SNS_REG_DRIVER_SAR_E2_BIAS                            =  4805;
+const SNS_REG_DRIVER_SAR_E2_THRESHOLD                       =  4806;
+const SNS_REG_DRIVER_SAR_E3_BIAS                            =  4807;
+const SNS_REG_DRIVER_SAR_E3_THRESHOLD                       =  4808;
+const SNS_REG_DRIVER_SAR_E4_BIAS                            =  4809;
+const SNS_REG_DRIVER_SAR_E4_THRESHOLD                       =  4810;
+const SNS_REG_DRIVER_SAR_E5_BIAS                            =  4811;
+const SNS_REG_DRIVER_SAR_E5_THRESHOLD                       =  4812;
+const SNS_REG_DRIVER_SAR_E6_BIAS                            =  4813;
+const SNS_REG_DRIVER_SAR_E6_THRESHOLD                       =  4814;
+const SNS_REG_DRIVER_SAR_E7_BIAS                            =  4815;
+const SNS_REG_DRIVER_SAR_E7_THRESHOLD                       =  4816;
+const SNS_REG_DRIVER_SAR_E8_BIAS                            =  4817;
+const SNS_REG_DRIVER_SAR_E8_THRESHOLD                       =  4818;
+const SNS_REG_DRIVER_SAR_E9_BIAS                            =  4819;
+const SNS_REG_DRIVER_SAR_E9_THRESHOLD                       =  4820;
+const SNS_REG_DRIVER_SAR_E10_BIAS                           =  4821;
+const SNS_REG_DRIVER_SAR_E10_THRESHOLD                      =  4822;
+const SNS_REG_DRIVER_SAR_E11_BIAS                           =  4823;
+const SNS_REG_DRIVER_SAR_E11_THRESHOLD                      =  4824;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_01                 =  4825;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_02                 =  4826;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_03                 =  4827;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_04                 =  4828;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_05                 =  4829;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_06                 =  4830;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_07                 =  4831;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_08                 =  4832;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_09                 =  4833;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_10                 =  4834;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_11                 =  4835;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_12                 =  4836;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_13                 =  4837;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_14                 =  4838;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_15                 =  4839;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_16                 =  4840;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_17                 =  4841;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_18                 =  4842;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_19                 =  4843;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_20                 =  4844;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_21                 =  4845;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_22                 =  4846;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_23                 =  4847;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_24                 =  4848;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_25                 =  4849;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_26                 =  4850;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_27                 =  4851;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_28                 =  4852;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_29                 =  4853;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_30                 =  4854;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_31                 =  4855;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_32                 =  4856;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_33                 =  4857;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_34                 =  4858;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_35                 =  4859;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_36                 =  4860;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_37                 =  4861;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_38                 =  4862;
+const SNS_REG_DRIVER_SAR_DRIVER_SPECIFIC_39                 =  4863;
+
+/** Item ID's corresponding to group SNS_REG_DRIVER_GROUP_SAR_2 (Group Id: 1091)
+    NOTE: Each driver defines how it uses *_DRIVER_SPECIFIC_* items. Check
+          the driver for proper usage instructions. */
+const SNS_REG_DRIVER_SAR_2_NUM_ELECTRODES                   =  4900;
+const SNS_REG_DRIVER_SAR_2_E0_BIAS                          =  4901;
+const SNS_REG_DRIVER_SAR_2_E0_THRESHOLD                     =  4902;
+const SNS_REG_DRIVER_SAR_2_E1_BIAS                          =  4903;
+const SNS_REG_DRIVER_SAR_2_E1_THRESHOLD                     =  4904;
+const SNS_REG_DRIVER_SAR_2_E2_BIAS                          =  4905;
+const SNS_REG_DRIVER_SAR_2_E2_THRESHOLD                     =  4906;
+const SNS_REG_DRIVER_SAR_2_E3_BIAS                          =  4907;
+const SNS_REG_DRIVER_SAR_2_E3_THRESHOLD                     =  4908;
+const SNS_REG_DRIVER_SAR_2_E4_BIAS                          =  4909;
+const SNS_REG_DRIVER_SAR_2_E4_THRESHOLD                     =  4910;
+const SNS_REG_DRIVER_SAR_2_E5_BIAS                          =  4911;
+const SNS_REG_DRIVER_SAR_2_E5_THRESHOLD                     =  4912;
+const SNS_REG_DRIVER_SAR_2_E6_BIAS                          =  4913;
+const SNS_REG_DRIVER_SAR_2_E6_THRESHOLD                     =  4914;
+const SNS_REG_DRIVER_SAR_2_E7_BIAS                          =  4915;
+const SNS_REG_DRIVER_SAR_2_E7_THRESHOLD                     =  4916;
+const SNS_REG_DRIVER_SAR_2_E8_BIAS                          =  4917;
+const SNS_REG_DRIVER_SAR_2_E8_THRESHOLD                     =  4918;
+const SNS_REG_DRIVER_SAR_2_E9_BIAS                          =  4919;
+const SNS_REG_DRIVER_SAR_2_E9_THRESHOLD                     =  4920;
+const SNS_REG_DRIVER_SAR_2_E10_BIAS                         =  4921;
+const SNS_REG_DRIVER_SAR_2_E10_THRESHOLD                    =  4922;
+const SNS_REG_DRIVER_SAR_2_E11_BIAS                         =  4923;
+const SNS_REG_DRIVER_SAR_2_E11_THRESHOLD                    =  4924;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_01               =  4925;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_02               =  4926;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_03               =  4927;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_04               =  4928;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_05               =  4929;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_06               =  4930;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_07               =  4931;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_08               =  4932;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_09               =  4933;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_10               =  4934;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_11               =  4935;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_12               =  4936;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_13               =  4937;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_14               =  4938;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_15               =  4939;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_16               =  4940;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_17               =  4941;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_18               =  4942;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_19               =  4943;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_20               =  4944;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_21               =  4945;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_22               =  4946;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_23               =  4947;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_24               =  4948;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_25               =  4949;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_26               =  4950;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_27               =  4951;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_28               =  4952;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_29               =  4953;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_30               =  4954;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_31               =  4955;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_32               =  4956;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_33               =  4957;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_34               =  4958;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_35               =  4959;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_36               =  4960;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_37               =  4961;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_38               =  4962;
+const SNS_REG_DRIVER_SAR_2_DRIVER_SPECIFIC_39               =  4963;
+
+/** Item ID's corresponding to group SNS_REG_DRIVER_GROUP_RGB_V02 (Group Id: 1080)
+*/
+const SNS_REG_DRIVER_RGB_R_FACTOR                           =  5000;
+const SNS_REG_DRIVER_RGB_G_FACTOR                           =  5001;
+const SNS_REG_DRIVER_RGB_B_FACTOR                           =  5002;
+const SNS_REG_DRIVER_RGB_C_FACTOR                           =  5003;
+const SNS_REG_DRIVER_RGB_IR_FACTOR                          =  5004;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_01                 =  5005;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_02                 =  5006;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_03                 =  5007;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_04                 =  5008;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_05                 =  5009;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_06                 =  5010;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_07                 =  5011;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_08                 =  5012;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_09                 =  5013;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_10                 =  5014;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_11                 =  5015;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_12                 =  5016;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_13                 =  5017;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_14                 =  5018;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_15                 =  5019;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_16                 =  5020;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_17                 =  5021;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_18                 =  5022;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_19                 =  5023;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_20                 =  5024;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_21                 =  5025;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_22                 =  5026;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_23                 =  5027;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_24                 =  5028;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_25                 =  5029;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_26                 =  5030;
+const SNS_REG_DRIVER_RGB_DRIVER_SPECIFIC_27                 =  5031;
+
+/** Item ID's corresponding to group SNS_REG_DRIVER_GROUP_RGB_2_V02 (Group Id: 1081)
+*/
+const SNS_REG_DRIVER_RGB_2_R_FACTOR                           =  5100;
+const SNS_REG_DRIVER_RGB_2_G_FACTOR                           =  5101;
+const SNS_REG_DRIVER_RGB_2_B_FACTOR                           =  5102;
+const SNS_REG_DRIVER_RGB_2_C_FACTOR                           =  5103;
+const SNS_REG_DRIVER_RGB_2_IR_FACTOR                          =  5104;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_01                 =  5105;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_02                 =  5106;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_03                 =  5107;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_04                 =  5108;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_05                 =  5109;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_06                 =  5110;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_07                 =  5111;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_08                 =  5112;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_09                 =  5113;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_10                 =  5114;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_11                 =  5115;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_12                 =  5116;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_13                 =  5117;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_14                 =  5118;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_15                 =  5119;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_16                 =  5120;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_17                 =  5121;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_18                 =  5122;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_19                 =  5123;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_20                 =  5124;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_21                 =  5125;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_22                 =  5126;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_23                 =  5127;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_24                 =  5128;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_25                 =  5129;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_26                 =  5130;
+const SNS_REG_DRIVER_RGB_2_DRIVER_SPECIFIC_27                 =  5131;
+
+/** Item ID's corresponding to group SNS_REG_DRIVER_GROUP_GAME_RV (Group Id: 1110) */
+const SNS_REG_DRIVER_GAME_RV_X_ORIENT           = 5200;
+const SNS_REG_DRIVER_GAME_RV_Y_ORIENT           = 5201;
+const SNS_REG_DRIVER_GAME_RV_Z_ORIENT           = 5202;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_PED_ALIGNMENT (Group Id: 3030) */
+const SNS_REG_ITEM_PED_ALIGNMENT_DEF_SENSOR_REPORT_RATE     = 5300;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_TILT_DETECTOR (Group Id: 3040) */
+const SNS_REG_ITEM_TILT_DETECTOR_DEF_SENSOR_REPORT_RATE = 5400;
+const SNS_REG_ITEM_TILT_DETECTOR_SAMPLE_RATE            = 5401;
+const SNS_REG_ITEM_TILT_DETECTOR_INIT_ACCEL_WINDOW_TIME = 5402;
+const SNS_REG_ITEM_TILT_DETECTOR_ACCEL_WINDOW_TIME      = 5403;
+const SNS_REG_ITEM_TILT_DETECTOR_DEF_TILT_ANGLE_THRESH  = 5404;
+
+
+/** Item IDs corresponding to group SNS_REG_GROUP_SSI_SMGR_CFG_3 (Group Id: 3050) */
+const SNS_REG_ITEM_SSI_SMGR_3_MAJ_VER_NO                = 5500;
+const SNS_REG_ITEM_SSI_SMGR_3_MIN_VER_NO                = 5501;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_UUID_HIGH            = 5502;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_UUID_LOW             = 5503;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_OFF_TO_IDLE          = 5504;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_IDLE_TO_READY        = 5505;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_I2C_BUS              = 5506;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_REG_GROUP_ID         = 5507;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_CAL_PRI_GROUP_ID     = 5508;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_GPIO1                = 5509;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_GPIO2                = 5510;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_SENSOR_ID            = 5511;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_I2C_ADDRESS          = 5512;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_DATA_TYPE1           = 5513;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_DATA_TYPE2           = 5514;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_RELATED_SENSOR_INDEX = 5515;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_SENSITIVITY_DEFAULT  = 5516;
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_FLAGS                = 5517;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_UUID_HIGH            = 5518;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_UUID_LOW             = 5519;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_OFF_TO_IDLE          = 5520;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_IDLE_TO_READY        = 5521;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_I2C_BUS              = 5522;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_REG_GROUP_ID         = 5523;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_CAL_PRI_GROUP_ID     = 5524;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_GPIO1                = 5525;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_GPIO2                = 5526;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_SENSOR_ID            = 5527;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_I2C_ADDRESS          = 5528;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_DATA_TYPE1           = 5529;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_DATA_TYPE2           = 5530;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_RELATED_SENSOR_INDEX = 5531;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_SENSITIVITY_DEFAULT  = 5532;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_FLAGS                = 5533;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_UUID_HIGH            = 5534;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_UUID_LOW             = 5535;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_OFF_TO_IDLE          = 5536;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_IDLE_TO_READY        = 5537;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_I2C_BUS              = 5538;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_REG_GROUP_ID         = 5539;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_CAL_PRI_GROUP_ID     = 5540;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_GPIO1                = 5541;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_GPIO2                = 5542;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_SENSOR_ID            = 5543;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_I2C_ADDRESS          = 5544;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_DATA_TYPE1           = 5545;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_DATA_TYPE2           = 5546;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_RELATED_SENSOR_INDEX = 5547;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_SENSITIVITY_DEFAULT  = 5548;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_FLAGS                = 5549;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_UUID_HIGH            = 5550;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_UUID_LOW             = 5551;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_OFF_TO_IDLE          = 5552;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_IDLE_TO_READY        = 5553;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_I2C_BUS              = 5554;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_REG_GROUP_ID         = 5555;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_CAL_PRI_GROUP_ID     = 5556;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_GPIO1                = 5557;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_GPIO2                = 5558;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_SENSOR_ID            = 5559;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_I2C_ADDRESS          = 5560;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_DATA_TYPE1           = 5561;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_DATA_TYPE2           = 5562;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_RELATED_SENSOR_INDEX = 5563;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_SENSITIVITY_DEFAULT  = 5564;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_FLAGS                = 5565;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_UUID_HIGH            = 5566;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_UUID_LOW             = 5567;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_OFF_TO_IDLE          = 5568;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_IDLE_TO_READY        = 5569;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_I2C_BUS              = 5570;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_REG_GROUP_ID         = 5571;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_CAL_PRI_GROUP_ID     = 5572;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_GPIO1                = 5573;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_GPIO2                = 5574;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_SENSOR_ID            = 5575;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_I2C_ADDRESS          = 5576;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_DATA_TYPE1           = 5577;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_DATA_TYPE2           = 5578;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_RELATED_SENSOR_INDEX = 5579;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_SENSITIVITY_DEFAULT  = 5580;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_FLAGS                = 5581;
+
+const SNS_REG_ITEM_SSI_SMGR_CFG0_3_DEVICE_SELECT        = 5582;
+const SNS_REG_ITEM_SSI_SMGR_CFG1_3_DEVICE_SELECT        = 5583;
+const SNS_REG_ITEM_SSI_SMGR_CFG2_3_DEVICE_SELECT        = 5584;
+const SNS_REG_ITEM_SSI_SMGR_CFG3_3_DEVICE_SELECT        = 5585;
+const SNS_REG_ITEM_SSI_SMGR_CFG4_3_DEVICE_SELECT        = 5586;
+
+/** Item IDs corresponding to group
+ *  SNS_REG_GROUP_SSI_DEVINFO_HEART_RATE(Group Id: 3060) */
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_MIN_VER_NO                     = 5600;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_NUM_UUID_VALID                 = 5601;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG0_UUID_HIGH                 = 5602;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG0_UUID_LOW                  = 5603;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG0_OFF_TO_IDLE               = 5604;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG0_IDLE_TO_READY             = 5605;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG0_GPIO1                     = 5606;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG0_REG_GROUP_ID              = 5607;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG0_CAL_PRI_GROUP_ID          = 5608;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG0_I2C_BUS                   = 5609;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG0_I2C_ADDRESS               = 5610;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG0_SENSITIVITY_DEFAULT       = 5611;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG0_FLAGS                     = 5612;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG1_UUID_HIGH                 = 5613;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG1_UUID_LOW                  = 5614;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG1_OFF_TO_IDLE               = 5615;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG1_IDLE_TO_READY             = 5616;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG1_GPIO1                     = 5617;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG1_REG_GROUP_ID              = 5618;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG1_CAL_PRI_GROUP_ID          = 5619;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG1_I2C_BUS                   = 5620;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG1_I2C_ADDRESS               = 5621;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG1_SENSITIVITY_DEFAULT       = 5622;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG1_FLAGS                     = 5623;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG2_UUID_HIGH                 = 5624;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG2_UUID_LOW                  = 5625;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG2_OFF_TO_IDLE               = 5626;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG2_IDLE_TO_READY             = 5627;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG2_GPIO1                     = 5628;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG2_REG_GROUP_ID              = 5629;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG2_CAL_PRI_GROUP_ID          = 5630;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG2_I2C_BUS                   = 5631;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG2_I2C_ADDRESS               = 5632;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG2_SENSITIVITY_DEFAULT       = 5633;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG2_FLAGS                     = 5634;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG3_UUID_HIGH                 = 5635;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG3_UUID_LOW                  = 5636;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG3_OFF_TO_IDLE               = 5637;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG3_IDLE_TO_READY             = 5638;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG3_GPIO1                     = 5639;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG3_REG_GROUP_ID              = 5640;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG3_CAL_PRI_GROUP_ID          = 5641;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG3_I2C_BUS                   = 5642;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG3_I2C_ADDRESS               = 5643;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG3_SENSITIVITY_DEFAULT       = 5644;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG3_FLAGS                     = 5645;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG4_UUID_HIGH                 = 5646;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG4_UUID_LOW                  = 5647;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG4_OFF_TO_IDLE               = 5648;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG4_IDLE_TO_READY             = 5649;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG4_GPIO1                     = 5650;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG4_REG_GROUP_ID              = 5651;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG4_CAL_PRI_GROUP_ID          = 5652;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG4_I2C_BUS                   = 5653;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG4_I2C_ADDRESS               = 5654;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG4_SENSITIVITY_DEFAULT       = 5655;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG4_FLAGS                     = 5656;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG5_UUID_HIGH                 = 5657;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG5_UUID_LOW                  = 5658;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG5_OFF_TO_IDLE               = 5659;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG5_IDLE_TO_READY             = 5660;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG5_GPIO1                     = 5661;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG5_REG_GROUP_ID              = 5662;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG5_CAL_PRI_GROUP_ID          = 5663;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG5_I2C_BUS                   = 5664;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG5_I2C_ADDRESS               = 5665;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG5_SENSITIVITY_DEFAULT       = 5666;
+const SNS_REG_ITEM_SSI_DEVINFO_HEART_RATE_CFG5_FLAGS                     = 5667;
+
+/** Item ID's corresponding to group SNS_REG_SETTINGS (Group Id: 65535) */
+const SNS_REG_SETTINGS_MG_WORD                  = 65500;
+const SNS_REG_SETTINGS_VERSION_MINOR            = 65501;
+const SNS_REG_SETTINGS_VERSION_MAJOR            = 65502;
+/** SNS_REG_SETTINGS_LIB* parameters added in version 2.16 */
+const SNS_REG_SETTINGS_FILE1_NAME               = 65503;
+const SNS_REG_SETTINGS_FILE1_VERSION            = 65504;
+const SNS_REG_SETTINGS_FILE2_NAME               = 65505;
+const SNS_REG_SETTINGS_FILE2_VERSION            = 65506;
+const SNS_REG_SETTINGS_FILE3_NAME               = 65507;
+const SNS_REG_SETTINGS_FILE3_VERSION            = 65508;
+
+
+/** Following are message definitions shared by all registry-related services */
+
+//============================================================================
+/** @COMMAND SNS_REG_SINGLE_READ
+    @BRIEF This command reads a single item from the registry.
+*/
+//============================================================================
+
+//! @MSG     SNS_REG_SINGLE_READ_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint16              item_id;
+  /**< ID of the registry entry to be read */
+} sns_reg_single_read_req_msg;
+
+//! @MSG     SNS_REG_SINGLE_READ_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s   resp = 2;
+  mandatory uint16              item_id;
+  mandatory opaque              data<SNS_REG_MAX_ITEM_BYTE_COUNT>;
+} sns_reg_single_read_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_REG_SINGLE_WRITE
+    @BRIEF This command writes a single item to the registry.
+*/
+//============================================================================
+
+//! @MSG     SNS_REG_SINGLE_WRITE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint16              item_id;
+  /**< ID of the registry entry to be written */
+  mandatory opaque              data<SNS_REG_MAX_ITEM_BYTE_COUNT>;
+  /**< Item data to be written to the registry. Data types of uint8/16/32/64 and
+       int8/16/32/64 are supported */
+} sns_reg_single_write_req_msg;
+
+//! @MSG     SNS_REG_SINGLE_WRITE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s   resp = 2;
+} sns_reg_single_write_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_REG_GROUP_READ
+    @BRIEF This command reads a single item from the registry.
+*/
+//============================================================================
+
+//! @MSG     SNS_REG_GROUP_READ_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint16              group_id;
+  /**< ID of the group of registry entries to be read */
+} sns_reg_group_read_req_msg;
+
+//! @MSG     SNS_REG_GROUP_READ_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s   resp = 2;
+  mandatory uint16              group_id;
+  mandatory opaque              data<SNS_REG_MAX_GROUP_BYTE_COUNT>;
+} sns_reg_group_read_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_REG_SINGLE_WRITE
+    @BRIEF This command writes a single item to the registry.
+*/
+//============================================================================
+
+//! @MSG     SNS_REG_GROUP_WRITE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint16              group_id;
+  /**< ID of the registry entry to be written */
+  mandatory opaque              data<SNS_REG_MAX_GROUP_BYTE_COUNT>;
+  /**< Item data to be written to the registry. Data types of uint8/16/32/64 and
+       int8/16/32/64 are supported */
+} sns_reg_group_write_req_msg;
+
+//! @MSG     SNS_REG_GROUP_WRITE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s   resp = 2;
+} sns_reg_group_write_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_REG_VERSION
+    @BRIEF This command requests Sensors Registry Service version number.
+*/
+//============================================================================
+
+
+//============================================================================
+/** @COMMAND SNS_REG_CANCEL
+    @BRIEF This command cancels an outstanding Sensors Registry command.
+*/
+//============================================================================
+
+
+//!============================================================================
+//! Service definition
+//! ============================================================================
+
+
+service SNS_REG2_SVC {
+  //! @ID SNS_REG_CANCEL
+  sns_common_cancel_req_msg	    SNS_REG_CANCEL_REQ,
+  sns_common_cancel_resp_msg	    SNS_REG_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_REG_VERSION
+  sns_common_version_req_msg	    SNS_REG_VERSION_REQ,
+  sns_common_version_resp_msg	    SNS_REG_VERSION_RESP;
+
+  //! @ID SNS_REG_SINGLE_READ
+  sns_reg_single_read_req_msg       SNS_REG_SINGLE_READ_REQ,
+  sns_reg_single_read_resp_msg      SNS_REG_SINGLE_READ_RESP;
+
+  //! @ID SNS_REG_SINGLE_WRITE
+  sns_reg_single_write_req_msg      SNS_REG_SINGLE_WRITE_REQ,
+  sns_reg_single_write_resp_msg     SNS_REG_SINGLE_WRITE_RESP;
+
+  //! @ID SNS_REG_GROUP_READ
+  sns_reg_group_read_req_msg        SNS_REG_GROUP_READ_REQ,
+  sns_reg_group_read_resp_msg       SNS_REG_GROUP_READ_RESP;
+
+  //! @ID SNS_REG_SINGLE_WRITE
+  sns_reg_group_write_req_msg      SNS_REG_GROUP_WRITE_REQ,
+  sns_reg_group_write_resp_msg     SNS_REG_GROUP_WRITE_RESP;
+
+} = SNS_QMI_SVC_ID_15;

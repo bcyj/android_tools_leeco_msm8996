@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---/******************************************************************************
+* @file    AndroidManifest.xml
+*  Coppyright (C) 2014 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="org.codeaurora.btmultisim"
+      android:sharedUserId="android.uid.phone"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <permission
+        android:name="com.qti.permission.DIAG"
+        android:protectionLevel="signatureOrSystem" />
+
+        <uses-permission android:name="android.permission.CALL_PHONE" />
+        <uses-permission android:name="android.permission.CALL_PRIVILEGED" />
+        <uses-permission android:name="android.permission.BLUETOOTH" />
+        <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+        <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+
+    <application>
+        <service android:exported="true" android:name=".BluetoothDsdaService" android:enabled="true" android:process="com.android.phone">
+            <intent-filter>
+                 <!--These are the interfaces supported by the service, which
+                     you can bind to.  -->
+                <action android:name="org.codeaurora.btmultisim.IBluetoothDsdaService"/>
+            </intent-filter>
+        </service>
+        <uses-library android:name="org.codeaurora.btmultisimlibrary"/>
+    </application>
+</manifest>

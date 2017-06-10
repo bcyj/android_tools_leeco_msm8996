@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2013-2014, Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.qti.networksetting"
+    android:sharedUserId="android.uid.phone" >
+
+    <application
+        android:icon="@drawable/ic_launcher_phone"
+        android:supportsRtl="true"
+        android:process="com.android.phone" >
+        <uses-library
+            android:name="com.qualcomm.qcrilhook" />
+
+        <activity
+            android:name=".NetworkSetting"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/available_networks"
+            android:theme="@android:style/Theme.Holo.DialogWhenLarge"
+            android:uiOptions="splitActionBarWhenNarrow" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.settings.NETWORK_OPERATOR_SETTINGS" />
+                <action android:name="org.codeaurora.settings.NETWORK_OPERATOR_SETTINGS_ASYNC" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

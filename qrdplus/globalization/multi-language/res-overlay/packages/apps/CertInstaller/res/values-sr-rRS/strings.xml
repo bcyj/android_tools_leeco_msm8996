@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"Програм за инсталирање сертификата"</string>
+
+    <!-- Title of the file picker screen -->
+    <string name="pick_file_title">"Избор сертификата"</string>
+
+    <!-- Title of dialog to enter password for pkcs12 -->
+    <string name="pkcs12_password_dialog_title">"Издвајање сертификата"</string>
+    <!-- message in progress bar when waiting for extracting certs from a pkcs12 package -->
+    <string name="extracting_pkcs12">"Издвајање..."</string>
+    <!-- Title of dialog to enter password for pkcs12 file -->
+    <string name="pkcs12_file_password_dialog_title">"Издвајање из датотеке %s"</string>
+    <!-- Title of dialog to name a credential -->
+    <string name="name_credential_dialog_title">"Именовање сертификата"</string>
+    <!-- Description for the credential name input box -->
+    <string name="credential_name">"Назив сертификата:"</string>
+    <!-- Title of the credential info -->
+    <!-- Description for the credential password input box -->
+    <string name="credential_password">"Унесите лозинку да бисте издвојили сертификате."</string>
+    <string name="credential_info">"Пакет обухвата:"</string>
+    <string name="p12_description">"Сертификати у PKCS12 складишту за кључ."</string>
+
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE] -->
+    <string name="one_userkey">"кључ за једног корисника"</string>
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE] -->
+    <string name="one_usercrt">"сертификат за једног корисника"</string>
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE] -->
+    <string name="one_cacrt">"један CA сертификат"</string>
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE]-->
+    <string name="n_cacrts">"%d CA сертификати"</string>
+
+    <string name="password_error">"Унесите тачну лозинку."</string>
+    <string name="password_empty_error">"Унесите лозинку."</string>
+    <string name="name_empty_error">"Унесите име."</string>
+    <string name="name_char_error">"Унесите име састављено само од слова и бројева."</string>
+    <string name="storage_error">"Није могуће сачувати сертификат. Додирните Потврди да бисте покушали поново."</string>
+    <string name="unable_to_save_cert">"Није могуће сачувати сертификат. Складиште акредитива није омогућено или није правилно покренуто."</string>
+    <string name="cert_not_saved">"Сертификат није инсталиран."</string>
+    <string name="no_cert_to_saved">"Нема сертификата за инсталирање."</string>
+    <string name="invalid_cert">"Сертификат је неважећи."</string>
+
+    <!-- toast message -->
+    <string name="cert_is_added">"<xliff:g id="CREDENTIAL">%s</xliff:g> је инсталиран."</string>
+    <!-- toast message -->
+    <string name="cert_too_large_error">"Инсталација није могућа јер је сертификат превелик."</string>
+    <!-- toast message -->
+    <string name="cert_missing_error">"Инсталација није могућа јер није могуће пронаћи датотеку сертификата."</string>
+    <!-- toast message -->
+    <string name="cert_read_error">"Инсталација није могућа јер није могуће читати датотеку сертификата."</string>
+
+    <!-- Shown when the certificate file can\'t be found.  [CHAR LIMIT=NONE] -->
+    <string name="no_cert_file_found" product="nosdcard">"У USB меморији није пронађена ниједна датотека са сертификатом."</string>
+    <string name="no_cert_file_found" product="default">"На SD картици није пронађена ниједна датотека сертификата."</string>
+    <!-- Shown when USB storage can\'t be found to look for a certificate.  [CHAR LIMIT=30] -->
+    <string name="sdcard_not_present" product="nosdcard">"USB меморија није доступна."</string>
+    <string name="sdcard_not_present" product="default">"SD картица није уметнута."</string>
+
+    <!-- Message displayed when a user other than the owner on a multi-user system tries to
+         install a certificate into the certificate store. [CHAR LIMIT=NONE] -->
+    <string name="only_primary_user_allowed">"Само власник овог уређаја може да инсталира сертификате."</string>
+
+    <!-- Label for spinner that shows the possible usage for a credential. Shown when user is
+         installing a credential [CHAR LIMIT=40] -->
+    <string name="credential_usage_label">"Коришћење акредитива:"</string>
+
+    <!-- Usage type for a credential that the user is installing. The label will restrict the
+         type of use for that credential. [CHAR LIMIT=40] -->
+    <string-array name="credential_usage">
+        <item>"VPN и апликације"</item>
+        <item>"Wi-Fi"</item>
+    </string-array>
+</resources>

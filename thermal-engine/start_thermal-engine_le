@@ -1,0 +1,31 @@
+#! /bin/sh
+#
+#Copyright (c) 2013 Qualcomm Technologies, Inc.  All Rights Reserved.
+#Qualcomm Technologies Proprietary and Confidential.
+
+# thermal-engine        init.d script to start thermal engine
+
+set -e
+
+case "$1" in
+  start)
+        echo -n "Starting thermal-engine: "
+        start-stop-daemon -S -b -a /usr/bin/thermal-engine
+        echo "done"
+        ;;
+  stop)
+        echo -n "Stopping thermal-engine: "
+        start-stop-daemon -K -n thermal-engine
+        echo "done"
+        ;;
+  restart)
+        $0 stop
+        $0 start
+        ;;
+  *)
+        echo "Usage thermal-engine { start | stop | restart}" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

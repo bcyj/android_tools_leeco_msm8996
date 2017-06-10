@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2014 pci-suntektech Technologies, Inc.  All Rights Reserved.
+     pci-suntektech Technologies Proprietary and Confidential.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <GridView
+        android:id="@+id/emoji_grid_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="10dp"
+        android:verticalSpacing="10dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:layout_above="@+id/button_view" >
+    </GridView>
+
+    <RelativeLayout
+        android:id="@+id/button_view"
+        android:layout_width="fill_parent"
+        android:layout_height="38dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/gray2"
+        android:orientation="vertical"
+        android:paddingTop="1dp" >
+
+        <ImageButton
+            android:id="@+id/add_emoji_btn"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/rcs_public_account_btn_bg"
+            android:clickable="true"
+            android:contentDescription="@string/imagebutton"
+            android:src="@drawable/rcs_add_emoji_image"/>
+
+        <ImageButton
+            android:id="@+id/delete_emoji_btn"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:background="@drawable/rcs_public_account_btn_bg"
+            android:clickable="true"
+            android:layout_marginRight="1dp"
+            android:layout_toLeftOf="@+id/add_emoji_btn"
+            android:contentDescription="@string/imagebutton"
+            android:src="@drawable/rcs_delete_btn_bg"
+            android:textSize="16sp" />
+
+        <HorizontalScrollView
+            android:id="@+id/hsv_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_toLeftOf="@+id/delete_emoji_btn"
+            android:paddingRight="1dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/content_linear_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+</RelativeLayout>

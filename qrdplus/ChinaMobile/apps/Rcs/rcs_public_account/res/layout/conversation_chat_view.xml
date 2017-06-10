@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2014 pci-suntektech Technologies, Inc.  All Rights Reserved.
+     pci-suntektech Technologies Proprietary and Confidential.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <com.suntek.mway.rcs.publicaccount.ui.widget.HistoryMsgListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_Bottom"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/transparent"
+        android:transcriptMode="disabled"
+        android:smoothScrollbar="false"
+        android:stackFromBottom="true"
+        android:dividerHeight="4dp"
+        android:listSelector="@color/transparent" />
+
+    <LinearLayout
+        android:id="@+id/layout_Bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/gray2"
+        android:orientation="vertical"
+        android:paddingTop="1dp" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray2"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/input_ayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:minHeight="50dp" >
+
+                <ImageButton
+                    android:id="@+id/btnSwitchToMenu"
+                    android:layout_width="45dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rcs_public_account_btn_bg"
+                    android:src="@drawable/menu_more_icon"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/edit_Text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toLeftOf="@+id/btn_phiz"
+                    android:layout_toRightOf="@+id/btnSwitchToMenu"
+                    android:maxLines="3"
+                    android:textSize="@dimen/text_medium"
+                    android:visibility="visible" />
+
+                <ImageButton
+                    android:id="@+id/btn_phiz"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/btn_Send"
+                    android:background="@drawable/rcs_public_account_btn_bg"
+                    android:src="@drawable/rcs_emotion_false" />
+
+                <ImageButton
+                    android:id="@+id/btn_Send"
+                    android:layout_width="45dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rcs_public_account_btn_bg"
+                    android:src="@drawable/send_btn_icon" />
+            </RelativeLayout>
+
+            <ViewStub
+                android:id="@+id/view_stub"
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                android:background="@android:color/darker_gray"
+                android:inflatedId="@+id/pic_view_id_after_inflate"
+                android:layout="@layout/rcs_emoji_root_viewstub"
+                android:paddingTop="1dp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pub_account_menus"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/gray2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:padding="0.5dp" >
+
+            <ImageView
+                android:id="@+id/btnSwitchToMsg"
+                android:layout_width="45dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/rcs_public_account_btn_bg"
+                android:clickable="true"
+                android:padding="8dp"
+                android:src="@drawable/rcs_kb_image" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/layout_menu1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rcs_public_account_btn_bg"
+                android:clickable="true"
+                android:padding="8dp" >
+
+                <TextView
+                    android:id="@+id/text_item1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:singleLine="true"
+                    android:text="@string/app_name"
+                    android:textColor="@color/black1"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/image_item1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/rcs_menu_indicator" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/layout_menu2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rcs_public_account_btn_bg"
+                android:clickable="true"
+                android:padding="8dp" >
+
+                <TextView
+                    android:id="@+id/text_item2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:singleLine="true"
+                    android:text="@string/app_name"
+                    android:textColor="@color/black1"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/image_item2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/rcs_menu_indicator" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/layout_menu3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rcs_public_account_btn_bg"
+                android:clickable="true"
+                android:padding="8dp" >
+
+                <TextView
+                    android:id="@+id/text_item3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:singleLine="true"
+                    android:text="@string/app_name"
+                    android:textColor="@color/black1"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/image_item3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/rcs_menu_indicator" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

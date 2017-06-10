@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2014, Qualcomm Technologies, Inc.
+    All Rights Reserved.
+    Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<resources>
+    <!-- Configuration to set delete any partial segments expire age -->
+    <!-- 2 days by CMCC (60 * 60 * 1000) * 24 * 2 , no long so use string-->
+    <string name="config_partial_segment_expire_age">172800000</string>
+
+    <!-- Configuration to play sms ringtone during MO/MT call -->
+    <bool name="config_sms_ringtone_incall">true</bool>
+
+    <!-- monitor locale change -->
+    <bool name="config_monitor_locale_change">true</bool>
+
+    <!-- config display RAT strings for CMCC: 2G(CHINA MOBILE) 3G(CHINA MOBILE 3G)
+         4G(CHINA MOBILE 4G)
+     -->
+    <string name="config_rat_2g" translatable="false"></string>
+    <string name="config_rat_3g" translatable="false">3G</string>
+    <string name="config_rat_4g" translatable="false">4G</string>
+
+    <!-- config network mode to operator specific -->
+    <bool name="config_network_mode_overriden">true</bool>
+
+    <!-- Defines the set of global actions. Actions may still be disabled or hidden based
+         on the current state of the device.
+         Each item must be one of the following strings:
+         "power" = Power off
+         "reboot" = Reboot
+         "settings" = An action to launch settings
+         "airplane" = Airplane mode toggle
+         "bugreport" = Take bug report, if available
+         "silent" = silent mode
+         "users" = list of users
+         -->
+    <string-array translatable="false" name="config_globalActionsList">
+        <item>power</item>
+        <item>reboot</item>
+        <item>airplane</item>
+        <item>silent</item>
+    </string-array>
+
+    <!-- config for GPS HAL -->
+    <string-array translatable="false" name="config_gpsParameters">
+        <item>SUPL_HOST=221.176.0.55</item>
+        <item>SUPL_PORT=7275</item>
+    </string-array>
+
+    <!-- Integer indicating number of association errors leading to blacklisting of the network -->
+    <integer translatable="false" name="config_wifi_framework_max_connection_errors_to_blacklist">2</integer>
+
+    <!-- Integer indicating number of authentication errors leading to blacklisting of the network -->
+    <integer translatable="false" name="config_wifi_framework_max_auth_errors_to_blacklist">2</integer>
+    <!-- Configuration to add ringer and vibrate option -->
+    <bool name="config_addVibrateWithRingtoneOption">true</bool>
+</resources>

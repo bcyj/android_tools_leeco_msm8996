@@ -1,0 +1,140 @@
+
+LOCAL_PATH := $(call my-dir)
+
+include $(BUILD_SYSTEM)/multilib.mk
+
+ifeq ($(MULTI_LANG_ENGINE),REVERIE)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := DroidSansTamil.ttf
+LOCAL_SRC_FILES := DroidSansTamil.ttf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := DroidSansHindi.ttf
+LOCAL_SRC_FILES := DroidSansHindi.ttf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := DroidSansTelugu.ttf
+LOCAL_SRC_FILES := DroidSansTelugu.ttf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := DroidSansGujarati.ttf
+LOCAL_SRC_FILES := DroidSansGujarati.ttf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := DroidSansPunjabi.ttf
+LOCAL_SRC_FILES := DroidSansPunjabi.ttf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := DroidSansBengali.ttf
+LOCAL_SRC_FILES := DroidSansBengali.ttf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := DroidSansKannada.ttf
+LOCAL_SRC_FILES := DroidSansKannada.ttf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := DroidSansOdia.ttf
+LOCAL_SRC_FILES := DroidSansOdia.ttf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := DroidSansMyanmar.ttf
+LOCAL_SRC_FILES := DroidSansMyanmar.ttf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
+include $(BUILD_PREBUILT)
+
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := fallback_fonts.xml
+LOCAL_SRC_FILES := fallback_fonts-Rev.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/etc
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := fonts.xml
+LOCAL_SRC_FILES := fonts-Rev.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/etc
+include $(BUILD_PREBUILT)
+
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := obj_arm/revlib.a
+LOCAL_BUILT_MODULE_STEM := revlib.a
+LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)
+LOCAL_MODULE_SUFFIX := .a
+LOCAL_MODULE := revlib
+LOCAL_MULTILIB := 32
+LOCAL_MODULE_CLASS := STATIC_LIBRARIES
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := obj/revlib.a
+LOCAL_BUILT_MODULE_STEM := revlib.a
+LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)
+LOCAL_MODULE_SUFFIX := .a
+LOCAL_MODULE := revlib
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_CLASS := STATIC_LIBRARIES
+include $(BUILD_PREBUILT)
+
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := obj_arm/revlibchrome.a
+LOCAL_BUILT_MODULE_STEM := revlibchrome.a
+LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)
+LOCAL_MODULE_SUFFIX := .a
+LOCAL_MODULE := revlibchrome
+LOCAL_MULTILIB := 32
+LOCAL_MODULE_CLASS := STATIC_LIBRARIES
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := obj/revlibchrome.a
+LOCAL_BUILT_MODULE_STEM := revlibchrome.a
+LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)
+LOCAL_MODULE_SUFFIX := .a
+LOCAL_MODULE := revlibchrome
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_CLASS := STATIC_LIBRARIES
+include $(BUILD_PREBUILT)
+
+
+endif

@@ -1,0 +1,207 @@
+/*****************************************************************************
+  @FILE     sns_oem_1_v01.idl
+
+  @BRIEF    Message definition for sample OEM Algorithm service 1.
+
+  @DESCRIPTION
+
+  This file defines QMI messages provided to clients interested in
+  the sample OEM algorithm services.
+
+  @COPYRIGHT
+  Copyright (c) 2013 Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential
+*****************************************************************************/
+include "sns_common_v01.idl";
+
+revision 1;
+
+const SNS_OEM_1_MAX_ITEMS_PER_OUTPUT_DATA = 3;
+/**< Maximum number of sensor values in one report */
+
+//! @STRUCT   SNS_OEM_1_OUTPUT_STRUCT
+struct{
+  /** This structure shall have the output data */
+ uint32 data<SNS_OEM_1_MAX_ITEMS_PER_OUTPUT_DATA>;
+}sns_oem_1_output_s;
+//============================================================================
+/** @COMMAND SNS_OEM_1_ENABLE
+    @BRIEF This command enables the OEM_1 algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_OEM_1_ENABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint32  report_period;
+  /**< unit of seconds, Q16; determines algorithm output report rate
+   specify 0 to report at sampling rate
+
+   Note: This is a sample request parameter, the OEM may replace
+   it with an appropriate parameter
+  */
+  optional uint32   sample_rate;
+  /**< sample rate in Hz, Q16;
+   if sample rate is less than report rate, it is set to report rate
+
+   Note: This is a sample request parameter, the OEM may replace
+   it with an appropriate parameter
+  */
+} sns_oem_1_enable_req_msg;
+
+//! @MSG     SNS_OEM_1_ENABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  optional uint8                            instance_id;
+  /**<
+    Instance ID is assigned by SAM.
+    The client shall use this instance ID for future messages associated with
+    this algorithm instance.
+  */
+} sns_oem_1_enable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_OEM_1_DISABLE
+    @BRIEF This command disables a OEM_1 algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_OEM_1_DISABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+} sns_oem_1_disable_req_msg;
+
+//! @MSG     SNS_OEM_1_DISABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  optional uint8                            instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+} sns_oem_1_disable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_OEM_1_REPORT
+    @BRIEF Report containing OEM_1 algorithm output
+*/
+//============================================================================
+
+//! @MSG     SNS_OEM_1_REPORT_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+  mandatory uint32                           timestamp;
+  /**< Timestamp of input used to generate the algorithm output  */
+  mandatory sns_oem_1_output_s               output;
+  /**< output of OEM_1 algorithm instance.  */
+} sns_oem_1_report_ind_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_OEM_1_GET_REPORT
+    @BRIEF This command fetches latest report output of OEM_1 algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_OEM_1_GET_REPORT_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+} sns_oem_1_get_report_req_msg;
+
+//! @MSG     SNS_OEM_1_GET_REPORT_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  optional uint8                            instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+  optional uint32                           timestamp;
+  /**< Timestamp of input used to generate the algorithm output  */
+  optional sns_oem_1_output_s           output;
+  /**<  output of OEM_1 algorithm instance.  */
+} sns_oem_1_get_report_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_OEM_1_ERROR
+    @BRIEF Asynchronous error indication for a OEM_1 algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_OEM_1_ERROR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//============================================================================
+
+message {
+  mandatory uint8                            error;
+  /**< Sensor1 error code.  */
+  mandatory uint8                            instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+} sns_oem_1_error_ind_msg;
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_OEM_1_SVC {
+  //! @ID SNS_COMMON_CANCEL
+  sns_common_cancel_req_msg        SNS_OEM_1_CANCEL_REQ,
+  sns_common_cancel_resp_msg       SNS_OEM_1_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_COMMON_VERSION
+  sns_common_version_req_msg       SNS_OEM_1_VERSION_REQ,
+  sns_common_version_resp_msg      SNS_OEM_1_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_OEM_1_ENABLE
+  sns_oem_1_enable_req_msg       SNS_OEM_1_ENABLE_REQ,
+  sns_oem_1_enable_resp_msg      SNS_OEM_1_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_OEM_1_DISABLE
+  sns_oem_1_disable_req_msg      SNS_OEM_1_DISABLE_REQ,
+  sns_oem_1_disable_resp_msg     SNS_OEM_1_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_OEM_1_GET_REPORT
+  sns_oem_1_get_report_req_msg   SNS_OEM_1_GET_REPORT_REQ,
+  sns_oem_1_get_report_resp_msg  SNS_OEM_1_GET_REPORT_RESP
+    = 0x04;
+
+  //! @ID SNS_OEM_1_REPORT
+  sns_oem_1_report_ind_msg       SNS_OEM_1_REPORT_IND
+    = 0x05;
+
+  //! @ID SNS_OEM_1_ERROR
+  sns_oem_1_error_ind_msg        SNS_OEM_1_ERROR_IND
+    = 0x06;
+
+} = SNS_QMI_SVC_ID_31;

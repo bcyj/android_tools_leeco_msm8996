@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+<title>Message definition for Event Gated Sensor service.</title>
+<link rel="stylesheet" type="text/css" href="qmi_idl_wiredoc.css" />
+</head>
+
+<body>
+<h1>Message definition for Event Gated Sensor service.
+</h1>
+ This file defines messages used by Event Gated Sensor algo service.<br> Event Gated Sensor service gates the physical sensor stream based on<br> the state of the event sensor.<br><br> As prerequisite, the sensor algorithm must use the common Interface<br> defined in the Sensor Algorithms framework.<br><br> The messages defined herein will be passed to the Sensor framework using<br> the sensor1_write() API.
+
+<h1>Service Type</h1>
+<ul>
+<li>QMI service type <b>SNS_QMI_SVC_ID_49</b>
+<li>Version <b>01</b>
+</ul>
+<h1><a name='Messages'>Messages</a></h1>
+<table class = 'tlv'><tr class='head'><th>Command</th><th>ID</th><th>Messages</th><th>Description</th></tr>
+<tr><td class='l'><a href='#SNS_COMMON_CANCEL'>SNS_COMMON_CANCEL</a></td><td>0x0000</td><td class='l'><a href="#SNS_SAM_EVENT_GATED_SENSOR_CANCEL_REQ">SNS_SAM_EVENT_GATED_SENSOR_CANCEL_REQ</a></br><a href="#SNS_SAM_EVENT_GATED_SENSOR_CANCEL_RESP">SNS_SAM_EVENT_GATED_SENSOR_CANCEL_RESP</a></br></td><td class='l'>This command cancel all requests from a client to any sensor service This shall be the first message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_COMMON_VERSION'>SNS_COMMON_VERSION</a></td><td>0x0001</td><td class='l'><a href="#SNS_SAM_EVENT_GATED_SENSOR_VERSION_REQ">SNS_SAM_EVENT_GATED_SENSOR_VERSION_REQ</a></br><a href="#SNS_SAM_EVENT_GATED_SENSOR_VERSION_RESP">SNS_SAM_EVENT_GATED_SENSOR_VERSION_RESP</a></br></td><td class='l'>This command requests the version of the sensor service This shall be the second message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_EVENT_GATED_SENSOR_ENABLE'>SNS_SAM_EVENT_GATED_SENSOR_ENABLE</a></td><td>0x0002</td><td class='l'><a href="#SNS_SAM_EVENT_GATED_SENSOR_ENABLE_REQ">SNS_SAM_EVENT_GATED_SENSOR_ENABLE_REQ</a></br><a href="#SNS_SAM_EVENT_GATED_SENSOR_ENABLE_RESP">SNS_SAM_EVENT_GATED_SENSOR_ENABLE_RESP</a></br></td><td class='l'>This command enables a event gated sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_EVENT_GATED_SENSOR_DISABLE'>SNS_SAM_EVENT_GATED_SENSOR_DISABLE</a></td><td>0x0003</td><td class='l'><a href="#SNS_SAM_EVENT_GATED_SENSOR_DISABLE_REQ">SNS_SAM_EVENT_GATED_SENSOR_DISABLE_REQ</a></br><a href="#SNS_SAM_EVENT_GATED_SENSOR_DISABLE_RESP">SNS_SAM_EVENT_GATED_SENSOR_DISABLE_RESP</a></br></td><td class='l'>This command disables a event gated sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_EVENT_GATED_SENSOR_REPORT'>SNS_SAM_EVENT_GATED_SENSOR_REPORT</a></td><td>0x0005</td><td class='l'><a href="#SNS_SAM_EVENT_GATED_SENSOR_REPORT_IND">SNS_SAM_EVENT_GATED_SENSOR_REPORT_IND</a></br></td><td class='l'>Output report from a event gated sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_EVENT_GATED_SENSOR_ERROR'>SNS_SAM_EVENT_GATED_SENSOR_ERROR</a></td><td>0x0006</td><td class='l'><a href="#SNS_SAM_EVENT_GATED_SENSOR_ERROR_IND">SNS_SAM_EVENT_GATED_SENSOR_ERROR_IND</a></br></td><td class='l'>Asynchronous error indication from a event gated sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_SAM_GET_ALGO_ATTRIBUTES'>SNS_SAM_GET_ALGO_ATTRIBUTES</a></td><td>0x0024</td><td class='l'><a href="#SNS_SAM_EVENT_GATED_SENSOR_GET_ATTRIBUTES_REQ">SNS_SAM_EVENT_GATED_SENSOR_GET_ATTRIBUTES_REQ</a></br><a href="#SNS_SAM_EVENT_GATED_SENSOR_GET_ATTRIBUTES_RESP">SNS_SAM_EVENT_GATED_SENSOR_GET_ATTRIBUTES_RESP</a></br></td><td class='l'>This command requests the attributes of the algorithm service This command shall only be used by algorithm services. </td></tr>
+</table>
+<br><br>
+<h2><a name='SNS_COMMON_CANCEL'></a><a href='#Messages'>SNS_COMMON_CANCEL</a></h2>
+This command cancel all requests from a client to any sensor service<br><br> This shall be the first message of any sensor service.
+<h4>Message ID</h4>
+0x0000
+<h3><a name="SNS_SAM_EVENT_GATED_SENSOR_CANCEL_REQ"></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_CANCEL_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_EVENT_GATED_SENSOR_CANCEL_RESP"></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_CANCEL_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_COMMON_CANCEL REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_COMMON_VERSION'></a><a href='#Messages'>SNS_COMMON_VERSION</a></h2>
+This command requests the version of the sensor service<br><br> This shall be the second message of any sensor service.
+<h4>Message ID</h4>
+0x0001
+<h3><a name="SNS_SAM_EVENT_GATED_SENSOR_VERSION_REQ"></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_VERSION_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_EVENT_GATED_SENSOR_VERSION_RESP"></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_VERSION_RESP</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>interface_version_number</td><td>4</td><td class='l'>The version number of the interface supported by the service </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_message_id</td><td>2</td><td class='l'>The maximum message ID supported by this service </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_COMMON_VERSION REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_EVENT_GATED_SENSOR_ENABLE'></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_ENABLE</a></h2>
+This command enables a event gated sensor service.
+<h4>Message ID</h4>
+0x0002
+<h3><a name="SNS_SAM_EVENT_GATED_SENSOR_ENABLE_REQ"></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_ENABLE_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>8</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>event_suid</td><td>8</td><td class='l'>Event Sensor SUID identifies the the gating event sensor. The following classify as event sensors -<br> SNS_SAM_AMD_SUID_V01, SNS_SAM_RMD_SUID_V01, SNS_SAM_SMD_SUID_V01, SNS_SAM_FACING_SUID_V01<br> Other service ID will result in SENSOR1_EBAD_PARAM response<br> The event sensors will be configured with default config options<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>gating_condition</td><td>1</td><td class='l'>Gating condition identifies the state of the event sensor during which the sensor stream is to be gated.<br> When event sensor is in the state specified by the gating condition, the sensor stream will be gated. In all other<br> states, the sensor stream will be allowed.<br> Gating condition must be one the event states supported by the event sensor as listed below<br> Sensor: SNS_SAM_AMD_SUID_V01/SNS_SAM_RMD_SUID_V01 - Gating Condition: SNS_SAM_MOTION_REST_V01 or SNS_SAM_MOTION_MOVE_V01<br> Sensor: SNS_SAM_SMD_SUID_V01 - Gating Condition: SMD_STATE_NO_MOTION/SMD_STATE_MOTION<br> Sensor: SNS_SAM_FACING_SUID_V01 - State: FACING_UP/FACING_DOWN<br> Else the service will respond with a SENSOR1_EBAD_PARAM<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>streaming_item_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- SensorId<ul><li>DataType<li>Decimation<li>Calibration<li>SamplingRate<li>SampleQuality</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SensorId</td><td>1</td><td class='l'>Identifies the sensor to be sampled for data. The valid sensors are<br>: - SNS_SMGR_ID_ACCEL<ul><li>SNS_SMGR_ID_GYRO<li>SNS_SMGR_ID_MAG<li>SNS_SMGR_ID_PRESSURE<li>SNS_SMGR_ID_PROX_LIGHT<li>SNS_SMGR_ID_HUMIDITY<li>SNS_SMGR_ID_RGB<li>SNS_SMGR_ID_SAR<li>SNS_SMGR_ID_HALL_EFFECT<li>SNS_SMGR_ID_HEART_RATE<li>SNS_SMGR_ID_STEP_EVENT<li>SNS_SMGR_ID_STEP_COUNT<li>SNS_SMGR_ID_SMD<li>SNS_SMGR_ID_GAME_ROTATION_VECTOR<li>SNS_SMGR_ID_IR_GESTURE<li>SNS_SMGR_ID_TAP<li>SNS_SMGR_OEM_SENSOR_XX<li>All other values defined as SNS_SMGR_ID_XXXX style are reserved for future use</ul> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>DataType</td><td>1</td><td class='l'>Identifies which data type of the specified sensor is being requested.<ul><li>SNS_SMGR_DATA_TYPE_PRIMARY<li>SNS_SMGR_DATA_TYPE_SECONDARY<li>All other values defined as SNS_SMGR_DATA_TYPE_XXXX style are reserved for</ul> future use<br> This parameter identifies the sensor data type.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Decimation</td><td>1</td><td class='l'>Specifies decimation option for samples belonging to this item<ul><li>SNS_SMGR_DECIMATION_RECENT_SAMPLE<li>SNS_SMGR_DECIMATION_FILTER<li>All other values will be rejected.</ul> The SNS_SMGR_DECIMATION_FILTER option is only applicable for ACCEL, GYRO,<br> and MAG sensor types to reduce data noise. When SNS_SMGR_DECIMATION_FILTER<br> option is specified, multiple samples could be used for one report.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Calibration</td><td>1</td><td class='l'>Specifies how raw data is to be calibrated<ul><li>SNS_SMGR_CAL_SEL_FULL_CAL<li>SNS_SMGR_CAL_SEL_FACTORY_CAL<li>SNS_SMGR_CAL_SEL_RAW<li>All other values will be rejected</ul> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SamplingRate</td><td>2</td><td class='l'>Specifies the frequency at which sensor is sampled.<br> This value shall be within the sensor capacity, .<br> expressed in integer format and in unit of Hz.<br> Values outside of sensor capacity will be rejected.<br> If this value is greater than SNS_SMGR_SAMPLING_RATE_INVERSION_POINT,<br> then it will be interpreted as the sampling period, in milliseconds. This<br> allows a client to sample the sensor at a rate less than 1 Hz. It is not<br> recommended to sample any sensor but environmental sensors at a rate less<br> than 1 Hz.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SampleQuality</td><td>2</td><td class='l'>Specifies the desired quality of sensor data<ul><li>SNS_SMGR_SAMPLE_QUALITY_ACCURATE_TIMESTAMP - High accuracy for sample timestamp.</ul> Delivery sampling rate may be up to twice the requested sampling rate,<br> and may also result in higher report rate.<br> Clients are recommended to specify 50, 100, or 200Hz sampling rates to<br> minimize the chance of increase in sampling rate.<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>report_rate</td><td>4</td><td class='l'>Specifies the desired reporting rate for the streaming sensor expressed in Q16 format and in unit of Hz.<br> If report rate is not specified, sensor data will be reported at sampling rate<br> Sensor will be streaming only when the gating condition is not true i.e. when the event sensor is in any<br> state other than that specified in the gating condition.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>5</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>proc_type</td><td>4</td><td class='l'>Defines the processor to monitor for suspend.<br> This would typically be the processor on which the<br> request message originated from.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>send_indications_during_suspend</td><td>1</td><td class='l'>Defines if indications for this request should be sent when the<br> processor is in suspend state.<ul><li>if send_indications_during_suspend=1 or TRUE, then indications</ul> will be sent for this request when processor is in suspend state<br> (Such indications may wake up the processor from suspend).<br><ul><li>if send_indications_during_suspend=0 or FALSE, then some indications </ul> will not be sent for this request when the processor is in suspend state.<br> The list of indications not sent will be defined by the message in question.<br> </td></tr>
+
+</table>
+<h3><a name="SNS_SAM_EVENT_GATED_SENSOR_ENABLE_RESP"></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_ENABLE_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'> Instance ID is assigned by SAM.<br> The client shall use this instance ID for future messages associated with<br> this algorithm instance.<br> </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_EVENT_GATED_SENSOR_ENABLE REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_EVENT_GATED_SENSOR_DISABLE'></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_DISABLE</a></h2>
+This command disables a event gated sensor service.
+<h4>Message ID</h4>
+0x0003
+<h3><a name="SNS_SAM_EVENT_GATED_SENSOR_DISABLE_REQ"></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_DISABLE_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance ID identifies the algorithm instance. </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_EVENT_GATED_SENSOR_DISABLE_RESP"></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_DISABLE_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance ID identifies the algorithm instance. </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_EVENT_GATED_SENSOR_DISABLE REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_EVENT_GATED_SENSOR_REPORT'></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_REPORT</a></h2>
+Output report from a event gated sensor service.
+<h4>Message ID</h4>
+0x0005
+<h3><a name="SNS_SAM_EVENT_GATED_SENSOR_REPORT_IND"></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_REPORT_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ReportId</td><td>1</td><td class='l'>The ID corresponding to a Buffering request </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>Indices_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- SensorId<ul><li>DataType<li>FirstSampleIdx<li>SampleCount<li>FirstSampleTimestamp<li>SamplingRate</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SensorId</td><td>1</td><td class='l'>Identifies the sensor to which the samples belong. This shall match one of<br> the requested sensors.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>DataType</td><td>1</td><td class='l'>Identifies the data type of the specified sensor to which the samples belong.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>FirstSampleIdx</td><td>1</td><td class='l'>Index into Samples data of the first sample belonging to this<br> SensorId/DataType pair.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SampleCount</td><td>1</td><td class='l'>Number of samples belonging to this SensorId/DataType pair.<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>FirstSampleTimestamp</td><td>4</td><td class='l'>Timestamp of first sample belonging to this SensorId/DataType pair. (in SSC ticks)<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>SamplingRate</td><td>4</td><td class='l'>Specifies the frequency at which sensor is actually sampled. This value<br> is expressed in Q16 format and in unit of Hz.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>Samples_len</td><td>1</td><td class='l'>Number of sets of the following elements<br>:- Data<ul><li>TimeStampOffset<li>Flags<li>Quality</ul></td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Data</td><td>12</td><td class='l'>Each sample can have up to SNS_SMGR_SENSOR_DIMENSION words, each word<br> is in Q16 format and in the units specific to the sensor/data type pair.<br> For 3-axis samples, Data[0], Data[1], and Data[2] are X, Y, and Z axis,<br> respectively. For others, only Data[0] has valid measurement.<ul><li>ACCEL/PRIMARY : 3 axes, each in meter/second squared (m/s2)<li>GYRO/PRIMARY : 3 axes, each in radian/second (rad/s)<li>MAG/PRIMARY : 3 axes, each in Gauss<li>PRESSURE/PRIMARY : 1 axis, in hectopascal (hPa)<li>PROX/PRIMARY : 1 axis, FAR=0, NEAR=1<li>RGB/PRIMARY : 3 axis, X axis = raw Red counts, Y axis = raw Green counts,</ul> Z axis = raw Blue counts<ul><li>SAR/PRIMARY : 1 axis, FAR=0, NEAR=non negative number indicating the sensor touched<li>HALL_EFFECT/PRIMARY : 1 axis, Mag Field present=1, Mag Field not present=0<li>HEART_RATE/PRIMARY : 3 axes, X is heart rate in bpm / each is unitless raw data from sensor<li>HEART_RATE/SECONDARY : 3 axes, each is unitless raw data from sensor<li>ACCEL/SECONDARY : 1 axis, in Celsius<li>GYRO/SECONDARY : 1 axis, in Celsius<li>MAG/SECONDARY : 1 axis, in Celsius<li>PRESSURE/SECONDARY : 1 axis, in Celsius<li>PROX/SECONDARY : 1 axis, in Lux<li>RGB/SECONDARY : 3 axis, X axis = Color temperature in Q16 (deg Kelvin),</ul> Y axis = raw Clear counts , Z axis = Reserved<ul><li>IR_GESTURE : (revision 10: Sensor ID defined, but not used)<li>DOUBLE-TAP/PRIMARY </ul>: - SINGLE-TAP/SECONDARY: Dimension-less (raw) value indicating the source of the tap<br> event, relative to the device. (Consider the device as a<br> point mass located at the origin (0,0,0)<br> of the Cartesian coordinate system.)<br><br> 0 = no tap event, 1 = tap from +X axis, 2 = tap from -X axis,<br> 3 = tap from +Y axis, 4 = tap from -Y axis, 5 = tap from +Z axis,<br> 6 = tap from -Z axis, 7 = tap along X axis, 8 = tap along Y axis,<br> 9 = tap along Z axis, 10 = tap event (unknown axis)<br><ul><li>OEM_SENSOR : (OEM-defined)</ul> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>TimeStampOffset</td><td>2</td><td class='l'>The offset from timestamps of previous sample in report (in SSC ticks).<br> Note: The maximum timestamp offset that can be portrayed with this<br> field is a little less than 2 seconds. </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Flags</td><td>1</td><td class='l'>Status flags of this sample.<ul><li>raw data<li>SNS_SMGR_ITEM_FLAG_INVALID<li>SNS_SMGR_ITEM_FLAG_FAC_CAL : Factory calibration data was applied<li>SNS_SMGR_ITEM_FLAG_AUTO_CAL: Auto calibration data was applied<li>All other values defined as SNS_SMGR_ITEM_FLAG_XXXX style are reserved</ul> for future use<br> </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>Quality</td><td>1</td><td class='l'>Quality of this sample.<ul><li>SNS_SMGR_ITEM_QUALITY_CURRENT_SAMPLE<li>SNS_SMGR_ITEM_QUALITY_FILTERED<li>SNS_SMGR_ITEM_QUALITY_INTERPOLATED<li>SNS_SMGR_ITEM_QUALITY_INTERPOLATED_FILTERED<li>SNS_SMGR_ITEM_QUALITY_INVALID_FAILED_SENSOR<li>SNS_SMGR_ITEM_QUALITY_INVALID_NOT_READY<li>All other values defined as SNS_SMGR_ITEM_QUALITY_XXXX style are reserved</ul> for future use<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>IndType</td><td>1</td><td class='l'>Optional batch indication type<br> SNS_BATCH_ONLY_IND - Standalone batch indication. Not part of a back to<br> back indication stream<br> SNS_BATCH_FIRST_IND - First indication in stream of back to back indications<br> SNS_BATCH_INTERMEDIATE_IND - Intermediate indication in stream of back to<br> back indications<br> SNS_BATCH_LAST_IND - Last indication in stream of back to back indications<br> </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_EVENT_GATED_SENSOR_REPORT</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_EVENT_GATED_SENSOR_ERROR'></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_ERROR</a></h2>
+Asynchronous error indication from a event gated sensor service.
+<h4>Message ID</h4>
+0x0006
+<h3><a name="SNS_SAM_EVENT_GATED_SENSOR_ERROR_IND"></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_ERROR_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>error</td><td>1</td><td class='l'>Sensor1 error code </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>instance_id</td><td>1</td><td class='l'>Instance ID identifies the algorithm instance. </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>timestamp</td><td>4</td><td class='l'>time stamp of input which caused this indication; in SSC ticks </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_SAM_EVENT_GATED_SENSOR_ERROR</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SAM_GET_ALGO_ATTRIBUTES'></a><a href='#Messages'>SNS_SAM_GET_ALGO_ATTRIBUTES</a></h2>
+This command requests the attributes of the algorithm service<br><br> This command shall only be used by algorithm services.
+<h4>Message ID</h4>
+0x0024
+<h3><a name="SNS_SAM_EVENT_GATED_SENSOR_GET_ATTRIBUTES_REQ"></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_GET_ATTRIBUTES_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SAM_EVENT_GATED_SENSOR_GET_ATTRIBUTES_RESP"></a><a href='#Messages'>SNS_SAM_EVENT_GATED_SENSOR_GET_ATTRIBUTES_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>algorithm_revision</td><td>4</td><td class='l'>Revision number of the algorithm implemented by the service </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>proc_type</td><td>4</td><td class='l'>ID of the processor on which the algorithm is running </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x05</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>supported_reporting_modes</td><td>4</td><td class='l'>Bitmask of all reporting modes supported by algorithm.<br> See sns_sam_report_e for reporting options </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x06</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>min_report_rate</td><td>4</td><td class='l'>Minimum report rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x07</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_report_rate</td><td>4</td><td class='l'>Maximum report rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x08</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>min_sample_rate</td><td>4</td><td class='l'>Minimum sample rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x09</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_sample_rate</td><td>4</td><td class='l'>Maximum sample rate supported by algorithm (in Hz, Q16) </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x0A</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_batch_size</td><td>4</td><td class='l'>The maximum batch size (in reports) supported by this service.<br> Returns 0, if batching is not supported </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x0B</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>power</td><td>4</td><td class='l'>Power estimate for algorithm (in mA, Q16) </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>8</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sensorUID</td><td>8</td><td class='l'>SSC Unique identifier for this sensor </td></tr>
+
+</table>
+<h4>Description of SNS_SAM_GET_ALGO_ATTRIBUTES REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+\appendix
+\chapter{Additional Information}
+\section{@FOOTER}
+

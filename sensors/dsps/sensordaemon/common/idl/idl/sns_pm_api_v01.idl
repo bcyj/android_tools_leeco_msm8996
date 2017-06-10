@@ -1,0 +1,100 @@
+/*****************************************************************************
+
+  @FILE     sns_pm_interface.idl
+
+  @BRIEF    Interface to the Power Manager module on the DSPS processor
+
+  @DESCRIPTION
+  Power manager module manages the active power states (active low, active high)
+  of the sensor sub system. It gets votes from sensor modules (SAM, SMGR)
+  and based on the votes the active state of the DSPS is decided by the
+  Sensors Power Manager.
+ 
+  Interface file provides a means for the sns modules such as SMGR, SAM, 
+  to vote for the active state of the DSPS.
+
+*****************************************************************************/
+
+include "sns_common_v01.idl";
+
+revision 1;
+
+/*! Sensor Power state defines that can be used by PM and other modules */
+
+//! Active low power state: In this state when DSPS not interacting with any other processor or DDR
+const SNS_PM_ST_ACTIVE_LOW = 0;
+
+//! Active high power state: critical DSPS modules expecting high BW in this state
+const SNS_PM_ST_ACTIVE_HIGH = 1;
+
+//!============================================================================
+/** @COMMAND SNS_PM_ACTIVE_PWR_ST_CHANGE
+    @BRIEF This command sent by client (SAM & SMGR) to place their
+    active state change votes to power manager.
+    SAM is expected to vote for active low/active high power states
+    SMGR is expected to vote for active low/active high/hibernation states
+*/
+//!============================================================================
+
+//! @MSG     SNS_PM_ACTIVE_PWR_ST_CHANGE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+message {
+  mandatory uint8 vote_value;
+  /**< Clients like SMGR & SAM placing their vote to PM module
+  */  
+} sns_pm_active_pwr_st_change_req_msg;
+
+//----------------------------------------------------------------------------
+//! @MSG     SNS_PM_ACTIVE_PWR_ST_CHANGE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s      resp;
+  /**< 
+    Giving a feedback(ack.nack) to the Clients (SMGR, SAM)
+  */
+} sns_pm_active_pwr_st_change_resp_msg;
+
+//----------------------------------------------------------------------------
+//! @MSG     SNS_PM_ACTIVE_PWR_ST_CHANGE_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8 curr_active_state;
+  /**< 
+    Current active state of DSPS
+  */
+} sns_pm_active_pwr_st_change_ind_msg;
+
+
+//============================================================================
+// Service definition
+//============================================================================
+// To be changed to service { SNS_PM_SRV for next version of idl compiler
+service SNS_PM_SVC { 
+  //! @ID SNS_COMMON_CANCEL
+    sns_common_cancel_req_msg	         SNS_PM_CANCEL_REQ,
+    sns_common_cancel_resp_msg	         SNS_PM_CANCEL_RESP
+    = 0x00; 
+
+  //! @ID SNS_COMMON_VERSION
+   sns_common_version_req_msg	         SNS_PM_VERSION_REQ,
+   sns_common_version_resp_msg	         SNS_PM_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_PM_ACTIVE_PWR_ST_CHANGE
+   sns_pm_active_pwr_st_change_req_msg   SNS_PM_ACTIVE_PWR_ST_CHANGE_REQ,
+   sns_pm_active_pwr_st_change_resp_msg  SNS_PM_ACTIVE_PWR_ST_CHANGE_RESP,
+   sns_pm_active_pwr_st_change_ind_msg   SNS_PM_ACTIVE_PWR_ST_CHANGE_IND
+   = 0x02;
+
+} = SNS_QMI_SVC_ID_1;
+
+
+

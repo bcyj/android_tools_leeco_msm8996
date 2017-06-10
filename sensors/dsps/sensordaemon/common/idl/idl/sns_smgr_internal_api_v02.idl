@@ -1,0 +1,376 @@
+/*****************************************************************************
+  @FILE     sns_smgr_internal_api_v02.idl
+
+  @BRIEF  Sensors Manager Internal API
+
+  @DESCRIPTION
+  This is the public header file which defines the SNS_SMGR_INTERNAL_SVC
+  service Data structures.
+
+  @COPYRIGHT Copyright (c) 2014 Qualcomm Technologies, Inc.  All Rights Reserved
+  Qualcomm Technologies Proprietary and Confidential.
+*****************************************************************************/
+include "sns_common_v01.idl";
+include "sns_smgr_common_v01.idl";
+
+revision 3;
+
+//! maximum number of sensor events supported by SMGR
+const SNS_MAX_NUM_SENSOR_EVENTS                = 200;
+
+//! Sensor Event IDs
+const SNS_SMGR_SENSOR_EVENT_ID_MOTION_DETECT_1 = 0xd324dc568eb58fb4;
+const SNS_SMGR_SENSOR_EVENT_ID_PROXIMITY_1     = 0xbdee7f234f56769e;
+const SNS_SMGR_SENSOR_EVENT_ID_PROXIMITY_FAR_1     = 0xb3e0ec7c65d43769;
+const SNS_SMGR_SENSOR_EVENT_ID_PROXIMITY_NEAR_1    = 0x9ee4971672d356fe;
+
+//! SMGR Internal Service QMI ID
+const SNS_SMGR_INTERNAL_SVC_ID = SNS_QMI_SVC_ID_13;
+
+//! Proximity events
+enum {
+
+  SNS_SMGR_SENSOR_EVENT_PROXIMITY_FAR,
+  SNS_SMGR_SENSOR_EVENT_PROXIMITY_NEAR
+
+} sns_smgr_sensor_event_proximity_e;
+
+//! Sensor Event Status
+enum {
+  SNS_SMGR_SENSOR_EVENT_STATUS_ENABLED,
+  SNS_SMGR_SENSOR_EVENT_STATUS_DISABLED,
+  SNS_SMGR_SENSOR_EVENT_STATUS_OCCURRED
+} sns_smgr_sensor_event_status_e;
+
+
+//! Event Gated Buffering  
+enum {
+  SNS_SMGR_EVENT_GATED_BUFFERING_ACTION_ADD = 1,
+  SNS_SMGR_EVENT_GATED_BUFFERING_ACTION_DELETE = 2
+} sns_smgr_event_gated_buffering_action_e;
+
+
+//!============================================================================
+/** @COMMAND SNS_SMGR_SENSOR_EVENTS_QUERY
+    @BRIEF This command sends sensor events query request and
+           gets a list of all supported sensor events
+*/
+//!============================================================================
+//!============================================================================
+//!
+//! @MSG     SNS_SMGR_SENSOR_EVENTS_QUERY_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//!----------------------------------------------------------------------------
+
+message { /* empty body */ } sns_smgr_sensor_events_query_req_msg;
+
+
+//!============================================================================
+//!
+//! @MSG     SNS_SMGR_SENSOR_EVENTS_QUERY_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//!----------------------------------------------------------------------------
+message {
+
+  mandatory sns_common_resp_s resp = 2;
+
+  optional  uint64            sensor_events<SNS_MAX_NUM_SENSOR_EVENTS>;
+
+} sns_smgr_sensor_events_query_resp_msg;
+
+
+
+//!============================================================================
+/** @COMMAND SNS_SMGR_SENSOR_EVENT
+    @BRIEF This command sends sensor event register request and
+           gets sensor event indication whenever the event occurs
+*/
+//!============================================================================
+
+//!============================================================================
+//! @MSG     SNS_SMGR_SENSOR_EVENT_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//! @VERSION 2.1
+//!----------------------------------------------------------------------------
+message {
+
+  mandatory uint64                sensor_event;
+  //!< The sensor event for which to register
+
+  mandatory boolean               registering;
+  //!< TRUE to register, FALSE deregister
+
+  mandatory uint32                shortest_interval;
+  //!< Shortest time, in milliseconds, between two consecutive events
+
+} sns_smgr_sensor_event_req_msg;
+
+
+//! @MSG     SNS_SMGR_SENSOR_EVENT_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//! @VERSION 2.1
+message {
+
+  mandatory sns_common_resp_s     resp = 2;
+
+} sns_smgr_sensor_event_resp_msg;
+
+//! @MSG     SNS_SMGR_SENSOR_EVENT_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @VERSION 2.1
+message {
+
+  mandatory uint64                sensor_event;
+  //!< The sensor event that has just occurred
+
+  mandatory uint64                timestamp;
+  //!< The timestamp, in ticks, when the event occurred
+
+  optional uint64                 event_info;
+  /**< 
+    If sensor_event is SNS_SMGR_SENSOR_EVENT_ID_MOTION_DETECT, this field is unused
+ 
+    If sensor_event is SNS_SMGR_SENSOR_EVENT_ID_PROXIMITY, this field can be
+    - SNS_SMGR_SENSOR_EVENT_PROXIMITY_FAR or
+    - SNS_SMGR_SENSOR_EVENT_PROXIMITY_NEAR
+  */
+
+  optional sns_smgr_sensor_event_status_e   event_status;
+  /**<
+    The current status for the sensor event. Possible values are
+    -SNS_SMGR_SENSOR_EVENT_STATUS_ENABLED
+    -SNS_SMGR_SENSOR_EVENT_STATUS_DISABLED
+    -SNS_SMGR_SENSOR_EVENT_STATUS_OCCURRED
+  */
+
+} sns_smgr_sensor_event_ind_msg;
+
+
+//!============================================================================
+/** @COMMAND SNS_SMGR_SENSOR_STATUS_MONITOR
+    @BRIEF This command sends sensor monitor request and receives indications
+    when sensor sampling rate, and/or wakeup rate, and/or number of clients
+    change.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//!============================================================================
+//! @MSG     SNS_SMGR_SENSOR_STATUS_MONITOR_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//! @VERSION 2.1
+message {
+  mandatory uint64                sensor_id;
+  //!< SNS_SMGR_SENSOR_ID_xxx
+
+  mandatory boolean               registering;
+  //!< TRUE to register, FALSE deregister
+
+} sns_smgr_sensor_status_monitor_req_msg;
+
+
+//! @MSG     SNS_SMGR_SENSOR_STATUS_MONITOR_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//! @VERSION 2.1
+message {
+  mandatory sns_common_resp_s     resp = 2;
+
+  optional  uint64                sensor_id;
+  //!< SNS_SMGR_SENSOR_ID_xxx
+
+} sns_smgr_sensor_status_monitor_resp_msg;
+
+
+//! @MSG     SNS_SMGR_SENSOR_MONITOR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @VERSION 2.1
+message {
+  mandatory uint64                sensor_id;
+  //!< SNS_SMGR_SENSOR_ID_xxx
+
+  mandatory uint8                 num_clients;
+  //!< Number of clients this sensor currently has
+
+  mandatory int32                 sampling_rate;
+  //!< The current sampling rate in units of Hz, Q16 format
+
+  mandatory int32                 wakeup_rate;
+  //!< The current wake up rate in units of Hz, Q16 format
+
+  mandatory uint64                timestamp;
+  //!< The timestamp, in ticks, when rates and/or number of clients change
+
+} sns_smgr_sensor_status_monitor_ind_msg;
+
+//!============================================================================
+/** @COMMAND SNS_SMGR_EVENT_GATED_BUFFERING
+  @BRIEF
+  This command requests sensor data to be sampled and buffered up to be sent together
+  with a configuration determined by a sensor event.
+
+  @DETAILS
+  Clients that require a different buffering request depending upon the status
+  of a supported sensor event can use this command to specify the required configuration
+  when the sensor event is disabled, enabled and has occurred. When SMGR has set up all
+  the reports, the client will recieve the reports associated with the present state of the
+  event sensor at that time.
+
+  @USAGE Production
+  @SECURITY_LEVEL Low Risk
+  @REQUIRED_ACTION Default
+*/
+//!============================================================================
+
+//! @MSG     SNS_SMGR_EVENT_GATED_BUFFERING_REQ
+//! @VERSION 3
+//! @TYPE    Request
+//! @SENDER  Client
+message
+{
+  mandatory uint8             ReportId;
+  /**< The report ID assigned by client to be used for identifying corresponding
+    response and indication messages. An existing report will be replaced by a new
+    report of the same ID.
+    */
+
+  mandatory sns_smgr_event_gated_buffering_action_e  Action;
+  /**< Specifies the action to be carried out for this report
+    - SNS_SMGR_EVENT_GATED_BUFFERING_ACTION_ADD
+    - SNS_SMGR_EVENT_GATED_BUFFERING_ACTION_DELETE
+    - All other values will be rejected.
+  */
+
+  mandatory uint64            SensorEvent;
+  /**<   The sensor event on which to gate the sensor stream. The requested stream
+    cannot prevent this event from being enabled by SMGR
+  */
+
+  mandatory sns_smgr_buffering_req_item_s EventDisabledConfig;
+  /**<       If the Sensor event is disabled, SMGR will use this configuration.
+  */
+  mandatory uint32 EventDisabledReportRate;
+  /**<  If the Sensor event is disabled, SMGR will use this Report Rate. In Q16
+     format and in uit of Hz.
+  */
+
+  mandatory sns_smgr_buffering_req_item_s EventEnabledConfig;
+  /**<       If the sensor event is enabled, SMGR will use this configuration
+  */
+  mandatory uint32 EventEnabledReportRate;
+  /**<  If the Sensor event is enabled, SMGR will use this Report Rate. In Q16
+     format and in uit of Hz.
+  */
+
+  mandatory sns_smgr_buffering_req_item_s EventOccurredConfig;
+  /**<       If a sensor event occurs, SMGR will ignore any further event state changes
+             for this request and continue to use this configuration until the request
+             is cancelled or is updated with a new request message.
+  */
+  mandatory uint32 EventOccurredReportRate;
+  /**<  If a sensor event occurs, SMGR will use this Report Rate. In Q16
+     format and in uit of Hz.
+  */
+
+  mandatory sns_suspend_notification_s NotifySuspend;
+  /**< Identifies if indications for this request should be sent
+       when the processor is in suspend state.
+
+       If this field is not specified, default value will be set to
+       notify_suspend->proc_type                  = SNS_PROC_APPS
+       notify_suspend->send_indications_during_suspend  = FALSE
+    */
+
+} sns_smgr_event_gated_buffering_req_msg;
+
+//! @MSG     SNS_SMGR_EVENT_GATED_BUFFERING_RESP
+//! @TYPE    Response
+//! @VERSION 3
+//! @SENDER  Service
+message {
+
+  mandatory sns_common_resp_s     Resp = 2;
+
+  optional uint8                  ReportId;
+  /**< The ID corresponding to a Buffering request */
+
+  optional uint8                  AckNak;
+  /**< Defines whether this response is Acknowledgement or Negative Acknowledgement
+    - SNS_SMGR_RESPONSE_ACK_SUCCESS - the request has been accepted
+    - SNS_SMGR_RESPONSE_ACK_MODIFIED - some parameters in the request are modified
+    - SNS_SMGR_RESPONSE_NAK_RESOURCES - no resources to service the request
+    - SNS_SMGR_RESPONSE_NAK_REPORT_ID - no such report to be deleted
+    - SNS_SMGR_RESPONSE_NAK_NO_ITEMS - no valid items were sent in request
+    - SNS_SMGR_RESPONSE_NAK_UNK_ACTION - invalid Action field in request
+    - SNS_SMGR_RESPONSE_NAK_INTERNAL_ERR - unspecified error
+  */
+
+  optional sns_smgr_reason_pair_s ReasonPair<SNS_SMGR_MAX_NUM_REASONS>;
+
+} sns_smgr_event_gated_buffering_resp_msg;
+
+//!============================================================================
+//! Service definition
+//! ============================================================================
+
+service SNS_SMGR_INTERNAL_SVC {
+  //! @ID SNS_COMMON_CANCEL
+  sns_common_cancel_req_msg               SNS_SMGR_CANCEL_REQ,
+  sns_common_cancel_resp_msg              SNS_SMGR_CANCEL_RESP
+   = 0x00;
+
+  //! @ID SNS_COMMON_VERSION
+  sns_common_version_req_msg              SNS_SMGR_VERSION_REQ,
+  sns_common_version_resp_msg             SNS_SMGR_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SMGR_SENSOR_EVENTS_QUERY
+  sns_smgr_sensor_events_query_req_msg    SNS_SMGR_SENSOR_EVENTS_QUERY_REQ,
+  sns_smgr_sensor_events_query_resp_msg   SNS_SMGR_SENSOR_EVENTS_QUERY_RESP
+    = 0x20;
+
+  //! @ID SNS_SMGR_SENSOR_EVENT
+  sns_smgr_sensor_event_req_msg           SNS_SMGR_SENSOR_EVENT_REQ,
+  sns_smgr_sensor_event_resp_msg          SNS_SMGR_SENSOR_EVENT_RESP
+    =0x21;
+  sns_smgr_sensor_event_ind_msg           SNS_SMGR_SENSOR_EVENT_IND
+    =0x22;
+
+  //! @ID SNS_SMGR_SENSOR_STATUS_MONITOR
+  sns_smgr_sensor_status_monitor_req_msg  SNS_SMGR_SENSOR_STATUS_MONITOR_REQ,
+  sns_smgr_sensor_status_monitor_resp_msg SNS_SMGR_SENSOR_STATUS_MONITOR_RESP
+    =0x23;
+  sns_smgr_sensor_status_monitor_ind_msg  SNS_SMGR_SENSOR_STATUS_MONITOR_IND
+    =0x24;
+
+
+  //! @ID SNS_SMGR_EVENT_GATED_BUFFERING
+  sns_smgr_event_gated_buffering_req_msg  SNS_SMGR_EVENT_GATED_BUFFERING_REQ,
+  sns_smgr_event_gated_buffering_resp_msg SNS_SMGR_EVENT_GATED_BUFFERING_RESP
+    =0x25;
+
+  //! @ID SNS_SMGR_BUFFERING_IND
+  sns_smgr_buffering_ind_msg             SNS_SMGR_EVENT_GATED_BUFFERING_IND
+    =0x26;
+
+
+} = SNS_SMGR_INTERNAL_SVC_ID;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+Version 2 of SMGR API reserved for clients internal to ADSP
+*/
+//============================================================================
+// End of Module
+//============================================================================
+

@@ -1,0 +1,253 @@
+/*****************************************************************************
+  @FILE     sns_sam_tap.idl
+
+  @BRIEF    Message definition for Tap.
+
+  @DESCRIPTION
+  This file defines Tap messages used by Tapalgo services,
+
+  As prerequisite, the sensor algorithm must use the common Interface
+  defined in the Sensor Algorithms framework.
+
+  The messages defined herein will be passed to the Sensor framework using
+  the sensor1_write() API.
+
+  @COPYRIGHT
+  Copyright (c) 2011-2014 Qualcomm Technologies, Inc.  All Rights Reserved
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+include "sns_sam_common_v01.idl";
+
+revision 4;
+
+const SNS_SAM_TAP_SUID = 0xff15cb1f27c9cb3e;
+
+/** ENUMs are for reference only, uint8 is used instead */
+
+//! @ENUM   SNS_SAM_TAP_EVENT_ENUM
+enum {
+  TAP_LEFT        = 1,
+  /**< Phone is tapped on the left. */
+  TAP_RIGHT       = 2,
+  /**< Phone is tapped on the right. */
+  TAP_TOP         = 3,
+  /**< Phone is tapped on the top. */
+  TAP_BOTTOM      = 4,
+  /**< Phone is tapped on the bottom. */
+  TAP_RESERVED_1  = 5,
+  /**< Reversed. */
+  TAP_RESERVED_2  = 6
+  /**< Reversed. */
+} sns_sam_tap_event_e;
+
+/** Following are message definitions shared by all Tap-related services */
+
+//============================================================================
+/** @COMMAND SNS_SAM_TAP_ENABLE
+    @BRIEF This command enables a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_TAP_ENABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint32 report_period;
+  /**< Unit of seconds, Q16; value of 0 means reporting on new event only */
+  optional uint32 sample_rate;
+  /**< sample rate in Hz, Q16 */
+  optional int32 tap_threshold;
+  /**< tap threshold m/s/s, Q16 */
+
+  //! @VERSION 1.2
+  optional sns_suspend_notification_s notify_suspend;
+  /**< Identifies if indications for this request should be sent
+       when the processor is in suspend state.
+
+       If this field is not specified, default value will be set to
+       notify_suspend->proc_type                  = SNS_PROC_APPS
+       notify_suspend->send_indications_during_suspend  = FALSE
+
+       This field does not have any bearing on error indication
+       messages, which will be sent even during suspend.
+    */
+} sns_sam_tap_enable_req_msg;
+
+//! @MSG     SNS_SAM_TAP_ENABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  optional uint8                             instance_id;
+  /**<
+    The instance ID is maintained/assigned by SAM.
+    The client shall use this instance ID for future messages associated with
+    current algorithm instance.
+  */
+} sns_sam_tap_enable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_TAP_DISABLE
+    @BRIEF This command disables a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_TAP_DISABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< To identify an instance of an algorithm.  */
+} sns_sam_tap_disable_req_msg;
+
+//! @MSG     SNS_SAM_TAP_DISABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  optional uint8                             instance_id;
+} sns_sam_tap_disable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_TAP_REPORT
+    @BRIEF Output report from a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_TAP_REPORT_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  mandatory uint32                           timestamp;
+  /**< time stamp of input which caused this indication; in ticks */
+  mandatory sns_sam_tap_event_e    state;
+} sns_sam_tap_report_ind_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_TAP_GET_REPORT
+    @BRIEF This command fetches latest report output from a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_TAP_GET_REPORT_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< To identify an instance of an algorithm.  */
+} sns_sam_tap_get_report_req_msg;
+
+//! @MSG     SNS_SAM_TAP_GET_REPORT_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  optional uint8                             instance_id;
+  optional uint32                            timestamp;
+  /**< time stamp at which this report is fetched; in ticks */
+  optional sns_sam_tap_event_e   state;
+} sns_sam_tap_get_report_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_TAP_ERROR
+    @BRIEF Asynchronous error report from a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_TAP_ERROR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//============================================================================
+
+message {
+  mandatory uint8                            error; /**< sensors error code */
+  mandatory uint8                            instance_id;
+} sns_sam_tap_error_ind_msg;
+
+//============================================================================
+/** @COMMAND SNS_SAM_TAP_CANCEL
+    @BRIEF This command cancels all requests to the algorithm service.
+*/
+//============================================================================
+
+//============================================================================
+/** @COMMAND SNS_SAM_TAP_VERSION
+    @BRIEF This command requests algorithm service version.
+*/
+//============================================================================
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_SAM_TAP_SVC {
+  //! @ID SNS_SAM_TAP_CANCEL
+  sns_common_cancel_req_msg        SNS_SAM_TAP_CANCEL_REQ,
+  sns_common_cancel_resp_msg       SNS_SAM_TAP_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_SAM_TAP_VERSION
+  sns_common_version_req_msg       SNS_SAM_TAP_VERSION_REQ,
+  sns_common_version_resp_msg      SNS_SAM_TAP_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SAM_TAP_ENABLE
+  sns_sam_tap_enable_req_msg       SNS_SAM_TAP_ENABLE_REQ,
+  sns_sam_tap_enable_resp_msg      SNS_SAM_TAP_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_SAM_TAP_DISABLE
+  sns_sam_tap_disable_req_msg      SNS_SAM_TAP_DISABLE_REQ,
+  sns_sam_tap_disable_resp_msg     SNS_SAM_TAP_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_SAM_TAP_GET_REPORT
+  sns_sam_tap_get_report_req_msg   SNS_SAM_TAP_GET_REPORT_REQ,
+  sns_sam_tap_get_report_resp_msg  SNS_SAM_TAP_GET_REPORT_RESP
+    = 0x04;
+
+  //! @ID SNS_SAM_TAP_REPORT
+  sns_sam_tap_report_ind_msg       SNS_SAM_TAP_REPORT_IND
+    = 0x05;
+
+  //! @ID SNS_SAM_TAP_ERROR
+  sns_sam_tap_error_ind_msg        SNS_SAM_TAP_ERROR_IND
+    = 0x06;
+
+  //! @ID SNS_SAM_GET_ALGO_ATTRIBUTES
+  sns_sam_get_algo_attrib_req_msg  SNS_SAM_TAP_GET_ATTRIBUTES_REQ,
+  sns_sam_get_algo_attrib_resp_msg SNS_SAM_TAP_GET_ATTRIBUTES_RESP
+    = 0x24;
+
+} = SNS_QMI_SVC_ID_26;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+*/
+
+//============================================================================
+// End of Module
+//============================================================================
+

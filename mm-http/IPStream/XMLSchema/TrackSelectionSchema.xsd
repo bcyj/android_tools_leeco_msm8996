@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <!--
+2  COPYRIGHT 2012 Qualcomm Technologies, Inc.
+3  All rights reserved. Qualcomm Technologies proprietary and confidential.
+4 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="SelectedRepresentations" type="SelectedRepresentationsType"/>
+  <xs:complexType name="SelectedRepresentationsType">
+    <xs:sequence>
+      <xs:element name="Period" type="PeriodType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PeriodType">
+    <xs:sequence>
+      <xs:element name="AdaptationSet" type="AdaptationSetType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="Key" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="AdaptationSetType">
+    <xs:sequence>
+      <xs:element name="Representation" type="RepresentationType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="Key" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="RepresentationType">
+    <xs:attribute name="Key" type="xs:string"/>
+  </xs:complexType>
+</xs:schema>

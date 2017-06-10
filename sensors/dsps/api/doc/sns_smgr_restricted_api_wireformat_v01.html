@@ -1,0 +1,189 @@
+<!-- Copyright (c) 2013-2014 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+<title>SMGR (Sensors Manager) Restricted API</title>
+<link rel="stylesheet" type="text/css" href="qmi_idl_wiredoc.css" />
+</head>
+
+<body>
+<h1>SMGR (Sensors Manager) Restricted API
+</h1>
+ The SMGR Restricted API defines messages which provide Restricted SMGR<br> services to its clients. The usage of these messages will only be defined to<br> approved clients. This may be done through a shared header file or through<br> other means.
+
+<h1>Service Type</h1>
+<ul>
+<li>QMI service type <b>SNS_QMI_SVC_ID_44</b>
+<li>Version <b>01</b>
+</ul>
+<h1><a name='Messages'>Messages</a></h1>
+<table class = 'tlv'><tr class='head'><th>Command</th><th>ID</th><th>Messages</th><th>Description</th></tr>
+<tr><td class='l'><a href='#SNS_COMMON_CANCEL'>SNS_COMMON_CANCEL</a></td><td>0x0000</td><td class='l'><a href="#SNS_COMMON_CANCEL_REQ">SNS_COMMON_CANCEL_REQ</a></br><a href="#SNS_SMGR_CANCEL_RESP">SNS_SMGR_CANCEL_RESP</a></br></td><td class='l'>This command cancel all requests from a client to any sensor service This shall be the first message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_COMMON_VERSION'>SNS_COMMON_VERSION</a></td><td>0x0001</td><td class='l'><a href="#SNS_COMMON_VERSION_REQ">SNS_COMMON_VERSION_REQ</a></br><a href="#SNS_COMMON_VERSION_RESP">SNS_COMMON_VERSION_RESP</a></br></td><td class='l'>This command requests the version of the sensor service This shall be the second message of any sensor service. </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_DRIVER_ACCESS'>SNS_SMGR_DRIVER_ACCESS</a></td><td>0x0020</td><td class='l'><a href="#SNS_SMGR_DRIVER_ACCESS_REQ">SNS_SMGR_DRIVER_ACCESS_REQ</a></br><a href="#SNS_SMGR_DRIVER_ACCESS_RESP">SNS_SMGR_DRIVER_ACCESS_RESP</a></br></td><td class='l'>This command allows a client to pass in an arbitrary message to the desired device driver. </td></tr>
+<tr><td class='l'><a href='#SNS_SMGR_DRIVER_ACCESS_IND'>SNS_SMGR_DRIVER_ACCESS_IND</a></td><td>0x0021</td><td class='l'><a href="#SNS_SMGR_DRIVER_ACCESS_IND">SNS_SMGR_DRIVER_ACCESS_IND</a></br></td><td class='l'>Driver Access Framework Message sent to the client from the driver </td></tr>
+</table>
+<br><br>
+<h4>Description of  REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_COMMON_CANCEL'></a><a href='#Messages'>SNS_COMMON_CANCEL</a></h2>
+This command cancel all requests from a client to any sensor service<br><br> This shall be the first message of any sensor service.
+<h4>Message ID</h4>
+0x0000
+<h3><a name="SNS_COMMON_CANCEL_REQ"></a><a href='#Messages'>SNS_COMMON_CANCEL_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_SMGR_CANCEL_RESP"></a><a href='#Messages'>SNS_SMGR_CANCEL_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_COMMON_CANCEL REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_COMMON_VERSION'></a><a href='#Messages'>SNS_COMMON_VERSION</a></h2>
+This command requests the version of the sensor service<br><br> This shall be the second message of any sensor service.
+<h4>Message ID</h4>
+0x0001
+<h3><a name="SNS_COMMON_VERSION_REQ"></a><a href='#Messages'>SNS_COMMON_VERSION_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+None
+<h4>Optional TLVs</h4>
+None
+<h3><a name="SNS_COMMON_VERSION_RESP"></a><a href='#Messages'>SNS_COMMON_VERSION_RESP</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x03</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>interface_version_number</td><td>4</td><td class='l'>The version number of the interface supported by the service </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x04</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>max_message_id</td><td>2</td><td class='l'>The maximum message ID supported by this service </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+None
+<h4>Description of SNS_COMMON_VERSION REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_DRIVER_ACCESS'></a><a href='#Messages'>SNS_SMGR_DRIVER_ACCESS</a></h2>
+This command allows a client to pass in an arbitrary message to the<br> desired device driver.
+<h4>Message ID</h4>
+0x0020
+<h3><a name="SNS_SMGR_DRIVER_ACCESS_REQ"></a><a href='#Messages'>SNS_SMGR_DRIVER_ACCESS_REQ</a></h3>
+<h4>Message Type</h4>Request 
+<h4>Sender</h4>Client 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>16</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>Uuid</td><td>16</td><td class='l'>The UUID of the device driver the request is to be forwarded to.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x02</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>4</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>RequestId</td><td>4</td><td class='l'>The request identifier specifies a particular request. Furthermore,<br> this field tells the driver how the RequestMsg is encoded so it may be<br> properly decoded. This field is only understood by the Sensor1 client<br> and the driver.<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>RequestMsg_len</td><td>2</td><td class='l'>Number of sets of the following elements<br>:- RequestMsg</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>RequestMsg</td><td>Var</td><td class='l'>An opaque message to be delivered to the device driver. The device<br> driver will parse this.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>TransactionId</td><td>1</td><td class='l'>A unique identifier assigned by the client to distinguish this<br> transaction from other concurrent transactions.<br> IMPORTANT: It is up to the device driver to support concurrent<br> transactions.<br> </td></tr>
+
+</table>
+<h3><a name="SNS_SMGR_DRIVER_ACCESS_RESP"></a><a href='#Messages'>SNS_SMGR_DRIVER_ACCESS_RESP</a></h3>
+<h4>Message Type</h4>Response 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>2</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>2</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>sns_result_t</td><td>1</td><td class='l'>0 == SUCCESS; 1 == FAILURE<br> A result of FAILURE indicates that that any data contained in the response<br> should not be used (other than sns_err_t, to determine the type of error </td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>sns_err_t</td><td>1</td><td class='l'>See sensor1_error_e in sensor1.h </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ResponseStatus</td><td>1</td><td class='l'>An error code generated by the SMGR.<ul><li>SNS_SMGR_DRIVER_ACCESS_STATUS_SUCCESS - The request was processed</ul> and serviced successfully<ul><li>SNS_SMGR_DRIVER_ACCESS_INVALID_UUID - Invalid UUID provided in the</ul> request<ul><li>SNS_SMGR_DRIVER_ACCESS_INVALID_PARAM - Invalid parameter or message</ul> in the request<ul><li>SNS_SMGR_DRIVER_ACCESS_INVALID_REQ - Request is unsupported by the</ul> DD<ul><li>SNS_SMGR_DRIVER_ACCESS_SMGR_FAILURE - Unspecified error in the SMGR<li>SNS_SMGR_DRIVER_ACCESS_DD_FAILURE - Unspecified error in the driver<li>SNS_SMGR_DRIVER_ACCESS_FAIL - Unspecified error<li>SNS_SMGR_DRIVER_ACCESS_PENDING - The request is pending completion<li>All other values defined as SNS_SMGR_DRIVER_ACCESS_XXXX style are</ul> reserved for future use<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>ResponseMsg_len</td><td>2</td><td class='l'>Number of sets of the following elements<br>:- ResponseMsg</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>ResponseMsg</td><td>Var</td><td class='l'>An opaque message to be delivered to the client. The client will parse<br> this within the context of the request that the client last sent.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x12</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>TransactionId</td><td>1</td><td class='l'>A unique identifier assigned by the client to distinguish this<br> transaction from other concurrent transactions.<br> IMPORTANT: It is up to the device driver to support concurrent<br> transactions.<br> </td></tr>
+
+</table>
+<h4>Description of SNS_SMGR_DRIVER_ACCESS REQ/RESP</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+<h2><a name='SNS_SMGR_DRIVER_ACCESS_IND'></a><a href='#Messages'>SNS_SMGR_DRIVER_ACCESS_IND</a></h2>
+Driver Access Framework Message sent to the client from the driver
+<h4>Message ID</h4>
+0x0021
+<h3><a name="SNS_SMGR_DRIVER_ACCESS_IND"></a><a href='#Messages'>SNS_SMGR_DRIVER_ACCESS_IND</a></h3>
+<h4>Message Type</h4>Indication 
+<h4>Sender</h4>Service 
+
+<h4>Mandatory TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x01</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>IndicationId</td><td>1</td><td class='l'>The indication identifier specifies a particular request. Furthermore,<br> this field tells the Sensor1 client how the IndicationMsg is encoded<br> so it may be properly decoded. This field is only understood by the<br> Sensor1 client and the driver.<br> </td></tr>
+
+</table>
+<h4>Optional TLVs</h4>
+<table class = 'tlv'><tr class='head'><th>Field</th><th>Field Value</th><th>Parameter</th><th>Size (bytes)</th><th>Description</th></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x10</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>Var</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>IndicationMsg_len</td><td>2</td><td class='l'>Number of sets of the following elements<br>:- IndicationMsg</td></tr>
+<tr class='row_0'><td class='l'></td><td></td><td class='l'>IndicationMsg</td><td>Var</td><td class='l'>An opaque message to be delivered to the client. The client will parse<br> this according to the IndicationId.<br> </td></tr>
+<tr class='row_0'><td class='l'>Type</td><td>0x11</td><td class='l'></td><td>1</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Length</td><td>1</td><td class='l'></td><td>2</td><td class='l'></td></tr>
+<tr class='row_0'><td class='l'>Value</td><td>&rarr;</td><td class='l'>TransactionId</td><td>1</td><td class='l'>A unique identifier assigned by the client to distinguish this<br> transaction from other concurrent transactions.<br> IMPORTANT: It is up to the device driver to support concurrent<br> transactions.<br> </td></tr>
+
+</table>
+<h4>Description of SNS_SMGR_DRIVER_ACCESS_IND</h4>
+
+<br><br>
+<table class='sep'><tr><td></td></tr></table>
+\appendix
+\chapter{Additional Information}
+\section{@FOOTER}
+

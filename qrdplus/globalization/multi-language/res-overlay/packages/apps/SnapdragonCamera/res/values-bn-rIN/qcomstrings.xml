@@ -1,0 +1,893 @@
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!--
+    Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+
+    Not a Contribution.
+
+    Copyright (C) 2007 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<resources>
+    <!-- Video quality setting entry. Videos will be recorded in FWVGA quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_fwvga" translatable="false">FWVGA</string>
+    <!-- Video quality setting entry. Videos will be recorded in WVGA quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_wvga" translatable="false">WVGA</string>
+    <!-- Video quality setting entry. Videos will be recorded in VGA quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_vga" translatable="false">VGA</string>
+    <!-- Video quality setting entry. Videos will be recorded in HVGA quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_hvga" translatable="false">HVGA</string>
+    <!-- Video quality setting entry. Videos will be recorded in WQVGA quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_wqvga" translatable="false">WQVGA</string>
+    <!-- Video quality setting entry. Videos will be recorded in CIF quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_cif" translatable="false">CIF</string>
+    <!-- Video quality setting entry. Videos will be recorded in QVGA quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_qvga" translatable="false">QVGA</string>
+    <!-- Video quality setting entry. Videos will be recorded in QCIF quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_qcif" translatable="false">QCIF</string>
+
+    <!-- Settings screen, Power Mode title -->
+    <string name="pref_camera_powermode_title">শক্তি অবস্থা</string>
+
+    <!-- Settings screen, Power mode dialog radio button choices -->
+    <string name="pref_camera_powermode_entry_lp">কম_শক্তি</string>
+    <string name="pref_camera_powermode_entry_np">স্বাভাবিক _শক্তি</string>
+
+    <!-- Settings screen, Power mode dialog radio button choices -->
+    <string name="pref_camera_powermode_value_lp">Low_Power</string>
+    <string name="pref_camera_powermode_value_np">Normal_Power</string>
+
+    <!-- Default Power mode.. -->
+    <string name="pref_camera_powermode_default" translatable="false">Normal_Power</string>
+
+    <!-- Default auto exposure setting. Do not translate. -->
+    <string name="pref_camera_autoexposure_default">frame-average</string>
+    <!-- Settings screen, Select auto exposure title -->
+    <string name="pref_camera_autoexposure_title">স্বয়ংক্রিয় অনাবৃতকরণ অবস্থা নির্বাচন করুন</string>
+
+    <!-- Settings screen, auto exposure dialog radio button choices -->
+    <string name="pref_camera_autoexposure_entry_frameaverage">গড় ফ্রেম</string>
+    <string name="pref_camera_autoexposure_entry_centerweighted">কে্নদ্র পরিমেয়</string>
+    <string name="pref_camera_autoexposure_entry_spotmetering">স্পট মিটারিং</string>
+
+    <!-- Auto exposure entry values. Do not translate. -->
+    <string name="pref_camera_autoexposure_value_frameaverage">frame-average</string>
+    <string name="pref_camera_autoexposure_value_centerweighted">center-weighted</string>
+    <string name="pref_camera_autoexposure_value_spotmetering">spot-metering</string>
+
+    <!-- Settings screen, Video encoder title -->
+    <string name="pref_camera_videoencoder_title">ভিডিও এনকোডার</string>
+
+    <!-- Settings screen, Video encoder dialog radio button choices -->
+    <string name="pref_camera_videoencoder_entry_0">MPEG4</string>
+    <string name="pref_camera_videoencoder_entry_1">H263</string>
+    <string name="pref_camera_videoencoder_entry_2">H264</string>
+    <string name="pref_camera_videoencoder_entry_3">H265</string>
+
+    <!-- Default video encoder setting. A numerical value. -->
+    <string name="pref_camera_videoencoder_default" translatable="false">h264</string>
+
+    <!-- Settings screen, Video encoder dialog title -->
+    <string name="pref_camera_videoencoder_dialogtitle">ভিডিও এনকোডার</string>
+
+    <!-- Default audio encoder setting. A numerical value. -->
+    <string name="pref_camera_audioencoder_default" translatable="false">aac</string>
+
+    <!-- Settings screen, Audio encoder title -->
+    <string name="pref_camera_audioencoder_title">অডিও এনকোডার</string>
+
+    <!-- Settings screen, Audio encoder dialog radio button choices -->
+    <string name="pref_camera_audioencoder_entry_0">AMRNB</string>
+    <string name="pref_camera_audioencoder_entry_1">AAC</string>
+    <!-- Default video duration setting. A numerical value.-->
+    <string name="pref_camera_video_duration_default" translatable="false">10</string>
+
+    <!-- Settings screen, Video duration title -->
+    <string name="pref_camera_video_duration_title">ভিডিও সময়</string>
+
+    <!-- Settings screen, Video duration dialog radio button choices -->
+    <string name="pref_camera_video_duration_entry_mms">30 সেকেন্ড (MMS)</string>
+    <string name="pref_camera_video_duration_entry_10">10 মিনিট</string>
+    <string name="pref_camera_video_duration_entry_30">30 মিনিট</string>
+    <string name="pref_camera_video_duration_entry_nolimit">কোনও সীমা নেই</string>
+
+    <!-- Default Skin Tone Enhancement setting. Do not translate. -->
+    <string name="pref_camera_skinToneEnhancement_default">disable</string>
+
+    <!-- Settings screen, Select Skin Tone Enhancement title -->
+    <string name="pref_camera_skinToneEnhancement_title">স্কীন টোন বাড়ানো</string>
+
+    <!-- Settings screen, Skin Tone Enhancement radio button choices -->
+    <string name="pref_camera_skinToneEnhancement_entry_enable">সক্ষম</string>
+    <string name="pref_camera_skinToneEnhancement_entry_disable">অক্ষম</string>
+
+    <!-- Skin Tone Enhancement entry values. Do not translate. -->
+    <string name="pref_camera_skinToneEnhancement_value_enable">enable</string>
+    <string name="pref_camera_skinToneEnhancement_value_disable">disable</string>
+    <!-- Settings screen, setting title text for ZSL-->
+    <string name="pref_camera_zsl_title">ZSL</string>
+
+    <string name="pref_camera_zsl_default" translatable="false">on</string>
+
+         <!-- Default selectable zone af setting. Do not translate. -->
+     <string name="pref_camera_selectablezoneaf_default">auto</string>
+
+     <!-- Settings screen, Selectable zone af title -->
+     <string name="pref_camera_selectablezoneaf_title"> নির্বাচনযোগ্য জোন অটো ফোকাস</string>
+
+     <!-- Settings screen, Selectable Zone Af dialog radio button choices -->
+     <string name="pref_camera_selectablezoneaf_entry_auto">স্বয়ংক্রিয়</string>
+     <string name="pref_camera_selectablezoneaf_entry_spotmetering">স্পট মিটারিং</string>
+     <string name="pref_camera_selectablezoneaf_entry_centerweighted">কে্নদ্র পরিমেয়</string>
+     <string name="pref_camera_selectablezoneaf_entry_frameaverage">গড় ফ্রেম</string>
+
+     <!-- Auto exposure entry values. Do not translate. -->
+     <string name="pref_camera_selectablezoneaf_value_auto">auto</string>
+     <string name="pref_camera_selectablezoneaf_value_spotmetering">spot-metering</string>
+     <string name="pref_camera_selectablezoneaf_value_centerweighted">center-weighted</string>
+     <string name="pref_camera_selectablezoneaf_value_frameaverage">frame-average</string>
+
+     <string name="pref_camera_advanced_feature_default">none</string>
+
+     <!-- Settings screen, Selectable advanced features title -->
+     <string name="pref_camera_advanced_features_title">উন্নত বৈশিষ্ট্যাবলী</string>
+
+     <!-- Settings screen, Selectable Zone Af dialog radio button choices -->
+     <string name="pref_camera_advanced_feature_entry_none">কেউ নয়</string>
+     <string name="pref_camera_advanced_feature_entry_ubifocus">Ubi ফোকাস</string>
+     <string name="pref_camera_advanced_feature_entry_refocus">পুনঃফোকাস করুন</string>
+     <string name="pref_camera_advanced_feature_entry_chromaflash">ক্রোমা ফ্ল্যাশ</string>
+     <string name="pref_camera_advanced_feature_entry_optizoom">অপ্টি জুম</string>
+     <string name="pref_camera_advanced_feature_entry_FSSR">FSSR</string>
+     <string name="pref_camera_advanced_feature_entry_trueportrait">সঠিক পোর্ট্রেট</string>
+     <string name="pref_camera_advanced_feature_entry_multi_touch_focus">একাধিক-স্পর্শ ফোকাস</string>
+
+     <!-- Auto exposure entry values. Do not translate. -->
+     <string name="pref_camera_advanced_feature_value_none">none</string>
+     <string name="pref_camera_advanced_feature_value_ubifocus_on">af-bracket-on</string>
+     <string name="pref_camera_advanced_feature_value_refocus_on">re-focus-on</string>
+     <string name="pref_camera_advanced_feature_value_chromaflash_on">chroma-flash-on</string>
+     <string name="pref_camera_advanced_feature_value_optizoom_on">opti-zoom-on</string>
+     <string name="pref_camera_advanced_feature_value_FSSR_on">FSSR-on</string>
+     <string name="pref_camera_advanced_feature_value_trueportrait_on">true-portrait-on</string>
+     <string name="pref_camera_advanced_feature_value_multi_touch_focus_on">multi-touch-focus-on</string>
+     <string name="pref_camera_advanced_feature_value_ubifocus_off">af-bracket-off</string>
+     <string name="pref_camera_advanced_feature_value_refocus_off">re-focus-off</string>
+     <string name="pref_camera_advanced_feature_value_chromaflash_off">chroma-flash-off</string>
+     <string name="pref_camera_advanced_feature_value_optizoom_off">opti-zoom-off</string>
+     <string name="pref_camera_advanced_feature_value_FSSR_off">FSSR-off</string>
+     <string name="pref_camera_advanced_feature_value_trueportrait_off">true-portrait-off</string>
+     <string name="pref_camera_advanced_feature_value_multi_touch_focus_off">multi-touch-focus-off</string>
+
+     <!-- Manual exposure control entry values -->
+     <string name="pref_camera_manual_exp_title">ম্যানুয়াল এক্সপোজার</string>
+     <string name="pref_camera_manual_exp_entry_ISO_priority">ISO অগ্রাধিকার</string>
+     <string name="pref_camera_manual_exp_entry_exptime_priority">এক্সপোজার সময় অগ্রাধিকার</string>
+     <string name="pref_camera_manual_exp_entry_user_setting">ব্যবহারকারী সেটিং</string>
+     <string name="pref_camera_manual_exp_entry_off">বন্ধ</string>
+
+     <string name="pref_camera_manual_exp_default">off</string>
+     <string name="pref_camera_manual_exp_value_ISO_priority">iso-priority</string>
+     <string name="pref_camera_manual_exp_value_exptime_priority">exp-time-priority</string>
+     <string name="pref_camera_manual_exp_value_user_setting">user-setting</string>
+     <string name="pref_camera_manual_exp_value_off">off</string>
+
+     <!-- Manual white balance entry values -->
+     <string name="pref_camera_manual_wb_title">ম্যানুয়াল সাদা ভারসাম্য</string>
+     <string name="pref_camera_manual_wb_entry_color_temperature">রঙের তাপমাত্রা</string>
+     <string name="pref_camera_manual_wb_entry_rbgb_gains">RBGB অর্জন</string>
+     <string name="pref_camera_manual_wb_entry_off">বন্ধ</string>
+
+     <string name="pref_camera_manual_wb_default">off</string>
+     <string name="pref_camera_manual_wb_value_color_temperature">color-temperature</string>
+     <string name="pref_camera_manual_wb_value_rbgb_gains">rbgb-gains</string>
+     <string name="pref_camera_manual_wb_value_off">off</string>
+
+     <!-- Manual Focus entry values -->
+     <string name="pref_camera_manual_focus_title">ম্যানুয়াল ফোকাস</string>
+     <string name="pref_camera_manual_focus_entry_scale_mode">স্কেল মোড</string>
+     <string name="pref_camera_manual_focus_entry_diopter_mode">ডিওপ্টার মোড</string>
+     <string name="pref_camera_manual_focus_entry_off">বন্ধ</string>
+
+     <string name="pref_camera_manual_focus_default">off</string>
+     <string name="pref_camera_manual_focus_value_scale_mode">scale-mode</string>
+     <string name="pref_camera_manual_focus_value_diopter_mode">diopter-mode</string>
+     <string name="pref_camera_manual_focus_value_off">off</string>
+
+    <!-- Settings screen, ZSL location dialog choices -->
+    <string name="pref_camera_zsl_entry_off">বন্ধ</string>
+    <string name="pref_camera_zsl_entry_on">চালু</string>
+
+    <string name="pref_camera_zsl_value_off">off</string>
+    <string name="pref_camera_zsl_value_on">on</string>
+
+    <!-- The message is shown in toast when HDR or scene mode is enabled -->
+    <string name="hdr_enable_message">HDR সক্ষম রয়েছে, কেবল স্বয়ংক্রিয় দৃশ্যের মোডটি সমর্থিত</string>
+    <string name="scene_enable_message">স্বতঃ ব্যতীত দৃশ্য মোডে HDR সমর্থিত নয়</string>
+
+    <!-- Settings screen, Video HDR location dialog choices -->
+    <string name="pref_camera_video_hdr_entry_off">বন্ধ</string>
+    <string name="pref_camera_video_hdr_entry_on">চালু</string>
+
+    <string name="pref_camera_video_hdr_value_off">off</string>
+    <string name="pref_camera_video_hdr_value_on">on</string>
+
+    <!-- Settings screen, CDS location dialog choices -->
+    <string name="pref_camera_cds_entry_off">বন্ধ</string>
+    <string name="pref_camera_cds_entry_on">চালু</string>
+    <string name="pref_camera_cds_entry_auto">স্বয়ংক্রিয়</string>
+
+    <string name="pref_camera_cds_value_off">off</string>
+    <string name="pref_camera_cds_value_on">on</string>
+    <string name="pref_camera_cds_value_auto">auto</string>
+
+     <!-- Settings screen, video CDS location dialog choices -->
+    <string name="pref_camera_video_cds_entry_off">বন্ধ</string>
+    <string name="pref_camera_video_cds_entry_on">চালু</string>
+    <string name="pref_camera_video_cds_entry_auto">স্বয়ংক্রিয়</string>
+
+    <string name="pref_camera_video_cds_value_off">off</string>
+    <string name="pref_camera_video_cds_value_on">on</string>
+    <string name="pref_camera_video_cds_value_auto">auto</string>
+
+    <!-- Settings screen, TNR location dialog choices -->
+    <string name="pref_camera_tnr_entry_disable">অক্ষম</string>
+    <string name="pref_camera_tnr_entry_enable">সক্ষম</string>
+
+    <!-- Settings screen, TNR location dialog choices -->
+    <string name="pref_camera_tnr_value_off">off</string>
+    <string name="pref_camera_tnr_value_on">on</string>
+
+    <!-- Settings screen, video TNR location dialog choices -->
+    <string name="pref_camera_video_tnr_entry_disable">অক্ষম</string>
+    <string name="pref_camera_video_tnr_entry_enable">সক্ষম</string>
+
+    <!-- Settings screen, video TNR location dialog choices -->
+    <string name="pref_camera_video_tnr_value_off">off</string>
+    <string name="pref_camera_video_tnr_value_on">on</string>
+
+    <!-- Settings screen, setting title text for Video HDR-->
+    <string name="pref_camera_video_hdr_title">ভিডিও HDR</string>
+
+    <string name="pref_camera_video_hdr_default" translatable="false">off</string>
+
+    <!-- Settings menu, setting title text for cds mode-->
+    <string name="pref_camera_cds_title">CDS মোড</string>
+
+    <!-- Settings menu, setting title text for video cds mode-->
+    <string name="pref_camera_video_cds_title">ভিডিও CDS মোড</string>
+
+    <!-- Default cds mode setting-->
+    <string name="pref_camera_cds_default" translatable="false">on</string>
+
+    <!-- Default video cds mode setting-->
+    <string name="pref_camera_video_cds_default" translatable="false">on</string>
+
+     <!-- Settings menu, setting title text for tnr mode-->
+    <string name="pref_camera_tnr_title">TNR মোড</string>
+
+    <!-- Settings menu, setting title text for video tnr mode-->
+    <string name="pref_camera_video_tnr_title">ভিডিও TNR মোড</string>
+
+    <!-- Default tnr mode setting-->
+    <string name="pref_camera_tnr_default" translatable="false">off</string>
+
+    <!-- Default video tnr mode setting-->
+    <string name="pref_camera_video_tnr_default" translatable="false">off</string>
+
+    <!-- Default face  detection setting. -->
+    <string name="pref_camera_facedetection_default" translatable="false">off</string>
+
+    <!-- Settings screen, Select Face Detection -->
+    <string name="pref_camera_facedetection_title">চেহারা দেখা</string>
+
+    <!-- Settings menu, Face Detection choices -->
+    <string name="pref_camera_facedetection_entry_off">বন্ধ</string>
+    <string name="pref_camera_facedetection_entry_on">চালু</string>
+
+     <!-- Default redeye reduction setting. -->
+     <string name="pref_camera_redeyereduction_default" translatable="false">disable</string>
+
+     <!-- Settings screen, Select Redeye Reduction -->
+     <string name="pref_camera_redeyereduction_title">রেডআই কমানো</string>
+
+     <!-- Settings menu, redeye reduction choices -->
+     <string name="pref_camera_redeyereduction_entry_enable">সক্ষম</string>
+     <string name="pref_camera_redeyereduction_entry_disable">অক্ষম</string>
+     <!-- Default mce setting. Do not translate. -->
+     <string name="pref_camera_mce_default">enable</string>
+
+     <!-- The message is shown in toast when the app encounters an unsupported selection for HFR/HSR mode -->
+     <string name="error_app_unsupported_hfr_selection">HFR/HSR, DIS/সময় ব্যয় এবং HDR-এর জন্য সমর্থিত নয়</string>
+
+     <!-- The message is shown in dialog when the app encounters an unsupported resolution for HFR mode -->
+     <string name="error_app_unsupported_hfr">HFR নির্বাচিত রিজোলিউশনে সমর্থিত নয়</string>
+
+     <!-- The message is shown in toast when the app encounters an unsupported resolution for DIS mode -->
+     <string name="error_app_unsupported_dis">ডিসপ্লে ইমেজ স্টেবিলাইজেশন(DIS)-এর জন্য অসমর্থিত ভিডিও রেজোলিউশন</string>
+
+     <!-- The message is shown in dialog when the app
+         encounters an unsupported resolution for HSR mode -->
+     <string name="error_app_unsupported_hsr">
+         নির্বাচিত রেজোলিউশনের জন্য HSR সমর্থিত নয়
+     </string>
+
+     <!-- The message is shown in dialog when the app encounters an unsupported video codec for HFR mode -->
+     <string name="error_app_unsupported_hfr_codec">HFR চালু থাকলেইও কেবল্মাত্র H264 ভিডিও এ্নকোডিং সমর্থন করে</string>
+
+     <!-- The message is shown in dialog when the app encounters an unsupported video resolution-->
+     <string name="error_app_unsupported">এই এনকোডার টাইপের জন্য ভিডিও স্বচ্ছতা সমর্থনযোগ্য নয়</string>
+
+     <!-- The message is shown in dialog when the app encounters an unsupported video profile-->
+     <string name="error_app_unsupported_profile">অসমর্থিত ভিডিও প্রোফাইল</string>
+
+    <!--The message is shown in dialog when the raw snapshot is selected in zsl mode-->
+    <string name="error_app_unsupported_raw">Raw ছবির ফর্ম্যাট zsl মোডে
+সমর্থিত নয়, JPEGতে পরিবর্তন করুন
+    </string>
+
+     <!-- Settings screen, AE bracketing and HDR location dialog choices -->
+     <string name="pref_camera_ae_bracket_hdr_entry_ae_bracket">AE-বন্ধনী</string>
+
+     <string name="pref_camera_ae_bracket_hdr_value_ae_bracket">AE-Bracket</string>
+
+     <string name="pref_camera_ae_bracket_hdr_title">AE-বন্ধনী</string>
+
+     <string name="pref_camera_ae_bracket_hdr_default" translatable="false">Off</string>
+
+     <string name="pref_camera_ae_bracket_hdr_entry_on">চালু</string>
+
+     <string name="pref_camera_ae_bracket_hdr_entry_off">বন্ধ</string>
+
+     <string name="err_app_unsupport_ae_bracket_code">এখন অ্যাপস কোনও ae বন্ধনীকে সমর্থন করে না</string>
+
+        <!-- The messsage shown if user selects a snapshot resolution lower than the current video size. -->
+    <string name="snapshot_lower_than_video">ভিডিও আকারের চেয়ে ভিডিও স্ন্যাপশটের আকার ছোট। ভিডিও আকারের ওপর ক্যাপিং করুন। অনুগ্রহ করে বর্তমান ভিডিও আকারের চেয়ে বেশি বা সমান স্বচ্ছতা নির্বাচন করুন। </string>
+
+    <!-- The messsage shown if user selects a snapshot resolution in low power mode. -->
+    <string name="snapshotsize_low_powermode">আমরা ছবিকে সমর্থন করি না
+        কম-শক্তি অবস্থায় স্বচ্ছতা। ভিডিও আকারের স্ন্যাপশট নেওয়া হবে। অনুগ্রহ করে
+        ছবির আকারের জন্য উচ্চ শক্তি অবস্থা নির্বাচন করুন।
+    </string>
+
+    <!-- The messsage shown if user tries to take snapshot during D1/QCIF resolution. -->
+    <string name="snapshot_qcif_and_d1">শধুমাত্র ভিডিও আকারের স্ন্যাপশট এই স্বচ্ছতাকে সমর্থন করে। </string>
+
+     <!-- Default hfr setting. Do not translate. -->
+     <string name="pref_camera_hfr_default">off</string>
+
+     <!-- Settings screen, Select hfr title -->
+     <string name="pref_camera_hfr_title">উচ্চ ফ্রেম হারের ভিডিও</string>
+
+     <!-- Settings screen, hfr radio button choices -->
+     <string name="pref_camera_hfr_entry_off">বন্ধ</string>
+     <string name="pref_camera_hfr_entry_2x">HFR 60</string>
+     <string name="pref_camera_hfr_entry_3x">HFR 90</string>
+     <string name="pref_camera_hfr_entry_4x">HFR 120</string>
+     <string name="pref_camera_hfr_entry_hsr_60">HSR 60</string>
+     <string name="pref_camera_hfr_entry_hsr_90">HSR 90</string>
+     <string name="pref_camera_hfr_entry_hsr_120">HSR 120</string>
+
+     <!-- HFR entry values. Do not translate. -->
+     <string name="pref_camera_hfr_value_off">off</string>
+     <string name="pref_camera_hfr_value_2x">hfr60</string>
+     <string name="pref_camera_hfr_value_3x">hfr90</string>
+     <string name="pref_camera_hfr_value_4x">hfr120</string>
+     <string name="pref_camera_hfr_value_hsr_60">hsr60</string>
+     <string name="pref_camera_hfr_value_hsr_90">hsr90</string>
+     <string name="pref_camera_hfr_value_hsr_120">hsr120</string>
+
+     <!-- Default see more setting. Do not translate. -->
+     <string name="pref_camera_see_more_default">off</string>
+
+     <!-- Settings screen, Select See More title -->
+     <string name="pref_camera_see_more_title">আরও দেখুন</string>
+
+     <!-- Settings screen, see more radio button choices -->
+     <string name="pref_camera_see_more_entry_off">বন্ধ</string>
+     <string name="pref_camera_see_more_entry_on">চালু</string>
+
+     <!-- see more entry values. Do not translate. -->
+     <string name="pref_camera_see_more_value_off">off</string>
+     <string name="pref_camera_see_more_value_on">on</string>
+
+        <!-- Denoise Settings screen, setting title text -->
+    <string name="pref_camera_denoise_title">ওয়েভ্লেট ডিনয়েজ অবস্থা</string>
+    <string name="pref_camera_denoise_default" translatable="false">denoise-on</string>
+
+    <!-- Denoise Settings screen, Record location dialog choices -->
+    <string name="pref_camera_denoise_entry_off">বন্ধ</string>
+    <string name="pref_camera_denoise_entry_on">চালু</string>
+
+     <!-- Default iso setting. Do not translate. -->
+     <string name="pref_camera_iso_default">auto</string>
+
+     <!-- Settings screen, Select Iso title -->
+     <string name="pref_camera_iso_title">ISO নির্বাচন করুন</string>
+
+     <!-- Settings screen, ISO dialog radio button choices -->
+     <string name="pref_camera_iso_entry_auto">স্বয়ংক্রিয়</string>
+     <string name="pref_camera_iso_entry_isodeblur">ISO স্বয়ংক্রিয় (HJR)</string>
+     <string name="pref_camera_iso_entry_iso100">ISO100</string>
+     <string name="pref_camera_iso_entry_iso200">ISO200</string>
+     <string name="pref_camera_iso_entry_iso400">ISO400</string>
+     <string name="pref_camera_iso_entry_iso800">ISO800</string>
+     <string name="pref_camera_iso_entry_iso1600">ISO1600</string>
+
+     <!-- ISO entry values. Do not translate. -->
+     <string name="pref_camera_iso_value_auto">auto</string>
+     <string name="pref_camera_iso_value_isodeblur">ISO_HJR</string>
+     <string name="pref_camera_iso_value_iso100">ISO100</string>
+     <string name="pref_camera_iso_value_iso200">ISO200</string>
+     <string name="pref_camera_iso_value_iso400">ISO400</string>
+     <string name="pref_camera_iso_value_iso800">ISO800</string>
+     <string name="pref_camera_iso_value_iso1600">ISO1600</string>
+
+     <!-- Settings screen, Anti Banding title -->
+     <string name="pref_camera_antibanding_title">ব্যান্ডিং-বিরোধী</string>
+
+     <!-- Default Anti Banding setting. -->
+     <string name="pref_camera_antibanding_default">off</string>
+
+     <!-- Settings screen, Anti Banding entries -->
+     <string name="pref_camera_antibanding_entry_0">বন্ধ</string>
+     <string name="pref_camera_antibanding_entry_1">50 Hz</string>
+     <string name="pref_camera_antibanding_entry_2">60 Hz</string>
+     <string name="pref_camera_antibanding_entry_3">স্বয়ংক্রিয়</string>
+
+        <!-- Default color effect setting. -->
+    <string name="pref_camera_coloreffect_default" translatable="false">none</string>
+
+    <!-- Settings screen, Select Color effect title -->
+    <string name="pref_camera_coloreffect_title">রং-এর প্রভাব</string>
+
+    <!-- Settings screen, Color effect dialog radio button choices -->
+    <string name="pref_camera_coloreffect_entry_none">কিছু নয়</string>
+    <string name="pref_camera_coloreffect_entry_mono">একক</string>
+    <string name="pref_camera_coloreffect_entry_sepia">সেপিয়া</string>
+    <string name="pref_camera_coloreffect_entry_negative">নেগেটিভ</string>
+    <!-- Color effect that overexposes and reverses some of the tones. -->
+    <string name="pref_camera_coloreffect_entry_solarize">সোলারাইজ</string>
+    <string name="pref_camera_coloreffect_entry_posterize">পোস্টারাইজ</string>
+    <string name="pref_camera_coloreffect_entry_aqua">জল</string>
+    <string name="pref_camera_coloreffect_entry_emboss">খোদাই করে লেখা</string>
+    <string name="pref_camera_coloreffect_entry_sketch">রেখাচিত্র</string>
+    <string name="pref_camera_coloreffect_entry_neon">নিওন</string>
+    <string name="pref_camera_coloreffect_entry_pastel">প্যাস্টেল</string>
+    <string name="pref_camera_coloreffect_entry_mosaic">মোজাইক</string>
+    <string name="pref_camera_coloreffect_entry_redtint">লাল আভা</string>
+    <string name="pref_camera_coloreffect_entry_bluetint">নীল আভা</string>
+    <string name="pref_camera_coloreffect_entry_greentint">সবুজ আভা</string>
+
+    <!-- Default Touch AF/AEC setting. Do not translate. -->
+    <string name="pref_camera_touchafaec_default">touch-on</string>
+
+    <!-- Settings screen, Select Touch AF/AEC title -->
+    <string name="pref_camera_touchafaec_title">AF/AEC স্পর্শ করুন</string>
+
+    <!-- Settings screen, Touch AF/AEC dialog radio button choices -->
+    <string name="pref_camera_touchafaec_entry_off">বন্ধ</string>
+    <string name="pref_camera_touchafaec_entry_on">চালু</string>
+
+    <!-- Select IS title -->
+    <string name="pref_camera_dis_title">IS</string>
+    <string name="pref_camera_dis_default">disable</string>
+
+    <!-- DIS choices -->
+    <string name="pref_camera_dis_entry_off">বন্ধ</string>
+    <string name="pref_camera_dis_entry_on">চালু</string>
+
+    <string name="pref_camera_dis_value_disable">disable</string>
+    <string name="pref_camera_dis_value_enable">enable</string>
+
+    <!-- Select Face Recognition title -->
+    <string name="pref_camera_facerc_title">মুখমণ্ডলের সনাক্তকরণ</string>
+
+    <string name="pref_camera_facerc_default">off</string>
+
+    <!-- Face Recognition choices -->
+    <string name="pref_camera_facerc_entry_off">বন্ধ</string>
+    <string name="pref_camera_facerc_entry_on">চালু</string>
+
+    <!-- Settings screen, Multiple levels entries -->
+    <string name="pref_camera_sharpness_entry_level0">স্তর 0</string>
+    <string name="pref_camera_sharpness_entry_level1">স্তর 1</string>
+    <string name="pref_camera_sharpness_entry_level2">স্তর 2(মনোনীত)</string>
+    <string name="pref_camera_sharpness_entry_level3">স্তর 3</string>
+    <string name="pref_camera_sharpness_entry_level4">স্তর 4</string>
+    <string name="pref_camera_sharpness_entry_level5">স্তর 5</string>
+    <string name="pref_camera_sharpness_entry_level6">স্তর 6</string>
+
+    <!-- Settings screen, Multiple levels entries -->
+    <string name="pref_camera_contrast_entry_level0">স্তর 0</string>
+    <string name="pref_camera_contrast_entry_level1">স্তর 1</string>
+    <string name="pref_camera_contrast_entry_level2">স্তর 2</string>
+    <string name="pref_camera_contrast_entry_level3">স্তর 3</string>
+    <string name="pref_camera_contrast_entry_level4">স্তর 4</string>
+    <string name="pref_camera_contrast_entry_level5">স্তর 5(মনোনীত)</string>
+    <string name="pref_camera_contrast_entry_level6">স্তর 6</string>
+    <string name="pref_camera_contrast_entry_level7">স্তর 7</string>
+    <string name="pref_camera_contrast_entry_level8">স্তর 8</string>
+    <string name="pref_camera_contrast_entry_level9">স্তর 9</string>
+    <string name="pref_camera_contrast_entry_level10">স্তর 10</string>
+
+    <!-- Settings screen, Multiple levels entries -->
+    <string name="pref_camera_saturation_entry_level0">স্তর 0</string>
+    <string name="pref_camera_saturation_entry_level1">স্তর 1</string>
+    <string name="pref_camera_saturation_entry_level2">স্তর 2</string>
+    <string name="pref_camera_saturation_entry_level3">স্তর 3</string>
+    <string name="pref_camera_saturation_entry_level4">স্তর 4</string>
+    <string name="pref_camera_saturation_entry_level5">স্তর 5(মনোনীত)</string>
+    <string name="pref_camera_saturation_entry_level6">স্তর 6</string>
+    <string name="pref_camera_saturation_entry_level7">স্তর 7</string>
+    <string name="pref_camera_saturation_entry_level8">স্তর 8</string>
+    <string name="pref_camera_saturation_entry_level9">স্তর 9</string>
+    <string name="pref_camera_saturation_entry_level10">স্তর 10</string>
+
+    <!-- Default sharpness setting. Do not translate. -->
+    <string name="pref_camera_sharpness_default">2</string>
+
+    <!-- Settings screen, Select sharpness title -->
+    <string name="pref_camera_sharpness_title">স্পষ্টতা</string>
+
+    <!-- Default contrast setting. Do not translate. -->
+    <string name="pref_camera_contrast_default">5</string>
+
+    <!-- Settings screen, Select contrast title -->
+    <string name="pref_camera_contrast_title">বৈসাদৃশ্য</string>
+
+    <!-- Default saturation setting. Do not translate. -->
+    <string name="pref_camera_saturation_default">5</string>
+
+    <!-- Settings screen, Select saturation title -->
+    <string name="pref_camera_saturation_title">সম্পৃক্তি</string>
+
+    <!-- Default picture quality setting. See
+         pref_camera_jpegquality_entryvalues for possible values -->
+    <string name="pref_camera_jpegquality_default" translatable="false">superfine</string>
+
+    <!-- Default Picture format setting. Do not translate. -->
+    <string name="pref_camera_picture_format_default">jpeg</string>
+
+    <!-- Settings screen, Select Picture format title -->
+    <string name="pref_camera_picture_format_title">ছবির ফরম্যাট নির্বাচন করুন</string>
+
+    <!-- Settings screen, picture format dialog radio button choices -->
+    <string name="pref_camera_picture_format_entry_jpeg">Jpeg</string>
+    <string name="pref_camera_picture_format_entry_raw">র‌্য</string>
+    <string name="pref_camera_picture_format_entry_raw_yuv_422_sp">YUV422SP</string>
+    <string name="pref_camera_picture_format_entry_raw_yuv_8bit_yuyv">YUVRaw8YUYV</string>
+    <string name="pref_camera_picture_format_entry_raw_yuv_8bit_yvyu">YUVRaw8YVYU</string>
+    <string name="pref_camera_picture_format_entry_raw_yuv_8bit_uyvy">YUVRaw8UYVY</string>
+    <string name="pref_camera_picture_format_entry_raw_yuv_8bit_vyuy">YUVRaw8VYUY</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_qcom_8gbrg">BayerQ8GBRG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_qcom_8grbg">BayerQ8GRBG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_qcom_8rggb">BayerQ8RGGB</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_qcom_8bggr">BayerQ8BGRR</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_qcom_10gbrg">BayerQ10GBRG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_qcom_10grbg">BayerQ10GRBG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_qcom_10rggb">BayerQ10RGGB</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_qcom_10bggr">BayerQ10BGGR</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_qcom_12gbrg">BayerQ12GBRG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_qcom_12grbg">BayerQ12GRBG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_qcom_12rggb">BayerQ12RGGB</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_qcom_12bggr">BayerQ12BGGR</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_mipi_8gbrg">BayerM8GBRG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_mipi_8grbg">BayerM8GRBG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_mipi_8rggb">BayerM8RGGB</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_mipi_8bggr">BayerM8BGGR</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_mipi_10gbrg">BayerM10GBRG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_mipi_10grbg">BayerM10GRBG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_mipi_10rggb">BayerM10RGGB</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_mipi_10bggr">BayerM10BGGR</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_mipi_12gbrg">BayerM12GBRG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_mipi_12grbg">BayerM12GRBG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_mipi_12rggb">BayerM12RGGB</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_mipi_12bggr">BayerM12BGGR</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_qcom_8gbrg">BayerIQ8GBRG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_qcom_8grbg">BayerIQ8GRBG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_qcom_8rggb">BayerIQ8RGGB</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_qcom_8bggr">BayerIQ8BGGR</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_qcom_10gbrg">BayerIQ10GBRG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_qcom_10grbg">BayerIQ10GRBG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_qcom_10rggb">BayerIQ10RGGB</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_qcom_10bggr">BayerIQ10BGGR</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_qcom_12gbrg">BayerIQ12GBRG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_qcom_12grbg">BayerIQ12GRBG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_qcom_12rggb">BayerIQ12RGGB</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_qcom_12bggr">BayerIQ12BGGR</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_mipi_8gbrg">BayerIM8GBRG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_mipi_8grbg">BayerIM8GRBG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_mipi_8rggb">BayerIM8RGGB</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_mipi_8bggr">BayerIM8BGGR</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_mipi_10gbrg">BayerIM10GBRG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_mipi_10grbg">BayerIM10GRBG</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_mipi_10rggb">BayerIM10rggb</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_mipi_10bggr">BayerIM8bggr</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_mipi_12gbrg">BayerIM12gbrg</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_mipi_12grbg">BayerIM12grbg</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_mipi_12rggb">BayerIM12rggb</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_mipi_12bggr">BayerIM12bggr</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain8_8gbrg">BayerIP88gbrg</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain8_8grbg">BayerIP88grbg</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain8_8rggb">BayerIP88rggb</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain8_8bggr">BayerIP88bggr</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain16_8gbrg">BayerIP168gbrg</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain16_8grbg">BayerIP168grbg</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain16_8rggb">BayerIP168rggb</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain16_8bggr">BayerIP168bggr</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain16_10gbrg">BayerIP1610gbrg</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain16_10grbg">BayerIP1610grbg</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain16_10rggb">BayerIP1610rggb</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain16_10bggr">BayerIP1610bggr</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain16_12gbrg">BayerIP1612gbrg</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain16_12grbg">BayerIP1612grbg</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain16_12rggb">BayerIP1612rggb</string>
+    <string name="pref_camera_picture_format_entry_raw_bayer_ideal_plain16_12bggr">BayerIP1612bggr</string>
+
+    <!-- Picture format entry values. Do not translate. -->
+    <string name="pref_camera_picture_format_value_jpeg">jpeg</string>
+    <string name="pref_camera_picture_format_value_raw">raw</string>
+    <string name="pref_camera_picture_format_value_raw_yuv_422_sp">yuv422sp</string>
+    <string name="pref_camera_picture_format_value_raw_yuv_8bit_yuyv">yuv-raw8-yuyv</string>
+    <string name="pref_camera_picture_format_value_raw_yuv_8bit_yvyu">yuv-raw8-yvyu</string>
+    <string name="pref_camera_picture_format_value_raw_yuv_8bit_uyvy">yuv-raw8-uyvy</string>
+    <string name="pref_camera_picture_format_value_raw_yuv_8bit_vyuy">yuv-raw8-vyuy</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_qcom_8gbrg">bayer-qcom-8gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_qcom_8grbg">bayer-qcom-8grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_qcom_8rggb">bayer-qcom-8rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_qcom_8bggr">bayer-qcom-8bgrr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_qcom_10gbrg">bayer-qcom-10gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_qcom_10grbg">bayer-qcom-10grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_qcom_10rggb">bayer-qcom-10rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_qcom_10bggr">bayer-qcom-10bggr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_qcom_12gbrg">bayer-qcom-12gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_qcom_12grbg">bayer-qcom-12grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_qcom_12rggb">bayer-qcom-12rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_qcom_12bggr">bayer-qcom-12bggr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_mipi_8gbrg">bayer-mipi-8gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_mipi_8grbg">bayer-mipi-8grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_mipi_8rggb">bayer-mipi-8rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_mipi_8bggr">bayer-mipi-8bggr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_mipi_10gbrg">bayer-mipi-10gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_mipi_10grbg">bayer-mipi-10grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_mipi_10rggb">bayer-mipi-10rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_mipi_10bggr">bayer-mipi-10bggr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_mipi_12gbrg">bayer-mipi-12gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_mipi_12grbg">bayer-mipi-12grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_mipi_12rggb">bayer-mipi-12rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_mipi_12bggr">bayer-mipi-12bggr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_qcom_8gbrg">bayer-ideal-qcom-8gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_qcom_8grbg">bayer-ideal-qcom-8grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_qcom_8rggb">bayer-ideal-qcom-8rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_qcom_8bggr">bayer-ideal-qcom-8bggr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_qcom_10gbrg">bayer-ideal-qcom-10gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_qcom_10grbg">bayer-ideal-qcom-10grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_qcom_10rggb">bayer-ideal-qcom-10rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_qcom_10bggr">bayer-ideal-qcom-10bggr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_qcom_12gbrg">bayer-ideal-qcom-12gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_qcom_12grbg">bayer-ideal-qcom-12grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_qcom_12rggb">bayer-ideal-qcom-12rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_qcom_12bggr">bayer-ideal-qcom-12bggr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_mipi_8gbrg">bayer-ideal-mipi-8gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_mipi_8grbg">bayer-ideal-mipi-8grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_mipi_8rggb">bayer-ideal-mipi-8rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_mipi_8bggr">bayer-ideal-mipi-8bggr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_mipi_10gbrg">bayer-ideal-mipi-10gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_mipi_10grbg">bayer-ideal-mipi-10grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_mipi_10rggb">bayer-ideal-mipi-10rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_mipi_10bggr">bayer-ideal-mipi-8bggr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_mipi_12gbrg">bayer-ideal-mipi-12gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_mipi_12grbg">bayer-ideal-mipi-12grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_mipi_12rggb">bayer-ideal-mipi-12rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_mipi_12bggr">bayer-ideal-mipi-12bggr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain8_8gbrg">bayer-ideal-plain8-8gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain8_8grbg">bayer-ideal-plain8-8grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain8_8rggb">bayer-ideal-plain8-8rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain8_8bggr">bayer-ideal-plain8-8bggr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain16_8gbrg">bayer-ideal-plain16-8gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain16_8grbg">bayer-ideal-plain16-8grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain16_8rggb">bayer-ideal-plain16-8rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain16_8bggr">bayer-ideal-plain16-8bggr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain16_10gbrg">bayer-ideal-plain16-10gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain16_10grbg">bayer-ideal-plain16-10grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain16_10rggb">bayer-ideal-plain16-10rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain16_10bggr">bayer-ideal-plain16-10bggr</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain16_12gbrg">bayer-ideal-plain16-12gbrg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain16_12grbg">bayer-ideal-plain16-12grbg</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain16_12rggb">bayer-ideal-plain16-12rggb</string>
+    <string name="pref_camera_picture_format_value_raw_bayer_ideal_plain16_12bggr">bayer-ideal-plain16-12bggr</string>
+    <!-- Settings screen, Picture quality title -->
+    <string name="pref_camera_jpegquality_title">ছবির মান</string>
+
+    <!-- Settings screen, Picture quality dialog radio button choices -->
+    <string name="pref_camera_jpegquality_entry_superfine">অতি সুন্দর</string>
+    <string name="pref_camera_jpegquality_entry_fine">সুন্দর</string>
+    <string name="pref_camera_jpegquality_entry_normal">স্বাভাবিক</string>
+    <string name="pref_camera_jpegquality_entry_0">Jpeg 55%</string>
+    <string name="pref_camera_jpegquality_entry_1">Jpeg 65%</string>
+    <string name="pref_camera_jpegquality_entry_2">Jpeg 75%</string>
+    <string name="pref_camera_jpegquality_entry_3">Jpeg 85%</string>
+    <string name="pref_camera_jpegquality_entry_4">Jpeg 95%</string>
+    <string name="pref_camera_jpegquality_entry_5">Jpeg 100%</string>
+
+     <!-- Default auto histogram setting. Do not translate. -->
+     <string name="pref_camera_histogram_default">disable</string>
+
+     <!-- Settings screen, Select Histogram title -->
+     <string name="pref_camera_histogram_title">হিস্টোগ্রাম</string>
+
+     <!-- Settings screen, Histogram radio button choices -->
+     <string name="pref_camera_histogram_entry_enable">সক্ষম</string>
+     <string name="pref_camera_histogram_entry_disable">অক্ষম</string>
+
+     <!-- Histogram entry values. Do not translate. -->
+     <string name="pref_camera_histogram_value_enable">enable</string>
+     <string name="pref_camera_histogram_value_disable">disable</string>
+
+    <string name="pref_camera_picturesize_entry_1920x1080">HD1080</string>
+    <string name="pref_camera_picturesize_entry_1280x768">WXGA</string>
+    <string name="pref_camera_picturesize_entry_1280x720">HD720</string>
+    <string name="pref_camera_picturesize_entry_800x600">SVGA</string>
+    <string name="pref_camera_picturesize_entry_800x480">WVGA</string>
+    <string name="pref_camera_picturesize_entry_352x288">CIF</string>
+    <string name="pref_camera_picturesize_entry_176x144">QCIF</string>
+
+    <string name="pref_camera_focusmode_entry_normal">স্বাভাবিক</string>
+    <string name="pref_camera_focusmode_entry_continuous">CAF</string>
+
+    <string name="pref_camera_scenemode_entry_asd">ASD</string>
+    <!-- Scene mode that takes an image with as little noise as possible so details of the subject are maintained. -->
+    <string name="pref_camera_scenemode_entry_portrait">প্রতিকৃতি</string>
+    <!-- Scene mode that takes an image of a landscape assuming all subjects are relatively far from the phone. -->
+    <string name="pref_camera_scenemode_entry_landscape">প্রাকৃতিক ভূ-দৃশয়</string>
+
+     <!-- Scene mode that takes night shots with long exposure and flash to illuminate the subject while still capturing darker detail in the background. -->
+    <string name="pref_camera_scenemode_entry_night_portrait">রাত্রির প্রতিকৃতি</string>
+    <!-- Scene mode to be used in a stage show. -->
+    <string name="pref_camera_scenemode_entry_theatre">নাট্যশালা</string>
+    <!-- Scene mode optimized for taking images on the beach. -->
+    <string name="pref_camera_scenemode_entry_beach">সৈকত</string>
+    <!-- Scene mode optimized for taking images in the snow. -->
+    <string name="pref_camera_scenemode_entry_snow">তুষার</string>
+
+    <!-- Scene mode for taking a photo as sharp as possible. -->
+    <string name="pref_camera_scenemode_entry_steadyphoto">স্থির ছবি</string>
+    <!-- Scene mode optimized for taking images of fireworks. -->
+    <string name="pref_camera_scenemode_entry_fireworks">আতসবাজি</string>
+    <!-- Scene mode optimized for taking images during sports . -->
+    <string name="pref_camera_scenemode_entry_sports">স্পোর্টস</string>
+    <!-- Scene mode optimized for capturing the naturally warm color of scenes lit by candles. [CHAR LIMIT=16] -->
+    <string name="pref_camera_scenemode_entry_candlelight">মোমবাতির আলো</string>
+    <!-- Scene mode for taking a photo with backlight. -->
+    <string name="pref_camera_scenemode_entry_backlight">পেছন দিকের আলো</string>
+    <!-- Scene mode optimized for taking images of flowers. -->
+    <string name="pref_camera_scenemode_entry_flowers">ফুল</string>
+    <!-- Scene mode optimized for taking images of AR. -->
+    <string name="pref_camera_scenemode_entry_ar">AR</string>
+
+    <!-- Default auto scene detection setting. -->
+    <string name="pref_camera_scenedetect_default" translatable="false">off</string>
+
+    <!-- Settings screen, Select Auto Scene Detection -->
+    <string name="pref_camera_scenedetect_title">স্বয়ংক্রিয় দ্রিষ্য অবলোকন</string>
+
+    <!-- Settings menu, auto scene detection choices -->
+    <string name="pref_camera_scenedetect_entry_off">বন্ধ</string>
+    <!-- Scene detection set to on - supports backlight and snow cloudy detection. -->
+    <string name="pref_camera_scenedetect_entry_on">চালু</string>
+
+    <!-- Toast showing error if invalid size selected for  time lapse  [CHAR LIMIT=65] -->
+    <string name="time_lapse_error">সময় ল্যাপ্স রেকর্ডিং-এর জন্য অবৈধ ভিডিও আকার।</string>
+
+    <string name="pref_camera_videosnapsize_default" translatable="false">1920x1080</string>
+
+    <!-- longshot value -->
+    <string name="pref_camera_longshot_default" translatable="false">off</string>
+    <string name="pref_camera_longshot_title">অবিরত শট</string>
+    <string name="msg_cancel_longshot_for_limited_memory">মেমোরি ফুরিয়েছে, বড়শট বাতিল হচ্ছে</string>
+
+    <!-- Toast showing non-supported functionality for flash in AE bracket -->
+    <string name="flash_aebracket_message">ফ্ল্যাশ AE-বন্ধনী মোডে সমর্থিত নয়</string>
+
+    <!-- Settings screen, setting title text for Auto HDR-->
+    <string name="pref_camera_auto_hdr_title">স্বয়ং HDR</string>
+    <string name="pref_camera_auto_hdr_default" translatable="false">
+    disable</string>
+
+    <!-- Settings screen, Auto HDR location dialog choices -->
+    <string name="pref_camera_auto_hdr_entry_enable">সক্ষম</string>
+    <string name="pref_camera_auto_hdr_entry_disable">অক্ষম</string>
+    <string name="pref_camera_auto_hdr_value_enable">enable</string>
+    <string name="pref_camera_auto_hdr_value_disable">disable</string>
+
+    <!-- toast message for storage location switch -->
+    <string name="on_switch_save_path_to_sdcard">অভ্যন্তরীণ সঞ্চয়স্থান পর্যাপ্ত নয় - সংরক্ষণের পথটি SD কার্ডে স্যুইচ করুন।</string>
+
+    <string name="pref_camera_hdr_mode_default">hdr-mode-multiframe</string>
+
+    <!-- Settings screen, Selectable HDR mode title -->
+    <string name="pref_camera_hdr_mode_title">HDR মোড</string>
+
+    <!-- Settings screen, Selectable HDR mode radio button choices -->
+    <string name="pref_camera_hdr_mode_entry_sensor">সেন্সর HDR</string>
+    <string name="pref_camera_hdr_mode_entry_multi_frame">একাধিক-ফ্রেম HDR</string>
+
+    <!-- HDR mode entry values. Do not translate. -->
+    <string name="pref_hdr_mode_value_sensor">hdr-mode-sensor</string>
+    <string name="pref_hdr_mode_value_multi_frame">hdr-mode-multiframe</string>
+
+    <!-- Settings screen, Selectable HDR need 1x frame default value -->
+    <string name="pref_camera_hdr_need_1x_default">@string/pref_hdr_need_1x_value_true</string>
+
+    <!-- Settings screen, Selectable HDR need 1x frame title -->
+    <string name="pref_camera_hdr_need_1x_title">HDR-এর 1x ফ্রেম প্রয়োজন</string>
+
+    <!-- Settings screen, Selectable HDR need 1x frame radio button choices -->
+    <string name="pref_camera_hdr_need_1x_entry_false">@string/setting_off</string>
+    <string name="pref_camera_hdr_need_1x_entry_true">@string/setting_on</string>
+
+    <!-- HDR need 1x frame entry values. Do not translate. -->
+    <string name="pref_hdr_need_1x_value_false">false</string>
+    <string name="pref_hdr_need_1x_value_true">true</string>
+
+    <!--Default video rotation setting-->
+    <string name="pref_camera_video_rotation_default" translatable="false">0</string>
+
+    <!--Settings screen, video rotation title-->
+    <string name="pref_camera_video_rotation_title">ভিডিও ঘুর্ণন</string>
+
+    <!--Menu, video rotation label-->
+    <string name="pref_camera_video_rotation_label">ভিডিও ঘুর্ণন</string>
+
+    <!-- Settings screen, Video rotation dialog radio button choices -->
+    <string name="pref_camera_video_rotation_entry_0">0</string>
+    <string name="pref_camera_video_rotation_entry_90">90</string>
+    <string name="pref_camera_video_rotation_entry_180">180</string>
+    <string name="pref_camera_video_rotation_entry_270">270</string>
+
+    <!-- The message is shown in toast when click showOnMap Menu and there is no map app -->
+    <string name="map_activity_not_found_err">অবস্থান দেখানোর জন্য কোনও মানচিত্র অ্যাপ নেই।</string>
+
+    <!-- Continous shot enable message -->
+    <string name="longshot_enable_message">
+            অবিরত শট মোডে উন্নত বৈশিষ্ট্যগুলি সমর্থিত নয়</string>
+    <!-- Advance features enable message -->
+    <string name="advance_feature_enable_msg">
+            উন্নত বৈশিষ্ট্যগুলি সক্ষম থাকাকালীন অবিরত শট সমর্থিত নয়</string>
+
+    <!-- The alas of CameraActivity for gesture operation -->
+    <string name="camera_gesture_title">ক্যামেরা লঞ্চ করুন</string>
+     <string name="pref_camera_tsmakeup_title">সৌন্দর্যবর্ধন</string>
+     <string name="pref_camera_tsmakeup_entry_on">চালু</string>
+     <string name="pref_camera_tsmakeup_entry_off">বন্ধ</string>
+     <string name="pref_camera_tsmakeup_default" translatable="false">Off</string>
+     <string name="pref_camera_tsmakeup_level_default" translatable="false">60</string>
+     <string name="pref_camera_tsmakeup_custom">কাস্টম</string>
+     <string name="pref_camera_tsmakeup_level_whiten">সাদাটে</string>
+     <string name="pref_camera_tsmakeup_level_clean">কোমল</string>
+     <string name="text_tsmakeup_alert_title">সতর্কীকরণ</string>
+     <string name="text_tsmakeup_alert_msg">সৌন্দর্যবর্ধনের মুখ শনাক্তকরণ চালু করা আবশ্যক, অবিরত রাখবেন নাকি প্রস্থান করবেন?</string>
+     <string name="text_tsmakeup_alert_continue">জারি রাখুন</string>
+     <string name="text_tsmakeup_alert_quit">প্রস্থান করুন</string>
+
+    <string name="all_in_focus">সমস্ত ফোকাসে</string>
+</resources>

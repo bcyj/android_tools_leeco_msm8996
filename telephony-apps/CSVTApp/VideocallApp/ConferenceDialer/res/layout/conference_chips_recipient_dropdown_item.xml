@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2014 Qualcomm Technologies, Inc.
+    All Rights Reserved.
+    Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="48dip"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="?android:attr/activatedBackgroundIndicator">
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <TextView
+            android:id="@android:id/title"
+            android:textColor="@drawable/list_item_font_primary"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dip"
+            android:singleLine="true"
+            android:ellipsize="end"
+        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@android:id/text1"
+                android:textColor="@drawable/list_item_font_secondary"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dip"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_marginTop="-4dip"
+            />
+            <View
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+            />
+            <TextView
+                android:id="@android:id/text2"
+                android:textColor="@drawable/list_item_font_secondary"
+                android:textSize="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dip"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_marginTop="-4dip"
+            />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@android:id/icon"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+        android:layout_marginLeft="12dip"
+        android:src="@drawable/ic_contact_picture"
+        android:cropToPadding="true"
+        android:scaleType="centerCrop"
+    />
+</LinearLayout>

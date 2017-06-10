@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015, Qualcomm Technologies, Inc. All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<checkitem xmlns:android="http://schemas.android.com/apk/res/android"
+    label="Music volume" function="musicVolumeGet" expect="8" expect_type="3">
+    <dialog title="@string/dialog_edit_label">
+        <view info="Music volume">
+            <edit function="musicVolumeGet" />
+        </view>
+        <positive label="@android:string/ok" function="musicVolumeSet"
+            params="(EditContent)" delay_millis="2000" />
+        <negative label="@android:string/cancel" />
+    </dialog>
+</checkitem>

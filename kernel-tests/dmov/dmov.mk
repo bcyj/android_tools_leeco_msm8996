@@ -1,0 +1,20 @@
+#sources and intermediate files are separated
+vpath %.c $(SRCDIR)/dmov
+
+DMOVTEST_CFLAGS := $(CFLAGS)
+DMOVTEST_CFLAGS += $(QCT_CFLAGS)
+  
+DMOVTEST_CPPFLAGS := $(CPPFLAGS)
+DMOVTEST_CPPFLAGS += $(QCT_CPPFLAGS)
+DMOVTEST_CPPFLAGS += -I$(KERNEL_OBJDIR)/include
+
+DMOVTEST_LDLIBS := $(LDLIBS)
+DMOVTEST_LDLIBS += -lpthread
+
+APP_NAME := msm_dma
+SRCLIST  := msm_dma.c
+
+all: $(APP_NAME)
+
+$(APP_NAME): $(SRCLIST)
+	$(CC) $(DMOVTEST_CFLAGS) $(DMOVTEST_CPPFLAGS) $(LDFLAGS) -o $@ $^ $(DMOVTEST_LDLIBS)

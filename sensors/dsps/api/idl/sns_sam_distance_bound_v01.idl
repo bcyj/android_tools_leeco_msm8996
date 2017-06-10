@@ -1,0 +1,378 @@
+/*****************************************************************************
+  @FILE     sns_sam_distance_bound_v01.idl
+
+  @BRIEF    Message definition for the Distance Bound algorithm service
+
+  @DESCRIPTION
+  This file defines messages used by Distance Bound algorithm service.
+
+  As prerequisite, the sensor algorithm must use the common Interface
+  defined in the Sensor algorithm framework.
+
+  The messages defined herein will be passed to the Sensor framework using
+  the sensor1_write() API.
+
+  @COPYRIGHT
+  Copyright (c) 2013-2014 Qualcomm Technologies, Inc.  All Rights Reserved
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+include "sns_sam_common_v01.idl";
+
+revision 5;
+
+const SNS_SAM_DISTANCE_BOUND_SUID = 0xa1fe7c7b96bb2322;
+
+/**< The maximum number of motion states that can be supported */
+const SNS_SAM_DISTANCE_BOUND_MOTION_STATE_MAX = 50;
+
+//! @ENUM SNS_SAM_DISTANCE_BOUND_MS_ENUM
+enum
+{
+    SNS_SAM_DISTANCE_BOUND_MOTION_STATE_UNKNOWN =       0,
+    SNS_SAM_DISTANCE_BOUND_MOTION_STATE_STATIONARY =    1,
+    SNS_SAM_DISTANCE_BOUND_MOTION_STATE_INMOTION =      2,
+    SNS_SAM_DISTANCE_BOUND_MOTION_STATE_FIDDLE =        3,
+    SNS_SAM_DISTANCE_BOUND_MOTION_STATE_PEDESTRIAN =    4,
+    SNS_SAM_DISTANCE_BOUND_MOTION_STATE_VEHICLE =       5,
+    SNS_SAM_DISTANCE_BOUND_MOTION_STATE_WALK =          6,
+    SNS_SAM_DISTANCE_BOUND_MOTION_STATE_RUN =           7,
+    SNS_SAM_DISTANCE_BOUND_MOTION_STATE_BIKE =          8
+} sns_sam_distance_bound_ms_e;
+
+//! @ENUM SNS_SAM_DISTANCE_BOUND_BREACH_EVENT_ENUM
+enum
+{
+    SNS_SAM_DISTANCE_BOUND_BREACH_EVENT_UNKNOWN =      -1,
+    SNS_SAM_DISTANCE_BOUND_BREACH_EVENT_FALSE =         0,
+    SNS_SAM_DISTANCE_BOUND_BREACH_EVENT_TRUE =          1
+} sns_sam_distance_bound_breach_event_e;
+
+struct {
+  sns_sam_distance_bound_breach_event_e distance_bound_breach_event;
+  /**<
+    Indicates if the distance bound set by client has been breached.
+    Set to SNS_SAM_DISTANCE_BOUND_BREACH_EVENT_UNKNOWN if
+    no sns_sam_distance_bound_set_bound_req_msg has been received. All other
+    output fields are to be ignored.
+    Set to SNS_SAM_DISTANCE_BOUND_BREACH_EVENT_TRUE if breach has occurred.
+    Set to SNS_SAM_DISTANCE_BOUND_BREACH_EVENT_FALSE if breach has not occurred.
+  */
+  uint8 session_key;
+  /**<
+    The unique session key provided by client associated with this report.
+  */
+} sns_sam_distance_bound_report_data_s;
+
+//============================================================================
+/** @COMMAND SNS_SAM_DISTANCE_BOUND_ENABLE
+    @BRIEF This command enables the distance_bound algorithm.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_DISTANCE_BOUND_ENABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  optional float motion_state_speed_bounds<SNS_SAM_DISTANCE_BOUND_MOTION_STATE_MAX>;
+  /**<
+    An array that specifies a maximum speed associated with each motion state
+    defined in meters per second. If not provided, the algorithm will
+    use default values. The sns_sam_distance_bound_ms_e specifies the index of
+    each motion state in the array motion_state_speed_bounds array.
+    */
+
+    //! @VERSION 1.1
+  optional sns_suspend_notification_s notify_suspend;
+  /**< Identifies if indications for this request should be sent
+       when the processor is in suspend state.
+
+       If this field is not specified, default value will be set to
+       notify_suspend->proc_type                  = SNS_PROC_MODEM
+       notify_suspend->send_indications_during_suspend  = TRUE
+
+       This field does not have any bearing on error indication
+       messages, which will be sent even during suspend.
+    */
+} sns_sam_distance_bound_enable_req_msg;
+
+//! @MSG     SNS_SAM_DISTANCE_BOUND_ENABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s resp = 2;
+
+  optional uint8 instance_id;
+  /**<
+    Algorithm instance ID maintained/assigned by SAM.
+    The client shall use this instance ID for future messages associated with
+    current algorithm instance.
+    */
+} sns_sam_distance_bound_enable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_DISTANCE_BOUND_DISABLE
+    @BRIEF This command disables the distance_bound algorithm.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_DISTANCE_BOUND_DISABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8 instance_id;
+  /**< To identify the algorithm instance to be disabled.  */
+} sns_sam_distance_bound_disable_req_msg;
+
+//! @MSG     SNS_SAM_DISTANCE_BOUND_DISABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s resp = 2;
+
+  optional uint8 instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+} sns_sam_distance_bound_disable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_DISTANCE_BOUND_GET_REPORT
+    @BRIEF This command fetches latest report output of distance_bound algorithm.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_DISTANCE_BOUND_GET_REPORT_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8 instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+} sns_sam_distance_bound_get_report_req_msg;
+
+//! @MSG     SNS_SAM_DISTANCE_BOUND_GET_REPORT_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s resp = 2;
+
+  optional uint8 instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+
+  optional uint32 timestamp;
+  /**< Timestamp of input with which latest distance bound report was computed
+  in SSC ticks  */
+
+  optional sns_sam_distance_bound_report_data_s report_data;
+  /**< distance_bound algorithm output report  */
+
+  optional float distance_accumulated;
+  /**<
+    Distance accumulated in meters since the last sns_sam_distance_bound_set_bound_req
+  */
+} sns_sam_distance_bound_get_report_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_DISTANCE_BOUND_REPORT
+    @BRIEF Output report from the distance_bound algorithm.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_DISTANCE_BOUND_REPORT_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8 instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+
+  mandatory uint32 timestamp;
+  /**< Timestamp of input with which latest distance bound report was computed
+  in SSC ticks */
+
+  mandatory sns_sam_distance_bound_report_data_s report_data;
+  /**< distance_bound algorithm output report  */
+
+  optional float distance_accumulated;
+  /**<
+    Distance accumulated in meters since the last sns_sam_distance_bound_set_bound_req
+  */
+} sns_sam_distance_bound_report_ind_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_DISTANCE_BOUND_ERROR
+    @BRIEF Asynchronous error report from the distance_bound algorithm.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_DISTANCE_BOUND_ERROR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//============================================================================
+
+message {
+  mandatory uint8 instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+
+  mandatory uint32 timestamp;
+  /**< Timestamp of when the error was detected; in SSC ticks */
+
+  mandatory uint8 error;
+  /**< sensors error code */
+} sns_sam_distance_bound_error_ind_msg;
+
+//============================================================================
+/** @COMMAND SNS_SAM_DISTANCE_BOUND_SET_BOUND
+    @BRIEF This COMMAND sets the distance bound.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_DISTANCE_BOUND_SET_BOUND_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8 instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+  mandatory float distance_bound;
+  /**<
+    The distance bound in meters. When the distance travelled exceeds this,
+    an event is sent to the requestor, and the distance travelled accumulation
+    is reset.
+    */
+  mandatory uint8 session_key;
+  /**<
+    A unique key provided by the client that identifies the session associated
+    with the sns_sam_distance_bound_set_bound_req_msg. A session is defined as
+    the period between the arrival of a sns_sam_distance_bound_set_bound_req_msg
+    and the generation of a sns_sam_distance_bound_report_ind_msg associated with
+    it. There can be only one session active at a time. The arrival of a new
+    sns_sam_distance_bound_set_bound_req_msg discards the previous session. The
+    session_key returned with the sns_sam_distance_bound_report_ind_msg can be used
+    by a client to identify the request associated with it.
+    */
+} sns_sam_distance_bound_set_bound_req_msg;
+
+//! @MSG     SNS_SAM_DISTANCE_BOUND_SET_BOUND_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s resp = 2;
+
+  optional uint8 instance_id;
+  /**< Instance id identifies the algorithm instance.  */
+} sns_sam_distance_bound_set_bound_resp_msg;
+
+//============================================================================
+/** @COMMAND SNS_SAM_DISTANCE_BOUND_CANCEL
+    @BRIEF Cancels all requests to the algorithm service from this client.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//============================================================================
+/** @COMMAND SNS_SAM_DISTANCE_BOUND_VERSION
+    @BRIEF This command requests algorithm service version.
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//============================================================================
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_SAM_DISTANCE_BOUND_SVC {
+  //! @ID SNS_SAM_DISTANCE_BOUND_CANCEL
+  sns_common_cancel_req_msg        SNS_SAM_DISTANCE_BOUND_CANCEL_REQ,
+  sns_common_cancel_resp_msg       SNS_SAM_DISTANCE_BOUND_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_SAM_DISTANCE_BOUND_VERSION
+  sns_common_version_req_msg       SNS_SAM_DISTANCE_BOUND_VERSION_REQ,
+  sns_common_version_resp_msg      SNS_SAM_DISTANCE_BOUND_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SAM_DISTANCE_BOUND_ENABLE
+  sns_sam_distance_bound_enable_req_msg       SNS_SAM_DISTANCE_BOUND_ENABLE_REQ,
+  sns_sam_distance_bound_enable_resp_msg      SNS_SAM_DISTANCE_BOUND_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_SAM_DISTANCE_BOUND_DISABLE
+  sns_sam_distance_bound_disable_req_msg      SNS_SAM_DISTANCE_BOUND_DISABLE_REQ,
+  sns_sam_distance_bound_disable_resp_msg     SNS_SAM_DISTANCE_BOUND_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_SAM_DISTANCE_BOUND_GET_REPORT
+  sns_sam_distance_bound_get_report_req_msg   SNS_SAM_DISTANCE_BOUND_GET_REPORT_REQ,
+  sns_sam_distance_bound_get_report_resp_msg  SNS_SAM_DISTANCE_BOUND_GET_REPORT_RESP
+    = 0x04;
+
+  //! @ID SNS_SAM_DISTANCE_BOUND_REPORT
+  sns_sam_distance_bound_report_ind_msg       SNS_SAM_DISTANCE_BOUND_REPORT_IND
+    = 0x05;
+
+  //! @ID SNS_SAM_DISTANCE_BOUND_ERROR
+  sns_sam_distance_bound_error_ind_msg        SNS_SAM_DISTANCE_BOUND_ERROR_IND
+    = 0x06;
+
+  //! @ID SNS_SAM_DISTANCE_BOUND_SET_BOUND
+  sns_sam_distance_bound_set_bound_req_msg   SNS_SAM_DISTANCE_BOUND_SET_BOUND_REQ,
+  sns_sam_distance_bound_set_bound_resp_msg  SNS_SAM_DISTANCE_BOUND_SET_BOUND_RESP
+    = 0x20;
+
+  //! @ID SNS_SAM_GET_ALGO_ATTRIBUTES
+  sns_sam_get_algo_attrib_req_msg            SNS_SAM_DISTANCE_BOUND_GET_ATTRIBUTES_REQ,
+  sns_sam_get_algo_attrib_resp_msg           SNS_SAM_DISTANCE_BOUND_GET_ATTRIBUTES_RESP
+    = 0x24;
+
+} = SNS_QMI_SVC_ID_42;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+*/
+
+//============================================================================
+// End of Module
+//============================================================================

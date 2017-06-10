@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2013 Mimer Information Technology AB, info@mimer.com -->
+<MimerSQLReplace>
+<fromSQL id="GOTE401" statement="SELECT transport_type, _id, thread_id, address, body, date, read, type, status, locked, error_code, sub, sub_cs, date, read, m_type, msg_box, d_rpt, rr, err_type, locked FROM (SELECT DISTINCT date * ? AS normalized_date, ? AS transport_type, _id, thread_id, address, body, date, read, type, status, locked, error_code, NULL AS sub, NULL AS sub_cs, date, read, NULL AS m_type, NULL AS msg_box, NULL AS d_rpt, NULL AS rr, NULL AS err_type, locked FROM sms WHERE (thread_id = ? AND (type != ?)) UNION SELECT DISTINCT date * ? AS normalized_date, ? AS transport_type, pdu._id, thread_id, NULL AS address, NULL AS body, date, read, NULL AS type, NULL AS status, locked, NULL AS error_code, sub, sub_cs, date, read, m_type, msg_box, d_rpt, rr, err_type, locked FROM pdu LEFT JOIN pending_msgs ON pdu._id = pending_msgs.msg_id WHERE (thread_id = ? AND msg_box != ? AND (msg_box != ? AND (m_type = ? OR m_type = ? OR m_type = ?))) ORDER BY normalized_date ASC)">
+select "transport_type","_id","thread_id","address","body","date","read","type","status","locked","error_code","sub","sub_cs","date","read","m_type","msg_box","d_rpt","rr",
+"err_type","locked"
+from (select distinct "date"*? as "normalized_date",cast(? as VARCHAR(10)) as "transport_type","_id","thread_id","address","body","date","read","type","status","locked","error_code",
+NULL as "sub",NULL as "sub_cs",NULL as "m_type",NULL as "msg_box",NULL as "d_rpt",NULL as "rr",NULL as "err_type"
+from "sms"
+where (("thread_id" = ?) and (("type" != ?)))
+union select distinct "date"*? as "normalized_date",cast(? as VARCHAR(10)) as "transport_type","pdu"."_id","thread_id",NULL as "address",NULL as "body","date","read",NULL as "type",
+NULL as "status","locked",NULL as "error_code","sub","sub_cs","m_type","msg_box","d_rpt","rr","err_type"
+from "pdu"
+left join "pending_msgs" on ("pdu"."_id" = "pending_msgs"."msg_id")
+where (("thread_id" = ?) and ("msg_box" != ?) and (("msg_box" != ?) and (("m_type" = ?) or ("m_type" = ?) or ("m_type" = ?)))))
+order by "normalized_date"
+</fromSQL>
+
+<fromSQL id="GOTE403" statement="SELECT transport_type, _id, thread_id, address, body, date, date_sent, read, type, status, locked, error_code, sub, sub_cs, date, date_sent, read, m_type, msg_box, d_rpt, rr, err_type, locked FROM (SELECT DISTINCT date * ? AS normalized_date, ? AS transport_type, _id, thread_id, address, body, date, date_sent, read, type, status, locked, error_code, NULL AS sub, NULL AS sub_cs, date, date_sent, read, NULL AS m_type, NULL AS msg_box, NULL AS d_rpt, NULL AS rr, NULL AS err_type, locked FROM sms WHERE (thread_id = ? AND (type != ?)) UNION SELECT DISTINCT date * ? AS normalized_date, ? AS transport_type, pdu._id, thread_id, NULL AS address, NULL AS body, date, date_sent, read, NULL AS type, NULL AS status, locked, NULL AS error_code, sub, sub_cs, date, date_sent, read, m_type, msg_box, d_rpt, rr, err_type, locked FROM pdu LEFT JOIN pending_msgs ON pdu._id = pending_msgs.msg_id WHERE (thread_id = ? AND msg_box != ? AND (msg_box != ? AND (m_type = ? OR m_type = ? OR m_type = ?))) ORDER BY normalized_date ASC)">
+
+select "transport_type","_id","thread_id","address","body","date","date_sent","read","type","status","locked","error_code","sub","sub_cs","date","date_sent","read","m_type","msg_box","d_rpt","rr",
+       "err_type","locked" 
+from (select distinct "date"*? as "normalized_date",cast(? as VARCHAR(10)) as "transport_type","_id","thread_id","address","body","date","date_sent","read","type","status","locked","error_code",
+                      NULL as "sub",NULL as "sub_cs",NULL as "m_type",NULL as "msg_box",NULL as "d_rpt",NULL as "rr",NULL as "err_type"
+      from "sms" 
+      where (("thread_id" = ?) and (("type" != ?))) 
+      union select distinct "date"*? as "normalized_date",cast(? as VARCHAR(10)) as "transport_type","pdu"."_id","thread_id",NULL as "address",NULL as "body","date","date_sent","read",NULL as "type",
+                            NULL as "status","locked",NULL as "error_code","sub","sub_cs","m_type","msg_box","d_rpt","rr","err_type"
+            from "pdu" 
+                 left join "pending_msgs" on ("pdu"."_id" = "pending_msgs"."msg_id") 
+            where (("thread_id" = ?) and ("msg_box" != ?) and (("msg_box" != ?) and (("m_type" = ?) or ("m_type" = ?) or ("m_type" = ?)))))
+order by "normalized_date"
+
+</fromSQL>
+
+
+<!-- BEGIN SEARCH FROM MESSAGING APP --> 
+<!--  start typing text -->
+<!--    SELECT compatibility.snippet(:1, words.index_text, :2, :3, :4, :5) as snippet 
+	FROM words
+	WHERE index_text LIKE '%' || :6 || '%'
+	ORDER BY snippet fetch :7
+  -->
+
+
+<fromSQL id="GOTE405" statement="SELECT snippet(words, '', '', '', 1, 1) as snippet FROM words WHERE index_text MATCH ? ORDER BY snippet LIMIT 50;">
+select compatibility.returnWord(body, :1:i1) as snippet from sms
+where (1=1 or :2:i2 is not null or :3:i3 is not null or :4:i4 is not null or :5:i5 is not null or :6:i6 is not null)
+and 'body collate current_collation_2' match :1:i1
+and snippet &lt;&gt; ''
+union all
+SELECT compatibility.returnWord(substring(text from 1 for 1000), :1:i1) as snippet
+FROM part WHERE part.ct = 'text/plain'
+and snippet &lt;&gt; ''
+and 'substring(text from 1 for 1000) collate current_collation_2' match :1:i1
+order by snippet fetch :7:i7
+</fromSQL> 
+
+<!-- Messaging search - type any search text and press search button -->
+<!-- search text having * (asterik) character doesn't work -->
+<fromSQL id="GOTE407"
+statement = "SELECT sms._id AS _id,thread_id,address,body,date,date_sent,index_text,words._id FROM sms,words WHERE (index_text MATCH ? AND sms._id=words.source_id AND words.table_to_use=1) UNION SELECT pdu._id,thread_id,addr.address,part.text AS body,pdu.date,pdu.date_sent,index_text,words._id FROM pdu,part,addr,words WHERE ((part.mid=pdu._id) AND (addr.msg_id=pdu._id) AND (addr.type=151) AND (part.ct='text/plain') AND (index_text MATCH ?) AND (part._id = words.source_id) AND (words.table_to_use=2)) GROUP BY thread_id ORDER BY thread_id ASC, date DESC">
+	SELECT sms."_id" AS "_id",thread_id,address,body,date,date_sent,body, null
+	FROM sms
+	WHERE 'body collate current_collation_2' match :1:i1 or (1=2 and :3:i3 = 1)
+	UNION
+	SELECT pdu."_id",thread_id,addr.address,substring(part.text from 1 for 1000) AS body,pdu.date,pdu.date_sent,substring(text from 1 for 1000), null
+	FROM pdu,part,addr
+	WHERE (part.mid=pdu."_id") AND (addr.msg_id=pdu."_id") AND (addr.type=:4:i4) AND (part.ct=:5:i5) AND
+		'substring(text from 1 for 1000) collate current_collation_2' match :2:i2  or (1=2 and :6:i6 = 1)
+	GROUP BY thread_id
+	ORDER BY thread_id ASC, date DESC
+</fromSQL>
+
+<!-- END SEARCH FROM MESSAGING APP -->
+
+<!-- we have removed the need for the words table and the table itself -->
+
+<fromSQL id="GOTE408" statement = "INSERT INTO words(table_to_use, _id, index_text, source_id) VALUES(?, ?, ?, ?);"/>
+
+<fromSQL id="GOTE409" statement="DELETE FROM threads WHERE _id = ? AND _id NOT IN          (SELECT thread_id FROM sms            UNION SELECT thread_id FROM pdu)">
+delete from "threads" where ("_id" = ?) and not exists(select "thread_id" from "sms" where thread_id = threads."_id") and  not exists (select "thread_id" from "pdu" where thread_id = threads."_id")
+
+</fromSQL>
+
+ 
+<!-- To avoid using Grant select permission on different tables to SYSADM. We need to add only one replacer which queries information schema.-->
+<fromSQL id="GOTE4010"
+	    statement="PRAGMA table_info(?)">
+	    
+	    select 1, column_name, 1, 1, COLUMN_DEFAULT from INFORMATION_SCHEMA.COLUMNS
+		where TABLE_SCHEMA = 'telephony'
+		AND (column_default is null or upper(column_default) not like ('%WITH CHECK OPTION%'))
+		AND TABLE_NAME = ?	
+	    
+</fromSQL>
+
+<!-- Using Handcent app, searching by sms body. -->
+
+
+ <fromSQL id="GOTE4011" statement="SELECT transport_type, _id, thread_id, address, body, date, read, type, sub, sub_cs, date, read, fn, name FROM (SELECT DISTINCT date * ? AS normalized_date, ? AS transport_type, _id, thread_id, address, body, date, read, type, NULL AS sub, NULL AS sub_cs, date, read, NULL AS fn, NULL AS name FROM sms WHERE ((body like ? or sub like ?) and thread_id not in () AND (type != ?)) UNION SELECT DISTINCT date * ? AS normalized_date, ? AS transport_type, pdu._id, thread_id, NULL AS address, NULL AS body, date, read, NULL AS type, sub, sub_cs, date, read, NULL AS fn, NULL AS name FROM pdu LEFT JOIN pending_msgs ON pdu._id = pending_msgs.msg_id WHERE ((body like ? or sub like ?) and thread_id not in () AND msg_box != ? AND (msg_box != ? AND (m_type = ? OR m_type = ? OR m_type = ?))) ORDER BY date DESC) ORDER BY date DESC">
+
+SELECT "transport_type","_id","thread_id","address","body","date","read","type",'sub',"sub_cs","date","read","fn","name" 
+from (
+        select "date"*? as "normalized_date",? as "transport_type","_id","thread_id","address","body","date","read","type",
+                cast(null as char) as "sub",cast(null as char) as "sub_cs","date","read",cast(null as char) as "fn",cast(null as char) as "name" 
+        from "sms" 
+        where (("body" collate current_collation_2 like ? or cast(null as char) like ?) and (("type" &lt;&gt; ?))) 
+        
+        union 
+        
+        select "date"*? as "normalized_date",? as "transport_type","pdu"."_id","thread_id",cast(null as char) as "address",cast(null as char) as "body",
+                "date","read",cast(null as char) as "type","sub","sub_cs","date","read",cast(null as char) as "fn",cast(null as char) as "name" 
+        from "pdu" 
+        left join "pending_msgs" on ("pdu"."_id" = "pending_msgs"."msg_id") 
+        where ((cast(null as char) like ? or "sub" collate current_collation_2 like ?) and ("msg_box" &lt;&gt; ?) and 
+                (("msg_box" &lt;&gt; ?) and (("m_type" = ?) or ("m_type" = ?) or ("m_type" = ?)))) 
+        ) 
+
+order by "date" desc  
+
+</fromSQL>
+
+<!-- Using Handcent app, check "undelievered" message. -->
+
+
+ <fromSQL id="GOTE4012" statement="SELECT transport_type, _id, thread_id, address, body, date, read, type, status, sub, sub_cs, date, read, m_type, msg_box, err_type FROM (SELECT thread_id AS tid, date * ? AS normalized_date, ? AS transport_type, _id, thread_id, address, body, date, read, type, status, NULL AS sub, NULL AS sub_cs, date, read, NULL AS m_type, NULL AS msg_box, NULL AS err_type FROM sms WHERE ((type = ? OR type = ? OR type = ?)) UNION SELECT thread_id AS tid, date * ? AS normalized_date, ? AS transport_type, pdu._id, thread_id, NULL AS address, NULL AS body, date, read, NULL AS type, NULL AS status, sub, sub_cs, date, read, m_type, msg_box, err_type FROM pdu LEFT JOIN pending_msgs ON pdu._id = pending_msgs.msg_id WHERE (msg_box = ?)) ORDER BY date desc">
+
+SELECT "transport_type","_id","thread_id","address","body","date","read","type","status","sub","sub_cs","date","read","m_type","msg_box","err_type" 
+from (
+        select "thread_id" as "tid","date"*? as "normalized_date",? as "transport_type","_id","thread_id","address","body","date","read","type","status",
+                null as "sub",null as "sub_cs","date","read",null as "m_type",null as "msg_box",
+                null as "err_type"
+        from "sms" 
+        where ((("type" = ?) or ("type" = ?) or ("type" = ?))) 
+        
+        union 
+        
+        select "thread_id" as "tid","date"*? as "normalized_date",? as "transport_type","pdu"."_id","thread_id",null as "address",
+                null as "body","date","read",null as "type",null as "status","sub","sub_cs","date","read","m_type","msg_box","err_type" 
+        from "pdu" 
+        left join "pending_msgs" on ("pdu"."_id" = "pending_msgs"."msg_id") 
+        where (("msg_box" = ?))
+      ) 
+order by "date" desc
+
+</fromSQL>
+
+<!-- Using QQPhoneBook app, it happens when opening some thread -->
+
+<fromSQL id="GOTE4013" statement="SELECT * FROM sms WHERE (type=?) AND ((date?>?) AND (?-date>?) AND thread_id == ?) ORDER BY date DESC">
+SELECT * FROM sms WHERE (type=:1) AND ((date + cast(:2 as bigint) >:3 ) AND (cast(:4 as bigint)-date>:5) AND thread_id = :6) ORDER BY date DESC
+
+ </fromSQL>
+	
+<!-- QQPhoneBook, click on a suggested sms -->
+<fromSQL id="GOTE4014" statement="SELECT _id FROM (SELECT DISTINCT date * ? AS normalized_date, _id FROM sms WHERE (normalized_date >= ? AND thread_id = ? AND (type != ?)) UNION SELECT DISTINCT date * ? AS normalized_date, pdu._id FROM pdu LEFT JOIN pending_msgs ON pdu._id = pending_msgs.msg_id WHERE (normalized_date >= ? AND thread_id = ? AND msg_box != ? AND (msg_box != ? AND (m_type = ? OR m_type = ? OR m_type = ?))) ORDER BY normalized_date ASC)">
+select "_id" from (
+        select normalized_date, "_id" from (
+                select distinct date*? as normalized_date,"_id", thread_id, type from sms )
+        where ((normalized_date >= ?) and (thread_id = ?) and ((type &lt;&gt; ?))) 
+        
+        union 
+        
+        select normalized_date, pdu."_id" from (
+                select distinct date*? as normalized_date,pdu."_id",msg_box,m_type, thread_id from pdu 
+                left join pending_msgs on (pdu."_id" = pending_msgs.msg_id) )
+        where ((normalized_date >= ?) and (thread_id = ?) and (msg_box &lt;&gt; ?) and ((msg_box &lt;&gt; ?) and ((m_type = ?) or (m_type = ?) or (m_type = ?)))) 
+        order by normalized_date
+)
+</fromSQL>
+
+<!--  When deleting a thread -->
+<fromSQL id="GOTE4015" statement="DELETE FROM threads WHERE _id NOT IN (SELECT DISTINCT thread_id FROM sms UNION SELECT DISTINCT thread_id FROM pdu)">
+delete from "threads" t where not exists(select "thread_id" from "sms" where thread_id = t."_id" union all select "thread_id" from "pdu" where thread_id = t."_id")
+</fromSQL>
+
+    <!--  Expensive update while restoring backup -->
+    <fromSQL id="GOTE4016" statement="UPDATE threads  SET  date =    (SELECT date FROM        (SELECT date * ? AS date, thread_id FROM pdu         UNION SELECT date, thread_id FROM sms)     WHERE thread_id = ? ORDER BY date DESC LIMIT ?),  snippet =    (SELECT snippet FROM        (SELECT date * ? AS date, sub AS snippet, thread_id FROM pdu         UNION SELECT date, body AS snippet, thread_id FROM sms)     WHERE thread_id = ? ORDER BY date DESC LIMIT ?),  snippet_cs =    (SELECT snippet_cs FROM        (SELECT date * ? AS date, sub_cs AS snippet_cs, thread_id FROM pdu         UNION SELECT date, ? AS snippet_cs, thread_id FROM sms)     WHERE thread_id = ? ORDER BY date DESC LIMIT ?)  WHERE threads._id = ?;">
+        UPDATE "threads"
+SET ("date", "snippet","snippet_cs") =
+    (SELECT "date", "snippet", "snippet_cs"
+        FROM(SELECT "date" * :1 AS "date",
+                    "sub"      AS "snippet",
+                    "sub_cs"   AS "snippet_cs",
+                    "thread_id"
+                FROM "pdu"
+                UNION
+                SELECT "date",
+                    "body" AS "snippet",
+                    :8 AS "snippet_cs",
+                    "thread_id"
+                FROM "sms")
+        WHERE("thread_id" = :2)
+        ORDER BY "date" DESC
+        FETCH :3)
+WHERE("threads"."_id" = :11) 
+AND (1=1 or (:4 is not null or :5 is not null  or :6 is not null or :7 is not null or :9 is not null or :10 is not null))
+    </fromSQL>
+
+
+
+<!-- Qualcomm Technologies replacers -->
+
+
+</MimerSQLReplace>

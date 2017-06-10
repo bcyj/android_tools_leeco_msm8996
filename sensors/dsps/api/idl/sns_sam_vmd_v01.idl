@@ -1,0 +1,72 @@
+/*****************************************************************************
+  @FILE     sns_sam_vmd.idl
+
+  @BRIEF    Service definition for VMD (Vehicle Motion Detector)
+            algorithm service.
+
+  @COPYRIGHT
+  Copyright (c) 2010-2014 Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Confidential and Proprietary
+
+*****************************************************************************/
+include "sns_sam_common_v01.idl";
+include "sns_sam_qmd_v01.idl";
+
+revision 4;
+
+const SNS_SAM_VMD_SUID = 0xaad47756cc4170ec;
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_SAM_VMD_SVC {
+  //! @ID SNS_COMMON_CANCEL
+  sns_common_cancel_req_msg        SNS_SAM_VMD_CANCEL_REQ,
+  sns_common_cancel_resp_msg       SNS_SAM_VMD_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_COMMON_VERSION
+  sns_common_version_req_msg       SNS_SAM_VMD_VERSION_REQ,
+  sns_common_version_resp_msg      SNS_SAM_VMD_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SAM_QMD_ENABLE
+  sns_sam_qmd_enable_req_msg       SNS_SAM_VMD_ENABLE_REQ,
+  sns_sam_qmd_enable_resp_msg      SNS_SAM_VMD_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_SAM_QMD_DISABLE
+  sns_sam_qmd_disable_req_msg      SNS_SAM_VMD_DISABLE_REQ,
+  sns_sam_qmd_disable_resp_msg     SNS_SAM_VMD_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_SAM_QMD_GET_REPORT
+  sns_sam_qmd_get_report_req_msg   SNS_SAM_VMD_GET_REPORT_REQ,
+  sns_sam_qmd_get_report_resp_msg  SNS_SAM_VMD_GET_REPORT_RESP
+    = 0x04;
+
+  //! @ID SNS_SAM_QMD_REPORT
+  sns_sam_qmd_report_ind_msg       SNS_SAM_VMD_REPORT_IND
+    = 0x05;
+
+  //! @ID SNS_SAM_QMD_ERROR
+  sns_sam_qmd_error_ind_msg        SNS_SAM_VMD_ERROR_IND
+    = 0x06;
+
+  //! @ID SNS_SAM_GET_ALGO_ATTRIBUTES
+  sns_sam_get_algo_attrib_req_msg  SNS_SAM_VMD_GET_ATTRIBUTES_REQ,
+  sns_sam_get_algo_attrib_resp_msg SNS_SAM_VMD_GET_ATTRIBUTES_RESP
+    = 0x24;
+
+} = SNS_QMI_SVC_ID_6;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+*/
+
+//============================================================================
+// End of Module
+//============================================================================

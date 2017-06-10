@@ -1,0 +1,35 @@
+	SPS Driver Testing Documentation
+
+TEST NAME: msm_sps_test
+
+INPUTS:
+
+[Test Type]
+
+  -n, --nominal		     Tests all APIs once.
+  -a, --adversarial	     Run scenarios that are expected to fail.
+  -p, --repeatability	     Run the nominal and adversarial test cases 5 times each.
+  -r, --release		     Run the nominal, adversarial, and repeatability test cases.
+
+[Options]
+
+  -v, --verbose <verbosity>  Run with varying test information displayed.
+  -i, --iteration            Iteration number for repeatability test case.
+  -t, --interval             Interval (in millisecond) between two iterations.
+  -h, --help		     Print help message and exit.
+
+If no 'test type' is specified, then the release test case is executed.
+
+DESCRIPTION:
+
+This test exercises the functions of the SPS driver.
+
+TARGETS:
+
+  8960 CDP
+
+NOTES:
+Run "insmod /system/lib/modules/msm_sps_test_module.ko" before run "msm_sps_test".
+
+The verbosity has four levels: show error messages, show warning messages also, show info messages also, and show debugging messages also.
+When the verbosity is at the debugging level, all the test cases will be run even if some of them fail in the testing.

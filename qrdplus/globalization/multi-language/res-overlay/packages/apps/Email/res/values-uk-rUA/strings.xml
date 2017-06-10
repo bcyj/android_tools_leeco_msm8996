@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Names of packages and authorities that are common to all apps
+    and read from resources -->
+
+    <!-- Permissions label for reading attachments -->
+    <string name="permission_read_attachment_label">"Читати вкладені файли пошти"</string>
+    <!-- Permissions description for reading attachments -->
+    <string name="permission_read_attachment_desc">"Дозволяє програмі читати вкладені файли вашої пошти."</string>
+    <!-- Permissions label for accessing the main provider -->
+    <string name="permission_access_provider_label">"Доступ до даних постачальника послуг електронної пошти"</string>
+    <!-- Permissions description for accessing the main provider -->
+    <string name="permission_access_provider_desc">"Дозволяє програмі отримувати доступ до бази даних вашої пошти, зокрема отриманих і надісланих повідомлень, імен користувачів та паролів."</string>
+
+    <!-- Name of application on Home screen -->
+    <string name="app_name">"Ел.пошта"</string>
+
+    <!-- Actions will be used as buttons and in menu items -->
+    <skip/>
+
+    <!--  Menu item used to create a new quick response [CHAR_LIMIT=16] -->
+    <string name="create_action">"Створити"</string>
+
+    <!-- Message informing user when a list that would contain quick responses
+            is empty [CHAR_LIMIT=80] -->
+    <string name="quick_responses_empty_view">"Швидких відповідей немає."</string>
+    <!-- Menu item -->
+    <string name="account_settings_action">"Налашт-ня обл. зап."</string>
+    <!-- The next set of strings are used in local display and may be localized. -->
+    <!-- In the UI, the inbox will be displayed with this name -->
+    <string name="mailbox_name_display_inbox">"Вхідні"</string>
+    <!-- In the UI, the outbox will be displayed with this name -->
+    <string name="mailbox_name_display_outbox">"Вихідні"</string>
+    <!-- In the UI, the drafts will be displayed with this name -->
+    <string name="mailbox_name_display_drafts">"Чернетки"</string>
+    <!-- In the UI, the trash will be displayed with this name -->
+    <string name="mailbox_name_display_trash">"Кошик"</string>
+    <!-- In the UI, the sent will be displayed with this name -->
+    <string name="mailbox_name_display_sent">"Надісл."</string>
+    <!-- In the UI, the junk will be displayed with this name -->
+    <string name="mailbox_name_display_junk">"Спам"</string>
+    <!-- In the UI, the starred will be displayed with this name -->
+    <string name="mailbox_name_display_starred">"Із зірочкою"</string>
+    <!-- In the UI, the unread will be displayed with this name [CHAR LIMIT=15] -->
+    <string name="mailbox_name_display_unread">"Непрочитані"</string>
+
+    <!-- Title of debug screen -->
+    <string name="debug_title">"Налагодж."</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_debug_logging_label" translatable="false">
+        Enable extra debug logging?</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_verbose_logging_label" translatable="false">
+        Enable exchange logging?</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_file_logging_label" translatable="false">
+        Enable sd card logging?</string>
+    <!-- Do Not Translate.  Button label, shown only on debug screen -->
+    <string name="debug_clear_webview_cache" translatable="false">
+        Clear WebView cache</string>
+    <!-- Do Not Translate. Button label. Shown only on debug screen -->
+    <string name="debug_clear_migration_state" translatable="false">Clear migration state</string>
+    <!-- Do Not Translate.  Checkbox label, shown on debug screen. -->
+    <string name="debug_force_one_minute_refresh_label" translatable="false">
+        Force 1-minute refresh for POP/IMAP</string>
+    <!-- Do Not Translate.  Checkbox label, shown on debug screen. -->
+    <string name="debug_enable_strict_mode_label" translatable="false">
+        Enable strict mode (with logging)</string>
+
+
+    <!-- Label shown in the account selector to select "Combined view", which contains
+         Combined Inbox, Combined Outbox, etc. [CHAR LIMIT=30] -->
+    <string name="mailbox_list_account_selector_combined_view">"Об\'єднаний перегляд"</string>
+
+    <!-- Header for forwarded original messages -->
+    <string name="message_compose_fwd_header_fmt">\n\n"-------- Оригінал. повід. --------\nТема: <xliff:g id="SUBJECT">%1$s</xliff:g>\nВід: <xliff:g id="SENDER">%2$s</xliff:g>\nКому: <xliff:g id="TO">%3$s</xliff:g>\nКопія: <xliff:g id="CC_0">%4$s</xliff:g>\n\n"</string>
+    <!-- Title for dialog containing list of quick responses that user may insert
+            into message body. [CHAR_LIMIT=30] -->
+    <string name="message_compose_insert_quick_response_list_title">"Вставити швидку відповідь"</string>
+    <!-- Menu item for inserting quick responses into email compose activity. [CHAR_LIMIT=30] -->
+    <string name="message_compose_insert_quick_response_menu_title">"Вставити швидку відповідь"</string>
+    <!-- Toast upon using "send" when one or more attachments will need to be background loaded
+      [CHAR LIMIT=none]-->
+    <string name="message_view_attachment_background_load">"Перед надсиланням буде завантажено один або кілька вкладених файлів із повідомлення, яке ви пересилаєте."</string>
+
+    <!-- String used in place of a message that could not be properly decoded (e.g. bad base64
+         data was received.) [CHAR LIMIT=none] -->
+    <string name="message_decode_error">"Під час розшифрування повідомлення сталася помилка."</string>
+
+    <!-- Notification ticker when a forwarded attachment couldn\'t be sent [CHAR LIMIT=none] -->
+    <string name="forward_download_failed_ticker">"Не вдалося переслати один або кілька вкладених файлів."</string>
+    <!-- Notification title when a forwarded attachment couldn\'t be sent [CHAR LIMIT=30]-->
+    <string name="forward_download_failed_title">"Вкладений файл не переслано"</string>
+
+    <!-- Notification ticker when email account authentication fails [CHAR LIMIT=none] -->
+    <string name="login_failed_ticker">"Помилка входу в обліковий запис <xliff:g id="ACCOUNT_NAME">%s</xliff:g>."</string>
+    <!-- Notification title when email account authentication fails [CHAR LIMIT=30]-->
+    <string name="login_failed_title">"Не вдалося ввійти"</string>
+
+    <!-- Title of screen when setting up new email account [CHAR LIMIT=45] -->
+    <string name="account_setup_basics_title">"Налаштування облікового запису"</string>
+    <!-- Title of screen when trying to get oauth authentication -->
+    <string name="oauth_authentication_title">"Запит на авторизацію"</string>
+    <!-- Title of screen to choose with authentication to use -->
+    <string name="sign_in_title">"Увійти"</string>
+
+    <!-- Warning if there is a problem authenticating with oauth -->
+    <string name="oauth_error_description">"Не вдається автентифікувати"</string>
+    <!-- Warning label displayed when the email address or password are incorrect -->
+    <string name="password_warning_label">"Неправильна електронна адреса чи пароль"</string>
+    <!-- Label displayed to confirm what email address we are trying to validate -->
+    <string name="email_confirmation_label">"Електронна адреса:"</string>
+    <!-- Headline of screen when setting up new email account (large text over divider)
+        [CHAR LIMIT=none] -->
+    <string name="account_setup_basics_headline">"Обліковий запис електронної пошти"</string>
+    <!-- On "Set up email" screen, enthusiastic welcome message. -->
+    <string name="accounts_welcome">"Обліковий запис можна налаштувати за допомогою лише кількох дій."</string>
+    <!-- On "Set up email" screen, hint for account email address text field -->
+    <string name="account_setup_basics_email_label">"Електронна адреса"</string>
+
+    <!-- Label between OAuth and password authentication, indicating the user must do one or the other [CHAR LIMIT=40] -->
+    <string name="or_label">"АБО"</string>
+    <!-- Label for signing in with Google using OAuth -->
+    <string name="sign_in_with_google">"Увійти через Google"</string>
+    <!-- On "Set up email" screen, hint for account email password text field, should be uppercase where applicable -->
+    <string name="account_setup_basics_password_label">"ПАРОЛЬ"</string>
+    <!-- hint for account email password text field -->
+    <string name="password_hint">"Пароль"</string>
+    <!--  On the "Setup up email" screen, label indicating what service we are signed in with [CHAR LIMIT=40] -->
+    <string name="signed_in_with_service_label">"Ви ввійшли в %s"</string>
+    <!-- Label for the authentication section, should be uppercase where applicable [CHAR LIMIT=20] -->
+    <string name="authentication_label">"АВТЕНТИФІКАЦІЯ"</string>
+    <!-- Label for the add authentication icon [CHAR LIMIT=40] -->
+    <string name="add_authentication_label">"Додати автентифікацію"</string>
+    <!-- Label for the add authentication icon [CHAR LIMIT=40] -->
+    <string name="clear_authentication_label">"Видалити автентифікацію"</string>
+    <!-- Button name on "Set up email" screen, with action underlined using html [CHAR LIMIT=20] -->
+    <string name="account_setup_basics_manual_setup_action">"Налашт-ня вручну"</string>
+    <!-- Toast when we can\'t build a URI from the given email & password -->
+    <!-- Note, the error message in the toast is purposefully vague, because I *don\'t* know
+        exactly what\'s wrong. -->
+    <string name="account_setup_username_password_toast">"Введіть дійсну електронну адресу та пароль."</string>
+    <!-- Title of dialog shown when a duplicate account is created -->
+    <string name="account_duplicate_dlg_title">"Копія облікового запису"</string>
+    <!-- Message of dialog shown when a duplicate account is created.  The display name of
+         the duplicate account is displayed. -->
+    <string name="account_duplicate_dlg_message_fmt">"Ви вже використовуєте це ім\'я користувача для облікового запису \"<xliff:g id="DUPLICATE">%s</xliff:g>\"."</string>
+
+    <!-- On check-settings screen, this is the initially-displayed message. -->
+    <string name="account_setup_check_settings_retr_info_msg">"Отримання інфо про облік. запис…"</string>
+    <!-- Appears on screen while system is checking incoming server settings -->
+    <string name="account_setup_check_settings_check_incoming_msg">"Перевірка налаштувань сервера…"</string>
+    <!-- Appears on screen while system is checking outgoing server settings -->
+    <string name="account_setup_check_settings_check_outgoing_msg">"Перевірка налаштувань SMTP…"</string>
+        <!-- Appears on screen while system is creating the account -->
+    <string name="account_setup_creating_account_msg">"Створення облікового запису…"</string>
+
+    <!-- Headline text that appears on "Confirm account type" screen [CHAR LIMIT=none] -->
+    <string name="account_setup_ab_headline">"Підтвердьте тип облікового запису"</string>
+    <!-- Explanatory text that appears on the "Confirm account type" screen [CHAR LIMIT=none] -->
+    <string name="account_setup_ab_instructions_format">"Ви вказали, що <xliff:g id="EMAIL">%1$s</xliff:g> використовує <xliff:g id="USERPROTOCOL">%2$s</xliff:g>, але цей обліковий запис може використовувати <xliff:g id="PROVIDERPROTOCOL">%3$s</xliff:g>"</string>
+
+    <!-- Text that appears on "Set up email" screen after successfully setting up an account
+        [CHAR LIMIT=none] -->
+    <string name="account_setup_names_headline">"Ваш обліковий запис налаштовано. Скоро надійдуть листи!"</string>
+    <!-- On "Set up email" screen, label of text field -->
+    <string name="account_setup_names_account_name_label">"Назвіть цей обл. запис. (додатково)"</string>
+    <!-- On "Set up email" screen, label of text field -->
+    <string name="account_setup_names_user_name_label">"Ваше ім\'я (відображено у вихідних повідомл.)"</string>
+
+    <!-- Headline for the the account type selector (IMAP or POP3 or EAS) [CHAR LIMIT=none] -->
+    <string name="account_setup_account_type_headline">"Тип облікового запису"</string>
+    <!-- "Add new email account" screen, text that appears on screen -->
+    <string name="account_setup_account_type_instructions">"Тип облікового запису?"</string>
+
+    <!-- "Incoming server settings" screen, headline (text over divider) [CHAR LIMIT=none] -->
+    <string name="account_setup_incoming_headline">"Параметри сервера вхідних повідомлень"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_username_label">"ІМ\'Я КОРИСТУВАЧА"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_password_label">"ПАРОЛЬ"</string>
+    <!-- "Incoming server settings" screen, label for text field -->
+    <string name="account_setup_password_subheading">"Пароль"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_server_label">"СЕРВЕР"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_port_label">"ПОРТ"</string>
+    <!-- "Incoming server settings" screen, label for pop-up menu, should be uppercase where applicable -->
+    <string name="account_setup_incoming_security_label">"ТИП ЗАХИСТУ"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an unencrypted session -->
+    <string name="account_setup_incoming_security_none_label">"Немає"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session on the selected port, accepting all SSL certificates -->
+    <string name="account_setup_incoming_security_ssl_trust_certificates_label">"SSL/TLS (Прийняти всі сертифікати)"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session on the selected port, including SSL certificate
+        checks -->
+    <string name="account_setup_incoming_security_ssl_label">"SSL/TLS"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session overlaid on a plain text session using the selected
+        port, accepting all SSL certificates -->
+    <string name="account_setup_incoming_security_tls_trust_certificates_label">"STARTTLS (Прийняти всі сертифікати)"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session overlaid on a plain text session on the selected
+        port, including SSL certificate checks -->
+    <string name="account_setup_incoming_security_tls_label">"STARTTLS"</string>
+    <!-- "Incoming server settings" screen, label for pop-up menu -->
+    <string name="account_setup_incoming_delete_policy_label">"Видалити ел.лист із сервера"</string>
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <string name="account_setup_incoming_delete_policy_never_label">"Ніколи"</string>
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <string name="account_setup_incoming_delete_policy_delete_label">"Коли видалено з вхідних"</string>
+    <!-- "Incoming server settings" screen, label for setting IMAP path prefix: -->
+    <string name="account_setup_incoming_imap_path_prefix_label">"Префікс шляху IMAP"</string>
+    <!-- "Incoming server settings" screen, hint for setting IMAP path prefix: -->
+    <string name="account_setup_incoming_imap_path_prefix_hint">"Додатково"</string>
+
+    <!-- "Outgoing server settings" screen, headline (text over divider) [CHAR LIMIT=none] -->
+    <string name="account_setup_outgoing_headline">"Параметри сервера вихідних повідомлень"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_smtp_server_label">"SMTP-СЕРВЕР"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_port_label">"ПОРТ"</string>
+    <!-- On "Outgoing server settings" screen, label for pop-up menu, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_security_label">"ТИП ЗАХИСТУ"</string>
+    <!-- On "Outgoing server settings" screen, label for check box, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_require_login_label">"Потрібно ввійти"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable-->
+    <string name="account_setup_outgoing_username_label">"ІМ\'Я КОРИСТУВАЧА"</string>
+
+    <!-- On "Exchange" setup screen, a heading title for the current client certificate, should be uppercase where applicable [CHAR LIMIT=50] -->
+    <string name="account_setup_exchange_certificate_title">"СЕРТИФІКАТ КЛІЄНТА"</string>
+    <!-- On "Exchange" setup screen, a button label to include a client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_select_certificate">"Вибрати"</string>
+    <!-- On "Exchange" setup screen, a button label to include a client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_use_certificate">"Використати сертифікат клієнта"</string>
+    <!-- On "Exchange" setup screen, a button label to remove the currently used client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_remove_certificate">"Видалити"</string>
+    <!-- On "Exchange" setup screen, placeholder text to indicate no client
+         certificate is used [CHAR LIMIT=50] -->
+    <string name="account_setup_exchange_no_certificate">"Немає"</string>
+    <!-- On "Exchange" setup screen, the exchange device-id label, should be uppercase where applicable [CHAR LIMIT=30] -->
+    <string name="account_setup_exchange_device_id_label">"ІДЕНТИФІКАТОР МОБІЛ. ПРИСТРОЮ"</string>
+
+    <!-- In Account setup options screen, Activity headline [CHAR LIMIT=none] -->
+    <string name="account_setup_options_headline">"Параметри облікового запису"</string>
+    <!-- In Account setup options screen, label for email check frequency selector -->
+    <string name="account_setup_options_mail_check_frequency_label">"Частота синхронізації:"</string>
+    <!-- In Account setup options & Account Settings screens, label for email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_never">"Ніколи"</string>
+    <!-- In Account setup options & Account Settings screens, label for email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_push">"Автомат. (опер-р)"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_5min">"Кожні 5 хвилин"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_10min">"Кожні 10 хвилин"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_15min">"Кожні 15 хвилин"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_30min">"Кожні 30 хвилин"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_1hour">"Щогодини"</string>
+    <!-- In Account setup options & Account Settings screens, check box for new-mail notification -->
+    <string name="account_setup_options_notify_label">"Сповіщати мене, коли надходить лист"</string>
+    <!-- In Account setup options screen, optional check box to also sync contacts -->
+    <string name="account_setup_options_sync_contacts_label">"Синхронізувати контакти з цього облікового запису"</string>
+    <!-- In Account setup options screen, optional check box to also sync contacts -->
+    <string name="account_setup_options_sync_calendar_label">"Синхронізувати календар із цього облікового запису"</string>
+    <!-- In Account setup options screen, check box to sync email -->
+    <string name="account_setup_options_sync_email_label">"Синхронізувати електронну пошту з цього облікового запису"</string>
+    <!-- In Account setup options screen, check box to auto-download attachments  [CHAR LIMIT=none] -->
+    <string name="account_setup_options_background_attachments_label">"Автоматично завантажувати вкладення, коли є з\'єднання з Wi-Fi"</string>
+    <!-- Dialog title when "setup" could not finish -->
+    <string name="account_setup_failed_dlg_title">"Не вдалося закінчити"</string>
+    <!-- In Account setup options screen, label for email lookback selector -->
+    <string name="account_setup_options_mail_window_label">"Синхронізувати електронну пошту з таких додатків:"</string>
+    <!-- In account setup options & account settings screens (exchange), sync window length; this
+        implies loading a \'reasonable\' number of messages [CHAR LIMIT=25] -->
+    <string name="account_setup_options_mail_window_auto">"Автоматично"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1day">"Останній день"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_3days">"Останні три дні"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1week">Минулий тиждень</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_2weeks">"Останні два тижні"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1month">Минулий місяць</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_all">"Усі"</string>
+    <!-- Per-mailbox sync window setting.  This means "use the account\'s sync window setting" [CHAR LIMIT=40] -->
+    <string name="account_setup_options_mail_window_default">"Стандартні налаштування"</string>
+
+    <!-- "Setup could not finish" dialog text; e.g., Username or password incorrect -->
+    <string name="account_setup_failed_dlg_auth_message">"Ім\'я користувача чи пароль неправильні."</string>
+
+    <!-- Account setup autodiscover auth failure dialog title. This is shown when autodiscover hits
+        an "access denied" server error, which could imply incorrect username/password or that no
+        autodiscover service has been configured for the domain [CHAR LIMIT=40] -->
+    <string name="account_setup_autodiscover_dlg_authfail_title">"Не вдається налаштувати обліковий запис"</string>
+    <!-- Account setup autodiscover auth failure dialog message. This is shown when autodiscover hits
+        an "access denied" server error, which could imply incorrect username/password or that no
+        autodiscover service has been configured for the domain [CHAR LIMIT=NONE] -->
+    <string name="account_setup_autodiscover_dlg_authfail_message">"Підтвердьте, що ім\'я користувача, пароль та налаштування облікового запису правильні."</string>
+
+    <!-- An error message presented to the user when the server\'s identity
+         cannot be established or trusted [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_dlg_certificate_message">"Неможливо безпечно з\'єднатись із сервером."</string>
+    <!-- An error message presented to the user when the server\'s identity
+         cannot be established or trusted [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Неможливо безпечно з\'єднатися із сервером.\n(<xliff:g id="ERROR">%s</xliff:g>)"</string>
+    <!-- An error message presented to the user when the server requires a
+         client certificate to connect [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_certificate_required">"Потрібен сертифікат клієнта. Під\'єднатися до сервера із сертифікатом клієнта?"</string>
+    <!-- An error message presented to the user when the certificate they
+         specified for connecting to a server is inaccessible [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_certificate_inaccessible">"Сертифікат недійсний або недоступний."</string>
+
+    <!-- Dialog text for ambiguous setup failure; server error/bad credentials [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_check_credentials_message">"Сервер повідомив про помилку. Перевірте своє ім\'я користувача та пароль і повторіть спробу."</string>
+
+    <!-- "Setup could not finish" dialog text; e.g., Cannot connect to server -->
+    <string name="account_setup_failed_dlg_server_message">"Неможливо з\'єднатись із сервером."</string>
+    <!-- "Setup could not finish" dialog text; e.g., Cannot connect to server\n(Connection timed out) -->
+    <string name="account_setup_failed_dlg_server_message_fmt">"Неможливо з\'єднатись із сервером.\n(<xliff:g id="ERROR">%s</xliff:g>)"</string>
+
+    <!-- Additional diagnostic text when TLS was required but the server doesn\'t support it -->
+    <string name="account_setup_failed_tls_required">"TLS обов\'язк., але не підтрм. цим сервером."</string>
+    <!-- Additional diagnostic text when server does not support any of our authentication methods -->
+    <string name="account_setup_failed_auth_required">"Методи автентифікації не підтримуються сервером."</string>
+    <!-- Additional diagnostic text when server connection failed due to security error -->
+    <string name="account_setup_failed_security">"Не вдалося відкрити з\'єднання із сервером через помилку безпеки."</string>
+    <!-- Additional diagnostic text when server connection failed due to io error (connection) -->
+    <string name="account_setup_failed_ioerror">"Не вдалося відкрити з\'єднання із сервером."</string>
+    <!-- Additional diagnostic text when server connection failed due to our inability to support a
+         required EAS protocol version [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_protocol_unsupported">"Ви ввели неправильну адресу сервера чи для сервера потрібна версія протоколу, яка не підтримується електронною поштою."</string>
+    <!-- Additional diagnostic text when server access was denied; the user should contact the
+         administrator of the server for more information [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_access_denied">"У вас немає дозволу на синхронізацію з цим сервером. Зв\'яжіться з адміністратором сервера, щоб дізнатися більше."</string>
+
+    <!-- Dialog title when validation requires security provisioning (e.g. support
+         for device lock PIN, or remote wipe.) and we ask the user permission before continuing -->
+    <string name="account_setup_security_required_title">"Віддалене керування безпекою"</string>
+    <!-- Additional diagnostic text when validation requires security provisioning (e.g. support
+         for device lock PIN, or remote wipe.) and we ask the user permission before continuing.
+         [CHAR LIMIT=none] -->
+    <string name="account_setup_security_policies_required_fmt">"Сервер <xliff:g id="SERVER">%s</xliff:g> потребує вашого дозволу віддалено контролювати деякі функції безпеки вашого пристрою Android. Завершити налаштування цього облікового запису?"</string>
+    <!-- Additional diagnostic text when validation failed due to required provisioning not
+         being supported [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_security_policies_unsupported">"Для цього сервера потрібні функції безпеки, які не підтримуються вашим пристроєм Android, зокрема: <xliff:g id="ERROR">%s</xliff:g>"</string>
+    <!-- Warning given to users when they request disabling device administration (i.e. that their
+         administered accounts will be deleted) [CHAR LIMIT=none] -->
+    <string name="disable_admin_warning">"ЗАСТЕРЕЖЕННЯ. Дезактивація повноважень програми електронної пошти на адміністрування вашого пристрою призведе до видалення всіх облікових записів електронної пошти, що потребують адміністрування, разом з їхніми електронними листами, контактами, подіями календаря й іншими даними."</string>
+
+    <!-- Dialog shown when the account requires some amount of device security provisioning,
+         just before jumping into system settings such as Device Policy grant, PIN/password,
+         or encryption setup.  [CHAR_LIMIT=40] -->
+    <string name="account_security_dialog_title">"Оновлення системи безпеки"</string>
+    <!-- Additional diagnostic text when the account requires some amount of device security
+         provisioning, just before jumping into system settings such as Device Policy grant,
+         PIN/password, or encryption setup.  [CHAR LIMIT=none] -->
+    <string name="account_security_dialog_content_fmt">"Потрібно оновити налаштування безпеки для облікового запису <xliff:g id="ACCOUNT">%s</xliff:g>."</string>
+
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_unsupported_ticker_fmt">"Обліковий запис \"<xliff:g id="ACCOUNT">%s</xliff:g>\" неможливо синхронізувати через вимоги безпеки."</string>
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_needed_ticker_fmt">"Для облікового запису \"<xliff:g id="ACCOUNT">%s</xliff:g>\" потрібно оновити налаштування безпеки."</string>
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_changed_ticker_fmt">"Налаштування безпеки облікового запису \"<xliff:g id="ACCOUNT">%s</xliff:g>\" змінено. Користувачу не потрібно нічого робити."</string>
+    <!-- Notification content title when device security required [CHAR_LIMIT=30] -->
+    <string name="security_notification_content_update_title">"Потрібно оновити прав. безпеки"</string>
+    <!-- Notification content title when device security policies have changed [CHAR_LIMIT=36] -->
+    <string name="security_notification_content_change_title">"Правила безпеки змінено"</string>
+    <!-- Notification content title when device security policies cannot be met [CHAR_LIMIT=30] -->
+    <string name="security_notification_content_unsupported_title">"Неможл. дотрим. правил безпеки"</string>
+    <!-- Title of the activity that dispatches changes to device security.  Not normally seen. -->
+    <string name="account_security_title">"Безпека пристрою"</string>
+    <!-- Additional diagnostic text when the email app asserts control of the phone.
+        [CHAR LIMIT=none] -->
+    <string name="account_security_policy_explanation_fmt">"Сервер <xliff:g id="SERVER">%s</xliff:g> потребує вашого дозволу віддалено контролювати деякі функції безпеки вашого пристрою Android."</string>
+
+    <!-- "Setup could not finish" dialog action button -->
+    <string name="account_setup_failed_dlg_edit_details_action">"Редаг. деталі"</string>
+
+    <!-- Notification ticker when device password is getting ready to expire [CHAR_LIMIT=80] -->
+    <string name="password_expire_warning_ticker_fmt">"Потрібно змінити PIN-код або пароль блокування екрана для \"<xliff:g id="ACCOUNT">%s</xliff:g>\"."</string>
+    <!-- Notification content title when device password is getting ready to expire
+            [CHAR_LIMIT=30] -->
+    <string name="password_expire_warning_content_title">"Терм.дії пар.блок.екр.закінч."</string>
+
+    <!-- Notification ticker when device password has expired [CHAR_LIMIT=80] -->
+    <string name="password_expired_ticker">"Термін дії PIN-коду чи пароля блокування екрана закінчився."</string>
+    <!-- Notification content title when device password has expired [CHAR_LIMIT=28] -->
+    <string name="password_expired_content_title">"Пароль блок. екр. вже не діє"</string>
+
+    <!-- Dialog title if device pin/password is going to expire soon. [CHAR_LIMIT=40] -->
+    <string name="password_expire_warning_dialog_title">"Терм. дії пароля блок. екр. закінчується"</string>
+    <!-- Dialog content device pin/password is going to expire soon. [CHAR_LIMIT=none] -->
+    <string name="password_expire_warning_dialog_content_fmt">"Незабаром потрібно буде змінити PIN-код або пароль блокування екрана, інакше дані для облікового запису <xliff:g id="ACCOUNT">%s</xliff:g> буде стерто. Змінити зараз?"</string>
+
+    <!-- Dialog title if device pin/password has already expired. [CHAR_LIMIT=40] -->
+    <string name="password_expired_dialog_title">"Терм. дії пароля блок. екрана закінчився"</string>
+    <!-- Dialog content device pin/password has already expired. [CHAR_LIMIT=none] -->
+    <string name="password_expired_dialog_content_fmt">"Дані для облікового запису <xliff:g id="ACCOUNT">%s</xliff:g> стираються з вашого пристрою. Їх можна відновити, змінивши PIN-код або пароль блокування екрана. Змінити зараз?"</string>
+
+    <!-- On AccountSettingsXL, dialog text if you try to exit in/out/eas fragment (server settings)
+         without checking/saving [CHAR LIMIT=none]-->
+    <string name="account_settings_exit_server_settings">"Відхилити незбережені зміни?"</string>
+
+    <!-- On Settings screen, setting option name -->
+    <!-- Title of account preference for downloading attachments in background [CHAR LIMIT=32] -->
+    <string name="account_settings_background_attachments_label">"Завантажувати вкладені файли"</string>
+    <!-- Summary of account preference for downloading attachments in background [CHAR LIMIT=64] -->
+    <string name="account_settings_background_attachments_summary">"Автом. завантажувати вклад. файли з останніх повідом. через Wi-Fi"</string>
+    <string name="account_settings_notify_label">"Сповіщення ел. пошти"</string>
+    <!-- On Settings screen, summary line when called via AccountManager for Exchange accounts
+        [CHAR LIMIT=50] -->
+    <string name="account_settings_summary">"Синхронізуйте частоту, сповіщення тощо"</string>
+    <!-- On Settings screen, setting summary text -->
+    <string name="account_settings_notify_summary">"Надсилати сповіщення, коли надходить лист"</string>
+    <!-- On Settings screen, setting option name and title of dialog box that opens -->
+    <string name="account_settings_mail_check_frequency_label">"Частота синхронізації"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_incoming_label">"Налашт. вхід. повід."</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_incoming_summary">"Ім\'я корист., пароль й інші налашт-ня сервера вхідних повідомл."</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_outgoing_label">"Налашт-ня вихідних"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_outgoing_summary">"Ім\'я корист., пароль й інші налашт-ня сервера вихідних повідомл."</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_enforced_label">"Правила, які застосовуються"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_enforced_summary">"Немає"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_unsupported_label">"Правила, які не підтримуються"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_unsupported_summary">"Немає"</string>
+    <!-- On Settings screen, label for button that attempts to sync the account -->
+    <string name="account_settings_retry_label">"Спробувати синхронізувати"</string>
+    <!-- On Settings screen, summmary for button that attempts to sync an account [CHAR LIMIT=64] -->
+    <string name="account_settings_retry_summary">"Торкніться тут, щоб синхронізувати цей обліковий запис"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_description_label">"Назва обл. зап."</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_name_label">"Ваше ім\'я"</string>
+    <!-- On Settings screen, setting option name. Allows user to modify saved quick responses
+        for insertion in message body. [CHAR_LIMIT=24]-->
+    <string name="account_settings_edit_quick_responses_label">"Швидкі відповіді"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_edit_quick_responses_summary">"Редагувати текст, що часто вставляється під час створення листів"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_notifications">"Налаштування сповіщень"</string>
+    <!-- On Settings screen, section heading for data usage [CHAR LIMIT=70] -->
+    <string name="account_settings_data_usage">"Використання даних"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_policies">"Правила безпеки"</string>
+
+    <string name="system_folders_title">"Системні папки"</string>
+    <string name="system_folders_trash_title">"Папка \"Кошик\""</string>
+    <string name="system_folders_trash_summary">"Виберіть \"Кошик\" на сервері"</string>
+    <string name="system_folders_trash_dlg">"Виберіть \"Кошик\" на сервері"</string>
+    <string name="system_folders_sent_title">"Папка \"Надіслані\""</string>
+    <string name="system_folders_sent_summary">"Виберіть папку надісланих на сервері"</string>
+    <string name="system_folders_sent_dlg">"Виберіть папку надісланих на сервері"</string>
+
+    <!-- On settings screen, dialog heading informing user to create or edit a quick response -->
+    <string name="edit_quick_response_dialog">"Швидка відповідь"</string>
+    <!-- On settings screen, edit quick response dialog\'s "save" button -->
+    <string name="save_action">"Зберегти"</string>
+
+    <!-- On settings screen, sync contacts check box label [CHAR LIMIT=20]-->
+    <string name="account_settings_sync_contacts_enable">"Синхрон. контакти"</string>
+    <!-- On settings screen, sync contacts summary text [CHAR LIMIT=35] -->
+    <string name="account_settings_sync_contacts_summary">"Синхрон. контакти для облік. запису"</string>
+    <!-- On settings screen, sync calendar check box label [CHAR LIMIT=20]-->
+        <string name="account_settings_sync_calendar_enable">"Синхрон. календ."</string>
+    <!-- On settings screen, sync calendar summary text [CHAR LIMIT=50] -->
+    <string name="account_settings_sync_calendar_summary">"Синхроніз. календар із цим обл.зап."</string>
+    <!-- On settings screen, sync email check box label [CHAR LIMIT=20]-->
+    <string name="account_settings_sync_email_enable">"Синхроніз. ел.пошту"</string>
+    <!-- On settings screen, sync email summary text [CHAR LIMIT=35] -->
+    <string name="account_settings_sync_email_summary">"Синхрон. ел. пошту для обл. запису"</string>
+
+    <!-- On Settings screen, vibrate pop-up menu label -->
+    <string name="label_notification_vibrate_title">"Вібросигнал"</string>
+
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_ringtone">"Вибрати сигнал дзвінка"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_servers">"Налашт-ня сервера"</string>
+
+    <!-- Mailbox settings activity title [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_activity_title">"Параметри синхронізації"</string>
+    <!-- Mailbox settings activity title, with the target folder name [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_activity_title_with_mailbox">"Параметри синхронізації (<xliff:g id="MAILBOXX_NAME">%s</xliff:g>)"</string>
+    <!-- On mailbox settings screen: Whether to sync this mailbox when the account syncs. -->
+    <string name="mailbox_settings_sync_enabled_label">"Синхронізувати цю папку"</string>
+    <!-- On mailbox settings screen: Explanatory text for what it means to "sync this folder". -->
+    <string name="mailbox_settings_sync_enabled_summary">"Повідомлення завантажаться, коли з\'явиться з\'єднання"</string>
+    <!-- On mailbox settings screen: Mailbox sync window (the number of days to synchronize email for) setting label [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_mailbox_sync_window_label">"Період синхронізації"</string>
+
+    <!-- Message that appears when adding a T-Online account -->
+    <string name="provider_note_t_online">"Перед налаштуванням цього облікового запису пошти відвідайте веб-сайт T-Online і створіть пароль для доступу до поштового сервера POP3."</string>
+
+    <!-- Short name of Microsoft Exchange account type; used by AccountManager -->
+    <string name="exchange_eas_name" translatable="false">Exchange</string>
+    <!-- Long name of Microsoft Exchange account type; used by AccountManager -->
+    <string name="exchange_name_alternate">"Microsoft Exchange ActiveSync"</string>
+
+    <!-- Message that appears if the AccountManager cannot create the system Account -->
+    <string name="system_account_create_failed">"Не вдалося створити обліковий запис. Повторіть спробу."</string>
+
+    <!-- Strings that support the DeviceAdmin / DevicePolicyManager API -->
+    <!-- Name of the DeviceAdmin (seen in settings & in user confirmation screen) -->
+    <string name="device_admin_label">"Ел.пошта"</string>
+    <!-- Long-form description of the DeviceAdmin (2nd line in settings & in user conf. screen) -->
+    <string name="device_admin_description">"Активує правила безпеки, указані сервером"</string>
+
+    <!-- A policy disallowing the user of the device\'s camera [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_camera">"Забороняти використання камери пристрою"</string>
+    <!-- A policy requiring a device lock screen password [CHAR LIMIT=50] -->
+    <string name="policy_require_password">"Вимагати пароль пристрою"</string>
+    <!-- A policy disallowing the reuse of recent passwords [CHAR LIMIT=50] -->
+    <string name="policy_password_history">"Обмежувати повторне викор. остан.паролів"</string>
+    <!-- A policy that forces a password to expire after a set period of time [CHAR LIMIT=50] -->
+    <string name="policy_password_expiration">"Вимагати закінчення терміну дії пароля"</string>
+    <!-- A policy requiring a maximum amount of time the device can sit idle before the lock screen
+        is activated [CHAR LIMIT=50] -->
+    <string name="policy_screen_timeout">"Вимаг. блок-ня екрана неактивн. пристрою"</string>
+    <!-- A policy limiting the number of old calendar events synced [CHAR LIMIT=50] -->
+    <string name="policy_calendar_age">"Обмежувати к-сть синхронізованих подій календаря"</string>
+    <!-- A policy limiting the number of emails synced [CHAR LIMIT=50] -->
+    <string name="policy_email_age">"Обмежувати к-сть синхронізованих електрон. листів"</string>
+
+    <!-- The four strings below represent "quick responses" which the user can insert into a
+        message being composed with just a couple of taps.  These four responses MUST be defined,
+        but need not include a string (i.e. they are optional).  Further, the responses can be
+        customized as necessary by the translator, in case one or more of these is inappropriate in
+        a particular locale or if there are better options available. -->
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_1">"Дякую!"</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_2">"Мені підходить!"</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_3">"Я прочитаю це пізніше, а потім дам знати."</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_4">"Потрібно зустрітися, щоб це обговорити."</string>
+
+    <!-- This is shown when a user responds to a meeting invitation [CHAR LIMIT=none]-->
+    <string name="confirm_response">"Надсилання відповіді…"</string>
+
+    <!-- Used by AccountManager -->
+    <!-- Account type name as used by AccountManager UI (IMAP is not translatable) [CHAR LIMIT=30] -->
+    <string name="imap_name">Особистий (IMAP)</string>
+    <!-- Account type name as used by AccountManager UI (POP3 is not translatable) [CHAR LIMIT=30] -->
+    <string name="pop3_name">Особистий (POP3)</string>
+
+    <!-- Displayed when the user must pick his server\'s trash folder from a list [CHAR LIMIT 30]-->
+    <string name="trash_folder_selection_title">"<xliff:g id="ACCOUNT">%s</xliff:g>: виберіть \"Кошик\" на сервері"</string>
+    <!-- Displayed when the user must pick his server\'s sent items folder from a list [CHAR LIMIT 30]-->
+    <string name="sent_folder_selection_title">"<xliff:g id="ACCOUNT">%s</xliff:g>: виберіть папку на сервері"</string>
+    <string name="account_waiting_for_folders_msg">"Завантаження списку папок…"</string>
+
+    <!-- Feedback uri to be used when feedback is enabled -->
+    <string name="email_feedback_uri" translatable="false"/>
+
+    <string name="account_manager_type_exchange" translatable="false">com.android.exchange</string>
+    <string name="account_manager_type_pop3" translatable="false">com.android.email.pop3</string>
+    <string name="account_manager_type_imap" translatable="false">com.android.email.imap</string>
+    <string name="account_manager_type_legacy_imap" translatable="false">com.android.email.imap</string>
+    <string name="intent_exchange_action" translatable="false">com.android.email.EXCHANGE_INTENT</string>
+    <string name="intent_exchange_cert_action" translatable="false">com.android.email.EXCHANGE_REQUEST_CERT</string>
+    <string name="intent_exchange_package" translatable="false">com.android.exchange</string>
+    <string name="intent_account_manager_entry" translatable="false">com.android.email.activity.setup.ACCOUNT_MANAGER_ENTRY</string>
+    <string name="intent_force_create_email_account" translatable="false">com.android.email.FORCE_CREATE_ACCOUNT</string>
+    <string name="intent_create_email_account" translatable="false">com.android.email.CREATE_NEW_ACCOUNT</string>
+    <string name="authority_email_provider" translatable="false">com.android.email.provider</string>
+    <string name="authority_conversation_provider" translatable="false">com.android.email.conversation.provider</string>
+    <string name="authority_account_cache_provider" translatable="false">com.android.email.accountcache</string>
+    <string name="protocol_legacy_imap" translatable="false">imap</string>
+    <string name="protocol_imap" translatable="false">imap</string>
+    <string name="protocol_pop3" translatable="false">pop3</string>
+    <string name="protocol_eas" translatable="false">eas</string>
+
+    <!-- Content Provider Authority for Eml Attachments -->
+    
+
+    <!-- Provider name for widgets -->
+    <string name="widget_provider" translatable="false">com.android.email.provider.WidgetProvider</string>
+
+    <string name="print_job_name" translatable="false">Email - <xliff:g id="subject">%1$s</xliff:g></string>
+
+    <!-- This message indicates no quick responses exist to choose from -->
+    <string name="no_quick_responses">"Немає"</string>
+
+    <!-- Activity name of the compose activity that should be reconciled -->
+    <!-- Do not disable the compose activity even there isn\'t any account.
+    <string name="reconciliation_compose_activity_name" translatable="false">com.android.email.activity.ComposeActivityEmail</string>
+    -->
+    <string name="reconciliation_compose_activity_name" translatable="false"/>
+
+    <!-- Gmail name for redirecting during account setup -->
+    <string name="gmail_name">"Gmail"</string>
+
+    <!-- Name for preference entry which leads to the per-folder sync settings activity -->
+    <string name="folder_sync_settings_pref_title">"Налаштування синхронізації папок"</string>
+
+    <!-- In Account setup options & Account Settings screens, Email sync size option. -->
+    <string name="account_settings_sync_size_enable">Налаштування обсягу синхронізації для електронної пошти</string>
+    <string name="account_settings_sync_size_enable_summary">Для заощадження трафіку можна налаштувати обсяг синхронізації для кожного облікового запису електронної пошти</string>
+    <string name="account_settings_sync_size_label">Виберіть обсяг синхронізації</string>
+    <string name="account_settings_sync_size_category_label">Налаштування обсягу синхронізації</string>
+
+    <string name="account_setup_options_mail_sync_size_all">Повністю</string>
+    <string name="account_setup_options_mail_sync_size_20k">20 Кб</string>
+    <string name="account_setup_options_mail_sync_size_100k">100 Кб</string>
+    <string name="account_setup_options_mail_sync_size_200k">200 Кб</string>
+    <string name="account_setup_options_mail_sync_size_500k">500 Кб</string>
+    <string name="account_setup_options_mail_sync_size_1M">1 Мб</string>
+
+    <!-- Customize Email account\'s signature -->
+    <string name="default_email_signature"/>
+
+    <!--Delete email account -->
+    <string name="remove_email_account">"Видалити"</string>
+    <string name="remove_email_account_continue">"ПРОДОВЖИТИ"</string>
+    <string name="remove_email_account_message">Ви збираєтесь перейти до програми "Налаштування", у якій можна видаляти облікові записи</string>
+</resources>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2014 pci-suntektech Technologies, Inc.  All Rights Reserved.
+     pci-suntektech Technologies Proprietary and Confidential.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rcs_public_account_btn_bg"
+    android:orientation="vertical"
+    android:paddingRight="10dp"
+    android:descendantFocusability="blocksDescendants"
+    android:paddingLeft="30dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp">
+
+    <ImageView
+        android:id="@+id/send_head_icon"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/user_default_icon" />
+
+    <TextView
+        android:id="@+id/send_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/send_head_icon"
+        android:padding="5dp"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/send_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/send_time"
+        android:padding="5dp"
+        android:text="@string/message_adapte_sening"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/resend_button"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/send_state"
+        android:background="@drawable/btn_message_retry"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/send_text_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/send_time"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:lineSpacingExtra="3dp"
+        android:layout_toLeftOf="@+id/send_head_icon"
+        android:textColor="@color/black1"
+        android:textSize="16sp"
+        android:autoLink="all"
+        android:linksClickable="false"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/send_image_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/send_time"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@+id/send_head_icon"
+        android:background="@drawable/rcs_emotion_true"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/send_audio_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/send_time"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@+id/send_head_icon"
+        android:background="@drawable/rcs_audio"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/send_video_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/send_time"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@+id/send_head_icon"
+        android:background="@drawable/rcs_emotion_true"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/send_vcrad_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/send_time"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@+id/send_head_icon"
+        android:background="@drawable/rcs_vcard"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/send_map_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/send_time"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@+id/send_head_icon"
+        android:background="@drawable/rcs_map"
+        android:visibility="gone" />
+
+</RelativeLayout>

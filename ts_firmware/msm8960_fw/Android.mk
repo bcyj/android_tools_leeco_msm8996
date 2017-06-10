@@ -1,0 +1,19 @@
+LOCAL_PATH := $(call my-dir)
+
+ifeq ($(HAVE_CYTTSP_FW_UPGRADE),true)
+include $(CLEAR_VARS)
+LOCAL_MODULE       := cyttsp_8960_cdp.hex
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH  := $(TARGET_OUT_ETC)/firmware
+LOCAL_SRC_FILES    := $(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := cyttsp_8064_mtp.hex
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH  := $(TARGET_OUT_ETC)/firmware
+LOCAL_SRC_FILES    := $(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
+endif

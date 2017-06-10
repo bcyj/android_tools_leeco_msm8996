@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2014 Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.multisimsettings" >
+
+    <PreferenceCategory
+        android:key="key_category_off_screen_gestures"
+        android:persistent="false"
+        android:title="@string/category_off_screen_gestures" />
+
+    <PreferenceCategory
+        android:key="key_category_other_gestures"
+        android:persistent="false"
+        android:title="@string/category_other_gestures" >
+
+        <SwitchPreference
+            android:key="key_silent_gesture"
+            android:persistent="true"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:summary="@string/summary_silent_gesture"
+            android:title="@string/title_silent_gesture" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

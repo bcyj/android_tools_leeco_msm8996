@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2013-2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Names of packages and authorities that are common to all apps
+    and read from resources -->
+
+    <!-- Permissions label for reading attachments -->
+    <string name="permission_read_attachment_label">"மின்னஞ்சல் இணைப்புகளைப் படி"</string>
+    <!-- Permissions description for reading attachments -->
+    <string name="permission_read_attachment_desc">"உங்கள் மின்னஞ்சல் இணைப்புகளைப் படிக்க பயன்பாட்டை அனுமதிக்கிறது."</string>
+    <!-- Permissions label for accessing the main provider -->
+    <string name="permission_access_provider_label">"மின்னஞ்சல் வழங்குநர் தரவை அணுகு"</string>
+    <!-- Permissions description for accessing the main provider -->
+    <string name="permission_access_provider_desc">"பெறப்பட்ட மற்றும் அனுப்பிய செய்திகள், பயனர்பெயர்கள், கடவுச்சொற்கள் ஆகியவை உள்ளடங்கிய உங்கள் மின்னஞ்சல் தரவுத்தளத்தை அணுக பயன்பாட்டை அனுமதிக்கிறது."</string>
+
+    <!-- Name of application on Home screen -->
+    <string name="app_name">"மின்னஞ்சல்"</string>
+
+    <!-- Actions will be used as buttons and in menu items -->
+    <skip/>
+
+    <!--  Menu item used to create a new quick response [CHAR_LIMIT=16] -->
+    <string name="create_action">"புதியதை உருவாக்கு"</string>
+
+    <!-- Message informing user when a list that would contain quick responses
+            is empty [CHAR_LIMIT=80] -->
+    <string name="quick_responses_empty_view">"விரைவு பதில்கள் இல்லை."</string>
+    <!-- Menu item -->
+    <string name="account_settings_action">"கணக்கு அமைப்புகள்"</string>
+    <!-- The next set of strings are used in local display and may be localized. -->
+    <!-- In the UI, the inbox will be displayed with this name -->
+    <string name="mailbox_name_display_inbox">"இன்பாக்ஸ்"</string>
+    <!-- In the UI, the outbox will be displayed with this name -->
+    <string name="mailbox_name_display_outbox">"அவுட்பாக்ஸ்"</string>
+    <!-- In the UI, the drafts will be displayed with this name -->
+    <string name="mailbox_name_display_drafts">"வரைவுகள்"</string>
+    <!-- In the UI, the trash will be displayed with this name -->
+    <string name="mailbox_name_display_trash">"நீக்கப்பட்டவை"</string>
+    <!-- In the UI, the sent will be displayed with this name -->
+    <string name="mailbox_name_display_sent">"அனுப்பியவை"</string>
+    <!-- In the UI, the junk will be displayed with this name -->
+    <string name="mailbox_name_display_junk">"தேவையற்றவை"</string>
+    <!-- In the UI, the starred will be displayed with this name -->
+    <string name="mailbox_name_display_starred">"நட்சத்திரமிட்டவை"</string>
+    <!-- In the UI, the unread will be displayed with this name [CHAR LIMIT=15] -->
+    <string name="mailbox_name_display_unread">"படிக்காதவை"</string>
+
+    <!-- Title of debug screen -->
+    <string name="debug_title">"பிழைத்திருத்துக"</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_debug_logging_label" translatable="false">
+        Enable extra debug logging?</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_verbose_logging_label" translatable="false">
+        Enable exchange logging?</string>
+    <!-- Do Not Translate.  Checkbox label, shown only on debug screen -->
+    <string name="debug_enable_file_logging_label" translatable="false">
+        Enable sd card logging?</string>
+    <!-- Do Not Translate.  Button label, shown only on debug screen -->
+    <string name="debug_clear_webview_cache" translatable="false">
+        Clear WebView cache</string>
+    <!-- Do Not Translate. Button label. Shown only on debug screen -->
+    <string name="debug_clear_migration_state" translatable="false">Clear migration state</string>
+    <!-- Do Not Translate.  Checkbox label, shown on debug screen. -->
+    <string name="debug_force_one_minute_refresh_label" translatable="false">
+        Force 1-minute refresh for POP/IMAP</string>
+    <!-- Do Not Translate.  Checkbox label, shown on debug screen. -->
+    <string name="debug_enable_strict_mode_label" translatable="false">
+        Enable strict mode (with logging)</string>
+
+
+    <!-- Label shown in the account selector to select "Combined view", which contains
+         Combined Inbox, Combined Outbox, etc. [CHAR LIMIT=30] -->
+    <string name="mailbox_list_account_selector_combined_view">"ஒருங்கிணைந்த காட்சி"</string>
+
+    <!-- Header for forwarded original messages -->
+    <string name="message_compose_fwd_header_fmt">\n\n"-------- அசல் செய்தி --------\nதலைப்பு: <xliff:g id="SUBJECT">%1$s</xliff:g>\nஅனுப்புநர்: <xliff:g id="SENDER">%2$s</xliff:g>\nபெறுநர்: <xliff:g id="TO">%3$s</xliff:g>\nCC: <xliff:g id="CC_0">%4$s</xliff:g>\n\n"</string>
+    <!-- Title for dialog containing list of quick responses that user may insert
+            into message body. [CHAR_LIMIT=30] -->
+    <string name="message_compose_insert_quick_response_list_title">"விரைவு பதிலைச் செருகவும்"</string>
+    <!-- Menu item for inserting quick responses into email compose activity. [CHAR_LIMIT=30] -->
+    <string name="message_compose_insert_quick_response_menu_title">"விரைவு பதிலைச் செருகவும்"</string>
+    <!-- Toast upon using "send" when one or more attachments will need to be background loaded
+      [CHAR LIMIT=none]-->
+    <string name="message_view_attachment_background_load">"நீங்கள் முன்னனுப்பிய செய்தியில் உள்ள ஒன்று அல்லது அதற்கு மேற்பட்ட இணைப்புகள், அனுப்புதலுக்கு முன்பு பதிவிறக்கப்படும்."</string>
+
+    <!-- String used in place of a message that could not be properly decoded (e.g. bad base64
+         data was received.) [CHAR LIMIT=none] -->
+    <string name="message_decode_error">"செய்தியைக் குறிவிலக்கும்போது பிழை ஏற்பட்டது."</string>
+
+    <!-- Notification ticker when a forwarded attachment couldn\'t be sent [CHAR LIMIT=none] -->
+    <string name="forward_download_failed_ticker">"ஒன்று அல்லது அதற்கு மேற்பட்ட இணைப்புகளை முன்னனுப்ப முடியவில்லை."</string>
+    <!-- Notification title when a forwarded attachment couldn\'t be sent [CHAR LIMIT=30]-->
+    <string name="forward_download_failed_title">"இணைப்பு முன்னனுப்பப்படவில்லை"</string>
+
+    <!-- Notification ticker when email account authentication fails [CHAR LIMIT=none] -->
+    <string name="login_failed_ticker">"<xliff:g id="ACCOUNT_NAME">%s</xliff:g> இல் உள்நுழைவதில் தோல்வி."</string>
+    <!-- Notification title when email account authentication fails [CHAR LIMIT=30]-->
+    <string name="login_failed_title">"உள்நுழைய முடியவில்லை"</string>
+
+    <!-- Title of screen when setting up new email account [CHAR LIMIT=45] -->
+    <string name="account_setup_basics_title">"கணக்கு அமைவு"</string>
+    <!-- Title of screen when trying to get oauth authentication -->
+    <string name="oauth_authentication_title">"அங்கீகரிப்பைக் கோருகிறது"</string>
+    <!-- Title of screen to choose with authentication to use -->
+    <string name="sign_in_title">"உள்நுழைக"</string>
+
+    <!-- Warning if there is a problem authenticating with oauth -->
+    <string name="oauth_error_description">"அங்கீகரிக்க முடியவில்லை"</string>
+    <!-- Warning label displayed when the email address or password are incorrect -->
+    <string name="password_warning_label">"மின்னஞ்சல் முகவரி அல்லது கடவுச்சொல் தவறாக உள்ளது"</string>
+    <!-- Label displayed to confirm what email address we are trying to validate -->
+    <string name="email_confirmation_label">"மின்னஞ்சல் முகவரி:"</string>
+    <!-- Headline of screen when setting up new email account (large text over divider)
+        [CHAR LIMIT=none] -->
+    <string name="account_setup_basics_headline">"மின்னஞ்சல் கணக்கு"</string>
+    <!-- On "Set up email" screen, enthusiastic welcome message. -->
+    <string name="accounts_welcome">"சில படிமுறைகளிலேயே உங்கள் கணக்கை அமைக்கலாம்."</string>
+    <!-- On "Set up email" screen, hint for account email address text field -->
+    <string name="account_setup_basics_email_label">"மின்னஞ்சல் முகவரி"</string>
+
+    <!-- Label between OAuth and password authentication, indicating the user must do one or the other [CHAR LIMIT=40] -->
+    <string name="or_label">"அல்லது"</string>
+    <!-- Label for signing in with Google using OAuth -->
+    <string name="sign_in_with_google">"Google மூலம் உள்நுழை"</string>
+    <!-- On "Set up email" screen, hint for account email password text field, should be uppercase where applicable -->
+    <string name="account_setup_basics_password_label">"கடவுச்சொல்"</string>
+    <!-- hint for account email password text field -->
+    <string name="password_hint">"கடவுச்சொல்"</string>
+    <!--  On the "Setup up email" screen, label indicating what service we are signed in with [CHAR LIMIT=40] -->
+    <string name="signed_in_with_service_label">"%s மூலம் உள்நுழைந்தீர்கள்"</string>
+    <!-- Label for the authentication section, should be uppercase where applicable [CHAR LIMIT=20] -->
+    <string name="authentication_label">"அங்கீகாரம்"</string>
+    <!-- Label for the add authentication icon [CHAR LIMIT=40] -->
+    <string name="add_authentication_label">"அங்கீகரிப்பைச் சேர்"</string>
+    <!-- Label for the add authentication icon [CHAR LIMIT=40] -->
+    <string name="clear_authentication_label">"அங்கீகரிப்பை அழி"</string>
+    <!-- Button name on "Set up email" screen, with action underlined using html [CHAR LIMIT=20] -->
+    <string name="account_setup_basics_manual_setup_action">"கைமுறை அமைவு"</string>
+    <!-- Toast when we can\'t build a URI from the given email & password -->
+    <!-- Note, the error message in the toast is purposefully vague, because I *don\'t* know
+        exactly what\'s wrong. -->
+    <string name="account_setup_username_password_toast">"சரியான மின்னஞ்சல் முகவரி மற்றும் கடவுச்சொல்லை உள்ளிடவும்."</string>
+    <!-- Title of dialog shown when a duplicate account is created -->
+    <string name="account_duplicate_dlg_title">"நகல் கணக்கு"</string>
+    <!-- Message of dialog shown when a duplicate account is created.  The display name of
+         the duplicate account is displayed. -->
+    <string name="account_duplicate_dlg_message_fmt">"நீங்கள் \"<xliff:g id="DUPLICATE">%s</xliff:g>\" கணக்கிற்காக இந்தப் பயனர்பெயரை ஏற்கனவே பயன்படுத்துகிறீர்கள்."</string>
+
+    <!-- On check-settings screen, this is the initially-displayed message. -->
+    <string name="account_setup_check_settings_retr_info_msg">"கணக்குத் தகவலை மீட்டெடுக்கிறது…"</string>
+    <!-- Appears on screen while system is checking incoming server settings -->
+    <string name="account_setup_check_settings_check_incoming_msg">"சேவையக அமைப்புகளைச் சரிபார்க்கிறது…"</string>
+    <!-- Appears on screen while system is checking outgoing server settings -->
+    <string name="account_setup_check_settings_check_outgoing_msg">"smtp அமைப்புகளைச் சரிபார்க்கிறது…"</string>
+        <!-- Appears on screen while system is creating the account -->
+    <string name="account_setup_creating_account_msg">"கணக்கை உருவாக்குகிறது..."</string>
+
+    <!-- Headline text that appears on "Confirm account type" screen [CHAR LIMIT=none] -->
+    <string name="account_setup_ab_headline">"கணக்கு வகையை உறுதிசெய்யவும்"</string>
+    <!-- Explanatory text that appears on the "Confirm account type" screen [CHAR LIMIT=none] -->
+    <string name="account_setup_ab_instructions_format">"<xliff:g id="USERPROTOCOL">%2$s</xliff:g> ஐப் பயன்படுத்துவதாக <xliff:g id="EMAIL">%1$s</xliff:g> ஐக் குறித்தீர்கள், ஆனால் <xliff:g id="PROVIDERPROTOCOL">%3$s</xliff:g> ஐக் பயன்படுத்தலாம்"</string>
+
+    <!-- Text that appears on "Set up email" screen after successfully setting up an account
+        [CHAR LIMIT=none] -->
+    <string name="account_setup_names_headline">"உங்கள் கணக்கு அமைக்கப்பட்டது, மின்னஞ்சலை விரைவில் பெறுவீர்கள்!"</string>
+    <!-- On "Set up email" screen, label of text field -->
+    <string name="account_setup_names_account_name_label">"இந்தக் கணக்குற்குப் பெயரிடவும் (விருப்பத் தேர்வுக்குரியது)"</string>
+    <!-- On "Set up email" screen, label of text field -->
+    <string name="account_setup_names_user_name_label">"உங்கள் பெயர் (வெளிசெல்லும் செய்திகளில் காண்பிக்கப்படும்)"</string>
+
+    <!-- Headline for the the account type selector (IMAP or POP3 or EAS) [CHAR LIMIT=none] -->
+    <string name="account_setup_account_type_headline">"கணக்கின் வகை"</string>
+    <!-- "Add new email account" screen, text that appears on screen -->
+    <string name="account_setup_account_type_instructions">"இது எவ்வகையான கணக்கு?"</string>
+
+    <!-- "Incoming server settings" screen, headline (text over divider) [CHAR LIMIT=none] -->
+    <string name="account_setup_incoming_headline">"உள்வரும் சேவையக அமைப்புகள்"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_username_label">"பயனர்பெயர்"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_password_label">"கடவுச்சொல்"</string>
+    <!-- "Incoming server settings" screen, label for text field -->
+    <string name="account_setup_password_subheading">"கடவுச்சொல்"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_server_label">"சேவையகம்"</string>
+    <!-- "Incoming server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_incoming_port_label">"போர்ட்"</string>
+    <!-- "Incoming server settings" screen, label for pop-up menu, should be uppercase where applicable -->
+    <string name="account_setup_incoming_security_label">"பாதுகாப்பு வகை"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an unencrypted session -->
+    <string name="account_setup_incoming_security_none_label">ஏதும.</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session on the selected port, accepting all SSL certificates -->
+    <string name="account_setup_incoming_security_ssl_trust_certificates_label">"SSL/TLS (எல்லா சான்றிதழ்களையும் ஏற்றுக்கொள்)"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session on the selected port, including SSL certificate
+        checks -->
+    <string name="account_setup_incoming_security_ssl_label">"SSL/TLS"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session overlaid on a plain text session using the selected
+        port, accepting all SSL certificates -->
+    <string name="account_setup_incoming_security_tls_trust_certificates_label">"STARTTLS (எல்லா சான்றிதழ்களையும் ஏற்றுக்கொள்)"</string>
+    <!-- "Incoming server settings" screen, option for "Security type" pop-up menu indicating
+        the desire for an encrypted session overlaid on a plain text session on the selected
+        port, including SSL certificate checks -->
+    <string name="account_setup_incoming_security_tls_label">"STARTTLS"</string>
+    <!-- "Incoming server settings" screen, label for pop-up menu -->
+    <string name="account_setup_incoming_delete_policy_label">"சேவையகத்தில் உள்ள மின்னஞ்சலை நீக்கு"</string>
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <string name="account_setup_incoming_delete_policy_never_label">"எப்போதும் வேண்டாம்"</string>
+    <!-- "Incoming server settings" screen, options in pop-up menu for Delete email from server: -->
+    <string name="account_setup_incoming_delete_policy_delete_label">"நான் இன்பாக்ஸிலிருந்து நீக்கும்போது"</string>
+    <!-- "Incoming server settings" screen, label for setting IMAP path prefix: -->
+    <string name="account_setup_incoming_imap_path_prefix_label">"IMAP பாதை முன்னொட்டு"</string>
+    <!-- "Incoming server settings" screen, hint for setting IMAP path prefix: -->
+    <string name="account_setup_incoming_imap_path_prefix_hint">"(விரும்பினால்)"</string>
+
+    <!-- "Outgoing server settings" screen, headline (text over divider) [CHAR LIMIT=none] -->
+    <string name="account_setup_outgoing_headline">"வெளிச்செல்லும் சேவையக அமைப்புகள்"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_smtp_server_label">"SMTP சர்வர்"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_port_label">"போர்ட்"</string>
+    <!-- On "Outgoing server settings" screen, label for pop-up menu, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_security_label">"பாதுகாப்பு வகை"</string>
+    <!-- On "Outgoing server settings" screen, label for check box, should be uppercase where applicable -->
+    <string name="account_setup_outgoing_require_login_label">"உள்நுழைவு தேவை"</string>
+    <!-- On "Outgoing server settings" screen, label for text field, should be uppercase where applicable-->
+    <string name="account_setup_outgoing_username_label">"பயனர்பெயர்"</string>
+
+    <!-- On "Exchange" setup screen, a heading title for the current client certificate, should be uppercase where applicable [CHAR LIMIT=50] -->
+    <string name="account_setup_exchange_certificate_title">"கிளையன்ட் சான்றிதழ்"</string>
+    <!-- On "Exchange" setup screen, a button label to include a client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_select_certificate">"தேர்ந்தெடு"</string>
+    <!-- On "Exchange" setup screen, a button label to include a client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_use_certificate">"கிளையண்ட் சான்றிதழைப் பயன்படுத்து"</string>
+    <!-- On "Exchange" setup screen, a button label to remove the currently used client certificate [CHAR LIMIT=35] -->
+    <string name="account_setup_exchange_remove_certificate">"அகற்று"</string>
+    <!-- On "Exchange" setup screen, placeholder text to indicate no client
+         certificate is used [CHAR LIMIT=50] -->
+    <string name="account_setup_exchange_no_certificate">ஏதும.</string>
+    <!-- On "Exchange" setup screen, the exchange device-id label, should be uppercase where applicable [CHAR LIMIT=30] -->
+    <string name="account_setup_exchange_device_id_label">"மொபைல் சாதன ஐடி"</string>
+
+    <!-- In Account setup options screen, Activity headline [CHAR LIMIT=none] -->
+    <string name="account_setup_options_headline">"கணக்கு விருப்பங்கள்"</string>
+    <!-- In Account setup options screen, label for email check frequency selector -->
+    <string name="account_setup_options_mail_check_frequency_label">"ஒத்திசைவு கால இடைவெளி:"</string>
+    <!-- In Account setup options & Account Settings screens, label for email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_never">"எப்போதும் வேண்டாம்"</string>
+    <!-- In Account setup options & Account Settings screens, label for email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_push">"தானியங்கி (புஷ்)"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_5min">"ஒவ்வொரு 5 நிமிடங்களுக்கும்"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_10min">"ஒவ்வொரு 10 நிமிடங்களுக்கும்"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_15min">"ஒவ்வொரு 15 நிமிடங்களுக்கும்"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_30min">"ஒவ்வொரு 30 நிமிடங்களுக்கும்"</string>
+    <!-- In Account setup options & Account Settings screens, email check frequency option -->
+    <string name="account_setup_options_mail_check_frequency_1hour">"ஒவ்வொரு மணிநேரமும்"</string>
+    <!-- In Account setup options & Account Settings screens, check box for new-mail notification -->
+    <string name="account_setup_options_notify_label">"மின்னஞ்சல் வரும்போது எனக்குத் தெரிவி"</string>
+    <!-- In Account setup options screen, optional check box to also sync contacts -->
+    <string name="account_setup_options_sync_contacts_label">"இந்தக் கணக்கின் தொடர்புகளை ஒத்திசை"</string>
+    <!-- In Account setup options screen, optional check box to also sync contacts -->
+    <string name="account_setup_options_sync_calendar_label">"இந்தக் கணக்கிலிருந்து கேலெண்டரை ஒத்திசை"</string>
+    <!-- In Account setup options screen, check box to sync email -->
+    <string name="account_setup_options_sync_email_label">"இந்தக் கணக்கிலிருந்து மின்னஞ்சலை ஒத்திசை"</string>
+    <!-- In Account setup options screen, check box to auto-download attachments  [CHAR LIMIT=none] -->
+    <string name="account_setup_options_background_attachments_label">"வைஃபை இல் இணைக்கப்பட்டிருக்கும்போது இணைப்புகளைத் தானாகப் பதிவிறக்கு"</string>
+    <!-- Dialog title when "setup" could not finish -->
+    <string name="account_setup_failed_dlg_title">"முடிக்க முடியவில்லை"</string>
+    <!-- In Account setup options screen, label for email lookback selector -->
+    <string name="account_setup_options_mail_window_label">"இவற்றின் மின்னஞ்சல்களை ஒத்திசைக்கவும்:"</string>
+    <!-- In account setup options & account settings screens (exchange), sync window length; this
+        implies loading a \'reasonable\' number of messages [CHAR LIMIT=25] -->
+    <string name="account_setup_options_mail_window_auto">"தானியங்கு"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1day">"இறுதி நாள்"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_3days">"கடந்த மூன்று நாட்கள்"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1week">"கடந்த வாரம்"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_2weeks">"கடந்த இரண்டு வாரங்கள்"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_1month">"கடந்த மாதம்"</string>
+    <!-- A sync window length setting (i.e. load messages this far back) [CHAR LIMIT=25]  -->
+    <string name="account_setup_options_mail_window_all">"எல்லாம்"</string>
+    <!-- Per-mailbox sync window setting.  This means "use the account\'s sync window setting" [CHAR LIMIT=40] -->
+    <string name="account_setup_options_mail_window_default">"கணக்கின் இயல்புநிலை அமைப்பைப் பயன்படுத்து"</string>
+
+    <!-- "Setup could not finish" dialog text; e.g., Username or password incorrect -->
+    <string name="account_setup_failed_dlg_auth_message">"பயனர்பெயர் அல்லது கடவுச்சொல் தவறானது."</string>
+
+    <!-- Account setup autodiscover auth failure dialog title. This is shown when autodiscover hits
+        an "access denied" server error, which could imply incorrect username/password or that no
+        autodiscover service has been configured for the domain [CHAR LIMIT=40] -->
+    <string name="account_setup_autodiscover_dlg_authfail_title">"கணக்கு அமைவில் பிரச்சனை உள்ளது"</string>
+    <!-- Account setup autodiscover auth failure dialog message. This is shown when autodiscover hits
+        an "access denied" server error, which could imply incorrect username/password or that no
+        autodiscover service has been configured for the domain [CHAR LIMIT=NONE] -->
+    <string name="account_setup_autodiscover_dlg_authfail_message">"பயனர்பெயர், கடவுச்சொல் மற்றும் கணக்கு அமைப்புகள் ஆகியவை சரியாக உள்ளதை உறுதிப்படுத்தவும்."</string>
+
+    <!-- An error message presented to the user when the server\'s identity
+         cannot be established or trusted [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_dlg_certificate_message">"சேவையகத்துடன் பாதுகாப்பாக இணைக்க முடியவில்லை."</string>
+    <!-- An error message presented to the user when the server\'s identity
+         cannot be established or trusted [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"சேவையகத்துடன் பாதுகாப்பாக இணைக்க முடியவில்லை.\n(<xliff:g id="ERROR">%s</xliff:g>)"</string>
+    <!-- An error message presented to the user when the server requires a
+         client certificate to connect [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_certificate_required">"கிளையண்ட் சான்றிதழ் தேவை. கிளையண்ட் சான்றிதழ் மூலம் சேவையகத்துடன் இணைய விரும்புகிறீர்களா?"</string>
+    <!-- An error message presented to the user when the certificate they
+         specified for connecting to a server is inaccessible [CHAR LIMIT=NONE] -->
+    <string name="account_setup_failed_certificate_inaccessible">"சான்றிதழ் தவறானது அல்லது அணுக முடியாதது."</string>
+
+    <!-- Dialog text for ambiguous setup failure; server error/bad credentials [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_check_credentials_message">"சேவையகம் பிழையுடன் பதிலளித்துள்ளது. உங்கள் பயனர்பெயரையும், கடவுச்சொல்லையும் சரிபார்த்து, மீண்டும் முயற்சிக்கவும்."</string>
+
+    <!-- "Setup could not finish" dialog text; e.g., Cannot connect to server -->
+    <string name="account_setup_failed_dlg_server_message">"சேவையகத்துடன் இணைக்க முடியவில்லை."</string>
+    <!-- "Setup could not finish" dialog text; e.g., Cannot connect to server\n(Connection timed out) -->
+    <string name="account_setup_failed_dlg_server_message_fmt">"சேவையகத்துடன் இணைக்க முடியவில்லை.\n(<xliff:g id="ERROR">%s</xliff:g>)"</string>
+
+    <!-- Additional diagnostic text when TLS was required but the server doesn\'t support it -->
+    <string name="account_setup_failed_tls_required">"TLS தேவை ஆனால் அது சேவையகத்தால் ஆதரிக்கப்படவில்லை."</string>
+    <!-- Additional diagnostic text when server does not support any of our authentication methods -->
+    <string name="account_setup_failed_auth_required">"அங்கீகரிப்பு முறைகள் சேவையகத்தால் ஆதரிக்கப்படவில்லை."</string>
+    <!-- Additional diagnostic text when server connection failed due to security error -->
+    <string name="account_setup_failed_security">"பாதுகாப்பு பிழையின் காரணமாகச் சேவையகத்துடனான இணைப்பைத் திறக்க முடியவில்லை."</string>
+    <!-- Additional diagnostic text when server connection failed due to io error (connection) -->
+    <string name="account_setup_failed_ioerror">"சேவையகத்துடனான இணைப்பைத் திறக்க முடியவில்லை."</string>
+    <!-- Additional diagnostic text when server connection failed due to our inability to support a
+         required EAS protocol version [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_protocol_unsupported">"நீங்கள் தவறான சேவையக முகவரியை உள்ளிட்டுள்ளீர்கள் அல்லது மின்னஞ்சல் ஆதரிக்காத நெறிமுறைப் பதிப்பைச் சேவையகம் கோருகிறது."</string>
+    <!-- Additional diagnostic text when server access was denied; the user should contact the
+         administrator of the server for more information [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_access_denied">"இந்தச் சேவையகத்துடன் ஒத்திசைக்க உங்களுக்கு அனுமதியில்லை. மேலும் தகவலுக்கு உங்கள் சேவையகத்தின் நிர்வாகியைத் தொடர்புகொள்ளவும்."</string>
+
+    <!-- Dialog title when validation requires security provisioning (e.g. support
+         for device lock PIN, or remote wipe.) and we ask the user permission before continuing -->
+    <string name="account_setup_security_required_title">"தொலைநிலை பாதுகாப்பு நிர்வாகம்"</string>
+    <!-- Additional diagnostic text when validation requires security provisioning (e.g. support
+         for device lock PIN, or remote wipe.) and we ask the user permission before continuing.
+         [CHAR LIMIT=none] -->
+    <string name="account_setup_security_policies_required_fmt">"உங்கள் Android சாதனத்தின் சில பாதுகாப்பு அம்சங்களை <xliff:g id="SERVER">%s</xliff:g> சேவையகம் தொலைநிலையில் கட்டுப்படுத்த உங்களை அனுமதிக்கக் கேட்கிறது. இந்தக் கணக்கை அமைத்து முடிக்க விரும்புகிறீர்களா?"</string>
+    <!-- Additional diagnostic text when validation failed due to required provisioning not
+         being supported [CHAR LIMIT=none] -->
+    <string name="account_setup_failed_security_policies_unsupported">"உங்கள் Android சாதனத்தால் ஆதரிக்கப்படாத பாதுகாப்பு அம்சங்கள் இந்தச் சேவையகத்திற்குத் தேவை, இதில் அடங்குபவை: <xliff:g id="ERROR">%s</xliff:g>"</string>
+    <!-- Warning given to users when they request disabling device administration (i.e. that their
+         administered accounts will be deleted) [CHAR LIMIT=none] -->
+    <string name="disable_admin_warning">"எச்சரிக்கை: உங்கள் சாதனத்தை நிர்வகிப்பதற்கான மின்னஞ்சல் பயன்பாட்டின் அதிகாரத்தை முடக்குவது, அந்தப் பயன்பாடு தேவைப்படும் எல்லா மின்னஞ்சல் கணக்குகளையும், அவற்றின் மின்னஞ்சல், தொடர்புகள், கேலெண்டர் நிகழ்வுகள் மற்றும் பிற தரவு ஆகிய அனைத்தையும் நீக்கிவிடும்."</string>
+
+    <!-- Dialog shown when the account requires some amount of device security provisioning,
+         just before jumping into system settings such as Device Policy grant, PIN/password,
+         or encryption setup.  [CHAR_LIMIT=40] -->
+    <string name="account_security_dialog_title">"பாதுகாப்புப் புதுப்பிப்பு"</string>
+    <!-- Additional diagnostic text when the account requires some amount of device security
+         provisioning, just before jumping into system settings such as Device Policy grant,
+         PIN/password, or encryption setup.  [CHAR LIMIT=none] -->
+    <string name="account_security_dialog_content_fmt">"<xliff:g id="ACCOUNT">%s</xliff:g> கணக்கிற்கு உங்கள் பாதுகாப்பு அமைப்புகளை நீங்கள் புதுப்பிக்க வேண்டும்."</string>
+
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_unsupported_ticker_fmt">"பாதுகாப்பு தேவைகளினால் \"<xliff:g id="ACCOUNT">%s</xliff:g>\" கணக்கை ஒத்திசைக்க முடியவில்லை."</string>
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_needed_ticker_fmt">"\"<xliff:g id="ACCOUNT">%s</xliff:g>\" கணக்கு பாதுகாப்பு அமைப்புகளைப் புதுப்பிக்கக் கோருகிறது."</string>
+    <!-- Notification ticker when device security required (note: unused in Holo XL) -->
+    <string name="security_changed_ticker_fmt">"\"<xliff:g id="ACCOUNT">%s</xliff:g>\" கணக்கானது, அதன் பாதுகாப்பு அமைப்புகளை மாற்றியுள்ளது; பயனர் நடவடிக்கை எதுவும் தேவையில்லை."</string>
+    <!-- Notification content title when device security required [CHAR_LIMIT=30] -->
+    <string name="security_notification_content_update_title">"பாதுகாப்புப் புதுப்பிப்பு அவசியமானது"</string>
+    <!-- Notification content title when device security policies have changed [CHAR_LIMIT=36] -->
+    <string name="security_notification_content_change_title">"பாதுகாப்பு கொள்கைகள் மாற்றப்பட்டன"</string>
+    <!-- Notification content title when device security policies cannot be met [CHAR_LIMIT=30] -->
+    <string name="security_notification_content_unsupported_title">"பாதுகாப்பு கொள்கைகளை அடைய முடியவில்லை"</string>
+    <!-- Title of the activity that dispatches changes to device security.  Not normally seen. -->
+    <string name="account_security_title">"சாதனப் பாதுகாப்பு"</string>
+    <!-- Additional diagnostic text when the email app asserts control of the phone.
+        [CHAR LIMIT=none] -->
+    <string name="account_security_policy_explanation_fmt">"உங்கள் Android சாதனத்தின் சில பாதுகாப்பு அம்சங்களை தொலைநிலையில் கட்டுப்படுத்த <xliff:g id="SERVER">%s</xliff:g> சேவையகத்துக்கு உங்கள் அனுமதி தேவைப்படுகிறது."</string>
+
+    <!-- "Setup could not finish" dialog action button -->
+    <string name="account_setup_failed_dlg_edit_details_action">"விவரங்களைத் திருத்து"</string>
+
+    <!-- Notification ticker when device password is getting ready to expire [CHAR_LIMIT=80] -->
+    <string name="password_expire_warning_ticker_fmt">"\"<xliff:g id="ACCOUNT">%s</xliff:g>\" க்கு உங்கள் பூட்டுத் திரை PIN அல்லது கடவுச்சொல்லை மாற்ற வேண்டும்."</string>
+    <!-- Notification content title when device password is getting ready to expire
+            [CHAR_LIMIT=30] -->
+    <string name="password_expire_warning_content_title">"பூட்டுத் திரை கடவுச்சொல் காலாவதியாகிறது"</string>
+
+    <!-- Notification ticker when device password has expired [CHAR_LIMIT=80] -->
+    <string name="password_expired_ticker">"உங்கள் பூட்டுத் திரை PIN அல்லது கடவுச்சொல் காலாவதியாகிவிட்டது."</string>
+    <!-- Notification content title when device password has expired [CHAR_LIMIT=28] -->
+    <string name="password_expired_content_title">"பூட்டுத் திரை கடவுச்சொல் காலாவதியானது"</string>
+
+    <!-- Dialog title if device pin/password is going to expire soon. [CHAR_LIMIT=40] -->
+    <string name="password_expire_warning_dialog_title">"பூட்டுத் திரை கடவுச்சொல் காலாவதியாகிறது"</string>
+    <!-- Dialog content device pin/password is going to expire soon. [CHAR_LIMIT=none] -->
+    <string name="password_expire_warning_dialog_content_fmt">"உங்கள் பூட்டுத் திரை PIN அல்லது கடவுச்சொல்லை விரைவிலேயே கண்டிப்பாக மாற்ற வேண்டும் அல்லது <xliff:g id="ACCOUNT">%s</xliff:g> க்கான தரவு அழிக்கப்படும். அதை இப்போதே மாற்ற விரும்புகிறீர்களா?"</string>
+
+    <!-- Dialog title if device pin/password has already expired. [CHAR_LIMIT=40] -->
+    <string name="password_expired_dialog_title">"பூட்டுத் திரை கடவுச்சொல் காலாவதியானது"</string>
+    <!-- Dialog content device pin/password has already expired. [CHAR_LIMIT=none] -->
+    <string name="password_expired_dialog_content_fmt">"உங்கள் சாதனத்திலிருந்து <xliff:g id="ACCOUNT">%s</xliff:g> க்கான தரவு அழிக்கப்படுகிறது. உங்கள் பூட்டுத் திரை PIN அல்லது கடவுச்சொல்லை மாற்றுவதன் மூலம் அதை மீட்டெடுக்கலாம். அதை இப்போது மாற்ற விரும்புகிறீர்களா?"</string>
+
+    <!-- On AccountSettingsXL, dialog text if you try to exit in/out/eas fragment (server settings)
+         without checking/saving [CHAR LIMIT=none]-->
+    <string name="account_settings_exit_server_settings">"சேமிக்கப்படாத மாற்றங்களை நிராகரிக்கவா?"</string>
+
+    <!-- On Settings screen, setting option name -->
+    <!-- Title of account preference for downloading attachments in background [CHAR LIMIT=32] -->
+    <string name="account_settings_background_attachments_label">"இணைப்புகளைப் பதிவிறக்கு"</string>
+    <!-- Summary of account preference for downloading attachments in background [CHAR LIMIT=64] -->
+    <string name="account_settings_background_attachments_summary">"வைஃபை வழியாக சமீபத்திய செய்திகளிலிருந்து இணைப்புகளை தானாக பதிவிறக்கும்"</string>
+    <string name="account_settings_notify_label">"மின்னஞ்சல் அறிவிப்புகள்"</string>
+    <!-- On Settings screen, summary line when called via AccountManager for Exchange accounts
+        [CHAR LIMIT=50] -->
+    <string name="account_settings_summary">"ஒத்திசைவின் கால இடைவெளி, அறிவிப்புகள், முதலியன"</string>
+    <!-- On Settings screen, setting summary text -->
+    <string name="account_settings_notify_summary">"மின்னஞ்சல் வரும்போது அறிவிக்கவும்"</string>
+    <!-- On Settings screen, setting option name and title of dialog box that opens -->
+    <string name="account_settings_mail_check_frequency_label">"ஒத்திசைவின் கால இடைவெளி"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_incoming_label">"உள்வரும் செய்திகளின் அமைப்புகள்"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_incoming_summary">"பயனர்பெயர், கடவுச்சொல் மற்றும் பிற உள்வரும் சேவையக அமைப்புகள்"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_outgoing_label">"வெளிச்செல்லும் செய்திகளின் அமைப்புகள்"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_outgoing_summary">"பயனர்பெயர், கடவுச்சொல் மற்றும் பிற வெளிசெல்லும் சேவையக அமைப்புகள்"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_enforced_label">"கொள்கைகள் செயல்படுத்தப்பட்டன"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_enforced_summary">ஏதும.</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_unsupported_label">"ஆதரிக்கப்படாத கொள்கைகள்"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_unsupported_summary">"எதுவுமில்லை"</string>
+    <!-- On Settings screen, label for button that attempts to sync the account -->
+    <string name="account_settings_retry_label">"ஒத்திசைக்க முயற்சிசெய்"</string>
+    <!-- On Settings screen, summmary for button that attempts to sync an account [CHAR LIMIT=64] -->
+    <string name="account_settings_retry_summary">"இந்தக் கணக்கை ஒத்திசைக்க இங்கே தொடவும்"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_description_label">"கணக்கின் பெயர்"</string>
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_name_label">"உங்கள் பெயர்"</string>
+    <!-- On Settings screen, setting option name. Allows user to modify saved quick responses
+        for insertion in message body. [CHAR_LIMIT=24]-->
+    <string name="account_settings_edit_quick_responses_label">"விரைவு பதில்கள்"</string>
+    <!-- On Settings screen, setting option summary [CHAR LIMIT=64] -->
+    <string name="account_settings_edit_quick_responses_summary">"மின்னஞ்சலை எழுதும்போது நீங்கள் அடிக்கடி செருகும் உரையைத் திருத்தவும்"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_notifications">"அறிவிப்பு அமைப்புகள்"</string>
+    <!-- On Settings screen, section heading for data usage [CHAR LIMIT=70] -->
+    <string name="account_settings_data_usage">"தரவு பயன்பாடு"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_policies">"பாதுகாப்பு கொள்கைகள்"</string>
+
+    <string name="system_folders_title">"முறைமை கோப்புகள்"</string>
+    <string name="system_folders_trash_title">"குப்பை கோப்புறை"</string>
+    <string name="system_folders_trash_summary">"உங்கள் சேவையகத்தின் குப்பை கோப்புறையைத் தேர்ந்தெடுக்கவும்"</string>
+    <string name="system_folders_trash_dlg">"உங்கள் சேவையகத்தின் குப்பை கோப்புறையைத் தேர்ந்தெடுக்கவும்"</string>
+    <string name="system_folders_sent_title">"அனுப்பிய உருப்படிகள் கோப்புறை"</string>
+    <string name="system_folders_sent_summary">"உங்கள் சேவையகத்தின் அனுப்பிய உருப்படிகள் கோப்புறையைத் தேர்ந்தெடுக்கவும்"</string>
+    <string name="system_folders_sent_dlg">"உங்கள் சேவையகத்தின் அனுப்பிய உருப்படிகள் கோப்புறையைத் தேர்ந்தெடுக்கவும்"</string>
+
+    <!-- On settings screen, dialog heading informing user to create or edit a quick response -->
+    <string name="edit_quick_response_dialog">"விரைவு பதில்"</string>
+    <!-- On settings screen, edit quick response dialog\'s "save" button -->
+    <string name="save_action">"சேமி"</string>
+
+    <!-- On settings screen, sync contacts check box label [CHAR LIMIT=20]-->
+    <string name="account_settings_sync_contacts_enable">"தொடர்புகளை ஒத்திசை"</string>
+    <!-- On settings screen, sync contacts summary text [CHAR LIMIT=35] -->
+    <string name="account_settings_sync_contacts_summary">"இந்தக் கணக்கின் தொடர்புகளை ஒத்திசை"</string>
+    <!-- On settings screen, sync calendar check box label [CHAR LIMIT=20]-->
+        <string name="account_settings_sync_calendar_enable">"கேலெண்டரை ஒத்திசை"</string>
+    <!-- On settings screen, sync calendar summary text [CHAR LIMIT=50] -->
+    <string name="account_settings_sync_calendar_summary">"இந்தக் கணக்கிற்கான கேலெண்டர் நிகழ்வை ஒத்திசை"</string>
+    <!-- On settings screen, sync email check box label [CHAR LIMIT=20]-->
+    <string name="account_settings_sync_email_enable">"மின்னஞ்சலை ஒத்திசை"</string>
+    <!-- On settings screen, sync email summary text [CHAR LIMIT=35] -->
+    <string name="account_settings_sync_email_summary">"இந்த கணக்கிற்கான மின்னஞ்சலை ஒத்திசை"</string>
+
+    <!-- On Settings screen, vibrate pop-up menu label -->
+    <string name="label_notification_vibrate_title">"அதிர்வு"</string>
+
+    <!-- On Settings screen, setting option name -->
+    <string name="account_settings_ringtone">"ரிங்டோனைத் தேர்வுசெய்"</string>
+    <!-- On Settings screen, section heading -->
+    <string name="account_settings_servers">"சேவையக அமைப்புகள்"</string>
+
+    <!-- Mailbox settings activity title [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_activity_title">"ஒத்திசைவு விருப்பங்கள்"</string>
+    <!-- Mailbox settings activity title, with the target folder name [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_activity_title_with_mailbox">"ஒத்திசைவு விருப்பங்கள் (<xliff:g id="MAILBOXX_NAME">%s</xliff:g>)"</string>
+    <!-- On mailbox settings screen: Whether to sync this mailbox when the account syncs. -->
+    <string name="mailbox_settings_sync_enabled_label">"இந்தக் கோப்புறையை ஒத்திசை"</string>
+    <!-- On mailbox settings screen: Explanatory text for what it means to "sync this folder". -->
+    <string name="mailbox_settings_sync_enabled_summary">"இணைக்கப்படும்போது செய்திகள் பதிவிறக்கப்படும்"</string>
+    <!-- On mailbox settings screen: Mailbox sync window (the number of days to synchronize email for) setting label [CHAR LIMIT=none] -->
+    <string name="mailbox_settings_mailbox_sync_window_label">"அஞ்சலை ஒத்திசைப்பதற்கான நாட்கள்"</string>
+
+    <!-- Message that appears when adding a T-Online account -->
+    <string name="provider_note_t_online">"இந்த மின்னஞ்சல் கணக்கை அமைக்கும் முன்பு, T-ஆன்லைன் இணையதளத்தைப் பார்வையிட்டு, POP3 மின்னஞ்சல் அணுகலுக்கான கடவுச்சொல்லை உருவாக்கவும்."</string>
+
+    <!-- Short name of Microsoft Exchange account type; used by AccountManager -->
+    <string name="exchange_eas_name" translatable="false">Exchange</string>
+    <!-- Long name of Microsoft Exchange account type; used by AccountManager -->
+    <string name="exchange_name_alternate">"Microsoft Exchange ActiveSync"</string>
+
+    <!-- Message that appears if the AccountManager cannot create the system Account -->
+    <string name="system_account_create_failed">"கணக்கை உருவாக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்."</string>
+
+    <!-- Strings that support the DeviceAdmin / DevicePolicyManager API -->
+    <!-- Name of the DeviceAdmin (seen in settings & in user confirmation screen) -->
+    <string name="device_admin_label">"மின்னஞ்சல்"</string>
+    <!-- Long-form description of the DeviceAdmin (2nd line in settings & in user conf. screen) -->
+    <string name="device_admin_description">"சேவையகம் சார்ந்த பாதுகாப்பு கொள்கைகளை இயக்குகிறது"</string>
+
+    <!-- A policy disallowing the user of the device\'s camera [CHAR LIMIT=50] -->
+    <string name="policy_dont_allow_camera">"சாதனத்தின் கேமராவைப் பயன்படுத்த அனுமதிக்க வேண்டாம்"</string>
+    <!-- A policy requiring a device lock screen password [CHAR LIMIT=50] -->
+    <string name="policy_require_password">"சாதனக் கடவுச்சொல்லைக் கோரு"</string>
+    <!-- A policy disallowing the reuse of recent passwords [CHAR LIMIT=50] -->
+    <string name="policy_password_history">"சமீபத்திய கடவுச்சொற்களின் மறுபயன்பாட்டை கட்டுப்படுத்து"</string>
+    <!-- A policy that forces a password to expire after a set period of time [CHAR LIMIT=50] -->
+    <string name="policy_password_expiration">"கடவுச்சொற்களைக் காலாவதியாக்கக் கோரு"</string>
+    <!-- A policy requiring a maximum amount of time the device can sit idle before the lock screen
+        is activated [CHAR LIMIT=50] -->
+    <string name="policy_screen_timeout">"திரை பூட்டப்படுவதற்கு முன்பு, சாதனம் செயல்படாமல் இருக்க வேண்டிய நேரத்தைக் கோரு"</string>
+    <!-- A policy limiting the number of old calendar events synced [CHAR LIMIT=50] -->
+    <string name="policy_calendar_age">"ஒத்திசைக்கப்பட்ட கேலெண்டர் நிகழ்வுகளின் எண்ணிக்கையைக் கட்டுப்படுத்து"</string>
+    <!-- A policy limiting the number of emails synced [CHAR LIMIT=50] -->
+    <string name="policy_email_age">"ஒத்திசைக்கப்பட்ட மின்னஞ்சல்களின் எண்ணிக்கையைக் கட்டுப்படுத்து"</string>
+
+    <!-- The four strings below represent "quick responses" which the user can insert into a
+        message being composed with just a couple of taps.  These four responses MUST be defined,
+        but need not include a string (i.e. they are optional).  Further, the responses can be
+        customized as necessary by the translator, in case one or more of these is inappropriate in
+        a particular locale or if there are better options available. -->
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_1">"நன்றி!"</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_2">"எனக்கு ஏற்றது போல் தெரிகிறதே!"</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_3">"இதைப் பின்னர் படித்து, உங்களைத் தொடர்புகொள்கிறேன்."</string>
+    <!-- A "quick response", i.e. a quick reply to a received mail [CHAR LIMIT=NONE] -->
+    <string name="quick_4">"இதை விவாதிக்க சந்திப்பை அமைப்பொம்."</string>
+
+    <!-- This is shown when a user responds to a meeting invitation [CHAR LIMIT=none]-->
+    <string name="confirm_response">"பதிலை அனுப்புகிறது..."</string>
+
+    <!-- Used by AccountManager -->
+    <!-- Account type name as used by AccountManager UI (IMAP is not translatable) [CHAR LIMIT=30] -->
+    <string name="imap_name">தனிப்பட்டது (IMAP)</string>
+    <!-- Account type name as used by AccountManager UI (POP3 is not translatable) [CHAR LIMIT=30] -->
+    <string name="pop3_name">தனிப்பட்டது (POP3)</string>
+
+    <!-- Displayed when the user must pick his server\'s trash folder from a list [CHAR LIMIT 30]-->
+    <string name="trash_folder_selection_title">"<xliff:g id="ACCOUNT">%s</xliff:g> க்கு சேவையக குப்பை கோப்புறையைத் தேர்ந்தெடுக்கவும்"</string>
+    <!-- Displayed when the user must pick his server\'s sent items folder from a list [CHAR LIMIT 30]-->
+    <string name="sent_folder_selection_title">"<xliff:g id="ACCOUNT">%s</xliff:g> க்கு, சேவையக அனுப்பிய உருப்படிகள் கோப்புறையை தேர்ந்தெடுக்கவும்"</string>
+    <string name="account_waiting_for_folders_msg">"கோப்புறைப் பட்டியலை ஏற்றுகிறது..."</string>
+
+    <!-- Feedback uri to be used when feedback is enabled -->
+    <string name="email_feedback_uri" translatable="false"/>
+
+    <string name="account_manager_type_exchange" translatable="false">com.android.exchange</string>
+    <string name="account_manager_type_pop3" translatable="false">com.android.email.pop3</string>
+    <string name="account_manager_type_imap" translatable="false">com.android.email.imap</string>
+    <string name="account_manager_type_legacy_imap" translatable="false">com.android.email.imap</string>
+    <string name="intent_exchange_action" translatable="false">com.android.email.EXCHANGE_INTENT</string>
+    <string name="intent_exchange_cert_action" translatable="false">com.android.email.EXCHANGE_REQUEST_CERT</string>
+    <string name="intent_exchange_package" translatable="false">com.android.exchange</string>
+    <string name="intent_account_manager_entry" translatable="false">com.android.email.activity.setup.ACCOUNT_MANAGER_ENTRY</string>
+    <string name="intent_force_create_email_account" translatable="false">com.android.email.FORCE_CREATE_ACCOUNT</string>
+    <string name="intent_create_email_account" translatable="false">com.android.email.CREATE_NEW_ACCOUNT</string>
+    <string name="authority_email_provider" translatable="false">com.android.email.provider</string>
+    <string name="authority_conversation_provider" translatable="false">com.android.email.conversation.provider</string>
+    <string name="authority_account_cache_provider" translatable="false">com.android.email.accountcache</string>
+    <string name="protocol_legacy_imap" translatable="false">imap</string>
+    <string name="protocol_imap" translatable="false">imap</string>
+    <string name="protocol_pop3" translatable="false">pop3</string>
+    <string name="protocol_eas" translatable="false">eas</string>
+
+    <!-- Content Provider Authority for Eml Attachments -->
+    
+
+    <!-- Provider name for widgets -->
+    <string name="widget_provider" translatable="false">com.android.email.provider.WidgetProvider</string>
+
+    <string name="print_job_name" translatable="false">Email - <xliff:g id="subject">%1$s</xliff:g></string>
+
+    <!-- This message indicates no quick responses exist to choose from -->
+    <string name="no_quick_responses">"ஏதுமில்லை"</string>
+
+    <!-- Activity name of the compose activity that should be reconciled -->
+    <!-- Do not disable the compose activity even there isn\'t any account.
+    <string name="reconciliation_compose_activity_name" translatable="false">com.android.email.activity.ComposeActivityEmail</string>
+    -->
+    <string name="reconciliation_compose_activity_name" translatable="false"/>
+
+    <!-- Gmail name for redirecting during account setup -->
+    <string name="gmail_name">"Gmail"</string>
+
+    <!-- Name for preference entry which leads to the per-folder sync settings activity -->
+    <string name="folder_sync_settings_pref_title">"கோப்புறை ஒத்திசைவு அமைப்புகள்"</string>
+
+    <!-- In Account setup options & Account Settings screens, Email sync size option. -->
+    <string name="account_settings_sync_size_enable">அஞ்சல் ஒன்று. ஒத்திசைவு அளவை உள்ளமை</string>
+    <string name="account_settings_sync_size_enable_summary">தரவைச் சேமிப்பதற்கு, நீங்கள் கணக்கின் அஞ்சல் ஒன்றுக்கான ஒத்திசைவு அளவை உள்ளமைக்கலாம்</string>
+    <string name="account_settings_sync_size_label">ஒத்திசைவு அளவைத் தேர்வு.</string>
+    <string name="account_settings_sync_size_category_label">ஒத்திசைவு அளவு அமைப்புகள்</string>
+
+    <string name="account_setup_options_mail_sync_size_all">முழு</string>
+    <string name="account_setup_options_mail_sync_size_20k">20KB</string>
+    <string name="account_setup_options_mail_sync_size_100k">100KB</string>
+    <string name="account_setup_options_mail_sync_size_200k">200KB</string>
+    <string name="account_setup_options_mail_sync_size_500k">500KB</string>
+    <string name="account_setup_options_mail_sync_size_1M">1MB</string>
+
+    <!-- Customize Email account\'s signature -->
+    <string name="default_email_signature"/>
+
+    <!--Delete email account -->
+    <string name="remove_email_account">"கணக்கை அகற்று"</string>
+    <string name="remove_email_account_continue">"தொடர்"</string>
+    <string name="remove_email_account_message">நீங்கள் அமைப்புகள் பயன்பாட்டுக்குச் செல்லவுள்ளீர்கள், அங்கு நீங்கள் கணக்குகளை அகற்றலாம்</string>
+</resources>

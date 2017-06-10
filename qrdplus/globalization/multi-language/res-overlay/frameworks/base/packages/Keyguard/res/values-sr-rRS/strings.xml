@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!--
+/*
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- App label in the manifest  -->
+    <string name="app_name">"Заштита тастера"</string>
+    <!-- Instructions telling the user to enter their SIM PIN to unlock the keyguard.
+         Displayed in one line in a large font.  -->
+    <string name="keyguard_password_enter_pin_code">"Унесите PIN кôд"</string>
+
+    <!-- Instructions telling the user to enter their SIM PUK to unlock the keyguard.
+         Displayed in one line in a large font.  -->
+    <string name="keyguard_password_enter_puk_code">"Унесите SIM PUK кôд и нови PIN кôд"</string>
+
+    <!-- Prompt to enter SIM PUK in Edit Text Box in unlock screen -->
+    <string name="keyguard_password_enter_puk_prompt">"SIM PUK кôд"</string>
+    <!-- Prompt to enter New SIM PIN in Edit Text Box in unlock screen -->
+    <string name="keyguard_password_enter_pin_prompt">"Нови SIM PIN кôд"</string>
+
+    <!-- Displayed as hint in passwordEntry EditText on PasswordUnlockScreen [CHAR LIMIT=30]-->
+    <string name="keyguard_password_entry_touch_hint"><font size="17">"Додирните да бисте унели лозинку"</font></string>
+
+    <!-- Instructions telling the user to enter their text password to unlock the keyguard.
+         Displayed in one line in a large font.  -->
+    <string name="keyguard_password_enter_password_code">"Откуцајте лозинку да бисте откључали"</string>
+
+    <!-- Instructions telling the user to enter their PIN password to unlock the keyguard.
+         Displayed in one line in a large font.  -->
+    <string name="keyguard_password_enter_pin_password_code">"Унесите PIN за откључавање"</string>
+
+    <!-- Instructions telling the user that they entered the wrong pin while trying
+         to unlock the keyguard.  Displayed in one line in a large font.  -->
+    <string name="keyguard_password_wrong_pin_code">"PIN кôд је нетачан."</string>
+
+    <!-- Shown in the lock screen when there is SIM card IO error. -->
+    <string name="lockscreen_sim_error_message_short">Неважећа картица.</string>
+
+    <!-- Instructions telling the user how to unlock the phone. -->
+    <string name="keyguard_label_text">"Да бисте откључали, притисните „Мени“, а затим 0."</string>
+
+    <!-- Shown when face unlock failed multiple times so we\'re just using the backup -->
+    <string name="faceunlock_multiple_failures">"Премашен је највећи дозвољени број покушаја Откључавања лицем"</string>
+
+    <!-- When the lock screen is showing, the phone is plugged in and the battery is fully
+         charged, say that it is charged. -->
+    <string name="keyguard_charged">"Напуњено"</string>
+
+    <!-- When the lock screen is showing and the phone plugged in, and the battery
+         is not fully charged, say that it\'s charging.  -->
+    <string name="keyguard_plugged_in">"Пуњење"</string>
+
+    <!-- When the lock screen is showing and the battery is low, warn user to plug
+         in the phone soon. -->
+    <string name="keyguard_low_battery">"Повежите пуњач."</string>
+
+    <!-- On the keyguard screen, when pattern lock is disabled, only tell them to press menu to unlock.  This is shown in small font at the bottom. -->
+    <string name="keyguard_instructions_when_pattern_disabled">"Притисните Мени да бисте откључали."</string>
+
+    <!-- SIM messages --><skip/>
+    <!-- When the user inserts a sim card from an unsupported network, it becomes network locked -->
+    <string name="keyguard_network_locked_message">"Мрежа је закључана"</string>
+    <!-- When the user inserts a sim card with some personalization enabled -->
+    <string name="keyguard_perso_locked_message">SIM/RUIM је Perso закључан</string>
+    <!-- Shown when there is no SIM card. -->
+    <string name="keyguard_missing_sim_message_short">"Нема SIM картице"</string>
+    <!-- Shown when there is no SIM card. -->
+    <string name="keyguard_missing_sim_message" product="tablet">"У таблету нема SIM картице."</string>
+    <!-- Shown when there is no SIM card. -->
+    <string name="keyguard_missing_sim_message" product="default">"У телефону нема SIM картице."</string>
+    <!-- Shown to ask the user to insert a SIM card. -->
+    <string name="keyguard_missing_sim_instructions">"Уметните SIM картицу."</string>
+    <!-- Shown to ask the user to insert a SIM card when sim is missing or not readable. -->
+    <string name="keyguard_missing_sim_instructions_long">"SIM картица недостаје или не може да се прочита. Уметните SIM картицу."</string>
+    <!-- Shown when SIM card is permanently disabled. -->
+    <string name="keyguard_permanent_disabled_sim_message_short">"SIM картица је неупотребљива."</string>
+    <!-- Shown to inform the user to SIM card is permanently disabled. -->
+    <string name="keyguard_permanent_disabled_sim_instructions">"SIM картица је трајно онемогућена.\n Обратите се добављачу услуге бежичне мреже да бисте добили другу SIM картицу."</string>
+    <!-- Shown to tell the user that their SIM is locked and they must unlock it. -->
+    <string name="keyguard_sim_locked_message">"SIM картица је закључана."</string>
+    <!-- When the user enters a wrong sim pin too many times, it becomes PUK locked (Pin Unlock Kode) -->
+    <string name="keyguard_sim_puk_locked_message">"SIM картица је закључана PUK кодом."</string>
+    <!-- For the unlock screen, When the user enters a sim unlock code, it takes a little while to check
+         whether it is valid, and to unlock the sim if it is valid.  we display a
+         progress dialog in the meantime.  this is the emssage. -->
+    <string name="keyguard_sim_unlock_progress_dialog_message">"Откључавање SIM картице…"</string>
+
+    <!-- Time format strings for fall-back clock widget -->
+    <string name="keyguard_widget_12_hours_format" translatable="false">h\uee01mm</string>
+    <!-- Time format strings for fall-back clock widget -->
+    <string name="keyguard_widget_24_hours_format" translatable="false">kk\uee01mm</string>
+
+    <!-- Accessibility description sent when user changes the current lock screen widget. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_widget_changed">"%1$s. Виџет %2$d од %3$d."</string>
+    <!-- Accessibility description of the add widget button. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_add_widget">"Додај виџет."</string>
+    <!-- Accessibility description of the empty sidget slot (place holder for a new widget). [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_widget_empty_slot">"Празно"</string>
+    <!-- Accessibility description of the event of expanding an unlock area. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_unlock_area_expanded">"Област откључавања је проширена."</string>
+    <!-- Accessibility description of the event of collapsing an unlock area. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_unlock_area_collapsed">"Област откључавања је скупљена."</string>
+    <!-- Accessibility description of a lock screen widget. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_widget">"Виџет <xliff:g id="WIDGET_INDEX">%1$s</xliff:g>."</string>
+    <!-- Accessibility description of the lock screen user selector widget. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_user_selector">"Избор корисника"</string>
+    <!-- Accessibility description of the camera widget. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_camera">"Камера"</string>
+    <!-- Accessibility description of the lock media control widget. [CHAR_LIMIT=none] -->
+    <string name="keygaurd_accessibility_media_controls">"Контроле за медије"</string>
+    <!-- Accessibility description of widget reordering start. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_widget_reorder_start">"Започела је промена редоследа виџета."</string>
+    <!-- Accessibility description of widget reordering end. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_widget_reorder_end">"Промена редоследа виџета је завршена."</string>
+    <!-- Accessibility description of the a widget deletion event. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_widget_deleted">"Виџет <xliff:g id="WIDGET_INDEX">%1$s</xliff:g> је избрисан."</string>
+    <!-- Accessibility description of the button to expand the lock area. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_expand_lock_area">"Прошири област откључавања."</string>
+    <!-- Accessibility description of the slide unlock. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_slide_unlock">"Откључавање превлачењем."</string>
+    <!-- Accessibility description of the pattern unlock. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_pattern_unlock">"Откључавање шаблоном."</string>
+    <!-- Accessibility description of the face unlock. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_face_unlock">"Откључавање лицем."</string>
+    <!-- Accessibility description of the pin lock. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_pin_unlock">"Откључавање PIN-ом."</string>
+    <!-- Accessibility description of the password lock. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_password_unlock">"Откључавање лозинком."</string>
+    <!-- Accessibility description of the unlock pattern area. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_pattern_area">"Област шаблона."</string>
+    <!-- Accessibility description of the unlock slide area. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_slide_area">"Област превлачења."</string>
+    <!-- Accessibility description of the PIN password view. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_pin_area">"Област за PIN"</string>
+    <!-- Accessibility description of the SIM PIN password view. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_sim_pin_area">"Област за PIN за SIM"</string>
+    <!-- Accessibility description of the SIM PUK password view. [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_sim_puk_area">"Област за PUK за SIM"</string>
+
+    <!-- Shown on transport control of lockscreen. Pressing button goes to previous track. -->
+    <string name="keyguard_accessibility_transport_prev_description">"Дугме за претходну песму"</string>
+    <!-- Shown on transport control of lockscreen. Pressing button goes to next track. -->
+    <string name="keyguard_accessibility_transport_next_description">"Дугме за следећу песму"</string>
+    <!-- Shown on transport control of lockscreen. Pressing button pauses playback -->
+    <string name="keyguard_accessibility_transport_pause_description">"Дугме за паузу"</string>
+    <!-- Shown on transport control of lockscreen. Pressing button pauses playback -->
+    <string name="keyguard_accessibility_transport_play_description">"Дугме за репродукцију"</string>
+    <!-- Shown on transport control of lockscreen. Pressing button pauses playback -->
+    <string name="keyguard_accessibility_transport_stop_description">"Дугме за заустављање"</string>
+    <!-- Shown on transport control of lockscreen. Pressing button rates the track as "thumbs up." -->
+    <string name="keyguard_accessibility_transport_thumbs_up_description">"Свиђа ми се"</string>
+    <!-- Shown on transport control of lockscreen. Pressing button rates the track as "thumbs down." -->
+    <string name="keyguard_accessibility_transport_thumbs_down_description">"Не свиђа ми се"</string>
+    <!-- Shown on transport control of lockscreen. Pressing button toggles the "heart" rating. -->
+    <string name="keyguard_accessibility_transport_heart_description">"Срце"</string>
+
+
+    <!-- Accessibility description for when the device prompts the user to dismiss keyguard
+         in order to complete an action. This will be followed by a message about the current
+         security option (e.g. "Pattern unlock."). [CHAR LIMIT=NONE] -->
+    <string name="keyguard_accessibility_show_bouncer">"Откључајте да бисте наставили"</string>
+
+    <!-- Accessibility description for when the bouncer prompt is dismissed. [CHAR LIMIT=NONE] -->
+    <string name="keyguard_accessibility_hide_bouncer">"Покретање је отказано"</string>
+
+    <!-- Accessibility description announced when user drags widget over the delete drop target [CHAR LIMIT=NONE] -->
+    <string name="keyguard_accessibility_delete_widget_start">"Отпустите виџет <xliff:g id="WIDGET_INDEX">%1$s</xliff:g> да бисте га избрисали."</string>
+
+    <!-- Accessibility description announced when user drags widget away from delete drop target [CHAR LIMIT=NONE] -->
+    <string name="keyguard_accessibility_delete_widget_end">"Виџет <xliff:g id="WIDGET_INDEX">%1$s</xliff:g> неће бити избрисан."</string>
+
+    <!-- Accessibility description for the text view that indicates when the next alarm is set (not shown on screen). [CHAR_LIMIT=none] -->
+    <string name="keyguard_accessibility_next_alarm">"Следећи аларм је подешен за <xliff:g id="ALARM">%1$s</xliff:g>"</string>
+
+    <!-- Password keyboard strings. Used by LockScreen and Settings --><skip/>
+    <!-- Label for "switch to symbols" key.  Must be short to fit on key! -->
+    <string name="password_keyboard_label_symbol_key">\?123</string>
+    <!-- Label for "switch to alphabetic" key.  Must be short to fit on key! -->
+    <string name="password_keyboard_label_alpha_key">"ABC"</string>
+    <!-- Label for ALT modifier key.  Must be short to fit on key! -->
+    <string name="password_keyboard_label_alt_key">"ALT"</string>
+
+    <!-- KeyboardView - accessibility support --><skip/>
+    <!-- Description of the Alt button in a KeyboardView. [CHAR LIMIT=NONE] -->
+    <string name="keyboardview_keycode_alt">"Alt"</string>
+    <!-- Description of the Cancel button in a KeyboardView. [CHAR LIMIT=NONE] -->
+    <string name="keyboardview_keycode_cancel">"Откажи"</string>
+    <!-- Description of the Delete button in a KeyboardView. [CHAR LIMIT=NONE] -->
+    <string name="keyboardview_keycode_delete">"Избриши"</string>
+    <!-- Description of the Done button in a KeyboardView. [CHAR LIMIT=NONE] -->
+    <string name="keyboardview_keycode_done">"Готово"</string>
+    <!-- Description of the Mode change button in a KeyboardView. [CHAR LIMIT=NONE] -->
+    <string name="keyboardview_keycode_mode_change">"Промена режима"</string>
+    <!-- Description of the Shift button in a KeyboardView. [CHAR LIMIT=NONE] -->
+    <string name="keyboardview_keycode_shift">"Shift"</string>
+    <!-- Description of the Enter button in a KeyboardView. [CHAR LIMIT=NONE] -->
+    <string name="keyboardview_keycode_enter">"Enter"</string>
+
+    <!-- Description of the unlock target in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_target_unlock">"Откључај"</string>
+    <!-- Description of the camera target in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_target_camera">"Камера"</string>
+    <!-- Description of the silent target in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_target_silent">"Нечујно"</string>
+    <!-- Description of the sound on target in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_target_soundon">"Укључи звук"</string>
+    <!-- Description of the unlock target in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_target_search">"Претрага"</string>
+
+    <!-- Description of the up direction in which one can to slide the handle in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_up">"Превуците нагоре за <xliff:g id="TARGET_DESCRIPTION">%s</xliff:g>."</string>
+    <!-- Description of the down direction in which one can to slide the handle in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_down">"Превуците надоле за <xliff:g id="TARGET_DESCRIPTION">%s</xliff:g>."</string>
+    <!-- Description of the left direction in which one can to slide the handle in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_left">"Превуците улево за <xliff:g id="TARGET_DESCRIPTION">%s</xliff:g>."</string>
+    <!-- Description of the right direction in which one can to slide the handle in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_right">"Превуците удесно за <xliff:g id="TARGET_DESCRIPTION">%s</xliff:g>."</string>
+
+    <!-- Text spoken when the current user is switched if accessibility is enabled. [CHAR LIMIT=none] -->
+    <string name="user_switched">"Актуелни корисник <xliff:g id="NAME">%1$s</xliff:g>."</string>
+
+    <!-- Label shown on emergency call button in keyguard -->
+    <string name="kg_emergency_call_label">"Хитни позив"</string>
+    <!-- Message shown in pattern unlock after some number of unsuccessful attempts -->
+    <string name="kg_forgot_pattern_button_text">"Заборављени шаблон"</string>
+    <!-- Message shown when user enters wrong pattern -->
+    <string name="kg_wrong_pattern">"Погрешан шаблон"</string>
+    <!-- Message shown when user enters wrong password -->
+    <string name="kg_wrong_password">"Погрешна лозинка"</string>
+    <!-- Message shown when user enters wrong PIN -->
+    <string name="kg_wrong_pin">"Погрешан PIN"</string>
+    <!-- Countdown message shown after too many failed unlock attempts -->
+    <string name="kg_too_many_failed_attempts_countdown">"Покушајте поново за <xliff:g id="NUMBER">%d</xliff:g> секунде(и)."</string>
+    <!-- Instructions for using the pattern unlock screen -->
+    <string name="kg_pattern_instructions">"Нацртајте шаблон"</string>
+    <!-- Instructions for using the SIM PIN unlock screen -->
+    <string name="kg_sim_pin_instructions">"Унесите PIN SIM картице"</string>
+    <!-- Instructions for using the SIM PIN unlock screen when there\'s more than one SIM -->
+    <string name="kg_sim_pin_instructions_multi">"Унесите PIN за SIM „<xliff:g id="CARRIER">%1$s</xliff:g>“"</string>
+    <!-- Instructions for using the PIN unlock screen -->
+    <string name="kg_pin_instructions">"Унесите PIN"</string>
+    <!-- Instructions for using the password unlock screen -->
+    <string name="kg_password_instructions">"Унесите лозинку"</string>
+    <!-- Hint shown in the PUK screen that asks the user to enter the PUK code given to them by their provider -->
+    <string name="kg_puk_enter_puk_hint">"SIM картица је сада онемогућена. Унесите PUK кôд да бисте наставили. За детаље контактирајте оператера."</string>
+    <!-- Hint shown when there are multiple SIMs in the device to ask the user to enter the PUK code given to them by their provider -->
+    <string name="kg_puk_enter_puk_hint_multi">"SIM „<xliff:g id="CARRIER">%1$s</xliff:g>“ је сада онемогућен. Унесите PUK кôд да бисте наставили. Контактирајте оператера за детаље."</string>
+    <!-- Hint shown in the PUK unlock screen PIN TextView -->
+    <string name="kg_puk_enter_pin_hint">"Унесите жељени PIN кôд"</string>
+    <!-- Message shown when the user needs to confirm the PIN they just entered in the PUK screen -->
+    <string name="kg_enter_confirm_pin_hint">"Потврдите жељени PIN кôд"</string>
+    <!-- Message shown in dialog while the device is unlocking the SIM card -->
+    <string name="kg_sim_unlock_progress_dialog_message">"Откључавање SIM картице…"</string>
+    <!-- Message shown when the user enters an invalid SIM pin password in PUK screen -->
+    <string name="kg_invalid_sim_pin_hint">"Унесите PIN који има од 4 до 8 бројева."</string>
+    <!-- Message shown when the user enters an invalid PUK code in the PUK screen -->
+    <string name="kg_invalid_sim_puk_hint">"PUK кôд треба да има 8 или више бројева."</string>
+    <!-- Message shown when the user enters an invalid PUK code -->
+    <string name="kg_invalid_puk">"Поново унесите исправни PUK кôд. Поновљени покушаји ће трајно онемогућити SIM."</string>
+      <!-- String shown in PUK screen when PIN codes don\'t match -->
+    <string name="kg_invalid_confirm_pin_hint" product="default">"PIN кодови се не подударају"</string>
+    <!-- Message shown when the user exceeds the maximum number of pattern attempts -->
+    <string name="kg_login_too_many_attempts">"Превише покушаја уноса шаблона"</string>
+    <!-- Instructions show in account unlock screen allowing user to enter their email password -->
+    <string name="kg_login_instructions">"Да бисте откључали, пријавите се помоћу Google налога."</string>
+    <!-- Hint shown in TextView in account unlock screen of keyguard -->
+    <string name="kg_login_username_hint">"Корисничко име (имејл адреса)"</string>
+    <!-- Hint shown in TextView in account unlock screen of keyguard -->
+    <string name="kg_login_password_hint">"Лозинка"</string>
+    <!-- Label shown on sign in button on account unlock screen of keyguard -->
+    <string name="kg_login_submit_button">"Пријави ме"</string>
+    <!-- Message shown when the user enters an invalid username/password combination in account unlock screen of keyguard -->
+    <string name="kg_login_invalid_input">"Неважеће корисничко име или лозинка."</string>
+    <!-- Hint text shown when user has too many failed password attempts in account unlock screen of keyguard -->
+    <string name="kg_login_account_recovery_hint">"Заборавили сте корисничко име или лозинку?\nПосетите адресу "<b>"google.com/accounts/recovery"</b>"."</string>
+    <!-- Message shown while device checks username/password in account unlock screen of keyguard -->
+    <string name="kg_login_checking_password">"Провера налога…"</string>
+    <!-- Message shown in dialog when max number of attempts are reached for PIN screen of keyguard -->
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"Унели сте PIN неисправно <xliff:g id="NUMBER_0">%d</xliff:g> пута. \n\nПокушајте поново за <xliff:g id="NUMBER_1">%d</xliff:g> секунде(и)."</string>
+    <!-- Message shown in dialog when max number of attempts are reached for password screen of keyguard -->
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Унели сте лозинку неисправно <xliff:g id="NUMBER_0">%d</xliff:g> пута. \n\nПокушајте поново за <xliff:g id="NUMBER_1">%d</xliff:g> секунде(и)."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Нацртали сте шаблон за откључавање неисправно <xliff:g id="NUMBER_0">%d</xliff:g> пута. \n\nПокушајте поново за <xliff:g id="NUMBER_1">%d</xliff:g> секунде(и)."</string>
+
+    <!-- Message shown when user is almost at the limit of password attempts where the device will be wiped. [CHAR LIMIT=none] -->
+    <string name="kg_failed_attempts_almost_at_wipe" product="tablet">"Погрешно сте покушали да откључате таблет <xliff:g id="NUMBER_0">%d</xliff:g> пут(а). Имате још <xliff:g id="NUMBER_1">%d</xliff:g> покушај(а), након чега се таблет ресетује и сви подаци са њега бришу."</string>
+    <!-- Message shown when user is almost at the limit of password attempts where the device will be wiped. [CHAR LIMIT=none] -->
+    <string name="kg_failed_attempts_almost_at_wipe" product="default">"Погрешно сте покушали да откључате телефон <xliff:g id="NUMBER_0">%d</xliff:g> пут(а). Имате још <xliff:g id="NUMBER_1">%d</xliff:g> покушај(а), након чега се телефон ресетује и сви подаци са њега бришу."</string>
+    <!-- Message shown in dialog when user has exceeded the maximum attempts and the device will now be wiped [CHAR LIMIT=none] -->
+    <string name="kg_failed_attempts_now_wiping" product="tablet">"Погрешно сте покушали да откључате таблет <xliff:g id="NUMBER">%d</xliff:g> пут(а). Таблет ће бити ресетован и сви подаци са њега ће бити избрисани."</string>
+    <!-- Message shown in dialog when user has exceeded the maximum attempts and the device will now be wiped [CHAR LIMIT=none] -->
+    <string name="kg_failed_attempts_now_wiping" product="default">"Погрешно сте покушали да откључате телефон <xliff:g id="NUMBER">%d</xliff:g> пут(а). Телефон ће бити ресетован и сви подаци са њега ће бити избрисани."</string>
+
+    <!-- Message shown when user is almost at the limit of password attempts where the user will be removed. [CHAR LIMIT=none] -->
+    <string name="kg_failed_attempts_almost_at_erase_user" product="tablet">"Погрешно сте покушали да откључате таблет <xliff:g id="NUMBER_0">%d</xliff:g> пут(а). Имате још <xliff:g id="NUMBER_1">%d</xliff:g> покушај(а), након чега се овај корисник уклања и сви подаци корисника бришу."</string>
+    <!-- Message shown when user is almost at the limit of password attempts where the user will be removed. [CHAR LIMIT=none] -->
+    <string name="kg_failed_attempts_almost_at_erase_user" product="default">"Погрешно сте покушали да откључате телефон <xliff:g id="NUMBER_0">%d</xliff:g> пут(а). Имате још <xliff:g id="NUMBER_1">%d</xliff:g> покушај(а), након чега се овај корисник уклања и сви подаци корисника бришу."</string>
+    <string name="kg_text_message_separator" product="default">" \u2014 "</string>
+    <!-- Message shown in dialog when user has exceeded the maximum attempts and the user will be removed. [CHAR LIMIT=none] -->
+    <string name="kg_failed_attempts_now_erasing_user" product="tablet">"Погрешно сте покушали да откључате таблет <xliff:g id="NUMBER">%d</xliff:g> пут(а). Овај корисник ће бити уклоњен и сви подаци корисника ће бити избрисани."</string>
+    <!-- Message shown in dialog when user has exceeded the maximum attempts and the user will be removed. [CHAR LIMIT=none] -->
+    <string name="kg_failed_attempts_now_erasing_user" product="default">"Погрешно сте покушали да откључате телефон <xliff:g id="NUMBER">%d</xliff:g> пут(а). Овај корисник ће бити уклоњен и сви подаци корисника ће бити избрисани."</string>
+
+    <!-- Message shown when user is almost at the limit of password attempts where the profile will be removed. [CHAR LIMIT=none] -->
+    <string name="kg_failed_attempts_almost_at_erase_profile" product="tablet">"Погрешно сте покушали да откључате таблет <xliff:g id="NUMBER_0">%d</xliff:g> пут(а). Имате још <xliff:g id="NUMBER_1">%d</xliff:g> покушај(а), након чега се пословни профил уклања и сви подаци са профила бришу."</string>
+    <!-- Message shown when user is almost at the limit of password attempts where the profile will be removed. [CHAR LIMIT=none] -->
+    <string name="kg_failed_attempts_almost_at_erase_profile" product="default">"Погрешно сте покушали да откључате телефон <xliff:g id="NUMBER_0">%d</xliff:g> пут(а). Имате још <xliff:g id="NUMBER_1">%d</xliff:g> покушај(а), након чега се пословни профил уклања и сви подаци са профила бришу."</string>
+    <!-- Message shown in dialog when user has exceeded the maximum attempts and the profile will be removed. [CHAR LIMIT=none] -->
+    <string name="kg_failed_attempts_now_erasing_profile" product="tablet">"Погрешно сте покушали да откључате таблет <xliff:g id="NUMBER">%d</xliff:g> пут(а). Пословни профил ће бити уклоњен и сви подаци са њега ће бити избрисани."</string>
+    <!-- Message shown in dialog when user has exceeded the maximum attempts and the profile will be removed. [CHAR LIMIT=none] -->
+    <string name="kg_failed_attempts_now_erasing_profile" product="default">"Погрешно сте покушали да откључате телефон <xliff:g id="NUMBER">%d</xliff:g> пут(а). Пословни профил ће бити уклоњен и сви подаци са њега ће бити избрисани."</string>
+
+    <!-- Message shown in dialog when user is almost at the limit where they will be
+    locked out and may have to enter an alternate username/password to unlock the phone -->
+    <string name="kg_failed_attempts_almost_at_login" product="tablet">"Нацртали сте шаблон за откључавање неисправно <xliff:g id="NUMBER_0">%d</xliff:g> пута. После још <xliff:g id="NUMBER_1">%d</xliff:g> неуспешна(их) покушаја, од вас ће бити затражено да откључате таблет помоћу налога е-поште.\n\nПокушајте поново за <xliff:g id="NUMBER_2">%d</xliff:g> секунде(и)."</string>
+    <!-- Message shown in dialog when user is almost at the limit where they will be
+    locked out and may have to enter an alternate username/password to unlock the phone -->
+    <string name="kg_failed_attempts_almost_at_login" product="default">"Нацртали сте шаблон за откључавање неисправно <xliff:g id="NUMBER_0">%d</xliff:g> пута. После још <xliff:g id="NUMBER_1">%d</xliff:g> неуспешна(их) покушаја, од вас ће бити затражено да откључате телефон помоћу налога е-поште.\n\nПокушајте поново за <xliff:g id="NUMBER_2">%d</xliff:g> секунде(и)."</string>
+    <!-- The delete-widget drop target button text -->
+    <string name="kg_reordering_delete_drop_target_text">"Уклони"</string>
+
+    <!-- Instructions telling the user that they entered the wrong SIM PIN for the last time.
+         Displayed in a dialog box.  -->
+    <string name="kg_password_wrong_pin_code_pukked">"Нетачан SIM PIN кôд. Сада морате да контактирате мобилног оператера да бисте откључали уређај."</string>
+    <!-- Instructions telling the user that they entered the wrong SIM PIN while trying
+         to unlock the keyguard.  Displayed in a dialog box.  -->
+    <plurals name="kg_password_wrong_pin_code">
+        <item quantity="one">"Нетачан SIM PIN кôд. Имате још <xliff:g id="NUMBER">%d</xliff:g> покушај, а онда морате да контактирате мобилног оператера да бисте откључали уређај."</item>
+        <item quantity="other">"Нетачан SIM PIN кôд. Имате још <xliff:g id="NUMBER">%d</xliff:g> покушаја."</item>
+    </plurals>
+
+    <!-- Instructions telling the user that they have exhausted SIM PUK retries and the SIM is now unusable.
+         Displayed in a dialog box.  -->
+    <string name="kg_password_wrong_puk_code_dead">"SIM картица је неупотребљива. Контактирајте мобилног оператера."</string>
+    <!-- Instructions telling the user that they entered the wrong puk while trying
+         to unlock the keyguard.  Displayed in a dialog box.  -->
+    <plurals name="kg_password_wrong_puk_code">
+        <item quantity="one">"Нетачан SIM PUK кôд. Имате још <xliff:g id="NUMBER">%d</xliff:g> покушај пре него што SIM картица постане трајно неупотребљива."</item>
+        <item quantity="other">"Нетачан SIM PUK кôд. Имате још <xliff:g id="NUMBER">%d</xliff:g> покушаја пре него што SIM картица постане трајно неупотребљива."</item>
+    </plurals>
+    <!-- Instructions telling the user that the operation to unlock the keyguard
+         with SIM PIN failed. Displayed in one line in a large font.  -->
+    <string name="kg_password_pin_failed">"Радња са SIM PIN кодом није успела!"</string>
+    <!-- Instructions telling the user that the operation to unlock the keyguard
+         with PUK failed. Displayed in one line in a large font.  -->
+    <string name="kg_password_puk_failed">"Радња са SIM PUK кодом није успела!"</string>
+    <!-- Notification telling the user that the PIN1 they entered is valid -->
+    <string name="kg_pin_accepted">"Кôд је прихваћен!"</string>
+
+    <!-- Transport control strings -->
+    <!-- Shown on transport control of lockscreen. Pressing button goes to previous track. -->
+    <string name="keyguard_transport_prev_description">"Дугме за претходну песму"</string>
+    <!-- Shown on transport control of lockscreen. Pressing button goes to next track. -->
+    <string name="keyguard_transport_next_description">"Дугме за следећу песму"</string>
+    <!-- Shown on transport control of lockscreen. Pressing button pauses playback -->
+    <string name="keyguard_transport_pause_description">"Дугме за паузу"</string>
+    <!-- Shown on transport control of lockscreen. Pressing button pauses playback -->
+    <string name="keyguard_transport_play_description">"Дугме за репродукцију"</string>
+    <!-- Shown on transport control of lockscreen. Pressing button pauses playback -->
+    <string name="keyguard_transport_stop_description">"Дугме за заустављање"</string>
+
+    <!-- On the keyguard screen, it shows the carrier the phone is connected to.
+        This is displayed if the phone is not connected to a carrier.-->
+    <string name="keyguard_carrier_default">"Офлајн сте."</string>
+    <string name="kg_remaining_attempts">Преостали покушаји: <xliff:g id="number">%d</xliff:g></string>
+    <string name="kg_failed_pin_attempts_now_wiping">
+        Унели сте погрешан PIN кôд <xliff:g id="number">%d</xliff:g> пута,
+желите ли да вратите телефон на фабричка подешавања?
+    </string>
+    <string name="kg_failed_password_attempts_now_wiping">
+        Унели сте погрешну лозинку <xliff:g id="number">%d</xliff:g> пута,
+желите ли да вратите телефон на фабричка подешавања?
+    </string>
+    <string name="kg_failed_pattern_attempts_now_wiping">
+        Унели сте погрешан шаблон <xliff:g id="number">%d</xliff:g> пута,
+желите ли да вратите телефон на фабричка подешавања?
+    </string>
+    <string name="kg_failed_attempts_now_wiping_confirm">
+        Тиме ћете избрисати све податке са уређаја и унутрашње меморије, а уређај ће бити враћен на фабричка подешавања.
+    </string>
+
+    <!-- Dismiss button text in SIM pin/puk unlock view -->
+    <string name="kg_dismiss">Одбаци</string>
+    <!-- Slot id in SIM pin/puk unlock view -->
+    <string name="kg_slot_name">Лежиште <xliff:g id="number">%d</xliff:g>: нова SIM картица\u0020 </string>
+
+    <!-- Instructions telling the user remaining times when enter SIM PIN view.  -->
+    <plurals name="kg_password_default_pin_message">
+        <item quantity="one">Унесите SIM PIN, преостао вам је још <xliff:g id="number">%d</xliff:g> покушај пре него што будете морали да контактирате оператера да вам откључа уређај.</item>
+        <item quantity="other">Унесите SIM PIN, број преосталих покушаја: <xliff:g id="number">%d</xliff:g>.</item>
+    </plurals>
+    <!-- Instructions telling the user remaining times when enter SIM PUK view.  -->
+    <plurals name="kg_password_default_puk_message">
+        <item quantity="one">SIM картица је сада онемогућена. Унесите PUK код да бисте наставили. Преостао вам је још <xliff:g id="number">%d</xliff:g> покушај пре него што SIM картица постане трајно неупотребљива. Контактирајте оператера да бисте добили више информација.</item>
+        <item quantity="other">SIM картица је сада онемогућена. Унесите PUK код да бисте наставили. Преостало вам је још <xliff:g id="number">%d</xliff:g> покушаја пре него што SIM картица постане трајно неупотребљива. Контактирајте оператера да бисте добили више информација.</item>
+    </plurals>
+    <!-- Content description of the switch input method button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_ime_switch_button" msgid="5032926134740456424">"Дугме Промени метод уноса."</string>
+
+</resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2015, Qualcomm Technologies, Inc. All Rights Reserved.
+    Qualcomm Technologies Proprietary and Confidential.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="20dip"
+        android:paddingEnd="20dip">
+
+    <LinearLayout
+            android:id="@+id/entry_panel"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+        <TextView android:id="@+id/perso_subtype_text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_ndp"/>
+
+        <EditText android:id="@+id/pin_entry"
+                android:inputType="textPassword"
+                android:imeOptions="actionDone"
+                android:layout_marginTop="8dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollHorizontally="true"
+                android:maxLength="@integer/perso_unlock_max_chars" />
+
+        <Button android:id="@+id/ndp_unlock"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/sim_ndp_unlock_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dip"
+                android:paddingEnd="20dip" />
+
+        <!-- Dismiss button.  (Not present in some products; see
+             sim_network_unlock_allow_dismiss in config.xml.) -->
+        <Button android:id="@+id/ndp_dismiss"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/sim_ndp_dismiss_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dip"
+                android:paddingEnd="20dip" />
+
+        <Button android:id="@+id/ndp_emergency"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/emergencyDialerButtonLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dip"
+                android:paddingEnd="20dip" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/status_panel"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:colorBackground="#80808080"
+            android:panelColorBackground="#fff">
+
+        <TextView android:id="@+id/status_text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:colorBackground="#80808080"
+            android:text="@string/requesting_unlock" />
+    </LinearLayout>
+
+</RelativeLayout>

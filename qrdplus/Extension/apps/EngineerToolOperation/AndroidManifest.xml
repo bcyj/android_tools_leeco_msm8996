@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015 Qualcomm Technologies, Inc. All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.qti.engineertool.operation"
+    android:sharedUserId="android.uid.system">
+
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.NFC" />
+
+    <application android:allowBackup="true" android:label="@string/app_name">
+
+        <provider android:name="SystemOperationHandler"
+            android:authorities="com.qualcomm.qti.engineertool.operation.system"
+            android:exported="true" />
+
+        <provider android:name="PhoneOperationHandler"
+            android:authorities="com.qualcomm.qti.engineertool.operation.phone"
+            android:exported="true"
+            android:process="com.android.phone" />
+
+    </application>
+
+</manifest>

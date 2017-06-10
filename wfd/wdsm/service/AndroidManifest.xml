@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+Copyright (c) 2012 - 2014 Qualcomm Technologies, Inc.  All Rights Reserved.
+Qualcomm Technologies Proprietary and Confidential.
+ -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.wfd.service"
+    android:versionCode="2"
+    android:versionName="2.0"
+    android:sharedUserId="android.uid.system"
+    >
+
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="16" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INJECT_EVENTS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.READ_FRAME_BUFFER"/>
+    <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER"/>
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"/>
+    <permission android:name="com.qualcomm.permission.wfd.QC_WFD"
+                android:protectionLevel="signatureOrSystem"
+                android:label="@string/perm_label"
+                android:description="@string/perm_desc"/>
+    <uses-permission android:name="com.qualcomm.permission.wfd.QC_WFD"/>
+
+    <application
+        android:label="@string/app_name"
+        android:process=":wfd_service"
+        android:icon="@drawable/icon">
+        <service android:name=".WfdService"
+                 android:permission="com.qualcomm.permission.wfd.QC_WFD" >
+            <intent-filter >
+                <action android:name="com.qualcomm.wfd.service.WfdService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

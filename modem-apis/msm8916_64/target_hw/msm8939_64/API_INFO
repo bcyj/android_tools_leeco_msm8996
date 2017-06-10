@@ -1,0 +1,16 @@
+These modem apis are from the M8939BAAAAULGD2132006.1  release.
+
+Use whereisbuild to find the build location:
+http://go/whereisbuild
+http://movado.qualcomm.com:5050/whereisbuild
+
+To copy the modem apis:
+
+% whereisbuild -b=M8939BAAAAULGD2132006.1
+% cd <modem_build_release_location>/MODEM_APIS
+% FILES=`find ./apps ./libs ./kernel -iname \*.\[chxm\]\* -print | xargs `
+% tar -vcf /tmp/modem_apis.tar $FILES
+% cd <android>/vendor/qcom/proprietary/modem-apis/<target_product>/api
+% rm -rf *
+% tar -xvf /tmp/modem_apis.tar
+% rm /tmp/modem_apis.tar

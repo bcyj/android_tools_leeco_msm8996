@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution.
+ * Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+
+<!--
+  ~ Copyright (C) 2012 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Application name used in Settings/Apps. Default label for activities
+         that don\'t specify a label. -->
+    <string name="applicationLabel">"Çevirici"</string>
+
+    <!-- Title for the activity that dials the phone.  This is the name
+         used in the Launcher icon. -->
+    <string name="launcherActivityLabel">"Telefon"</string>
+
+    <!-- The description text for the dialer tab.
+
+    Note: AccessibilityServices use this attribute to announce what the view represents.
+    This is especially valuable for views without textual representation like ImageView.
+
+    [CHAR LIMIT=NONE] -->
+    <string name="dialerIconLabel">"Telefon"</string>
+
+    <!-- The description text for the call log tab.
+
+    Note: AccessibilityServices use this attribute to announce what the view represents.
+    This is especially valuable for views without textual representation like ImageView.
+
+    [CHAR LIMIT=NONE] -->
+    <string name="recentCallsIconLabel">"Çağrı kaydı"</string>
+
+    <!-- Menu item used to send an SMS or MMS message to a phone number  -->
+    <string name="menu_sendTextMessage">"Kısa mesaj gönder"</string>
+
+    <!-- Menu item used to call a contact from the call log -->
+    <string name="recentCalls_callNumber">"Ara: <xliff:g id="NAME">%s</xliff:g>"</string>
+
+    <!-- Menu item used to copy a number from the call log to the dialer so it can be edited before calling it -->
+    <string name="recentCalls_editNumberBeforeCall">"Önce numarayı düzenle"</string>
+
+    <!-- Menu item used to add a number from the call log to contacts -->
+    <string name="recentCalls_addToContact">"Kişilere ekle"</string>
+
+    <!-- Menu item used to remove a single call from the call log -->
+    <string name="recentCalls_removeFromRecentList">"Çağrı kaydından kaldır"</string>
+
+    <!-- Menu item used to remove all calls from the call log -->
+    <string name="recentCalls_deleteAll">"Çağrı kaydını temizle"</string>
+
+    <!-- Menu item used to delete a voicemail. [CHAR LIMIT=30] -->
+    <string name="recentCalls_trashVoicemail">"Sesli mesajı sil"</string>
+
+    <!-- Menu item used to share a voicemail. [CHAR LIMIT=30] -->
+    <string name="recentCalls_shareVoicemail">"Sesli mesajı paylaş"</string>
+
+    <!-- Text displayed when the call log is empty. -->
+    <string name="recentCalls_empty">"Çağrı kaydınız boş."</string>
+
+    <!-- Title of the confirmation dialog for clearing the call log. [CHAR LIMIT=37]  -->
+    <string name="clearCallLogConfirmation_title">"Çağrı günlüğünü sil?"</string>
+
+    <!-- Confirmation dialog for clearing the call log. [CHAR LIMIT=NONE]  -->
+    <string name="clearCallLogConfirmation">"Tüm çağrı kayıtlarınız silinecek."</string>
+
+    <!-- Title of the "Clearing call log" progress-dialog [CHAR LIMIT=35] -->
+    <string name="clearCallLogProgress_title">"Çağrı günlüğü temizleniyor..."</string>
+
+    <!-- Title of the notification of new voicemails. [CHAR LIMIT=30] -->
+    <plurals name="notification_voicemail_title">
+        <item quantity="one">"Sesli mesaj"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> Sesli mesaj"</item>
+    </plurals>
+
+    <!-- Used in the notification of a new voicemail for the action to play the voicemail. -->
+    <string name="notification_action_voicemail_play">"Oynat"</string>
+
+    <!-- Used to build a list of names or phone numbers, to indicate the callers who left
+         voicemails.
+         The first argument may be one or more callers, the most recent ones.
+         The second argument is an additional callers.
+         This string is used to build a list of callers.
+
+         [CHAR LIMIT=10]
+     -->
+    <string name="notification_voicemail_callers_list"><xliff:g id="newer_callers">%1$s</xliff:g>,
+        <xliff:g id="older_caller">%2$s</xliff:g>
+    </string>
+
+    <!-- Text used in the ticker to notify the user of the latest voicemail. [CHAR LIMIT=30] -->
+    <string name="notification_new_voicemail_ticker">"Yeni sesli mesj gönderen: <xliff:g id="CALLER">%1$s</xliff:g>"</string>
+
+    <!-- Message to show when there is an error playing back the voicemail. [CHAR LIMIT=40] -->
+    <string name="voicemail_playback_error">"Sesli mesaj yürütülemedi."</string>
+
+    <!-- Message to display before we have prepared the media player, i.e. before we know duration. [CHAR LIMIT=40] -->
+    <string name="voicemail_buffering">"Arabelleğe alınıyor..."</string>
+
+    <!-- Message to display whilst we are waiting for the content to be fetched. [CHAR LIMIT=40] -->
+    <string name="voicemail_fetching_content">"Sesli mesaj getiriliyor..."</string>
+
+    <!-- Message to display if we fail to get content within a suitable time period. [CHAR LIMIT=40] -->
+    <string name="voicemail_fetching_timout">"Sesli mesaj getirilemedi."</string>
+
+    <!-- The header to show that call log is only showing voicemail calls. [CHAR LIMIT=40] -->
+    <string name="call_log_voicemail_header">"Yalnızca sesli mesaj içeren çağrılar"</string>
+
+    <!-- The header to show that call log is only showing incoming calls. [CHAR LIMIT=40] -->
+    <string name="call_log_incoming_header">"Yalnızca gelen çağrılar"</string>
+
+    <!-- The header to show that call log is only showing outgoing calls. [CHAR LIMIT=40] -->
+    <string name="call_log_outgoing_header">"Yalnızca giden çağrılar"</string>
+
+    <!-- The header to show that call log is only showing missed calls. [CHAR LIMIT=40] -->
+    <string name="call_log_missed_header">"Yalnızca cevapsız çağrılar"</string>
+
+    <!-- The header to show that call log is only showing missed calls. [CHAR LIMIT=40] -->
+    <string name="call_log_blacklist_header">Sadece kara liste aramaları</string>
+
+    <!--  Voicemail status message shown at the top of call log to notify the user that no new
+    voicemails are currently available. This can happen when both notification as well as data
+    connection to the voicemail server is lost. [CHAR LIMIT=64] -->
+    <string name="voicemail_status_voicemail_not_available">"Sesli mesaj sunucusuna bağlanılamıyor."</string>
+    <!--  Voicemail status message shown at the top of call log to notify the user that there is no
+      data connection to the voicemail server, but there are new voicemails waiting on the server.
+      [CHAR LIMIT=64] -->
+    <string name="voicemail_status_messages_waiting">"Sesli msj suncsuna bağlanılamıyor. Yeni sesli mesajlar bekliyor."</string>
+    <!--  Voicemail status message shown at the top of call log to invite the user to configure
+    visual voicemail. [CHAR LIMIT=64] -->
+    <string name="voicemail_status_configure_voicemail">"Sesli mesajınızı yapılandırın."</string>
+    <!--  Voicemail status message shown at the top of call details screen to notify the user that
+    the audio of this voicemail is not available. [CHAR LIMIT=64] -->
+    <string name="voicemail_status_audio_not_available">"Ses kullanılamıyor."</string>
+
+    <!--  User action prompt shown next to a voicemail status message to let the user configure
+    visual voicemail. [CHAR LIMIT=20] -->
+    <string name="voicemail_status_action_configure">"Yapılandır"</string>
+    <!--  User action prompt shown next to a voicemail status message to let the user call voicemail
+    server directly to listen to the voicemails. [CHAR LIMIT=20] -->
+    <string name="voicemail_status_action_call_server">"Sesli mesaj ara"</string>
+
+    <!-- The slowest voicemail playback speed. [CHAR LIMIT=30] -->
+    <string name="voicemail_speed_slowest">"En yavaş hız"</string>
+    <!-- Slower than normal voicemail playback speed. [CHAR LIMIT=30] -->
+    <string name="voicemail_speed_slower">"Düşük hız"</string>
+    <!--  Normal voicemail playback speed. [CHAR LIMIT=30] -->
+    <string name="voicemail_speed_normal">"Normal hız"</string>
+    <!--  Faster than normal pvoicemail playback speed. [CHAR LIMIT=30] -->
+    <string name="voicemail_speed_faster">"Yüksek hız"</string>
+    <!--  Fastest voicemail playback speed. [CHAR LIMIT=30] -->
+    <string name="voicemail_speed_fastest">"En yüksek hız"</string>
+
+    <!-- The counter for calls in a group and the date of the latest call as shown in the call log [CHAR LIMIT=15] -->
+    <string name="call_log_item_count_and_date">(<xliff:g id="count">%1$d</xliff:g>)
+        <xliff:g id="date">%2$s</xliff:g>
+    </string>
+
+    <!-- Title for the sms disambiguation dialog -->
+    <string name="sms_disambig_title">"Sayı seçin"</string>
+
+    <!-- Title for the call disambiguation dialog -->
+    <string name="call_disambig_title">"Sayı seçin"</string>
+
+    <!-- Message next to disamgiguation dialog check box -->
+    <string name="make_primary">"Bu tercihi anımsa"</string>
+
+    <!-- String describing the image on ImageButton one
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_one">"bir"</string>
+
+    <!-- String describing the image on ImageButton two
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_two">"iki"</string>
+
+    <!-- String describing the image on ImageButton three
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_three">"üç"</string>
+
+    <!-- String describing the image on ImageButton four
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_four">"dört"</string>
+
+    <!-- String describing the image on ImageButton five
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_five">"beş"</string>
+
+    <!-- String describing the image on ImageButton six
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_six">"altı"</string>
+
+    <!-- String describing the image on ImageButton seven
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_seven">"yedi"</string>
+
+    <!-- String describing the image on ImageButton eight
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_eight">"sekiz"</string>
+
+    <!-- String describing the image on ImageButton nine
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_nine">"dokuz"</string>
+
+    <!-- String describing the image on ImageButton star
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_star">"yıldız"</string>
+
+    <!-- String describing the image on ImageButton zero
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_zero">"sıfır"</string>
+
+    <!-- String describing the image on ImageButton pound
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_image_button_pound">"pound"</string>
+
+    <!-- String describing the image on ImageButton plus
+
+         Used by AccessibilityService to announce the purpose of the button.
+    -->
+
+    <!-- String describing the Search ImageButton
+
+         Used by AccessibilityService to announce the purpose of the button.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_search_button">"ara"</string>
+
+    <!-- String describing the Dial ImageButton
+
+         Used by AccessibilityService to announce the purpose of the button.
+    -->
+    <string name="description_dial_button">"çevir"</string>
+
+    <!-- String describing the digits text box containing the number to dial.
+
+         Used by AccessibilityService to announce the purpose of the view.
+    -->
+    <string name="description_digits_edittext">"çevrilecek numara"</string>
+
+    <!-- String describing the button in the voicemail playback to start/stop playback.
+
+         Used by AccessibilityService to announce the purpose of the view.
+    -->
+    <string name="description_playback_start_stop">"Oynatmayı başlat veya durdur"</string>
+
+    <!-- String describing the button in the voicemail playback to switch on/off speakerphone.
+
+         Used by AccessibilityService to announce the purpose of the view.
+    -->
+    <string name="description_playback_speakerphone">"Hoperlörü aç veya kapat"</string>
+
+    <!-- String describing the seekbar in the voicemail playback to seek playback position.
+
+         Used by AccessibilityService to announce the purpose of the view.
+    -->
+    <string name="description_playback_seek">"Oynatma konumunu ayarla"</string>
+
+    <!-- String describing the button in the voicemail playback to decrease playback rate.
+
+         Used by AccessibilityService to announce the purpose of the view.
+    -->
+    <string name="description_rate_decrease">"Oynatma hızını azalt"</string>
+
+    <!-- String describing the button in the voicemail playback to increase playback rate.
+
+         Used by AccessibilityService to announce the purpose of the view.
+    -->
+    <string name="description_rate_increase">"Oynatma hızını artır"</string>
+
+    <!-- Content description for the fake action menu button that brings up the call history
+         activity -->
+    <string name="action_menu_call_history_description">"Çağrı Geçmişi"</string>
+
+    <!-- Content description for the fake action menu overflow button.
+         This should be same as the description for the real action menu
+         overflow button available in ActionBar.
+         [CHAR LIMIT=NONE] -->
+    <string name="action_menu_overflow_description" msgid="2295659037509008453">"Diğer seçenekler"</string>
+
+    <!-- Content description for the button that displays the dialpad
+         [CHAR LIMIT=NONE] -->
+    <string name="action_menu_dialpad_button">"tuş takımı"</string>
+
+    <!-- Menu item to copy something [CHAR_LIMIT=10] -->
+    <string name="menu_copy">"Kopyala"</string>
+
+    <!-- Menu item used to show only outgoing in the call log. [CHAR LIMIT=30] -->
+    <string name="menu_show_outgoing_only">"Yalnızca gidenleri göster"</string>
+
+    <!-- Menu item used to show only incoming in the call log. [CHAR LIMIT=30] -->
+    <string name="menu_show_incoming_only">"Yalnızca gelenleri göster"</string>
+
+    <!-- Menu item used to show only missed in the call log. [CHAR LIMIT=30] -->
+    <string name="menu_show_missed_only">"Yalnızca cevapsızları göster"</string>
+
+    <!-- Menu item used to show only voicemails in the call log. [CHAR LIMIT=30] -->
+    <string name="menu_show_voicemails_only">"Yalnızca sesli msajları göster"</string>
+
+    <!-- Menu item used to show all calls in the call log. [CHAR LIMIT=30] -->
+    <string name="menu_show_all_calls">"Tüm çağrıları göster"</string>
+
+    <!-- Menu items for dialpad options as part of Pause and Wait ftr [CHAR LIMIT=30] -->
+    <string name="video_call">"Video görüşmesi"</string>
+    <string name="menu_add_to_4g_conference_call">4G konferans aramasına ekle</string>
+    <string name="menu_4g_conference_call">4G konferans araması</string>
+    <string name="add_contact">"Rehbere ekle"</string>
+    <string name="add_2sec_pause">"2 saniyelik duraklama ekle"</string>
+    <string name="add_wait">"Bekleme ekle"</string>
+
+    <!-- Menu item to select account used to make phone calls [CHAR LIMIT=30] -->
+    <string name="menu_select_account">"Hesap Seç"</string>
+
+    <!-- Label for the dialer app setting page [CHAR LIMIT=30]-->
+    <string name="dialer_settings_label">"Ayarlar"</string>
+
+    <!-- Menu item to create a new contact [CHAR LIMIT=30] -->
+    <string name="menu_newContact">"Yeni kişi"</string>
+
+    <!-- Menu item to display all contacts [CHAR LIMIT=30] -->
+    <string name="menu_allContacts">"Tüm kişiler"</string>
+
+    <!-- Title bar for call detail screen -->
+    <string name="callDetailTitle">"Çağrı ayrıntıları"</string>
+
+    <!-- Toast for call detail screen when couldn\'t read the requested details -->
+    <string name="toast_call_detail_error">"İstenen çağrı için ayrıntılar okunamadı."</string>
+
+    <!-- Item label: jump to the in-call DTMF dialpad.
+         (Part of a list of options shown in the dialer when another call
+         is already in progress.) -->
+    <string name="dialer_useDtmfDialpad">"Telefon tuş takımını kullan"</string>
+
+    <!-- Item label: jump to the in-call UI.
+         (Part of a list of options shown in the dialer when another call
+         is already in progress.) -->
+    <string name="dialer_returnToInCallScreen">"Çağrıya dön"</string>
+
+    <!-- Item label: use the Dialer\'s dialpad to add another call.
+         (Part of a list of options shown in the dialer when another call
+         is already in progress.) -->
+    <string name="dialer_addAnotherCall">"Çağrı ekle"</string>
+
+    <!-- Title for incoming call details screen -->
+    <string name="type_incoming">"Gelen çağrı"</string>
+
+    <!-- Title for outgoing call details screen -->
+    <string name="type_outgoing">"Giden çağrı"</string>
+
+    <!-- Title for missed call details screen -->
+    <string name="type_missed">"Cevapsız çağrı"</string>
+
+    <!-- Title for incoming video call in call details screen [CHAR LIMIT=60] -->
+    <string name="type_incoming_video">"Gelen video görüşmesi isteği"</string>
+
+    <!-- Title for outgoing video call in call details screen [CHAR LIMIT=60] -->
+    <string name="type_outgoing_video">"Giden video görüşmesi isteği"</string>
+
+    <!-- Title for missed video call in call details screen [CHAR LIMIT=60] -->
+    <string name="type_missed_video">"Cevapsız video görüşmesi isteği"</string>
+
+    <!-- Title for incoming 4G voice call in call details screen [CHAR LIMIT=60] -->
+    <string name="type_incoming_volte">Gelen 4G sesli araması</string>
+
+    <!-- Title for outgoing 4G voice call in call details screen [CHAR LIMIT=60] -->
+    <string name="type_outgoing_volte">Giden 4G sesli araması</string>
+
+    <!-- Title for missed 4G voice call in call details screen [CHAR LIMIT=60] -->
+    <string name="type_missed_volte">Cevapsız 4G sesli araması</string>
+
+    <!-- Title for voicemail details screen -->
+    <string name="type_voicemail">"Sesli mesaj"</string>
+
+    <!-- Description for incoming calls going to voice mail vs. not -->
+    <string name="actionIncomingCall">"Gelen çağrılar"</string>
+
+    <!-- String describing the icon in the call log used to play a voicemail.
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_call_log_play_button">"Sesli mesajı oynat"</string>
+
+    <!-- String describing the button to view the contact for the current number.
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_view_contact">"Kişiyi görüntüle: <xliff:g id="NAME">%1$s</xliff:g>"</string>
+
+    <!-- String describing the button to call a number or contact.
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_call">"Sesli arama yap: <xliff:g id="NAME">%1$s</xliff:g>"</string>
+
+    <!-- String describing the button to access the contact details for a name or number.
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_contact_details">"<xliff:g id="NAMEORNUMBER">%1$s</xliff:g> için kişi ayrıntıları"</string>
+
+    <!-- String indicating a call log entry has an associated voicemail.
+
+    Note: AccessibilityServices use this attribute to announce what the view represents.
+          This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_new_voicemail">"Yeni sesli mesaj."</string>
+
+    <!-- String indicating the number of calls to/from a caller in the call log.
+
+    Note: AccessibilityServices use this attribute to announce what the view represents.
+          This is especially valuable for views without textual representation like ImageView.
+    -->
+    <string name="description_num_calls">"<xliff:g id="NUMBEROFCALLS">%1$s</xliff:g> çağrı."</string>
+
+    <!-- String indicating a call log entry had video capabilities.
+
+    Note: AccessibilityServices use this attribute to announce what the view represents.
+          This is especially valuable for views without textual representation like ImageView.
+          [CHAR LIMIT=NONE]
+    -->
+    <string name="description_video_call">"Video görüşmesi."</string>
+
+    <!-- String describing the button to SMS a number or contact.
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+              [CHAR LIMIT=NONE]
+    -->
+    <string name="description_send_text_message">"Şu kişiye kısa mesaj gönder: <xliff:g id="NAME">%1$s</xliff:g>"</string>
+
+    <!-- String describing the icon in the call log used to represent an unheard voicemail left to
+         the user.
+
+        Note: AccessibilityServices use this attribute to announce what the view represents.
+              This is especially valuable for views without textual representation like ImageView.
+              [CHAR LIMIT=NONE]
+    -->
+    <string name="description_call_log_unheard_voicemail">"Dinlenilmemiş sesli mesaj"</string>
+
+    <!-- String describing the icon used to start a voice search -->
+    <string name="description_start_voice_search">"Sesli arama başlat"</string>
+
+    <!-- Menu item used to call a contact, containing the number of the contact to call -->
+    <string name="menu_callNumber">"Çağrı yap: <xliff:g id="NUMBER">%s</xliff:g>"</string>
+
+    <!-- String used to display calls from unknown numbers in the call log -->
+    <string name="unknown">"Bilinmiyor"</string>
+
+    <!-- String used for displaying calls to the voicemail number in the call log -->
+    <string name="voicemail">"Sesli Mesaj"</string>
+
+    <!-- String used to display calls from private numbers in the call log -->
+    <string name="private_num">"Özel numara"</string>
+
+    <!-- String used to display calls from pay phone in the call log -->
+    <string name="payphone">"Ankesörlü telefon"</string>
+
+    <!-- Displayed in the text entry box in the dialer when in landscape mode to guide the user
+         to dial using the physical keyboard -->
+    <string name="dialerKeyboardHintText">"Çevirmek için klavyeyi kullan"</string>
+
+    <!-- Hint text displayed in the "digits" field above the dialer\'s
+         dialpad, if there\'s already a call in progress.  (This hint
+         reminds the user that the dialer will add a new call, as opposed
+         to sending DTMF tones over the current call.)
+         [CHAR LIMIT=40] -->
+    <string name="dialerDialpadHintText">"Arama eklemek için çevir"</string>
+
+    <!-- A nicely formatted call duration displayed when viewing call details. For example "42 mins 28 secs" -->
+    <string name="callDetailsDurationFormat">"<xliff:g id="MINUTES">%s</xliff:g> dak <xliff:g id="SECONDS">%s</xliff:g> sn"</string>
+
+    <string name="call_duration_active">Etkin süre:</string>
+    <string name="call_duration_call_out">Arama süresi:</string>
+
+    <!-- Dialog message which is shown when the user tries to make a phone call
+         to prohibited phone numbers [CHAR LIMIT=NONE] -->
+    <string name="dialog_phone_call_prohibited_message" msgid="4313552620858880999">"Çağrı yapılamadı"</string>
+
+    <!-- Dialog message which is shown when the user tries to check voicemail
+         while the system isn\'t ready for the access. [CHAR LIMIT=NONE] -->
+    <string name="dialog_voicemail_not_ready_message">"Sesli mesajı yapılandırmak için Menü &gt; Ayarlar\'a gidin."</string>
+
+    <string name="is_set_voicemail_number">Sesli mesaj numarası ayarlanmadı, şimdi ayarlansın mı?</string>
+
+    <!-- Dialog message which is shown when the user tries to check voicemail
+         while the system is in airplane mode. The user cannot access to
+         voicemail service in Airplane mode. [CHAR LIMI=NONE] -->
+    <string name="dialog_voicemail_airplane_mode_message">"Sesli mesaja çağrı yapmak için öncelikle Uçak modunu kapatın."</string>
+
+    <!-- Message that appears in the favorites tab of the Phone app when the contact list has not fully loaded yet (below the favorite and frequent contacts) [CHAR LIMIT=20] -->
+    <string name="contact_list_loading">"Yükleniyor..."</string>
+
+    <!-- The title of a dialog that displays the IMEI of the phone -->
+    <string name="imei">"IMEI"</string>
+
+    <!-- The title of a dialog that displays the MEID of the CDMA phone -->
+    <string name="meid">"MEID"</string>
+
+    <!-- Dialog text displayed when loading a phone number from the SIM card for speed dial -->
+    <string name="simContacts_emptyLoading">"SIM karttan yükleniyor..."</string>
+
+    <!-- Dialog title displayed when loading a phone number from the SIM card for speed dial -->
+    <string name="simContacts_title">"SIM kart kişileri"</string>
+
+    <!-- Message displayed when there is no application available to handle the add contact menu option. [CHAR LIMIT=NONE] -->
+    <string name="add_contact_not_available">"Bu özelliği kullanmak için Kişiler uygulamasını yeniden etkinleştirin."</string>
+
+    <!-- Message displayed when there is no application available to handle voice search. [CHAR LIMIT=NONE] -->
+    <string name="voice_search_not_available">"Sesli arama kullanılamıyor."</string>
+
+    <!-- Message displayed when the Phone application has been disabled and a phone call cannot
+         be made. [CHAR LIMIT=NONE] -->
+    <string name="call_not_available">"Telefon uygulaması devre dışı bırakıldığından telefon edilemiyor."</string>
+
+    <!-- Message displayed when there is no application available to handle a particular action.
+         [CHAR LIMIT=NONE] -->
+    <string name="activity_not_available">"Seçilen işlemi gerçekleştirmek için kullanılabilir yüklü etkinlik yok."</string>
+
+    <!-- Hint displayed in dialer search box when there is no query that is currently typed.
+         [CHAR LIMIT=30] -->
+    <string name="dialer_hint_find_contact">"Ad veya telefon numarası yazın"</string>
+
+    <!-- String resource for the font-family to use for the call log activity\'s title
+         Do not translate. -->
+    <string name="call_log_activity_title_font_family">sans-serif-light</string>
+
+    <!-- String resource for the font-family to use for the full call history footer
+         Do not translate. -->
+    <string name="view_full_call_history_font_family">sans-serif</string>
+
+    <!-- Text displayed when the list of missed calls is empty -->
+    <string name="recentMissed_empty">"Yakın zamanda cevapsız çağrınız yok."</string>
+
+    <!-- Text displayed when the list of voicemails is empty -->
+    <string name="recentVoicemails_empty">"Yakın zamanda sesli mesajınız yok."</string>
+
+    <!--  Menu option to show favorite contacts only -->
+    <string name="show_favorites_only">"Yalnızca favori kişileri göster"</string>
+
+    <!--  Title of activity that displays a list of all calls -->
+    <string name="call_log_activity_title">"Geçmiş"</string>
+
+    <!-- Title for the call log tab containing the list of all voicemails and calls
+         [CHAR LIMIT=30] -->
+    <string name="call_log_all_title">"Tümü"</string>
+
+    <!-- Title for the call log tab containing the list of all missed calls only
+         [CHAR LIMIT=30] -->
+    <string name="call_log_missed_title">"Cevapsız"</string>
+
+    <!-- Title for the call log tab containing the list of all voicemail calls only
+         [CHAR LIMIT=30] -->
+    <string name="call_log_voicemail_title">"Sesli Mesaj"</string>
+
+    <string name="select_account_dialog_title">"Hesap Seç"</string>
+
+    <string name="tab_speed_dial">"Hızlı Arama"</string>
+
+    <string name="tab_recents">"Son Kişiler"</string>
+
+    <string name="tab_all_contacts">"Kişiler"</string>
+
+    <!--  Text displayed when user swipes out a favorite contact -->
+    <string name="favorite_hidden">"Favorilerden kaldırıldı"</string>
+    <!--  Text displayed for the undo button to undo removing a favorite contact -->
+    <string name="favorite_hidden_undo">"Geri al"</string>
+
+    <!-- Shortcut item used to call a number directly from search -->
+    <string name="search_shortcut_call_number">"Telefon et: <xliff:g id="NUMBER">%s</xliff:g>"</string>
+
+    <!-- Shortcut item used to add a number directly from search -->
+    <string name="search_shortcut_add_to_contacts">"Kişilere ekle"</string>
+
+    <!-- Shortcut item used to make a video call directly from search. -->
+    <string name="search_shortcut_make_video_call">"Video görüşmesi yap"</string>
+
+    <!-- Title for the recent calls footer that brings users to the full call history when clicked -->
+    <string name="recents_footer_text">"Tüm çağrı geçmişini görüntüle"</string>
+
+    <!-- Number of missed calls shown on call card [CHAR LIMIT=40] -->
+    <string name="num_missed_calls">"<xliff:g id="NUMBER">%s</xliff:g> yeni cevapsız çağrı"</string>
+
+    <!-- Shown when there are no speed dial favorites. -->
+    <string name="speed_dial_empty">"Hızlı arama, sık telefon ettiğiniz \nfavori kişilerinizi ve numaralarınızı\ntek dokunuşla aramaktır."</string>
+
+    <!-- Shown when there are no contacts in the all contacts list. -->
+    <string name="all_contacts_empty">"Kişiniz yok."</string>
+
+    <!-- Shows up as a tooltip to provide a hint to the user that the profile pic in a contact
+         card can be tapped to bring up a list of all numbers, or long pressed to start reordering
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="contact_tooltip">"Tüm numaraları görmek için resme hafifçe vurun veya yeniden sıralamak için basılı tutun"</string>
+
+    <!-- Content description for dismiss button on badge. [CHAR LIMIT=NONE] -->
+    <string name="description_dismiss">"Kapat"</string>
+
+    <!-- Remove button that shows up when contact is long-pressed. [CHAR LIMIT=NONE] -->
+    <string name="remove_contact">"Kaldır"</string>
+
+    <!-- Button text for the "all contacts" button displayed on the main dialer screen above the
+         list of favorite phone numbers.  Navigates the user to the "All Contacts" list.
+         This text represents the same action as the text in string "menu_allContacts".
+         [CHAR LIMIT=21] -->
+    <string name="favorites_menu_all_contacts">"TÜM KİŞİLER"</string>
+
+    <!-- Button text for the "call back" button displayed underneath an entry in the call log.
+         Tapping causes a call to be placed to the caller represented by the call log entry.
+         [CHAR LIMIT=30] -->
+    <string name="call_log_action_call_back">"GERİ ARA"</string>
+
+    <!-- Button text for the "video call" button displayed underneath an entry in the call log.
+         Tapping causes a video call to be placed to the caller represented by the call log entry.
+         [CHAR LIMIT=30] -->
+    <string name="call_log_action_video_call">"VİDEO GÖRÜŞMESİ"</string>
+
+    <!-- Button text for the "LISTEN" button displayed underneath an entry in the call log.
+         Tapping navigates the user to the call details screen where the user can listen to the
+         voicemail represented by the call log entry.
+         [CHAR LIMIT=30] -->
+    <string name="call_log_action_voicemail">"DİNLE"</string>
+
+    <!-- Button text for the "DETAILS" button displayed underneath an entry in the call log.
+         Tapping navigates the user to the call details screen where the user can view details for
+         the call log entry.
+         [CHAR LIMIT=30] -->
+    <string name="call_log_action_details">"AYRINTILAR"</string>
+
+    <!-- String describing an incoming missed call entry in the call log.
+         Note: AccessibilityServices uses this attribute to announce what the view represents.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_incoming_missed_call">"Cevapsız çağrı: <xliff:g id="NAMEORNUMBER">%1$s</xliff:g>, <xliff:g id="TYPEORLOCATION">%2$s</xliff:g>, <xliff:g id="TIMEOFCALL">%3$s</xliff:g>."</string>
+
+    <!-- String describing an incoming answered call entry in the call log.
+         Note: AccessibilityServices uses this attribute to announce what the view represents.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_incoming_answered_call">"Yanıtlanan çağrı: <xliff:g id="NAMEORNUMBER">%1$s</xliff:g>, <xliff:g id="TYPEORLOCATION">%2$s</xliff:g>, <xliff:g id="TIMEOFCALL">%3$s</xliff:g>."</string>
+
+    <!-- String describing an outgoing call entry in the call log.
+         Note: AccessibilityServices uses this attribute to announce what the view represents.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_outgoing_call">"Aranan numara: <xliff:g id="NAMEORNUMBER">%1$s</xliff:g>, <xliff:g id="TYPEORLOCATION">%2$s</xliff:g>, <xliff:g id="TIMEOFCALL">%3$s</xliff:g>."</string>
+
+    <!-- String describing the "call back" action for an entry in the call log.  The call back
+         action triggers a return call to the named user.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_call_back_action">"Geri ara: <xliff:g id="NAMEORNUMBER">%1$s</xliff:g>"</string>
+
+    <!-- String describing the "video call" action for an entry in the call log.  The video call
+         action triggers a return video call to the named person/number.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_video_call_action">"<xliff:g id="NAMEORNUMBER">%1$s</xliff:g> olarak kayıtlı kişiye video görüşmesi isteğinde bulun."</string>
+
+    <!-- String describing the "listen" action for an entry in the call log.  The listen
+         action is shown for call log entries representing a voicemail message and this button
+         triggers playing back the voicemail.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_voicemail_action">"Şu numaradan gelen sesli mesajı dinle: <xliff:g id="NAMEORNUMBER">%1$s</xliff:g>"</string>
+
+    <!-- String describing the "details" action for an entry in the call log.  The details action
+         displays the call details screen for an entry in the call log.  This shows the calls to
+         and from the specified number associated with the call log entry.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_details_action">"<xliff:g id="NAMEORNUMBER">%1$s</xliff:g> için çağrı ayrıntıları"</string>
+
+    <!-- Toast message which appears when a call log entry is deleted.
+         [CHAR LIMIT=NONE] -->
+    <string name="toast_entry_removed">"Çağrı kaydı girişi silindi."</string>
+
+    <!-- Toast message which appears when a call log contact is reported.
+         [CHAR LIMIT=NONE] -->
+    <string name="toast_caller_id_reported">"Kişi bildirildi."</string>
+
+    <!-- Button text for the "report" button displayed underneath an entry in the call log.
+         Tapping causes the call log entry to be reported to Google as a bad id.
+         [CHAR LIMIT=30] -->
+    <string name="call_log_action_report">"BİLDİR"</string>
+
+    <!-- String used as a header in the call log above calls which occurred today.
+         [CHAR LIMIT=65] -->
+    <string name="call_log_header_today">"Bugün"</string>
+
+    <!-- String used as a header in the call log above calls which occurred yesterday.
+         [CHAR LIMIT=65] -->
+    <string name="call_log_header_yesterday">"Dün"</string>
+
+    <!-- String used as a header in the call log above calls which occurred two days or more ago.
+         [CHAR LIMIT=65] -->
+    <string name="call_log_header_other">"Daha eski"</string>
+
+    <!-- String a header on the call details screen.  Appears above the list calls to or from a
+         particular number.
+         [CHAR LIMIT=65] -->
+    <string name="call_detail_list_header">"Çağrı Listesi"</string>
+
+    <!-- String describing the "speaker on" button on the playback control used to listen to a
+         voicemail message.  When speaker is on, playback of the voicemail will occur through the
+         phone speaker.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="voicemail_speaker_on">"Hoparlörü açın."</string>
+
+    <!-- String describing the "speaker off" button on the playback control used to listen to a
+         voicemail message.  When speaker is off, playback of the voicemail will occur through the
+         phone earpiece.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="voicemail_speaker_off">"Hoparlörü kapatın."</string>
+
+    <!-- String describing the "play faster" button in the playback control used to listen to a
+         voicemail message.  Speeds up playback of the voicemail message.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="voicemail_play_faster">"Daha hızlı çalın."</string>
+
+    <!-- String describing the "play slower" button in the playback control used to listen to a
+         voicemail message.  Slows down playback of the voicemail message.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="voicemail_play_slower">"Daha yavaş çalın."</string>
+
+    <!-- String describing the "play/pause" button in the playback control used to listen to a
+         voicemail message.  Starts playback or pauses ongoing playback.
+         Note: AccessibilityServices uses this attribute to announce the purpose of the button.
+         [CHAR LIMIT=NONE] -->
+    <string name="voicemail_play_start_pause">"Çalmayı başlatın veya duraklatın."</string>
+
+    <!-- Delimeter used between each item in a textual list; for example "Alpha, Beta".
+         [CHAR LIMIT=3] -->
+    <string name="list_delimeter">", "</string>
+
+    <!-- Dialer settings related strings-->
+
+    <!-- Label for the general dialer settings section [CHAR LIMIT=30]-->
+    <string name="general_settings_label">"Genel ayarlar"</string>
+
+    <!-- Label for the general dialer settings section description [CHAR LIMIT=80]-->
+    <string name="general_settings_description">"Kişi görüntüleme, sesler ve hızlı yanıtlar"</string>
+
+    <!-- Title for "Contact display options" category, which is shown above options which
+         manipulate how contacts are shown. [CHAR LIMIT=40] -->
+    <string name="contact_display_options_category_title">"Kişi görüntüleme seçenekleri"</string>
+
+    <!-- Title for the category "sounds", which is shown above sounds and vibration related
+         settings. [CHAR LIMIT=30] -->
+    <string name="sounds_and_vibrate_category_title">"Sesler ve titreşim"</string>
+
+    <!-- Setting option name to pick ringtone (a list dialog comes up). [CHAR LIMIT=30] -->
+    <string name="ringtone_title">"Telefon zil sesi"</string>
+
+    <!-- Setting option name to enable or disable vibration when ringing the phone.
+         [CHAR LIMIT=30] -->
+    <string name="vibrate_on_ring_title">"Çağrılarda ayrıca titret"</string>
+
+    <!-- Setting option name to enable or disable DTMF tone sound [CHAR LIMIT=30] -->
+    <string name="dtmf_tone_enable_title">"Tuş takımı tonları"</string>
+
+    <!-- Label for section of general call settings where miscellaneous settings are listed. -->
+    <string name="other_settings_title">"Diğer"</string>
+
+    <!-- Title of settings screen for managing the "Respond via SMS" feature. [CHAR LIMIT=30] -->
+    <string name="respond_via_sms_setting_title">"Hızlı yanıtlar"</string>
+
+    <!-- Label for the call settings section [CHAR LIMIT=30]-->
+    <string name="call_settings_label">"Çağrı ayarları"</string>
+
+    <!-- Label for the call settings section description [CHAR LIMIT=80]-->
+    <string name="call_settings_description">"Sesli mesaj, çağrı bekletme ve diğerleri"</string>
+
+    <string name="device_id">Cihaz Kimliği</string>
+
+    <string name="call_log_show_all_slots">Tüm SIMler</string>
+    <string name="call_log_all_calls_header">Tüm aramalar</string>
+    <string name="calllog_search_hint">"Arama kaydını ara"</string>
+
+    <string name="add_to_white_list">Beyaz listeye ekle</string>
+    <string name="add_to_black_list">Kara listeye ekle</string>
+    <string name="dialog_title">İpucu</string>
+    <string name="firewall_number_len_not_valid">Numara yanlış</string>
+    <string name="firewall_number_in_black">"Numara zaten kara listede"</string>
+    <string name="firewall_number_in_white">"Numara zaten beyaz listede"</string>
+    <string name="firewall_save_success">Başarıyla kaydedildi</string>
+    <string name="firewall_add_blacklist_warning">Bu numarayı kara listeye eklerseniz bu numaradan mesaj ve arama alamazsınız</string>
+
+    <string name="set_speed_dial">Hızlı çevirme ayarları</string>
+    <string name="input_number">Numarayı Girin</string>
+    <string name="speed_dial_cancel">"İptal"</string>
+    <string name="speed_dial_ok">"Tamam"</string>
+</resources>

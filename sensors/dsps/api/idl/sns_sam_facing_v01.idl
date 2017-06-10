@@ -1,0 +1,257 @@
+/*****************************************************************************
+  @FILE     sns_sam_facing.idl
+
+  @BRIEF    Message definition for Facing.
+
+  @DESCRIPTION
+  This file defines Facing messages used by Facing algo services,
+
+  As prerequisite, the sensor algorithm must use the common Interface
+  defined in the Sensor Algorithms framework.
+
+  The messages defined herein will be passed to the Sensor framework using
+  the sensor1_write() API.
+
+  @COPYRIGHT
+  Copyright (c) 2011-2014 Qualcomm Technologies, Inc.  All Rights Reserved
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+include "sns_sam_common_v01.idl";
+
+revision 4;
+
+const SNS_SAM_FACING_SUID = 0x117bd2eb23d526dd;
+
+/* ENUMs are for reference only, uint8 is used instead */
+
+//! @ENUM   SNS_SAM_FACING_EVENT_ENUM
+enum {
+  FACING_UP      = 1,
+  /**< Phone has just moved to a facing-up phone posture, which is defined as screen up. */
+  FACING_DOWN    = 2,
+  /**< Phone has just moved to a facing-down phone posture, which is defined as screen down. */
+  FACING_NEUTRAL = 3
+  /**< Phone has just left either the facing-up or the facing-down phone posture. */
+} sns_sam_facing_event_e;
+
+/* Following are message definitions shared by all Facing-related services */
+
+//============================================================================
+/** @COMMAND SNS_SAM_FACING_ENABLE
+    @BRIEF This command enables a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_FACING_ENABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint32 report_period;
+  /**< Reporting period in seconds; Q16 format. A value of 0 means reporting is on new events only. */
+  optional uint32 sample_rate;
+  /**< Sample rate in Hz; Q16 format. */
+  optional int32 facing_angle_threshold;
+  /**< Facing angle threshold in radians; Q16 format. */
+  optional int32 report_neutral;
+  /**< Flag to indicate whether the Neutral state is to be reported. */
+  //! @VERSION 1.2
+  optional sns_suspend_notification_s notify_suspend;
+  /**< Identifies whether indications for this request are to be sent
+       when the processor is in the Suspend state.
+
+       If this field is not specified, the default value is set to:
+       notify_suspend->proc_type                  = SNS_PROC_APPS
+       notify_suspend->send_indications_during_suspend  = FALSE
+
+       This field does not have any bearing on error indication
+       messages, which are sent even during Suspend.
+    */
+} sns_sam_facing_enable_req_msg;
+
+//! @MSG     SNS_SAM_FACING_ENABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  /**< Common response message. */
+  optional uint8                             instance_id;
+  /**<
+    Instance ID, which is maintained/assigned by the SAM.
+    The client must use this instance ID for future messages associated with
+    the current algorithm instance.
+  */
+} sns_sam_facing_enable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_FACING_DISABLE
+    @BRIEF This command disables a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_FACING_DISABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Identifies the algorithm instance.  */
+} sns_sam_facing_disable_req_msg;
+
+//! @MSG     SNS_SAM_FACING_DISABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  /**< Common response message. */
+  optional uint8                             instance_id;
+  /**< Identifies the algorithm instance.  */
+} sns_sam_facing_disable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_FACING_REPORT
+    @BRIEF Output report from a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_FACING_REPORT_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Identifies the algorithm instance.  */
+  mandatory uint32                           timestamp;
+  /**< Timestamp of the input that caused this indication; in SSC ticks */
+  mandatory sns_sam_facing_event_e    state;
+  /**< Facing state. */
+} sns_sam_facing_report_ind_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_FACING_GET_REPORT
+    @BRIEF This command fetches latest report output from a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_FACING_GET_REPORT_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Identifies the algorithm instance.  */
+} sns_sam_facing_get_report_req_msg;
+
+//! @MSG     SNS_SAM_FACING_GET_REPORT_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  /**< Common response message. */
+  optional uint8                             instance_id;
+  /**< Identifies the algorithm instance.  */
+  optional uint32                            timestamp;
+  /**< Timestamp at which this report is generated; in SSC ticks */
+  optional sns_sam_facing_event_e   state;
+  /**< Facing state. */
+} sns_sam_facing_get_report_resp_msg;
+
+//============================================================================
+/** @COMMAND SNS_SAM_FACING_ERROR
+    @BRIEF Asynchronous error report from a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_FACING_ERROR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//============================================================================
+
+message {
+  mandatory uint8                            error;
+  /**< Sensors error code. */
+  mandatory uint8                            instance_id;
+  /**< Identifies the algorithm instance.  */
+} sns_sam_facing_error_ind_msg;
+
+//============================================================================
+/** @COMMAND SNS_SAM_FACING_CANCEL
+    @BRIEF This command cancels all requests to the algorithm service.
+*/
+//============================================================================
+
+//============================================================================
+/** @COMMAND SNS_SAM_FACING_VERSION
+    @BRIEF This command requests algorithm service version.
+*/
+//============================================================================
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_SAM_FACING_SVC {
+  //! @ID SNS_SAM_FACING_CANCEL
+  sns_common_cancel_req_msg        SNS_SAM_FACING_CANCEL_REQ,
+  sns_common_cancel_resp_msg       SNS_SAM_FACING_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_SAM_FACING_VERSION
+  sns_common_version_req_msg       SNS_SAM_FACING_VERSION_REQ,
+  sns_common_version_resp_msg      SNS_SAM_FACING_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SAM_FACING_ENABLE
+  sns_sam_facing_enable_req_msg       SNS_SAM_FACING_ENABLE_REQ,
+  sns_sam_facing_enable_resp_msg      SNS_SAM_FACING_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_SAM_FACING_DISABLE
+  sns_sam_facing_disable_req_msg      SNS_SAM_FACING_DISABLE_REQ,
+  sns_sam_facing_disable_resp_msg     SNS_SAM_FACING_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_SAM_FACING_GET_REPORT
+  sns_sam_facing_get_report_req_msg   SNS_SAM_FACING_GET_REPORT_REQ,
+  sns_sam_facing_get_report_resp_msg  SNS_SAM_FACING_GET_REPORT_RESP
+    = 0x04;
+
+  //! @ID SNS_SAM_FACING_REPORT
+  sns_sam_facing_report_ind_msg       SNS_SAM_FACING_REPORT_IND
+    = 0x05;
+
+  //! @ID SNS_SAM_FACING_ERROR
+  sns_sam_facing_error_ind_msg        SNS_SAM_FACING_ERROR_IND
+    = 0x06;
+
+  //! @ID SNS_SAM_GET_ALGO_ATTRIBUTES
+  sns_sam_get_algo_attrib_req_msg     SNS_SAM_FACING_GET_ATTRIBUTES_REQ,
+  sns_sam_get_algo_attrib_resp_msg    SNS_SAM_FACING_GET_ATTRIBUTES_RESP
+    = 0x24;
+
+} = SNS_QMI_SVC_ID_27;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+*/
+
+//============================================================================
+// End of Module
+//============================================================================
+

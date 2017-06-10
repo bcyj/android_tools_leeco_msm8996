@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2013-2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution.
+ * Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- used in various places to indicate there is one song for a given artist or album -->
+    <string name="onesong">1 పాట</string>
+    <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
+    <plurals name="Nsongs">
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> పాటలు</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other"><xliff:g id="count_for_artist">%1$dలో %2$d</xliff:g> పాటలు<xliff:g id="total_count"/></item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+        <!-- number of albums is one -->
+        <item quantity="one">1 ఆల్బమ్</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ఆల్బమ్‌లు</item>
+    </plurals>
+
+    <!--
+    This string is used as the format string in a String.format call,
+    and 5 additional arguments are available for printing:
+    1 - hours
+    2 - minutes
+    3 - minutes%60
+    4 - seconds
+    5 - second%60
+    -->
+    <skip/>
+    <!-- Do not translate. Duration format for duration < 1 hour -->
+    <string translatable="false" name="durationformatshort"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    <!-- Do not translate. Duration format for duration >= 1 hour -->
+    <string translatable="false" name="durationformatlong"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    <!-- Menu item that takes the user back to the top level screen of the music player -->
+    <string name="goto_start">గ్రంథాలయం</string>
+    <!-- Menu item that switches the music player in to party shuffle mode -->
+    <string name="party_shuffle">పార్టీ కలిపివేత</string>
+    <!-- Menu item that switches the music player out of party shuffle mode -->
+    <string name="party_shuffle_off">పార్టీ కలిపివేత ఆఫ్‌లో ఉంది</string>
+    <!-- Menu item that clear all playlists mode -->
+    <string name="clear_all_playlists">అన్ని ప్లేజాబితాలను క్లియర్ చేయి</string>
+    <!-- Menu item that deletes the currently selected item, which might be a single song, or a collection of songs.
+         The user will be prompted to confirm before deletion actually takes place -->
+    <string name="delete_item">తొలగించు</string>
+    <!-- Menu item to play back all the songs in the currently showing list in shuffle mode -->
+    <string name="shuffle_all">అన్నీ కలిపివేయి</string>
+    <!-- Menu item to play back all the songs in the currently showing list in list order -->
+    <string name="play_all">అన్నీ ప్లే చేయి</string>
+    <!-- Menu item to play song in music -->
+    <string name="open_in_music">సంగీతంలో తెరువు</string>
+    <!-- Menu item to share audio or video -->
+    <string name="share">పంచు</string>
+
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc">SD కార్డ్ నుండి<xliff:g id="artist">%s</xliff:g> యొక్క అన్ని పాటలను శాశ్వతంగా తొలగించాలా?</string>
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc_nosdcard">USB నిల్వ నుండి <xliff:g id="artist">%s</xliff:g> యొక్క అన్ని పాటలను శాశ్వతంగా తొలగించాలా?</string>
+
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc">SD కార్డ్ నుండి మొత్తం ఆల్బమ్ \"<xliff:g id="album">%s</xliff:g>\"ను శాశ్వతంగా తొలగించాలా?</string>
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc_nosdcard">USB నిల్వ నుండి మొత్తం ఆల్బమ్ \"<xliff:g id="album">%s</xliff:g>\"ను శాశ్వతంగా తొలగించాలా?</string>
+
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc">SD కార్డ్ నుండి \"<xliff:g id="song">%s</xliff:g>\"ను శాశ్వతంగా తొలగించాలా?</string>
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc_nosdcard">USB నిల్వ నుండి \"<xliff:g id="song">%s</xliff:g>\"ను శాశ్వతంగా తొలగించాలా?</string>
+
+    <!-- Delete confirmation dialog, confirmation button text -->
+    <string name="delete_confirm_button_text">సరే</string>
+    <!-- Toast confirming that song(s) was/were deleted. -->
+    <plurals name="NNNtracksdeleted">
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">1 పాట తొలగించబడింది.</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> పాటలు తొలగించబడ్డాయి.</item>
+    </plurals>
+
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning">SD కార్డ్‌ను స్కాన్ చేస్తోంది\u2026</string>
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning_nosdcard">USB నిల్వప్రదేశాన్ని స్కాన్ చేస్తోంది\u2026</string>
+
+    <!-- title of the "current playlist" screen when not in party shuffle mode -->
+    <string name="nowplaying_title">ఇప్పుడు ప్లే అవుతున్న</string>
+    <!-- title of the "current playlist" screen when in party shuffle mode-->
+    <string name="partyshuffle_title">పార్టీ కలిపివేత</string>
+    <!-- Artist screen title -->
+    <string name="artists_title">ఆర్టిస్ట్‌లు</string>
+    <!-- Category label on Library screen -->
+    <string name="albums_menu">ఆల్బమ్‌లు</string>
+    <!-- Albums screen title -->
+    <string name="albums_title">ఆల్బమ్‌లు</string>
+    <!-- Category label on Library screen -->
+    <string name="tracks_menu">పాటలు</string>
+    <!-- Songs screen title -->
+    <string name="tracks_title">పాటలు</string>
+    <!-- Category label on Library screen -->
+    <string name="folder_menu">ఫోల్డర్</string>
+    <!-- Folder screen title -->
+    <string name="folders_title">ఫోల్డర్</string>
+    <!-- Category label on Library screen -->
+    <string name="playlists_menu">ప్లేజాబితాలు</string>
+    <!-- Playlists screen title -->
+    <string name="playlists_title">ప్లేజాబితాలు</string>
+    <!-- Videos screen title -->
+    <string name="videos_title">వీడియోలు</string>
+    <!-- All media screen title -->
+    <string name="all_title">మొత్తం మీడియా</string>
+    <!-- Category label on Library screen -->
+    <string name="browse_menu">ఆర్టిస్ట్‌లు</string>
+    <!-- Library screen, menu item -->
+    <string name="search_title">శోధించు</string>
+    <!-- Title of screen when there are no songs, or if the SD card is busy -->
+    <string name="no_tracks_title">పాటలు లేవు</string>
+    <!-- Title of screen when there are no videos, or if the SD card is busy -->
+    <string name="no_videos_title">వీడియోలు లేవు</string>
+    <!-- Title of screen when there are no playlists, or if the SD card is busy -->
+    <string name="no_playlists_title">ప్లేజాబితాలు లేవు</string>
+    <!-- Playlist context menu item to delete the selected playlist. -->
+    <string name="delete_playlist_menu">తొలగించు</string>
+    <!-- Playlist context menu item to edit the selected playlist -->
+    <string name="edit_playlist_menu">సవరించు</string>
+    <!-- Playlist context menu item to rename the selected playlist-->
+    <string name="rename_playlist_menu">పేరుమార్చు</string>
+    <!-- Dialog box message shown when clearing all playlists-->
+    <string name="clear_all_playlists_message">మీరు అన్ని ప్లేజాబితాలను క్లియర్ చేయాలనుకుంటున్నారా?</string>
+    <!-- Dialog box message shown when deleting a playlist-->
+    <string name="delete_playlist_message">మీరు  <xliff:g id="name">%s</xliff:g>  తొలగించాలనుకుంటున్నారా?</string>
+    <!-- Dialog box button -->
+    <string name="delete_playlist_button_ok">OK</string>
+    <string name="delete_playlist_button_cancel">రద్దు చేయి</string>
+    <!-- Transient popup message shown after deleting a playlist -->
+    <string name="playlist_deleted_message">ప్లేజాబితా తొలగించబడింది.</string>
+    <!-- Transient popup message shown after renaming a playlist -->
+    <string name="playlist_renamed_message">ప్లేజాబితా పేరుమార్చబడింది.</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in list view -->
+    <string name="recentlyadded">ఇటీవల జోడించిన</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in title bar of songs list -->
+    <string name="recentlyadded_title">ఇటీవల జోడించిన</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in list view -->
+    <string name="podcasts_listitem">పాడ్‌కాస్ట్‌లు</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in title bar of songs list -->
+    <string name="podcasts_title">పాడ్‌కాస్ట్‌లు</string>
+    <!-- all recordings will show up in the media database in a playlist with thiis name -->
+    <string name="audio_db_playlist_name">నా రికార్డింగ్‌లు</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title">SD కార్డ్ లేదు</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title_nosdcard">USB నిల్వప్రదేశం లేదు</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message">మీ ఫోన్‌లో SD కార్డ్ చొప్పించబడలేదు.</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message_nosdcard">మీ ఫోన్‌లో USB నిల్వ లేదు.</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title">SD కార్డ్ అందుబాటులో లేదు</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title_nosdcard">USB నిల్వను అలభ్యం</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message">మీ SD కార్డ్ బిజీగా ఉంది.</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message_nosdcard">మీ USB నిల్వ బిజీగా ఉంది.</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title">SD కార్డ్ దోషం</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title_nosdcard">USB నిల్వప్రదేశ దోషం</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message">మీ SD కార్డ్‌లో ఒక దోషం ఏర్పడింది.</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message_nosdcard">మీ USB నిల్వప్రదేశంలో ఒక దోషం ఏర్పడింది.</string>
+    <!-- Default name of artist that doesn\'t have a name in the metadata -->
+    <string name="unknown_artist_name">గుర్తుతెలియని ఆర్టిస్ట్</string>
+    <!-- Default name of album that doesn\'t have a name in the metadata -->
+    <string name="unknown_album_name">గుర్తుతెలియని ఆల్బమ్</string>
+    <!-- Default name of folder that doesn\'t have a path in the metadata -->
+    <string name="unknown_folder_name">తెలియని పథం</string>
+    <!-- Default name of folder that doesn\'t have a count in the metadata -->
+    <string name="unknown_folder_count">తెలియని గణన</string>
+    <!-- Toast after turning shuffle on -->
+    <string name="shuffle_on_notif">కలిపివేత ఆన్‌లో ఉంది.</string>
+    <!-- Toast after turning shuffle off -->
+    <string name="shuffle_off_notif">కలిపివేత ఆఫ్‌లో ఉంది.</string>
+    <!-- Toast after turning repeat off -->
+    <string name="repeat_off_notif">పునరావృతం ఆఫ్‌లో ఉంది.</string>
+    <!-- Toast after turning single repeat on -->
+    <string name="repeat_current_notif">ప్రస్తుత పాటను పునరావృతం చేస్తోంది.</string>
+    <!-- Toast after turning repeat all on -->
+    <string name="repeat_all_notif">అన్ని పాటలను పునరావృతం చేస్తోంది.</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu">ఫోన్ రింగ్‌టోన్‌గా ఉపయోగించు</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short">రింగ్‌టోన్‌గా ఉపయోగించు</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\"ను ఫోన్ రింగ్‌టోన్‌గా అమర్చు.</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu_1">స్లా. 1 రింగ్‌టోన్‌గా ఉపయో.</string>
+    <string name="ringtone_menu_2">స్లా. 2 రింగ్‌టోన్‌గా ఉపయో.</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short_1">రింగ్‌టోన్ 1గా ఉపయోగించు</string>
+    <string name="ringtone_menu_short_2">రింగ్‌టోన్ 2గా ఉపయోగించు</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_1">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\"ని స్లా. 1 రింగ్‌టో. సె. చే.</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_2">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\"ని స్లా. 2 రింగ్‌టో. సె. చే.</string>
+    <!-- Context menu item -->
+    <string name="play_selection">ప్లే చేయి</string>
+    <!-- Context menu item -->
+    <string name="add_to_playlist">ప్లేజాబితాకు జోడించు</string>
+    <!-- Context menu item -->
+    <string name="queue">ప్రస్తుత ప్లేజాబితా</string>
+    <!-- Context menu item -->
+    <string name="new_playlist">క్రొత్తది</string>
+    <!-- Template for newly created playlist name -->
+    <string name="new_playlist_name_template">కొత్త ప్లేజాబితా <xliff:g id="number">%d</xliff:g></string>
+    <!-- Toasts after adding song(s) to playlists -->
+    <plurals name="NNNtrackstoplaylist">
+        <!-- message shown when one song was added -->
+        <item quantity="one">ప్లేజాబితాకు 1 పాట జోడించబడింది.</item>
+        <!-- message shown when zero or more than one song was added -->
+        <item quantity="other"><xliff:g id="number" example="27">ప్లేజాబితాకు %d</xliff:g> పాటలు జోడించబడ్డాయి.</item>
+    </plurals>
+    <!-- Toast after selecting an empty playlist -->
+    <string name="emptyplaylist">ఎంచుకున్న ప్లేజాబితా ఖాళీగా ఉంది.</string>
+    <!-- Button name when saving a playlist -->
+    <string name="create_playlist_create_text">భద్రపరుచు</string>
+    <!-- Button name when saving a playlist and the new playlist will overwrite an existing one -->
+    <string name="create_playlist_overwrite_text">తిరిగి వ్రాయి</string>
+    <!-- Dialog box title -->
+    <string name="service_start_error_title">ప్లేబ్యాక్ సమస్య</string>
+    <!-- Dialog box message -->
+    <string name="service_start_error_msg">పాటను ప్లే చేయలేరు.</string>
+    <!-- Dialog box button -->
+    <string name="service_start_error_button">సరే</string>
+    <!-- Time span edit options that appear when editing system playlist "Recently added" -->
+    <!-- Used to indicate the number of weeks the "recently added" playlist covers in a selector widget -->
+    <string-array name="weeklist">
+        <item>1 వారం  </item>
+        <item>2 వారాలు</item>
+        <item>3 వారాలు</item>
+        <item>4 వారాలు</item>
+        <item>5 వారాలు</item>
+        <item>6 వారాలు</item>
+        <item>7 వారాలు</item>
+        <item>8 వారాలు</item>
+        <item>9 వారాలు</item>
+        <item>10 వారాలు</item>
+        <item>11 వారాలు</item>
+        <item>12 వారాలు</item>
+    </string-array>
+    <!-- Button name in time span picker -->
+    <string name="weekpicker_set">పూర్తయింది</string>
+    <!-- Title of time span picker -->
+    <string name="weekpicker_title">సమయాన్ని అమర్చు</string>
+    <!-- Do not translate. Background color for currently dragged item in playlist edit mode. -->
+    <color name="dragndrop_background">#e0103010</color>
+    <!-- Do not translate. Background color for albums in the artists list view. -->
+    <color name="expanding_child_background">#ff404040</color>
+
+    <!-- menu item to save the current list as a new playlist -->
+    <string name="save_as_playlist">ప్లేజాబితాగా భద్రపరుచు</string>
+    <!-- menu item to clear the current playlist -->
+    <string name="clear_playlist">ప్లేజాబితాను తొలగించు</string>
+
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicbrowserlabel">సంగీతం</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicshortcutlabel">మ్యూజిక్ ప్లేజాబితా</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediaplaybacklabel">సంగీతం</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="videobrowserlabel">వీడియోలు</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediapickerlabel">సంగీతం</string>
+
+    <!-- Shown as a transient message whenever a file fails to play -->
+    <string name="playback_failed">ప్లేయర్ ఈ రకం ఆడియో ఫైల్‌కు మద్దతు ఇవ్వదు.</string>
+    <!-- Shown as a transient message whenever a file fails to open -->
+    <string name="open_failed">క్షమించండి, ఫైల్‌ను తెరవలేము.</string>
+
+    <!-- Text for the "cancel" button in the "delete" and "create playlist" confirmation dialogs -->
+    <string name="cancel">రద్దు చేయి</string>
+
+    <!-- context menu item to remove the selected item from the playlist -->
+    <string name="remove_from_playlist">ప్లేజాబితా నుంచి తొలగించు</string>
+
+    <!-- shown when connecting to a music stream, before it starts playing -->
+    <string name="streamloadingtext"><xliff:g id="host">%s</xliff:g>కు అనుసంధానిస్తోంది\u2026</string>
+
+    <!-- title of contextual music search menu -->
+    <string name="mediasearch">దీనిని ఉపయోగించి <xliff:g id="term" example="Beethoven">%s</xliff:g>ను శోధించు:</string>
+
+    <!-- Shown in the title bar while the list of artists is being retrieved in the background -->
+    <string name="working_artists">ఆర్టిస్ట్‌లు\u2026</string>
+    <!-- Shown in the title bar while the list of albums is being retrieved in the background -->
+    <string name="working_albums">ఆల్బమ్‌లు\u2026</string>
+    <!-- Shown in the title bar while the list of songs is being retrieved in the background -->
+    <string name="working_songs">పాటలు\u2026</string>
+    <!-- Shown in the title bar while the list of folders is being retrieved in the background -->
+    <string name="working_folders">ఫోల్డర్‌లు\u2026</string>
+    <!-- Shown in the title bar while the list of playlists is being retrieved in the background -->
+    <string name="working_playlists">ప్లేజాబితాలు\u2026</string>
+
+    <!-- Shown in the music picker while loading the music database. -->
+    <string name="loading">లోడ్ అవుతోంది\u2026</string>
+    <!-- Menu in music picker to sort the list by track/song name. -->
+    <string name="sort_by_track">ట్రాక్‌లు</string>
+    <!-- Menu in music picker to sort the list by album name. -->
+    <string name="sort_by_album">ఆల్బమ్‌లు</string>
+    <!-- Menu in music picker to sort the list by artist name. -->
+    <string name="sort_by_artist">ఆర్టిస్ట్‌లు</string>
+    <!--  Title of the music picker activity. -->
+    <string name="music_picker_title">సంగీత ట్రాక్‌ను ఎంచుకోండి</string>
+
+    <!-- The string used to describe Music as a searchable item within system search settings. -->
+    <string name="search_settings_description">ఆర్టిస్ట్‌లు, ఆల్బమ్‌లు మరియు ట్రాక్‌లు</string>
+
+    <!-- Shown in the search box as a hint -->
+    <string name="search_hint">మ్యూజిక్ శోధించు</string>
+    <string name="search_hint_video">వీడియో శోధించు</string>
+
+    <!--The fast scroll thumb will show one character from this string depending on the position in the list -->
+    <string name="fast_scroll_alphabet">\u0020ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+
+    <!-- Text shown on widget when first loaded -->
+    <string name="widget_initial_text">సంగీతాన్ని ఎంచుకోవడానికి తాకండి.</string>
+
+    <!-- Menu text for the item controlling the audio effects panel [CHAR LIMIT=15] -->
+    <string name="effectspanel">శబ్ద ప్రభావాలు</string>
+
+    <string name="duplicate_playlist_name_alert">ఒక ప్లేజాబితా అనే  \"<xliff:g id="name">%s</xliff:g>\"  ఇప్పటికే ఉంది. వేరే పేరు ఎంచుకోండి.</string>
+    <string name="same_playlist_name_alert">ప్లేజాబితా \"<xliff:g id="name">%s</xliff:g>\" పేరు మార్చబడలేదు. దయచేసి వేరొక పేరుని ఎంచుకోండి.</string>
+    <string name="button_ok">Ok</string>
+    <string name="list_empty">ప్లేజాబితాలో సంగీతం లేదు.</string>
+
+    <!-- Shown when video is played after disable Gallery app from Settings -->
+    <string name="enable_gallery_app">వీడియో ప్లే చేయబడదు, ఎందుకంటే సెట్టింగ్‌లు నుండి గ్యాలరీ అనువర్తనాన్ని ప్రారంభించండి.</string>
+    <string name="close_music">"ముగింపు"</string>
+    <string name="delete_video_item_message">మీరు \"<xliff:g id="name">%s</xliff:g>\"ను తొలగించాలనుకుంటున్నారా?</string>
+    <string name="video_deleted_message">వీడియో ఫైల్ తొలగించబడింది.</string>
+
+    <!-- Menu item that takes the user link to net to see more music -->
+    <string name="more_music">మరింత సంగీతం</string>
+    <!-- Menu item that takes the user link to net to see more video -->
+    <string name="more_video">మరిన్ని వీడియోలు</string>
+    <!--gesture control playback status-->
+    <string name="music_gesture_play">"ఆడియో ప్లే/ఫాజ్ చేయి"</string>
+    <string name="music_gesture_prev">"ముందరి పాటని ప్లే చేయి"</string>
+    <string name="music_gesture_next">"తరువాతి పాటని ప్లే చేయి"</string>
+
+    <!-- DRM Related Strings -->
+    <string name="no_permission_for_drm">"క్షమించండి, Drm ఫైల్‌ని భాగస్వామ్యం చేయలేము"</string>
+    <string name="drm_license_info">Drm లైసెన్స్ సమాచారం</string>
+    <string name="drm_ringtone_error">CD/SD ఫైల్‌లను రింగ్‌టోన్ వలె సెట్ చేయలేరు</string>
+
+</resources>

@@ -1,0 +1,1058 @@
+/*****************************************************************************
+  @FILE     embms_qmi.idl
+
+  @BRIEF    EMBMS QMI Service - EMBMS QMI Master IDL with Service Definition
+
+  @DESCRIPTION
+  This specification documents Major Version 1 of the Qualcomm MSM Interface
+  for EMBMS QMI Services.
+
+  The interface in this version meets the requirement of aidl version 00.04.06.
+
+  @COPYRIGHT Copyright (c) 2012-2013 Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+
+include "common_v01.idl";
+
+revision 2;
+
+const NUMBER_MAX = 64;
+const IP_ADDRESS_LENGTH_MAX = 16;
+const TMGI_LENGTH_MAX = 6;
+const EARFCNLIST_MAX = 32;
+const SIG_MAX_MBSFN_AREA = 8; // NAS_LTE_EMBMS_MAX_MBSFN_AREA_V01(8)
+const SIG_MAX_TMGI = 256;     // NAS_LTE_EMBMS_MAX_MBSFN_AREA_V01(8) * NAS_TMGI_BEARER_INFO_MAX_V01(32)
+const MCC_MNC_MAX = 3;
+const SAI_PER_FREQ_MAX = 64;
+const FREQ_MAX = 9;
+const SAI_MAX = 576; //64*9
+const LOG_PACKET_ID_MAX = 256;
+const LOG_PACKET_SIZE_MAX = 2048;
+const CONTENT_PARAM_NUM_MAX = 64;
+const PLMN_LIST_MAX = 16;
+
+struct {
+    uint8 tmgi<TMGI_LENGTH_MAX>;
+} embms_tmgi_type;
+
+struct {
+    int32 paramCode;
+    int32 paramValue;
+} embms_content_desc_type;
+
+struct {
+    string mcc<MCC_MNC_MAX>;
+    string mnc<MCC_MNC_MAX>;
+} embms_plmn_type;
+
+//Enumeration for the radio state
+enum {
+  RADIO_STATE_AVAILABLE = 0x00,
+  RADIO_STATE_NOT_AVAILABLE = 0x01
+} radio_state_enum;
+
+enum {
+  EMBMS_E911_MODE_INACTIVE = 0x0,
+  EMBMS_E911_MODE_ACTIVE = 0x1
+} embms_e911_mode;
+//============================================================================
+/** @COMMAND QMI_EMBMS_ENABLE_EMBMS_REQ
+    @BRIEF   Enables EMBMS
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_ENABLE_EMBMS_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+} embms_enable_embms_req_msg;
+
+//! @MSG     QMI_EMBMS_ENABLE_EMBMS_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory int32 resp_code;
+    optional  uint8 call_id;
+    optional  string interface_name<NUMBER_MAX>;
+    optional  uint32 if_index;
+} embms_enable_embms_resp_msg;
+/** @DESCRIPTION
+This command is used to enable EMBMS.
+*/
+
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_DISABLE_EMBMS_REQ
+    @BRIEF   Disables EMBMS
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_DISABLE_EMBMS_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory uint8 call_id;
+} embms_disable_embms_req_msg;
+
+//! @MSG     QMI_EMBMS_DISABLE_EMBMS_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory int32 resp_code;
+    optional  uint8 call_id;
+} embms_disable_embms_resp_msg;
+/** @DESCRIPTION
+This command is used to disable EMBMS.
+*/
+
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_ACTIVATE_TMGI_REQ
+    @BRIEF   Activates TMGI
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_ACTIVATE_TMGI_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory uint8 call_id;
+    mandatory embms_tmgi_type tmgi_info;
+    mandatory int32 preemption_priority;
+    mandatory int32 earfcnlist<EARFCNLIST_MAX>;
+    optional  int32 saiList<SAI_PER_FREQ_MAX>;
+} embms_activate_tmgi_req_msg;
+
+//! @MSG     QMI_EMBMS_ACTIVATE_TMGI_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory int32 resp_code;
+    optional  uint8 call_id;
+    optional  embms_tmgi_type tmgi_info;
+} embms_activate_tmgi_resp_msg;
+/** @DESCRIPTION
+This command is used to activate TMGI.
+*/
+
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_DEACTIVATE_TMGI_REQ
+    @BRIEF   Deactivates TMGI
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_DEACTIVATE_TMGI_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory uint8 call_id;
+    mandatory embms_tmgi_type tmgi_info;
+} embms_deactivate_tmgi_req_msg;
+
+//! @MSG     QMI_EMBMS_DEACTIVATE_TMGI_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory int32 resp_code;
+    optional  uint8 call_id;
+    optional  embms_tmgi_type tmgi_info;
+} embms_deactivate_tmgi_resp_msg;
+/** @DESCRIPTION
+This command is used to deactivate TMGI.
+*/
+
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_ACTIVATE_DEACTIVATE_TMGI_REQ
+    @BRIEF   Activates and deactivates TMGI
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_ACTIVATE_DEACTIVATE_TMGI_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory uint8 call_id;
+    mandatory embms_tmgi_type act_tmgi_info;
+    mandatory embms_tmgi_type deact_tmgi_info;
+    mandatory int32 preemption_priority;
+    mandatory int32 earfcnlist<EARFCNLIST_MAX>;
+    optional  int32 saiList<SAI_PER_FREQ_MAX>;
+} embms_activate_deactivate_tmgi_req_msg;
+
+//! @MSG     QMI_EMBMS_ACTIVATE_DEACTIVATE_TMGI_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory uint16 act_resp_code;
+    mandatory uint16 deact_resp_code;
+    optional  uint8 call_id;
+    optional  embms_tmgi_type act_tmgi_info;
+    optional  embms_tmgi_type deact_tmgi_info;
+} embms_activate_deactivate_tmgi_resp_msg;
+/** @DESCRIPTION
+This command is used to activate and deactivate TMGI.
+*/
+
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_GET_AVAILABLE_TMGI_REQ
+    @BRIEF   Get Available TMGI
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_GET_AVAILABLE_TMGI_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory uint8 call_id;
+} embms_get_available_tmgi_req_msg;
+
+//! @MSG     QMI_EMBMS_GET_AVAILABLE_TMGI_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory int32 resp_code;
+    optional  embms_tmgi_type tmgi_info<NUMBER_MAX>;
+} embms_get_available_tmgi_resp_msg;
+/** @DESCRIPTION
+This command is used to get the available TMGI.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_GET_ACTIVE_TMGI_REQ
+    @BRIEF   Get Active TMGI
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_GET_ACTIVE_TMGI_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory uint8 call_id;
+} embms_get_active_tmgi_req_msg;
+
+//! @MSG     QMI_EMBMS_GET_ACTIVE_TMGI_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory int32 resp_code;
+    optional  embms_tmgi_type tmgi_info<NUMBER_MAX>;
+} embms_get_active_tmgi_resp_msg;
+/** @DESCRIPTION
+This command is used to get the active TMGI.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_ENABLE_RSSI_REQ
+    @BRIEF   Enables RSSI
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_ENABLE_RSSI_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+} embms_enable_rssi_req_msg;
+
+//! @MSG     QMI_EMBMS_ENABLE_RSSI_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+} embms_enable_rssi_resp_msg;
+/** @DESCRIPTION
+This command is used to enable RSSI.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_DISABLE_RSSI_REQ
+    @BRIEF   Disables RSSI
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_DISABLE_RSSI_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+} embms_disable_rssi_req_msg;
+
+//! @MSG     QMI_EMBMS_DISABLE_RSSI_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+} embms_disable_rssi_resp_msg;
+/** @DESCRIPTION
+This command is used to disable RSSI.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_GET_COVERAGE_STATE_REQ
+    @BRIEF   Get Coverage state
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_GET_COVERAGE_STATE_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+} embms_get_coverage_state_req_msg;
+
+//! @MSG     QMI_EMBMS_GET_COVERAGE_STATE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory int32 resp_code;
+    optional uint32 coverage_state;
+} embms_get_coverage_state_resp_msg;
+/** @DESCRIPTION
+This command is used to get Coverage state.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_GET_RSSI_REQ
+    @BRIEF   Get RSSI
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_GET_RSSI_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+} embms_get_rssi_req_msg;
+
+//! @MSG     QMI_EMBMS_GET_RSSI_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory int32 resp_code;
+    optional  int32 area_id<SIG_MAX_MBSFN_AREA>;
+    optional  float sig_noise_ratio<SIG_MAX_MBSFN_AREA>;
+    optional  float excess_snr<SIG_MAX_MBSFN_AREA>;
+    optional  int32 number_of_tmgi_per_mbsfn<SIG_MAX_MBSFN_AREA>;
+    optional  embms_tmgi_type active_tgmi<SIG_MAX_TMGI>;
+} embms_get_rssi_resp_msg;
+/** @DESCRIPTION
+This command is used to get RSSI.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_GET_EMBMS_SERVICE_STATE_REQ
+    @BRIEF   Get EMBMS Service state
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_GET_EMBMS_SERVICE_STATE_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//---------------------------------------------------------------------------
+message {
+} embms_get_embms_service_state_req_msg;
+
+//! @MSG     QMI_EMBMS_GET_EMBMS_SERVICE_STATE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 resp_code;
+    optional uint32 embms_service_state;
+} embms_get_embms_service_state_resp_msg;
+/** @DESCRIPTION
+This command is used to get EMBMS service state.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_UNSOL_EMBMS_SERVICE_STATE_IND
+    @BRIEF   Indicates a change in EMBMS service state
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_UNSOL_EMBMS_SERVICE_STATE_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @SCOPE   Unicast (per control point)
+//----------------------------------------------------------------------------
+message {
+  mandatory uint32 state;
+  mandatory string interface_name<NUMBER_MAX>;
+} embms_unsol_embms_service_state_ind_msg;
+/** @DESCRIPTION
+This command is used to indicate a change in EMBMS service state.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_ACTIVE_TMGI_IND
+    @BRIEF   Indicates a change in Active TMGI list
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_ACTIVE_TMGI_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @SCOPE   Unicast (per control point)
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory embms_tmgi_type tmgi_info<NUMBER_MAX>;
+} embms_unsol_active_tmgi_ind_msg;
+/** @DESCRIPTION
+This command is used to indicate a change in Active TMGI list.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_UNSOL_BROADCAST_COVERAGE_IND
+    @BRIEF   Indicates a change in Broadcast coverage
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_UNSOL_BROADCAST_COVERAGE_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @SCOPE   Unicast (per control point)
+//----------------------------------------------------------------------------
+message {
+  mandatory int32 dbg_trace_id;
+  mandatory uint32 broadcast_coverage;
+} embms_unsol_broadcast_coverage_ind_msg;
+/** @DESCRIPTION
+This command is used to indicate a change in Broadcast Coverage.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_UNSOL_RSSI_IND
+    @BRIEF   Indicates a change in RSSI
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_UNSOL_RSSI_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @SCOPE   Unicast (per control point)
+//----------------------------------------------------------------------------
+message {
+  mandatory uint32 rssi;
+} embms_unsol_rssi_ind_msg;
+/** @DESCRIPTION
+This command is used to indicate a change in RSSI.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_AVAILABLE_TMGI_IND
+    @BRIEF   Indicates a change in Available TMGI list
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_AVAILABLE_TMGI_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @SCOPE   Unicast (per control point)
+//----------------------------------------------------------------------------
+message {
+  mandatory int32 dbg_trace_id;
+  mandatory embms_tmgi_type tmgi_info<NUMBER_MAX>;
+} embms_unsol_available_tmgi_ind_msg;
+/** @DESCRIPTION
+This command is used to indicate a change in Available TMGI list.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_OOS_WARNING_IND
+    @BRIEF   Indicates an oos waring in EMBMS service state.
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_OOS_WARNING_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @SCOPE   Unicast (per control point)
+//----------------------------------------------------------------------------
+message {
+  mandatory int32 dbg_trace_id;
+  mandatory uint32 reason;
+  mandatory embms_tmgi_type tmgi_info<NUMBER_MAX>;
+} embms_unsol_oos_warning_ind_msg;
+/** @DESCRIPTION
+This command is used to indicate an oos waring in EMBMS service state.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_CELL_INFO_CHANGED_IND
+    @BRIEF   Indicates a change in mcc, mnc, cell_id
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_CELL_INFO_CHANGED_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @SCOPE   Unicast (per control point)
+//----------------------------------------------------------------------------
+message {
+  mandatory int32 dbg_trace_id;
+  mandatory string mcc<MCC_MNC_MAX>;
+  mandatory string mnc<MCC_MNC_MAX>;
+  mandatory int32 cell_id;
+} embms_unsol_cell_info_changed_ind_msg;
+/** @DESCRIPTION
+This command is used to indicate a change in cell info.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_RADIO_STATE_IND
+    @BRIEF   Indicates a change of radio state
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_RADIO_STATE_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @SCOPE   Unicast (per control point)
+//----------------------------------------------------------------------------
+message {
+  mandatory int32 dbg_trace_id;
+  mandatory radio_state_enum radio_state;
+} embms_unsol_radio_state_ind_msg;
+/** @DESCRIPTION
+This command is used to indicate a change of radio state.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_SAI_IND
+    @BRIEF   Indicates a change of SAI list
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_SAI_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @SCOPE   Unicast (per control point)
+//----------------------------------------------------------------------------
+message {
+  mandatory int32 dbg_trace_id;
+  mandatory int32 camped_sai_list<SAI_PER_FREQ_MAX>;
+  mandatory int32 num_of_sai_per_group<FREQ_MAX>;
+  mandatory int32 available_sai_list<SAI_MAX>;
+} embms_unsol_sai_ind_msg;
+/** @DESCRIPTION
+This command is used to indicate a change of SAI list.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_GET_ACTIVE_LOG_PACKET_IDS_REQ
+    @BRIEF   Get active log packet ids
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_GET_ACTIVE_LOG_PACKET_IDS_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory int32 supported_log_packet_id_list<LOG_PACKET_ID_MAX>;
+} embms_get_active_log_packet_ids_req_msg;
+
+//! @MSG     QMI_EMBMS_GET_ACTIVE_LOG_PACKET_IDS_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory int32 active_log_packet_id_list<LOG_PACKET_ID_MAX>;
+} embms_get_active_log_packet_ids_resp_msg;
+/** @DESCRIPTION
+This command is used to get the current active log packet ids.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_DELIVER_LOG_PACKET_REQ
+    @BRIEF   Deliver log packet
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_DELIVER_LOG_PACKET_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory int32 packet_id;
+    mandatory int8  log_packet<LOG_PACKET_SIZE_MAX>;
+} embms_deliver_log_packet_req_msg;
+
+//! @MSG     QMI_EMBMS_DELIVER_LOG_PACKET_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+} embms_deliver_log_packet_resp_msg;
+/** @DESCRIPTION
+This command is used to deliver a specific log packet.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_SET_SNTP_TIME_REQ
+    @BRIEF   Set UTC time using SNTP time
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_SET_SNTP_TIME_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory uint8  sntp_available;
+    optional  uint64 sntp_time_milli_sec;
+    optional  uint64 time_stamp_milli_sec;
+} embms_set_sntp_time_req_msg;
+
+//! @MSG     QMI_EMBMS_SET_SNTP_TIME_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+} embms_set_sntp_time_resp_msg;
+/** @DESCRIPTION
+This command is to set UTC time using SNTP time.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_GET_SIB16_COVERAGE_REQ
+    @BRIEF   Get sib16 coverage
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_GET_SIB16_COVERAGE_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+} embms_get_sib16_coverage_req_msg;
+
+//! @MSG     QMI_EMBMS_GET_SIB16_COVERAGE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory uint8 in_coverage;
+} embms_get_sib16_coverage_resp_msg;
+/** @DESCRIPTION
+This command is to get sib16 coverage.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_UNSOL_SIB16_COVERAGE_IND
+    @BRIEF   Indicates a change of sib16 coverage
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_UNSOL_SIB16_COVERAGE_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @SCOPE   Unicast (per control point)
+//----------------------------------------------------------------------------
+message {
+    mandatory uint8 in_coverage;
+} embms_unsol_sib16_coverage_ind_msg;
+/** @DESCRIPTION
+This command is to indicate a change of sib16 coverage.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_GET_UTC_TIME_REQ
+    @BRIEF   Get UTC time
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_GET_UTC_TIME_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+} embms_get_utc_time_req_msg;
+
+//! @MSG     QMI_EMBMS_GET_UTC_TIME_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32  dbg_trace_id;
+    mandatory int32 resp_code;
+    mandatory uint64 milli_sec;
+    optional  uint8  day_light_saving;
+    optional  int8   leap_seconds;
+    optional  int8   local_time_offset;
+} embms_get_utc_time_resp_msg;
+/** @DESCRIPTION
+This command is to get UTC time.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_GET_E911_STATE_REQ
+    @BRIEF   Find whether there's active e911 calls
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_GET_E911_STATE_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+} embms_get_e911_state_req_msg;
+
+//! @MSG     QMI_EMBMS_GET_E911_STATE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32  dbg_trace_id;
+    mandatory int32 resp_code;
+    optional  embms_e911_mode e911_state;
+} embms_get_e911_state_resp_msg;
+/** @DESCRIPTION
+This command is to get the E911 state
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_UNSOL_E911_STATE_IND
+    @BRIEF   Indicates a change of e911 state
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_UNSOL_E911_STATE_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @SCOPE   Unicast (per control point)
+//----------------------------------------------------------------------------
+message {
+    mandatory int32  dbg_trace_id;
+    mandatory embms_e911_mode e911_state;
+} embms_unsol_e911_state_ind_msg;
+/** @DESCRIPTION
+This command is to indicate a change in e911 state.
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_UPDATE_CONTENT_DESC_REQ
+    @BRIEF   Update the content description
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_UPDATE_CONTENT_DESC_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory uint8 call_id;
+    mandatory embms_tmgi_type tmgi_info;
+    optional  embms_content_desc_type content_desc<CONTENT_PARAM_NUM_MAX>;
+} embms_update_content_desc_req_msg;
+
+//! @MSG     QMI_EMBMS_UPDATE_CONTENT_DESC_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory int32 resp_code;
+} embms_update_content_desc_resp_msg;
+/** @DESCRIPTION
+This command is to update the content description
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_UNSOL_CONTENT_DESC_UPDATE_PER_OBJ_IND
+    @BRIEF   Indicates a change in content description
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_UNSOL_CONTENT_DESC_UPDATE_PER_OBJ_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @SCOPE   Unicast (per control point)
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory embms_tmgi_type tmgi_info;
+    optional  int32 per_object_content_ctrl;
+    optional  int32 per_object_status_ctrl;
+} embms_unsol_content_desc_update_per_obj_ind_msg;
+/** @DESCRIPTION
+This command is to indicate a change in content description
+*/
+
+
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_GET_SIB_PLMN_REQ
+    @BRIEF   Get sib plmn info
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_GET_SIB_PLMN_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+} embms_get_sib_plmn_req_msg;
+
+//! @MSG     QMI_EMBMS_GET_SIB_PLMN_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory embms_plmn_type plmn<PLMN_LIST_MAX>;
+} embms_get_sib_plmn_resp_msg;
+/** @DESCRIPTION
+This command is to retreive the sib plmn info
+*/
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_UNSOL_EMBMS_STATUS_IND
+    @BRIEF   Indicates a change of EMBMS status
+*/
+//============================================================================
+
+//! @MSG     QMI_EMBMS_UNSOL_EMBMS_STATUS_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//! @SCOPE   Unicast (per control point)
+//----------------------------------------------------------------------------
+message {
+    mandatory uint8 is_available;
+} embms_unsol_embms_status_ind_msg;
+/** @DESCRIPTION
+This command is to indicate a change of EMBMS status.
+*/
+//------------------------------------------------------------------------------------
+
+//============================================================================
+/** @COMMAND QMI_EMBMS_GET_EMBMS_STATUS
+    @BRIEF   Get EMBMS status info
+*/
+//============================================================================
+//! @MSG     QMI_EMBMS_GET_EMBMS_STATUS_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+} embms_get_embms_status_req_msg;
+
+//! @MSG     QMI_EMBMS_GET_EMBMS_STATUS_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+message {
+    mandatory int32 dbg_trace_id;
+    mandatory uint8 is_available;
+} embms_get_embms_status_resp_msg;
+/** @DESCRIPTION
+This command is to retreive the EMBMS status info
+*/
+
+service embms{
+    // 0x0000
+    //! @ID QMI_EMBMS_ENABLE_EMBMS_REQ
+    embms_enable_embms_req_msg QMI_EMBMS_ENABLE_EMBMS_REQ,
+    embms_enable_embms_resp_msg QMI_EMBMS_ENABLE_EMBMS_RESP = 0x0000;
+
+    // 0x0001
+    //! @ID QMI_EMBMS_DISABLE_EMBMS_REQ
+    embms_disable_embms_req_msg     QMI_EMBMS_DISABLE_EMBMS_REQ,
+    embms_disable_embms_resp_msg    QMI_EMBMS_DISABLE_EMBMS_RESP;
+
+    // 0x0002
+    //! @ID QMI_EMBMS_ACTIVATE_TMGI_REQ
+    embms_activate_tmgi_req_msg     QMI_EMBMS_ACTIVATE_TMGI_REQ,
+    embms_activate_tmgi_resp_msg    QMI_EMBMS_ACTIVATE_TMGI_RESP;
+
+    // 0x0003
+    //! @ID QMI_EMBMS_DEACTIVATE_TMGI_REQ
+    embms_deactivate_tmgi_req_msg     QMI_EMBMS_DEACTIVATE_TMGI_REQ,
+    embms_deactivate_tmgi_resp_msg    QMI_EMBMS_DEACTIVATE_TMGI_RESP;
+
+    // 0x0004
+    //! @ID QMI_EMBMS_GET_AVAILABLE_TMGI_REQ
+    embms_get_available_tmgi_req_msg QMI_EMBMS_GET_AVAILABLE_TMGI_REQ,
+    embms_get_available_tmgi_resp_msg QMI_EMBMS_GET_AVAILABLE_TMGI_RESP;
+
+    // 0x0005
+    //! @ID QMI_EMBMS_GET_ACTIVE_TMGI_REQ
+    embms_get_active_tmgi_req_msg QMI_EMBMS_GET_ACTIVE_TMGI_REQ,
+    embms_get_active_tmgi_resp_msg QMI_EMBMS_GET_ACTIVE_TMGI_RESP;
+
+    // 0x0006
+    //! @ID QMI_EMBMS_ENABLE_RSSI_REQ
+    embms_enable_rssi_req_msg QMI_EMBMS_ENABLE_RSSI_REQ,
+    embms_enable_rssi_resp_msg QMI_EMBMS_ENABLE_RSSI_RESP;
+
+    // 0x0007
+    //! @ID QMI_EMBMS_DISABLE_RSSI_REQ
+    embms_disable_rssi_req_msg QMI_EMBMS_DISABLE_RSSI_REQ,
+    embms_disable_rssi_resp_msg QMI_EMBMS_DISABLE_RSSI_RESP;
+
+    // 0x0008
+    //! @ID QMI_EMBMS_GET_COVERAGE_STATE_REQ
+    embms_get_coverage_state_req_msg QMI_EMBMS_GET_COVERAGE_STATE_REQ,
+    embms_get_coverage_state_resp_msg QMI_EMBMS_GET_COVERAGE_STATE_RESP;
+
+    // 0x0009
+    //! @ID QMI_EMBMS_GET_RSSI_REQ
+    embms_get_rssi_req_msg QMI_EMBMS_GET_RSSI_REQ,
+    embms_get_rssi_resp_msg QMI_EMBMS_GET_RSSI_RESP;
+
+    // 0x000A
+    //! @ID QMI_EMBMS_GET_EMBMS_SERVICE_STATE_REQ
+    embms_get_embms_service_state_req_msg QMI_EMBMS_GET_EMBMS_SERVICE_STATE_REQ,
+    embms_get_embms_service_state_resp_msg QMI_EMBMS_GET_EMBMS_SERVICE_STATE_RESP;
+
+    // 0x000B
+    //! @ID QMI_EMBMS_UNSOL_EMBMS_SERVICE_STATE_IND
+    embms_unsol_embms_service_state_ind_msg QMI_EMBMS_UNSOL_EMBMS_SERVICE_STATE_IND;
+
+    // 0x000C
+    //! @ID QMI_EMBMS_ACTIVE_TMGI_IND
+    embms_unsol_active_tmgi_ind_msg QMI_EMBMS_ACTIVE_TMGI_IND;
+
+    // 0x000D
+    //! @ID QMI_EMBMS_UNSOL_BROADCAST_COVERAGE_IND
+    embms_unsol_broadcast_coverage_ind_msg QMI_EMBMS_UNSOL_BROADCAST_COVERAGE_IND;
+
+    // 0x000E
+    //! @ID QMI_EMBMS_UNSOL_RSSI_IND
+    embms_unsol_rssi_ind_msg QMI_EMBMS_UNSOL_RSSI_IND;
+
+    // 0x000F
+    //! @ID QMI_EMBMS_AVAILABLE_TMGI_IND
+    embms_unsol_available_tmgi_ind_msg QMI_EMBMS_AVAILABLE_TMGI_IND;
+
+    // 0x0010
+    //! @ID QMI_EMBMS_OOS_WARNING_IND
+    embms_unsol_oos_warning_ind_msg QMI_EMBMS_OOS_WARNING_IND;
+
+    // 0x0011
+    //! @ID QMI_EMBMS_ACTIVATE_DEACTIVATE_TMGI_REQ
+    embms_activate_deactivate_tmgi_req_msg  QMI_EMBMS_ACTIVATE_DEACTIVATE_TMGI_REQ,
+    embms_activate_deactivate_tmgi_resp_msg QMI_EMBMS_ACTIVATE_DEACTIVATE_TMGI_RESP;
+
+    // 0x0012
+    //! @ID QMI_EMBMS_CELL_INFO_CHANGED_IND
+    embms_unsol_cell_info_changed_ind_msg QMI_EMBMS_CELL_INFO_CHANGED_IND;
+
+    // 0x0013
+    //! @ID QMI_EMBMS_RADIO_STATE_IND
+    embms_unsol_radio_state_ind_msg QMI_EMBMS_RADIO_STATE_IND;
+
+    // 0x0014
+    //! @ID QMI_EMBMS_SAI_IND
+    embms_unsol_sai_ind_msg QMI_EMBMS_SAI_IND;
+
+    // 0x0015
+    //! @ID QMI_EMBMS_GET_ACTIVE_LOG_PACKET_IDS_REQ
+    embms_get_active_log_packet_ids_req_msg  QMI_EMBMS_GET_ACTIVE_LOG_PACKET_IDS_REQ,
+    embms_get_active_log_packet_ids_resp_msg QMI_EMBMS_GET_ACTIVE_LOG_PACKET_IDS_RESP;
+
+    // 0x0016
+    //! @ID QMI_EMBMS_DELIVER_LOG_PACKET_REQ
+    embms_deliver_log_packet_req_msg  QMI_EMBMS_DELIVER_LOG_PACKET_REQ,
+    embms_deliver_log_packet_resp_msg QMI_EMBMS_DELIVER_LOG_PACKET_RESP;
+
+    // 0x0017
+    //! @ID QMI_EMBMS_SET_SNTP_TIME_REQ
+    embms_set_sntp_time_req_msg  QMI_EMBMS_SET_SNTP_TIME_REQ,
+    embms_set_sntp_time_resp_msg QMI_EMBMS_SET_SNTP_TIME_RESP;
+
+    // 0x0018
+    //! @ID QMI_EMBMS_GET_SIB16_COVERAGE_REQ
+    embms_get_sib16_coverage_req_msg  QMI_EMBMS_GET_SIB16_COVERAGE_REQ,
+    embms_get_sib16_coverage_resp_msg QMI_EMBMS_GET_SIB16_COVERAGE_RESP;
+
+    // 0x0019
+    //! @ID QMI_EMBMS_UNSOL_SIB16_COVERAGE_IND
+    embms_unsol_sib16_coverage_ind_msg QMI_EMBMS_UNSOL_SIB16_COVERAGE_IND;
+
+    // 0x001A
+    //! @ID QMI_EMBMS_GET_UTC_TIME_REQ
+    embms_get_utc_time_req_msg  QMI_EMBMS_GET_UTC_TIME_REQ,
+    embms_get_utc_time_resp_msg QMI_EMBMS_GET_UTC_TIME_RESP;
+
+    // 0x001B
+    //! @ID QMI_EMBMS_GET_E911_STATE_REQ
+    embms_get_e911_state_req_msg  QMI_EMBMS_GET_E911_STATE_REQ,
+    embms_get_e911_state_resp_msg QMI_EMBMS_GET_E911_STATE_RESP;
+
+    // 0x001C
+    //! @ID QMI_EMBMS_UNSOL_E911_STATE_IND
+    embms_unsol_e911_state_ind_msg QMI_EMBMS_E911_STATE_IND;
+
+    // 0x001D
+    //! @ID QMI_EMBMS_UPDATE_CONTENT_DESC_REQ
+    embms_update_content_desc_req_msg  QMI_EMBMS_UPDATE_CONTENT_DESC_REQ,
+    embms_update_content_desc_resp_msg QMI_EMBMS_UPDATE_CONTENT_DESC_RESP;
+
+    // 0x001E
+    //! @ID QMI_EMBMS_UNSOL_CONTENT_DESC_UPDATE_PER_OBJ_IND
+    embms_unsol_content_desc_update_per_obj_ind_msg QMI_EMBMS_UNSOL_CONTENT_DESC_UPDATE_PER_OBJ_IND;
+
+    // 0x001F
+    //! @ID QMI_EMBMS_GET_SIB_PLMN_REQ
+    embms_get_sib_plmn_req_msg  QMI_EMBMS_GET_SIB_PLMN_REQ,
+    embms_get_sib_plmn_resp_msg QMI_EMBMS_GET_SIB_PLMN_RESP;
+
+    // 0x0020
+    //! @ID QMI_EMBMS_UNSOL_EMBMS_STATUS_IND
+    embms_unsol_embms_status_ind_msg QMI_EMBMS_UNSOL_EMBMS_STATUS_IND;
+
+    // 0x0021
+    //! @ID QMI_EMBMS_GET_EMBMS_STATUS
+    embms_get_embms_status_req_msg  QMI_EMBMS_GET_EMBMS_STATUS_REQ,
+    embms_get_embms_status_resp_msg QMI_EMBMS_GET_EMBMS_STATUS_RESP;
+} = 0x0002;

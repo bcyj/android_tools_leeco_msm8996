@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- The name of the application that appears in the launcher [CHAR LIMIT=15] -->
+    <string name="app_label">"Downloads"</string>
+    <!-- The title that appears at the top of the activity listing downloads sorted by date [CHAR LIMIT=40] -->
+    <string name="download_title_sorted_by_date">"Downloads - Nach Datum sortiert"</string>
+    <!-- The title that appears at the top of the activity listing downloads sorted by size [CHAR LIMIT=40] -->
+    <string name="download_title_sorted_by_size">"Downloads - Nach Größe sortiert"</string>
+
+    <!-- Appears in lieu of the list of downloads if there are no downloads to view
+         [CHAR LIMIT=200] -->
+    <string name="no_downloads">"Keine Downloads"</string>
+
+    <!-- Default title for an item in the download list for which no title was provided by the app.
+         [CHAR LIMIT=20] -->
+    <string name="missing_title">"&lt;Unbekannt&gt;"</string>
+
+    <!-- Button to display sort-by-size option [CHAR LIMIT=25] -->
+    <string name="button_sort_by_size">"Nach Größe sortieren"</string>
+    <!-- Button to display sort-by-date option [CHAR LIMIT=25] -->
+    <string name="button_sort_by_date">"Nach Datum sortieren"</string>
+
+    <!-- Status messages -->
+
+    <!-- Status indicating that the download has been queued to start in the future.  Appears for an
+         individual item in the download list.  [CHAR LIMIT=11] -->
+    <string name="download_queued">"Eingereiht"</string>
+    <!-- Status indicating that the system is currently downloading the file.  Appears for an
+         individual item in the download list.  [CHAR LIMIT=11] -->
+    <string name="download_running">"Läuft"</string>
+    <!-- Status indicating that the download has completed successfully. Appears for an individual
+         item in the download list.  [CHAR LIMIT=11] -->
+    <string name="download_success">"Fertig"</string>
+    <!-- Status indicating that the download has ended without completing successfully.  Appears for
+         an individual item in the download list.  [CHAR LIMIT=11] -->
+    <string name="download_error">"Fehler"</string>
+
+    <!-- Dialog/toast messages -->
+
+    <!-- Title of dialog that is shown when the user clicks a download for which no file is
+         available, either because the download hasn\'t started or because the download failed
+         [CHAR LIMIT=25] -->
+    <string name="dialog_title_not_available">"Downloadfehler"</string>
+    <!-- Text for dialog when user clicks on a download that failed [CHAR LIMIT=200] -->
+    <string name="dialog_failed_body">"Möchten Sie später einen erneuten Downloadversuch für die Datei starten oder die Datei aus der Warteschlange löschen?"</string>
+    <!-- Title for dialog when user clicks on a download that has not yet begun, but will be started
+         in the future. [CHAR LIMIT=25] -->
+    <string name="dialog_title_queued_body">"Warten auf Download"</string>
+    <!-- Text for dialog when user clicks on a download that has not yet begun, but will be started
+         in the future. [CHAR LIMIT=200] -->
+    <string name="dialog_queued_body">"Die Datei ist noch nicht verfügbar, da auf den Download der Datei gewartet wird."</string>
+    <!-- Text for dialog when user clicks on a completed download but the file is missing
+         [CHAR LIMIT=200] -->
+    <string name="dialog_file_missing_body">"Heruntergeladene Datei kann nicht gefunden werden."</string>
+    <!-- Text for dialog when user clicks on a download that failed due to insufficient space on
+         external storage [CHAR LIMIT=200] -->
+    <string name="dialog_insufficient_space_on_external">"Der Download kann nicht abgeschlossen werden, da der Speicherplatz des externen Speichers nicht ausreicht."</string>
+    <!-- Text for dialog when user clicks on a download that failed due to insufficient space on
+         the internal download cache [CHAR LIMIT=200] -->
+    <string name="dialog_insufficient_space_on_cache">"Der Download kann nicht abgeschlossen werden, da der Speicherplatz des internen Downloadspeichers nicht ausreicht."</string>
+    <!-- Text for dialog when user clicks on a download that failed because it was interrupted and
+         the server doesn\'t support resuming downloads [CHAR LIMIT=200] -->
+    <string name="dialog_cannot_resume">"Der Download wurde unterbrochen und kann nicht fortgesetzt werden."</string>
+    <!-- Text for dialog when user clicks on a download that failed because the requested
+         destination file already exists [CHAR LIMIT=200] -->
+    <string name="dialog_file_already_exists">"Der Download ist nicht möglich, da die Zieldatei bereits vorhanden ist."</string>
+    <!-- Text for dialog when user clicks on a download that failed because it was requested to go
+         on the external media, which is not mounted [CHAR LIMIT=200] -->
+    <string name="dialog_media_not_found">"Der Download ist nicht möglich, da das externe Speichermedium nicht vorhanden ist."</string>
+    <!-- Text for a toast appearing when a user clicks on a completed download, informing the user
+         that there is no application on the device that can open the file that was downloaded
+         [CHAR LIMIT=200] -->
+    <string name="download_no_application_title">"Datei kann nicht geöffnet werden."</string>
+
+    <!-- Buttons -->
+
+    <!-- Text for button to remove the entry for a download that has not yet begun or that has
+         failed [CHAR LIMIT=25] -->
+    <string name="remove_download">"Entfernen"</string>
+    <!-- Text for button to delete a download that has completed, or to delete multiple download
+         entries [CHAR LIMIT=25] -->
+    <string name="delete_download">"Löschen"</string>
+    <!-- Text for button to keep a download that has not yet begun [CHAR LIMIT=25] -->
+    <string name="keep_queued_download">"Beibehalten"</string>
+    <!-- Text for button to cancel a download that is currently in progress [CHAR LIMIT=25] -->
+    <string name="cancel_running_download">"Abbrechen"</string>
+    <!-- Text for button appearing in a dialog to restart a download, either one that failed or one
+         for which the downloaded file is now missing [CHAR LIMIT=25] -->
+    <string name="retry_download">"Wiederholen"</string>
+    <!-- Text for button appearing in the pop-up selection menu to deselect all currently selected
+    downloads in the download list [CHAR LIMIT=25] -->
+    <string name="deselect_all">"Auswahl für alle aufheben"</string>
+    <!-- Text for menu to select all downloads in the download list [CHAR LIMIT=25] -->
+    <string name="select_all">"Alle auswählen"</string>
+    <!-- number of downloads selected [CHAR LIMIT=50] -->
+    <string name="selected_count">"<xliff:g id="NUMBER">%1$d</xliff:g> von <xliff:g id="TOTAL">%2$d</xliff:g> ausgewählt"</string>
+    <!-- title shown when displaying list of apps to choose from when share is clicked on
+        [CHAR LIMIT = 20] -->
+    <string name="download_share_dialog">"Teilen über"</string>
+
+    <!-- Drm Strings -->
+    <string name="action_consumes_rights">Für die Verwendung dieser Medien werden Rechte verbraucht</string>
+    <string name="drm_cannot_share_multiple">Einige der gewählten Dateien sind weiterleitungsgeschützte DRM-Dateien, die nicht freigegeben werden können.</string>
+    <string name="drm_cannot_share">Ausgewählte Datei ist weiterleitungsgeschützte DRM-Datei, kann nicht freigegeben werden</string>
+</resources>

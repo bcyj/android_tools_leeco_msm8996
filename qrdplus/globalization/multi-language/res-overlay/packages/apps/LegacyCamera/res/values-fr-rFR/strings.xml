@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- General strings -->
+
+    <!-- title for the dialog showing the error of camera hardware -->
+    <string name="camera_error_title">"Erreur de l\'appareil photo."</string>
+
+    <!-- message for the dialog showing the error of camera hardware -->
+    <string name="cannot_connect_camera">"Impossible d\'établir une connexion avec l\'appareil photo."</string>
+
+    <!-- message for the dialog showing the camera is disabled because of security policies. Camera cannot be used. -->
+    <string name="camera_disabled">"L\'appareil photo a été désactivé en raison des règles de sécurité."</string>
+
+    <!-- label for the icon meaning \'show me all the images that were taken with the camera\' -->
+    <string name="camera_label">"Appareil photo"</string>
+
+    <!-- label for the \'video recording application shown in the top level \'all applications\' -->
+    <string name="video_camera_label">"Caméra"</string>
+
+    <!-- label for the folder that contains Camera pictures in the gallery -->
+    <string name="gallery_camera_bucket_name">"Photos de l\'appareil"</string>
+
+    <!-- label for the folder that contains Camera videos in the gallery -->
+    <string name="gallery_camera_videos_bucket_name">"Vidéos de la caméra"</string>
+
+    <!-- alert to the user to wait for some operation to complete -->
+    <string name="wait">"Veuillez patienter..."</string>
+
+    <!-- alert to the user that USB storage must be available before using the camera [CHAR LIMIT=NONE] -->
+    <string name="no_storage" product="nosdcard">"Veuillez installer une mémoire de stockage USB avant d\'utiliser l\'appareil photo."</string>
+    <!-- alert to the user that an SD card must be installed before using the camera -->
+    <string name="no_storage" product="default">"Veuillez insérer une carte SD avant d\'utiliser l\'appareil photo."</string>
+
+    <!-- alert to the user that the USB storage is too full to complete the operation [CHAR LIMIT=NONE] -->
+    <string name="not_enough_space" product="nosdcard">"La mémoire de stockage USB est pleine."</string>
+    <!-- alert to the user that the SD card is too full to complete the operation -->
+    <string name="not_enough_space" product="default">"Votre carte SD est pleine."</string>
+
+    <!-- alert to the user that the USB storage is being disk-checked [CHAR LIMIT=30] -->
+    <string name="preparing_sd" product="nosdcard">"Préparation mémoire de stockage USB..."</string>
+    <!-- alert to the user that the SD card is being disk-checked -->
+    <string name="preparing_sd" product="default">"Préparation de la carte SD..."</string>
+
+    <!-- alert to the user that the camera fails to read or write the USB storage. [CHAR LIMIT=NONE] -->
+    <string name="access_sd_fail" product="nosdcard">"Impossible d\'accéder à la mémoire de stockage USB."</string>
+    <!-- alert to the user that the camera fails to read or write the SD card. -->
+    <string name="access_sd_fail" product="default">"Impossible d\'accéder à la carte SD."</string>
+
+    <!-- Confirmation dialog when restoring settings -->
+    <string name="confirm_restore_title">"Rétablir les paramètres par défaut"</string>
+    <string name="confirm_restore_message">"Rétablir les paramètres par défaut de l\'appareil photo ?"</string>
+
+    <!-- button in review mode indicating that the video just taken should be played [CHAR LIMIT=10] -->
+    <string name="review_play">"Lire"</string>
+
+    <!-- button in review mode indicating that the photo taking, video recording, and panorama saving session should be canceled [CHAR LIMIT=10] -->
+    <string name="review_cancel">"ANNULER"</string>
+
+    <!-- button in review mode indicating that the taken photo/video is OK to be attached/uploaded [CHAR LIMIT=10] -->
+    <string name="review_ok">"OK"</string>
+
+    <!-- button in review mode indicate the user want to retake another photo/video for attachment [CHAR LIMIT=10] -->
+    <string name="review_retake">"AUTRE PHOTO"</string>
+
+    <!-- Button indicating to go to the image gallery -->
+    <string name="camera_gallery_photos_text">"Galerie"</string>
+
+    <!-- Button indicating to switch to another camera -->
+    <string name="switch_camera_id">"Changer de caméra"</string>
+
+    <!-- A lable that overlays on top of the preview frame to indicate the camcorder is in time lapse mode [CHAR LIMIT=35] -->
+    <string name="time_lapse_title">"Enregistrement mode time lapse"</string>
+
+    <!-- Settings screen, camera selection dialog title. Users can select a camera from the phone (front-facing or back-facing). [CHAR LIMIT=20] -->
+    <string name="pref_camera_id_title">"Choisir appareil ph."</string>
+
+    <string name="pref_camera_id_default" translatable="false">0</string>
+
+    <!-- In select camera setting, back facing camera. [CHAR LIMIT=14] -->
+    <string name="pref_camera_id_entry_back">"Arrière"</string>
+    <!-- In select camera setting, front-facing camera. [CHAR LIMIT=14] -->
+    <string name="pref_camera_id_entry_front">"Avant"</string>
+
+    <!-- Settings screen, setting title text -->
+    <string name="pref_camera_recordlocation_title">"Enregist. position"</string>
+
+    <string name="pref_camera_recordlocation_default" translatable="false">none</string>
+
+    <!-- Settings screen, Record location dialog choices -->
+    <string name="pref_camera_recordlocation_entry_off">Désactivé</string>
+    <string name="pref_camera_recordlocation_entry_on">"Activé"</string>
+
+    <!-- The Video quality settings in preference [CHAR LIMIT=21] -->
+    <string name="pref_video_quality_title">"Qualité vidéo"</string>
+    <!-- The default quality value is 5 (720p) -->
+    <string name="pref_video_quality_default" translatable="false">5</string>
+    <!-- Video quality setting entry. Videos will be recorded in 1080p quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_1080p" translatable="false">HD</string>
+    <!-- Video quality setting entry. Videos will be recorded in 720p quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_720p" translatable="false">HD</string>
+    <!-- Video quality setting entry. Videos will be recorded in 480p quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_480p" translatable="false">SD</string>
+
+    <!-- Describes the preference dialog for choosing interval between frame capture for
+    time lapse recording. Appears at top of the dialog. [CHAR LIMIT=30] -->
+    <string name="pref_video_time_lapse_frame_interval_title">"Intervalle de temps"</string>
+    <string name="pref_video_time_lapse_frame_interval_default" translatable="false">0</string>
+    <!-- The time interval between frame capture for time lapse recording -->
+    <string name="pref_video_time_lapse_frame_interval_entry_1000" translatable="false">1s</string>
+    <string name="pref_video_time_lapse_frame_interval_entry_1500" translatable="false">1.5s</string>
+    <string name="pref_video_time_lapse_frame_interval_entry_2000" translatable="false">2s</string>
+    <string name="pref_video_time_lapse_frame_interval_entry_2500" translatable="false">2.5s</string>
+    <string name="pref_video_time_lapse_frame_interval_entry_3000" translatable="false">3s</string>
+    <string name="pref_video_time_lapse_frame_interval_entry_5000" translatable="false">5s</string>
+    <string name="pref_video_time_lapse_frame_interval_entry_10000" translatable="false">10s</string>
+
+    <!-- Settings screen, Camera setting category title -->
+    <string name="pref_camera_settings_category">"Paramètres appareil photo"</string>
+
+    <!-- Settings screen, Camcorder setting category title -->
+    <string name="pref_camcorder_settings_category">"Mode Caméra"</string>
+
+    <!-- Settings screen, Picture size title -->
+    <string name="pref_camera_picturesize_title">"Taille d\'image"</string>
+
+    <!-- Settings screen, Picture size dialog radio button choices -->
+    <string name="pref_camera_picturesize_entry_2592x1936">"5 M pixels"</string>
+    <string name="pref_camera_picturesize_entry_2048x1536">"3 M pixels"</string>
+    <string name="pref_camera_picturesize_entry_1600x1200">"2 M pixels"</string>
+    <string name="pref_camera_picturesize_entry_1280x960">"1,3 M pixels"</string>
+    <string name="pref_camera_picturesize_entry_1024x768">"1 M pixels"</string>
+    <string name="pref_camera_picturesize_entry_640x480">"VGA"</string>
+    <string name="pref_camera_picturesize_entry_320x240">"QVGA"</string>
+
+    <!-- Settings screen, Focus mode title -->
+    <string name="pref_camera_focusmode_title">"Mise au point"</string>
+
+    <!-- Settings screen, Focue mode dialog radio button choices -->
+    <string name="pref_camera_focusmode_entry_auto">Auto</string>
+    <string name="pref_camera_focusmode_entry_infinity">"Infini"</string>
+    <string name="pref_camera_focusmode_entry_macro">"Macro"</string>
+
+    <!-- Default flash mode setting.-->
+    <string name="pref_camera_flashmode_default" translatable="false">auto</string>
+
+    <!-- Value for flash off setting-->
+    <string name="pref_camera_flashmode_no_flash" translatable="false">no_flash</string>
+
+    <!-- Settings screen, Flash mode title -->
+    <string name="pref_camera_flashmode_title">"Mode Flash"</string>
+
+    <!-- Settings screen, Flash mode dialog radio button choices -->
+    <string name="pref_camera_flashmode_entry_auto">Auto</string>
+    <string name="pref_camera_flashmode_entry_on">"Activé"</string>
+    <string name="pref_camera_flashmode_entry_off">Désactivé</string>
+
+    <!-- Default videocamera flash mode setting.-->
+    <string name="pref_camera_video_flashmode_default" translatable="false">off</string>
+
+    <!-- Default white balance setting. -->
+    <string name="pref_camera_whitebalance_default" translatable="false">auto</string>
+
+    <!-- Settings screen, white balance title -->
+    <string name="pref_camera_whitebalance_title">"Balance des blancs"</string>
+
+    <!-- Settings screen, White balance dialog radio button choices -->
+    <string name="pref_camera_whitebalance_entry_auto">Auto</string>
+    <string name="pref_camera_whitebalance_entry_incandescent">"Incandescent"</string>
+    <string name="pref_camera_whitebalance_entry_daylight">"Lumière du jour"</string>
+    <string name="pref_camera_whitebalance_entry_fluorescent">"Fluorescent"</string>
+    <string name="pref_camera_whitebalance_entry_cloudy">"Nuageux"</string>
+
+    <!-- Default scene mode setting. -->
+    <string name="pref_camera_scenemode_default" translatable="false">auto</string>
+
+    <!-- Settings screen, Select Scene mode -->
+    <string name="pref_camera_scenemode_title">"Mode Scène"</string>
+
+    <!-- Settings menu, scene mode choices -->
+    <string name="pref_camera_scenemode_entry_auto">Auto</string>
+    <!-- Scene mode that takes an image quickly with little motion blur. -->
+    <string name="pref_camera_scenemode_entry_action">"Action"</string>
+    <!-- Scene mode that takes long exposures to capture night scenes without flash. -->
+    <string name="pref_camera_scenemode_entry_night">"Nuit"</string>
+    <!-- Scene mode optimized for taking images in the sunset. -->
+    <string name="pref_camera_scenemode_entry_sunset">"Coucher de soleil"</string>
+    <!-- Scene mode optimized for taking indoor low-lights pictures. [CHAR LIMIT=16] -->
+    <string name="pref_camera_scenemode_entry_party">"Fête"</string>
+
+    <!-- Toast after trying to select a setting that is not allowed to change in scene mode [CHAR LIMIT=NONE] -->
+    <string name="not_selectable_in_scene_mode">"Ce paramètre ne peut pas être sélectionné en mode Scène."</string>
+
+    <!-- Restore settings item in preference -->
+    <string name="pref_restore_title">"Paramètres de l\'appareil photo"</string>
+    <string name="pref_restore_detail">"Rétablir les paramètres par défaut"</string>
+
+    <!-- Exposure settings in preference -->
+    <string name="pref_exposure_title">"Exposition"</string>
+    <string name="pref_exposure_default" translatable="false">0</string>
+
+    <!-- Dialog "OK" button. Dismisses dialog. -->
+    <string name="dialog_ok">"OK"</string>
+
+    <!-- Low-memory dialog message [CHAR LIMT=NONE] -->
+    <string name="spaceIsLow_content" product="nosdcard">"La mémoire de stockage USB est pleine. Définissez la qualité sur une valeur plus basse ou supprimez des images ou d\'autres types de fichiers."</string>
+    <!-- Low-memory dialog message [CHAR LIMIT=NONE] -->
+    <string name="spaceIsLow_content" product="default">"Votre carte SD est pleine. Modifiez le paramètre de qualité ou supprimez des images ou des fichiers."</string>
+
+    <!-- Camera format string for new image files. Passed to java.text.SimpleDateFormat. -->
+    <string name="image_file_name_format" translatable="false">"\'IMG\'_yyyyMMdd_HHmmss"</string>
+
+    <!-- Video Camera format string for new video files. Passed to java.text.SimpleDateFormat. -->
+    <string name="video_file_name_format" translatable="false">"\'VID\'_yyyyMMdd_HHmmss"</string>
+
+    <!-- Filename prefix for panorama output. -->
+    <string name="pano_file_name_format" translatable="false">"\'PANO\'_yyyyMMdd_HHmmss"</string>
+
+    <!-- The messsage shown when video record reaches size limit. -->
+    <string name="video_reach_size_limit">"Taille maximale atteinte."</string>
+
+    <!-- The text of menu item to switch the mode to Camera. [CHAR LIMIT=NONE] -->
+    <string name="switch_to_camera_label">"Passer en mode photo"</string>
+
+    <!-- The text of menu item to switch the mode to Video. [CHAR LIMIT=NONE] -->
+    <string name="switch_to_video_label">"Passer en mode vidéo"</string>
+
+    <!-- The text of menu item to switch the mode to Panorama. [CHAR LIMIT=NONE] -->
+    <string name="switch_to_panorama_label">"Passer en mode panoramique"</string>
+
+    <string name="setting_increment" translatable="false">&gt;</string>
+    <string name="setting_decrement" translatable="false">&lt;</string>
+
+    <!-- Title of the dialog showing a list of applications that can share the captured picture. [CHAR LIMIT=30] -->
+    <string name="share_picture_via">"Partager l\'image via"</string>
+
+    <!-- Title of the dialog showing a list of applications that can share the captured video. [CHAR LIMIT=30] -->
+    <string name="share_video_via">"Partager la vidéo via"</string>
+
+    <!-- Toast saying that there is no picture to share. [CHAR LIMIT=30] -->
+    <string name="no_picture_to_share">"Aucune image à partager."</string>
+
+    <!-- Toast saying that there is no video to share. [CHAR LIMIT=30] -->
+    <string name="no_video_to_share">"Aucune vidéo à partager."</string>
+
+    <!-- The text shown when the panorama panning speed is to fast [CHAR LIMIT=12] -->
+    <string name="pano_too_fast_prompt">"Trop rapide"</string>
+
+    <!-- The text shown in the progress dialog when panorama preview is generating in the background [CHAR LIMIT=30] -->
+    <string name="pano_dialog_prepare_preview">"Préparation vue panoramique..."</string>
+
+    <!-- The text shown in the dialog when panorama saving failed [CHAR LIMIT=40] -->
+    <string name="pano_dialog_panorama_failed">"Impossible d\'enregistrer le panoramique."</string>
+
+    <!-- The text shown on the dialog title in the dialogs for Panorama [CHAR LIMIT=12] -->
+    <string name="pano_dialog_title">"Panoramique"</string>
+
+    <!-- The text shown on the top-left corner of the screen to indicate the capturing is on going [CHAR LIMIT=27] -->
+    <string name="pano_capture_indication">"Capture vue panoramique…"</string>
+
+    <!-- The text shown on the bottom-left corner of the screen to indicate that the saving is in process [CHAR LIMIT=13] -->
+    <string name="pano_review_saving_indication_str">"Enreg…"</string>
+
+    <!-- Toast telling users tapping on the viewfinder will trigger autofocus [CHAR LIMIT=28] -->
+    <string name="tap_to_focus">"Appuyez pour mise au point."</string>
+
+    <!-- Default effect setting that clears the effect. -->
+    <string name="pref_video_effect_default" translatable="false">none</string>
+
+    <!-- Title of video effect setting popup window -->
+    <string name="pref_video_effect_title">"Effets"</string>
+
+    <!-- Effect setting item that clear the effect. [CHAR LIMIT=14] -->
+    <string name="effect_none">"Aucun"</string>
+    <!-- Effect setting item that squeezes the face. [CHAR LIMIT=14] -->
+    <string name="effect_goofy_face_squeeze">"Compresser"</string>
+    <!-- Effect setting item that makes eyes big. [CHAR LIMIT=14] -->
+    <string name="effect_goofy_face_big_eyes">"Grands yeux"</string>
+    <!-- Effect setting item that makes mouth big. [CHAR LIMIT=14] -->
+    <string name="effect_goofy_face_big_mouth">"Grande bouche"</string>
+    <!-- Effect setting item that makes mouth small. [CHAR LIMIT=14] -->
+    <string name="effect_goofy_face_small_mouth">"Petite bouche"</string>
+    <!-- Effect setting item that makes nose big. [CHAR LIMIT=14] -->
+    <string name="effect_goofy_face_big_nose">"Gros nez"</string>
+    <!-- Effect setting item that makes eyes small. [CHAR LIMIT=14] -->
+    <string name="effect_goofy_face_small_eyes">"Petits yeux"</string>
+    <!-- Effect setting item that replaces background with Android in Space. [CHAR LIMIT=14] -->
+    <string name="effect_backdropper_space">"Dans l\'espace"</string>
+    <!-- Effect setting item that replaces background with a sunset. [CHAR LIMIT=14] -->
+    <string name="effect_backdropper_sunset">"Coucher soleil"</string>
+    <!-- Effect setting item that replaces background with video from gallery. [CHAR LIMIT=14] -->
+    <string name="effect_backdropper_gallery">"Sélectionner arrière-plan"</string>
+
+    <!-- Message displayed in overlay during background replacement training [CHAR LIMIT=180]-->
+    <string name="bg_replacement_message">"Posez votre appareil."\n"Sortez du cadre quelques instants."</string>
+
+    <!-- Toast after trying to select a setting that is not allowed to change in effect [CHAR LIMIT=50] -->
+    <string name="not_selectable_in_effect">"Sélection impossible lorsque l\'effet est activé."</string>
+
+    <!-- Toast telling users tapping on the viewfinder will take a picture [CHAR LIMIT=65] -->
+    <string name="video_snapshot_hint">"Appuyez sur écran aperçu pour prendre photo pendant enreg. vidéo."</string>
+
+    <!-- Toast telling users video snapshot is disabled when the effects are on and a user tries to tap on the viewfinder [CHAR LIMIT=65] -->
+    <string name="disable_video_snapshot_hint">"Instantané vidéo désactivé en cas d\'activation des effets spéciaux."</string>
+
+    <!-- A button in effect setting popup to clear the effect. [CHAR LIMIT=26] -->
+    <string name="clear_effects">"Effacer les effets"</string>
+
+    <!-- Title of category for silly face effects. [CHAR LIMIT=26] -->
+    <string name="effect_silly_faces">"DRÔLES DE TÊTES"</string>
+
+    <!-- Title of category for background replacement effects. [CHAR LIMIT=26] -->
+    <string name="effect_background">"ARRIÈRE-PLAN"</string>
+
+    <!-- The shutter button. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_shutter_button">"Bouton de l\'obturateur"</string>
+    <!-- The button to review the thumbnail. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_review_thumbnail">"Photo la plus récente"</string>
+    <!-- The front/back camera switch. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_camera_picker">"Interrupteur des caméras avant et arrière"</string>
+    <!-- The mode picker to switch between camera, video and panorama. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_mode_picker">"Sélecteur du mode Photo, Vidéo ou Panoramique"</string>
+    <!-- The button to switch to the second-level indicators of the camera settings. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_second_level_indicators">"Plus de paramètres"</string>
+    <!-- The button to back to the first-level indicators of the camera settings. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_back_to_first_level">"Fermer les paramètres"</string>
+    <!-- The zoom control button. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_zoom_control">"Contrôle du zoom"</string>
+    <!-- The decrement button in camera preference such as exposure, picture size. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_decrement">"Diminuer %1$s"</string>
+    <!-- The increment button in camera preference such as exposure, picture size. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_increment">"Augmenter %1$s"</string>
+    <!-- The on/off switch in camera settings, such as store location. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_switch">"Interrupteur %1$s"</string>
+
+    <!-- TODO: remove the string as it is a work-around solution to bypass the default speak of the element type. -->
+    <string name="empty" translatable="false">" "</string>
+</resources>

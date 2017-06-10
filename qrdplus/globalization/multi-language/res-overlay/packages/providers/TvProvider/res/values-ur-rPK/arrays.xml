@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Category mapping from ATSC to canonical genre -->
+    <string-array name="genre_mapping_atsc">
+        <item>تعلیم|تعلیم</item>
+        <item>تفریح|تفریح</item>
+        <item>مووی|موویز</item>
+        <item>خبریں|خبریں</item>
+        <item>مذہبی|طرز_زندگی</item>
+        <item>کھیل|کھیل</item>
+        <item>دیگر|دیگر</item>
+        <item>ایکشن|موویز</item>
+        <item>اشتہار|دیگر</item>
+        <item>متحرک|خاندانی_بچّے</item>
+        <item>بیاض|ناٹک</item>
+        <item>آٹوموبائل|دیگر</item>
+        <item>انعام|تفریح</item>
+        <item>بیس بال|کھیل</item>
+        <item>باسکٹ بال|کھیل</item>
+        <item>بلیٹن|دیگر</item>
+        <item>کاروبار|دیگر</item>
+        <item>کلاسیکی|موسیقی</item>
+        <item>کالج|تعلیم</item>
+        <item>لڑائی|دیگر</item>
+        <item>مزاحیہ|مزاحیہ</item>
+        <item>تبصرے|دیگر</item>
+        <item>محفل|موسیقی</item>
+        <item>کنزیومر|دیگر</item>
+        <item>عصر حاضر|دیگر</item>
+        <item>جرم|موویز</item>
+        <item>رقص|تفریح</item>
+        <item>دستاویزی فلم|خبریں</item>
+        <item>ناٹک|ناٹک</item>
+        <item>ایلیمنٹری|تعلیم</item>
+        <item>اروٹیکا|موویز</item>
+        <item>ورزش|کھیل</item>
+        <item>تصور|موویز</item>
+        <item>کاشت|دیگر</item>
+        <item>فیشن|طرز_زندگی</item>
+        <item>فکشن|فنون</item>
+        <item>کھانا|طرز_زندگی</item>
+        <item>فٹ بال|کھیل</item>
+        <item>غیر ملک|دیگر</item>
+        <item>فنڈ ریزن|دیگر</item>
+        <item>گیم/سوالات|گیمنگ</item>
+        <item>گارڈن|طرز_زندگی</item>
+        <item>گولف|کھیل</item>
+        <item>حکومت|دیگر</item>
+        <item>صحت|طرز_زندگی</item>
+        <item>ہائی سکول|تعلیم</item>
+        <item>تاریخ|تعلیم</item>
+        <item>مشغلہ|طرز_زندگی</item>
+        <item>ہاکی|کھیل</item>
+        <item>گھر|طرز_زندگی</item>
+        <item>دھشتناک|موویز</item>
+        <item>معلومات|خبریں</item>
+        <item>ہدایت|دیگر</item>
+        <item>بین الاقوامی|دیگر</item>
+        <item>انٹرویو|دیگر</item>
+        <item>زبان|تعلیم</item>
+        <item>قانونی|دیگر</item>
+        <item>لائیو|دیگر</item>
+        <item>مقامی|دیگر</item>
+        <item>ریاضی|تعلیم</item>
+        <item>طبی|دیگر</item>
+        <item>ملاقات|دیگر</item>
+        <item>فوجی|دیگر</item>
+        <item>منیسیریز|ناٹک</item>
+        <item>موسیقی|موسیقی</item>
+        <item>بھید|موویز</item>
+        <item>قومی|دیگر</item>
+        <item>قدرت|جانوروں کی_جنگلی حیات</item>
+        <item>پولیس|دیگر</item>
+        <item>سیاست|دیگر</item>
+        <item>پریمیئر|پریمیئر</item>
+        <item>پہلے سے ریکارڈ کردہ|دیگر</item>
+        <item>مصنوعہ|دیگر</item>
+        <item>پیشہ ور|دیگر</item>
+        <item>عوام|دیگر</item>
+        <item>دوڑ|کھیل</item>
+        <item>پڑھنا|فنون</item>
+        <item>مرمت|دیگر</item>
+        <item>دہرائیں|دیگر</item>
+        <item>جائزہ|دیگر</item>
+        <item>رومانس|موویز</item>
+        <item>سائنس|ٹیکھ_سائنس</item>
+        <item>سلسلہ|ناٹک</item>
+        <item>خدمت|دیگر</item>
+        <item>شاپنگ|شاپنگ</item>
+        <item>صابن اوپیرا|ناٹک</item>
+        <item>خاص|دیگر</item>
+        <item>تشویش|موویز</item>
+        <item>گفتگو|تفریح</item>
+        <item>تکنیکی|ٹیکھ_سائنس</item>
+        <item>ٹینس|کھیل</item>
+        <item>سفر|سفر</item>
+        <item>مختلف قسم|تفریح</item>
+        <item>ویڈیو|فنون</item>
+        <item>موسم|خبریں</item>
+        <item>مغربی|دیگر</item>
+        <item>فن|فنون</item>
+        <item>خود کاردوڑ|کھیل</item>
+        <item>هوابازی|کھیل</item>
+        <item>سوانح حیات|خبریں</item>
+        <item>کشتی رانی|کھیل</item>
+        <item>گیند بازی|کھیل</item>
+        <item>مکے بازی|کھیل</item>
+        <item>کارٹون|خاندانی_بچّے</item>
+        <item>بچّے|خاندانی_بچّے</item>
+        <item>کلاسک فلم|موویز</item>
+        <item>برادری|دیگر</item>
+        <item>کمپیوٹرس|ٹیکھ_سائنس</item>
+        <item>ملکی موسیقی|موسیقی</item>
+        <item>عدالت|دیگر</item>
+        <item>انتہائی کھیل|کھیل</item>
+        <item>خاندان|خاندانی_بچّے</item>
+        <item>مالیاتی|خبریں</item>
+        <item>ورزش سے متعلق|کھیل</item>
+        <item>سرخیاں|خبریں</item>
+        <item>گھوڑوں کی دوڑ|کھیل</item>
+        <item>شکار/ماہی گیری/باہری|جانوروں کی_جنگلی حیات</item>
+        <item>خود مختار|دیگر</item>
+        <item>جاز|موسیقی</item>
+        <item>میگزین|خبریں</item>
+        <item>موٹر سائکل کی دوڑ|کھیل</item>
+        <item>موسیقی/فلم/کتابیں|دیگر</item>
+        <item>خبریں-بین الاقوامی|خبریں</item>
+        <item>خبریں مقامی|خبریں</item>
+        <item>خبریں قومی|خبریں</item>
+        <item>خبریں علاقائی|خبریں</item>
+        <item>اولمپکس|کھیل</item>
+        <item>اصل|موویز</item>
+        <item>فنون ادا کرنا|فنون</item>
+        <item>پالتو جانور/جانون|جانوروں کی_جنگلی حیات</item>
+        <item>پاپ|موسیقی</item>
+        <item>راک اینڈ رول|موسیقی</item>
+        <item>سائنس افسانے|موویز</item>
+        <item>خود بہتری|تعلیم</item>
+        <item>مزاحیہ|ناٹک</item>
+        <item>اسکیٹنگ|کھیل</item>
+        <item>سکیانگ|کھیل</item>
+        <item>فٹ بال|کھیل</item>
+        <item>ٹریک/میدان|کھیل</item>
+        <item>سچ|دیگر|کھیل</item>
+        <item>والی بال|کھیل</item>
+        <item>کشتی|کھیل</item>
+    </string-array>
+
+    <!-- Category mapping from DVB to canonical genre -->
+    <string-array name="genre_mapping_dvb">
+        <item>مووی/ناٹک|موویز</item>
+        <item>جاسوس/رومانچک|موویز</item>
+        <item>ایڈونچر/مغربی/جنگ|موویز</item>
+        <item>سائنس فکشن/تصور/دھشتناک|موویز</item>
+        <item>مزاحیہ|مزاحیہ</item>
+        <item>صابن/ڈرامہ/فولکلوراک|ناٹک</item>
+        <item>رومانس|موویز</item>
+        <item>سنجیدہ/کلسیکل/مذہبی/تاریخی مووی/ناٹک|موویز</item>
+        <item>بالغ مووی/ناٹک|موویز</item>
+        <item>خبریں/حالات حاضرہ|خبریں</item>
+        <item>خبریں/موسم کی اطلاع|خبریں</item>
+        <item>خبریں میگزین|خبریں</item>
+        <item>دستاویزی فلم|خبریں</item>
+        <item>بحث/انٹویو/بحث|خبریں</item>
+        <item>دکھائیں/گیم شو|تفریح</item>
+        <item>گیم شو/سوالات/مقابلہ</item>
+        <item>مختلف قسم کے شو|تفریح</item>
+        <item>گفتگو شو|تفریح</item>
+        <item>کھیل|کھیل</item>
+        <item>خصوصی تقریبات (اولمپک کھیل، ورلڈ کپ وغیرہ)|کھیل</item>
+        <item>کھیل میگزینس|کھیل</item>
+        <item>فٹ بال/فٹ بال|کھیل</item>
+        <item>ٹینس/اسکواش|کھیل</item>
+        <item>ٹیم کھیل (فٹ بال کے علاوہ)|کھیل</item>
+        <item>ایتھلیٹکس|کھیل</item>
+        <item>موٹر کھیل|کھیل</item>
+        <item>پانی کھیل|کھیل</item>
+        <item>موسم سرما کھیل|کھیل</item>
+        <item>گھوڑسواری|کھیل</item>
+        <item>مارشل کھیل|کھیل</item>
+        <item>بچّوں کے نوجوانوں کے پروگرام|خاندانی_بچّے</item>
+        <item>پری سکول کے بچّوں کے پروگرام|خاندانی_بچّے</item>
+        <item>6 سے 14 کے لیے تفریح کے پروگرام|خاندانی_بچّے</item>
+        <item>10 سے 16 کے لیے تفریح کے پروگرام|خاندانی_بچّے</item>
+        <item>معلوماتی/تعلیمی/اسکول کے پروگرام|خاندانی_بچّے</item>
+        <item>کارٹونس/کٹھپتلیاں|خاندانی_بچّے</item>
+        <item>موسیقی/بیلے/رقص|رقص</item>
+        <item>راک/پاپ|موسیقی</item>
+        <item>سنجیدہ موسیقی/کلسیکل موسیقی|موسیقی</item>
+        <item>لوک/روایتی موسیقی|موسیقی</item>
+        <item>جاز|موسیقی</item>
+        <item>موسیقی/اوپیرا|موسیقی</item>
+        <item>بیلے|تفریح</item>
+        <item>فنون/ثقافت|فنون</item>
+        <item>فنون ادا کرنا|فنون</item>
+        <item>فنون لطیفہ|فنون</item>
+        <item>مذہبی|طرز_زندگی</item>
+        <item>مقبول ثقافت/روایتی فنون|طرز_زندگی</item>
+        <item>ادب|فنون</item>
+        <item>فلم/سنیما|فنون</item>
+        <item>تجرباتی فلم/ویڈیو|فنون</item>
+        <item>براڈ کاسٹننگ/پریس|فنون</item>
+        <item>نئی میڈیا|فنون</item>
+        <item>فنون/ثقافت میگزینس|فنون</item>
+        <item>فیشن|طرز_زندگی</item>
+        <item>سماجی/سیاسی مسائل/معاشیات|دیگر</item>
+        <item>میگزینس/اطلاعات/دستاویزی فلم|خبریں</item>
+        <item>معاشیات/سماجی مشاورتی|دیگر</item>
+        <item>قابل ذکر لوگ|دیگر</item>
+        <item>تعلیم/سائنس/حقیقی موضوعات|تعلیم</item>
+        <item>قدرت/جانور/ماحول|جانوروں کی_جنگلی حیات</item>
+        <item>ٹیکنالوجی،قدرتی سائنسیس|ٹیکھ سائنس</item>
+        <item>دوا/فزیالوجی/نفسیاتی|ٹیکھ سائنس</item>
+        <item>غیر ملکی ممالک/مہم|تعلیم</item>
+        <item>سماجی/روحانی علوم|ٹیکھ سائنس</item>
+        <item>مزید تعلیم|تعلیم</item>
+        <item>زبان|تعلیم</item>
+        <item>تفریحی مشاغل|طرز_زندگی</item>
+        <item>سیاحت/سفر|سفر</item>
+        <item>دستکاری|طرز_زندگی</item>
+        <item>موٹرنگ|طرز_زندگی</item>
+        <item>فٹنس اور صحت|طرز_زندگی</item>
+        <item>کھانا پکانا|طرز_زندگی</item>
+        <item>اشتہار/شاپنگ|شاپنگ</item>
+        <item>باغبانی|طرز_زندگی</item>
+        <item>اصل زبان|دیگر</item>
+        <item>کالا اور سفید|دیگر</item>
+        <item>غیر شائع شدہ|دیگر</item>
+        <item>براہ راست نشریات|دیگر</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB to canonical genre -->
+    <string-array name="genre_mapping_isdb">
+        <item>حرکت پذیری|موویز</item>
+        <item>بیس بال|کھیل</item>
+        <item>بچّوں کا گانا|موسیقی</item>
+        <item>کلاسک،اوپیرا|موسیقی</item>
+        <item>کھانا بنانے کی قسمیں|تفریح</item>
+        <item>مزاحیہ پروگرام|تفریح</item>
+        <item>کامک کہانی|تفریح</item>
+        <item>کمپیوٹر، TV گیمس|ٹیکھ سائنس</item>
+        <item>گفتگو، زبانیں|تعلیم</item>
+        <item>رقص، بیلے|تفریح</item>
+        <item>بحث، کانفرنس|خبریں</item>
+        <item>معاشیات، مارکٹ کی اطلاع|خبریں</item>
+        <item>تعلیمی مسائل|تعلیم</item>
+        <item>وقوعے|تفریح</item>
+        <item>فیشن|طرز_زندگی</item>
+        <item>لوک موسیقی، دنیا کی موسیقی|موسیقی</item>
+        <item>گیم|گیمنگ</item>
+        <item>باغبانی، پالتو جانور، دستکاری|طرز_زندگی</item>
+        <item>گولف|کھیل</item>
+        <item>گپ شپ/ٹیبلایڈ شو|تفریح</item>
+        <item>پیٹو/کھانا پکانا|طرز_زندگی</item>
+        <item>صحت، طبی علاج|طرز_زندگی</item>
+        <item>مشغلہ/تعلیم|طرز_زندگی</item>
+        <item>گھوڑوں کی دوڑ، لوگوں کی دوڑ|کھیل</item>
+        <item>جاپانی حرکت پذیری|خاندانی بچّے</item>
+        <item>جاپانی بلاڈ، جاپانی روایتی موسیقی|موسیقی</item>
+        <item>جاپانی چیس (شوگی) اور "go"|گیمنگ</item>
+        <item>جاپانی ناٹک|ناٹک</item>
+        <item>جاپانی موویز|موویز</item>
+        <item>جاپانی راک، پاپ موسیقی|موسیقی</item>
+        <item>جاز، فیوزن|موسیقی</item>
+        <item>جونیر ہائی اسکول اور ہائی اسکول کے طلبہ|تعلیم</item>
+        <item>کابوکی، کلاسیکل ناٹک|ناٹک</item>
+        <item>کراؤکے، شوقیہ گانوں کامقابلہ|موسیقی</item>
+        <item>تاحیات تعلیم، قابلیت|تعلیم</item>
+        <item>چھوٹے بچّے، اسکولکےبچّے|تعلیم</item>
+        <item>لائیو کنسرٹ|موسیقی</item>
+        <item>رہنے والے، گھر|طرز_زندگی</item>
+        <item>مقامی پروگرام|خبریں</item>
+        <item>ماہ-جوںگ، پنبال گیمس|گیمنگ</item>
+        <item>میراتھن، اتھلیٹک کھیل، تیراکی|کھیل</item>
+        <item>سمندری کھیل، موسم سرما کے کھیل|کھیل</item>
+        <item>جدید ناٹک، مغربی-طرز ناٹک| ناٹک</item>
+        <item>موٹر کھیل|کھیل</item>
+        <item>موسیقی|موسیقی</item>
+        <item>موسیقی، فن، صنعتی فن|فنون</item>
+        <item>موسیقی کی قسمیں|تفریح</item>
+        <item>خبروں کا تجزیہ|خبریں</item>
+        <item>اولمپک، بین الاقوامی گیمس|کھیل</item>
+        <item>دیگر گیند والے گیمس|کھیل</item>
+        <item>غیر ملکی حرکت پذیری|خاندانی_بچّے</item>
+        <item>غیر ملکی ناٹک|ناٹک</item>
+        <item>غیر ملکی، بین الاقوامی اطلاع|خبریں</item>
+        <item>غیر ملکی موویز|موویز</item>
+        <item>غیر ملکی راک، پاپ موسیقی|موسیقی</item>
+        <item>مدّت کے ناٹک|ناٹک</item>
+        <item>سیاست، قومی اسمبلی|خبریں</item>
+        <item>مقبول گانے، جاپانی مقبول گانے (اینکا گانے)|موسیقی</item>
+        <item>سوالات|گیمنگ</item>
+        <item>درجہ بندی، موسیقی کی درخواست|موسیقی</item>
+        <item>باقاعدہ، عام|خبریں</item>
+        <item>شاپنگ، میل آرڈر کاروبار|شاپنگ</item>
+        <item>فٹ بال|کھیل</item>
+        <item>خاص اثرات|خاندادی بچّے</item>
+        <item>خصوصی پروگرام، دستاویزی فلم|خبریں</item>
+        <item>خصوصی اطلاع</item>
+        <item>کھیل کی خبریں|کھیل</item>
+        <item>سومو، جنگجو کھیل|کھیل</item>
+        <item>گفتگو کی قسمیں|تفریح</item>
+        <item>دورے کی قسمیں|تفریح</item>
+        <item>ٹریفک کی اطلاع|خبریں</item>
+        <item>دورہ، ماہی گیری،بیرونی تفریح|جانوروں کی_جنگلی حیات</item>
+        <item>یونیورسٹی کے طلباء، امتحانات|تعلیم</item>
+        <item>موسم کی اطلاع|خبریں</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB in Brazil to canonical genre -->
+    <string-array name="genre_mapping_isdb_br">
+        <item>جیونی|خبریں</item>
+        <item>پاک|طرز_زندگی</item>
+        <item>دستاویزی فلم|خبریں</item>
+        <item>تعلیمی|تعلیم</item>
+        <item>اروٹیکا|موویز</item>
+        <item>کھیل|کھیل</item>
+        <item>فلمیں|موویز</item>
+        <item>گیم نمایش|گیمنگ</item>
+        <item>مزاحیہ|ظریفانہ</item>
+        <item>بچہ|خاندان_بچوں</item>
+        <item>معلومات|طرز_زندگی</item>
+        <item>صحافت|خبریں</item>
+        <item>منیسیریز|ڈرامہ</item>
+        <item>فیشن|طرز_زندگی</item>
+        <item>موسیقی|موسیقی</item>
+        <item>ایوارڈ|تفریح</item>
+        <item>حقیقی نمائش|تفریح</item>
+        <item>مذہبی|طرز_زندگی</item>
+        <item>رپورٹ|خبریں</item>
+        <item>دیہی|طرز_زندگی</item>
+        <item>صحت|طرز_زندگی</item>
+        <item>سلسلہ|ڈرامہ</item>
+        <item>سلسلہ/نمایش|ڈرامہ</item>
+        <item>نمایش|تفریح</item>
+        <item>ٹیلیجونیس|خبریں</item>
+        <item>ٹیلیسال|خریداری</item>
+        <item>سیاحت|سفر</item>
+        <item>مختلف قسم|تفریح</item>
+        <item>آڈیٹوریم|تفریح</item>
+        <item>انعام|تفریح</item>
+        <item>سوانح حیات|خبریں</item>
+        <item>بچّے|خاندانی_بچّے</item>
+        <item>بچّے|خاندانی_بچّے</item>
+        <item>ٹھٹول|مزاحیہ</item>
+        <item>کھانا پکانا|طرز_زندگی</item>
+        <item>ملک|طرز_زندگی</item>
+        <item>بحث/انٹویو/بحث|خبریں</item>
+        <item>مباحثہ|خبریں</item>
+        <item>دستاویزی فلم|خبریں</item>
+        <item>تعلیم|تعلیم</item>
+        <item>تعلیمی|تعلیم</item>
+        <item>انگاننرانگ کی خدمات|ٹیک_سائنس</item>
+        <item>اروٹیکا|موویز</item>
+        <item>فیشن|طرز_زندگی</item>
+        <item>مونث|تفریح</item>
+        <item>گیم نمایش|گیمنگ</item>
+        <item>صحت|طرز_زندگی</item>
+        <item>ظریفانہ|مزاحیہ</item>
+        <item>معلومات|طرز_زندگی</item>
+        <item>انٹرویو|خبریں</item>
+        <item>صحافت|خبریں</item>
+        <item>بنانے کا|تفریح</item>
+        <item>منیسیریز|ڈرامہ</item>
+        <item>منیسیریز|ناٹک</item>
+        <item>مووی (فلم)|موویز</item>
+        <item>مووی|موویز</item>
+        <item>موسیقی کی قسمیں|تفریح</item>
+        <item>خبریں|خبریں</item>
+        <item>پریزانگ|خریداری</item>
+        <item>ریفل|خریداری</item>
+        <item>ریفل, ٹیلی ویژن فروخت, پریزانگ|خریداری</item>
+        <item>حقیقی نمائش|تفریح</item>
+        <item>مذہبی|طرز_زندگی</item>
+        <item>رپورٹنگ|خبریں</item>
+        <item>رپورٹ|خبریں</item>
+        <item>دیہی|طرز_زندگی</item>
+        <item>سلسلہ|ناٹک</item>
+        <item>سلسلہ / TV نمایش|ڈرامہ</item>
+        <item>نمایش|تفریح</item>
+        <item>سوپ اوپیرا|ناٹک</item>
+        <item>کھیل|کھیل</item>
+        <item>کھیل|کھیل</item>
+        <item>ٹیلی سیلز|خریداری</item>
+        <item>ٹیلی ویژن|فروخت</item>
+        <item>سیاحت|سفر</item>
+        <item>سفر|سفر</item>
+        <item>TV خبریں|خبریں</item>
+        <item>مختلف قسم|تفریح</item>
+        <item>مختلف قسم کے نمایش|تفریح</item>
+    </string-array>
+</resources>

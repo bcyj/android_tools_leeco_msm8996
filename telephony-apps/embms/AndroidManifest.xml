@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.qualcomm.embms"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="10" />
+
+    <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <service android:exported="true" android:name=".EmbmsService" android:enabled="true" android:process=":remote">
+            <intent-filter>
+                 <!--These are the interfaces supported by the service, which
+                     you can bind to.  -->
+                <action android:name="com.qualcomm.embms.IEmbmsService"/>
+            </intent-filter>
+        </service>
+        <uses-library android:name="com.qualcomm.embmslibrary"/>
+        <uses-library android:name="com.qualcomm.qcrilhook"/>
+        <receiver android:name=".EmbmsBootReceiver">
+           <intent-filter>
+               <action android:name="android.intent.action.BOOT_COMPLETED"/>
+           </intent-filter>
+        </receiver>
+    </application>
+</manifest>

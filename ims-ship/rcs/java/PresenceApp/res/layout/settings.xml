@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (c)2012-2013 Qualcomm Technologies, Inc.  All Rights Reserved.
+ Qualcomm Technologies Proprietary and Confidential.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:scrollbars="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+        <!-- Settings for VT -->
+         <TextView
+      android:text="@string/vt_setting"
+      android:textSize="25sp"
+      android:textColor="#ffffff"
+      android:background="#717171"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1"/>
+
+<!--  Sub Section: VT Enable/Disable-->
+  <LinearLayout
+      android:id="@+id/checkbox_layout"
+      android:orientation="vertical"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1">
+
+      <CheckBox  android:id="@+id/vt_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="15dip"
+          android:text="@string/vt_settings_text" />
+
+      <CheckBox  android:id="@+id/ft_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="15dip"
+          android:text="@string/ft_settings_text" />
+
+      <CheckBox  android:id="@+id/chat_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="15dip"
+          android:text="@string/chat_settings_text" />
+
+      <CheckBox  android:id="@+id/presence_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="15dip"
+          android:text="@string/app_name" />
+
+  </LinearLayout>
+
+  <TextView
+      android:id="@+id/data_textview_title"
+      android:text="@string/data_status"
+      android:textSize="25sp"
+      android:textColor="#ffffff"
+      android:background="#717171"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"/>
+
+        <TextView
+          android:id="@+id/data_textview"
+          android:text="@string/data_on_off_status"
+          android:textSize="15dip"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="10dip"
+          android:layout_weight="1"/>
+
+
+<!--  Section Heading: Notify Settings-->
+  <TextView
+      android:text="@string/notify_settings_text"
+      android:textSize="25sp"
+      android:textColor="#ffffff"
+      android:background="#717171"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1"/>
+
+<!--  Sub Section: Notify format-->
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1">
+      <TextView
+          android:text="@string/set_notify_fmt_text"
+          android:textSize="15dip"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:paddingTop="10dip"
+          android:layout_weight="1"/>
+      <Spinner
+          android:id="@+id/notify_fmt_Spinner"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_weight="1"
+          android:entries="@array/notify_fmt_list"/>
+  </LinearLayout>
+
+  <!--  Buttons layout for Notify Format -->
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1">
+      <Button
+          android:id="@+id/set_notify_fmt_button"
+          android:text="@string/set_text"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"/>
+      <Button
+          android:id="@+id/get_notify_current_fmt_button"
+          android:text="@string/get_text"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"/>
+  </LinearLayout>
+
+<!--  Section Heading: Event Reporting Settings-->
+<!--   <TextView
+      android:text="@string/event_report_settings_text"
+      android:textSize="25sp"
+      android:textColor="#ffffff"
+      android:background="#717171"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1"/> -->
+
+<!--  Sub Section: Notify format-->
+ <!--  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1">
+
+      <CheckBox  android:id="@+id/enable_publish_trigger_ind_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="15dip"
+          android:text="@string/enable_publish_trigger_ind_text" />
+
+      <CheckBox  android:id="@+id/enable_enabler_state_ind_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="15dip"
+          android:text="@string/enable_enabler_state_ind_text" />
+
+      <CheckBox  android:id="@+id/enable_notify_ind_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="15dip"
+          android:text="@string/enable_notify_ind_text" />
+  </LinearLayout> -->
+
+  <!--  Buttons layout for Notify Format -->
+  <!-- <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1">
+      <Button
+          android:id="@+id/set_event_report_button"
+          android:text="@string/set_text"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"/>
+      <Button
+          android:id="@+id/get_event_report_button"
+          android:text="@string/get_text"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"/>
+  </LinearLayout> -->
+
+<!--  Section Heading: Timer Settings-->
+  <TextView
+      android:text="@string/timer_settings_text"
+      android:textSize="25sp"
+      android:textColor="#ffffff"
+      android:background="#717171"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1"/>
+
+<!--  Sub Section: AVAILABILITY_CACHE_EXPIRATION-->
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1">
+      <TextView
+          android:text="@string/availability_cache_exp_text"
+          android:textSize="15dip"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_weight="1"/>
+      <EditText
+          android:id="@+id/availability_cache_exp_value"
+          android:layout_height="fill_parent"
+          android:layout_width="fill_parent"
+          android:inputType="numberDecimal"
+          android:layout_weight="1" android:lines="1"/>
+
+  </LinearLayout>
+
+  <!--  Sub Section: CAPABILITIES_CACHE_EXPIRATION-->
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1">
+      <TextView
+          android:text="@string/capability_cache_exp_text"
+          android:textSize="15dip"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_weight="1"/>
+      <EditText
+          android:id="@+id/capability_cache_exp_value"
+          android:layout_height="fill_parent"
+          android:layout_width="fill_parent"
+          android:inputType="numberDecimal"
+          android:layout_weight="1" android:lines="1"/>
+
+  </LinearLayout>
+
+  <!--  Sub Section: CAPABILITY_POLL_INTERVAL-->
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1">
+      <TextView
+          android:text="@string/capability_poll_interval_text"
+          android:textSize="15dip"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_weight="1"/>
+      <EditText
+          android:id="@+id/capability_poll_interval_value"
+          android:layout_height="fill_parent"
+          android:layout_width="fill_parent"
+          android:inputType="numberDecimal"
+          android:layout_weight="1" android:lines="1"/>
+
+  </LinearLayout>
+
+  <!--  Sub Section: CAPABILITY_POLL_LIST_SUBSCRIPTION_EXPIRATION-->
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1">
+      <TextView
+          android:text="@string/capability_poll_list_exp_text"
+          android:textSize="15dip"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_weight="1"/>
+      <EditText
+          android:id="@+id/capability_poll_list_exp_value"
+          android:layout_height="fill_parent"
+          android:layout_width="fill_parent"
+          android:inputType="numberDecimal"
+          android:layout_weight="1" android:lines="1"/>
+
+  </LinearLayout>
+
+  <!--  Sub Section: SOURCE_THROTTLE_PUBLISH-->
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1">
+      <TextView
+          android:text="@string/source_throttle_publish_text"
+          android:textSize="15dip"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_weight="1"/>
+      <EditText
+          android:id="@+id/source_throttle_publish_value"
+          android:layout_height="fill_parent"
+          android:layout_width="fill_parent"
+          android:inputType="numberDecimal"
+          android:layout_weight="1" android:lines="1"/>
+  </LinearLayout>
+
+<!--  Section Heading: Retry Settings-->
+  <TextView
+      android:text="@string/retry_info_text"
+      android:textSize="25sp"
+      android:textColor="#ffffff"
+      android:background="#717171"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1"/>
+
+  <!--  Sub Section: Subscribe retry-->
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1">
+      <TextView
+          android:text="@string/subscribe_retry_text"
+          android:textSize="15dip"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_weight="1"/>
+      <EditText
+          android:id="@+id/subscribe_retry_value"
+          android:layout_height="fill_parent"
+          android:layout_width="fill_parent"
+          android:inputType="numberDecimal"
+          android:layout_weight="1" android:lines="1"/>
+  </LinearLayout>
+
+  <!--  Sub Section: Publish retry-->
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1">
+      <TextView
+          android:text="@string/publish_retry_text"
+          android:textSize="15dip"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_weight="1"/>
+      <EditText
+          android:id="@+id/publish_retry_value"
+          android:layout_height="fill_parent"
+          android:layout_width="fill_parent"
+          android:inputType="numberDecimal"
+          android:layout_weight="1" android:lines="1"/>
+  </LinearLayout>
+
+<!--  Section Heading: List subscription settings-->
+  <TextView
+      android:text="@string/list_subscription_settings_text"
+      android:textSize="25sp"
+      android:textColor="#ffffff"
+      android:background="#717171"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1"/>
+
+
+  <!--  Sub Section: Max entry in list subscription-->
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1">
+      <TextView
+          android:text="@string/max_list_entries_text"
+          android:textSize="15dip"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_weight="1"/>
+      <EditText
+          android:id="@+id/max_list_entries_value"
+          android:layout_height="fill_parent"
+          android:layout_width="fill_parent"
+          android:inputType="numberDecimal"
+          android:layout_weight="1" android:lines="1"/>
+  </LinearLayout>
+
+  <!--  Buttons layout-->
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1">
+      <Button
+          android:id="@+id/ok"
+          android:text="@string/oktext"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"/>
+      <Button
+          android:id="@+id/cancel"
+          android:text="@string/canceltext"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"/>
+  </LinearLayout>
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (c) 2011-2012 Qualcomm Technologies, Inc.  All Rights Reserved.
+ Qualcomm Technologies Proprietary and Confidential.
+ -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.update">
+
+    <application android:label="@string/app_name" android:icon="@drawable/icon">
+        <activity android:name=".UpdateDialog">
+            <intent-filter>
+                <action android:name="android.settings.SYSTEM_UPDATE" />
+                <action android:name="android.intent.action.MAIN" />
+               <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".InstallReceiver" android:theme="@style/NoDisplay">
+            <intent-filter>
+                <action android:name="com.qualcomm.update.REBOOT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.qualcomm.update.REBOOT_DELTA" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".UpdateViewActivity" android:launchMode="singleInstance"/>
+        <activity android:name=".RemoteActivity" android:screenOrientation="nosensor"/>
+        <receiver android:name=".StartUpdate">
+            <intent-filter>
+                <action android:name="com.android.suc.startupdate" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MASTER_CLEAR" />
+</manifest>

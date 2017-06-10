@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!--
+     Copyright (C) 2011 Google Inc.
+     Licensed to The Android Open Source Project.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Names of packages and authorities that are common to all apps
+    and read from resources -->
+
+    <!-- Layout tests strings -->
+    <string name="mock_content_provider" translatable="false">Mock Content Provider</string>
+    <string name="conversation_content_provider" translatable="false">Conversation Content Provider</string>
+    <string name="account_cache_provider" translatable="false">Account Cache Provider</string>
+
+    <string name="app_name" translatable="false">Unified Email</string>
+
+    <!-- Compose -->
+    <!-- Shown in Compose; the sender of the message [CHAR LIMIT=10] -->
+    <string name="from">"Từ"</string>
+    <!-- Shown in Compose; the recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="to">"Tới"</string>
+    <!-- Shown in Compose; the cc recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="cc">"Cc"</string>
+    <!-- Shown in Compose; the bcc recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="bcc">"Bcc"</string>
+    <!-- Shown in Compose; the subject of the message [CHAR LIMIT=100] -->
+    <string name="subject_hint">"Chủ đề"</string>
+    <!-- Shown in Compose; the body of the message [CHAR LIMIT=100] -->
+    <string name="body_hint">"Soạn email"</string>
+    <!--  Compose screen button. Add an attachment to this message [CHAR LIMIT=20] -->
+    <string name="add_file_attachment">"Đính kèm tệp"</string>
+    <!--  Compose screen button. Add a photo attachment to this message [CHAR LIMIT=20] -->
+    <string name="add_photo_attachment">"Đính kèm ảnh"</string>
+    <!-- Stub string for attaching from a service. Sub-apps should override this. -->
+    <!-- The actual string value doesn\'t matter, it should never appear. -->
+    <string name="attach_from_service_stub1" translatable="false"/>
+    <!-- Button name: save this message as draft [CHAR LIMIT=25]-->
+    <string name="save_draft">"Lưu bản nháp"</string>
+    <!--  Button name: discard this message [CHAR LIMIT=15] -->
+    <string name="discard">"Loại bỏ"</string>
+    <!-- The possible ways to reply to a message [CHAR LIMIT=15] -->
+    <string name="compose">"Soạn thư"</string>
+    <!-- The action bar title for the default compose mode [CHAR LIMIT=10] -->
+    <string name="compose_title">"Soạn thư"</string>
+    <!-- The possible ways to reply to a message [CHAR LIMIT=15] -->
+    <string-array name="compose_modes">
+        <!-- Reply -->
+        <item>"Trả lời"</item>
+        <!-- Reply all -->
+        <item>"Trả lời tất cả"</item>
+        <!-- Forward -->
+        <item>"Chuyển tiếp"</item>
+    </string-array>
+        <!-- Formatting string for the subject when it contains a reply or forward identifier. Do not translate.-->
+    <string name="formatted_subject" translatable="false"><xliff:g id="prefix">%1$s</xliff:g> <xliff:g id="subject">%2$s</xliff:g></string>
+    <!-- Compose screen, prefixed to the subject of a message when replying to it (if not already present). Do not translate. -->
+    <string name="reply_subject_label" translatable="false">Re:</string>
+    <!-- Compose screen, Prefix to forwarded message subject. Do not translate. -->
+    <string name="forward_subject_label" translatable="false">Fwd:</string>
+    <!-- Compose screen, displayed at the top of a message being replied to. Please preserve the HTML entities (surrounded by & and ;).  The two %s strings will be replaced by 1) the date 2) the person who wrote the email being responded to. [CHAR LIMIT=1000]-->
+    <string name="reply_attribution">"Vào <xliff:g id="DATE">%s</xliff:g>, <xliff:g id="PERSON">%s</xliff:g> đã viết:"</string>
+    <!-- Compose screen, displayed at the top of a message being forwarded. Please preserve the HTML entities (surrounded by & and ;). [CHAR LIMIT=1000] -->
+    <string name="forward_attribution">"---------- Tin nhắn đã chuyển tiếp ----------&lt;br&gt;Từ: <xliff:g id="FROM">%1$s</xliff:g>&lt;br&gt;Ngày: <xliff:g id="DATE">%2$s</xliff:g>&lt;br&gt;Chủ đề: <xliff:g id="SUBJECT">%3$s</xliff:g>&lt;br&gt;Tới: <xliff:g id="TO">%4$s</xliff:g>&lt;br&gt;"</string>
+    <!-- Compose screen, displayed at the top of a message being forwarded. [CHAR LIMIT=100]-->
+    <string name="forward_attribution_no_headers">"---------- Thư đã chuyển tiếp ----------"</string>
+    <!-- Compose screen, displayed at the top of a message being forwarded if there are any email addresses in the CC list. Please preserve the HTML entities (surrounded by & and ;). [CHAR LIMIT=1000]-->
+    <string name="cc_attribution">"Cc: <xliff:g id="CC">%1$s</xliff:g>&lt;br&gt;"</string>
+    <!-- Dialog text: select the type of an attachment while composing [CHAR LIMIT=100]-->
+    <string name="select_attachment_type">"Chọn loại tệp đính kèm"</string>
+    <!-- Toast, attachment too large for single file [CHAR LIMIT=100] -->
+    <string name="too_large_to_attach_single">"Không thể đính kèm tệp quá <xliff:g id="MAXSIZE">%1$s</xliff:g>."</string>
+    <!-- Toast, attachment too large for multiple files [CHAR LIMIT=100] -->
+    <string name="too_large_to_attach_multiple">"Một hoặc nhiều tệp không được đính kèm. Giới hạn <xliff:g id="MAXSIZE">%1$s</xliff:g>."</string>
+    <!-- Toast, attachment too large when existing attachments exist [CHAR LIMIT=100] -->
+    <string name="too_large_to_attach_additional">"Tệp không được đính kèm. Đã đạt giới hạn <xliff:g id="MAXSIZE">%1$s</xliff:g>."</string>
+    <!-- Toast, problem attaching file [CHAR LIMIT=100] -->
+    <string name="generic_attachment_problem">"Không thể đính kèm tệp."</string>
+    <!-- Toast, cannot attach the provided file because the calling context doesn\'t have the permission [CHAR LIMIT=100] -->
+    <string name="attachment_permission_denied">"Quyền bị từ chối cho tệp đính kèm."</string>
+    <!-- Displayed for one second after trying to send with no recipients in To field [CHAR LIMIT=200]-->
+    <string name="recipient_needed">"Thêm ít nhất một người nhận."</string>
+    <!-- Messages for send confirmation dialog [CHAR LIMIT=100]-->
+    <string name="confirm_send_message_with_no_subject">"Không có văn bản nào trong chủ đề thư."</string>
+    <string name="confirm_send_message_with_no_body">"Không có văn bản nào trong phần nội dung thư."</string>
+    <string name="confirm_send_message">"Gửi tin nhắn này?"</string>
+    <!-- Displayed for one second after discarding draft message [CHAR LIMIT=50]-->
+    <string name="message_discarded">"Tin nhắn đã bị hủy."</string>
+    <!-- Formatting string for the user\'s signaure. [CHAR LIMIT=10] -->
+    <string name="signature">\n\n"<xliff:g id="SIGNATURE">%s</xliff:g>"</string>
+    <!--  Shown in the from dropdown in front of custom from addresses. [CHAR LIMIT=15] -->
+    <string name="custom_from_account_label">"Gửi với địa chỉ:"</string>
+
+    <!-- Menu item: send this message -->
+    <string name="send">"Gửi"</string>
+    <!-- Menu item: mark this conversation as read -->
+    <string name="mark_read">"Đánh dấu là đã đọc"</string>
+    <!-- Menu item: mark this conversation as unread -->
+    <string name="mark_unread">"Đánh dấu là chưa đọc"</string>
+    <!-- Menu item: toggle read/unread for menus that contain both read and unread options -->
+    <string name="toggle_read_unread">"Chuyển đổi đã đọc/chưa đọc"</string>
+    <!--  Menu item: mute this conversation -->
+    <string name="mute">"Ẩn"</string>
+    <!-- Menu item: add a star to this conversation -->
+    <string name="add_star">"Thêm dấu sao"</string>
+    <!-- Menu item: remove the star from this conversation -->
+    <string name="remove_star">"Xóa dấu sao"</string>
+    <!-- Remove the folder from this conversation [CHAR LIMIT = 30]-->
+    <string name="remove_folder">"Xóa khỏi <xliff:g id="FOLDERNAME">%1$s</xliff:g>"</string>
+    <!-- Menu item: archive this conversation -->
+    <string name="archive">"Lưu trữ"</string>
+    <!-- Menu item: report this conversation as spam [CHAR LIMIT = 30] -->
+    <string name="report_spam">"Báo cáo spam"</string>
+    <!-- Menu item: report this conversation not as spam [CHAR LIMIT = 30] -->
+    <string name="mark_not_spam">"Báo cáo không phải spam"</string>
+    <!-- Menu item: report this conversation as phishing [CHAR LIMIT = 30] -->
+    <string name="report_phishing">"Báo cáo lừa đảo"</string>
+    <!-- Menu item: delete this conversation -->
+    <string name="delete">"Xóa"</string>
+    <!-- Menu item: discard the drafts in this conversation [CHAR LIMIT = 30] -->
+    <string name="discard_drafts">"Hủy thư nháp"</string>
+    <!-- Menu item: discard the failed messages in this conversation [CHAR LIMIT = 30] -->
+    <string name="discard_failed">"Không hủy được"</string>
+    <!-- Menu item: refresh the inbox -->
+    <string name="refresh">"Làm mới"</string>
+    <!-- Menu item: reply to this message -->
+    <string name="reply">"Trả lời"</string>
+    <!-- Menu item: reply to all recipients in this message [CHAR LIMIT=18] -->
+    <string name="reply_all">"Trả lời tất cả"</string>
+    <!-- Menu item: resume a draft message [CHAR LIMIT=12] -->
+    <string name="resume_draft">"Chỉnh sửa"</string>
+    <!-- Menu item: forward this message -->
+    <string name="forward">"Chuyển tiếp"</string>
+    <!-- Menu item: compose a new email -->
+    <string name="menu_compose">"Soạn thư"</string>
+    <!-- Menu item: change the folders for this conversation. -->
+    <string name="menu_change_folders">"Thay đổi thư mục"</string>
+    <!-- Menu item: moves to folders for selected conversation(s). [CHAR LIMIT = 30] -->
+    <string name="menu_move_to">"Di chuyển tới"</string>
+    <!-- Menu item move_to state for displaying as an action or in overflow -->
+    <!-- 0 corresponds to SHOW_AS_ACTION_NEVER -->
+    <string name="menu_move_to_state" translatable="false">0</string>
+    <!-- Menu item: moves current or selected conversation(s) to Inbox. [CHAR LIMIT = 30] -->
+    <string name="menu_move_to_inbox">"Chuyển đến Hộp thư đến"</string>
+    <!-- Menu item: manages the folders for this account. [CHAR LIMIT = 30] -->
+    <string name="menu_manage_folders">"Cài đặt thư mục"</string>
+    <!-- Menu item: report an email was not readable or poorly rendered -->
+    <string name="report_rendering_problem" translatable="false">Looks bad</string>
+    <!-- Menu item: report an email\'s readability has improved -->
+    <string name="report_rendering_improvement" translatable="false">Looks good</string>
+    <!-- Temporary text used for reporting rendering issues Googlers see in testing -->
+    <string name="report_rendering_problem_desc" translatable="false">
+        This message looks bad.
+    </string>
+    <!-- Temporary text used for reporting rendering improvements Googlers see in testing -->
+    <string name="report_rendering_improvement_desc" translatable="false">
+        This message looks good.
+    </string>
+    <!-- Menu item text to show the original version of an email conversation, before message manipulation [CHAR LIMIT=25] -->
+    <string name="menu_show_original">"H.nguyên về t.động đặt cỡ"</string>
+    <!-- Menu item: launch the Settings activity -->
+    <string name="menu_settings">"Cài đặt"</string>
+    <!-- Menu item: search through the Gmail inbox -->
+    <string name="menu_search">"Tìm kiếm"</string>
+    <!-- Menu item: toggle drawer -->
+    <string name="menu_toggle_drawer">"Chuyển đổi ngăn"</string>
+    <!-- Title of the drawer, indicating what it is used for, which is navigation of the app -->
+    <string name="drawer_title">"Điều hướng"</string>
+
+    <!--  Menu item: shown in conversation menu. Tap this to move to mark conversation as important [CHAR LIMIT=30] -->
+    <string name="mark_important">"Đánh dấu là quan trọng"</string>
+    <!--  Menu item: shown in conversation menu. Tap this to move to mark conversation as not important [CHAR LIMIT=30] -->
+    <string name="mark_not_important">"Đánh dấu là không quan trọng"</string>
+
+    <!-- Compose screen, menu item: add Cc/Bcc fields -->
+    <string name="add_cc_label">"Thêm Cc/Bcc"</string>
+    <!-- Compose screen, menu item: add Bcc field [CHAR_LIMIT=20]-->
+    <string name="add_bcc_label">"Thêm Bcc"</string>
+    <!-- Compose screen, Prefix to quoted text in forwarded/replied message [CHAR LIMIT=50]-->
+    <string name="quoted_text">"Bao gồm văn bản được trích dẫn"</string>
+    <!-- Compose screen, Prefix to quoted text in forwarded/replied message; folder for the quoted text area. [CHAR LIMIT=25] -->
+    <string name="quoted_text_label">"Trích dẫn văn bản"</string>
+    <!--  Button for including inline responses. [CHAR LIMIT=25] -->
+    <string name="respond_inline">"Trả lời trực tiếp"</string>
+    <!-- Format string for email addresses -->
+    <string name="formatted_email_address" translatable="false">&lt;<xliff:g id="email">%1$s</xliff:g>&gt;</string>
+
+    <!-- Attachments -->
+    <!-- Size unit, displayed in a button next to an attachment [CHAR LIMIT=5]-->
+    <string name="bytes">"<xliff:g id="COUNT">%s</xliff:g> B"</string>
+    <!-- Size unit, displayed in a button next to an attachment [CHAR LIMIT=5] -->
+    <string name="kilobytes">"<xliff:g id="COUNT">%s</xliff:g> KB"</string>
+    <!-- Size unit, displayed in a button next to an attachment  [CHAR LIMIT=5]-->
+    <string name="megabytes">"<xliff:g id="COUNT">%s</xliff:g> MB"</string>
+    <!-- Attachment description for image files [CHAR LIMIT=30] -->
+    <string name="attachment_image">"Hình ảnh"</string>
+    <!-- Attachment description for video files [CHAR LIMIT=30] -->
+    <string name="attachment_video">"Video"</string>
+    <!-- Attachment description for audio files [CHAR LIMIT=30] -->
+    <string name="attachment_audio">"Âm thanh"</string>
+    <!-- Attachment description for text files [CHAR LIMIT=30] -->
+    <string name="attachment_text">"Văn bản"</string>
+    <!-- Attachment description for .doc files [CHAR LIMIT=30] -->
+    <string name="attachment_application_msword">"Tài liệu"</string>
+    <!-- Attachment description for .ppt files [CHAR LIMIT=30] -->
+    <string name="attachment_application_vnd_ms_powerpoint">"Bản trình bày"</string>
+    <!-- Attachment description for .pdf files [CHAR LIMIT=30] -->
+    <string name="attachment_application_vnd_ms_excel">"Bảng tính"</string>
+    <!-- Attachment description for .pdf files [CHAR LIMIT=30] -->
+    <string name="attachment_application_pdf">"PDF"</string>
+    <!-- Attachment description for unknown files [CHAR LIMIT=30]-->
+    <string name="attachment_unknown">"Tệp <xliff:g id="ATTACHMENTEXTENSION">%s</xliff:g>"</string>
+    <!-- Read email screen, button name. Preview an attachment by Gview. [CHAR LIMIT=18] -->
+    <string name="preview_attachment">"Xem trước"</string>
+    <!-- Read email screen, button name. Save an attachment to sd card. [CHAR LIMIT=10] -->
+    <string name="save_attachment">"Lưu"</string>
+    <!-- Read email screen, button name. Redownload an attachment [CHAR LIMIT=20]-->
+    <string name="download_again">"Tải xuống lại"</string>
+    <!-- A supplemental option on attachments for apps to override. This string intentionally blank here. [CHAR LIMIT=20] -->
+    <string name="attachment_extra_option1" translatable="false"/>
+    <!-- Remove this attachment [CHAR LIMIT=50] -->
+    <string name="remove_attachment_desc">"Xóa tệp đính kèm <xliff:g id="ATTACHMENTNAME">%s</xliff:g>"</string>
+    <!-- Dialog box title [CHAR LIMIT=30] -->
+    <string name="more_info_attachment">"Thông tin"</string>
+    <!-- Dialog box message, displayed when we could not view an attachment. [CHAR LIMIT=200]-->
+    <string name="no_application_found">"Không ứng dụng nào mở được tệp đính kèm này để xem."</string>
+    <!-- Dialog box title. [CHAR LIMIT=30] -->
+    <string name="fetching_attachment">"Đang tìm nạp tệp đính kèm"</string>
+    <!-- Dialog box message. [CHAR LIMIT=80] -->
+    <string name="please_wait">"Vui lòng đợi…"</string>
+    <!-- Displayed in the conversation view, next to a file\'s size and type. Status of a saved attachment. [CHAR LIMIT=20]-->
+    <string name="saved">"Đã lưu, <xliff:g id="SIZE">%s</xliff:g>"</string>
+    <!-- Displayed in the conversation view. Status of a failed attachment. [CHAR LIMIT=50]-->
+    <string name="download_failed">"Không thể tải xuống. Chạm để thử lại."</string>
+    <!-- Photo view screen, button name. Save all attachments to sd card. [CHAR LIMIT=17] -->
+    <string name="menu_photo_save_all">"Lưu tất cả"</string>
+    <!-- Photo view screen, button name. Share attachment. [CHAR LIMIT=10] -->
+    <string name="menu_photo_share">"Chia sẻ"</string>
+    <!-- Photo view screen, button name. Share all attachments. [CHAR LIMIT=20] -->
+    <string name="menu_photo_share_all">"Chia sẻ tất"</string>
+    <!-- Photo view screen, button name. Print photo. [CHAR LIMIT=20] -->
+    <string name="menu_photo_print">"In"</string>
+    <!-- Displayed in the action bar as a subtitle. Save in progress. [CHAR LIMIT=15] -->
+    <string name="saving">"Đang lưu…"</string>
+
+    <!-- Webview Context Menu Strings -->
+    <!-- Title of dialog for choosing which activity to share a link with. [CHAR LIMIT=50]-->
+    <string name="choosertitle_sharevia">"Chia sẻ qua"</string>
+    <!-- Menu item to open a link  [CHAR LIMIT=50]-->
+    <string name="contextmenu_openlink">"Mở trong Trình duyệt"</string>
+    <!-- Menu item to copy the selection  [CHAR LIMIT=50]-->
+    <string name="contextmenu_copy">"Sao chép"</string>
+    <!-- Menu item to copy a link  [CHAR LIMIT=50]-->
+    <string name="contextmenu_copylink">"Sao chép URL liên kết"</string>
+    <!-- Menu item to view an image  [CHAR LIMIT=50]-->
+    <string name="contextmenu_view_image">"Xem hình ảnh"</string>
+    <!-- Menu item to dial a number  [CHAR LIMIT=50]-->
+    <string name="contextmenu_dial_dot">"Quay số…"</string>
+    <!-- Menu item to send an SMS  [CHAR LIMIT=50]-->
+    <string name="contextmenu_sms_dot">"SMS…"</string>
+    <!-- Menu item to add a contact  [CHAR LIMIT=50]-->
+    <string name="contextmenu_add_contact">"Thêm địa chỉ liên hệ"</string>
+    <!-- Menu item to send an email [CHAR LIMIT=50] -->
+    <string name="contextmenu_send_mail">"Gửi email"</string>
+    <!-- Menu item to show a map  [CHAR LIMIT=50]-->
+    <string name="contextmenu_map">"Bản đồ"</string>
+    <!-- Menu item to share link  [CHAR LIMIT=50]-->
+    <string name="contextmenu_sharelink">"Chia sẻ liên kết"</string>
+
+    <!-- Browse list item strings -->
+    <!-- Formatting string for the content description field of a conversation list item when device is in accessibility mode. [CHAR LIMIT=250] -->
+    <string name="content_description">"<xliff:g id="TOHEADER">%1$s</xliff:g><xliff:g id="PARTICIPANT">%2$s</xliff:g> về <xliff:g id="SUBJECT">%3$s</xliff:g>, <xliff:g id="SNIPPET">%4$s</xliff:g> vào <xliff:g id="DATE">%5$s</xliff:g>, <xliff:g id="READSTATE">%6$s</xliff:g>"</string>
+    <!-- Formatting string for the content description field of a conversation list item when device is in accessibility mode and the message was received today. [CHAR LIMI=250] -->
+    <string name="content_description_today">"<xliff:g id="TOHEADER">%1$s</xliff:g><xliff:g id="PARTICIPANT">%2$s</xliff:g> về <xliff:g id="SUBJECT">%3$s</xliff:g>, <xliff:g id="SNIPPET">%4$s</xliff:g> lúc <xliff:g id="TIME">%5$s</xliff:g>, <xliff:g id="READSTATE">%6$s</xliff:g>"</string>
+    <!-- Formatting string for the content description field of a conversation list item when device is in accessibility mode. [CHAR LIMIT=250] -->
+    <string name="content_description_with_folders">"<xliff:g id="TOHEADER">%1$s</xliff:g><xliff:g id="PARTICIPANT">%2$s</xliff:g> về <xliff:g id="SUBJECT">%3$s</xliff:g>, <xliff:g id="SNIPPET">%4$s</xliff:g> vào <xliff:g id="DATE">%5$s</xliff:g>, <xliff:g id="READSTATE">%6$s</xliff:g>, nhãn: <xliff:g id="FOLDERS">%7$s</xliff:g>"</string>
+    <!-- Formatting string for the content description field of a conversation list item when device is in accessibility mode and the message was received today. [CHAR LIMI=250] -->
+    <string name="content_description_today_with_folders">"<xliff:g id="TOHEADER">%1$s</xliff:g><xliff:g id="PARTICIPANT">%2$s</xliff:g> về <xliff:g id="SUBJECT">%3$s</xliff:g>, <xliff:g id="SNIPPET">%4$s</xliff:g> lúc <xliff:g id="TIME">%5$s</xliff:g>, <xliff:g id="READSTATE">%6$s</xliff:g>, nhãn: <xliff:g id="FOLDERS">%7$s</xliff:g>"</string>
+    <!-- String used in content description field of a conversation list item when device is in accessibility mode and the conversation was read [CHAR LIMIT=250] -->
+    <string name="read_string">"cuộc trò chuyện đã đọc"</string>
+    <!-- String used in content description field of a conversation list item when device is in accessibility mode and the conversation was not read [CHAR LIMIT=250] -->
+    <string name="unread_string">"cuộc trò chuyện chưa đọc"</string>
+    <!-- Formatting string. If the subject contains the tag of a mailing-list (text surrounded with
+    return the subject with that tag ellipsized, e.g. "[android-gmail-team] Hello" -> "[andr...] Hello" [CHAR LIMIT=100] -->
+    <string name="filtered_tag"> [<xliff:g id="tag">%1$s</xliff:g>]<xliff:g id="subject">%2$s</xliff:g></string>
+    <!-- Displayed in conversation list item in the form of "badge subject" [CHAR LIMIT=7] -->
+    <string name="badge_and_subject"><xliff:g>%1$s</xliff:g> <xliff:g>%2$s</xliff:g></string>
+    <!-- Displayed in browse list item when the list item is a draft message instead of showing the subject [CHAR LIMIT=100] -->
+    <plurals name="draft">
+        <!-- Title of the screen when there is exactly one draft -->
+        <item quantity="one">"Bản nháp"</item>
+        <!-- Title of the screen when there are more than one draft -->
+        <item quantity="other">"Bản nháp"</item>
+    </plurals>
+    <!-- Message displayed in a browse list item for one second when message is being sent [CHAR LIMIT=20]-->
+    <string name="sending">"Đang gửi…"</string>
+    <!-- Message displayed in the outgoing message list item when the message failed to sent and is being retried [CHAR LIMIT=20] -->
+    <string name="message_retrying">"Đang thử lại..."</string>
+    <!-- Message displayed in the outgoing message list item when the message failed to send [CHAR LIMIT=20] -->
+    <string name="message_failed">"Không thành công"</string>
+    <!-- Message displayed in a browse list item for one second after a send failed [CHAR LIMIT=26]-->
+    <string name="send_failed">"Thư chưa được gửi."</string>
+    <!-- String used to represent "me" when used as an object pronoun. This string is used when
+         showing the list of recipients of a message [CHAR LIMIT=15] -->
+    <string name="me_object_pronoun">"tôi"</string>
+    <!-- String used to represent "me"/"I" when used as an subject pronoun. This string is use when
+         showing the list of senders for a conversation list item. [CHAR LIMIT=15] -->
+    <string name="me_subject_pronoun">"tôi"</string>
+
+    <plurals name="confirm_delete_conversation">
+        <!-- Dialog message to confirm deletion of one conversation -->
+        <item quantity="one">"Xóa cuộc hội thoại này?"</item>
+        <!-- Dialog message to confirm deletion of several conversations -->
+        <item quantity="other">"Xóa <xliff:g id="COUNT">%1$d</xliff:g> cuộc hội thoại này?"</item>
+    </plurals>
+    <plurals name="confirm_archive_conversation">
+        <!-- Dialog message to confirm archival of one conversation -->
+        <item quantity="one">"Lưu trữ cuộc hội thoại này?"</item>
+        <!-- Dialog message to confirm archival of several conversations -->
+        <item quantity="other">"Lưu trữ <xliff:g id="COUNT">%1$d</xliff:g> cuộc hội thoại này?"</item>
+    </plurals>
+    <plurals name="confirm_discard_drafts_conversation">
+        <!-- Dialog message to confirm discarding a single draft message [CHAR LIMIT=50] -->
+        <item quantity="one">"Hủy thông báo này?"</item>
+        <!-- Dialog message to confirm discarding many draft messages [CHAR LIMIT=50] -->
+        <item quantity="other">"Hủy <xliff:g id="COUNT">%1$d</xliff:g> thông báo này?"</item>
+    </plurals>
+
+    <!-- Dialog text: confirm discard -->
+    <string name="confirm_discard_text">"Hủy tin nhắn này?"</string>
+
+    <!-- Conversation list shared between the Activity and Widget -->
+    <!-- Displayed in the middle of the screen when conversations are being loaded [CHAR LIMIT 100]-->
+    <string name="loading_conversations">"Đang tải…"</string>
+    <!-- Displayed in the middle of the screen when an inbox is empty [CHAR LIMIT 100]-->
+    <string name="empty_inbox">"Đã xong! Chúc bạn một ngày vui."</string>
+    <!-- Displayed in the middle of the screen when a search returns no results [CHAR LIMIT 100]-->
+    <string name="empty_search">"Rất tiếc! Chúng tôi không tìm thấy bất kỳ kết quả nào cho \"<xliff:g id="SEARCH_QUERY">%1$s</xliff:g>\"."</string>
+    <!-- Displayed in the middle of the screen when the spam folder is empty [CHAR LIMIT 100]-->
+    <string name="empty_spam_folder">"Tuyệt vời, không có spam ở đây!"</string>
+    <!-- Displayed in the middle of the screen when the trash folder is empty [CHAR LIMIT 100]-->
+    <string name="empty_trash_folder">"Không có rác ở đây. Cảm ơn bạn đã khôi phục!"</string>
+    <!-- Displayed in the middle of the screen when a folder is empty [CHAR LIMIT 100]-->
+    <string name="empty_folder">"Không có thư nào ở đây."</string>
+    <!-- Displayed in the middle of the screen when a folder is loading [CHAR LIMIT 100]-->
+    <string name="getting_messages">"Đang nhận thư của bạn"</string>
+
+    <!-- Undo bar strings -->
+    <!-- Menu item: undo latest action [CHAR LIMIT=12]-->
+    <string name="undo">"Hoàn tác"</string>
+
+    <plurals name="conversation_unstarred">
+        <item quantity="one">"Đang bỏ dấu sao <xliff:g id="COUNT">%1$d</xliff:g> cuộc hội thoại"</item>
+        <item quantity="other">"Đang bỏ dấu sao <xliff:g id="COUNT">%1$d</xliff:g> cuộc hội thoại"</item>
+    </plurals>
+
+    <!-- The following are shown as a toast after the operation has completed --><skip/>
+    <plurals name="conversation_muted">
+        <!-- Displayed while muting one conversation -->
+        <item quantity="one">"Đã bỏ qua &lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt;"</item>
+        <!-- Displayed while muting several conversations -->
+        <item quantity="other">"Đã bỏ qua &lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt;"</item>
+    </plurals>
+
+    <plurals name="conversation_spammed">
+        <!-- Displayed while reporting one conversation as spam -->
+        <item quantity="one">"Đã báo cáo &lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; là spam"</item>
+        <!-- Displayed while reporting several conversations as spam -->
+        <item quantity="other">"Đã báo cáo &lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; là spam"</item>
+    </plurals>
+
+    <plurals name="conversation_not_spam">
+        <!-- Displayed while reporting one conversation as not spam -->
+        <item quantity="one">"Đã báo cáo &lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; không phải là spam"</item>
+        <!-- Displayed while reporting several conversations as not spam -->
+        <item quantity="other">"Đã báo cáo &lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; không phải là spam"</item>
+    </plurals>
+
+    <plurals name="conversation_not_important">
+        <!-- Displayed while reporting one conversation as not important in the important folder -->
+        <item quantity="one">"Đã đánh dấu &lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; là không quan trọng"</item>
+        <!-- Displayed while reporting several conversations as not important in the important folder -->
+        <item quantity="other">"Đã đánh dấu &lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; là không quan trọng"</item>
+    </plurals>
+
+    <plurals name="conversation_phished">
+        <!-- Displayed while reporting one conversation as phishing -->
+        <item quantity="one">"Đã báo cáo &lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; là lừa đảo"</item>
+        <!-- Displayed while reporting several conversations as phishing -->
+        <item quantity="other">"Đã báo cáo &lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt; là lừa đảo"</item>
+    </plurals>
+
+    <plurals name="conversation_archived">
+        <!-- Displayed while archiving one conversation -->
+        <item quantity="one">"Đã lưu trữ &lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt;"</item>
+        <!-- Displayed while archiving multiple conversations -->
+        <item quantity="other">"Đã lưu trữ &lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt;"</item>
+    </plurals>
+
+    <plurals name="conversation_deleted">
+        <!-- Displayed while deleting one conversation -->
+        <item quantity="one">"Đã xóa &lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt;"</item>
+        <!-- Displayed while deleting multiple conversations -->
+        <item quantity="other">"Đã xóa &lt;b&gt;<xliff:g id="COUNT">%1$d</xliff:g>&lt;/b&gt;"</item>
+    </plurals>
+    <!-- Displayed when swiping away a single conversation to delete it [CHAR LIMIT=80] -->
+    <string name="deleted">"Đã xóa"</string>
+    <!-- Displayed when swiping away a single conversation to archive it [CHAR LIMIT=80] -->
+    <string name="archived">"Đã lưu trữ"</string>
+    <!-- Displayed when swiping away a single conversation to remove the currently displayed folder [CHAR LIMIT=80] -->
+    <string name="folder_removed">"Đã xóa khỏi <xliff:g id="FOLDERNAME">%1$s</xliff:g>"</string>
+
+    <plurals name="conversation_folder_changed">
+        <!-- Displayed while adding and removing folders to a single conversation. [CHAR LIMIT=100] -->
+        <item quantity="one">"Đã thay đổi thư mục"</item>
+        <!-- Displayed while adding and removing folders to multiple conversations. [CHAR LIMIT=100] -->
+        <item quantity="other">"Đã thay đổi các thư mục"</item>
+    </plurals>
+
+    <!-- Displayed after moving a conversation to a different folder. [CHAR LIMIT=100] -->
+    <string name="conversation_folder_moved">"Đã chuyển vào <xliff:g id="FOLDERNAME">%1$s</xliff:g>"</string>
+
+    <!-- Search Results: Text for header that is shown above search results [CHAR LIMIT=30] -->
+    <string name="search_results_header">"Kết quả"</string>
+    <!-- Toast shown when the user taps the search hard key when viewing an account that does not support search [CHAR LIMIT=100] -->
+    <string name="search_unsupported">"Không hỗ trợ tính năng tìm kiếm trên tài khoản này."</string>
+    <!-- Accessibility description for the search suggestion item [CHAR LIMIT=100] -->
+    <string name="search_suggestion_desc">"Đề xuất: <xliff:g id="SUGGESTION">%s</xliff:g>"</string>
+
+    <!-- Conversation view -->
+    <!--  Text anchor for control to add / change labels on a conversation when
+          viewing it. [CHAR LIMIT=40] -->
+    <string name="add_label">"Thêm thư mục"</string>
+
+    <!-- New Message notification text that appears over conversation view on incoming messages. [CHAR LIMIT=40] -->
+    <plurals name="new_incoming_messages">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> tin nhắn mới"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> tin nhắn mới"</item>
+    </plurals>
+
+    <!-- Conversation message header strings -->
+    <!--  Text for showing the date and expanding recipient details in a message when viewing it. [CHAR LIMIT=40] -->
+    <string name="date_and_view_details">"<xliff:g id="DATE">%1$s</xliff:g> &lt;a href=\'http://www.example.com\'&gt;Xem chi tiết&lt;/a&gt;"</string>
+    <!--  Text for collapsing recipient details in a message when viewing it. [CHAR LIMIT=40] -->
+    <string name="hide_details">"Ẩn chi tiết"</string>
+    <!-- Shown to display the recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="to_message_header">"tới <xliff:g id="RECIPIENTS">%1$s</xliff:g>"</string>
+    <!-- Shown to display the bcc recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="bcc_header_for_recipient_summary">"bcc: "</string>
+    <!--  Icon name for showing sender contact information. [CHAR LIMIT=100] -->
+    <string name="contact_info_string">"Hiển thị thông tin liên hệ cho <xliff:g id="NAME">%1$s</xliff:g>"</string>
+    <!--  Icon name for showing sender contact information when we cannot get sender info. [CHAR LIMIT=100] -->
+    <string name="contact_info_string_default">"Hiển thị thông tin liên hệ"</string>
+    <!-- Used for accessibility purposes when a conversation has several previously read
+         messages that are collapsed into a single touch target. Tapping on this touch target
+         expands these messages. [CHAR LIMIT=UNLIMITED] -->
+    <plurals name="show_messages_read">
+        <item quantity="other">"Mở rộng <xliff:g id="COUNT">%1$d</xliff:g> thư cũ hơn"</item>
+    </plurals>
+    <!-- Used for accessibility purposes when a conversation has several previously read
+         messages that are collapsed into a single touch target to announce that the messages
+         have been expanded. [CHAR LIMIT=UNLIMITED] -->
+    <plurals name="super_collapsed_block_accessibility_announcement">
+        <item quantity="other">"Đã mở rộng <xliff:g id="COUNT">%1$d</xliff:g> thư cũ hơn"</item>
+    </plurals>
+    <!-- Shown to display the from address of the message [CHAR LIMIT=10] -->
+    <string name="from_heading">"Từ:"</string>
+    <!-- Shown to display the reply to address of the message [CHAR LIMIT=20] -->
+    <string name="replyto_heading">"Trả lời"</string>
+    <!-- Shown to display the to recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="to_heading">"Tới: "</string>
+    <!-- Shown to display the to recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="to_heading_no_space">"Tới:"</string>
+    <!-- Shown to display the cc recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="cc_heading">"Cc:"</string>
+    <!-- Shown to display the bcc recipient(s) of the message [CHAR LIMIT=10] -->
+    <string name="bcc_heading">"Bcc:"</string>
+    <!-- Shown to display the date of the message [CHAR LIMIT=10] -->
+    <string name="date_heading">"Ngày:"</string>
+    <!-- Displayed above an HTML message to show the images in that message [CHAR LIMIT=40] -->
+    <string name="show_images">"Hiển thị ảnh"</string>
+    <!-- Displayed above an HTML message to always show images in messages from that sender [CHAR LIMIT=40] -->
+    <string name="always_show_images">"Luôn hiển thị ảnh từ người gửi này"</string>
+    <!-- Shown in a toast to acknowledge always showing images for a sender [CHAR LIMIT=100] -->
+    <string name="always_show_images_toast">"Hình ảnh từ người gửi này sẽ được hiển thị tự động."</string>
+    <!-- Display format of an email recipient, displayed in expanded message details [CHAR LIMIT=10] -->
+    <string name="address_display_format"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="email">%2$s</xliff:g></string>
+    <!-- Display format of an email sender if the message has a via domain set, displayed in expanded message details [CHAR LIMIT=15] -->
+    <string name="address_display_format_with_via_domain">"<xliff:g id="NAME">%1$s</xliff:g> <xliff:g id="EMAIL">%2$s</xliff:g> qua <xliff:g id="VIA_DOMAIN">%3$s</xliff:g>"</string>
+    <!-- Displayed for one second after user saves message as draft [CHAR LIMIT=50]-->
+    <string name="message_saved">"Tin nhắn đã được lưu dưới dạng tin nháp."</string>
+    <!-- Displayed for one second while message is being sent [CHAR LIMIT=50]-->
+    <string name="sending_message">"Đang gửi tin nhắn…"</string>
+    <!-- Displayed for one second after trying to send with invalid recipients [CHAR LIMIT=50]-->
+    <string name="invalid_recipient">"Địa chỉ <xliff:g id="WRONGEMAIL">%s</xliff:g> không hợp lệ."</string>
+    <!-- Shown in HTML to allow the user to see quoted text; should match Gmail web UI. [CHAR LIMIT=50] -->
+    <string name="show_elided">"Hiển thị văn bản được trích dẫn"</string>
+    <!-- Shown in HTML to allow the user to hide quoted text; should match Gmail web UI. 25BC is Unicode for a downward-pointing triangle. [CHAR LIMIT=50] -->
+    <string name="hide_elided">"▼ Ẩn văn bản được trích dẫn"</string>
+    <!-- Shown as a heading in message view when a message contains a calendar invite [CHAR LIMIT=30]-->
+    <string name="message_invite_title">"Thư mời lịch"</string>
+    <!-- Shown as a button label in message view to launch calendar to see this invite [CHAR LIMIT=40]-->
+    <string name="message_invite_calendar_view">"Xem trong Lịch"</string>
+    <!-- Shown as a text label in message view describing the choices of whether to attend an invite [CHAR LIMIT=20]-->
+    <string name="message_invite_label_attending">"Tham dự?"</string>
+    <!-- Shown as a button label in message view to accept a calendar invite [CHAR LIMIT=20]-->
+    <string name="message_invite_accept">"Có"</string>
+    <!-- Shown as a button label in message view to give a tentative response to a calendar invite [CHAR LIMIT=20]-->
+    <string name="message_invite_tentative">"Có thể"</string>
+    <!-- Shown as a button label in message view to decline a calendar invite [CHAR LIMIT=20]-->
+    <string name="message_invite_decline">"Không"</string>
+
+    <!-- An enumeration comma for separating items in lists. [CHAR LIMIT=2] -->
+    <string name="enumeration_comma">,\u0020</string>
+
+    <!-- Button name, displayed in dialogs [CHAR LIMIT=20]-->
+    <string name="send_anyway">"Vẫn gửi"</string>
+    <!-- Button name, displayed in dialogs [CHAR LIMIT=10] -->
+    <string name="ok">"OK"</string>
+    <!-- Button name, displayed in dialogs [CHAR LIMIT=10] -->
+    <string name="done">"Hoàn tất"</string>
+    <!-- Button name, displayed in dialogs [CHAR LIMIT=10] -->
+    <string name="cancel">"Hủy"</string>
+    <!-- Button name, displayed in dialogs [CHAR LIMIT=10] -->
+    <string name="clear">"Xóa"</string>
+    <!-- Button name, used as part of a multi-step process [CHAR LIMIT=10] -->
+    <string name="next">"Tiếp theo"</string>
+    <!-- Button name, used as part of a multi-step process [CHAR LIMIT=10] -->
+    <string name="previous">"Trước"</string>
+
+    <!-- Sync status errors. Please do not change the order [CHAR LIMIT=100] -->
+    <string-array name="sync_status">
+        <item>"Thành công"</item>
+        <item>"Không có kết nối"</item>
+        <item>"Không thể đăng nhập"</item>
+        <item>"Thành công"</item>
+        <item>"Không có kết nối"</item>
+        <item>"Lỗi nội bộ"</item>
+        <item>"Lỗi máy chủ"</item>
+    </string-array>
+
+    <!-- Widget strings -->
+    <!-- Displayed when user adds a new widget. Tapping on the widget in this
+          mode will bring user to the account selection screen [CHAR LIMIT=35] -->
+    <string name="tap_to_configure">"Chạm để thiết lập"</string>
+
+    <!-- Displayed within a widget that was setup for a non-synced folder [CHAR LIMIT=60] -->
+    <string name="non_synced_folder_description">"Để xem các cuộc hội thoại, hãy đồng bộ hóa thư mục này."</string>
+
+    <!-- Displayed within a widget that was setup for a non-synced folder.  This is the text of the
+         button that will allow the user to configure sync for the folder [CHAR LIMIT=35] -->
+    <string name="tap_to_configure_folder_sync">"Đồng bộ hóa thư mục"</string>
+
+    <!-- Displayed in widget when unread count > 99. [CHAR LIMIT=4] -->
+    <string name="widget_large_unread_count">%d+</string>
+
+    <!-- Displayed when there are >99 unseen messages, see:unseen_count [CHAR LIMIT=3] -->
+    <string name="large_unseen_count">"<xliff:g id="COUNT">%d</xliff:g>+ mới"</string>
+
+    <!-- Displayed when there are unseen messages [CHAR LIMIT=3] [BACKUP_MESSAGE_ID: 3377106103106345367] -->
+    <string name="unseen_count">"<xliff:g id="COUNT">%d</xliff:g> mới"</string>
+
+    <plurals name="actionbar_unread_messages">
+        <!-- String for the actionbar subtitle when messages are unread [CHAR LIMIT=30] -->
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> chưa đọc"</item>
+    </plurals>
+
+    <!-- Displayed at the end of the conversation list in the widget. Tapping on this will open the default Inbox. [CHAR LIMIT=35] -->
+    <string name="view_more_conversations">"Xem các cuộc hội thoại khác"</string>
+
+    <!-- Displayed while we load a conversation. [CHAR LIMIT=100] -->
+    <string name="loading_conversation">"Đang tải…"</string>
+
+    <!-- Name of the Mailboxes activity [CHAR LIMIT=30] -->
+    <string name="activity_mailbox_selection">"Chọn tài khoản"</string>
+
+    <!-- Name of the Folders activity [CHAR LIMIT=30] -->
+    <string name="activity_folder_selection">"Chọn thư mục"</string>
+
+    <!-- Name of the Folder shortcut widget. Should use "Email" to refer to the app. [CHAR LIMIT=30] -->
+    <string name="folder_shortcut_widget_label">"Thư mục Email"</string>
+
+    <!-- Folder selection dialog -->
+    <!-- Title for change folders dialog [CHAR LIMIT=30] -->
+    <string name="change_folders_selection_dialog_title">"Thay đổi thư mục"</string>
+    <!-- Title for move to dialog [CHAR LIMIT=30] -->
+    <string name="move_to_selection_dialog_title">"Di chuyển tới"</string>
+
+    <!-- Search -->
+    <!-- Title of the search dialog -->
+    <string name="search_title" translatable="false">Unified Email</string>
+    <!-- Shown in light gray in the Search box when no text has been entered [CHAR LIMIT=20]-->
+    <string name="search_hint">"Tìm kiếm"</string>
+    <!-- Search Results: Text for status of the search when the results are completely loaded [CHAR LIMIT=10] -->
+    <string name="search_results_loaded"><xliff:g id="searchCount">%1$d</xliff:g></string>
+    <!-- Voice search is not supported on this device [CHAR LIMIT=100] -->
+    <string name="voice_search_not_supported">"Tìm kiếm bằng giọng nói không được hỗ trợ trên thiết bị này."</string>
+    <!-- Description of the back button [CHAR LIMIT=100] -->
+    <string name="search_back_desc">"Đóng tìm kiếm"</string>
+    <!-- Description of the voice icon [CHAR LIMIT=100] -->
+    <string name="search_voice_desc">"Bắt đầu tìm kiếm bằng giọng nói"</string>
+    <!-- Description of the clear icon (clears the current input text in the search bar) [CHAR LIMIT=100] -->
+    <string name="search_clear_desc">"Xóa văn bản tìm kiếm"</string>
+
+    <!-- Shown in conversation list footer when application cannot make a connection [CHAR LIMIT=20]-->
+    <string name="network_error">"Không có kết nối"</string>
+    <!-- Button at bottom of conversation list screen if last attempt to load conversations failed [CHAR LIMIT=20]-->
+    <string name="retry">"Thử lại"</string>
+    <!-- Button at bottom of conversation list screen if the folder for which contents are being shown supports loading more on demand [CHAR LIMIT=20]-->
+    <string name="load_more">"Tải thêm"</string>
+
+    <!-- Text for dummy attachments to load the actual attachment. This is not an ideal string, but it\'s too late to add a new string and get it translated -->
+    <string name="load_attachment">@string/load_more</string>
+
+    <!-- Shortcut strings -->
+    <!-- Title for shortcut naming dialog [CHAR LIMIT=100]-->
+    <string name="shortcut_name_title">"Lối tắt thư mục tên"</string>
+
+    <!-- Wait fragment strings -->
+    <!-- Displayed in title bar during the initial sync  [CHAR LIMIT=40] -->
+    <string name="wait_for_sync_title">"Đang đợi đồng bộ hóa"</string>
+    <!-- Title for the screen displayed during the initial sync [CHAR LIMIT=100]  -->
+    <string name="not_synced_title">"Tài khoản chưa được đồng bộ hóa"</string>
+    <!-- Displayed in the middle of the screen during the initial sync [CHAR LIMIT=300]-->
+    <string name="wait_for_manual_sync_body">"Tài khoản này không được thiết lập để tự động đồng bộ hóa.\nChạm vào "<b>"Đồng bộ hóa ngay bây giờ"</b>" để đồng bộ hóa thư một lần hoặc "<b>"Thay đổi cài đặt đồng bộ hóa"</b>" để thiết lập tài khoản này tự động đồng bộ hóa thư."</string>
+    <!-- Displayed at the bottom of the screen during the initial sync. If pressed will sync users mail for the selected account. [CHAR LIMIT=12]  -->
+    <string name="manual_sync">"Đồng bộ hóa ngay bây giờ"</string>
+    <!-- Displayed at the bottom of the screen during the initial sync. If pressed will open sync setting screen for accounts. [CHAR LIMIT=30]  -->
+    <string name="change_sync_settings">"Thay đổi cài đặt đồng bộ hóa"</string>
+
+    <!-- Displayed when we could not load a photo in the photo viewer. [CHAR LIMIT=30] -->
+    <string name="photo_load_failed">"Không thể tải ảnh"</string>
+
+    <!--  The move message / change labels action can\'t be taken because the selected messages
+        come from different accounts -->
+    <string name="cant_move_or_change_labels">"Không thể di chuyển vì lựa chọn chứa nhiều tài khoản."</string>
+
+    <!-- Format string used when displaying a summary in a message summary in list notification that was triggered by several new conversations.
+         Extra space between sender and subject is intentional.  [CHAR LIMIT=120] -->
+    <string name="multiple_new_message_notification_item"><b><xliff:g id="sender">%1$s</xliff:g></b>\u0020\u0020\u0020<xliff:g id="subject">%2$s</xliff:g></string>
+
+    <!-- Format string used when displaying the big text of a notification that was triggered by a single new conversation. [CHAR LIMIT=120] -->
+    <string name="single_new_message_notification_big_text"><xliff:g id="subject">%1$s</xliff:g>\n<xliff:g id="snippet">%2$s</xliff:g></string>
+
+    <!-- Displayed in a message subheading. Ignore the current spam warning. [CHAR LIMIT=30] -->
+    <string name="ignore_spam_warning">"Hãy bỏ qua, tôi tin tưởng thư này"</string>
+
+    <!-- Displayed in the message heading. Shown if the message was sent via another domain. [CHAR LIMIT=10] -->
+    <string name="via_domain">"qua <xliff:g id="VIADOMAIN">%1$s</xliff:g>"</string>
+
+    <!-- Button text for the button to click to have the user sign in again or adjust their credentials. [CHAR LIMIT=20]-->
+    <string name="signin">"Đăng nhập"</string>
+    <!-- Button text for the button to click for more information. [CHAR LIMIT=20]-->
+    <string name="info">"Thông tin"</string>
+    <!-- Button text for the button to click to report feedback. [CHAR LIMIT=20]-->
+    <string name="report">"Báo cáo"</string>
+    <!-- Button text for the button to click to show newly received messages in the active thread. [CHAR LIMIT=20]-->
+    <string name="show">Hiển thị</string>
+    <!-- Dialog title when a sync error occurs. [CHAR LIMIT=50]-->
+    <string name="sync_error">"Không thể đồng bộ hóa."</string>
+    <!-- Dialog title when a sync error occurs. [CHAR LIMIT=100]-->
+    <string name="sync_error_message">"Thiết bị của bạn không có đủ dung lượng lưu trữ để đồng bộ hóa."</string>
+    <!-- Button text for the button to click to go to the manage storage settings screen. [CHAR LIMIT=20]-->
+    <string name="storage">"Dung lượng"</string>
+
+    <string translatable="false" name="hierarchical_folder_parent_top"><xliff:g id="topLevelParent">%1$s</xliff:g>\u2215<xliff:g id="parent">%2$s</xliff:g>\u2215</string>
+    <string translatable="false" name="hierarchical_folder_parent_top_ellip"><xliff:g id="topLevelParent">%1$s</xliff:g>\u2215\u2026\u2215<xliff:g id="parent">%2$s</xliff:g>\u2215</string>
+    <string translatable="false" name="hierarchical_folder_top"><xliff:g id="topLevelParent">%1$s</xliff:g>\u2215</string>
+
+    <!-- Token used as a divider between senders -->
+    <string name="senders_split_token">,\u00A0</string>
+    <string name="draft_count_format">\u00A0(<xliff:g id="count">%1$s</xliff:g>)</string>
+
+    <!-- Token to replace senders that are not visible -->
+    <string translatable="false" name="senders_elided">..</string>
+    <!-- Token used to space out elided senders that are not visible -->
+    <string translatable="false" name="elided_padding_token">\u00A0</string>
+    <!-- Token used to space out message count, draft text, and senders -->
+    <string translatable="false" name="message_count_spacer">\u00A0\u00A0</string>
+
+    <string translatable="false" name="quote_begin">&lt;div class=\"quote\"&gt;</string>
+
+    <!-- String used in the FolderListFragment to mark the start of user-defined folders -->
+    <string name="all_folders_heading">"Tất cả thư mục"</string>
+    <!-- String used in the FolderListFragment to mark the start of recent folders -->
+    <string name="recent_folders_heading">"Thư mục gần đây"</string>
+
+    <!-- Dialog title when showing message header details in a popup window. [CHAR LIMIT=100]-->
+    <string name="message_details_title">"Chi tiết tin nhắn"</string>
+
+    <!-- General preference: Label of the setting for the direction to move to
+         when deleting the current message.
+         Options contain "newer message","older message", etc. [CHAR LIMIT=32] -->
+    <string name="preference_advance_to_title">"Tự động tiến"</string>
+
+    <!-- The auto-advance modes -->
+    <string-array name="prefEntries_autoAdvance">
+        <!-- Newer conversation -->
+        <item>"Mới hơn"</item>
+        <!-- Older conversation -->
+        <item>"Cũ hơn"</item>
+        <!-- Conversation list -->
+        <item>"Danh sách cuộc hội thoại"</item>
+    </string-array>
+
+    <!-- Description for each auto-advance option to display after the user has picked one -->
+    <!-- The entries here must correspond to the entries in prefEntries_autoAdvance [CHAR LIMIT=60] -->
+    <string-array name="prefSummaries_autoAdvance">
+        <!-- Newer conversation -->
+        <item>"Hiển thị cuộc hội thoại mới hơn sau khi bạn xóa"</item>
+        <!-- Older conversation -->
+        <item>"Hiển thị cuộc hội thoại cũ hơn sau khi bạn xóa"</item>
+        <!-- Conversation list -->
+        <item>"Hiển thị danh sách cuộc hội thoại sau khi bạn xóa"</item>
+    </string-array>
+
+    <!-- Dialog title for the auto-advance list -->
+    <string name="prefDialogTitle_autoAdvance">"Chuyển sang"</string>
+
+    <!-- TODO: these pref keys that are never user visible should probably be
+    moved to a donttranslate file -->
+    <!-- The default auto-advance mode -->
+    <string translatable="false" name="prefDefault_autoAdvance">list</string>
+
+    <!-- The auto-advance mode values -->
+    <string-array translatable="false" name="prefValues_autoAdvance">
+        <item>newer</item>
+        <item>older</item>
+        <item>list</item>
+    </string-array>
+
+    <!-- Settings screen, title of "Restore default for "Show pictures"" [CHAR LIMIT=1000]-->
+    <string name="clear_display_images_whitelist_title">"Xóa phê duyệt ảnh"</string>
+
+    <!-- Settings screen, title of dialog shown to confirm action when user taps
+    "Clear picture approvals" in preferences [CHAR LIMIT=200]-->
+    <string name="clear_display_images_whitelist_dialog_title">"Xóa phê duyệt ảnh?"</string>
+    <!-- Settings screen, message of dialog shown to confirm action when tapping
+    "Clear picture approvals" [CHAR LIMIT=1000]-->
+    <string name="clear_display_images_whitelist_dialog_message">"Dừng hiển thị các hình ảnh nội tuyến từ người gửi bạn đã cho phép trước đó."</string>
+
+    <!-- Message shown in toast when the user taps "Restore default for "Show pictures"" in Gmail general preferences. [CHAR LIMIT=50] -->
+    <string name="sender_whitelist_cleared">"Hình ảnh sẽ không được tự động hiển thị."</string>
+
+    <!-- Settings screen, name of the setting that lets the user choose their signature [CHAR LIMIT=50] -->
+    <string name="preferences_signature_title">"Chữ ký"</string>
+    <!-- Settings screen, title of the dialog that lets the user configure their signature [CHAR LIMIT=50] -->
+    <string name="preferences_signature_dialog_title">"Chữ ký"</string>
+    <!-- Settings screen, setting summary text when no signature set [CHAR LIMIT=100] -->
+    <string name="preferences_signature_summary_not_set">"Chưa cài đặt"</string>
+
+    <!-- Notification action for replying to a message. [CHAR LIMIT=20] -->
+    <string name="notification_action_reply">"Trả lời"</string>
+    <!-- Notification action for replying-all to a message. [CHAR LIMIT=20] -->
+    <string name="notification_action_reply_all">"Trả lời tất cả"</string>
+    <!-- Notification action for archiving a message. [CHAR LIMIT=20] -->
+    <string name="notification_action_archive">"Lưu trữ"</string>
+    <!-- Notification action for removing a label from a message. [CHAR LIMIT=20] -->
+    <string name="notification_action_remove_label">"Xóa nhãn"</string>
+    <!-- Notification action for deleting a message. [CHAR LIMIT=20] -->
+    <string name="notification_action_delete">"Xóa"</string>
+
+    <!-- Notification undo text after archiving a message. [CHAR LIMIT=30] -->
+    <string name="notification_action_undo_archive">"Đã lưu trữ"</string>
+    <!-- Notification undo text after removing a label from a message. [CHAR LIMIT=30] -->
+    <string name="notification_action_undo_remove_label">"Đã xóa nhãn"</string>
+    <!-- Notification undo text after deleting a message. [CHAR LIMIT=30] -->
+    <string name="notification_action_undo_delete">"Đã xóa"</string>
+
+    <!-- Regex that specifies veiled addresses. These are all empty because this is disabled currently. -->
+    <string name="veiled_address"/>
+    <!-- String to be shown instead of a veiled addresses. [CHAR LIMIT=50] -->
+    <string name="veiled_alternate_text"/>
+    <!-- String to be shown instead of a veiled addresses. [CHAR LIMIT=50] -->
+    <string name="veiled_alternate_text_unknown_person"/>
+    <!-- Summary string to be shown instead of a veiled recipient. [CHAR LIMIT=50] -->
+    <string name="veiled_summary_unknown_person"/>
+
+    <!-- Notification ticker text for per-label notification [CHAR LIMIT=30]-->
+    <string name="label_notification_ticker">"<xliff:g id="label">%s</xliff:g>: <xliff:g id="notification">%s</xliff:g>"</string>
+
+    <!-- Notification message to the user upon new messages for a conversation. [CHAR LIMIT=120] -->
+    <plurals name="new_messages">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> tin nhắn mới"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> tin nhắn mới"</item>
+    </plurals>
+
+    <!-- Format string used when displaying the title of a notification that was triggered by a single new conversation. [CHAR LIMIT=120] -->
+    <string name="single_new_message_notification_title"><xliff:g id="sender">%1$s</xliff:g>: <xliff:g id="subject">%2$s</xliff:g></string>
+
+    <!-- Settings screen, what to display for Ringtone when the user chooses "silent" [CHAR LIMIT=100]-->
+    <string name="silent_ringtone">"Im lặng"</string>
+
+    <!-- Settings screen, preference name for archive vs. delete [CHAR LIMIT=50] -->
+    <string name="preference_removal_action_title">"Hành động mặc định"</string>
+    <!-- Options to select from for whether to have archive or delete as the remove action [CHAR LIMIT=50] -->
+    <string-array name="prefEntries_removal_action">
+        <item>"Lưu trữ"</item>
+        <item>"Xóa"</item>
+    </string-array>
+    <!-- Description of currently selected option of whether to use archive or delete as remove action [CHAR LIMIT=200] -->
+    <string-array name="prefSummaries_removal_action_summary">
+        <item>"Lưu trữ"</item>
+        <item>"Xóa"</item>
+    </string-array>
+    <string-array translatable="false" name="prefValues_removal_action">
+        <item>archive</item>
+        <item>delete</item>
+    </string-array>
+    <!-- Dialog title for the choosing whether to use archive or delete as remove action [CHAR LIMIT=150] -->
+    <string name="prefDialogTitle_removal_action">"Hành động mặc định"</string>
+    <!-- The default value -->
+    <string translatable="false" name="prefDefault_removal_action">archive</string>
+
+    <!--  Settings screen, Reply to all default setting title  [CHAR LIMIT=30] -->
+    <string name="preferences_default_reply_all_title">"Trả lời tất cả"</string>
+    <!--  Settings screen, Reply to all default setting summary [CHAR LIMIT=70] -->
+    <string name="preferences_default_reply_all_summary_impl">"Sử dụng làm mặc định cho trả lời thư"</string>
+    <!--  DO NOT TRANSLATE THE BELOW STRING - In order to allow overriding of this for K tablets (but not pre-K tablets), we use an indirection with the actual string defined above. -->
+    <string name="preferences_default_reply_all_summary" translatable="false">@string/preferences_default_reply_all_summary_impl</string>
+
+    <!-- Preference name for swipe actions preference [CHAR LIMIT=100]-->
+    <string name="preference_swipe_title">"Hành động vuốt"</string>
+    <!-- Preference description swiping in conversation list option [CHAR LIMIT=100] -->
+    <string name="preference_swipe_description">"Trong danh sách cuộc hội thoại"</string>
+
+    <!-- Preference name for whether to display sender images in conversation list [CHAR LIMIT=100] -->
+    <string name="preference_sender_image_title">"Ảnh người gửi"</string>
+    <!-- Preference description for whether to display sender image option [CHAR LIMIT=200] -->
+    <string name="preference_sender_image_description">"Hiển thị bên cạnh tên trong danh sách cuộc hội thoại"</string>
+
+    <!-- Conversation list screen overflow menu in trash folder [CHAR LIMIT=50]  -->
+    <string name="empty_trash">"Xóa sạch thùng rác"</string>
+
+    <!-- Conversation list screen overflow menu in spam folder [CHAR LIMIT=50]  -->
+    <string name="empty_spam">"Xóa sạch spam"</string>
+
+    <!-- Dialog title for empty trash confirmation dialog [CHAR LIMIT=100] -->
+    <string name="empty_trash_dialog_title">"Xóa sạch thùng rác?"</string>
+
+    <!-- Dialog title for empty spam confirmation dialog [CHAR LIMIT=100] -->
+    <string name="empty_spam_dialog_title">"Xóa sạch spam?"</string>
+
+    <!-- Dialog message for empty folder confirmation dialog [CHAR LIMIT=300] -->
+    <plurals name="empty_folder_dialog_message">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> tin nhắn này sẽ bị xóa vĩnh viễn."</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> tin nhắn này sẽ bị xóa vĩnh viễn."</item>
+    </plurals>
+
+    <!-- Strings used for accessibility for the items that toggles the drawer action  -->
+    <string name="drawer_open">"Mở ngăn kéo điều hướng"</string>
+    <string name="drawer_close">"Đóng ngăn kéo điều hướng"</string>
+
+    <string name="conversation_photo_welcome_text">"Chạm vào hình ảnh của người gửi để chọn cuộc hội thoại đó."</string>
+
+    <string name="long_press_to_select_tip">"Chạm và giữ để chọn một cuộc hội thoại rồi chạm để chọn cuộc hội thoại khác."</string>
+
+    <!-- Content description for the folder icon for nested folders. -->
+    <string name="folder_icon_desc">"Biểu tượng thư mục"</string>
+
+    <!--  Button, "Add account" in the preference screen [CHAR LIMIT=30] -->
+    <string name="add_account">"Thêm tài khoản"</string>
+
+    <!-- Content Provider Authority for Eml Attachments -->
+    
+
+    <!-- Content description for the "X" image icon for dismissing a tip. This is used for spoken description of the icon when touch explore is enabled. [CHAR LIMIT=50] -->
+    <string name="dismiss_tip_hover_text">"Bỏ qua mẹo"</string>
+
+    <!-- Tip for letting user know that their device auto-sync setting
+        is turned off, in case they are wondering why they are not
+        receiving any new mail. [CHAR LIMIT=250] -->
+    <string name="auto_sync_off">"Tự động đồng bộ hóa bị tắt. Chạm để bật."</string>
+
+    <!-- Tip for letting user know that their account level sync setting
+        is turned off, in case they are wondering why they are not
+        receiving any new mail. Then prompts the user to enable sync in Gmail\'s
+        account settings. [CHAR LIMIT=250] -->
+    <string name="account_sync_off">"Đồng bộ hóa tài khoản tắt. Hãy bật trong &lt;a href=\'http://www.example.com\'&gt;Cài đặt tài khoản.&lt;/a&gt;"</string>
+
+    <!-- Hint text that there are X number of unsent messages users
+    Outbox. [CHAR LIMIT=250] -->
+    <string name="unsent_messages_in_outbox">"<xliff:g id="NUMBER">%1$s</xliff:g> thư chưa được gửi trong <xliff:g id="OUTBOX">%2$s</xliff:g>"</string>
+
+    <!-- Title of dialog to turn auto-sync on [CHAR LIMIT=100] -->
+    <string name="turn_auto_sync_on_dialog_title">"Bật tự động đồng bộ hóa?"</string>
+
+    <!-- Text of dialog to turn auto-sync on [CHAR LIMIT=500] -->
+    <string name="turn_auto_sync_on_dialog_body">"Các thay đổi bạn thực hiện đối với tất cả các ứng dụng và tài khoản, không chỉ với Gmail, sẽ được đồng bộ hóa giữa web, các thiết bị khác của bạn và <xliff:g id="PHONE_OR_TABLET">%1$s</xliff:g> của bạn."</string>
+
+    <!-- Phone (vs. tablet) for describing this device [CHAR LIMIT=30] -->
+    <string name="phone">"điện thoại"</string>
+
+    <!-- Tablet (vs. phone) for describing this device [CHAR LIMIT=30] -->
+    <string name="tablet">"máy tính bảng"</string>
+
+    <!-- Confirm button text for dialog to turn auto-sync on [CHAR
+         LIMIT=30] -->
+    <string name="turn_auto_sync_on_dialog_confirm_btn">"Bật"</string>
+
+    <!-- Button in conversation list to show more folders [CHAR LIMIT=50] -->
+    <string name="show_n_more_folders">"Hiển thị <xliff:g id="NUMBER">%1$s</xliff:g> thư mục"</string>
+    <!-- Button in conversation list to hide folders [CHAR LIMIT=50] -->
+    <string name="hide_folders">"Ẩn thư mục"</string>
+
+    <!-- Menu item text to that when clicked will allow a user to print an email message. [CHAR LIMIT=25] -->
+    <string name="print">"In"</string>
+    <!-- Menu item text to that when clicked will allow a user to print an email conversation. [CHAR LIMIT=25] -->
+    <string name="print_all">"In tất cả"</string>
+    <!-- Number of messages in a conversation [CHAR LIMIT=30]-->
+    <plurals name="num_messages">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> thư"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> thư"</item>
+    </plurals>
+
+    <!-- Display format of an email recipient, displayed in printed message details [CHAR LIMIT=10] -->
+    <string name="address_print_display_format" translatable="false"><xliff:g id="name">%1$s</xliff:g> &amp;lt;<xliff:g id="email">%2$s</xliff:g>&amp;gt;</string>
+    <!-- Shown to display the date of the message [CHAR LIMIT=50] -->
+    <string name="date_message_received_print">"<xliff:g id="DAY_AND_DATE">%1$s</xliff:g> vào lúc <xliff:g id="TIME">%2$s</xliff:g>"</string>
+    <!-- Shown to display the to recipient(s) of the message if the message is a draft [CHAR LIMIT=20] -->
+    <string name="draft_to_heading">"Thư nháp tới:"</string>
+
+    <!-- Shown to display in the message header if the message is a draft and there are no "to" addresses in the draft [CHAR LIMIT=10] -->
+    <string name="draft_heading">"Thư nháp"</string>
+    <!-- Shown to inform the user that the quoted text for this message has been hidden. [CHAR LIMIT=50] -->
+    <string name="quoted_text_hidden_print">"Ẩn văn bản trích dẫn"</string>
+    <!-- Number of attachments in a message [CHAR LIMIT=30]-->
+    <plurals name="num_attachments">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> tệp đính kèm"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> tệp đính kèm"</item>
+    </plurals>
+
+    <!-- Provider name for widgets -->
+    <string name="widget_provider" translatable="false">com.android.mail.widget.WidgetProvider</string>
+
+    <string name="print_job_name" translatable="false">Unified Email - <xliff:g id="subject">%1$s</xliff:g></string>
+    <!-- Title to display when an email has no subject. [CHAR LIMIT=50]-->
+    <string name="no_subject">"(không có chủ đề)"</string>
+
+    <!-- Action bar title for the screen to set a vacation responder (out-of-office) message. [CHAR LIMIT=50] -->
+    <string name="vacation_responder">"Tự động trả lời thư"</string>
+    <!-- Account preference: Title of the setting to set a vacation responder (out-of-office) message. [CHAR LIMIT=50]-->
+    <string name="preferences_vacation_responder_title">"Tự động trả lời thư"</string>
+    <!-- Shown in vacation responder; the body of the message [CHAR LIMIT=100] -->
+    <string name="vacation_responder_body_hint_text">"Thông báo"</string>
+    <!-- Shown in vacation responder; accompanies a checkbox that, if checked, causes vacation responses to be sent to people in the user\'s contacts [CHAR LIMIT=75] -->
+    <string name="send_to_contacts_text">"Chỉ gửi vào Danh bạ của tôi"</string>
+    <!-- Shown in vacation responder; accompanies a checkbox that, if checked, causes vacation responses to be sent to people in the user\'s corporate domain [CHAR LIMIT=75] -->
+    <string name="send_to_domain_text">"Chỉ gửi vào <xliff:g id="DOMAIN">%1$s</xliff:g>"</string>
+    <!-- Title text for the button to be pressed if the user wishes to change the start date of the vacation responder. [CHAR LIMIT=25]-->
+    <string name="pick_start_date_title">"Bắt đầu"</string>
+    <!-- Title text for the button to be pressed if the user wishes to change the end date of the vacation responder.
+            This text should include a note that this field is optional to set. [CHAR LIMIT=25]-->
+    <string name="pick_end_date_title">"Kết thúc (tùy chọn)"</string>
+    <!-- Shown to display that an end date in the vacation responder has not been set. [CHAR LIMIT=25]-->
+    <string name="date_not_set">"Chưa đặt"</string>
+    <!-- Title text for the dialog that appears when the user wishes to change the end date of the vacation responder.
+            This text should include a note that this field is optional to set. [CHAR LIMIT=35]-->
+    <string name="set_end_date_dialog_title">"Kết thúc (tùy chọn)"</string>
+    <!-- Shown as an option in a dialog to set a custom end date for a vacation responder message.  [CHAR LIMIT=30] -->
+    <string name="custom_date">"Tùy chỉnh"</string>
+    <!-- Shown as an option in a dialog to set no end date for a vacation responder message. [CHAR LIMIT=30]-->
+    <string name="date_none">"Không có"</string>
+    <!-- Asks the user whether they wish to discard changes. [CHAR LIMIT=50]-->
+    <string name="discard_changes">"Hủy thay đổi?"</string>
+    <!-- Toast, vacation responder changes were saved. [CHAR LIMIT=100]-->
+    <string name="vacation_responder_changes_saved">"Đã lưu thay đổi tự động trả lời thư"</string>
+    <!-- Toast, vacation responder changes were discarded. [CHAR LIMIT=100]-->
+    <string name="vacation_responder_changes_discarded">"Đã hủy thay đổi tự động trả lời thư"</string>
+    <!-- Account preference: Subtitle of the setting to set a vacation responder (out-of-office) message
+            when the vacation responder is off. [CHAR LIMIT=50]-->
+    <string name="vacation_responder_off">"Tắt"</string>
+    <!-- Account preference: Subtitle of the setting to set a vacation responder (out-of-office) message
+            when the vacation responder is on but does not have an end date set (only a start date). [CHAR LIMIT=50]-->
+    <string name="vacation_responder_on">"Bật, từ <xliff:g id="DATE">%1$s</xliff:g>"</string>
+    <!-- Account preference: Subtitle of the setting to set a vacation responder (out-of-office) message
+            when the vacation responder is on and has both a start and end date set. [CHAR LIMIT=50]-->
+    <string name="vacation_responder_on_with_end_date">"Bật, từ <xliff:g id="START_DATE">%1$s</xliff:g> đến <xliff:g id="END_DATE">%2$s</xliff:g>"</string>
+    <!-- Informs the user that both the subject and body of the vacation responder are empty
+         when they try to enable the responder. [CHAR LIMIT=50]-->
+    <string name="vacation_responder_empty_subject_and_body_warning">"Thêm chủ đề hoặc thư"</string>
+
+    <!-- Content description for the attach button that appears in compose for tablet layouts.
+         This is not to be confused with the menu items, this is an actual button in the layout.
+         On v18 and below devices, this button is used to attach photos only and so the text
+         is for adding a photo attachment. On v19, it is used to attach an arbitrary file
+         and so this string is overridden to use the "attach file" text. The drawable used
+         for this button is overridden similarly. -->
+    <string name="attach_file_content_description" translatable="false">@string/add_photo_attachment</string>
+
+    <!-- Displayed below a message that has been truncated to show the full message. [CHAR LIMIT=50] -->
+    <string name="view_entire_message">"Xem toàn bộ thư"</string>
+
+    <!-- Toast text for error loading an eml file -->
+    <string name="eml_loader_error_toast">"Không thể mở tệp này"</string>
+
+    <!-- String tag identifying the drawer pullout view -->
+    <string name="drawer_pullout_tag" translatable="false">drawer_pullout</string>
+
+    <!-- Menu item that displays the help page. [CHAR LIMIT=50]-->
+    <string name="help_and_info">"Trợ giúp"</string>
+
+    <!-- Menu item that displays the help page. [CHAR LIMIT=50]-->
+    <string name="help_and_feedback">"Trợ giúp và phản hồi"</string>
+
+    <!-- URI to display the help content; this must be overlayed -->
+    <string name="help_uri" translatable="false"/>
+
+    <!-- Solicit feedback string in about screen [CHAR LIMIT=50]-->
+    <string name="feedback">"Gửi phản hồi"</string>
+
+    <!-- Copyright text [CHAR LIMIT=50] -->
+    <string name="copyright">"©<xliff:g id="YEAR">%1$d</xliff:g> Google Inc."</string>
+
+    <!-- Version text [CHAR LIMIT=50] -->
+    <string name="version">"<xliff:g id="APP_NAME">%1$s</xliff:g> phiên bản <xliff:g id="VERSION">%2$s</xliff:g>"</string>
+
+    <!-- Menu item: view a webpage about this application [CHAR LIMIT=50]; this MUST be overlayed -->
+    <string name="view_app_page"/>
+
+    <!-- URL to a webpage about this application; this MUST be overlayed -->
+    <string name="app_url" translatable="false"/>
+
+    <!-- Menu item: print... [CHAR LIMIT=25] -->
+    <string name="print_dialog">"In…"</string>
+
+    <!-- Menu item: copyright information [CHAR LIMIT=25] -->
+    <string name="copyright_information">"Thông tin bản quyền"</string>
+
+    <!-- Menu item: privacy policy [CHAR LIMIT=25] -->
+    <string name="privacy_policy">"Chính sách bảo mật"</string>
+
+    <!-- URI to display the privacy; this must be overlayed -->
+    <string name="privacy_policy_uri" translatable="false"/>
+
+    <!-- Menu item: open source licenses [CHAR LIMIT=25] -->
+    <string name="open_source_licenses">"Giấy phép nguồn mở"</string>
+
+    <!-- Activity class name for showing a full message url.
+         Empty by default since this should be overridden by implementing apps. -->
+    <string name="full_message_activity" translatable="false"/>
+
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_yes">"Có"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_no">"Không"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_ok">"OK"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_hehe">"Hehe"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_thanks">"Cảm ơn"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_i_agree">"Tôi đồng ý"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_nice">"Tốt"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_on_my_way">"Đang trên đường"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_later">"OK, tôi sẽ liên hệ lại với bạn"</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_smiling_face">:)</string>
+    <!-- One of the default canned responses used when replying to an email on a wearable device [CHAR LIMIT=30] -->
+    <string name="reply_choice_frowning_face">:(</string>
+
+    <array name="reply_choices">
+        <item>@string/reply_choice_yes</item>
+        <item>@string/reply_choice_no</item>
+        <item>@string/reply_choice_ok</item>
+        <item>@string/reply_choice_hehe</item>
+        <item>@string/reply_choice_thanks</item>
+        <item>@string/reply_choice_i_agree</item>
+        <item>@string/reply_choice_nice</item>
+        <item>@string/reply_on_my_way</item>
+        <item>@string/reply_choice_later</item>
+        <item>@string/reply_choice_smiling_face</item>
+        <item>@string/reply_choice_frowning_face</item>
+    </array>
+
+    <!-- Settings screen, heading for grouping action confirmation related  settings together [CHAR LIMIT=100] -->
+    <string name="preference_header_action_confirmations">"Xác nhận hành động"</string>
+    <!--  Settings screen, confirm on action option title [CHAR LIMIT=150] -->
+    <string name="preference_confirm_before_delete_title">"Xác nhận trước khi xóa"</string>
+    <!--  Settings screen, confirm on action option title [CHAR LIMIT=150] -->
+    <string name="preference_confirm_before_archive_title">"Xác nhận trước khi lưu trữ"</string>
+    <!--  Settings screen, confirm on action option title [CHAR LIMIT=150] -->
+    <string name="preference_confirm_before_send_title">"Xác nhận trước khi gửi"</string>
+
+    <!--  Settings screen, Conversation mode setting titile  [CHAR LIMIT=30] -->
+    <string name="preferences_conversation_mode_title">"Tự động chỉnh kích thước thư"</string>
+    <!--  Settings screen, Conversation mode setting summary [CHAR LIMIT=70] -->
+    <string name="preferences_conversation_mode_summary">"Thu hẹp kích thước thư cho vừa với màn hình"</string>
+
+    <!--  Settings screen, disable snap headers setting title  [CHAR LIMIT=30] -->
+    <string name="preferences_disable_snap_headers_title">"Tác vụ thư"</string>
+
+    <!-- The snap header summaries -->
+    <string-array name="prefSummaries_snapHeader">
+        <item>"Luôn hiển thị các tác vụ thư ở phía trên cùng của màn hình"</item>
+        <item>"Chỉ hiển thị các tác vụ thư ở đỉnh màn hình khi được xoay sang chiều dọc"</item>
+        <item>"Không hiển thị các tác vụ thư bên ngoài tiêu đề thư"</item>
+    </string-array>
+
+    <!-- The snap header modes -->
+    <string-array name="prefEntries_snapHeader">
+        <item>"Luôn hiển thị"</item>
+        <item>"Chỉ hiển thị theo chiều dọc"</item>
+        <item>"Không hiển thị"</item>
+    </string-array>
+
+    <!-- The snap header values -->
+    <string-array translatable="false" name="prefValues_snapHeader">
+        <item>always</item>
+        <item>portrait</item>
+        <item>never</item>
+    </string-array>
+
+    <!-- Settings screen, title of "Clear search history" menu item -->
+    <string name="clear_history_title">"Xóa lịch sử tìm kiếm"</string>
+    <!-- Message shown in toast when the user taps "clear search history" in general preferences. [CHAR LIMIT=50] -->
+    <string name="search_history_cleared">"Đã xóa lịch sử tìm kiếm."</string>
+    <!-- Settings screen, title of dialog shown to confirm action when user taps
+    "Clear search history" in preferences [CHAR LIMIT=200]-->
+    <string name="clear_history_dialog_title">"Xóa lịch sử tìm kiếm?"</string>
+    <!-- Settings screen, message of dialog shown to confirm action when user taps
+    "Clear search history" in preferences [CHAR LIMIT=1000]-->
+    <string name="clear_history_dialog_message">"Tất cả tìm kiếm bạn đã thực hiện trước đó sẽ bị xóa."</string>
+
+    <!-- Settings screen, preference item to launch into Settings [CHAR LIMIT=50] -->
+    <string name="manage_accounts_menu_item">"Quản lý tài khoản"</string>
+
+    <!-- Settings screen, main title of the screen, big font [CHAR LIMIT=50]-->
+    <string name="general_preferences_title">"Cài đặt chung"</string>
+
+    <!-- Settings screen title -->
+    <!-- Name of the Settings activity -->
+    <string name="activity_preferences">"Cài đặt"</string>
+
+    <!-- Content description for the action menu overflow button. [CHAR LIMIT=NONE] -->
+    <string name="overflow_description">"Tùy chọn khác"</string>
+
+    <string name="user_agent_format" translatable="false">%1$s AndroidUnifiedEmail/%2$s</string>
+
+    <!--  Settings screen, confirm on action option title [CHAR LIMIT=150] -->
+    <string name="preference_confirm_before_forward_title">Xác nhận trước khi chuyển tiếp</string>
+    <!-- Confirm forward dialog message -->
+    <string name="confirm_forward_message">Nếu thư này có các tệp đính kèm chưa được tải, bạn muốn làm gì?</string>
+    <string name="confirm_forward_normal">Gửi sau khi tải</string>
+    <string name="confirm_forward_drop_unloaded">Đã gỡ ghim</string>
+    <!-- Forward dialog message -->
+    <string name="forward_dialog_message">Bạn có muốn chuyển tiếp tin nhắn này không?</string>
+    <!-- Feedback uri to be used when feedback is enabled -->
+    <string name="email_feedback_uri" translatable="false"/>
+    <!-- Text when there is a security hold on an account that needs to be accepted. The email address param takes the for "abc@xyz.com" -->
+    <string name="security_hold_required_text">"Cần cập nhật bảo mật cho <xliff:g id="EMAIL_ADDRESS">%1$s</xliff:g>"</string>
+
+    <!-- Text to go to the dialog to accept the security hold -->
+    <string name="update_security_text">"cập nhật ngay"</string>
+    <!-- Shown when user submits a form. [CHAR LIMIT=40] -->
+    <string name="forms_are_disabled">"Biểu mẫu bị vô hiệu hóa trong Gmail"</string>
+
+    <!-- activity name of the photoviewer -->
+    <string name="photo_view_activity" translatable="false">com.android.mail.photo.MailPhotoViewActivity</string>
+</resources>

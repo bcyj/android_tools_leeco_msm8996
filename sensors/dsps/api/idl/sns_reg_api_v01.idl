@@ -1,0 +1,404 @@
+/*****************************************************************************
+  @FILE     sns_reg_api.idl
+
+  @BRIEF    Sensors Registry APIs
+
+  @DESCRIPTION
+  This file describes the messages which defines the Sensors Registry APIs.
+  These APIs allow clients to store and retrieve data in the registry through 
+  the Sensors Registry Sevice.
+
+  The messages defined herin will be passed to the Sensor framework using
+  the sensor1_write() API.
+
+*****************************************************************************/
+include "sns_common_v01.idl";
+
+revision 1;
+
+/** Indication status code
+  */
+const SNS_REG_IND_STATUS_OK                      = 0;
+const SNS_REG_IND_STATUS_RD_ERR                  = 1;
+const SNS_REG_IND_STATUS_WR_ERR                  = 2;
+const SNS_REG_IND_STATUS_INVALID                 = 3;
+
+/** Constant declaration 
+  */
+const SNS_REG_MAX_ITEM_BYTE_COUNT                = 8;
+const SNS_REG_MAX_GROUP_BYTE_COUNT               = 256;
+
+/** Group ID's for SMGR 
+*/
+
+
+/** Group ID's required by SMGR for Accel Sensor 
+*/
+const SNS_REG_SMGR_GROUP_ACCEL                   =  0;
+const SNS_REG_SMGR_GROUP_ACCEL_2                 =  1;
+const SNS_REG_SMGR_GROUP_ACCEL_3                 =  2;
+const SNS_REG_SMGR_GROUP_ACCEL_4                 =  3;
+const SNS_REG_SMGR_GROUP_ACCEL_5                 =  4;
+
+/** Group ID's required by SMGR for Gyro Sensor 
+*/
+const SNS_REG_SMGR_GROUP_GYRO                    =  10;
+const SNS_REG_SMGR_GROUP_GYRO_2                  =  11;
+const SNS_REG_SMGR_GROUP_GYRO_3                  =  12;
+const SNS_REG_SMGR_GROUP_GYRO_4                  =  13;
+const SNS_REG_SMGR_GROUP_GYRO_5                  =  14;
+
+/** Group ID's required by SMGR for Mag Sensor 
+*/
+const SNS_REG_SMGR_GROUP_MAG                     =  20;
+const SNS_REG_SMGR_GROUP_MAG_2                   =  21;
+const SNS_REG_SMGR_GROUP_MAG_3                   =  22;
+const SNS_REG_SMGR_GROUP_MAG_4                   =  23;
+const SNS_REG_SMGR_GROUP_MAG_5                   =  24;
+
+/** Group ID's required by SMGR for Pressure Sensor 
+*/
+const SNS_REG_SMGR_GROUP_PRESSURE                =  30;
+const SNS_REG_SMGR_GROUP_PRESSURE_2              =  31;
+const SNS_REG_SMGR_GROUP_PRESSURE_3              =  32;
+const SNS_REG_SMGR_GROUP_PRESSURE_4              =  33;
+const SNS_REG_SMGR_GROUP_PRESSURE_5              =  34;
+
+/** Group ID's required by SMGR for ALS/Prox Sensor 
+*/
+const SNS_REG_SMGR_GROUP_PROX_LIGHT              =  40;
+const SNS_REG_SMGR_GROUP_PROX_LIGHT_2            =  41;
+const SNS_REG_SMGR_GROUP_PROX_LIGHT_3            =  42;
+const SNS_REG_SMGR_GROUP_PROX_LIGHT_4            =  43;
+const SNS_REG_SMGR_GROUP_PROX_LIGHT_5            =  44;
+
+/** Group ID's for items not specific to any one sensor
+*/
+const SNS_REG_GROUP_SENSOR_TEST                  =  50;
+
+/** Group ID's required by device drivers. All group ID's used
+    by device drivers must start from 1000 onwards.
+*/
+
+/** Group ID's required by Accel device drivers 
+*/
+const SNS_REG_DRIVER_GROUP_ACCEL                   =  1000;
+const SNS_REG_DRIVER_GROUP_ACCEL_2                 =  1001;
+const SNS_REG_DRIVER_GROUP_ACCEL_3                 =  1002;
+const SNS_REG_DRIVER_GROUP_ACCEL_4                 =  1003;
+const SNS_REG_DRIVER_GROUP_ACCEL_5                 =  1004;
+
+/** Group ID's required by Gyro device drivers 
+*/
+const SNS_REG_DRIVER_GROUP_GYRO                    =  1010;
+const SNS_REG_DRIVER_GROUP_GYRO_2                  =  1011;
+const SNS_REG_DRIVER_GROUP_GYRO_3                  =  1012;
+const SNS_REG_DRIVER_GROUP_GYRO_4                  =  1013;
+const SNS_REG_DRIVER_GROUP_GYRO_5                  =  1014;
+
+/** Group ID's required by Mag device drivers 
+*/
+const SNS_REG_DRIVER_GROUP_MAG                     =  1020;
+const SNS_REG_DRIVER_GROUP_MAG_2                   =  1021;
+const SNS_REG_DRIVER_GROUP_MAG_3                   =  1022;
+const SNS_REG_DRIVER_GROUP_MAG_4                   =  1023;
+const SNS_REG_DRIVER_GROUP_MAG_5                   =  1024;
+
+/** Group ID's required by pressure device drivers 
+*/
+const SNS_REG_DRIVER_GROUP_PRESSURE                =  1030;
+const SNS_REG_DRIVER_GROUP_PRESSURE_2              =  1031;
+const SNS_REG_DRIVER_GROUP_PRESSURE_3              =  1032;
+const SNS_REG_DRIVER_GROUP_PRESSURE_4              =  1033;
+const SNS_REG_DRIVER_GROUP_PRESSURE_5              =  1034;
+
+/** Group ID's required by ALS/Prox device drivers 
+*/
+const SNS_REG_DRIVER_GROUP_PROX_LIGHT              =  1040;
+const SNS_REG_DRIVER_GROUP_PROX_LIGHT_2            =  1041;
+const SNS_REG_DRIVER_GROUP_PROX_LIGHT_3            =  1042;
+const SNS_REG_DRIVER_GROUP_PROX_LIGHT_4            =  1043;
+const SNS_REG_DRIVER_GROUP_PROX_LIGHT_5            =  1044;
+
+/** Group ID's required by SAM for QMD algorithms
+*/
+const SNS_REG_SAM_GROUP_AMD                 	      =  2000;
+const SNS_REG_SAM_GROUP_VMD                 	      =  2001;
+const SNS_REG_SAM_GROUP_RMD                 	      =  2002;
+
+/** Group ID's required by SCM for Factory Calibration */
+const SNS_REG_SCM_GROUP_ACCEL_FAC_CAL_PARAMS       =  0;
+const SNS_REG_SCM_GROUP_GYRO_FAC_CAL_PARAMS        =  10;
+
+
+/** Group ID's required by SCM for GYRO_CAL */
+const SNS_REG_SCM_GROUP_GYRO_CAL_ALGO                   = 2500;
+const SNS_REG_SCM_GROUP_GYRO_CAL                        = 2500;
+
+/** Group ID's required by SCM for Accel Sensor Dyanmic Bias Calibration
+*/
+const SNS_REG_SCM_GROUP_ACCEL_DYN_CAL_PARAMS              = 2600;
+
+/** Group ID's required by SCM for Gyro Sensor Dyanmic Bias Calibration
+*/
+const SNS_REG_SCM_GROUP_GYRO_DYN_CAL_PARAMS               = 2610;
+
+/** Group ID's required by SAM for filtering magnetic vector 
+*/
+const SNS_REG_SAM_GROUP_FMV_PARAMS = 2620;
+
+
+/** Item ID's
+*/
+
+/** Item ID's corresponding to group SNS_REG_SMGR_GROUP_ACCEL_V01 & SNS_REG_SCM_GROUP_ACCEL_FAC_CAL_PARAMS (Group Id:0)
+*/
+const SNS_REG_ITEM_ACC_X_BIAS                     = 0;
+const SNS_REG_ITEM_ACC_Y_BIAS                     = 1;
+const SNS_REG_ITEM_ACC_Z_BIAS                     = 2;
+const SNS_REG_ITEM_ACC_X_SCALE                    = 3;
+const SNS_REG_ITEM_ACC_Y_SCALE                    = 4;
+const SNS_REG_ITEM_ACC_Z_SCALE                    = 5;
+
+/** Item ID's corresponding to group SNS_REG_SCM_GROUP_ACCEL_DYN_CAL (Group Id: 2600)
+*/
+const SNS_REG_ITEM_ACC_X_DYN_BIAS                  = 6;
+const SNS_REG_ITEM_ACC_Y_DYN_BIAS                  = 7;
+const SNS_REG_ITEM_ACC_Z_DYN_BIAS                  = 8;
+const SNS_REG_ITEM_ACC_X_DYN_SCALE                 = 9;
+const SNS_REG_ITEM_ACC_Y_DYN_SCALE                 = 10;
+const SNS_REG_ITEM_ACC_Z_DYN_SCALE                 = 11;
+
+/** Item ID's corresponding to group SNS_REG_GROUP_SENSOR_TEST (Group Id: 50)
+*/
+const SNS_REG_ITEM_RAW_DATA_MODE                   = 50;
+
+/** Item ID's corresponding to group SNS_REG_DRIVER_GROUP_PROX_LIGHT_V01 (Group Id: 1040)
+*/
+const SNS_REG_ITEM_ALP_VISIBLE_LIGHT_TRANS_RATIO  = 100;
+const SNS_REG_ITEM_ALP_IR_LIGHT_TRANS_RATIO       = 101;
+const SNS_REG_ITEM_ALP_DC_OFFSET                  = 102;
+const SNS_REG_ITEM_ALP_NEAR_THRESHOLD             = 103;
+const SNS_REG_ITEM_ALP_FAR_THRESHOLD              = 104;
+const SNS_REG_ITEM_ALP_PRX_FACTOR                 = 105;
+const SNS_REG_ITEM_ALP_ALS_FACTOR                 = 106;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_AMD_V01 (Group Id: 2000)
+*/
+const SNS_REG_ITEM_AMD_DEF_ACC_SAMP_RATE          = 200;
+const SNS_REG_ITEM_AMD_INT_CFG_PARAM1             = 201;
+const SNS_REG_ITEM_AMD_INT_CFG_PARAM2             = 202;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_VMD_V01 (Group Id: 2001)
+*/
+const SNS_REG_ITEM_VMD_DEF_ACC_SAMP_RATE          = 210;
+const SNS_REG_ITEM_VMD_INT_CFG_PARAM1             = 211;
+const SNS_REG_ITEM_VMD_INT_CFG_PARAM2             = 212;
+
+/** Item ID's corresponding to group SNS_REG_SAM_GROUP_RMD_V01 (Group Id: 2002)
+*/
+const SNS_REG_ITEM_RMD_DEF_ACC_SAMP_RATE          = 220;
+const SNS_REG_ITEM_RMD_INT_CFG_PARAM1             = 221;
+const SNS_REG_ITEM_RMD_INT_CFG_PARAM2             = 222;
+const SNS_REG_ITEM_RMD_INT_CFG_PARAM3             = 223;
+const SNS_REG_ITEM_RMD_INT_CFG_PARAM4             = 224;
+
+/** Item ID's corresponding to group SNS_REG_SMGR_GROUP_GYRO & SNS_REG_SCM_GROUP_GYRO_FAC_CAL_PARAMS (Group Id: 10)
+*/
+const SNS_REG_ITEM_GYRO_X_BIAS                     = 300;
+const SNS_REG_ITEM_GYRO_Y_BIAS                     = 301;
+const SNS_REG_ITEM_GYRO_Z_BIAS                     = 302;
+const SNS_REG_ITEM_GYRO_X_SCALE                    = 303;
+const SNS_REG_ITEM_GYRO_Y_SCALE                    = 304;
+const SNS_REG_ITEM_GYRO_Z_SCALE                    = 305;
+
+/** Item ID's corresponding to group SNS_REG_SCM_GROUP_GYRO_DYN_CAL (Group Id: 2650)
+*/
+const SNS_REG_ITEM_GYRO_X_DYN_BIAS                  = 306;
+const SNS_REG_ITEM_GYRO_Y_DYN_BIAS                  = 307;
+const SNS_REG_ITEM_GYRO_Z_DYN_BIAS                  = 308;
+const SNS_REG_ITEM_GYRO_X_DYN_SCALE                 = 309;
+const SNS_REG_ITEM_GYRO_Y_DYN_SCALE                 = 310;
+const SNS_REG_ITEM_GYRO_Z_DYN_SCALE                 = 311;
+
+
+
+/**  Item ID's corresponding to group SNS_REG_SCM_GROUP_GYRO_CAL (Group Id: 2500) */
+const SNS_REG_ITEM_GYRO_CAL_DEF_SAMP_RATE         = 500;
+const SNS_REG_ITEM_GYRO_CAL_DEF_NUM_SAMP          = 501;
+const SNS_REG_ITEM_GYRO_CAL_DEF_VAR_THOLD         = 502;
+const SNS_REG_ITEM_GYRO_CAL_DEF_ENABLE_ALGO       = 503;
+
+/**  Item ID's corresponding to group SNS_REG_SAM_GROUP_FMV_PARAMS (Group Id: 2620) */
+const SNS_REG_ITEM_FMV_TC_ACCURACY_0 =    600;
+const SNS_REG_ITEM_FMV_TC_ACCURACY_1 =    601;
+const SNS_REG_ITEM_FMV_TC_ACCURACY_2 =    602;
+const SNS_REG_ITEM_FMV_TC_ACCURACY_3 =    603;
+const SNS_REG_ITEM_FMV_TC_ACCURACY_4 =    604;
+const SNS_REG_ITEM_FMV_GYRO_GAP_THRESH =  605;
+const SNS_REG_ITEM_FMV_MAG_GAP_FACTOR =   606;
+const SNS_REG_ITEM_FMV_ROT_FOR_ZUPT =     607;
+const SNS_REG_ITEM_FMV_MAX_MAG_INNOVATION =    608;
+
+
+/** Following are message definitions shared by all registry-related services */
+
+//============================================================================
+/** @COMMAND SNS_REG_SINGLE_READ
+    @BRIEF This command reads a single item from the registry.
+*/
+//============================================================================
+
+//! @MSG     SNS_REG_SINGLE_READ_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint16              item_id;
+  /**< ID of the registry entry to be read */ 
+} sns_reg_single_read_req_msg;
+
+//! @MSG     SNS_REG_SINGLE_READ_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s   resp = 2;
+  mandatory uint16              item_id;
+  mandatory opaque              data<SNS_REG_MAX_ITEM_BYTE_COUNT>;
+} sns_reg_single_read_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_REG_SINGLE_WRITE
+    @BRIEF This command writes a single item to the registry.
+*/
+//============================================================================
+
+//! @MSG     SNS_REG_SINGLE_WRITE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint16              item_id;
+  /**< ID of the registry entry to be written */
+  mandatory opaque              data<SNS_REG_MAX_ITEM_BYTE_COUNT>;
+  /**< Item data to be written to the registry. Data types of uint8/16/32/64 and 
+       int8/16/32/64 are supported */
+} sns_reg_single_write_req_msg;
+
+//! @MSG     SNS_REG_SINGLE_WRITE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s   resp = 2;
+} sns_reg_single_write_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_REG_GROUP_READ
+    @BRIEF This command reads a single item from the registry.
+*/
+//============================================================================
+
+//! @MSG     SNS_REG_GROUP_READ_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint16              group_id;
+  /**< ID of the group of registry entries to be read */ 
+} sns_reg_group_read_req_msg;
+
+//! @MSG     SNS_REG_GROUP_READ_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s   resp = 2;
+  mandatory uint16              group_id;
+  mandatory opaque              data<SNS_REG_MAX_GROUP_BYTE_COUNT>;
+} sns_reg_group_read_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_REG_SINGLE_WRITE
+    @BRIEF This command writes a single item to the registry.
+*/
+//============================================================================
+
+//! @MSG     SNS_REG_GROUP_WRITE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint16              group_id;
+  /**< ID of the registry entry to be written */
+  mandatory opaque              data<SNS_REG_MAX_GROUP_BYTE_COUNT>;
+  /**< Item data to be written to the registry. Data types of uint8/16/32/64 and 
+       int8/16/32/64 are supported */
+} sns_reg_group_write_req_msg;
+
+//! @MSG     SNS_REG_GROUP_WRITE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s   resp = 2;
+} sns_reg_group_write_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_REG_VERSION
+    @BRIEF This command requests Sensors Registry Service version number.
+*/
+//============================================================================
+
+
+//============================================================================
+/** @COMMAND SNS_REG_CANCEL
+    @BRIEF This command cancels an outstanding Sensors Registry command.
+*/
+//============================================================================
+
+
+//!============================================================================
+//! Service definition
+//! ============================================================================
+
+
+service SNS_REG_SVC {
+  //! @ID SNS_REG_CANCEL
+  sns_common_cancel_req_msg		    SNS_REG_CANCEL_REQ,
+  sns_common_cancel_resp_msg	    SNS_REG_CANCEL_RESP; 
+
+  //! @ID SNS_REG_VERSION
+  sns_common_version_req_msg	    SNS_REG_VERSION_REQ,
+  sns_common_version_resp_msg	    SNS_REG_VERSION_RESP; 
+
+  //! @ID SNS_REG_SINGLE_READ
+  sns_reg_single_read_req_msg       SNS_REG_SINGLE_READ_REQ,
+  sns_reg_single_read_resp_msg      SNS_REG_SINGLE_READ_RESP; 
+
+  //! @ID SNS_REG_SINGLE_WRITE
+  sns_reg_single_write_req_msg      SNS_REG_SINGLE_WRITE_REQ,
+  sns_reg_single_write_resp_msg     SNS_REG_SINGLE_WRITE_RESP; 
+
+  //! @ID SNS_REG_GROUP_READ
+  sns_reg_group_read_req_msg        SNS_REG_GROUP_READ_REQ,
+  sns_reg_group_read_resp_msg       SNS_REG_GROUP_READ_RESP; 
+
+  //! @ID SNS_REG_SINGLE_WRITE
+  sns_reg_group_write_req_msg      SNS_REG_GROUP_WRITE_REQ,
+  sns_reg_group_write_resp_msg     SNS_REG_GROUP_WRITE_RESP; 
+
+} = SNS_QMI_SVC_ID_3;

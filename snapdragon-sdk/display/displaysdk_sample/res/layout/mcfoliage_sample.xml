@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* ====================================================================
+ * Copyright (c) 2014 Qualcomm Technologies, Inc. All Rights Reserved.
+ * QTI Proprietary and Confidential.
+ * =====================================================================
+ * @file mcfoliage_sample.xml
+ *
+ */
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mcfoliage"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/surfaceimage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/image_picker_desc"
+        android:scaleType="fitCenter" />
+
+    <CheckBox
+        android:id="@+id/mcfoliage_checkbox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/text_hue_mcfoliage"
+        android:layout_alignParentLeft="true"
+        android:background="@color/translucentgrey"
+        android:text="@string/mcfoliage_enable" />
+
+    <TextView
+        android:id="@+id/text_hue_mcfoliage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mcfoliage_hue_bar"
+        android:layout_alignParentLeft="true"
+        android:text="@string/mc_hue"
+        android:background="@color/translucentgrey" />
+
+    <SeekBar
+        android:id="@+id/mcfoliage_hue_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/text_saturation_mcfoliage"
+        android:layout_alignParentLeft="true"
+        android:background="@color/translucentgrey" />
+
+    <TextView
+        android:id="@+id/text_saturation_mcfoliage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mcfoliage_saturation_bar"
+        android:layout_alignParentLeft="true"
+        android:text="@string/mc_saturation"
+        android:background="@color/translucentgrey" />
+
+    <TextView
+        android:id="@+id/text_intensity_mcfoliage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mcfoliage_intensity_bar"
+        android:layout_alignParentLeft="true"
+        android:text="@string/mc_intensity"
+        android:background="@color/translucentgrey" />
+
+    <SeekBar
+        android:id="@+id/mcfoliage_intensity_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/translucentgrey" />
+
+    <SeekBar
+        android:id="@+id/mcfoliage_saturation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/text_intensity_mcfoliage"
+        android:layout_alignParentLeft="true"
+        android:background="@color/translucentgrey" />
+
+</RelativeLayout>

@@ -1,0 +1,106 @@
+include "common_v01.idl";
+
+revision 0;
+
+const Qtuner_FREE_SPACE_SCENARIO = 0;
+const Qtuner_CONCURRENT_SCENARIOS_MAX = 32; /* active max scenarios  */
+const Qtuner_OEM_STR_LENGTH = 64; /* OEM name */
+
+
+//============================================================================
+
+//! @MSG     QMI_Qtuner_SET_RFM_SCENARIO_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+
+
+message {
+
+  //! Array of scenario numbers from APPS
+  //! @VERSION_INTRODUCED 1.0
+  //! @VERSION 1.0
+  mandatory uint32 scenarios<Qtuner_CONCURRENT_SCENARIOS_MAX>;
+  /**< Qtuner Scenario numbers detected in APPS */
+
+}Qtuner_set_scenario_req;
+
+
+//! @MSG     QMI_Qtuner_SET_RFM_SCENARIO_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+
+}Qtuner_set_scenario_resp ;
+
+
+//============================================================================
+
+//! @MSG     Qtuner_GET_RFM_SCENARIO_REQ
+//! @TYPE    Request
+//! @SENDER  Control point
+//----------------------------------------------------------------------------
+
+message
+{
+} Qtuner_get_rfm_scenarios_req;
+
+//! @MSG     QMI_Qtuner_GET_RFM_SCENARIO_RESP
+//! @TYPE    Response
+//! @SENDER  Service_compiler --env=AMSS network_access_service_v01.idl
+//----------------------------------------------------------------------------
+
+message {
+  optional uint32 active_scenarios<Qtuner_CONCURRENT_SCENARIOS_MAX>;
+} Qtuner_get_rfm_scenarios_resp;
+
+
+message
+{
+} Qtuner_get_provisioned_table_revision_req;
+
+
+message {
+  optional uint32 provisioned_table_revision;
+  optional uint16 provisioned_table_OEM<Qtuner_OEM_STR_LENGTH>;
+
+} Qtuner_get_provisioned_table_revision_resp;
+
+
+
+//============================================================================
+// Service definition
+//============================================================================
+service Qtuner {
+
+  // 0x0020
+  //! @ID QMI_Qtuner_SET_RFM_SCENARIO
+  Qtuner_set_scenario_req           QMI_Qtuner_SET_RFM_SCENARIO_REQ,
+  Qtuner_set_scenario_resp          QMI_Qtuner_SET_RFM_SCENARIO_RESP
+    = 0x0020;
+
+  // 0x0021
+  //! @ID QMI_Qtuner_GET_RFM_SCENARIO
+  Qtuner_get_rfm_scenarios_req      QMI_Qtuner_GET_RFM_SCENARIO_REQ,
+  Qtuner_get_rfm_scenarios_resp     QMI_Qtuner_GET_RFM_SCENARIO_RESP;
+
+  // 0x0022
+  //! @ID QMI_Qtuner_GET_PROVISIONED_TABLE_REVISION
+  Qtuner_get_provisioned_table_revision_req
+                      QMI_Qtuner_GET_PROVISIONED_TABLE_REVISION_REQ,
+  Qtuner_get_provisioned_table_revision_resp
+                      QMI_Qtuner_GET_PROVISIONED_TABLE_REVISION_RESP;
+
+} = 0x04;
+
+//============================================================================
+// File footer
+//============================================================================
+
+
+//============================================================================
+// End of Module
+//============================================================================
+

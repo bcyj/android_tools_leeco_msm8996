@@ -1,0 +1,24 @@
+Test: mpp_test
+
+Usage: ./mpp_test.sh [-n | --nominal] [(-v | --verbosity) <verbosity>]
+
+Description:
+This test tests basic multi-purpose pin (MPP) functionality.
+
+For 7x27, 7x30, and 8x50 targets, this unit test tests if one MPP can be set
+as a digital output successfully.
+
+For 8660, this test is more limited because the MPP drivers used on 8660 do not
+expose control to userspace.  All that can be observed is the debug output of
+the MPP drivers that is printed via the dbg_show callback in the GPIO driver.
+Thus reading <debugfs>/gpio will allow one to find out the configuration and
+current state of all MPPs.
+
+This unit test therefore checks to see if there is the correct number of PMIC
+8058 MPPs listed in <debugfs>/gpio and that each has an allowed type.
+
+Targets: 8660, 7x27, 7x30, 8x50
+
+Notes:
+(1) On Android adb shell, busybox installation is required for test to run.
+(2) On Android adb shell, debugfs must be mounted at $ANDROID_DATA/debug

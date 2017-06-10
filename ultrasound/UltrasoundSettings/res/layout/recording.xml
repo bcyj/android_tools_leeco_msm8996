@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---/**************************************************************************
+* @file       recording.xml
+* @brief      Layout specs for the recording activity
+*
+*  Copyright (C) 2012 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  **************************************************************************-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:orientation="vertical" android:layout_width="fill_parent"
+   android:layout_height="fill_parent">
+   <TableLayout android:id="@+id/tableLayout1"
+      android:layout_height="wrap_content" android:layout_width="match_parent">
+      <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content"
+         android:layout_height="wrap_content">
+         <TextView android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"
+            android:id="@+id/NameTextView" android:text="@string/name_text"></TextView>
+         <EditText android:inputType="textPersonName"
+            android:layout_marginLeft="50dp" android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:id="@+id/NameEditText"></EditText>
+      </TableRow>
+      <TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content"
+         android:layout_height="wrap_content">
+         <TextView android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"
+            android:id="@+id/LocationTextView" android:text="@string/location_text"></TextView>
+         <EditText android:id="@+id/LocationEditText"
+            android:layout_marginLeft="50dp" android:layout_width="180dp"
+            android:layout_height="wrap_content"></EditText>
+      </TableRow>
+      <TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content"
+         android:layout_height="wrap_content">
+         <TextView android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"
+            android:id="@+id/CommentsTextView" android:text="@string/comments_text"></TextView>
+         <EditText android:inputType="textMultiLine" android:height="100dp"
+            android:layout_marginLeft="50dp" android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:id="@+id/CommentsEditText"></EditText>
+      </TableRow>
+      <TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content"
+         android:layout_height="wrap_content">
+         <TextView android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"
+            android:id="@+id/TypeTextView" android:text="@string/type_text"></TextView>
+         <Spinner android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp" android:id="@+id/TypeSpinner"
+            android:layout_width="match_parent"></Spinner>
+      </TableRow>
+      <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content"
+         android:layout_height="wrap_content">
+         <TextView android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"
+            android:id="@+id/CFGFileTextView" android:text="@string/cfg_file_text"></TextView>
+         <EditText android:inputType="text" android:layout_marginLeft="50dp"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"
+            android:id="@+id/CfgFileEditText"></EditText>
+      </TableRow>
+      <TextView android:textAppearance="?android:attr/textAppearanceSmall"
+         android:layout_height="wrap_content" android:layout_width="wrap_content"
+         android:id="@+id/UserNoticeTextView" android:text="@string/user_notice_text"></TextView>
+      <!-- Recording Location -->
+      <TableRow android:id="@+id/tableRow4" android:layout_width="wrap_content"
+         android:layout_height="wrap_content">
+         <TextView android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"
+            android:id="@+id/RecordLocationTextView" android:text="@string/record_location_text"></TextView>
+         <EditText android:inputType="text" android:layout_marginLeft="50dp"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"
+            android:id="@+id/RecordLocationEditText"></EditText>
+      </TableRow>
+   </TableLayout>
+   <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow4"
+      android:layout_height="wrap_content">
+      <Button android:id="@+id/BeginButton" android:layout_height="wrap_content"
+         android:layout_marginLeft="100dp" android:layout_marginTop="70dp"
+         android:text="@string/button_text" android:layout_width="100dp"></Button>
+   </TableRow>
+</LinearLayout>

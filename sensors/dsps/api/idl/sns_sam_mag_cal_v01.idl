@@ -1,0 +1,215 @@
+/*****************************************************************************
+  @FILE     sns_sam_mag_cal.idl
+
+  @BRIEF    Message definition for Magnetometer Calibration.
+
+  @DESCRIPTION
+  This file defines messages provided to clients to use
+  Magnetometer calibration algorithm services.
+
+  Copyright (c) 2011, 2014 Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+include "sns_common_v01.idl";
+
+revision 2;
+
+const SNS_SAM_MAG_CAL_SUID = 0x89e31c906b87c4c1;
+
+struct {
+  int32 m[3];
+  /**< Calibrated Mag output in Q16 format. Data in milli Gauss. */
+  int32 b[3];
+  /**< Bias Offset output in Q16 format. Data in milli Gauss. */
+  uint8 accuracy;
+  /**< accuracy output. 0=worst 1=low 2=medium 3=best. */
+} sns_sam_mag_cal_result_s;
+
+//============================================================================
+/** @COMMAND SNS_SAM_MAG_CAL_ENABLE
+    @BRIEF This command enables a Mag Calibration algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_MAG_CAL_ENABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint32 report_period;
+  /**< unit of seconds, Q16; determines algorithm output report rate 
+	   specify 0 to report at sampling rate 
+  */
+  optional uint32 sample_rate;
+  /**< sample rate in Hz, Q16; 
+	   if sample rate is less than report rate, it is set to report rate
+  */ 
+} sns_sam_mag_cal_enable_req_msg;
+
+//! @MSG     SNS_SAM_MAG_CAL_ENABLE_REP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  optional uint8                             instance_id;
+  /**<
+    Instance ID is assigned by SAM.
+    The client shall use this instance ID for future messages associated with
+    this algorithm instance.
+  */
+} sns_sam_mag_cal_enable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_MAG_CAL_DISABLE
+    @BRIEF This command disables a Mag Calibration algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_MAG_CAL_DISABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Instance ID identifies the algorithm instance.  */
+} sns_sam_mag_cal_disable_req_msg;
+
+//! @MSG     SNS_SAM_MAG_CAL_DISABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  optional uint8                             instance_id;
+  /**< Instance ID identifies the algorithm instance. */
+} sns_sam_mag_cal_disable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_MAG_CAL_REPORT
+    @BRIEF Report containing Mag Calibration algorithm output
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_MAG_CAL_REPORT_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Instance ID identifies the algorithm instance. */
+  mandatory uint32                           timestamp;
+  /**< Timestamp of input used to generate the latest algorithm output */
+  mandatory sns_sam_mag_cal_result_s         result;
+  /**< Output of the Mag calibration algorithm instance */
+} sns_sam_mag_cal_report_ind_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_MAG_CAL_GET_REPORT
+    @BRIEF This command fetches latest report output of a Mag Calibration algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_MAG_CAL_GET_REPORT_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Instance ID identifies the algorithm instance.  */
+} sns_sam_mag_cal_get_report_req_msg;
+
+//! @MSG     SNS_SAM_MAG_CAL_GET_REPORT_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  optional uint8                             instance_id;
+  /**< Instance ID identifies the algorithm instance. */
+  optional uint32                            timestamp;
+  /**< Timestamp of input used to generate the algorithm output */
+  optional sns_sam_mag_cal_result_s          result;
+  /**< Output of the mag calibration algorithm instance */
+} sns_sam_mag_cal_get_report_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_MAG_CAL_ERROR
+    @BRIEF Asynchronous error indication for a Mag calibration algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_MAG_CAL_ERROR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//============================================================================
+
+message {
+  mandatory uint8                            error;
+  /**< Sensor1 error code */
+  mandatory uint8                            instance_id;
+  /**< Instance ID identifies the algorithm instance. */
+} sns_sam_mag_cal_error_ind_msg;
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_SAM_MAG_CAL_SVC {
+  //! @ID SNS_COMMON_CANCEL
+  sns_common_cancel_req_msg            SNS_SAM_MAG_CAL_CANCEL_REQ,
+  sns_common_cancel_resp_msg           SNS_SAM_MAG_CAL_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_COMMON_VERSION
+  sns_common_version_req_msg           SNS_SAM_MAG_CAL_VERSION_REQ,
+  sns_common_version_resp_msg          SNS_SAM_MAG_CAL_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SAM_MAG_CAL_ENABLE
+  sns_sam_mag_cal_enable_req_msg       SNS_SAM_MAG_CAL_ENABLE_REQ,
+  sns_sam_mag_cal_enable_resp_msg      SNS_SAM_MAG_CAL_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_SAM_MAG_CAL_DISABLE
+  sns_sam_mag_cal_disable_req_msg      SNS_SAM_MAG_CAL_DISABLE_REQ,
+  sns_sam_mag_cal_disable_resp_msg     SNS_SAM_MAG_CAL_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_SAM_MAG_CAL_GET_REPORT
+  sns_sam_mag_cal_get_report_req_msg   SNS_SAM_MAG_CAL_GET_REPORT_REQ,
+  sns_sam_mag_cal_get_report_resp_msg  SNS_SAM_MAG_CAL_GET_REPORT_RESP
+    = 0x04;
+
+  //! @ID SNS_SAM_MAG_CAL_REPORT
+  sns_sam_mag_cal_report_ind_msg       SNS_SAM_MAG_CAL_REPORT_IND
+    = 0x05;
+
+  //! @ID SNS_SAM_MAG_CAL_ERROR
+  sns_sam_mag_cal_error_ind_msg        SNS_SAM_MAG_CAL_ERROR_IND
+    = 0x06;
+
+} = SNS_QMI_SVC_ID_16;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+*/
+
+//============================================================================
+// End of Module
+//============================================================================
+

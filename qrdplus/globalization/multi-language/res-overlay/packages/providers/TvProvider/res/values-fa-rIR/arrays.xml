@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Category mapping from ATSC to canonical genre -->
+    <string-array name="genre_mapping_atsc">
+        <item>آموزشی|آموزشی</item>
+        <item>سرگرمی|سرگرمی</item>
+        <item>فیلم|فیلم</item>
+        <item>اخبار|اخبار</item>
+        <item>مذهبی|سبک زندگی</item>
+        <item>ورزش|ورزشی</item>
+        <item>موارد دیگر|موارد دیگر</item>
+        <item>اکشن|فیلم</item>
+        <item>تبلیغات|موارد دیگر</item>
+        <item>انیمیشن|کودک و خانواده</item>
+        <item>گلچین ادبی|درام</item>
+        <item>اتوموبیل|موارد دیگر</item>
+        <item>جوایز|سرگرمی</item>
+        <item>بیسبال|ورزشی</item>
+        <item>بسکتبال|ورزشی</item>
+        <item>بولتن|موارد دیگر</item>
+        <item>تجارت|موارد دیگر</item>
+        <item>کلاسیک|موسیقی</item>
+        <item>کالج|آموزشی</item>
+        <item>نبرد|موارد دیگر</item>
+        <item>کمدی|کمدی</item>
+        <item>گزارش رویداد|موارد دیگر</item>
+        <item>کنسرت|موسیقی</item>
+        <item>مصرف‌کننده|موارد دیگر</item>
+        <item>معاصر|موارد دیگر</item>
+        <item>جنایی|فیلم</item>
+        <item>رقص|سرگرمی</item>
+        <item>مستند|اخبار</item>
+        <item>درام|درام</item>
+        <item>ابتدایی|آموزشی</item>
+        <item>عاشقانه|فیلم</item>
+        <item>تمرین ورزشی|ورزشی</item>
+        <item>تخیلی|فیلم</item>
+        <item>مزرعه|موارد دیگر</item>
+        <item>مد|سبک زندگی</item>
+        <item>افسانه|هنری</item>
+        <item>غذا|سبک زندگی</item>
+        <item>فوتبال|ورزشی</item>
+        <item>خارجی|موارد دیگر</item>
+        <item>اعانات|موارد دیگر</item>
+        <item>بازی/مسابقه|بازی</item>
+        <item>باغ|سبک زندگی</item>
+        <item>گلف|ورزشی</item>
+        <item>دولت|موارد دیگر</item>
+        <item>سلامت|سبک زندگی</item>
+        <item>دبیرستان|آموزشی</item>
+        <item>تاریخ|آموزشی</item>
+        <item>سرگرمی|سبک زندگی</item>
+        <item>هاکی|ورزشی</item>
+        <item>خانه|سبک زندگی</item>
+        <item>وحشتناک|فیلم</item>
+        <item>اطلاعات|اخبار</item>
+        <item>تعلیم|موارد دیگر</item>
+        <item>بین‌المللی|موارد دیگر</item>
+        <item>مصاحبه|موارد دیگر</item>
+        <item>زبان|آموزشی</item>
+        <item>قانونی|موارد دیگر</item>
+        <item>زنده|موارد دیگر</item>
+        <item>محلی|موارد دیگر</item>
+        <item>ریاضی|آموزشی</item>
+        <item>پزشکی|موارد دیگر</item>
+        <item>جلسه|موارد دیگر</item>
+        <item>نظامی|موارد دیگر</item>
+        <item>سریال‌های کوتاه|درام</item>
+        <item>موسیقی|موسیقی</item>
+        <item>اسرارآمیز|فیلم</item>
+        <item>ملی|موارد دیگر</item>
+        <item>طبیعت|حیات وحش</item>
+        <item>پلیس|موارد دیگر</item>
+        <item>سیاست|موارد دیگر</item>
+        <item>نخست‌وزیر|نخست‌وزیر</item>
+        <item>از قبل ضبط شده|موارد دیگر</item>
+        <item>محصول|موارد دیگر</item>
+        <item>حرفه‌ای|موارد دیگر</item>
+        <item>عمومی|موارد دیگر</item>
+        <item>مسابقه|ورزشی</item>
+        <item>خواندن|هنری</item>
+        <item>تعمیر|موارد دیگر</item>
+        <item>تکرار|موارد دیگر</item>
+        <item>بررسی|موارد دیگر</item>
+        <item>رومانتیک|فیلم</item>
+        <item>علوم|علوم فنی</item>
+        <item>سریال|درام</item>
+        <item>سرویس|موارد دیگر</item>
+        <item>خرید|خرید</item>
+        <item>نمایش‌های تلویزیونی|درام</item>
+        <item>ویژه|موارد دیگر</item>
+        <item>تردید|فیلم</item>
+        <item>گفتگو|سرگرمی</item>
+        <item>فنی|علوم فنی</item>
+        <item>تنیس|ورزشی</item>
+        <item>سفر|سفر</item>
+        <item>گوناگونی|سرگرمی</item>
+        <item>ویدیو|هنری</item>
+        <item>وضع هوا|اخبار</item>
+        <item>وسترن|موارد دیگر</item>
+        <item>هنری|هنری</item>
+        <item>مسابقه اتومبیل‌رانی|ورزشی</item>
+        <item>هوانوردی|ورزشی</item>
+        <item>بیوگرافی|اخبار</item>
+        <item>قایق‌رانی|ورزشی</item>
+        <item>بولینگ|ورزشی</item>
+        <item>بوکس|ورزشی</item>
+        <item>کارتون|کودک و خانواده</item>
+        <item>کودکان|کودک و خانواده</item>
+        <item>فیلم کلاسیک|فیلم</item>
+        <item>جامعه|موارد دیگر</item>
+        <item>رایانه|علوم فنی</item>
+        <item>موسیقی محلی|موسیقی</item>
+        <item>دادگاه|موارد دیگر</item>
+        <item>ورزش‌های سخت|ورزشی</item>
+        <item>خانواده|کودک و خانواده</item>
+        <item>اقتصادی|اخبار</item>
+        <item>ژیمناستیک|ورزشی</item>
+        <item>عناوین مهم|اخبار</item>
+        <item>مسابقه اسب‌دوانی|ورزشی</item>
+        <item>شکار/ماهی‌گیری/فضای آزاد|حیات وحش</item>
+        <item>مستقل|موارد دیگر</item>
+        <item>جاز|موسیقی</item>
+        <item>مجله|اخبار</item>
+        <item>مسابقه موتورسواری|ورزشی</item>
+        <item>موسیقی/فیلم/کتاب|موارد دیگر</item>
+        <item>اخبار بین‌المللی|اخبار</item>
+        <item>اخبار محلی|اخبار</item>
+        <item>اخبار ملی|اخبار</item>
+        <item>اخبار منطقه‌ای|اخبار</item>
+        <item>المپیک|ورزشی</item>
+        <item>اوریجینال|فیلم</item>
+        <item>هنرهای نمایشی|هنری</item>
+        <item>حیوانات خانگی/حیوانات|حیات وحش</item>
+        <item>موسیقی|پاپ</item>
+        <item>راک اند رول|موسیقی</item>
+        <item>علمی تخیلی|فیلم</item>
+        <item>پیشرفت شخصی|آموزشی</item>
+        <item>سریال کمدی|درام</item>
+        <item>اسکیت|ورزشی</item>
+        <item>اسکی|ورزشی</item>
+        <item>ساکر|ورزشی</item>
+        <item>دو/میدانی|ورزشی</item>
+        <item>وقایع|موارد دیگر</item>
+        <item>والیبال|ورزشی</item>
+        <item>کشتی|ورزشی</item>
+    </string-array>
+
+    <!-- Category mapping from DVB to canonical genre -->
+    <string-array name="genre_mapping_dvb">
+        <item>فیلم/درام|فیلم</item>
+        <item>پلیسی/مهیج|فیلم</item>
+        <item>ماجراجویی/غربی/جنگ|فیلم</item>
+        <item>علمی تخیلی/تخیلی/ترسناک|فیلم</item>
+        <item>کمدی|کمدی</item>
+        <item>نمایش‌های تلویزیونی/ملودارم/فولکلور|درام</item>
+        <item>عشقی|فیلم</item>
+        <item>جدی/کلاسیک/مذهبی/فیلم تاریخی/درام|فیلم</item>
+        <item>فیلم بزرگسالان/درام|فیلم</item>
+        <item>اخبار/امور جاری|اخبار</item>
+        <item>اخبار/گزارش وضع هوا|اخبار</item>
+        <item>مجله خبری|اخبار</item>
+        <item>مستند|اخبار</item>
+        <item>بحث/مصاحبه/مذاکره|اخبار</item>
+        <item>نمایش/نمایش بازی|سرگرمی</item>
+        <item>نمایش بازی/مسابقه/رقابت|بازی</item>
+        <item>نمایش گوناگونی|سرگرمی</item>
+        <item>میزگرد|سرگرمی</item>
+        <item>ورزش|ورزشی</item>
+        <item>رویدادهای خاص (بازی‌های المپیک، جام جهانی و غیره)|ورزشی</item>
+        <item>مجله ورزشی|ورزشی</item>
+        <item>فوتبال/ساکر|ورزشی</item>
+        <item>تنیس/اسکواش|ورزشی</item>
+        <item>ورزش‌های تیمی (به جز فوتبال)|ورزشی</item>
+        <item>ورزشکاران|ورزشی</item>
+        <item>ورزش موتورسواری|ورزشی</item>
+        <item>ورزش آبی|ورزشی</item>
+        <item>ورزش‌های زمستانی|ورزشی</item>
+        <item>اسب‌سواری|ورزشی</item>
+        <item>ورزش‌های رزمی|ورزشی</item>
+        <item>برنامه کودکان/نوجوانان|کودک و خانواده</item>
+        <item>برنامه خردسالان|کودک و خانواده</item>
+        <item>برنامه‌های سرگرمی برای ۶ تا ۱۴ سال|کودک و خانواده</item>
+        <item>برنامه‌های سرگرمی برای ۱۰ تا ۱۶ سال|کودک و خانواده</item>
+        <item>برنامه‌های مدرسه/آموزشی/اطلاعاتی|کودک و خانواده</item>
+        <item>کارتون/نمایش عروسکی|کودک و خانواده</item>
+        <item>موسیقی/باله/رقص|موسیقی</item>
+        <item>راک/پاپ|موسیقی</item>
+        <item>موسیقی جدی/موسیقی کلاسیک|موسیقی</item>
+        <item>موسیقی محلی/سنتی|موسیقی</item>
+        <item>جاز|موسیقی</item>
+        <item>موزیکال/اپرا|موسیقی</item>
+        <item>باله|سرگرمی</item>
+        <item>هنر/فرهنگ|هنری</item>
+        <item>هنرهای نمایشی|هنری</item>
+        <item>هنرهای زیبا|هنری</item>
+        <item>مذهب|سبک زندگی</item>
+        <item>فرهنگ عمومی/هنرهای سنتی|سبک زندگی</item>
+        <item>ادبیات|هنری</item>
+        <item>فیلم/سینما|هنری</item>
+        <item>ویدیو/فیلم تجربی|هنری</item>
+        <item>پخش/مطبوعات|هنری</item>
+        <item>رسانه جدید|هنری</item>
+        <item>مجله‌های فرهنگی/هنری|هنری</item>
+        <item>مد|سبک زندگی</item>
+        <item>امور سیاسی/اجتماعی/اقتصادی|موارد دیگر</item>
+        <item>مجلات/گزارشات/مستند|اخبار</item>
+        <item>مشاوره‌های اجتماعی/اقتصادی|موارد دیگر</item>
+        <item>افراد مشهور|موارد دیگر</item>
+        <item>موضوعات واقعی/علمی/آموزشی|آموزشی</item>
+        <item>طبیعت/حیوانات/محیط زیست|حیات وحش</item>
+        <item>علوم طبیعی/تکنولوژی|علوم فنی</item>
+        <item>پزشکی/فیزیولوژی/روانشناسی|علوم فنی</item>
+        <item>نمایشگاه‌ها/کشورهای خارجی|آموزشی</item>
+        <item>علوم معنوی/اجتماعی|علوم فنی</item>
+        <item>آموزش بیشتر|آموزشی</item>
+        <item>زبان‌ها|آموزشی</item>
+        <item>اوقات فراغت|سبک زندگی</item>
+        <item>گردشگری/سفر|سفر</item>
+        <item>هنر دستی|سبک زندگی</item>
+        <item>اتومبیل‌رانی|سبک زندگی</item>
+        <item>سلامت و تناسب اندام|سبک زندگی</item>
+        <item>آشپزی|سبک زندگی</item>
+        <item>تبلیغات/خرید|خرید</item>
+        <item>باغبانی|سبک زندگی</item>
+        <item>زبان اصلی|موارد دیگر</item>
+        <item>سیاه و سفید|موارد دیگر</item>
+        <item>منتشر نشده|موارد دیگر</item>
+        <item>پخش زنده|موارد دیگر</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB to canonical genre -->
+    <string-array name="genre_mapping_isdb">
+        <item>انیمیشن|فیلم</item>
+        <item>بیسبال|ورزشی</item>
+        <item>کودکان و ترانه|موسیقی</item>
+        <item>کلاسیک، اپرا|موسیقی</item>
+        <item>پخت و پز|سرگرمی</item>
+        <item>برنامه کمدی|سرگرمی</item>
+        <item>داستان کمدی، سرگرمی|سرگرمی</item>
+        <item>بازی‌های تلویزیونی، رایانه‌ای|علوم فنی</item>
+        <item>گفتگو، زبان‌ها|آموزشی</item>
+        <item>رقص، باله|سرگرمی</item>
+        <item>بحث، کنفرانس|اخبار</item>
+        <item>گزارش بازار، اقتصاد|اخبار</item>
+        <item>مشکلات آموزشی|آموزشی</item>
+        <item>رویداد|سرگرمی</item>
+        <item>مد|سبک زندگی</item>
+        <item>موسیقی محلی، موسیقی جهانی|موسیقی</item>
+        <item>بازی|بازی</item>
+        <item>باغبانی، حیوانات خانگی، هنرهای دستی|سبک زندگی</item>
+        <item>گلف|ورزشی</item>
+        <item>چکیده اخبار/زندگی خصوصی|سرگرمی</item>
+        <item>خوراک‌شناسی، آشپزی|سبک زندگی</item>
+        <item>مراقبت‌های پزشکی، سلامتی|سبک زندگی</item>
+        <item>سرگرمی/آموزش|سبک زندگی</item>
+        <item>مسابقه اسب‌دوانی، مسابقه عمومی|ورزشی</item>
+        <item>انیمیشن ژاپنی|کودک و خانواده</item>
+        <item>شعر ژاپنی، موسیقی سنتی ژاپنی|موسیقی</item>
+        <item>شطرنج ژاپنی (شوجی) و ‎"‎بازی‎"‎|بازی</item>
+        <item>نمایش ژاپنی|نمایشی</item>
+        <item>فیلم‌های ژاپنی|فیلم</item>
+        <item>موسیقی پاپ، راک ژاپنی|موسیقی</item>
+        <item>جاز، موسیقی تلفیقی|موسیقی</item>
+        <item>دانش‌آموزان راهنمایی و دبیرستانی|آموزشی</item>
+        <item>نمایش کلاسیک، کوباکی|نمایشی</item>
+        <item>کارائوکی، مسابقات آواز مقدماتی|موسیقی</item>
+        <item>کسب مهارت، آموزش زندگی|آموزشی</item>
+        <item>بچه‌های کوچک، بچه‌های مدرسه‌ای|آموزشی</item>
+        <item>کنسرت زنده|موسیقی</item>
+        <item>زندگی، خانه|سبک زندگی</item>
+        <item>برنامه محلی|اخبار</item>
+        <item>بازی‌های پین‌بال- ماه جونگ|بازی</item>
+        <item>ماراتون، ورزش‌های قهرمانی، شنا|ورزشی</item>
+        <item>ورزش‌های دریایی، ورزش‌های زمستانی|ورزشی</item>
+        <item>نمایش مدرن، نمایش سبک وسترن|درام</item>
+        <item>ورزش‌های موتورسواری|ورزشی</item>
+        <item>موزیکال|موسیقی</item>
+        <item>موسیقی، هنر، هنر صنعتی|هنری</item>
+        <item>گوناگونی موسیقی|سرگرمی</item>
+        <item>تحلیل خبرها|اخبار</item>
+        <item>بازی‌های بین‌المللی، المپیک|ورزشی</item>
+        <item>بازی‌های توپی دیگر|ورزشی</item>
+        <item>انیمیشن‌های خارجی|کودک و خانواده</item>
+        <item>نمایش‌های خارجی|نمایشی</item>
+        <item>گزارشات بین‌المللی، خارجی|اخبار</item>
+        <item>فیلم‌های خارجی|فیلم</item>
+        <item>موسیقی پاپ، راک خارجی|موسیقی</item>
+        <item>نمایش‌های دوره‌ای|نمایشی</item>
+        <item>انجمن ملی، سیاسی|اخبار</item>
+        <item>ترانه‌های معروف، ترانه‌های معروف ژاپنی (ترانه‌های انکا)|موسیقی</item>
+        <item>مسابقه|بازی</item>
+        <item>رتبه‌بندی، ترانه‌های درخواستی|موسیقی</item>
+        <item>عادی، عمومی|اخبار</item>
+        <item>خرید، تجارت سفارش کالا|خرید</item>
+        <item>ساکر|ورزشی</item>
+        <item>جلوه‌های ویژه|کودک و خانواده</item>
+        <item>برنامه ویژه، مستند|اخبار</item>
+        <item>گزارش ویژه|اخبار</item>
+        <item>اخبار ورزشی|ورزشی</item>
+        <item>ورزش رزمی، سومو|ورزشی</item>
+        <item>انواع گفتگو|سرگرمی</item>
+        <item>انواع تور|سرگرمی</item>
+        <item>گزارش ترافیک|اخبار</item>
+        <item>سفر، ماهی‌گیری، سرگرمی خارج از خانه|حیات وحش</item>
+        <item>دانشجویان دانشگاه، امتحانات|آموزشی</item>
+        <item>گزارش وضع هوا|اخبار</item>
+    </string-array>
+
+    <!-- Category mapping from ISDB in Brazil to canonical genre -->
+    <string-array name="genre_mapping_isdb_br">
+        <item>Biografia|NEWS</item>
+        <item>Culinária|LIFE_STYLE</item>
+        <item>Documentário|NEWS</item>
+        <item>Educativo|EDUCATION</item>
+        <item>Erótico|MOVIES</item>
+        <item>Esporte|SPORTS</item>
+        <item>Filme|MOVIES</item>
+        <item>مسابقه تلویزیونی|بازی</item>
+        <item>Humorístico|COMEDY</item>
+        <item>Infantil|FAMILY_KIDS</item>
+        <item>Informação|LIFE_STYLE</item>
+        <item>Jornalismo|NEWS</item>
+        <item>Minissérie|DRAMA</item>
+        <item>Moda|LIFE_STYLE</item>
+        <item>موزیکال|موسیقی</item>
+        <item>Premiação|ENTERTAINMENT</item>
+        <item>نمایش واقع‌نما|سرگرمی</item>
+        <item>Religioso|LIFE_STYLE</item>
+        <item>Reportagem|NEWS</item>
+        <item>روستایی|سبک زندگی</item>
+        <item>Saúde|LIFE_STYLE</item>
+        <item>Série|DRAMA</item>
+        <item>Série/seriado|DRAMA</item>
+        <item>میزگرد|سرگرمی</item>
+        <item>Telejornais|NEWS</item>
+        <item>Televendas|SHOPPING</item>
+        <item>Turismo|TRAVEL</item>
+        <item>Variedade|ENTERTAINMENT</item>
+        <item>کنفرانس|سرگرمی</item>
+        <item>جوایز|سرگرمی</item>
+        <item>بیوگرافی|اخبار</item>
+        <item>کودک|کودک و خانواده</item>
+        <item>کودکان|کودک و خانواده</item>
+        <item>کمدی|کمدی</item>
+        <item>آشپزی|سبک زندگی</item>
+        <item>کشور|سبک زندگی</item>
+        <item>مذاکره/مصاحبه|اخبار</item>
+        <item>مذاکره|اخبار</item>
+        <item>مستند|اخبار</item>
+        <item>آموزشی|آموزشی</item>
+        <item>آموزشی|آموزشی</item>
+        <item>مهندسی|علوم فنی</item>
+        <item>عاشقانه|فیلم</item>
+        <item>مد|سبک زندگی</item>
+        <item>زنان|سرگرمی</item>
+        <item>مسابقه تلویزیونی|بازی</item>
+        <item>سلامت|سبک زندگی</item>
+        <item>فکاهی|کمدی</item>
+        <item>اطلاعات|سبک زندگی</item>
+        <item>مصاحبه|اخبار</item>
+        <item>روزنامه|اخبار</item>
+        <item>تولید|سرگرمی</item>
+        <item>سریال‌های کوتاه|درام</item>
+        <item>سریال‌های کوتاه|درام</item>
+        <item>فیلم (سینمایی)|فیلم</item>
+        <item>فیلم|فیلم</item>
+        <item>موسیقی|سرگرمی</item>
+        <item>اخبار|اخبار</item>
+        <item>تبلیغ|خرید</item>
+        <item>بخت‌آزمایی|خرید</item>
+        <item>بخت‌آزمایی، فروش در تلویزیون، تبلیغ|خرید</item>
+        <item>نمایش واقع‌نما|سرگرمی</item>
+        <item>مذهبی|سبک زندگی</item>
+        <item>گزارشگری|اخبار</item>
+        <item>گزارش|اخبار</item>
+        <item>روستایی|سبک زندگی</item>
+        <item>سریال|درام</item>
+        <item>سریال/برنامه تلویزیونی|درام</item>
+        <item>میزگرد|سرگرمی</item>
+        <item>نمایش‌های تلویزیونی|درام</item>
+        <item>ورزش|ورزشی</item>
+        <item>ورزش|ورزشی</item>
+        <item>فروش تلویزیونی|خرید</item>
+        <item>فروش در تلویزیون|خرید</item>
+        <item>توریسم|مسافرت</item>
+        <item>سفر|سفر</item>
+        <item>اخبار تلویزیونی|اخبار</item>
+        <item>گوناگونی|سرگرمی</item>
+        <item>نمایش گوناگونی|سرگرمی</item>
+    </string-array>
+</resources>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Choices for the "Reminder method" spinner.
+         These must be kept in sync with the reminder_methods_values array.
+         [CHAR LIMIT=10]
+    -->
+    <string-array name="reminder_methods_labels">
+        <item>"Powiadomienie"</item>
+        <item>"E-mail"</item>
+        <item>"SMS"</item>
+        <item>"Alarm"</item>
+    </string-array>
+
+    <!-- This maps reminder_methods_labels to internal constants. -->
+    <integer-array name="reminder_methods_values" translatable="false">
+        <item>1</item>  <!-- METHOD_ALERT -->
+        <item>2</item>  <!-- METHOD_EMAIL -->
+        <item>3</item>  <!-- METHOD_SMS -->
+        <item>4</item>  <!-- METHOD_ALARM -->
+    </integer-array>
+
+    <!-- Choices for the "Reminder minutes" spinner.
+         These must be kept in sync with the reminder_minutes_values array.
+         For consistency, the format should match what
+         EventViewUtils.constructReminderLabel() generates.  (TODO: eliminate
+         this and just generate the list from reminder_minutes_values?)
+         [CHAR LIMIT=15]
+    -->
+    <string-array name="reminder_minutes_labels">
+        <item>"0 minut"</item>
+        <item>"1 minuta"</item>
+        <item>"5 minut"</item>
+        <item>"10 minut"</item>
+        <item>"15 minut"</item>
+        <item>"20 minut"</item>
+        <item>"25 minut"</item>
+        <item>"30 minut"</item>
+        <item>"45 minut"</item>
+        <item>"1 godzina"</item>
+        <item>"2 godziny"</item>
+        <item>"3 godziny"</item>
+        <item>"12 godzin"</item>
+        <item>"24 godziny"</item>
+        <item>"2 dni"</item>
+        <item>"1 tydzień"</item>
+    </string-array>
+
+    <integer-array name="reminder_minutes_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+        <item>120</item>
+        <item>180</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>2880</item>
+        <item>10080</item>
+    </integer-array>
+
+  <!-- Choices for the "Reminder minutes" spinner in the settings.
+         These must be kept in sync with the preferences_default_reminder_values array.
+         [CHAR LIMIT=12]
+    -->
+       <string-array name="preferences_default_reminder_labels">
+        <item>"Brak"</item>
+        <item>"0 minut"</item>
+        <item>"1 minuta"</item>
+        <item>"5 minut"</item>
+        <item>"10 minut"</item>
+        <item>"15 minut"</item>
+        <item>"20 minut"</item>
+        <item>"25 minut"</item>
+        <item>"30 minut"</item>
+        <item>"45 minut"</item>
+        <item>"1 godzina"</item>
+        <item>"2 godziny"</item>
+        <item>"3 godziny"</item>
+        <item>"12 godzin"</item>
+        <item>"24 godziny"</item>
+        <item>"2 dni"</item>
+        <item>"1 tydzień"</item>
+    </string-array>
+
+    <string-array name="preferences_default_reminder_values" translatable="false">
+        <item>"-1"</item>
+        <item>"0"</item>
+        <item>"1"</item>
+        <item>"5"</item>
+        <item>"10"</item>
+        <item>"15"</item>
+        <item>"20"</item>
+        <item>"25"</item>
+        <item>"30"</item>
+        <item>"45"</item>
+        <item>"60"</item>
+        <item>"120"</item>
+        <item>"180"</item>
+        <item>"720"</item>
+        <item>"1440"</item>
+        <item>"2880"</item>
+        <item>"10080"</item>
+    </string-array>
+
+    <string-array name="preferences_week_start_day_labels">
+        <item>"Domyślny dla regionu"</item>
+        <item>"Sobota"</item>
+        <item>"Niedziela"</item>
+        <item>"Poniedziałek"</item>
+    </string-array>
+
+    <string-array name="preferences_week_start_day_values" translatable="false">
+        <item>"-1"</item>
+        <item>"7"</item>
+        <item>"1"</item>
+        <item>"2"</item>
+    </string-array>
+
+
+
+    <string-array name="availability">
+        <item>"Zajęty"</item>
+        <item>"Dostępny"</item>
+        <item>"Wstępnie"</item>
+    </string-array>
+
+    <!-- This maps reminder_methods_labels to internal constants. -->
+    <integer-array name="availability_values" translatable="false">
+        <item>0</item>  <!-- Busy -->
+        <item>1</item>  <!-- Available -->
+        <item>2</item>  <!-- Tentative -->
+    </integer-array>
+
+    <string-array name="visibility">
+        <item>"Domyślne"</item>
+        <item>"Prywatne"</item>
+        <item>"Publiczne"</item>
+    </string-array>
+
+    <string-array name="ordinal_labels">
+        <item>"1."</item>
+        <item>"2."</item>
+        <item>"3."</item>
+        <item>"4."</item>
+        <item>"ostatni"</item>
+    </string-array>
+
+    <!-- Invitation responses -->
+    <string-array name="response_labels1">
+        <item>"Brak odpowiedzi"</item>
+        <item>"Tak"</item>
+        <item>"Może"</item>
+        <item>"Nie"</item>
+    </string-array>
+
+    <!-- The corresponding indices are defined in DeleteEventHelper.java -->
+    <!-- This is a list of choices displayed when the user deletes an event.
+         It only is shown when deleting a recurring event.
+    -->
+    <skip/>
+    <string-array name="delete_repeating_labels">
+        <item>"Tylko to wydarzenie"</item>
+        <item>"To i przyszłe wydarzenia"</item>
+        <item>"Wszystkie wydarzenia"</item>
+    </string-array>
+
+    <!-- DO NOT TRANSLATE These values need to correspond to the indices
+         defined in DeleteEventHelper.java-->
+    <integer-array name="delete_repeating_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+
+    <!-- The corresponding indices are defined in DeleteEventHelper.java -->
+    <!-- This is the same array as above (the "delete_repeating_labels" array,
+         except that the first element "Only this event" is removed.  This
+         array exists to work-around a bug in the CalendarProvider and sync
+         code where you can\'t delete one instance of a repeating event that
+         was created on the phone until that event has been synced to the server.
+     -->
+    <skip/>
+    <string-array name="delete_repeating_labels_no_selected">
+        <item>"To i przyszłe wydarzenia"</item>
+        <item>"Wszystkie wydarzenia"</item>
+    </string-array>
+
+    <!-- The corresponding array indices are defined in EventInfoActivity.java -->
+    <skip/>
+    <!-- The list of choices displayed in a dialog box when the user wants to
+    respond to an invitation that repeats. -->
+    <string-array name="change_response_labels">
+        <!-- The choice for responding to only one instance of a repeating event -->
+        <item>"Tylko to wydarzenie"</item>
+        <!-- The choice for responding to all instances of a repeating event -->
+        <item>"Wszystkie wydarzenia w serii"</item>
+    </string-array>
+
+    <!-- Strings for buttons in drop down menu -->
+    <string-array name="buttons_list">
+        <item>"Dzień"</item>
+        <item>"Tydzień"</item>
+        <item>"Miesiąc"</item>
+        <item>"Plan dnia"</item>
+        <item>Rok</item>
+    </string-array>
+
+    <!-- Experimental options for skipping reminders. [CHAR LIMIT = 37] -->
+    <string-array name="preferences_skip_reminders_labels">
+        <!-- Default choice -->
+        <item>"Tylko po odrzuceniu"</item>
+        <!-- Second option, for skipping reminders to events not yet responded to. -->
+        <item>"Po odrzuceniu lub gdy brak odpowiedzi"</item>
+    </string-array>
+
+    <string-array name="preferences_skip_reminders_values" translatable="false">
+        <item>declined</item>
+        <item>not_responded</item>
+    </string-array>
+
+    <!-- Recurrence picker: How events are to be repeated.  [CHAR LIMIT = 20] -->
+    <string-array name="recurrence_freq">
+        <item>"CODZIENNIE"</item>
+        <item>"CO TYDZIEŃ"</item>
+        <item>"CO MIESIĄC"</item>
+        <item>"CO ROK"</item>
+    </string-array>
+
+    <!-- The following sets of strings describe a monthly recurring event, which will repeat
+         on the Nth WEEKDAY of every month. For example, the 3rd Monday of every month, or
+         the last Sunday. These are set up like this to resolve any gender-matching issues
+         that were present in some languages.
+     -->
+    <!-- Repeat a monthly event on the same nth day of every Sunday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_sun">
+        <item>"w każdą pierwszą niedzielę"</item>
+        <item>"w każdą drugą niedzielę"</item>
+        <item>"w każdą trzecią niedzielę"</item>
+        <item>"w każdą czwartą niedzielę"</item>
+        <item>"w każdą ostatnią niedzielę"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Monday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_mon">
+        <item>"w każdy pierwszy poniedziałek"</item>
+        <item>"w każdy drugi poniedziałek"</item>
+        <item>"w każdy trzeci poniedziałek"</item>
+        <item>"w każdy czwarty poniedziałek"</item>
+        <item>"w każdy ostatni poniedziałek"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Tuesday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_tues">
+        <item>"w każdy pierwszy wtorek"</item>
+        <item>"w każdy drugi wtorek"</item>
+        <item>"w każdy trzeci wtorek"</item>
+        <item>"w każdy czwarty wtorek"</item>
+        <item>"w każdy ostatni wtorek"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Wednesday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_wed">
+        <item>"w każdą pierwszą środę"</item>
+        <item>"w każdą drugą środę"</item>
+        <item>"w każdą trzecią środę"</item>
+        <item>"w każdą czwartą środę"</item>
+        <item>"w każdą ostatnią środę"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Thursday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_thurs">
+        <item>"w każdy pierwszy czwartek"</item>
+        <item>"w każdy drugi czwartek"</item>
+        <item>"w każdy trzeci czwartek"</item>
+        <item>"w każdy czwarty czwartek"</item>
+        <item>"w każdy ostatni czwartek"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Friday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_fri">
+        <item>"w każdy pierwszy piątek"</item>
+        <item>"w każdy drugi piątek"</item>
+        <item>"w każdy trzeci piątek"</item>
+        <item>"w każdy czwarty piątek"</item>
+        <item>"w każdy ostatni piątek"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Saturday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_sat">
+        <item>"w każdą pierwszą sobotę"</item>
+        <item>"w każdą drugą sobotę"</item>
+        <item>"w każdą trzecią sobotę"</item>
+        <item>"w każdą czwartą sobotę"</item>
+        <item>"w każdą ostatnią sobotę"</item>
+    </string-array>
+</resources>

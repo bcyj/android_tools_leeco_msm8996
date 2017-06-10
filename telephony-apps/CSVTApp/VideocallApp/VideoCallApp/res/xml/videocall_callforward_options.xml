@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2012 BORQS Software Solutions Pvt Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied.
+ * See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:videocall="http://schemas.android.com/apk/res/com.borqs.videocall"
+     android:title="@string/labelVTCF">
+
+
+    <!-- Note for all com.android.phone.EditPreference objects
+
+         The last several attributes are for use with the EditText field
+         in the dialog.  These attributes are forwarded to that field
+         when the edittext is created.  The attributes include:
+           1. android:singleLine
+           2. android:autoText
+           3. android:background -->
+
+    <com.borqs.videocall.CallForwardEditPreference
+        android:key="button_vt_cfu_key"
+        android:title="@string/labelCFU"
+        android:persistent="false"
+        android:summaryOn="@string/sum_cfu_enabled"
+        android:summaryOff="@string/sum_cfu_disabled"
+        android:dialogTitle="@string/labelCFU"
+        android:dialogMessage="@string/messageCFU"
+        videocall:confirmMode="activation"
+        videocall:serviceClass="data_sync"
+        videocall:reason="unconditional"
+        android:singleLine="true"
+        android:autoText="false"/>
+
+    <!-- See note on com.android.phone.EditPreference above -->
+    <com.borqs.videocall.CallForwardEditPreference
+        android:key="button_vt_cfb_key"
+        android:title="@string/labelCFB"
+        android:persistent="false"
+        android:summaryOn="@string/sum_cfb_enabled"
+        android:summaryOff="@string/sum_cfb_disabled"
+        android:dialogTitle="@string/labelCFB"
+        android:dialogMessage="@string/messageCFB"
+        videocall:confirmMode="activation"
+        videocall:serviceClass="data_sync"
+        videocall:reason="busy"
+        android:dependency="button_vt_cfu_key"
+        android:singleLine="true"
+        android:autoText="false"/>
+
+    <!-- See note on com.android.phone.EditPreference above -->
+    <com.borqs.videocall.CallForwardEditPreference
+        android:key="button_vt_cfnry_key"
+        android:title="@string/labelCFNRy"
+        android:persistent="false"
+        android:summaryOn="@string/sum_cfnry_enabled"
+        android:summaryOff="@string/sum_cfnry_disabled"
+        android:dialogTitle="@string/labelCFNRy"
+        android:dialogMessage="@string/messageCFNRy"
+        videocall:confirmMode="activation"
+        videocall:serviceClass="data_sync"
+        videocall:reason="no_reply"
+        android:dependency="button_vt_cfu_key"
+        android:singleLine="true"
+        android:autoText="false"/>
+
+    <!-- See note on com.android.phone.EditPreference above -->
+    <com.borqs.videocall.CallForwardEditPreference
+        android:key="button_vt_cfnrc_key"
+        android:title="@string/labelCFNRc"
+        android:persistent="false"
+        android:summaryOn="@string/sum_cfnrc_enabled"
+        android:summaryOff="@string/sum_cfnrc_disabled"
+        android:dialogTitle="@string/labelCFNRc"
+        android:dialogMessage="@string/messageCFNRc"
+        videocall:confirmMode="activation"
+        videocall:serviceClass="data_sync"
+        videocall:reason="not_reachable"
+        android:dependency="button_vt_cfu_key"
+        android:singleLine="true"
+        android:autoText="false"/>
+</PreferenceScreen>

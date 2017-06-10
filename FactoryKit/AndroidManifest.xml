@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2011-2014, Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+-->
+<!-- android:sharedUserId="android.uid.system" -->
+<!-- <uses-permission android:name="android.permission.HARDWARE_TEST" /> -->
+<!-- <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" /> -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qti.factory"
+    android:installLocation="internalOnly"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.NFC" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WAKE_LOCK" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+
+    <!-- Application -->
+    <application
+        android:name=".Framework.MainApp"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+
+        <!-- uses-library android:name="qcom.fmradio" /> -->
+
+        <activity
+            android:name=".Framework.Framework"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".Framework.EventReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:label="EventReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+
+                <data
+                    android:host="3228649"
+                    android:scheme="android_secret_code" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.qti.factory.Led.Led"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/led_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Flashlight.Flashlight"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/flashlight_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".KeypadBacklight.KeypadBacklight"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/keypadbacklight_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TouchPanelEdge.TouchPanelEdge"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/touchpanel_edge_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TouchPanelKey.TouchPanelKey"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/touchpanel_edge_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Keypad.Keypad"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/keypad_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LCM.LCM"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Vibrate.Vibrate"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/vibrate_confirm"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NFC.NFC"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/nfc_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Speaker.Speaker"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/speaker_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.qti.factory.Handset.HandsetLoopBack"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/handset_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Headset.HeadsetLoopBack"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/headset_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FM.FM"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/fm_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CameraBack.CameraBack"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/cameraback_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CameraFront.CameraFront"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/camerafront_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PSensor.PSensor"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/psensor_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".GSensor.GSensor"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/gsensor_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MSensor.MSensor"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/msensor_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Gyroscope.Gyroscope"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/gyroscope_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LightSensor.LightSensor"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/lightsensor_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SDCard.SDCard"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/sdcard_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Bluetooth.Bluetooth"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/bluetooth_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WiFi.WiFi"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/wifi_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SIM1.SIM1"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/sim1_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SIM2.SIM2"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/sim2_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".GPS.GPS"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/gps_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Battery.Battery"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/battery_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.qti.factory.FuelGaugeCalibration.FuelGaugeCalibration"
+	    android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/fuelgauge_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.qti.factory.SIM1.SIM1Service" 
+		 android:exported="false">
+            <intent-filter>
+                <action android:name="intent.SIM1.SIM1Service" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.qti.factory.SIM2.SIM2Service" 
+		 android:exported="false">
+            <intent-filter>
+                <action android:name="intent.SIM2.SIM2Service" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.qti.factory.WiFi.WiFiService" 
+		 android:exported="false">
+            <intent-filter>
+                <action android:name="intent.WiFi.WiFiService" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.qti.factory.GPS.GpsService" 
+		 android:exported="false">
+            <intent-filter>
+                <action android:name="intent.GPS.GpsService" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.qti.factory.SDCard.SDCardService" 
+		 android:exported="false">
+            <intent-filter>
+                <action android:name="intent.SDCard.SDCardService" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.qti.factory.Gyroscope.GyroscopeService" 
+		 android:exported="false">
+            <intent-filter>
+                <action android:name="intent.Gyroscope.GyroscopeService" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.qti.factory.MSensor.MSensorService" 
+		 android:exported="false">
+            <intent-filter>
+                <action android:name="intent.MSensor.MSensorService" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.qti.factory.GSensor.GSensorService" 
+		 android:exported="false">
+            <intent-filter>
+                <action android:name="intent.GSensor.GSensorService" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.qti.factory.PSensor.PSensorService" 
+		 android:exported="false">
+            <intent-filter>
+                <action android:name="intent.PSensor.PSensorService" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.qti.factory.LightSensor.LightSensorService"
+		 android:exported="false">
+            <intent-filter>
+                <action android:name="intent.LightSensor.LightSensorService" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.qti.factory.Bluetooth.BluetoothService" 
+		 android:exported="false">
+            <intent-filter>
+                <action android:name="intent.Bluetooth.BluetoothService" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.qti.factory.Battery.BatteryService"
+		 android:exported="false">
+            <intent-filter>
+                <action android:name="intent.Battery.BatteryService" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".Framework.PhoneProcessAgent"
+            android:exported="false"
+            android:configChanges="keyboardHidden|orientation"
+            android:process="com.android.phone" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </service>
+        <service android:name="com.qti.factory.Framework.AutoService" 
+		 android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.category.factory.kit" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

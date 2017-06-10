@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"نصب کننده بسته"</string>
+    <string name="next">"بعدی"</string>
+    <string name="install">"نصب"</string>
+    <string name="done">"انجام شد"</string>
+    <!-- TODO REMOVE LATER -->
+    <string name="security_settings_desc">"به این برنامه اجازه داده شود که:"</string>
+    <string name="cancel">"لغو"</string>
+    <string name="unknown">"ناشناس"</string>
+    <string name="installing">"در حال نصب…"</string>
+    <string name="install_done">"برنامه نصب شد."</string>
+    <!-- Message for installing a new app that requires some permissions [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question">"آیا می‌خواهید این برنامه را نصب کنید؟ این برنامه به این موارد دسترسی خواهد یافت:"</string>
+    <!-- Message for installing a new app that does not require permissions [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_no_perms">"آیا می‌خواهید این برنامه را نصب کنید؟ این برنامه به دسترسی خاصی نیاز ندارد."</string>
+    <!-- Message for updating an existing app [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_update">"آیا میٰ‌خواهید بهٰ‌روزرسانی این برنامه کنونی را نصب کنید؟ داده کنونی شما از بین نمی‌رود. برنامه به‌روزرسانی شده دسترسی خواهد داشت به:"</string>
+    <!-- Message for updating an existing system app [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_update_system">"آیا می‌خواهید به‌روزرسانی این برنامه جاسازی شده را نصب کنید؟ داده‌های کنونی شما از بین نمی‌رود. برنامه به‌روزرسانی شده دسترسی خواهد داشت به:"</string>
+    <!-- Message for updating an existing app, no permissions [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_update_no_perms">"آیا می‌خواهید یک به‌روزرسانی برای این برنامه کاربردی موجود نصب کنید؟ داده‌های موجود شما از دست نخواهد رفت. به دسترسی ویژه‌ای نیاز ندارد."</string>
+    <!-- Message for updating an existing system app, no permissions [CHAR LIMIT=NONE] -->
+    <string name="install_confirm_question_update_system_no_perms">"آیا می‌خواهید یک به‌روزرسانی برای این برنامه کاربردی داخلی نصب کنید؟ داده‌های موجود شما از دست نخواهد رفت. به دسترسی ویژه‌ای نیاز ندارد."</string>
+    <string name="install_failed">"برنامه نصب نشد."</string>
+    <!-- Reason displayed when installation fails because the installation package itself is invalid
+        in some way (e.g., corrupt) [CHAR LIMIT=100] -->
+    <string name="install_failed_invalid_apk">"این بسته به نظر می‌رسد خراب است."</string>
+    <!-- Reason displayed when installation fails because the package an existing package is
+        installed with a conflicting package author signature [CHAR LIMIT=100] -->
+    <string name="install_failed_inconsistent_certificates">"بسته فعلی با همین نام اما با امضای مختلف قبلاً نصب شده است."</string>
+    <!-- Reason displayed when installation fails because the package specifies a minimum compatible
+        OS version that is newer than our current OS version. [CHAR LIMIT=100] -->
+    <string name="install_failed_older_sdk">"‏این بسته فقط در نسخه‌های جدیدتر Android کار می‌کند."</string>
+    <!-- Reason displayed when installation fails because the package specifies it is compatible
+        only with a CPU that the current tablet doesn\'t have. [CHAR LIMIT=100] -->
+    <string name="install_failed_cpu_abi_incompatible" product="tablet">"این برنامه با رایانهٔ لوحی شما سازگار نیست."</string>
+    <!-- Reason displayed when installation fails because the package specifies it is compatible
+        only with a CPU that the current TV doesn\'t have. [CHAR LIMIT=100] -->
+    <string name="install_failed_cpu_abi_incompatible" product="tv">این برنامه با تلویزیون شما
+سازگار نیست.</string>
+    <!-- Reason displayed when installation fails because the package specifies it is compatible
+        only with a CPU that the current phone doesn\'t have. [CHAR LIMIT=100] -->
+    <string name="install_failed_cpu_abi_incompatible" product="default">"این برنامه با تلفن شما سازگار نیست."</string>
+    <!-- Reason displayed when installation fails because the package was deleted during the
+        installation process. [CHAR LIMIT=100] -->
+    <string name="install_failed_file_not_found">"بسته مشخص شده قبل از تکمیل نصب حذف شده است."</string>
+    <!-- Reason displayed when installation fails because the package could not be verified
+        because the package verifier rejected it. [CHAR LIMIT=100] -->
+    <string name="install_failed_verify_failed">"این بسته مورد تأیید نیست و نمی‌تواند نصب شود."</string>
+    <!-- Reason displayed when installation fails because the package could not be verified
+        before the internal system timer expired. [CHAR LIMIT=100] -->
+    <string name="install_failed_verify_timeout">"هنگام تأیید صحت این بسته، فرصت زمانی تمام شد. بعداً دوباره آن را نصب کنید."</string>
+    <!-- Message presented when an application could not be installed on the tablet for some reason. [CHAR LIMIT=100] -->
+    <string name="install_failed_msg" product="tablet">"<xliff:g id="APP_NAME">%1$s</xliff:g> در رایانهٔ لوحی شما نصب نشد."</string>
+    <!-- Message presented when an application could not be installed on the TV for some reason. [CHAR LIMIT=100] -->
+    <string name="install_failed_msg" product="tv">نصب ‎<xliff:g id="app_name">%1$s</xliff:g>‎ در تلویزیون شما ممکن نیست.</string>
+    <!-- Message presented when an application could not be installed on the phone for some reason. [CHAR LIMIT=100] -->
+    <string name="install_failed_msg" product="default">"<xliff:g id="APP_NAME">%1$s</xliff:g> در تلفن شما نصب نشد."</string>
+    <string name="launch">"باز کردن"</string>
+    <string name="unknown_apps_dlg_title">"نصب مسدود شد"</string>
+    <!-- Message presented in a dialog box when a package is requested to be installed, but the "Allow unknown applications" checkbox is not enabled. [CHAR LIMIT=100] -->
+    <string name="unknown_apps_dlg_text" product="tablet">"به دلایل امنیتی، رایانهٔ لوحی شما طوری تنظیم شده است که نصب برنامه‌های دریافت شده از منابع ناشناخته را مسدود کند."</string>
+    <!-- Message presented in a dialog box when a package is requested to be installed, but the "Allow unknown applications" checkbox is not enabled. [CHAR LIMIT=100] -->
+    <string name="unknown_apps_dlg_text" product="tv">برای امنیت بیشتر، تلویزیون شما طوری تنظیم شده است که نصب برنامه‌های دریافت شده از منابع ناشناس را مسدود کند.</string>
+    <!-- Message presented in a dialog box when a package is requested to be installed, but the "Allow unknown applications" checkbox is not enabled. [CHAR LIMIT=100] -->
+    <string name="unknown_apps_dlg_text" product="default">"به دلایل امنیتی، تلقن شما طوری تنظیم شده است که نصب برنامه‌های دریافت شده از منابع ناشناخته را مسدود کند."</string>
+    <!-- Message presented in a dialog box when the device administrator restricts the installation of apps from unknown sources. [CHAR LIMIT=none] -->
+    <string name="unknown_apps_admin_dlg_text">مدیر شما به نصب برنامه‌های دریافت شده از منابع ناشناس اجازه نمی‌دهد.</string>
+
+    <string name="ok">"تأیید"</string>
+    <string name="settings">"تنظیمات"</string>
+    <!-- Title of dialog asking user if they would allow an application to be an install source. -->
+    <string name="allow_source_dlg_title">"منبع جدید برای برنامه‌ها"</string>
+    <!-- Message of dialog asking user if they would allow an application to be an install source. -->
+    <string name="allow_source_dlg_text">"<xliff:g id="APP_NAME">%1$s</xliff:g> می‌خواهد برنامه‌های دیگری نصب کند.\n\nآیا اکنون و در آینده این اجازه را می‌دهید؟"</string>
+    <string name="manage_applications">"مدیریت برنامه‌ها"</string>
+    <string name="dlg_app_replacement_title">"برنامه جایگزین شود؟"</string>
+    <string name="dlg_app_replacement_statement">"برنامه‌ای که دارید نصب می‌کنید جایگزین یک برنامهٔ دیگر خواهد شد.\n\nتمام داده‌های کاربری قبلی شما ذخیره خواهد شد."</string>
+    <!-- Dialog attributes when replacing system app -->
+    <string name="dlg_sys_app_replacement_statement">"این یک برنامه سیستمی است.\n\nتمام داده‌های کاربری قبلی شما ذخیره خواهد شد."</string>
+    <string name="out_of_space_dlg_title">"فضا کافی نیست"</string>
+    <string name="out_of_space_dlg_text">"<xliff:g id="APP_NAME">%1$s</xliff:g> نصب نمی‌شود. مقداری از فضا را آزاد کرده و دوباره امتحان کنید."</string>
+    <!-- strings related to uninstall activity -->
+    <string name="dlg_ok">"تأیید"</string>
+    <string name="app_not_found_dlg_title">"برنامه یافت نشد"</string>
+    <string name="app_not_found_dlg_text">"برنامه در لیست برنامه‌های نصب شده یافت نشد."</string>
+    <string name="uninstall_application_title">"حذف نصب برنامه"</string>
+    <string name="uninstall_update_title">"حذف نصب به‌روزرسانی"</string>
+    <string name="uninstall_activity_text">"<xliff:g id="ACTIVITY_NAME">%1$s</xliff:g> قسمتی از برنامه زیر است:"</string>
+    <string name="uninstall_application_text">"می‌خواهید این برنامه را حذف نصب کنید؟"</string>
+    <string name="uninstall_application_text_all_users">"آیا می‌خواهید این برنامه را برای "<b>"همه"</b>" کاربران حذف کنید؟ این برنامه کاربردی و داده‌های آن برای "<b>"همه"</b>" کاربران این دستگاه حذف خواهد شد."</string>
+    <string name="uninstall_application_text_user">"آیا می‌خواهید این برنامه را برای این کاربر <xliff:g id="USERNAME">%1$s</xliff:g> حذف نصب کنید؟"</string>
+    <string name="uninstall_update_text">"آیا می‌خواهید این برنامه را با یک نسخه کارخانه جایگزین کنید؟"</string>
+    <string name="uninstalling">"در حال حذف نصب..."</string>
+    <string name="uninstall_done">"حذف نصب پایان یافت."</string>
+    <string name="uninstall_failed">"حذف نصب انجام نشد."</string>
+    <!-- String presented to the user when uninstalling a package failed because the target package
+        is a current device administrator [CHAR LIMIT=80] -->
+    <string name="uninstall_failed_device_policy_manager">"حذف نصب ممکن نیست، زیرا این بسته یک سرپرست دستگاه فعال است."</string>
+    <!-- String presented to the user when uninstalling a package failed because a profile owner
+         has marked the the target package as not able to be uninstalled [CHAR LIMIT=80] -->
+    <string name="uninstall_blocked_profile_owner">"این برنامه برای نمایه <xliff:g id="USERNAME">%1$s</xliff:g> شما مورد نیاز است و نمی‌تواند حذف نصب شود."</string>
+    <!-- String presented to the user when uninstalling a package failed because a device owner
+         has marked the the target package as not able to be uninstalled [CHAR LIMIT=80] -->
+    <string name="uninstall_blocked_device_owner">"سرپرست دستگاه شما این برنامه را لازم کرده است و نمی‌تواند حذف نصب شود."</string>
+    <!-- String on a button that leads to the "device administrator" configuration setting where a
+        user will be able to disable the device administrator in order to uninstall
+        it. [CHAR LIMIT=50] -->
+    <string name="manage_device_administrators">"مدیریت سرپرستان دستگاه"</string>
+    <string name="uninstall_failed_msg">"<xliff:g id="APP_NAME">%1$s</xliff:g> حذف نصب نشد."</string>
+
+    <!-- Dialog attributes to indicate parse errors -->
+    <string name="Parse_error_dlg_title">"خطای تجزیه"</string>
+    <string name="Parse_error_dlg_text">"مشکلی در تجزیه این بسته وجود داشت."</string>
+
+    <!-- Tab label for new permissions being added to an existing app [CHAR LIMIT=20] -->
+    <string name="newPerms">"جدید"</string>
+    <!-- Tab label for all permissions of an app being installed [CHAR LIMIT=20] -->
+    <string name="allPerms">"همه موارد"</string>
+    <!-- Tab label for permissions related to user privacy [CHAR LIMIT=20] -->
+    <string name="privacyPerms">"حریم خصوصی"</string>
+    <!-- Tab label for permissions related to device behavior [CHAR LIMIT=20] -->
+    <string name="devicePerms">"دسترسی به دستگاه"</string>
+
+    <!-- Body text for new tab when there are no new permissions [CHAR LIMIT=NONE] -->
+    <string name="no_new_perms">"این به‌روزرسانی به مجوز جدیدی نیاز ندارد."</string>
+
+    <string name="grant_confirm_question">"آیا می‌خواهید مجوزهای زیر را اعطا کنید؟ این مجوزها دسترسی به این موارد را بوجود می‌آورند:"</string>
+    <string name="app_install_location_title">"مکان نصب برگزیده"</string>
+    <!-- Apps on SD installation location options in ApplicationSettings -->
+    <string-array name="app_install_location_entries">
+        <item>"سیستم تصمیم بگیرد"</item>
+        <item>"دستگاه ذخیره‌سازی داخلی"</item>
+        <item>"‏کارت SD جدا شدنی"</item>
+    </string-array>
+</resources>

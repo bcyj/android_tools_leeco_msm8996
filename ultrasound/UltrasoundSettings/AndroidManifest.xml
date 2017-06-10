@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---/**************************************************************************
+* @file    AndroidManifest.xml
+* @brief   Gets generated when creating any activity using android sdk
+*          Provides the permissions required by the activity and activity name
+*  Copyright (C) 2011-2013 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  *****************************************************************************-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   package="com.android.ultrasound" android:sharedUserId="android.uid.system">
+   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+   <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+   <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+   <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+   <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+   <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+   <application android:icon="@drawable/icon" android:label="@string/app_name">
+      <activity android:name="UltrasoundSettings" android:label="@string/UltrasoundSettings">
+         <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+         </intent-filter>
+      </activity>
+      <activity android:name="DigitalPen" android:label="@string/DigitalPenSettings"
+         android:windowSoftInputMode="stateHidden">
+      </activity>
+      <activity android:name="Gesture" android:label="@string/GestureSettings"
+         android:windowSoftInputMode="stateHidden">
+      </activity>
+      <activity android:name="SyncGesture" android:label="@string/SyncGestureSettings"
+         android:windowSoftInputMode="stateHidden">
+      </activity>
+      <activity android:name="Tester" android:label="@string/TesterSettings"
+         android:windowSoftInputMode="stateHidden">
+      </activity>
+      <activity android:name="Hovering" android:label="@string/HoveringSettings"
+         android:windowSoftInputMode="stateHidden">
+      </activity>
+      <activity android:name="P2P" android:label="@string/P2PSettings"
+         android:windowSoftInputMode="stateHidden">
+      </activity>
+      <activity android:name="Recording" android:label="@string/RecordingSettings">
+      </activity>
+      <activity android:name="Proximity" android:label="@string/ProximitySettings">
+      </activity>
+      <activity android:name="GestureRecording" android:configChanges="keyboard|navigation"></activity>
+      <activity android:name="ProximityRecording" android:configChanges="keyboard|navigation"></activity>
+   </application>
+</manifest>

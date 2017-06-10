@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2013, Qualcomm Technologies, Inc.
+    All Rights Reserved.
+    Qualcomm Technologies Proprietary and Confidential.
+-->
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.ftm" >
+    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
+    <application
+        android:icon="@drawable/qcom">
+        <uses-library
+            android:name="com.qualcomm.qcrilhook">
+        </uses-library>
+        <activity
+            android:name=".em.EngineerModeActivity"
+            android:label="@string/app_name"
+            android:icon="@drawable/qcom">
+        </activity>
+
+        <activity
+            android:name=".em.EmSIMActivity" >
+        </activity>
+
+        <activity
+            android:name=".em.EmSetDisplayActivity" >
+        </activity>
+
+        <receiver android:name=".em.EmBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="3878" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="qualcomm.intent.action.ACTION_EM_DATA_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".em.EmInfoService"></service>
+    </application>
+</manifest>

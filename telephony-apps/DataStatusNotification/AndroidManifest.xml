@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (c) 2014 Qualcomm Technologies, Inc.  All Rights Reserved.
+Qualcomm Technologies Proprietary and Confidential.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qti.qualcomm.datastatusnotification"
+    android:sharedUserId="android.uid.phone" >
+
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
+
+    <application android:process="com.android.phone">
+        <uses-library android:name="com.qualcomm.qcrilhook" />
+
+        <receiver
+            android:name=".SubInfoReceiver"
+            android:enabled="true"
+            android:exported="false"
+            android:label="SubInfoReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SUBINFO_RECORD_UPDATED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".DataStatusNotificationService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+    </application>
+
+</manifest>

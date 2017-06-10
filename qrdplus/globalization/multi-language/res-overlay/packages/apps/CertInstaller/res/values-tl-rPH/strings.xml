@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"Installer ng Certificate"</string>
+
+    <!-- Title of the file picker screen -->
+    <string name="pick_file_title">"Pumili ng certificate"</string>
+
+    <!-- Title of dialog to enter password for pkcs12 -->
+    <string name="pkcs12_password_dialog_title">"I-extract ang certificate"</string>
+    <!-- message in progress bar when waiting for extracting certs from a pkcs12 package -->
+    <string name="extracting_pkcs12">"Ine-extract…"</string>
+    <!-- Title of dialog to enter password for pkcs12 file -->
+    <string name="pkcs12_file_password_dialog_title">"I-extract mula sa %s"</string>
+    <!-- Title of dialog to name a credential -->
+    <string name="name_credential_dialog_title">"Pangalanan ang certificate"</string>
+    <!-- Description for the credential name input box -->
+    <string name="credential_name">"Pangalan ng certificate:"</string>
+    <!-- Title of the credential info -->
+    <!-- Description for the credential password input box -->
+    <string name="credential_password">"I-type ang password upang i-extract ang mga certificate."</string>
+    <string name="credential_info">"Naglalaman ang package ng:"</string>
+    <string name="p12_description">"Mga certificate sa PKCS12 keystore."</string>
+
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE] -->
+    <string name="one_userkey">"isang key ng user"</string>
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE] -->
+    <string name="one_usercrt">"isang certificate ng user"</string>
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE] -->
+    <string name="one_cacrt">"isang certficate ng CA"</string>
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE]-->
+    <string name="n_cacrts">"%d Mga certificate ng CA"</string>
+
+    <string name="password_error">"I-type ang tamang password."</string>
+    <string name="password_empty_error">"I-type ang password."</string>
+    <string name="name_empty_error">"Mag-type ng pangalan."</string>
+    <string name="name_char_error">"Mag-type ng pangalan na naglalaman lamang ng mga titik at numero."</string>
+    <string name="storage_error">"Hindi mai-save ang certificate. Pindutin ang OK upang subukang muli."</string>
+    <string name="unable_to_save_cert">"Hindi mai-save ang certificate. Hindi pinagana o maayos na nasimulan ang storage ng kredensyal."</string>
+    <string name="cert_not_saved">"Hindi naka-install ang certificate."</string>
+    <string name="no_cert_to_saved">"Walang ii-install na certificate."</string>
+    <string name="invalid_cert">"Di-wasto ang certificate."</string>
+
+    <!-- toast message -->
+    <string name="cert_is_added">"Naka-install ang <xliff:g id="CREDENTIAL">%s</xliff:g>."</string>
+    <!-- toast message -->
+    <string name="cert_too_large_error">"Hindi ma-install dahil masyadong malaki ang certificate."</string>
+    <!-- toast message -->
+    <string name="cert_missing_error">"Hindi ma-install dahil hindi mahanap ang file ng certificate."</string>
+    <!-- toast message -->
+    <string name="cert_read_error">"Hindi mai-install dahil hindi mabasa ang file ng certificate."</string>
+
+    <!-- Shown when the certificate file can\'t be found.  [CHAR LIMIT=NONE] -->
+    <string name="no_cert_file_found" product="nosdcard">"Walang nakitang file ng certificate sa imbakan na USB."</string>
+    <string name="no_cert_file_found" product="default">"Walang nakitang file ng certificate sa SD card."</string>
+    <!-- Shown when USB storage can\'t be found to look for a certificate.  [CHAR LIMIT=30] -->
+    <string name="sdcard_not_present" product="nosdcard">"Hindi available imbakan na USB"</string>
+    <string name="sdcard_not_present" product="default">"Wala ang SD card."</string>
+
+    <!-- Message displayed when a user other than the owner on a multi-user system tries to
+         install a certificate into the certificate store. [CHAR LIMIT=NONE] -->
+    <string name="only_primary_user_allowed">"Ang may-ari lang ng device na ito ang maaaring mag-install ng mga certificate."</string>
+
+    <!-- Label for spinner that shows the possible usage for a credential. Shown when user is
+         installing a credential [CHAR LIMIT=40] -->
+    <string name="credential_usage_label">"Paggamit ng kredensyal:"</string>
+
+    <!-- Usage type for a credential that the user is installing. The label will restrict the
+         type of use for that credential. [CHAR LIMIT=40] -->
+    <string-array name="credential_usage">
+        <item>"VPN at apps"</item>
+        <item>"Wi-Fi"</item>
+    </string-array>
+</resources>

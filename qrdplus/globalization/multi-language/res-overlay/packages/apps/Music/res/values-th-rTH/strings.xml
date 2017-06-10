@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution.
+ * Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- used in various places to indicate there is one song for a given artist or album -->
+    <string name="onesong">"1 เพลง"</string>
+    <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
+    <plurals name="Nsongs">
+        <item quantity="other">"<xliff:g id="COUNT">%d</xliff:g> เพลง"</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other">"<xliff:g id="COUNT_FOR_ARTIST">%2$d</xliff:g> จาก <xliff:g id="TOTAL_COUNT">%1$d</xliff:g> เพลง"</item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+        <!-- number of albums is one -->
+        <item quantity="one">"1 อัลบั้ม"</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other">"<xliff:g id="COUNT">%d</xliff:g> อัลบั้ม"</item>
+    </plurals>
+
+    <!--
+    This string is used as the format string in a String.format call,
+    and 5 additional arguments are available for printing:
+    1 - hours
+    2 - minutes
+    3 - minutes%60
+    4 - seconds
+    5 - second%60
+    -->
+    <skip/>
+    <!-- Do not translate. Duration format for duration < 1 hour -->
+    <string translatable="false" name="durationformatshort"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    <!-- Do not translate. Duration format for duration >= 1 hour -->
+    <string translatable="false" name="durationformatlong"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    <!-- Menu item that takes the user back to the top level screen of the music player -->
+    <string name="goto_start">"ไลบรารี"</string>
+    <!-- Menu item that switches the music player in to party shuffle mode -->
+    <string name="party_shuffle">"เพลย์ลิสต์สุ่ม"</string>
+    <!-- Menu item that switches the music player out of party shuffle mode -->
+    <string name="party_shuffle_off">"ปิดเพลย์ลิสต์สุ่ม"</string>
+    <!-- Menu item that clear all playlists mode -->
+    <string name="clear_all_playlists">ล้างรายการเล่นทั้งหมด</string>
+    <!-- Menu item that deletes the currently selected item, which might be a single song, or a collection of songs.
+         The user will be prompted to confirm before deletion actually takes place -->
+    <string name="delete_item">"ลบ"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in shuffle mode -->
+    <string name="shuffle_all">"สุ่มเพลงทั้งหมด"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in list order -->
+    <string name="play_all">"เล่นทั้งหมด"</string>
+    <!-- Menu item to play song in music -->
+    <string name="open_in_music">เปิดในเพลง</string>
+    <!-- Menu item to share audio or video -->
+    <string name="share">"แบ่งปัน"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc">"ลบทุกเพลงของ <xliff:g id="ARTIST">%s</xliff:g> จากการ์ด SD หรือไม่"</string>
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc_nosdcard">"ลบทุกเพลงของ <xliff:g id="ARTIST">%s</xliff:g> จากที่จัดเก็บข้อมูล USB หรือไม่"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc">"ลบอัลบั้ม \"<xliff:g id="ALBUM">%s</xliff:g>\" ทั้งอัลบั้มจากการ์ด SD อย่างถาวรหรือไม่"</string>
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc_nosdcard">"ลบอัลบั้ม \"<xliff:g id="ALBUM">%s</xliff:g>\" ทั้งอัลบั้มจากที่จัดเก็บข้อมูล USB อย่างถาวรหรือไม่"</string>
+
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc">"ลบ \"<xliff:g id="SONG">%s</xliff:g>\" จากการ์ด SD อย่างถาวรหรือไม่"</string>
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc_nosdcard">"ลบ \"<xliff:g id="SONG">%s</xliff:g>\" จากที่จัดเก็บข้อมูล USB อย่างถาวรหรือไม่"</string>
+
+    <!-- Delete confirmation dialog, confirmation button text -->
+    <string name="delete_confirm_button_text">"ตกลง"</string>
+    <!-- Toast confirming that song(s) was/were deleted. -->
+    <plurals name="NNNtracksdeleted">
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">"ลบไป 1 เพลง"</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other">"เพลง <xliff:g id="SONGS_TO_DELETE">%d</xliff:g> เพลงถูกลบ"</item>
+    </plurals>
+
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning">"กำลังสแกนการ์ด SD…"</string>
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning_nosdcard">"กำลังสแกนที่เก็บข้อมูล USB…"</string>
+
+    <!-- title of the "current playlist" screen when not in party shuffle mode -->
+    <string name="nowplaying_title">"กำลังเล่น"</string>
+    <!-- title of the "current playlist" screen when in party shuffle mode-->
+    <string name="partyshuffle_title">"เพลย์ลิสต์สุ่ม"</string>
+    <!-- Artist screen title -->
+    <string name="artists_title">"ศิลปิน"</string>
+    <!-- Category label on Library screen -->
+    <string name="albums_menu">"อัลบั้ม"</string>
+    <!-- Albums screen title -->
+    <string name="albums_title">"อัลบั้ม"</string>
+    <!-- Category label on Library screen -->
+    <string name="tracks_menu">"เพลง"</string>
+    <!-- Songs screen title -->
+    <string name="tracks_title">"เพลง"</string>
+    <!-- Category label on Library screen -->
+    <string name="folder_menu">โฟลเดอร์</string>
+    <!-- Folder screen title -->
+    <string name="folders_title">โฟลเดอร์</string>
+    <!-- Category label on Library screen -->
+    <string name="playlists_menu">"เพลย์ลิสต์"</string>
+    <!-- Playlists screen title -->
+    <string name="playlists_title">"เพลย์ลิสต์"</string>
+    <!-- Videos screen title -->
+    <string name="videos_title">"วิดีโอ"</string>
+    <!-- All media screen title -->
+    <string name="all_title">"สื่อทั้งหมด"</string>
+    <!-- Category label on Library screen -->
+    <string name="browse_menu">"ศิลปิน"</string>
+    <!-- Library screen, menu item -->
+    <string name="search_title">"ค้นหา"</string>
+    <!-- Title of screen when there are no songs, or if the SD card is busy -->
+    <string name="no_tracks_title">"ไม่มีเพลง"</string>
+    <!-- Title of screen when there are no videos, or if the SD card is busy -->
+    <string name="no_videos_title">"ไม่มีวิดีโอ"</string>
+    <!-- Title of screen when there are no playlists, or if the SD card is busy -->
+    <string name="no_playlists_title">"ไม่มีเพลย์ลิสต์"</string>
+    <!-- Playlist context menu item to delete the selected playlist. -->
+    <string name="delete_playlist_menu">"ลบ"</string>
+    <!-- Playlist context menu item to edit the selected playlist -->
+    <string name="edit_playlist_menu">"แก้ไข"</string>
+    <!-- Playlist context menu item to rename the selected playlist-->
+    <string name="rename_playlist_menu">"เปลี่ยนชื่อ"</string>
+    <!-- Dialog box message shown when clearing all playlists-->
+    <string name="clear_all_playlists_message">คุณต้องการล้างรายการเล่นทั้งหมดใช่หรือไม่</string>
+    <!-- Dialog box message shown when deleting a playlist-->
+    <string name="delete_playlist_message">คุณต้องการลบ \"<xliff:g id="name">%s</xliff:g>\" หรือไม่</string>
+    <!-- Dialog box button -->
+    <string name="delete_playlist_button_ok">ตกลง</string>
+    <string name="delete_playlist_button_cancel">ยกเลิก</string>
+    <!-- Transient popup message shown after deleting a playlist -->
+    <string name="playlist_deleted_message">"เพลย์ลิสต์ถูกลบ"</string>
+    <!-- Transient popup message shown after renaming a playlist -->
+    <string name="playlist_renamed_message">"เปลี่ยนชื่อเพลย์ลิสต์"</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in list view -->
+    <string name="recentlyadded">"เพิ่งเพิ่มเข้ามา"</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in title bar of songs list -->
+    <string name="recentlyadded_title">"เพิ่งเพิ่มเข้ามา"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in list view -->
+    <string name="podcasts_listitem">"พอดแคสต์"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in title bar of songs list -->
+    <string name="podcasts_title">"พอดแคสต์"</string>
+    <!-- all recordings will show up in the media database in a playlist with thiis name -->
+    <string name="audio_db_playlist_name">"การบันทึกของฉัน"</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title">"ไม่มีการ์ด SD"</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title_nosdcard">"ไม่มีที่เก็บข้อมูล USB"</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message">"โทรศัพท์ของคุณไม่ได้ใส่การ์ด SD"</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message_nosdcard">"โทรศัพท์ของคุณไม่มีที่จัดเก็บข้อมูล USB"</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title">"ใช้งานการ์ด SD ไม่ได้"</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title_nosdcard">"ที่เก็บข้อมูล USB ใช้งานไม่ได้"</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message">"การ์ด SD ไม่ว่าง"</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message_nosdcard">"ที่จัดเก็บข้อมูล USB ของคุณไม่ว่าง"</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title">"ข้อผิดพลาดการ์ด SD"</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title_nosdcard">"ข้อผิดพลาดของที่เก็บข้อมูล USB"</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message">"พบข้อผิดพลาดบนการ์ด SD ของคุณ"</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message_nosdcard">"พบข้อผิดพลาดบนที่เก็บข้อมูล USB ของคุณ"</string>
+    <!-- Default name of artist that doesn\'t have a name in the metadata -->
+    <string name="unknown_artist_name">"ไม่ทราบศิลปิน"</string>
+    <!-- Default name of album that doesn\'t have a name in the metadata -->
+    <string name="unknown_album_name">"ไม่ทราบอัลบั้ม"</string>
+    <!-- Default name of folder that doesn\'t have a path in the metadata -->
+    <string name="unknown_folder_name">พาธที่ไม่รู้จัก</string>
+    <!-- Default name of folder that doesn\'t have a count in the metadata -->
+    <string name="unknown_folder_count">ผลรวมที่ไม่รู้จัก</string>
+    <!-- Toast after turning shuffle on -->
+    <string name="shuffle_on_notif">"เปิดการสุ่มเพลง"</string>
+    <!-- Toast after turning shuffle off -->
+    <string name="shuffle_off_notif">"ปิดการสุ่มเพลง"</string>
+    <!-- Toast after turning repeat off -->
+    <string name="repeat_off_notif">"ปิดการเล่นซ้ำ"</string>
+    <!-- Toast after turning single repeat on -->
+    <string name="repeat_current_notif">"เล่นเพลงปัจจุบันซ้ำ"</string>
+    <!-- Toast after turning repeat all on -->
+    <string name="repeat_all_notif">"เล่นเพลงทั้งหมดซ้ำ"</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu">"ใช้เป็นเสียงเรียกเข้าของโทรศัพท์"</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short">"ใช้เป็นเสียงเรียกเข้า"</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set">"\"<xliff:g id="NAME">%s</xliff:g>\" ถูกตั้งค่าเป็นเสียงเรียกเข้าของโทรศัพท์"</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu_1">ใช้เป็นเสียงเรียกเข้าช่อง 1</string>
+    <string name="ringtone_menu_2">ใช้เป็นเสียงเรียกเข้าช่อง 2</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short_1">"ใช้เป็นเสียงเรียกเข้า 1"</string>
+    <string name="ringtone_menu_short_2">"ใช้เป็นเสียงเรียกเข้า 2"</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_1">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\ ตั้งเป็นเสียงเรียกเข้าช่อง 1</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_2">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\ ตั้งเป็นเสียงเรียกเข้าช่อง 2</string>
+    <!-- Context menu item -->
+    <string name="play_selection">"เล่น"</string>
+    <!-- Context menu item -->
+    <string name="add_to_playlist">"เพิ่มในเพลย์ลิสต์"</string>
+    <!-- Context menu item -->
+    <string name="queue">"เพลย์ลิสต์ปัจจุบัน"</string>
+    <!-- Context menu item -->
+    <string name="new_playlist">"ใหม่"</string>
+    <!-- Template for newly created playlist name -->
+    <string name="new_playlist_name_template">"เพลย์ลิสต์ใหม่ <xliff:g id="NUMBER">%d</xliff:g>"</string>
+    <!-- Toasts after adding song(s) to playlists -->
+    <plurals name="NNNtrackstoplaylist">
+        <!-- message shown when one song was added -->
+        <item quantity="one">"เพิ่มในเพลย์ลิสต์ 1 เพลง"</item>
+        <!-- message shown when zero or more than one song was added -->
+        <item quantity="other">"เพิ่ม <xliff:g id="NUMBER">%d</xliff:g> เพลงลงในเพลย์ลิสต์"</item>
+    </plurals>
+    <!-- Toast after selecting an empty playlist -->
+    <string name="emptyplaylist">"เพลย์ลิสต์ที่เลือกไว้ว่างเปล่า"</string>
+    <!-- Button name when saving a playlist -->
+    <string name="create_playlist_create_text">"บันทึก"</string>
+    <!-- Button name when saving a playlist and the new playlist will overwrite an existing one -->
+    <string name="create_playlist_overwrite_text">"เขียนทับ"</string>
+    <!-- Dialog box title -->
+    <string name="service_start_error_title">"ปัญหาการเล่น"</string>
+    <!-- Dialog box message -->
+    <string name="service_start_error_msg">"ไม่สามารถเล่นเพลงนี้ได้"</string>
+    <!-- Dialog box button -->
+    <string name="service_start_error_button">"ตกลง"</string>
+    <!-- Time span edit options that appear when editing system playlist "Recently added" -->
+    <!-- Used to indicate the number of weeks the "recently added" playlist covers in a selector widget -->
+    <string-array name="weeklist">
+        <item>"1 สัปดาห์"</item>
+        <item>"2 สัปดาห์"</item>
+        <item>"3 สัปดาห์"</item>
+        <item>"4 สัปดาห์"</item>
+        <item>"5 สัปดาห์"</item>
+        <item>"6 สัปดาห์"</item>
+        <item>"7 สัปดาห์"</item>
+        <item>"8 สัปดาห์"</item>
+        <item>"9 สัปดาห์"</item>
+        <item>"10 สัปดาห์"</item>
+        <item>"11 สัปดาห์"</item>
+        <item>"12 สัปดาห์"</item>
+    </string-array>
+    <!-- Button name in time span picker -->
+    <string name="weekpicker_set">"เสร็จสิ้น"</string>
+    <!-- Title of time span picker -->
+    <string name="weekpicker_title">"ตั้งเวลา"</string>
+    <!-- Do not translate. Background color for currently dragged item in playlist edit mode. -->
+    <color name="dragndrop_background">#e0103010</color>
+    <!-- Do not translate. Background color for albums in the artists list view. -->
+    <color name="expanding_child_background">#ff404040</color>
+
+    <!-- menu item to save the current list as a new playlist -->
+    <string name="save_as_playlist">"บันทึกเป็นเพลย์ลิสต์"</string>
+    <!-- menu item to clear the current playlist -->
+    <string name="clear_playlist">"ล้างเพลย์ลิสต์"</string>
+
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicbrowserlabel">"เพลง"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicshortcutlabel">"เพลย์ลิสต์"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediaplaybacklabel">"เพลง"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="videobrowserlabel">"วิดีโอ"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediapickerlabel">"เพลง"</string>
+
+    <!-- Shown as a transient message whenever a file fails to play -->
+    <string name="playback_failed">"โปรแกรมเล่นไม่สนับสนุนไฟล์เสียงประเภทนี้"</string>
+    <!-- Shown as a transient message whenever a file fails to open -->
+    <string name="open_failed">ขออภัย เปิดแฟ้มไม่ได้</string>
+
+    <!-- Text for the "cancel" button in the "delete" and "create playlist" confirmation dialogs -->
+    <string name="cancel">"ยกเลิก"</string>
+
+    <!-- context menu item to remove the selected item from the playlist -->
+    <string name="remove_from_playlist">"ลบจากเพลย์ลิสต์"</string>
+
+    <!-- shown when connecting to a music stream, before it starts playing -->
+    <string name="streamloadingtext">"กำลังเชื่อมต่อกับ <xliff:g id="HOST">%s</xliff:g>..."</string>
+
+    <!-- title of contextual music search menu -->
+    <string name="mediasearch">"ค้นหาเกี่ยวกับ <xliff:g id="TERM">%s</xliff:g> โดยใช้:"</string>
+
+    <!-- Shown in the title bar while the list of artists is being retrieved in the background -->
+    <string name="working_artists">"ศิลปิน..."</string>
+    <!-- Shown in the title bar while the list of albums is being retrieved in the background -->
+    <string name="working_albums">"อัลบั้ม..."</string>
+    <!-- Shown in the title bar while the list of songs is being retrieved in the background -->
+    <string name="working_songs">"เพลง..."</string>
+    <!-- Shown in the title bar while the list of folders is being retrieved in the background -->
+    <string name="working_folders">โฟลเดอร์\u2026</string>
+    <!-- Shown in the title bar while the list of playlists is being retrieved in the background -->
+    <string name="working_playlists">"เพลย์ลิสต์..."</string>
+
+    <!-- Shown in the music picker while loading the music database. -->
+    <string name="loading">"กำลังโหลด..."</string>
+    <!-- Menu in music picker to sort the list by track/song name. -->
+    <string name="sort_by_track">"แทร็ก"</string>
+    <!-- Menu in music picker to sort the list by album name. -->
+    <string name="sort_by_album">"อัลบั้ม"</string>
+    <!-- Menu in music picker to sort the list by artist name. -->
+    <string name="sort_by_artist">"ศิลปิน"</string>
+    <!--  Title of the music picker activity. -->
+    <string name="music_picker_title">"เลือกแทร็กเพลง"</string>
+
+    <!-- The string used to describe Music as a searchable item within system search settings. -->
+    <string name="search_settings_description">"ศิลปิน อัลบั้ม และแทร็ก"</string>
+
+    <!-- Shown in the search box as a hint -->
+    <string name="search_hint">"ค้นหาเพลง"</string>
+    <string name="search_hint_video">ค้นหาวิดีโอ</string>
+
+    <!--The fast scroll thumb will show one character from this string depending on the position in the list -->
+    <string name="fast_scroll_alphabet">" กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรลวศษสหฬอฮ"</string>
+
+    <!-- Text shown on widget when first loaded -->
+    <string name="widget_initial_text">"แตะเพื่อเลือกเพลง"</string>
+
+    <!-- Menu text for the item controlling the audio effects panel [CHAR LIMIT=15] -->
+    <string name="effectspanel">"เอฟเฟ็กต์เสียง"</string>
+
+    <string name="duplicate_playlist_name_alert">มีรายการเล่นที่ชื่อ \"<xliff:g id="name">%s</xliff:g>\" อยู่แล้ว โปรดเลือกชื่ออื่น</string>
+    <string name="same_playlist_name_alert">ชื่อรายการเล่น \"<xliff:g id="name">%s</xliff:g>\" ไม่ได้เปลี่ยน โปรดเลือกชื่ออื่น</string>
+    <string name="button_ok">ตกลง</string>
+    <string name="list_empty">ไม่มีเพลงในรายการเล่น</string>
+
+    <!-- Shown when video is played after disable Gallery app from Settings -->
+    <string name="enable_gallery_app">ไม่สามารถเล่นวิดีโอได้ โปรดเปิดใช้งานแอปพลิเคชันแกลเลอรีจากการตั้งค่า</string>
+    <string name="close_music">"สิ้นสุด"</string>
+    <string name="delete_video_item_message">คุณต้องการลบ \"<xliff:g id="name">%s</xliff:g>\" หรือไม่</string>
+    <string name="video_deleted_message">ลบไฟล์วิดีโอแล้ว</string>
+
+    <!-- Menu item that takes the user link to net to see more music -->
+    <string name="more_music">เพลง​เพิ่มเติม</string>
+    <!-- Menu item that takes the user link to net to see more video -->
+    <string name="more_video">วิดีโอเพิ่มเติม</string>
+    <!--gesture control playback status-->
+    <string name="music_gesture_play">"เล่นเสียง/หยุดเสียงชั่วคราว"</string>
+    <string name="music_gesture_prev">"เล่นเพลงก่อนหน้า"</string>
+    <string name="music_gesture_next">"เล่นเพลงถัดไป"</string>
+
+    <!-- DRM Related Strings -->
+    <string name="no_permission_for_drm">"ขออภัย ไม่สามารถแบ่งปันไฟล์ DRM ได้"</string>
+    <string name="drm_license_info">ข้อมูลใบอนุญาตลิขสิทธิ์ DRM</string>
+    <string name="drm_ringtone_error">ไม่สามารถตั้งไฟล์ CD/SD เป็นเสียงเรียกเข้า</string>
+
+</resources>

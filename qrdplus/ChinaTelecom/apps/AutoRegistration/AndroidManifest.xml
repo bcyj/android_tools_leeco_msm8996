@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      Copyright (c) 2014, Qualcomm Technologies, Inc. All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qualcomm.qti.autoregistration"
+    android:sharedUserId="android.uid.phone"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <application>
+        <service
+            android:name=".RegistrationService"
+            android:exported="false" />
+
+        <receiver android:name=".AutoRegReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.qualcomm.action.AUTO_REGISTRATION"/>
+            </intent-filter>
+             <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="9999" />
+            </intent-filter>
+        </receiver>
+        <provider
+            android:name="com.qualcomm.qti.service.DeviceInfoProvider"
+            android:process="com.android.phone"
+            android:authorities="com.qualcomm.qti.service.GET_DEVICE_INFO" />
+    </application>
+
+</manifest>

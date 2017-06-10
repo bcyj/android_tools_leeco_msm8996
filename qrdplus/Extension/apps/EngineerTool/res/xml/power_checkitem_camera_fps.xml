@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015, Qualcomm Technologies, Inc. All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+ -->
+
+<checkitem xmlns:android="http://schemas.android.com/apk/res/android"
+    label="Reducing Preview FPS" function="propR" expect="2[0-9]|30"
+    params="persist.debug.set.fixedfps,0">
+    <dialog title="@string/dialog_edit_label">
+        <view info="@string/dialog_edit_fps_info" info_gravity="top">
+            <edit function="propR" params="persist.debug.set.fixedfps,0" />
+        </view>
+        <positive label="@android:string/ok" function="propW"
+            params="persist.debug.set.fixedfps,(EditContent)" />
+        <negative label="@android:string/cancel" />
+    </dialog>
+</checkitem>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---/**************************************************************************
+* @file       data_usage.xml
+* @brief      Has layout specs for Data Usage activity
+*
+*  Copyright (C) 2012 Qualcomm Technologies, Inc.
+*  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+*  **************************************************************************-->
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical">
+  <LinearLayout
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent">
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:paddingLeft="20dip"
+      android:paddingRight="20dip"
+      android:text="@string/data_usage_txt_name">
+    </TextView>
+    <EditText
+      android:layout_height="wrap_content"
+      android:id="@+id/edittext_limit"
+      android:inputType="numberDecimal|numberSigned"
+      android:layout_width="fill_parent">
+    </EditText>
+  </LinearLayout>
+  <TextView
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="@string/data_usage_txtview_note">
+  </TextView>
+  <LinearLayout
+    android:layout_height="wrap_content"
+    android:id="@+id/dullbutton"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_gravity="center_horizontal">
+    <Button
+      android:layout_height="wrap_content"
+      android:id="@+id/ok_button"
+      android:layout_gravity="center"
+      android:layout_width="wrap_content"
+      android:text="@string/data_usage_button_ok"
+      android:layout_weight="1">
+    </Button>
+    <Button
+      android:layout_height="wrap_content"
+      android:id="@+id/cancel_button"
+      android:layout_width="wrap_content"
+      android:layout_weight="1"
+      android:text="@string/data_usage_button_cancel">
+    </Button>
+  </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Wi-Fi settings -->
+
+
+    <!-- Match this with the order of NetworkInfo.DetailedState. -->
+    <skip/>
+    <!-- Wi-Fi settings. The status messages when the network is unknown. -->
+    <string-array name="wifi_status">
+
+        <!-- Status message of Wi-Fi when it is idle. -->
+        <item/>
+        <!-- Status message of Wi-Fi when it is scanning. -->
+        <item>စကန္လုပ္ေန…</item>
+        <!-- Status message of Wi-Fi when it is connecting. -->
+        <item>ခ်ိတ္ဆက္ေန...</item>
+        <!-- Status message of Wi-Fi when it is authenticating. -->
+        <item>အေထာက္အထား စိစစ္ေန…</item>
+        <!-- Status message of Wi-Fi when it is obtaining IP address. -->
+        <item>IP လိပ္စာ ရယူေန…</item>
+        <!-- Status message of Wi-Fi when it is connected. -->
+        <item>ခ်ိတ္ဆက္ထား</item>
+        <!-- Status message of Wi-Fi when it is suspended. -->
+        <item>ေရႊ႕ဆိုင္းထား</item>
+        <!-- Status message of Wi-Fi when it is disconnecting. -->
+        <item>အဆက္ ျဖတ္ေန…</item>
+        <!-- Status message of Wi-Fi when it is disconnected. -->
+        <item>အဆက္ ျဖတ္လိုက္ၿပီ</item>
+        <!-- Status message of Wi-Fi when it is a failure. -->
+        <item>မေအာင္ျမင္ပါ</item>
+        <!-- Status message of Wi-Fi when it is blocked. -->
+        <item>ပိတ္ဆို႔ထား</item>
+        <!-- Status message of Wi-Fi when connectiong is being verified. -->
+        <item>ညံ့သည့္ ခ်ိတ္ဆက္မႈကို ယာယီ ေရွာင္ရွားေန</item>
+    </string-array>
+
+    <!-- Match this with the order of NetworkInfo.DetailedState. -->
+    <skip/>
+    <!-- Wi-Fi settings. The status messages when the network is known. -->
+    <string-array name="wifi_status_with_ssid">
+
+        <!-- Status message of Wi-Fi when it is idle. -->
+        <item/>
+        <!-- Status message of Wi-Fi when it is scanning. -->
+        <item>စကန္လုပ္ေန…</item>
+        <!-- Status message of Wi-Fi when it is connecting to a network. -->
+        <item><xliff:g id="NETWORK_NAME">%1$s</xliff:g> ႏွင့္ ဆက္သြယ္ေန…</item>
+        <!-- Status message of Wi-Fi when it is authenticating with a network. -->
+        <item><xliff:g id="NETWORK_NAME">%1$s</xliff:g> ႏွင့္ အေထာက္အထားကို စိစစ္ေန…</item>
+        <!-- Status message of Wi-Fi when it is obtaining IP address from a network. -->
+        <item><xliff:g id="NETWORK_NAME">%1$s</xliff:g> မွ IP လိပ္စာ ရယူေန…</item>
+        <!-- Status message of Wi-Fi when it is connected to a network. -->
+        <item><xliff:g id="NETWORK_NAME">%1$s</xliff:g> ႏွင့္ ဆက္သြယ္ထားၿပီ</item>
+        <!-- Status message of Wi-Fi when it is suspended. -->
+        <item>ေရႊ႕ဆိုင္းထား</item>
+        <!-- Status message of Wi-Fi when it is disconnecting from a network. -->
+        <item><xliff:g id="NETWORK_NAME">%1$s</xliff:g>မွ အဆက္ ျဖတ္ေန…</item>
+        <!-- Status message of Wi-Fi when it is disconnected. -->
+        <item>ခ်ိတ္ဆက္မႈ ျပတ္သြား</item>
+        <!-- Status message of Wi-Fi when it is a failure. -->
+        <item>မေအာင္ျမင္ပါ</item>
+        <!-- Status message of Wi-Fi when it is blocked. -->
+        <item>ပိတ္ဆို႔ထား</item>
+        <!-- Status message of Wi-Fi when connectiong is being verified. -->
+        <item>ညံ့သည့္ ခ်ိတ္ဆက္မႈကို ယာယီ ေရွာင္ရွားေန</item>
+    </string-array>
+
+    <!-- Display settings.  The delay in inactivity before the daydream starts. -->
+    <string-array name="sleep_timeout_entries">
+        <item>၅ မိနစ္</item>
+        <item>၁၀ မိနစ္</item>
+        <item>၁၅ မိနစ္</item>
+        <item>၃၀ မိနစ္</item>
+        <item>၁ နာရီ</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="sleep_timeout_values" translatable="false">
+
+        <!-- Do not translate. -->
+        <item>300000</item>
+        <!-- Do not translate. -->
+        <item>600000</item>
+        <!-- Do not translate. -->
+        <item>900000</item>
+        <!-- Do not translate. -->
+        <item>1800000</item>
+        <!-- Do not translate. -->
+        <item>3600000</item>
+    </string-array>
+
+    <!-- Display settings.  The delay after the daydream starts when the screen goes off. -->
+    <string-array name="screen_off_timeout_entries">
+        <item>၃၀ မိနစ္</item>
+        <item>၁ နာရီ</item>
+        <item>၃ နာရီ</item>
+        <item>၆ နာရီ</item>
+        <item>၁၂ နာရီ</item>
+        <item>မည္သည့္အခါမွ</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="screen_off_timeout_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>1800000</item>
+        <!-- Do not translate. -->
+        <item>3600000</item>
+        <!-- Do not translate. -->
+        <item>10800000</item>
+        <!-- Do not translate. -->
+        <item>21600000</item>
+        <!-- Do not translate. -->
+        <item>43200000</item>
+        <!-- Do not translate. -->
+        <item>-1</item>
+    </string-array>
+
+
+    <!-- Titles for debug overdraw preference. [CHAR LIMIT=35] -->
+    <string-array name="debug_hw_overdraw_entries">
+        <item>မရွိ</item>
+        <item>ေက်ာ္လြန္ ဧရိယာမ်ားကို ျပရန္</item>
+        <item>ေက်ာ္လြန္ ေရတြက္မႈကို ျပရန္</item>
+    </string-array>
+
+    <!-- Values for debug overdraw preference. -->
+    <string-array name="debug_hw_overdraw_values" translatable="false">
+        <item>false</item>
+        <item>show</item>
+        <item>count</item>
+    </string-array>
+
+    <!-- Titles for HDMI optimization preference values [CHAR LIMIT=60] -->
+    <string-array name="hdmi_optimization_entries">
+        <item>အေကာင္းဆံုး ျပတ္သားမႈ</item>
+        <item>အေကာင္းဆံုး ေဘာင္ႏႈန္း</item>
+    </string-array>
+
+    <!-- Values for HDMI optimization preference values DO NOT TRANSLATE -->
+    <string-array name="hdmi_optimization_values">
+        <item>အမ်ားဆံုး</item>
+        <item>1080p</item>
+    </string-array>
+
+    <!-- Titles for captioning typeface preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_typeface_selector_titles">
+        <item>ပံုေသ</item>
+        <item>Sans-seri</item>
+        <item>Sans-serif သိပ္သည္း</item>
+        <item>"Sans-serif monospace"</item>
+        <item>"Serif"</item>
+        <item>"Serif monospace"</item>
+        <item>သာမန္</item>
+        <item>"Cursive"</item>
+        <item>စာလံုးႀကီး အေသး</item>
+    </string-array>
+
+    <!-- Values for captioning typeface preference. -->
+    <string-array name="captioning_typeface_selector_values" translatable="false">
+        <item/>
+        <item>sans-serif</item>
+        <item>sans-serif-condensed</item>
+        <item>sans-serif-monospace</item>
+        <item>serif</item>
+        <item>serif-monospace</item>
+        <item>casual</item>
+        <item>cursive</item>
+        <item>sans-serif-smallcaps</item>
+    </string-array>
+
+    <!-- Titles for captioning font size preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_font_size_selector_titles">
+        <item>အလြန္ေသး</item>
+        <item>ေသး</item>
+        <item>ပံုမွန္</item>
+        <item>ႀကီးမား</item>
+        <item>သိပ္ႀကီးမား</item>
+    </string-array>
+
+    <!-- Values for captioning font size preference. -->
+    <string-array name="captioning_font_size_selector_values" translatable="false">
+        <item>0.25</item>
+        <item>0.5</item>
+        <item>1.0</item>
+        <item>1.5</item>
+        <item>2.0</item>
+    </string-array>
+
+    <!-- Titles for captioning character edge type preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_edge_type_selector_titles">
+        <item>မရွိ</item>
+        <item>အနားသတ္</item>
+        <item>အရိပ္ခ်ေပး</item>
+        <item>ျမႇင့္ထား</item>
+        <item>ႏွိမ့္ထား</item>
+    </string-array>
+
+    <!-- Values for captioning character edge type preference. -->
+    <integer-array name="captioning_edge_type_selector_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </integer-array>
+
+    <!-- Titles for captioning color preference. -->
+    <string-array name="captioning_color_selector_titles" translatable="false">
+        <item>@string/color_white</item>
+        <item>@string/color_black</item>
+        <item>@string/color_red</item>
+        <item>@string/color_yellow</item>
+        <item>@string/color_green</item>
+        <item>@string/color_cyan</item>
+        <item>@string/color_blue</item>
+        <item>@string/color_magenta</item>
+    </string-array>
+
+    <!-- Index to id mapping for captioning color preference. -->
+    <array name="captioning_color_selector_ids" translatable="false">
+        <item>@color/captioning_color_FFFFFF</item>
+        <item>@color/captioning_color_000000</item>
+        <item>@color/captioning_color_FF0000</item>
+        <item>@color/captioning_color_FFFF00</item>
+        <item>@color/captioning_color_00FF00</item>
+        <item>@color/captioning_color_00FFFF</item>
+        <item>@color/captioning_color_0000FF</item>
+        <item>@color/captioning_color_FF00FF</item>
+        <item>@color/captioning_color_000055</item>
+        <item>@color/captioning_color_0000AA</item>
+        <item>@color/captioning_color_005500</item>
+        <item>@color/captioning_color_005555</item>
+        <item>@color/captioning_color_0055AA</item>
+        <item>@color/captioning_color_0055FF</item>
+        <item>@color/captioning_color_00AA00</item>
+        <item>@color/captioning_color_00AA55</item>
+        <item>@color/captioning_color_00AAAA</item>
+        <item>@color/captioning_color_00AAFF</item>
+        <item>@color/captioning_color_00FF55</item>
+        <item>@color/captioning_color_00FFAA</item>
+        <item>@color/captioning_color_550000</item>
+        <item>@color/captioning_color_550055</item>
+        <item>@color/captioning_color_5500AA</item>
+        <item>@color/captioning_color_5500FF</item>
+        <item>@color/captioning_color_555500</item>
+        <item>@color/captioning_color_555555</item>
+        <item>@color/captioning_color_5555AA</item>
+        <item>@color/captioning_color_5555FF</item>
+        <item>@color/captioning_color_5555FF</item>
+        <item>@color/captioning_color_55AA00</item>
+        <item>@color/captioning_color_55AA55</item>
+        <item>@color/captioning_color_55AAAA</item>
+        <item>@color/captioning_color_55AAFF</item>
+        <item>@color/captioning_color_55FF00</item>
+        <item>@color/captioning_color_55FF55</item>
+        <item>@color/captioning_color_55FFAA</item>
+        <item>@color/captioning_color_55FFFF</item>
+        <item>@color/captioning_color_AA0000</item>
+        <item>@color/captioning_color_AA0055</item>
+        <item>@color/captioning_color_AA00AA</item>
+        <item>@color/captioning_color_AA00FF</item>
+        <item>@color/captioning_color_AA5500</item>
+        <item>@color/captioning_color_AA5555</item>
+        <item>@color/captioning_color_AA55AA</item>
+        <item>@color/captioning_color_AA55FF</item>
+        <item>@color/captioning_color_AAAA00</item>
+        <item>@color/captioning_color_AAAA55</item>
+        <item>@color/captioning_color_AAAAAA</item>
+        <item>@color/captioning_color_AAAAFF</item>
+        <item>@color/captioning_color_AAFF00</item>
+        <item>@color/captioning_color_AAFF55</item>
+        <item>@color/captioning_color_AAFFAA</item>
+        <item>@color/captioning_color_AAFFFF</item>
+        <item>@color/captioning_color_FF0055</item>
+        <item>@color/captioning_color_FF00AA</item>
+        <item>@color/captioning_color_FF5500</item>
+        <item>@color/captioning_color_FF5555</item>
+        <item>@color/captioning_color_FF55AA</item>
+        <item>@color/captioning_color_FF55FF</item>
+        <item>@color/captioning_color_FFAA00</item>
+        <item>@color/captioning_color_FFAA55</item>
+        <item>@color/captioning_color_FFAAAA</item>
+        <item>@color/captioning_color_FFAAFF</item>
+        <item>@color/captioning_color_FFFF55</item>
+        <item>@color/captioning_color_FFFFAA</item>
+    </array>
+
+    <!-- Titles for captioning opacity preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_opacity_selector_titles">
+        <item>၂၅.ဝ၀%</item>
+        <item>၅၀.ဝ၀%</item>
+        <item>၇၅.ဝ၀%</item>
+        <item>၁၀ဝ.ဝ၀%</item>
+    </string-array>
+
+    <!-- Values for captioning opacity preference. -->
+    <integer-array name="captioning_opacity_selector_values" translatable="false">
+        <item>0x40FFFFFF</item>
+        <item>0x80FFFFFF</item>
+        <item>0xC0FFFFFF</item>
+        <item>0xFFFFFFFF</item>
+    </integer-array>
+
+    <!-- Titles for captioning text style preset preference. [CHAR LIMIT=35] -->
+    <string-array name="captioning_preset_selector_titles">
+        <item>အမည္းေပၚအျဖဴ</item>
+        <item>အျဖဴေပၚအမည္း</item>
+        <item>အမည္းေပၚအဝါ</item>
+        <item>အျပာေပၚအဝါ</item>
+        <item>စိတ္ႀကိဳက္</item>
+    </string-array>
+
+    <!-- Values for captioning text style preset preference. -->
+    <integer-array name="captioning_preset_selector_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>-1</item>
+    </integer-array>
+
+</resources>

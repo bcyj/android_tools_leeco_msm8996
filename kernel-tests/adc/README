@@ -1,0 +1,58 @@
+	ADC Testing Documentation
+
+TEST NAME: msm_adc_test
+
+INPUTS:
+
+[Test Type]
+
+  -n, --nominal		     Tests all channels once with both blocking and non-blocking
+			     requets.
+  -a, --adversarial	     Run scenarios that are expected to fail.
+  -s, --stress		     Launch 6 threads that test either blocking or aio
+			     transfer requests
+  -p, --repeatability	     Run the nominal test case 5 times
+  -r, --release		     Run the nominal, adversarial, and repeatability test cases.
+  -e  --epm		     Include EPM channels for testing
+
+[Options]
+
+  -v, --verbose <verbosity>  Run with varying test information displayed
+  -h, --help		     Print help message and exit
+
+If no 'test type' is specified, then the nominal case is executed
+
+DESCRIPTION:
+
+This test exercises the dal adc driver to make conversion requests to the three
+LTC ADC devices found on the 7x30 Fluid using the provided ioctl interface.
+First, it get local channel indices for each respective channel name. Next, it
+will use both blocking and non-blocking transfer requests to return the requested data.
+
+For the non-blocking case, the test queues a series of channel requests, then blocks
+on completion using the POLL ioctl command. Once at least one result is available from
+the driver, POLL will return and the test will use the READ ioctl command to return the
+results.
+
+EPM Channels:
+
+EPM stands for Embedded Power Measurement. EPM ADC channels are used for measuring the 
+current on specific power rails through on-board sense resistors.
+EPM channels are supported only on 7x30 Fluids and 8660 Fluids
+
+TARGETS:
+
+  -7x30  FLUID, 8x60 SURF/FFA, 8x60 FLUID
+
+Boards supporting EPM chanenls:
+
+  - 7x30 FLUID, 8x60 FLUID
+
+NOTES:
+
+This test could also compare results on a channel to channel basis to make sure they
+are reasonable. Currently it does not, since the values returned from the modem are not
+accurate.
+
+The driver also provides a hwmon / sysfs interface. This test does not exercise that interface.
+It only uses the ioctl interface.

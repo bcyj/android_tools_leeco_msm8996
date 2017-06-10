@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2006 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- This is the label underneath the icon for Calendar -->
+    <string name="app_label">ျပကၡဒိန္</string>
+
+    <!-- Shared Labels. These labels are shared among the activities. -->
+    <skip/>
+    <!-- This is the label for the title or name of an event -->
+    <string name="what_label">ဘာ</string>
+    <!-- This is the label for the location of an event -->
+    <string name="where_label">ဘယ္ေနရာ</string>
+    <!-- This is the label for the time of an event [CHAR LIMIT=30] -->
+    <string name="when_label">ဘယ္ေတာ့</string>
+    <!-- This is the label for the timezone of an event [CHAR LIMIT=30] -->
+    <string name="timezone_label">အခ်ိန္ဇုန္</string>
+    <!-- This is the label for the Guests/Attendees of an event -->
+    <string name="attendees_label">ဧည့္သည္မ်ား</string>
+    <!-- Text to show when an event starts on the current day -->
+    <string name="today">ယေန႔</string>
+    <!-- Text to show when an event starts on the next day -->
+    <string name="tomorrow">နက္ျဖန္</string>
+    <!-- Text for an event starting on the current day with a start and end time.
+         For ex, "Today at 5:00pm-6:00pm" [CHAR LIMIT=NONE] -->
+    <string name="today_at_time_fmt">ယေန႔ <xliff:g id="TIME_INTERVAL">%s</xliff:g> တြင္</string>
+    <!-- Text for an event starting on the next day with a start and end time.
+         For ex, "Tomorrow at 5:00pm-6:00pm" [CHAR LIMIT=NONE] -->
+    <string name="tomorrow_at_time_fmt">နက္ျဖန္ <xliff:g id="TIME_INTERVAL">%s</xliff:g>တြင္</string>
+    <!-- Format string for a date and time description.  For ex:
+         "April 19, 2012, 3:00pm - 4:00pm" [CHAR LIMIT=NONE] -->
+    <string name="date_time_fmt">"<xliff:g id="date">%s</xliff:g>, <xliff:g id="time_interval">%s</xliff:g>"</string>
+
+    <!-- Some events repeat daily, weekly, monthly, or yearly.  This is the label
+         for all the choices about how often an event repeats (including the choice
+         of not repeating). -->
+    <string name="repeats_label">ထပ္ျဖစ္မႈ</string>
+    <!-- Title of event when no explicit title is specified by the user -->
+    <string name="no_title_label">(ေခါင္းစဥ္မဲ့)</string>
+
+    <!-- Reminder format strings -->
+    <plurals name="Nminutes">
+        <!-- This is the label for a 1-minute reminder. -->
+        <item quantity="one">၁ မိနစ္</item>
+        <!-- This is the label for 2 or more minutes. The actual number of
+             minutes is a parameter. -->
+        <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> မိနစ္</item>
+    </plurals>
+    <!-- We use the abbreviation "mins" instead of "minutes" to keep the string short.
+         This is the number of minutes displayed for a calendar reminder.  For example,
+         a reminder of 10 minutes would be displayed as \'10 mins\'.  The translation
+         should use the shortest acceptable abbreviation to save space. -->
+    <plurals name="Nmins">
+        <!-- This is the label for a 1-minute reminder. -->
+        <item quantity="one">၁ မိနစ္</item>
+        <!-- This is the label for 2 or more minutes. The actual number of
+             minutes is a parameter. -->
+        <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> မိနစ္</item>
+    </plurals>
+    <!-- This is the number of hours displayed for a calendar reminder.  For example,
+         a reminder of 1 hour would be displayed as \'1 hour\'.  The translation
+         should use the shortest acceptable abbreviation of \'hour\' to save space. -->
+    <plurals name="Nhours">
+        <!-- This is the label for a 1-hour reminder. -->
+        <item quantity="one">၁ နာရီ</item>
+        <!-- This is the label for a reminder of 2 or more hours. The actual number of
+             hours is a parameter. -->
+        <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> နာရီ</item>
+    </plurals>
+    <!-- This is the number of days displayed for a calendar reminder.  For example,
+         a reminder of 2 days would be displayed as \'2 days\'.  The translation
+         should use the shortest acceptable abbreviation of \'day\' to save space. -->
+    <plurals name="Ndays">
+        <!-- This is the label for a reminder of 1 day. -->
+        <item quantity="one">၁ ရက္</item>
+        <!-- This is the label for a reminder of 2 or more days. The actual number of
+             days is a parameter. -->
+        <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> ရက္</item>
+    </plurals>
+    <!-- This is for displaying the week of the year near the date. Eg. "January, 2011 Week 1" -->
+    <plurals name="weekN">
+        <!-- Label for displaying week of the year for all week values [CHAR LIMIT=16] -->
+        <item quantity="other">အပတ္ <xliff:g id="COUNT">%d</xliff:g></item>
+    </plurals>
+
+    <!-- Menu items: -->
+    <skip/>
+    <!-- This is a label on a context menu item. Pressing this menu item to initiate
+        syncing of your Calendar data with the server. [CHAR LIMIT=11] -->
+    <string name="calendar_refresh">"ျပန္လည္ ဆန္းသစ္ပါ"</string>
+    <!-- This is a label on a context menu item. Pressing this menu item displays the
+         Agenda view. -->
+
+    <!-- This is a label on a context menu item. Pressing this menu item displays the
+         Day view. -->
+    <string name="show_day_view">ရက္ကို ျပရန္</string>
+    <!-- This is a label on a menu item. Pressing this menu item displays the
+         Agenda view. -->
+    <string name="agenda_view">အစီအစဥ္</string>
+    <!-- This is a label on a menu item. Pressing this menu item displays the
+         Day view. -->
+    <string name="day_view">ေန႔ရက္</string>
+    <!-- This is a label on a menu item. Pressing this menu item displays the
+         Week view. -->
+    <string name="week_view">အပတ္</string>
+    <!-- This is a label on a menu item. Pressing this menu item displays the
+         Month view. -->
+    <string name="month_view">လ</string>
+    <!-- This is a label on a menu item. Pressing this menu item displays the
+         details of an event. -->
+    <string name="event_view">ျဖစ္ရပ္မ်ားကို ၾကည့္ရန္</string>
+    <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to create a new event. -->
+    <string name="event_create">ျဖစ္ရပ္ အသစ္</string>
+    <!-- This is a label on a menu item in a popup window. Pressing this menu
+         item allows the user to edit or change an existing event. -->
+    <string name="event_edit">ျဖစ္ရပ္ကို တည္းျဖတ္ရန္</string>
+    <!-- This is a label on a menu item in a popup window. Pressing this menu
+         item allows the user to delete an existing event. -->
+    <string name="event_delete">ျဖစ္ရပ္ကို ဖ်က္ရန္</string>
+    <!-- This is a label on a menu item. Pressing this menu
+         item takes the user to the current day (today) in whatever view
+         (Day view, Week view, Agenda view, Month view) they are currently in. -->
+    <string name="goto_today">ယေန႔</string>
+    <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to see the list of calendars that he is viewing and to then add
+         or remove selected calendars. -->
+
+    <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to view and edit his Settings (or Preferences) -->
+    <string name="menu_preferences">ဆက္တင္မ်ား</string>
+    <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to select the calendars to display [CHAR LIMIT=20] -->
+    <string name="menu_select_visible_calendars">ျပရန္ ျပကၡဒိန္မ်ား</string>
+    <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to select the calendars to display [CHAR LIMIT=20] -->
+    <string name="search">ရွာေဖြရန္</string>
+    <!-- This is a label on a menu item. Pressing this menu item hides
+         the navigation controls on the right side. [CHAR LIMIT=20] -->
+    <string name="hide_controls">ထိန္းခ်ဳပ္မႈမ်ား ဝွက္ထားရန္</string>
+    <!-- This is a label on a menu item. Pressing this menu item shows the
+         navigation controls on the right side. [CHAR LIMIT=20] -->
+    <string name="show_controls">ထိန္းခ်ဳပ္မႈ ျပရန္</string>
+
+    <!-- Month view -->
+    <skip/>
+
+    <!-- Select Visible Calendars activity -->
+    <skip/>
+    <!-- Title of "My calendars" screen -->
+    <string name="select_visible_calendars_title">ျပေပးရန္ ျပကၡဒိန္မ်ား</string>
+    <!-- Synced and visible status message -->
+
+    <!-- Synced but not visible status message -->
+
+    <!-- not Synced or visible status message -->
+
+    <!-- Synced status message displayed when the given calendar is stored/synced on the device
+        [CHAR LIMIT=60] -->
+    <string name="synced"> စင့္ခ္ လုပ္ၿပီး</string>
+    <!-- Not synced status message displayed when the given calendar is not stored/synced on the
+        device [CHAR LIMIT=60] -->
+    <string name="not_synced"> စင့္ခ္ မလုပ္ရေသး</string>
+    <!-- Message displayed to user when an account with Calendars is not being auto-synced
+        [CHAR LIMIT=120]-->
+    <string name="acct_not_synced">ဤအေကာင့္ကို စင့္ခ္ လုပ္မေပးပါ၊ သို႔ျဖစ္၍ သင္၏ ျပကၡဒိန္မ်ားမွာ ေနာက္ဆံုးမူ ဟုတ္ခ်င္မွ ဟုတ္လိမ့္မည္။</string>
+    <!-- Label on button that takes user to the Accounts and Sync settings page [CHAR LIMIT=60] -->
+    <string name="accounts">အေကာင့္မ်ား ႏွင့္ စင့္ခ္</string>
+
+    <!-- Select Synced Calendars activity -->
+    <!-- Select the set of calendars to sync [CHAR LIMIT=60] -->
+    <string name="select_synced_calendars_title">စင့္ခ္လုပ္ရန္ ျပကၡဒိန္မ်ား</string>
+    <!-- Select the set of calendars to sync [CHAR LIMIT=60] -->
+    <string name="select_synced_calendars_button">စင့္ခ္လုပ္ရန္ ျပကၡဒိန္မ်ား</string>
+
+    <!-- Event edit activity -->
+    <skip/>
+    <!-- The title of the screen where the user edits an event [CHAR LIMIT=17] -->
+
+    <!-- Default value of What field (as a hint to the user) [CHAR LIMIT=15] -->
+    <string name="hint_what">ျဖစ္ရပ္ အမည္</string>
+    <!-- Default value of Where field (as a hint to the user)[CHAR LIMIT=15] -->
+    <string name="hint_where">တည္ေနရာ</string>
+    <!-- Default value of Description field (as a hint to the user) [CHAR LIMIT=15]-->
+    <string name="hint_description">ေဖာ္ျပခ်က္</string>
+    <!-- Default value of Attendees/Guests field (as a hint to the user) [CHAR LIMIT=10] -->
+    <string name="hint_attendees">ဧည့္သည္</string>
+    <!-- Toast message displayed when a new event is created -->
+    <string name="creating_event">ျဖစ္ရပ္ကို ဖန္တီးလိုက္ၿပီ</string>
+    <!-- Toast message displayed when an existing event is saved after being modified -->
+    <string name="saving_event">ျဖစ္ရပ္ သိမ္းဆည္းၿပီး</string>
+    <!-- Toast message displayed when a new event was not saved because it was empty [CHAR LIMIT=30] -->
+    <string name="empty_event">ဗလာ ျဖစ္ရပ္ကို ဖန္တီး မေပးခဲ့ပါ။</string>
+    <!-- Toast message displayed when a new event with guests is created -->
+    <string name="creating_event_with_guest">အေၾကာင္းၾကားခ်က္မ်ားကို ပို႔ေပးမည္။</string>
+    <!-- Toast message displayed when an existing event with guests is saved after being modified -->
+    <string name="saving_event_with_guest">မြမ္းမံခ်က္မ်ားကို ပို႔ေပးမည္။</string>
+
+    <!-- Toast message displayed responding to an event from an email as accepted
+     [CHAR LIMIT=50] -->
+    <string name="rsvp_accepted">လက္ခံဟု ျပန္ၾကားခဲ့သည္။</string>
+    <!-- Toast message displayed responding to an event from an email as tentative
+     [CHAR LIMIT=50] -->
+    <string name="rsvp_tentative">ျဖစ္ႏိုင္ဟု ျပန္ၾကားခဲ့သည္။</string>
+    <!-- Toast message displayed responding to an event from an email as declined
+     [CHAR LIMIT=50] -->
+    <string name="rsvp_declined">လက္မခံဟု ျပန္ၾကားခဲ့သည္။</string>
+
+
+    <!-- Title of message displayed to indicate available calendars are being loaded when creating
+         a new event -->
+
+    <!-- Body of message displayed to indicate available calendars are being loaded when creating
+         a new event -->
+
+
+    <!-- Create event dialog -->
+    <skip/>
+    <!-- Create event dialog save button [CHAR LIMIT=10] -->
+    <string name="create_event_dialog_save">သိမ္းဆည္းပါ</string>
+
+    <!-- The alert toast is not actually being displayed for some reason. -->
+    <skip/>
+    <!-- the title of the alert/notification activity -->
+    <string name="alert_title">ျပကၡဒိန္ အေၾကာင္းၾကားခ်က္မ်ား</string>
+    <!-- Notification window messages: -->
+    <skip/>
+
+    <!-- Event info/edit screen labels:-->
+    <skip/>
+    <!-- This is the title of the screen used to view the details of an event -->
+    <string name="event_info_title">ျဖစ္ရပ္ ၾကည့္ရန္</string>
+    <!-- This is the title of the screen used to view the details of an invitation
+         to a meeting or event -->
+    <string name="event_info_title_invite">ေတြ႕ဆံုရန္ ဖိတ္ၾကားခ်က္</string>
+
+    <!-- EditEventActivity specific strings: -->
+    <skip/>
+    <!-- Events have a start date/time and an end date/time. The display shows
+         the start and end times like \'From start date To end date\'. This is the
+         label before the \'end date\'. -->
+    <string name="edit_event_to_label">သို႔​</string>
+    <!-- Events have a start date/time and an end date/time. The display shows
+         the start and end times like \'From start date To end date\'. This is the
+         label before the \'start date\'. -->
+    <string name="edit_event_from_label">မွ</string>
+    <!-- Check box label that specifies if this is an all-day event -->
+    <string name="edit_event_all_day_label">တစ္ေန႔လံုး</string>
+    <!-- Label for choosing one of the calendars -->
+    <string name="edit_event_calendar_label">ျပကၡဒိန္</string>
+    <!-- Menu item to show all choices [CHAR LIMIT=22]-->
+    <string name="edit_event_show_all">အားလံုးကို ျပသရန္ပါ</string>
+    <!-- Label for the event description -->
+    <string name="description_label">ေဖာ္ျပခ်က္</string>
+    <!-- Label for the \'Presence\' of an event, which can be either \'busy\' (the default)
+         or \'available\'  [CHAR LIMIT=15] -->
+    <string name="presence_label">ကြ်ႏု္ပ္ကို အျဖစ္ ျပရန္</string>
+    <!-- Label for the \'Privacy\' of an event, which can be either \'private\'
+         or \'public\' [CHAR LIMIT=15] -->
+    <string name="privacy_label">ကိုယ္ေရးလံုၿခံဳမႈ</string>
+    <!-- Label for the list of reminders for an event [CHAR LIMIT=20] -->
+    <string name="reminders_label">သတိေပးခ်က္ ထည့္ရန္</string>
+    <!-- Title of alert shown if the user tries to create an event and has no calendars -->
+    <string name="no_syncable_calendars">ျပကၡဒိန္မ်ား မရွိ</string>
+    <!-- Body of alert shown if the user tries to create an event and has no calendars. Users can start adding an account here. [CHAR LIMIT=NONE] -->
+    <string name="no_calendars_found">သင္သည္ ျဖစ္ရပ္ တစ္ခုကို ထည့္မေပးခင္မွာ၊ သင္သည္ အနည္းဆံုး ျပကၡဒိန္ ျဖစ္ရပ္ တစ္ခုကို ထည့္ေပးလ်က္ ျပကၡဒိန္ တစ္ခုကို ျမင္ရေအာင္ လုပ္ေပးရန္ လိုမည္။ အေကာင့္ တစ္ခုကို ထည့္ရန္ အေကာင့္ ထည့္ရန္ကို ထိပါ (အကယ္၍ သင္သည္ အေကာင့္ကို ယခုေလးတင္ ထည့္ေပးခဲ့သည္ ဆိုလွ်င္ ၄င္းက စင့္ခ္ လုပ္ၿပီးမွကို ေစာင့္ၿပီး ေနာက္မွာ ထပ္ႀကိဳးစားပါ)။ သို႔မဟုတ္ ပယ္ဖ်က္ရန္ကို ထိလိုက္ကာ အနည္းဆံုး ျပကၡဒိန္ တစ္ခု ျမင္ရတာ ေသခ်ာပါေစ။</string>
+    <!-- Body of dialog prompting the user to create an account.[CHAR LIMIT=NONE] -->
+    <string name="create_an_account_desc">ျပကၡဒိန္ လုပ္ကိုင္မႈမွာ Google အေကာင့္ႏွင့္ ပိုအဆင္ေျပသည္။ \\n\\n• မည္သည့္ ဘေရာက္ဇာမွမဆို ရယူသံုးႏိုင္\\n• သင္၏ ျဖစ္ရပ္မ်ားကို လံုၿခံဳစြာ ဘက္ခ္အပ္ လုပ္ထားပါ။</string>
+    <!-- Title of a button shown when there is no account available and the system prompt a user to add one. [CHAR LIMIT=none] -->
+    <string name="add_account">အေကာင့္ ထည့္ရန္</string>
+
+    <!-- View Event -->
+    <skip/>
+    <!-- Label for which calendar an event is part of -->
+    <string name="view_event_calendar_label">ျပကၡဒိန္:</string>
+    <!-- Label for the event organizer -->
+    <string name="view_event_organizer_label">စီစဥ္သူ:</string>
+    <!-- Label for the local timezone -->
+
+    <!-- Label for showing event color picker -->
+    <string name="choose_event_color_label">ျဖစ္ရပ္ အေရာင္ကို ေရြးရန္</string>
+    <!-- Title for event color picker dialog -->
+    <string name="event_color_picker_dialog_title">ျဖစ္ရပ္ အေရာင္</string>
+    <!-- Label for button which sets event color to default calendar color -->
+    <string name="event_color_set_to_default">ျပကၡဒိန္ ပံုေသ အေရာင္သို႔ သတ္မွတ္ရန္</string>
+
+    <!-- Title for calendar color picker dialog -->
+    <string name="calendar_color_picker_dialog_title">ျပကၡဒိန္ အေရာင္</string>
+    <!-- Description for calendar color squares, which bring up the color picker. -->
+    <string name="calendar_square_color_picker_description">အေရာင္ ေရြးမႈ</string>
+
+    <!-- Label for whether the user is attending this event. This is shown when
+         a user is invited to a meeting or event.  The possible answers are
+         \'yes\', \'no\', and \'maybe\' (and, initially, \'no response\'). -->
+    <string name="view_event_response_label">တက္ေရာက္မွာလား?</string>
+    <!-- Response for whether attending an event - accepted [CHAR LIMIT=10]-->
+    <string name="response_yes">လက္ခံ</string>
+    <!-- Response for whether attending an event - tentative [CHAR LIMIT=10]-->
+    <string name="response_maybe">ျဖစ္ႏိုင္</string>
+    <!-- Response for whether attending an event - declined [CHAR LIMIT=10]-->
+    <string name="response_no">မတက္ပါ</string>
+    <!-- Label for emailing attendees -->
+    <string name="email_guests_label">ဧည့္သည္မ်ားထံ အီးေမးလ္ပို႔ရန္</string>
+    <!-- Label for emailing the organizer (when there are no attendees) -->
+    <string name="email_organizer_label">အီးေမးလ္ စီစဥ္သူ</string>
+    <!-- This is shown in the popup picker when emailing attendees -->
+    <string name="email_picker_label">ႏွင့္ အီးေမးလ္</string>
+    <!-- The is shown in the email subject as the prefix appended to the event title -->
+    <string translatable="false" name="email_subject_prefix">Re:\u0020</string>
+    <!-- Toast message displayed when the event id was not found LIMIT=30] -->
+    <string name="event_not_found">ျဖစ္ရပ္ကို ရွာမေတြ႕ခဲ့ပါ။</string>
+
+    <!-- Notification label for getting a map of the location. -->
+    <string name="map_label">ေျမပံု</string>
+    <!-- Notification label for calling a phone number in the location. -->
+    <string name="call_label">ေခၚဆိုမႈ</string>
+
+    <!-- Title of the quick response item in Settings [CHAR LIMIT=18]-->
+    <string name="quick_response_settings">အျမန္ တံု႔ျပန္မႈ</string>
+    <!-- Summary of the quick response item in Settings [CHAR LIMIT=80]-->
+    <string name="quick_response_settings_summary">ဧည့္သည္မ်ားထံ အီးေမးလ္ပို႔ခ်ိန္မွာ ပံုေသ တံု႔ျပန္ခ်က္မ်ားကို တည္းျဖတ္ရန္</string>
+    <!-- Title of the quick response screen in Settings->Quick Response [CHAR LIMIT=27]-->
+    <string name="quick_response_settings_title">အျမန္ တံု႔ျပန္ခ်က္ တည္းျဖတ္</string>
+    <!-- Title of the quick response item in Settings [CHAR LIMIT=18]-->
+    <string name="quick_response_settings_edit_title">အျမန္ တံု႔ျပန္ခ်က္</string>
+
+    <!-- Title of the dialog prompting the user choose a response when emailing guests  [CHAR LIMIT=none]-->
+    <string name="quick_response_dialog_title">အျမန္ တံု႔ျပန္မႈကို ေရြးရန္</string>
+    <!-- Error to user when an email program can\'t be found[CHAR LIMIT=none]-->
+    <string name="quick_response_email_failed">အီးေမးလ္ ပ႐ိုဂရမ္ကို ရွာမရခဲ့</string>
+    <!-- The is shown in the email subject as the prefix appended to the event title [CHAR LIMIT=none]-->
+    <string-array name="quick_response_defaults">
+        <item>ေျပးရာမွာ ႏွစ္မိနစ္ခန္႔ ေနာက္က်ေနသည္။</item>
+        <item>အဲဒီကို ၁၀ မိနစ္ အတြင္းမွာ ေရာက္လာမည္။</item>
+        <item>သြားႏွင့္ၿပီး ကြ်ႏု္ပ္ မပါဘဲ စတင္ပါ။</item>
+        <item>ေဆာ္ရီး၊ ကြ်ႏု္ပ္ အဲဒါကို မလုပ္ႏိုင္ပါ။ ကြ်ႏု္ပ္တို႔ ျပန္ၿပီး စီစဥ္ရန္ လိုမည္။</item>
+        </string-array>
+    <!-- Option to create a custom response instead of using defaults [CHAR LIMIT=none] -->
+    <string name="quick_response_custom_msg">သင္ ကိုယ္တိုင္…ကို ေရးရန္</string>
+
+    <!-- Event Info strings-->
+    <!-- Time Zone Label [CHAR LIMIT=12]-->
+
+    <!-- Repetition Label [CHAR LIMIT=12]-->
+
+    <!-- Organizer Label [CHAR LIMIT=12]-->
+    <string name="event_info_organizer">စီစဥ္သူ-</string>
+    <!-- Reminders label [CHAR LIMIT=15]-->
+    <string name="event_info_reminders_label">သတိေပးခ်က္မ်ား</string>
+
+    <!-- Agenda View strings -->
+    <skip/>
+    <!-- This is shown as part of the heading at the top of a list of today\'s events. -->
+    <string name="agenda_today">ယေန႔၊ <xliff:g id="DATE">%1$s</xliff:g></string>
+    <!-- This is shown as part of the heading at the top of a list of today\'s events. -->
+    <string name="agenda_yesterday">မေန႔က၊ <xliff:g id="DATE">%1$s</xliff:g></string>
+    <!-- This is shown as part of the heading at the top of a list of today\'s events. -->
+    <string name="agenda_tomorrow">နက္ျဖန္၊ <xliff:g id="DATE">%1$s</xliff:g></string>
+    <!-- This is shown while the calendar events are being loading to the screen. -->
+    <string name="loading">တင္ေန…</string>
+    <!-- This is shown at the top of the agenda view showing the beginning of the searched range. If the user taps on this string and Calendar will find events older than what is visible and display them to the user -->
+    <string name="show_older_events"><xliff:g id="OLDEST_SEARCH_RANGE">%1$s</xliff:g> မတိုင္မီတုန္းက ျဖစ္ရပ္မ်ားကို ၾကည့္ရန္ ထိပါ</string>
+    <!-- This is shown at the bottom of the agenda view showing the end of the searched range. If the user taps on this string and Calendar will find events later/newer than what is visible and display them to the user -->
+    <string name="show_newer_events"><xliff:g id="NEWEST_SEARCH_RANGE">%1$s</xliff:g> ေနာက္ပိုင္း ျဖစ္ရပ္မ်ားကို ၾကည့္ရန္ ထိပါ</string>
+
+    <!-- Search activity strings -->
+    <skip/>
+    <!-- Title of the search screen [CHAR LIMIT=30] -->
+    <string name="search_title">ကြ်ႏု္ပ္ ျပကၡဒိန္မ်ား ရွာေဖြ</string>
+
+    <!-- Button labels: -->
+    <skip/>
+    <!-- This is the title of a popup window that is displayed when the user
+         edits a repeating event. [CHAR LIMIT=20]-->
+    <string name="edit_event_label">အေသးစိတ္မ်ား</string>
+    <!-- This is a menu button for switching into edit mode when viewing an event.
+        [CHAR LIMIT=10] -->
+    <string name="edit_label">တည္းျဖတ္</string>
+    <!-- The button label for deleting an event -->
+    <string name="delete_label">ဖ်က္ရန္</string>
+    <!-- A menu item for deleting an event -->
+
+    <!-- The button label for saving an event -->
+    <string name="save_label">လုပ္ၿပီးပါၿပီ</string>
+    <!-- The button label for discarding changes to an event -->
+    <string name="discard_label">ပယ္ဖ်က္ရန္</string>
+
+    <!-- Button labels on expanded notification reminders: -->
+    <skip/>
+    <!-- The button label for making the reminder alarms go away temporarily.
+         The reminder alarms will fire off again in 5 minutes. -->
+    <string name="snooze_all_label">အားလံုး ေမွးထားရန္</string>
+    <!-- The button label for dismissing all the current reminder alarms. This
+         causes them to disappear from the notification screen. -->
+    <string name="dismiss_all_label">အားလံုးကို ပယ္ရန္</string>
+    <!-- The button label for making the reminder alarms go away temporarily
+         and re-fire in 5 minutes. [CHAR LIMIT=12]-->
+    <string name="snooze_label">ေမွးမည္</string>
+
+    <!-- Repetition dialog options: -->
+    <skip/>
+    <!-- A label in a multiple-choice list for the specifying that an event does
+         not repeat -->
+    <string name="does_not_repeat">တစ္ႀကိမ္ ျဖစ္ရပ္</string>
+    <!-- Part of a description of an repeating event. This part states the date when a repeating
+         event ends. The part before the semi-colon describes how it repeats.
+         e.g. Every 2 weeks; until 1/1/2030 [CHAR LIMIT=21] -->
+    <string name="endByDate">;<xliff:g id="DATE">%s</xliff:g> အထိ</string>
+    <!-- Part of a description of an repeating event. This part how many times the event repeats.
+         The part before the semi-colon describes how it repeats.
+         e.g. Every 2 weeks; for 15 times [CHAR LIMIT=15] -->
+    <plurals name="endByCount">
+        <item quantity="one">၊ တစ္ႀကိမ္</item>
+        <item quantity="other">; <xliff:g id="NUMBER">%d</xliff:g> ႀကိမ္</item>
+    </plurals>
+    <!-- A description for an event that repeats daily. For example, Every 2 days [CHAR LIMIT=15]-->
+    <plurals name="daily">
+        <item quantity="one">ေန႔စဥ္</item>
+        <item quantity="other"><xliff:g id="NUMBER">%d</xliff:g> ရက္တိုင္း</item>
+    </plurals>
+    <!-- A label in a multiple-choice list for the specifying that an event
+         repeats every weekday (Monday through Friday) -->
+    <string name="every_weekday">႐ံုးရက္တိုင္း (တနလၤာ–ေသာၾကာ)</string>
+    <!-- A description for an event that repeats weekly on some day of the week. For example,
+         \'Weekly on Tuesday\' or Every 2 weeks on Monday, Tuesday.  [CHAR LIMIT=25]-->
+    <plurals name="weekly">
+        <item quantity="one">အပတ္စဥ္ <xliff:g id="DAYS_OF_WEEK">%2$s</xliff:g> တြင္</item>
+        <item quantity="other"><xliff:g id="NUMBER">%1$d</xliff:g> ပတ္တိုင္း <xliff:g id="DAYS_OF_WEEK">%2$s</xliff:g> တြင္</item>
+    </plurals>
+
+    <!-- The common portion of a string describing how often an event repeats,
+         example: \'Monthly (on day 2)\' -->
+    <string name="monthly">လစဥ္</string>
+    <!-- Calendar spinner item, to select that an event recurs every year. -->
+    <string name="yearly_plain">ႏွစ္စဥ္</string>
+    <!-- Example: "Monthly (on day 15)" -->
+    <string name="monthly_on_day">လစဥ္ (<xliff:g id="DAY_OF_MONTH">%s</xliff:g>ရက္တြင္)</string>
+    <!-- Example: "Yearly (on April 15)" -->
+    <string name="yearly">ႏွစ္စဥ္ (<xliff:g id="DATES">%s</xliff:g> တြင္)</string>
+    <!-- This is a label for telling the user that this event repeats in
+         custom (non-standard) way from the usual repeat rates (such as daily,
+         weekly, etc.) and that the user cannot change this on the phone
+         (but only on the web). -->
+    <string name="custom" product="tablet">စိတ္ႀကိဳက္ (တက္ဘလက္ ထဲတြင္ စိတ္ႀကိဳက္ ျပဳျပင္၍မရပါ)</string>
+    <!-- This is a label for telling the user that this event repeats in
+         custom (non-standard) way from the usual repeat rates (such as daily,
+         weekly, etc.) and that the user cannot change this on the phone
+         (but only on the web). -->
+    <string name="custom" product="default">စိတ္ႀကိဳက္ (ဖုန္း ထဲတြင္ စိတ္ႀကိဳက္ ျပဳျပင္ မရပါ)</string>
+
+    <!-- This is a choice in a list that the user sees when he tries to modify
+         a repeating event.  This choice says to change just this one instance
+         of this repeating event. -->
+    <string name="modify_event">ဤျဖစ္ရပ္ကိုသာ ေျပာင္းလဲရန္</string>
+    <!-- This is a choice in a list that the user sees when he tries to modify
+         a repeating event.  This choice says to change all occurrences of
+         this repeating event. -->
+    <string name="modify_all">စီးရီးမ်ားထဲက ျဖစ္ရပ္ အားလံုး ေျပာင္းလဲရန္</string>
+    <!-- This is a choice in a list that the user sees when he tries to modify
+         a repeating event.  This choice says to change this instance and all
+         future occurrences of this repeating event. -->
+    <string name="modify_all_following">လက္ရွိ ႏွင့္ အနာဂတ္ ျဖစ္ရပ္မ်ားကို ေျပာင္းလဲရန္</string>
+
+    <!-- Dialogs -->
+
+    <!-- This is a label on the dialog for creating a new event. [CHAR LIMIT=30] -->
+    <string name="new_event_dialog_label">ျဖစ္ရပ္ အသစ္</string>
+    <!-- This is the button to create a new event in a dialog window. [CHAR LIMIT=30] -->
+    <string name="new_event_dialog_option">ျဖစ္ရပ္ အသစ္</string>
+    <!-- Confirmation dialog message -->
+    <skip/>
+    <!-- This is a confirmation message in a popup dialog that appears when the
+         user has asked to delete an event. The user still has a chance to cancel
+         this operation. -->
+    <string name="delete_this_event_title">ဤျဖစ္ရပ္ကို ဖ်က္ရမလား?</string>
+    <!-- This is a confirmation message in a popup dialog that appears when the
+         user has asked to delete an event that is recurring. The user still has a chance to cancel
+         this operation. -->
+    <string name="delete_recurring_event_title"><xliff:g id="EVENTTITLE">%s</xliff:g>ကို ဖ်က္ရမလား?</string>
+    <!-- This is the title of a popup dialog that asks for confirmation before
+         changing the response to an invitation. -->
+    <string name="change_response_title">တံု႔ျပန္ခ်က္ကို ေျပာင္းလဲရန္</string>
+
+    <!-- This the title of a menu for General Preferences.
+         Pressing the menu item lets user to view and edit his general settings
+         (or preferences) [CHAR LIMIT=30] -->
+    <string name="menu_general_preferences">အေထြေထြ ဆက္တင္မ်ား</string>
+
+    <!-- This the title of a menu for "About Calendar" Preferences.
+         Pressing the menu item lets user to view the current settings
+         [CHAR LIMIT=30] -->
+    <string name="menu_about_preferences">ျပကၡဒိန္ အေၾကာင္း</string>
+
+    <!-- This is the title of the screen for setting user preferences. -->
+    <string name="preferences_title">ဆက္တင္မ်ား</string>
+    <!-- This is the title of a section in the Settings screen for settings
+         related to viewing calendar events -->
+    <string name="preferences_general_title">ျပကၡဒိန္ ျမင္ကြင္း ဆက္တင္</string>
+    <!-- This is the title of a section in the Settings screen for settings
+         related to reminders for calendar events -->
+    <string name="preferences_reminder_title">အသိေပးခ်က္မ်ား \u0026 သတိေပးခ်က္မ်ား</string>
+    <!-- Settings check box label to hide events that the user has declined to attend -->
+    <string name="preferences_hide_declined_title">ျငင္းထားသည့္ ပြဲမ်ားေဖ်ာက္ထားရန္</string>
+    <!-- Settings week start label to start week on specific day-->
+    <string name="preferences_week_start_day_title">အပတ္ စတင္သည္မွာ</string>
+    <!-- Title of popup for week start day setting-->
+    <string name="preferences_week_start_day_dialog">အပတ္ စတင္သည္မွာ</string>
+    <!-- DO NOT TRANSLATE -->
+    <string name="preferences_week_start_day_default">-1</string>
+    <!-- Title of the settings item to clear the recent search history [CHAR LIMIT=40] -->
+    <string name="preferences_clear_search_history_title">ရွာေဖြမႈ မွတ္တမ္းကို ရွင္းရန္</string>
+    <!-- Summary of the settings item to clear the recent search history [CHAR LIMIT=70]-->
+    <string name="preferences_clear_search_history_summary">သင္ လုပ္ေဆာင္ခဲ့သည့္ ရွာေဖြမႈ အားလံုး ဖယ္ရွားရန္</string>
+    <!-- Message to show in a toast when the history is cleared [CHAR LIMIT=40] -->
+    <string name="search_history_cleared">ရွာေဖြမႈ မွတ္တမ္း ရွင္းၿပီးၿပီ။</string>
+    <!-- Settings check box label to enable or disable notifications -->
+    <string name="preferences_alerts_title">အေၾကာင္းၾကားခ်က္မ်ား</string>
+    <!-- Settings dialog label that specifies when the phone should vibrate -->
+    <string name="preferences_alerts_vibrateWhen_title">တုန္ခါမႈ</string>
+    <!-- The old value for enabling vibration. used only for migrating -->
+    <string translatable="false" name="prefDefault_alerts_vibrate_true">always</string>
+    <!-- Title of ringtone selector dialog -->
+    <string name="preferences_alerts_ringtone_title">အသံ</string>
+    <!-- Title of check box label to enable or disable pop-up notifications -->
+    <string name="preferences_alerts_popup_title">ေပါ့ပ္အပ္ အေၾကာင္းၾကားခ်က္မ်ား</string>
+    <!-- List item label for setting the default number of reminder minutes -->
+    <string name="preferences_default_reminder_title">သတိေပးခ်က္ ပံုေသ အခ်ိန္</string>
+    <!-- Title of dialog for setting the default number of reminder minutes -->
+    <string name="preferences_default_reminder_dialog">သတိေပးခ်က္ ပံုေသ အခ်ိန္</string>
+    <!-- Default value for the number of reminder minutes -->
+    <string name="preferences_default_reminder_default">10</string>
+    <!-- Settings check box label to keep Calendar in a fixed \'home\' time zone [CHAR LIMIT = 18] -->
+    <string name="preferences_use_home_tz_title">အိမ္ခ်ိန္ဇုန္သံုးရန္</string>
+    <!-- Settings description of what setting Calendar to use a fixed \'home\' time
+        zone does [CHAR LIMIT = 60]-->
+    <string name="preferences_use_home_tz_descrip">ခရီးမွာ ျပကၡဒိန္ ႏွင့္ ျဖစ္ရပ္ခ်ိန္ကို သင့္အိမ္ အခ်ိန္ ဇုန္ျဖင့္ ျပရန္</string>
+    <!-- Settings title for selecting a \'home\' time zone to display Calendar in [CHAR LIMIT = 18] -->
+    <string name="preferences_home_tz_title">အိမ္၏ အခ်ိန္ ဇုန္</string>
+    <!-- DO NOT TRANSLATE -->
+    <string name="preferences_home_tz_default">America/Los_Angeles</string>
+
+    <!-- Title of the settings item to show week number in week view [CHAR LIMIT=40] -->
+    <string name="preferences_show_week_num_title">အပတ္၏ နံပါတ္စဥ္ကို ျပရန္</string>
+
+    <!-- This is the title of a section in the Settings screen for "About" this application -->
+    <string name="preferences_about_title">အေၾကာင္း</string>
+    <!-- Build version of the application -->
+    <string name="preferences_build_version">တည္ေဆာက္မႈ ဗားရွင္း</string>
+
+    <!-- Widget -->
+    <skip/>
+    <!-- Title for calendar gadget when displayed in list of all other gadgets -->
+    <string name="gadget_title">ျပကၡဒိန္</string>
+
+    <!-- Shown in month view next to event icon when additional events exist for that day, but no
+        room remaining -->
+    <plurals name="month_more_events">
+        <!-- additional events message for 1 event, the quotes force a literal interpretation of the
+            string [CHAR LIMIT = 10] -->
+        <item quantity="one">"+1"</item>
+        <!-- additional events message for multiple events [CHAR LIMIT = 10] -->
+        <item quantity="other">+<xliff:g id="NUMBER">%d</xliff:g></item>
+    </plurals>
+
+    <!-- Caption to show on gadget when there are no upcoming calendar events -->
+    <string name="gadget_no_events">လာမည့္ ျပကၡဒိန္ ျဖစ္ရပ္မ်ား မရွိ</string>
+
+    <!-- Text to show on gadget when an event is currently in progress -->
+
+
+    <!-- Text to show on gadget when an all-day event is in progress -->
+
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="tardis">TARDIS</string>
+
+    <!-- Experimental settings [CHAR LIMIT = 30]-->
+    <string name="preferences_experimental_category">စမ္းသပ္မႈဆိုင္ရာ</string>
+
+    <!-- Reminders settings [CHAR LIMIT = 30]-->
+    <string name="preferences_reminders_category">သတိေပးခ်က္မ်ား</string>
+    <!-- Preference label for when to skip reminders [CHAR LIMIT = 25] -->
+    <string name="preferences_reminders_responded_label">သတိေပးခ်က္မ်ား ေက်ာ္ရန္</string>
+    <!-- Dialog title for when to skip reminders [CHAR LIMIT = 25] -->
+    <string name="preferences_reminders_responded_dialog">သတိေပးခ်က္မ်ား ေက်ာ္ရန္</string>
+    <!-- Preference label for quiet hours [CHAR LIMIT = 25]-->
+    <string name="preferences_reminders_quiet_hours_label">တိတ္ဆိတ္မႈ နာရီမ်ား</string>
+    <!-- Preference description for quiet hours [CHAR LIMIT = NONE]-->
+    <string name="preferences_reminders_quiet_hours_description">သတ္မွတ္ အခ်ိန္ အတြင္းမွာ ျဖစ္ရပ္မ်ား သတိေပးခ်က္ တိတ္ထားရန္</string>
+    <!-- Preference label for quiet hours start time [CHAR LIMIT = 25]-->
+    <string name="preferences_reminders_quiet_hours_start">တိတ္ဆိတ္ နာရီမ်ား စခ်ိန္</string>
+    <!-- Preference label for quiet hours end time [CHAR LIMIT = 25]-->
+    <string name="preferences_reminders_quiet_hours_end">တိတ္ဆိတ္မႈ နာရီမ်ားၿပီးဆံုးခ်ိန္</string>
+
+    <!-- Preferences used for debugging purposes [CHAR LIMIT = 30]-->
+    <string name="preferences_debug_category">ဒီဘတ္ဂ်င္း</string>
+
+    <!-- Send a copy of the database to developers for debugging [CHAR LIMIT="NONE"] -->
+    <string name="copy_db">ေဒတာေဘ့စ္ပို႔ပါ</string>
+
+    <!-- Displayed in email address autocomplete list when searching for contacts
+         in corporate directories. Example:  "Searching bigcompany.com..." [CHAR LIMIT=64] -->
+    <string name="directory_searching_fmt"><xliff:g id="DOMAIN">%s</xliff:g> ကို ရွာေန…</string>
+
+    <!-- Accessibility Events -->
+    <!-- Strings that describes actions for buttons without text -->
+    <!-- Create a new calendar event [CHAR LIMIT = NONE]-->
+
+    <!-- Remove a name of an attendee from a calendar event [CHAR LIMIT = NONE]-->
+    <string name="accessibility_remove_attendee">တက္ေရာက္သူကို ဖယ္ရွားပါ</string>
+    <!-- Pick a starting date for a new event [CHAR LIMIT = NONE]-->
+    <string name="accessibility_pick_start_date">စတင္ ရက္စြဲ</string>
+    <!-- Pick a starting time for a new event [CHAR LIMIT = NONE]-->
+    <string name="accessibility_pick_start_time">စတင္ခ်ိန္</string>
+    <!-- Pick the ending date for a new event [CHAR LIMIT = NONE]-->
+    <string name="accessibility_pick_end_date">ၿပီးဆံုးမႈ ရက္စြဲ</string>
+    <!-- Pick the ending time for a new event[CHAR LIMIT = NONE]-->
+    <string name="accessibility_pick_end_time">ၿပီးဆံုးခ်ိန္</string>
+    <!-- Select a time zone for a new event [CHAR LIMIT = NONE]-->
+    <string name="accessibility_pick_time_zone">အခ်ိန္ ဇုန္</string>
+    <!-- Select a time zone for a new event [CHAR LIMIT = NONE]-->
+    <string name="accessibility_pick_recurrence">ျဖစ္ရပ္ကို ထပ္လုပ္ပါ</string>
+    <!-- Add a reminder to an event [CHAR LIMIT = NONE]-->
+    <string name="accessibility_add_reminder">သတိေပးခ်က္ ထည့္ပါ</string>
+    <!-- Remove a reminder from an event [CHAR LIMIT = NONE]-->
+    <string name="accessibility_remove_reminder">သတိေပးမႈ ဖယ္ရွားပါ</string>
+    <!-- Add a new attendee to an event [CHAR LIMIT = NONE]-->
+    <string name="accessibility_add_attendee">တက္ေရာက္သူကို ထည့္ရန္</string>
+    <!-- Choose if to sync/unsync this calendar with its server [CHAR LIMIT = NONE]-->
+    <string name="accessibility_sync_cal">ျပကၡဒိန္ စင့္ခ္လုပ္ပါ</string>
+    <!-- Mark this event as an "all day event" [CHAR LIMIT = NONE]-->
+    <string name="accessibility_all_day">တစ္ေန႔လံုး ျဖစ္ရပ္</string>
+    <!-- Refresh the data in the calendar [CHAR LIMIT = NONE]-->
+
+    <!-- Choose the type of repetition for the event (daily, weekly, etc.[CHAR LIMIT = NONE]-->
+    <string name="accessibility_repeats">ထပ္ျဖစ္မႈ</string>
+    <!-- Set the time for the reminder[CHAR LIMIT = NONE]-->
+    <string name="accessibility_reminder_time">သတိေပးခ်က္ အခ်ိန္</string>
+    <!-- Set the type of the reminder (popup/email/sms)[CHAR LIMIT = NONE]-->
+    <string name="accessibility_reminder_type">သတိေပးခ်က္ ပံုစံ</string>
+    <!-- Select the way you are visible for the event (busy/free) [CHAR LIMIT = NONE]-->
+    <string name="accessibility_reminder_showmeas">ကြ်ႏု္ပ္ကို ...အျဖစ္ ျပရန္</string>
+    <!-- Set the event as private/public/default [CHAR LIMIT = NONE]-->
+    <string name="accessibility_reminder_privacy">ကိုယ္ေရးလံုၿခံဳမႈ</string>
+    <!-- Calendar notification [CHAR LIMIT = NONE]-->
+    <string name="acessibility_cal_notification">ျပကၡဒိန္ အေၾကာင္းၾကားခ်က္</string>
+    <!-- Calendar notification snooze button [CHAR LIMIT = NONE]-->
+    <string name="acessibility_snooze_notification">အေၾကာင္းၾကားခ်က္ကို ေမွးထားရန္</string>
+    <!-- Calendar notification email button [CHAR LIMIT = NONE]-->
+    <string name="accessibility_email_notification">ဧည့္သည္မ်ားထံ အီးေမးလ္ပို႔ရန္</string>
+
+    <!-- A "new event" hint for the user when selecting a specific hour in the day view [CHAR LIMIT = 30]-->
+    <string name="day_view_new_event_hint">+ ျဖစ္ရပ္ အသစ္</string>
+
+    <!--
+      Source: A value for announcing the current event index (example: "Event 2 of 6").
+      Description: This is spoken to the user. [CHAR LIMIT="NONE"]
+    -->
+    <string name="template_announce_item_index">ျဖစ္ရပ္ <xliff:g id="ITEM_INDEX">%1$s</xliff:g> of <xliff:g id="ITEM_COUNT">%2$s</xliff:g>။</string>
+
+        <!-- number of events in the notification bar -->
+    <plurals name="Nevents">
+        <!-- This is the label for a 1 event. -->
+        <item quantity="one">၁ ျဖစ္ရပ္</item>
+        <!-- This is the label for 2 or more events. -->
+        <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> ျဖစ္ရပ္မ်ား</item>
+    </plurals>
+
+    <!-- number of remaining events for an alert digest in the notification bar [CHAR LIMIT = 30] -->
+    <plurals name="N_remaining_events">
+        <!-- This is the label for 1 event. -->
+        <item quantity="one">+၁ ျဖစ္ရပ္</item>
+        <!-- This is the label for 2 or more events. -->
+        <item quantity="other">+<xliff:g id="COUNT">%d</xliff:g> ျဖစ္ရပ္မ်ား</item>
+    </plurals>
+
+    <!-- Description of the selected marker for accessibility support [CHAR LIMIT = NONE]-->
+    <string name="acessibility_selected_marker_description">ေရြးထားသည့္ ျဖစ္ရပ္</string>
+
+    <!-- Tell user not to check a checkbox [CHAR LIMIT=30] -->
+    <string name="do_not_check">မစစ္ေဆးပါႏွင့္ -&gt;</string>
+
+    <!-- Dialog title for recurrence picker for configuring a repeating event[CHAR LIMIT=20] -->
+    <string name="recurrence_dialog_title">ထပ္လုပ္ရန္</string>
+    <!-- Dialog title for recurrence picker when one-time event is selected [CHAR LIMIT=20] -->
+    <string name="recurrence_dialog_title_never">ဘယ္ေတာ့မွ ထပ္မလုပ္ရ</string>
+
+    <!-- Strings to describe how frequently to repeat an event (e.g. every 5 days) -->
+    <plurals name="recurrence_interval_daily">
+        <!-- Singular form [CHAR LIMIT=30] -->
+        <item quantity="one"><xliff:g id="COUNT">%d</xliff:g> ရက္တိုင္း</item>
+        <!-- Plural form [CHAR LIMIT=30] -->
+        <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> ရက္တိုင္း</item>
+    </plurals>
+    <!-- Strings to describe how frequently to repeat an event (e.g. every 5 weeks) -->
+    <plurals name="recurrence_interval_weekly">
+        <!-- Singular form [CHAR LIMIT=30] -->
+        <item quantity="one"><xliff:g id="COUNT">%d</xliff:g> ပတ္တိုင္း</item>
+        <!-- Plural form [CHAR LIMIT=30] -->
+        <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> ပတ္တိုင္း</item>
+    </plurals>
+    <!-- Strings to describe how frequently to repeat an event (e.g. every 5 months) -->
+    <plurals name="recurrence_interval_monthly">
+        <!-- Singular form [CHAR LIMIT=30] -->
+        <item quantity="one"><xliff:g id="COUNT">%d</xliff:g> လတိုင္း</item>
+        <!-- Plural form [CHAR LIMIT=30] -->
+        <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> လတိုင္း</item>
+    </plurals>
+    <!-- Strings to describe how frequently to repeat an event (e.g. every 5 years) -->
+    <plurals name="recurrence_interval_yearly">
+        <!-- Singular form [CHAR LIMIT=30] -->
+        <item quantity="one"><xliff:g id="COUNT">%d</xliff:g> ႏွစ္တိုင္း</item>
+        <!-- Plural form [CHAR LIMIT=30] -->
+        <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> ႏွစ္တိုင္း</item>
+    </plurals>
+
+    <!-- Repeat an monthly event on the same day of every month [CHAR LIMIT=20] -->
+    <string name="recurrence_month_pattern_by_day">လစဥ္ ထို ေန႔မွာ</string>
+
+    <!-- Specifies that a repeating event to repeat forever (based on the defined frequency) instead of ending at a future date[CHAR LIMIT=20] -->
+    <string name="recurrence_end_continously">ထာဝရ</string>
+    <!-- Specifies that a repeating event to repeat until a certain date[CHAR LIMIT=25] -->
+    <string name="recurrence_end_date_label">ရက္စြဲ အထိ</string>
+    <!-- Specifies that a repeating event to repeat until a certain date[CHAR LIMIT=20] -->
+    <string name="recurrence_end_date"><xliff:g id="DATE">%s</xliff:g> အထိ</string>
+    <!-- Specifies that a repeating event to repeat for a number of times. A repeating event can repeat forever, repeat in a certain frequency until a certain date, or repeat for a number of times. e.g. repeat 10 times and stop. This string is for the last case [CHAR LIMIT=25] -->
+    <string name="recurrence_end_count_label">ျဖစ္ရပ္ တစ္သီႀကီး အတြက္</string>
+
+    <!-- Specifies that a repeating event should repeat for a certain number of iterations. [CHAR LIMIT=20]-->
+    <plurals name="recurrence_end_count">
+        <item quantity="one">ျဖစ္ရပ္ <xliff:g id="EVENT_COUNT">%d</xliff:g> အတြက္</item>
+        <item quantity="other">ျဖစ္ရပ္မ်ား <xliff:g id="EVENT_COUNT">%d</xliff:g> အတြက္</item>
+    </plurals>
+
+    <!-- Description of the selected marker for accessibility support [CHAR LIMIT = NONE]-->
+    <string name="acessibility_recurrence_choose_end_date_description">ၿပီးဆံုးရက္စြဲကို ေျပာင္းရန္</string>
+
+    <!-- Do Not Translate.  Sender identity for global notification synchronization. -->
+    <string name="notification_sender_id"/>
+</resources>

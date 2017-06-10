@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- The name of the Android Camera application. [CHAR LIMIT=16] -->
+    <string name="app_name">"ကင်မရာ"</string>
+    <string name="snapcam_app_name">Snapdragon ကင္မရာ</string>
+    <!-- The label for the Video Camera activity. [CHAR LIMIT=16] -->
+    <string name="video_camera_label">"ဗီဒီယိုရိုက်"</string>
+    <!-- Used to format short video duration in Details dialog. minutes:seconds e.g. 00:30 -->
+    <string name="details_ms">%1$02d:%2$02d</string>
+    <!-- Used to format video duration in Details dialog. hours:minutes:seconds e.g. 0:21:30 -->
+    <string name="details_hms">%1$d:%2$02d:%3$02d</string>
+
+    <!-- Displayed in the title of the dialog for things to do with a picture
+             that is to be "set as" (e.g. set as contact photo or set as wallpaper) -->
+    <string name="set_image">"အနေဖြင့် ဓာတ်ပုံအားသတ်မှတ်ရန်"</string>
+
+    <!-- Details dialog "OK" button. Dismisses dialog. -->
+    <string name="delete">"ဖျက်ပစ်ရန်"</string>
+    <!-- String Delete the selected media item(s) [CHAR LIMIT=50] -->
+    <plurals name="delete_selection">
+        <item quantity="one">ရွေးချယ်ထားသော အရာကို ဖျက်ပစ်မလား?</item>
+        <item quantity="other">ရွေးချယ်ထားသော အရာများကို ဖျက်ပစ်မလား?</item>
+    </plurals>
+    <string name="share">မျှဝေပါ</string>
+    <string name="share_panorama">ပြောင်းလဲလျက်ရှိသော ရှုခင်းစဉ် မျှဝေပါ</string>
+    <string name="share_as_photo">ဓာတ်ပုံကဲ့သို့ မျှဝေပါ</string>
+
+    <!-- The label shown after an image is deleted [CHAR LIMIT=16] -->
+    <string name="deleted">ဖျက်ထုတ်ပြီးပါပြီ</string>
+
+    <!-- The label on the button which when clicked will undo a deletion of image [CHAR LIMIT=16]-->
+    <string name="undo">မလုပ်တော့ပါ</string>
+
+    <string name="details">အသေးစိတ်များ</string>
+    <string name="close">နီးသော</string>
+
+    <!-- String indicating how many media item(s) is(are) selected
+            eg. 1 selected [CHAR LIMIT=30] -->
+    <plurals name="number_of_items_selected">
+        <item quantity="zero">%1$d ရွေးထားသည်</item>
+        <item quantity="one">%1$d ရွေးထားသည်</item>
+        <item quantity="other">%1$d ရွေးထားသည်</item>
+    </plurals>
+
+    <!-- String indicating how many media album(s) is(are) selected
+            eg. 1 selected [CHAR LIMIT=30] -->
+    <plurals name="number_of_albums_selected">
+        <item quantity="zero">%1$d ရွေးထားသည်</item>
+        <item quantity="one">%1$d ရွေးထားသည်</item>
+        <item quantity="other">%1$d ရွေးထားသည်</item>
+    </plurals>
+
+    <!-- String indicating how many media group(s) is(are) selected
+            eg. 1 selected [CHAR LIMIT=30] -->
+    <plurals name="number_of_groups_selected">
+        <item quantity="zero">%1$d ရွေးထားသည်</item>
+        <item quantity="one">%1$d ရွေးထားသည်</item>
+        <item quantity="other">%1$d ရွေးထားသည်</item>
+    </plurals>
+
+    <!-- String indicating timestamp of photo or video -->
+    <string name="show_on_map">မြေပုံပေါ်တွင် ပြပါ</string>
+    <string name="rotate_left">ဘယ်ဘက် လည်ပါ</string>
+    <string name="rotate_right">ညာဘက် လည်ပါ</string>
+
+    <!-- String used as a menu label. The user can choose to edit the image
+         [CHAR_LIMIT=20]-->
+    <string name="edit">တည်းဖြတ်သည်</string>
+
+    <!-- The title of the menu item to let user crop the image. [CHAR LIMIT=15] -->
+    <string name="crop_action">ဖြတ်ညှပ်ကပ်ပါ</string>
+    <!-- The title of the menu item to let user trim the video. [CHAR LIMIT=15] -->
+    <string name="trim_action">ချုံ့ပါ</string>
+    <!-- The title of the menu item to let user set the image as background etc. [CHAR LIMIT=15] -->
+    <string name="set_as">အဖြစ် သတ်မှတ်ပါ</string>
+
+    <!-- String indicating an error when playing the video. [CHAR LIMIT=30] -->
+    <string name="video_err">ဗီဒီယို ဖွင့်လို့ မရနိုင်ပါ။</string>
+
+    <!-- Toast message shown when the cropped image has been saved in the
+         %s folder (string: folder_download) [CHAR LIMIT=50]-->
+    <string name="crop_saved">
+        ဖြတ်ညှပ်ထားသော ပုံကို <xliff:g id="folder_name">%s</xliff:g> တွင် သိမ်းဆည်းလိုက်သည်။</string>
+
+    <!-- Text indicating the title of a media item in details window [CHAR LIMIT=14] -->
+    <string name="title">ခေါင်းစဉ်</string>
+    <!-- Text indicating the description of a media item in details window [CHAR LIMIT=14] -->
+    <string name="description">ဖော်ပြချက်</string>
+    <!-- Text indicating the creation time of a media item in details window [CHAR LIMIT=14] -->
+    <string name="time">အချိန်</string>
+    <!-- Text indicating the location of a media item in details window [CHAR LIMIT=14] -->
+    <string name="location">တည်နေရာ</string>
+    <!-- Text indicating the path of a media item in details window [CHAR LIMIT=14] -->
+    <string name="path">လမ်းကြောင်း</string>
+    <!-- Text indicating the width of a media item in details window [CHAR LIMIT=14] -->
+    <string name="width">အကျယ်</string>
+    <!-- Text indicating the height of a media item in details window [CHAR LIMIT=14] -->
+    <string name="height">အမြင့်</string>
+    <!-- Text indicating the orientation of a media item in details window [CHAR LIMIT=14] -->
+    <string name="orientation">အသားပေးခြင်း</string>
+    <!-- Text indicating the duration of a video item in details window [CHAR LIMIT=18] -->
+    <string name="duration">ကြာချိန်</string>
+    <!-- Text indicating the mime type of a media item in details window [CHAR LIMIT=14] -->
+    <string name="mimetype">MIME အမျိုးအစား</string>
+    <!-- Text indicating the file size of a media item in details window [CHAR LIMIT=14] -->
+    <string name="file_size">ဖိုင်အရွယ်အစား</string>
+    <!-- Text indicating the maker of a media item in details window [CHAR LIMIT=14] -->
+    <string name="maker">ပြုလုပ်သူ</string>
+    <!-- Text indicating the model of a media item in details window [CHAR LIMIT=14] -->
+    <string name="model">မော်ဒယ်</string>
+    <!-- Text indicating flash info of a media item in details window [CHAR LIMIT=14] -->
+    <string name="flash">ဖလက်ချ်မီး</string>
+    <!-- Text indicating aperture of a media item in details window [CHAR LIMIT=14] -->
+    <string name="aperture">အပါချာ</string>
+    <!-- Text indicating the focal length of a media item in details window [CHAR LIMIT=14] -->
+    <string name="focal_length">ဆုံတာ</string>
+    <!-- Text indicating the white balance of a media item in details window [CHAR LIMIT=18] -->
+    <string name="white_balance">အဖြူရောင်မျှခြေ</string>
+    <!-- Text indicating the exposure time of a media item in details window [CHAR LIMIT=14] -->
+    <string name="exposure_time">အလင်းရောင်ဖွင့်ထားသည့်အချိန်</string>
+    <!-- Text indicating the ISO speed rating of a media item in details window [CHAR LIMIT=14] -->
+    <string name="iso">ISO</string>
+    <!-- String indicating the time units in seconds. [CHAR LIMIT=8] -->
+    <!-- String indicating the length units in milli-meters. [CHAR LIMIT=8] -->
+    <string name="unit_mm">mm</string>
+    <!-- String indicating how camera shooting feature is used. [CHAR LIMIT=12] -->
+    <string name="manual">လူမှလုပ်ဆောင်သည်</string>
+    <!-- String indicating how camera shooting feature is used. [CHAR LIMIT=12 -->
+    <string name="auto">အလိုအလျောက်</string>
+    <!-- String indicating camera flash is fired. [CHAR LIMIT=14] -->
+    <string name="flash_on">ဖလက်ချ်မီး လက်သွားသည်</string>
+    <!-- String indicating camera flash is not used. [CHAR LIMIT=14] -->
+    <string name="flash_off">ဖလက်ချ်မီး မပွင့်ပါ</string>
+
+    <!-- String indicating image width or height is unknown. [CHAR LIMIT=14] -->
+    <string name="unknown">အမည်မသိ</string>
+
+    <!-- Toast message shown after we try to make a local album available offline
+         [CHAR LIMIT=150] -->
+    <string name="try_to_set_local_album_available_offline">
+        ဤအရာကို မိမိကိရိယာထဲမှာ သိုလှောင်ထားလိုက်ပြီး၊ အင်တာနက် မရှိလည်း ရပါပြီ။</string>
+
+
+    <!-- The content of a dialog showing trimming in progress. [CHAR LIMIT=30] -->
+    <string name="please_wait">​ကျေးဇူးပြု၍ စောင့်ပါ</string>
+
+    <!-- Text to show with progress bar while stitching a photo sphere. \'Photo sphere\' is a product name. [CHAR LIMIT=35]-->
+    <string name="rendering_photo_sphere">ပုံအဝန်းအဝိုင်း ပြောင်းခြင်း</string>
+
+    <!-- title for the dialog showing the error of camera hardware -->
+    <string name="camera_error_title">ကင်မရာအမှား</string>
+
+    <!-- message for the dialog showing the error of camera hardware -->
+    <string name="cannot_connect_camera">ကင်မရာနှင့်ချိတ်၍မရပါ။</string>
+
+    <!-- message for the dialog showing the camera is disabled because of security policies. Camera cannot be used. -->
+    <string name="camera_disabled">လုံခြုံရေးမူဝါဒများကြောင့် ကင်မရာကို အလုပ်မလုပ်နိုင်အောင်ဆောင်ရွက်ထားပါသည်။</string>
+
+    <!-- alert to the user to wait for some operation to complete -->
+    <string name="wait">ကျေးဇူးပြု၍\u2026 စောင့်ပေးပါ</string>
+
+    <!-- alert to the user that an SD card must be installed before using the camera -->
+    <string name="no_storage" product="default">ကင်မရာကိုအသုံးမပြုမီ SD ကဒ်ကိုထည့်ပါ။</string>
+
+    <!-- alert to the user that the SD card is being disk-checked -->
+    <string name="preparing_sd" product="default">SD ကဒ် အသင့်ပြင်နေပါသည်\u2026</string>
+
+    <!-- alert to the user that the camera fails to read or write the SD card. -->
+    <string name="access_sd_fail" product="default">SD ကဒ်ကို လက်မခံပါ။</string>
+
+    <!-- A label that overlays on top of the preview frame to indicate the camcorder is in time lapse mode [CHAR LIMIT=35] -->
+    <string name="time_lapse_title">အသံသွင်းသည့်အချိန်</string>
+
+    <!-- Screen display message during image capture to indicate that the capture is in progress, like during HDR+. [CHAR LIMIT=20] -->
+    <string name="capturing">"ရိုက်ယူရန်"</string>
+
+    <!-- Settings screen, camera selection dialog title. Users can select a camera from the phone (front-facing or back-facing). [CHAR LIMIT=20] -->
+    <string name="pref_camera_id_title">"ကင်မရာရွေးရန်"</string>
+
+    <string name="pref_camera_id_default" translatable="false">0</string>
+
+    <!-- In select camera setting, back facing camera. [CHAR LIMIT=14] -->
+    <string name="pref_camera_id_entry_back">"နောက်သို့"</string>
+    <!-- In select camera setting, front-facing camera. [CHAR LIMIT=14] -->
+    <string name="pref_camera_id_entry_front">"အရှေ့"</string>
+
+    <!-- Settings screen, setting title text -->
+    <string name="pref_camera_recordlocation_title">တည်နေရာကို သိမ်းဆည်းထားပါ</string>
+
+    <string name="pref_camera_recordlocation_default" translatable="false">none</string>
+
+    <!--  Label for record location preference [CHAR LIMIT=50] -->
+    <string name="pref_camera_location_label">တည်နေရာ</string>
+
+    <!-- Title for countdown timer on camera settings screen [CHAR LIMIT=30]-->
+    <string name="pref_camera_timer_title">နောက်ပြန်ရေတွက်သည့် အချိန်တိုင်းကိရိယာ</string>
+
+    <string name="pref_camera_timer_default" translatable="false">0</string>
+    <!-- Entry for countdown timer setting. e.g. 1 second, 10 seconds, etc. [CHAR LIMIT=30]-->
+    <plurals name="pref_camera_timer_entry">
+        <item quantity="one">1 စက္ကန့်</item>
+        <item quantity="other">%d စက္ကန့်များ</item>
+    </plurals>
+    <string name="pref_camera_timer_sound_default">@string/setting_on_value</string>
+    <!-- Text followed by a checkbox to turn on/off sound effects during the countdown. [CHAR LIMIT = 24]-->
+    <string name="pref_camera_timer_sound_title">​နောက်ပြန်ရေတွက်စဉ် တတီတီမြည်ပါ</string>
+
+    <!-- Entry of camera save path -->
+    <string name="pref_camera_savepath_title">သိုေလွာင္ခန္း ေနရာ</string>
+    <string name="pref_camera_savepath_default">0</string>
+    <string name="pref_camera_savepath_entry_0">"ဖုန်း"</string>
+    <string name="pref_camera_savepath_entry_1">SD ကတ္</string>
+
+    <!-- Entry of a on/off setting. The setting is turned off. [CHAR LIMIT=15] -->
+    <string name="setting_off">ပိတ်သည်</string>
+    <!-- Entry of a on/off setting. The setting is turned on. [CHAR LIMIT=15] -->
+    <string name="setting_on">ဖွင့်ပါ</string>
+
+    <!-- The value of a camera preference indicating the setting is off. -->
+    <string name="setting_off_value" translatable="false">off</string>
+    <!-- The value of a camera preference indicating the setting is on. -->
+    <string name="setting_on_value" translatable="false">on</string>
+
+    <!-- The Video quality settings in preference [CHAR LIMIT=21] -->
+    <string name="pref_video_quality_title">ဗွီဒီယို အရည်အသွေး</string>
+    <!-- Video quality setting entry.
+    Videos will be recorded in 4k DCI quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_4kdci" translatable="false">
+    4k DCI</string>
+    <!-- Video quality setting entry.
+    Videos will be recorded in 4k UHD quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_2160p" translatable="false">
+    4k UHD</string>
+    <!-- Video quality setting entry.
+    Videos will be recorded in 4k UHD quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_4kuhd" translatable="false">
+    4k UHD</string>
+    <!-- Video quality setting entry. Videos will be recorded in 1080p quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_1080p" translatable="false">HD 1080p</string>
+    <!-- Video quality setting entry. Videos will be recorded in 720p quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_720p" translatable="false">HD 720p</string>
+    <!-- Video quality setting entry. Videos will be recorded in 480p quality. [CHAR LIMIT=24] -->
+    <string name="pref_video_quality_entry_480p" translatable="false">SD 480p</string>
+
+    <!-- Describes the preference dialog for choosing interval between frame capture for
+    time lapse recording. Appears at top of the dialog. [CHAR LIMIT=30] -->
+    <string name="pref_video_time_lapse_frame_interval_title">အချိန်ကာလ ကြာညောင်းမှု</string>
+    <string name="pref_video_time_lapse_frame_interval_default" translatable="false">0</string>
+
+    <!-- Settings screen, Camera setting category title -->
+    <string name="pref_camera_settings_category">ကင်မရာဆက်တင်များ</string>
+
+    <!-- Settings screen, Camcorder setting category title -->
+    <string name="pref_camcorder_settings_category">အသံဖမ်းစက်ပါကင်မရာဆက်တင်</string>
+
+    <!-- Settings screen, Picture size title -->
+    <string name="pref_camera_picturesize_title">ပုံအရွယ်အစား</string>
+    <!-- Settings screen, dialog choice for 20 megapixels picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_20mp">20M ပစ္ဇယ္မ်ား</string>
+    <!-- Settings screen, dialog choice for 16 megapixels picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_16mp">16M ပစ္ဇယ္မ်ား</string>
+    <!-- Settings screen, dialog choice for 13 megapixels picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_13mp">13M ပစ်ဇယ်များ</string>
+    <!-- Settings screen, dialog choice for 12 megapixels picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_12mp">12M ပစ်ဇယ်များ</string>
+    <!-- Settings screen, dialog choice for 8 megapixels picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_8mp">8M ပစ်ဇယ်များ</string>
+    <!-- Settings screen, dialog choice for square picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_square">ႏွစ္ထပ္ကိန္း (၁:၁)</string>
+    <!-- Settings screen, dialog choice for 5 megapixels picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_5mp">5M ပစ်ဇယ်များ</string>
+    <!-- Settings screen, dialog choice for 4 megapixels picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_4mp_wide">4M ပစ္ဇယ္ (၁၆:၉)</string>
+    <!-- Settings screen, dialog choice for 3 megapixels picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_3mp">13M ပစ်ဇယ်များ</string>
+    <!-- Settings screen, dialog choice for 2 megapixels picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_2mp">12M ပစ်ဇယ်များ</string>
+    <!-- Settings screen, dialog choice for 2 megapixels picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_2mp_wide">2M ပစ်ဇယ်များ (16:9)</string>
+    <!-- Settings screen, dialog choice for 1.5 megapixels picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_1_5mp">1.5M ပစ္ဇယ္</string>
+    <!-- Settings screen, dialog choice for 1.3 megapixels picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_1_3mp">1.3M ပစ်ဇယ်များ</string>
+    <!-- Settings screen, dialog choice for 1 megapixels picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_1mp">1M ပစ်ဇယ်များ</string>
+    <!-- Settings screen, dialog choice for VGA picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_vga">VGA</string>
+    <!-- Settings screen, dialog choice for QVGA picture size [CHAR LIMIT=20] -->
+    <string name="pref_camera_picturesize_entry_qvga">QVGA</string>
+
+    <!-- Settings screen, Focus mode title -->
+    <string name="pref_camera_focusmode_title">ပစ်မှတ်မုဒ်</string>
+
+    <!-- Settings screen, Focus mode dialog radio button choices -->
+    <string name="pref_camera_focusmode_entry_auto">အလိုအလျောက်</string>
+    <!-- A setting that lets the camera focus into infinity. [CHAR LIMIT=20] -->
+    <string name="pref_camera_focusmode_entry_infinity">အင်ဖနတီ</string>
+    <!-- A setting that lets the camera operate in macro focus mode for nearby objects. [CHAR LIMIT=20] -->
+    <string name="pref_camera_focusmode_entry_macro">မခရို</string>
+
+    <!-- Menu, focus mode labels [CHAR LIMIT=50] -->
+    <string name="pref_camera_focusmode_label_auto">အလိုလို</string>
+    <string name="pref_camera_focusmode_label_infinity">အင်ဖနတီ</string>
+    <string name="pref_camera_focusmode_label_macro">မခရို</string>
+
+    <!-- Default flash mode setting.-->
+    <string name="pref_camera_flashmode_default" translatable="false">auto</string>
+
+    <!-- Value for flash off setting-->
+    <string name="pref_camera_flashmode_no_flash" translatable="false">no_flash</string>
+
+    <!-- Settings screen, Flash mode title -->
+    <string name="pref_camera_flashmode_title">မီးမုဒ်</string>
+        <!-- flash label [CHAR LIMIT=50] -->
+    <string name="pref_camera_flashmode_label">မီးမုဒ်</string>
+
+    <!-- Settings screen, Flash mode \'auto\'. [CHAR LIMIT=12] -->
+    <string name="pref_camera_flashmode_entry_auto">အလိုအလျောက်</string>
+    <!-- Settings screen, Flash mode \'alway on\'. [CHAR LIMIT=12] -->
+    <string name="pref_camera_flashmode_entry_on">ဖွင့်ပါ</string>
+    <!-- Settings screen, Flash mode \'always off\'. [CHAR LIMIT=12] -->
+    <string name="pref_camera_flashmode_entry_off">ပိတ်သည်</string>
+
+    <!-- Menu, flash mode labels [CHAR LIMIT=50] -->
+    <string name="pref_camera_flashmode_label_auto">အလိုလို ဖလက်ချ်မီး</string>
+    <string name="pref_camera_flashmode_label_on">ဖလက်ချ်မီး ဖွင့်ထားသည်</string>
+    <string name="pref_camera_flashmode_label_off">ဖလက်ချ်မီး ပိတ်ထားသည်</string>
+
+    <!-- Default videocamera flash mode setting.-->
+    <string name="pref_camera_video_flashmode_default" translatable="false">off</string>
+
+    <!-- Default white balance setting. -->
+    <string name="pref_camera_whitebalance_default" translatable="false">auto</string>
+
+    <!-- Settings screen, white balance title -->
+    <string name="pref_camera_whitebalance_title">အဖြူရောင်မျှခြေ</string>
+    <!-- Menu, white balance label -->
+    <string name="pref_camera_whitebalance_label">အဖြူရောင်မျှခြေ</string>
+
+    <!-- Settings screen, White balance dialog radio button choices -->
+    <string name="pref_camera_whitebalance_entry_auto">အလိုအလျောက်</string>
+    <string name="pref_camera_whitebalance_entry_incandescent">အလွန်တောက်ပခြင်း</string>
+    <string name="pref_camera_whitebalance_entry_daylight">နေ့အလင်းရောင်</string>
+    <string name="pref_camera_whitebalance_entry_fluorescent">မီးချောင်းအလင်း</string>
+    <string name="pref_camera_whitebalance_entry_cloudy">တိမ်ထူ</string>
+
+    <!-- Menu, White balance labels [CHAR LIMIT=50] -->
+    <string name="pref_camera_whitebalance_label_auto">အလိုလို</string>
+    <string name="pref_camera_whitebalance_label_incandescent">အလွန်တောက်ပခြင်း</string>
+    <string name="pref_camera_whitebalance_label_daylight">နေ့အလင်းရောင်</string>
+    <string name="pref_camera_whitebalance_label_fluorescent">မီးချောင်းအလင်း</string>
+    <string name="pref_camera_whitebalance_label_cloudy">တိမ်ထူ</string>
+
+    <!-- Default scene mode setting. -->
+    <string name="pref_camera_scenemode_default" translatable="false">auto</string>
+
+    <!-- Settings screen, Select Scene mode -->
+    <string name="pref_camera_scenemode_title">ရှုခင်း</string>
+
+    <!-- Settings menu, scene mode choices [CHAR LIMIT=16] -->
+    <string name="pref_camera_scenemode_entry_auto">"အလိုအလျောက်"</string>
+    <!-- Scene mode that uses HDR plus (better HDR) [CHAR LIMIT=16] -->
+    <string name="pref_camera_scenemode_entry_hdr_plus">"HDR+"</string>
+    <!-- Scene mode that uses HDR (high dynamic range) [CHAR LIMIT=16] -->
+    <string name="pref_camera_scenemode_entry_hdr">"HDR"</string>
+    <!-- Scene mode to turn on HDR (better high dynamic range) [CHAR LIMIT=50] -->
+    <string name="pref_camera_scenemode_entry_turn_hdr_plus_on">"HDR+ ဖွင့်ထား"</string>
+    <!-- Scene mode to turn off HDR (better high dynamic range) [CHAR LIMIT=50] -->
+    <string name="pref_camera_scenemode_entry_turn_hdr_plus_off">"HDR+ ပိတ်ထား"</string>
+    <!-- Scene mode to turn on HDR (high dynamic range) [CHAR LIMIT=50] -->
+    <string name="pref_camera_scenemode_entry_turn_hdr_on">"HDR ဖွင့်ထား"</string>
+    <!-- Scene mode to turn off HDR (high dynamic range) [CHAR LIMIT=50] -->
+    <string name="pref_camera_scenemode_entry_turn_hdr_off">"HDR ပိတ်ထား"</string>
+    <!-- Scene mode that takes an image quickly with little motion blur. [CHAR LIMIT=16] -->
+    <string name="pref_camera_scenemode_entry_action">"လုပ်ဆောင်မှု"</string>
+    <!-- Scene mode that takes long exposures to capture night scenes without flash. [CHAR LIMIT=16] -->
+    <string name="pref_camera_scenemode_entry_night">"ည"</string>
+    <!-- Scene mode optimized for taking images in the sunset. [CHAR LIMIT=16] -->
+    <string name="pref_camera_scenemode_entry_sunset">"နေဝင်ချိန်"</string>
+    <!-- Scene mode optimized for taking indoor low-lights pictures. [CHAR LIMIT=16] -->
+    <string name="pref_camera_scenemode_entry_party">"ပါတီ"</string>
+    <!-- Scene mode for refocus feature [CHAR LIMIT=16] -->
+    <string name="pref_camera_scenemode_entry_refocus">Micro+</string>
+
+    <!-- Settings menu, scene mode labels [CHAR LIMIT=50] -->
+    <string name="pref_camera_scenemode_label_auto">"တစ်ခုမှမဟုတ်ပါ"</string>
+    <!-- Scene mode that takes an image quickly with little motion blur. [CHAR LIMIT=50] -->
+    <string name="pref_camera_scenemode_label_action">"ဆောင်ရွက်မှု"</string>
+    <!-- Scene mode that takes long exposures to capture night scenes without flash. [CHAR LIMIT=50] -->
+    <string name="pref_camera_scenemode_label_night">"ည"</string>
+    <!-- Scene mode optimized for taking images in the sunset. [CHAR LIMIT=50] -->
+    <string name="pref_camera_scenemode_label_sunset">"နေဝင်ချိန်"</string>
+    <!-- Scene mode optimized for taking indoor low-lights pictures. [CHAR LIMIT=50] -->
+    <string name="pref_camera_scenemode_label_party">"ပါတီ"</string>
+
+    <!-- Settings menu countdown timer off [CHAR LIMIT=50] -->
+    <string name="pref_camera_countdown_label_off">"အချိန်မှတ်မှုမရှိ"</string>
+    <!-- Settings menu countdown timer 1 second [CHAR LIMIT=50] -->
+    <string name="pref_camera_countdown_label_one">"၁ စက္ကန့်"</string>
+    <!-- Settings menu countdown timer 3 seconds [CHAR LIMIT=50] -->
+    <string name="pref_camera_countdown_label_three">"၃ စက္ကန့်"</string>
+    <!-- Settings menu countdown timer 10 seconds [CHAR LIMIT=50] -->
+    <string name="pref_camera_countdown_label_ten">"၁၀ စက္ကန့်"</string>
+    <!-- Settings menu countdown timer 15 seconds [CHAR LIMIT=50] -->
+    <string name="pref_camera_countdown_label_fifteen">"၁၅ စက္ကန့်"</string>
+
+    <!-- Toast after trying to select a setting that is not allowed to change in scene mode [CHAR LIMIT=NONE] -->
+    <string name="not_selectable_in_scene_mode">"မြင်ကွင်အနေအထားတွင်း ရွေးမရပါ"</string>
+
+    <!-- Toast after enable HDR function to inform Continuous Shot has disabled -->
+    <string name="HDR_disable_continuous_shot">HDR ကုိဖြင္ျခင္းျဖင့္ ဆက္တုိက္ရုိက္ခ်က္ကုိ ပိတ္လိမ့္မည္။</string>
+
+
+    <!-- Toast after enable Advanced Capture function to inform Continuous Shot has disabled -->
+    <string name="advanced_capture_disable_continuous_shot">ၤအဆင့္ျမင့္ ရုိက္ကူးမႈကုိ ဖြင့္ျခင္းျဖင့္ ဆက္တုိက္ရုိက္ခ်က္ကုိ ပိတ္လိမ့္မည္။</string>
+
+    <!-- Toast after enable 2k4k video quality to inform IS has disabled -->
+    <string name="video_quality_4k_disable_IS">4k ဗီဒီယုိ အရည္အေသြးကုိ ဖြင့္ျခင္းျဖင့္ IS ကုိပိတ္လိမ့္မည္။</string>
+
+    <!-- Exposure settings in preference -->
+    <string name="pref_exposure_title">"အလင်းရမှု"</string>
+    <string name="pref_exposure_default" translatable="false">0</string>
+    <!--  menu label exposure compensation [CHAR LIMIT=50] -->
+    <string name="pref_exposure_label">"အလင်းထိတွေ့နှုန်း"</string>
+
+    <!-- Default HDR entry value -->
+    <string name="pref_camera_hdr_default">@string/setting_off_value</string>
+
+    <!-- Default HDR+ entry value -->
+    <string name="pref_camera_hdr_plus_default">@string/setting_off_value</string>
+
+    <!-- HDR label ON [CHAR LIMIT=60] -->
+    <string name="pref_camera_hdr_label">"HDR"</string>
+
+    <!-- switch camera label back [CHAR LIMIT=60] -->
+    <string name="pref_camera_id_label_back">"အရှေ့ကင်မရာ"</string>
+    <!-- switch camera label front [CHAR LIMIT=60] -->
+    <string name="pref_camera_id_label_front">"နောက်ကင်မရာ"</string>
+
+    <!-- Dialog "OK" button. Dismisses dialog. -->
+    <string name="dialog_ok">"ကောင်းပြီ"</string>
+
+    <!-- Low-memory dialog message [CHAR LIMIT=NONE] -->
+    <string name="spaceIsLow_content" product="default">"SD ကဒ်တွင် နေရာလွတ် နည်းနေပါပြီ။ ကွာလတီ ဆက်တင် ပြောင်းခြင်း သို့မဟုတ် ပုံအချို့ သို့မဟုတ် တခြားဖိုင်များအား ဖျက်ခြင်းလုပ်ပါ"</string>
+
+    <!-- Camera format string for new image files. Passed to java.text.SimpleDateFormat. -->
+    <string name="image_file_name_format" translatable="false">"\'IMG\'_yyyyMMdd_HHmmss"</string>
+
+    <!-- Video Camera format string for new video files. Passed to java.text.SimpleDateFormat. -->
+    <string name="video_file_name_format" translatable="false">"\'VID\'_yyyyMMdd_HHmmss"</string>
+
+    <!-- Filename prefix for panorama output. -->
+    <string name="pano_file_name_format" translatable="false">"\'PANO\'_yyyyMMdd_HHmmss"</string>
+
+    <!-- The message shown when video record reaches size limit. -->
+    <string name="video_reach_size_limit">"အရွယ်ကန့်သတ်မှုကျော်လွန်"</string>
+
+    <!-- The text shown when the panorama panning speed is to fast [CHAR LIMIT=16] -->
+    <string name="pano_too_fast_prompt">"အရမ်းမြန်"</string>
+
+    <!-- The text shown in the progress dialog when panorama preview is generating in the background [CHAR LIMIT=30] -->
+    <string name="pano_dialog_prepare_preview">"မြင်ကွင်းကျယ်အတွက်ပြင်ဆင်နေစဉ်"</string>
+
+    <!-- The text shown in the dialog when panorama saving failed [CHAR LIMIT=40] -->
+    <string name="pano_dialog_panorama_failed">"မြင်ကွင်းကျယ်အား သိမ်းလို့မရပါ"</string>
+
+    <!-- The text shown on the dialog title in the dialogs for Panorama [CHAR LIMIT=12] -->
+    <string name="pano_dialog_title">"မြင်ကွင်းကျယ်"</string>
+
+    <!-- The text shown on the top-left corner of the screen to indicate the capturing is on going [CHAR LIMIT=27] -->
+    <string name="pano_capture_indication">"မြင်ကွင်းကျယ်အားရိုက်နေစဉ်"</string>
+
+    <!-- The text shown in the progress dialog when waiting for previous panorama finishing [CHAR LIMIT=40] -->
+    <string name="pano_dialog_waiting_previous">"ပြီးခဲ့သော မြင်ကွင်းကျယ်အား စောင့်နေစဉ်"</string>
+
+    <!-- The text shown on the bottom-left corner of the screen to indicate that the saving is in process [CHAR LIMIT=13] -->
+    <string name="pano_review_saving_indication_str">"သိမ်းနေစဉ်…"</string>
+
+    <!-- The text shown on the screen to indicate that the panorama is rendering [CHAR LIMIT=27] -->
+    <string name="pano_review_rendering">"မြင်းကွင်းကျယ်အား ပြသနေစဉ်"</string>
+
+    <!-- Toast telling users tapping on the viewfinder will trigger autofocus [CHAR LIMIT=28] -->
+    <string name="tap_to_focus">"ဗဟိုချိန်ရန် ထိကိုင်ပါ"</string>
+
+    <!-- Default effect setting that clears the effect. -->
+    <string name="pref_video_effect_default" translatable="false">none</string>
+
+    <!-- Title of video effect setting popup window -->
+    <string name="pref_video_effect_title">"အထူးပြုလုပ်ချက်များ"</string>
+
+    <!-- Effect setting item that clear the effect. [CHAR LIMIT=14] -->
+    <string name="effect_none">"တစ်ခုမှမဟုတ်ပါ"</string>
+    <!-- Effect setting item that squeezes the face. [CHAR LIMIT=14] -->
+    <string name="effect_goofy_face_squeeze">"ဖြစ်ညှစ်သည်"</string>
+    <!-- Effect setting item that makes eyes big. [CHAR LIMIT=14] -->
+    <string name="effect_goofy_face_big_eyes">"မျက်လုံးကြီး"</string>
+    <!-- Effect setting item that makes mouth big. [CHAR LIMIT=14] -->
+    <string name="effect_goofy_face_big_mouth">"ပါးစပ်ကြီး"</string>
+    <!-- Effect setting item that makes mouth small. [CHAR LIMIT=14] -->
+    <string name="effect_goofy_face_small_mouth">"ပါးစပ်သေး"</string>
+    <!-- Effect setting item that makes nose big. [CHAR LIMIT=14] -->
+    <string name="effect_goofy_face_big_nose">"နှာခေါင်းကြီး"</string>
+    <!-- Effect setting item that makes eyes small. [CHAR LIMIT=14] -->
+    <string name="effect_goofy_face_small_eyes">"မျက်လုံးသေး"</string>
+    <!-- Effect setting item that replaces background with Android in Space. [CHAR LIMIT=14] -->
+    <string name="effect_backdropper_space">"အာကာသတွင်"</string>
+    <!-- Effect setting item that replaces background with a sunset. [CHAR LIMIT=14] -->
+    <string name="effect_backdropper_sunset">"နေဝင်ချိန်"</string>
+    <!-- Effect setting item that replaces background with video from gallery. [CHAR LIMIT=14] -->
+    <string name="effect_backdropper_gallery">"သင့် ဗီဒီယို"</string>
+
+    <!-- Toast telling users tapping on the viewfinder will take a picture [CHAR LIMIT=54] -->
+    <string name="video_snapshot_hint">"ရိုက်ကူးနေစဉ် ဓာတ်ပုံရိုက်ရန် ထိကိုင်ပါ"</string>
+
+    <!-- Announcement telling users video recording has just started [CHAR LIMIT=NONE] -->
+    <string name="video_recording_started">"ဗီဒီယိုရိုက်မှုစတင်ပြီး"</string>
+    <!-- Announcement telling users video recording has just stopped [CHAR LIMIT=NONE] -->
+    <string name="video_recording_stopped">"ဗီဒီယိုရိုက်မှုရပ်သွားပြီး"</string>
+
+    <!-- A button in effect setting popup to clear the effect. [CHAR LIMIT=26] -->
+    <string name="clear_effects">"အထူးပြုလုပ်ချက်များဖယ်ရန်"</string>
+
+    <!-- Title of category for silly face effects. [CHAR LIMIT=26] -->
+    <string name="effect_silly_faces">"အသုံးမကျသောမျက်နှာများ"</string>
+
+    <!-- Title of category for background replacement effects. [CHAR LIMIT=26] -->
+    <string name="effect_background">"နောက်ခံ"</string>
+
+    <!-- The shutter button. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_shutter_button">"ရှပ်တာ"</string>
+    <!-- The menu button. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_menu_button">"မီနူးခလုတ်"</string>
+    <!-- The mode picker to switch between camera, video and panorama. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_mode_picker">ကင်မရာ၊ ဗွီဒီယို သို့မဟုတ် ပါနိုရာ</string>
+    <!-- The check box in camera settings, such as store location. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_check_box">%1$s ရွေးချယ်ပေးရန်အကွက်</string>
+    <!-- The button to switch to Camera mode. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_switch_to_camera">ဓာတ်ပုံသို့ ပြောင်းပါ</string>
+    <!-- The button to switch to Video mode. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_switch_to_video">ဗွီဒီယိုသို့ပြောင်းပါ</string>
+    <!-- The button to switch to Panorama mode. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_switch_to_panorama">မြင်ကွင်းကျယ်သို့ ပြောင်းမည်</string>
+    <!-- The button to switch to the Photo Sphere mode. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_switch_to_photo_sphere">"Photo Sphere သို့ ပြောင်းရန်"</string>
+    <!-- The button to switch to the high quality mode. [CHAR LIMIT = NONE] -->
+    <string name="accessibility_switch_to_gcam">"အရည်အသွေးအမြင့်ပြောင်းရန်"</string>
+    <!-- The button in review mode indicating that the photo taking, video recording, and panorama saving session should be canceled [CHAR LIMIT = NONE] -->
+    <string name="accessibility_review_cancel">"သုံးသပ်မှုအား ပယ်ဖျက်ရန်"</string>
+    <!-- The button in review mode indicating that the taken photo/video is OK to be attached/uploaded [CHAR LIMIT = NONE] -->
+    <string name="accessibility_review_ok">"သုံးသပ်မှုပြီး"</string>
+    <!-- button in review mode indicate the user want to retake another photo/video for attachment [
+CHAR LIMIT = NONE] -->
+    <string name="accessibility_review_retake">"သုံးသပ်မှုပြန်လုပ်ရန်"</string>
+    <!-- Default text for a button that can be toggled on and off. -->
+    <string name="capital_on">"ပွင့်"</string>
+    <!-- Default text for a button that can be toggled on and off. -->
+    <string name="capital_off">"ပိတ်"</string>
+
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_off">"ပိတ်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_500">"စက္ကန့်ဝက်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_1000">"၁ စက္ကန့်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_1500">"၁ စက္ကန့်ခွဲ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_2000">"၂ စက္ကန့်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_2500">"၂ စက္ကန့်ခွဲ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_3000">"၃ စက္ကန့်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_4000">"၄ စက္ကန့်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_5000">"၅ စက္ကန့်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_6000">"၆ စက္ကန့်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_10000">"၁၀ စက္ကန့်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_12000">"၁၂ စက္ကန့်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_15000">"၁၅ စက္ကန့်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_24000">"၂၄ စက္ကန့်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_30000">"မိနစ်ဝက်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_60000">"၁ မိနစ်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_90000">"၁မိနစ်ခွဲ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_120000">"၂ မိနစ်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_150000">"၂ မိနစ်ခွဲ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_180000">"၃ မိနစ်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_240000">"၄ မိနစ်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_300000">"၅ မိနစ်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_360000">"၆ မိနစ်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_600000">"၁၀ မိနစ်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_720000">"၁၂ မိနစ်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_900000">"၁၅ မိနစ်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_1440000">"၂၄ မိနစ်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_1800000">"နာရီဝက်"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_3600000">"၁ နာရီ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_5400000">"၁နာရီခွဲ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_7200000">"၂ နာရီ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_9000000">"၂နာရီခွဲ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_10800000">"၃နာရီ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_14400000">"၄ နာရီ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_18000000">"၅ နာရီ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_21600000">"၆ နာရီ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_36000000">"၁၀ နာရီ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_43200000">"၁၂ နာရီ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_54000000">"၁၅ နာရီ"</string>
+    <!-- Text to indicate time lapse recording frame interval [CHAR LIMIT = 30] -->
+    <string name="pref_video_time_lapse_frame_interval_86400000">"၂၄နာရီ"</string>
+
+    <!-- Seconds: a unit of time for time lapse intervals. [CHAR LIMIT = 20] -->
+    <string name="time_lapse_seconds">"စက္ကန့်"</string>
+    <!-- Minutes: a unit of time for time lapse intervals. [CHAR LIMIT = 20] -->
+    <string name="time_lapse_minutes">"မိနစ်"</string>
+    <!-- Hours: a unit of time for time lapse intervals. [CHAR LIMIT = 20] -->
+    <string name="time_lapse_hours">"နာရီ"</string>
+
+    <!-- The button to confirm time-lapse setting changes. [CHAR LIMIT = 20] -->
+    <string name="time_lapse_interval_set">"ပြီးပါပြီ"</string>
+    <!-- Title in time interval picker for setting time interval. [CHAR LIMIT = 30]-->
+    <string name="set_time_interval">"အချိန်အကွာအဝေးသတ်မှတ်ရန်"</string>
+    <!-- Help text that is shown when the time lapse feature is turned off. [CHAR LIMIT = 180]-->
+    <string name="set_time_interval_help">"အချိန်ကြာမှု ပြုလုပ်ချက်မရပါ။ ကြာချိန်သတ်မှတ်ရန် ထိုအရာအားဖွင့်ပါ"</string>
+    <!-- Title in timer setting for setting the duration for the countdown timer. [CHAR LIMIT = 50]-->
+    <string name="set_duration">"ကြာချိန်ကို စက္ကန့်ဖြင့် မှတ်ပါ"</string>
+    <!-- On-screen hint during timer countdown for taking a photo. [CHAR LIMIT = 60]-->
+    <string name="count_down_title_text">"ဓာတ်ပုံရိုက်ရန် အမှတ်ရေနေစဉ်"</string>
+
+    <!-- Title for first run dialog asking if the user wants to remember photo locations [CHAR LIMIT = 50] -->
+    <string name="remember_location_title">"ဓာတ်ပုံရိုက်ခဲ့တဲ့နေရာ သိမ်းရမလား"</string>
+    <!-- Message for first run dialog asking if the user wants to remember photo locations [CHAR LIMIT = None] -->
+    <string name="remember_location_prompt">"ဓာတ်ပုံများနှင့် ဗီဒီယိုများအား ရိုက်ကူးခဲ့ရာ နေရာများနှင့်တကွ မှတ်သားပါ\n\nတခြား အပ်ပလီကေးရှင်းများမှ ဒီအချက်အလက်ကို သိမ်းထားသော ပုံများနှင့်အတူ ရယူနိုင်သည်"</string>
+    <!-- Negative answer for first run dialog asking if the user wants to remember photo locations [CHAR LIMIT = 20] -->
+    <string name="remember_location_no">"ကျေးဇူးပဲ မလိုပါဘူး"</string>
+    <!-- Positive answer for first run dialog asking if the user wants to remember photo locations [CHAR LIMIT = 20] -->
+    <string name="remember_location_yes">"မှန်ပါသည်"</string>
+
+    <!-- Camera menu labels -->
+    <!-- more options label [CHAR LIMIT=50] -->
+    <string name="camera_menu_more_label">"ပိုမိုရွေးချယ်စရာများ"</string>
+    <!-- settings label [CHAR LIMIT=50] -->
+    <string name="camera_menu_settings_label">"ဆက်တင်များ"</string>
+
+    <!--  Tiny Planet -->
+    <!-- Button to press for creating a tiny planet image. [CHAR LIMIT = 30] -->
+    <string name="create_tiny_planet">"Tiny Planet ဖန်တီးရန်"</string>
+    <!-- Message shown while a tiny planet image is being saved. [CHAR LIMIT = 30] -->
+    <string name="saving_tiny_planet">"Tiny Planet အားသိမ်းဆည်းနေစဉ်…"</string>
+    <!-- Label above a slider that let\'s the user set the zoom of a tiny planet image. [CHAR LIMIT = 15] -->
+    <string name="tiny_planet_zoom">"ချဲ့ချုံ့ရန်"</string>
+    <!-- Label above a slider that let\'s the user set the rotation of a tiny planet image. [CHAR LIMIT = 15] -->
+    <string name="tiny_planet_rotate">"လှည့်ရန်"</string>
+
+    <!-- Crop -->
+    <!-- Label for the save button in the crop activity action bar [CHAR LIMIT=20] -->
+    <string name="crop_save">"သိမ်းပါ"</string>
+    <!--  String shown when we cannot load the image when starting the activity [CHAR LIMIT=NONE] -->
+    <string name="cannot_load_image">"ပုံတင်လို့မရပါ!"</string>
+    <!-- Label for album filmstrip button -->
+    <string name="switch_photo_filmstrip">"Filmstrip မြင်ကွင်း"</string>
+
+    <!--  String shown when setting the homepage wallpaper in the background [CHAR LIMIT=NONE] -->
+    <string name="setting_wallpaper">"နောက်ခံ ရွေးနေစဉ်"</string>
+
+
+    <!-- Menu, Video rotation labels [CHAR LIMIT=50] -->
+    <string name="pref_camera_video_rotation_label_0">0</string>
+    <string name="pref_camera_video_rotation_label_90">90</string>
+    <string name="pref_camera_video_rotation_label_180">180</string>
+    <string name="pref_camera_video_rotation_label_270">270</string>
+
+    <string name="remaining_photos_format">%d က်န္ပါေသးသည္</string>
+
+    <string name="refocus_toast">ေနာက္ဆံုး ဓါတ္ပံု၏ ဆံုခ်က္ကို ျပန္လည္ ခ်ိန္ရန္ ဤေနရာကို ႏွိပ္ပါ</string>
+ </resources>

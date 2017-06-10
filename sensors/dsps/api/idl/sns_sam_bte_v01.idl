@@ -1,0 +1,256 @@
+/*****************************************************************************
+  @FILE     sns_sam_bte.idl
+
+  @BRIEF    Message definition for BTE.
+
+  @DESCRIPTION
+  This file defines BTE messages used by Bring to Ear algo services.
+
+  As prerequisite, the sensor algorithm must use the common Interface
+  defined in the Sensor Algorithms framework.
+
+  The messages defined herein will be passed to the Sensor framework using
+  the sensor1_write() API.
+
+  @COPYRIGHT
+  Copyright (c) 2011-2014 Qualcomm Technologies, Inc.  All Rights Reserved
+  Qualcomm Technologies Proprietary and Confidential.
+
+*****************************************************************************/
+include "sns_sam_common_v01.idl";
+
+revision 4;
+
+const SNS_SAM_BTE_SUID = 0x7ea05556cd61c1ad;
+
+/* ENUMs are for reference only, uint8 is used instead */
+
+//! @ENUM   SNS_SAM_BTE_EVENT_ENUM
+enum {
+  BRING_TO_EAR_UNKNOWN  = 0,  /**< Bring to ear unknown. */
+  BRING_TO_EAR_DETECTED = 1   /**< Bring to ear detected. */
+} sns_sam_bring_to_ear_event_e;
+
+/* Following are message definitions shared by all BTE-related services */
+
+//============================================================================
+/** @COMMAND SNS_SAM_BTE_ENABLE
+    @BRIEF This command enables a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_BTE_ENABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  optional uint32 sample_rate;
+  /**< Sample rate in Hz; Q16 format. */
+  optional uint32 facing_angle_threshold;
+  /**< Angle in radians; Q16 format. */
+  optional uint32 horiz_angle_threshold;
+  /**< Angle in radians; Q16 format. */
+  optional uint32 vert_angle_threshold;
+  /**< Angle in radians; Q16 format. */
+  optional uint32 prox_enabled;
+  /**< Boolean value: 1=TRUE, 0=FALSE */
+  //! @VERSION 1.2
+  optional sns_suspend_notification_s notify_suspend;
+  /**< Identifies whether indications for this request are to be sent
+       when the processor is in the Suspend state.
+
+       If this field is not specified, the default value is set to:
+       notify_suspend->proc_type                  = SNS_PROC_APPS
+       notify_suspend->send_indications_during_suspend  = FALSE
+
+       This field does not have any bearing on error indication
+       messages, which are sent even during Suspend.
+    */
+} sns_sam_bte_enable_req_msg;
+
+//! @MSG     SNS_SAM_BTE_ENABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  /**< Common response message. */
+  mandatory uint8                            instance_id;
+  /**<
+    Instance ID, which is maintained/assigned by the SAM.
+    The client must use this instance ID for future messages associated with
+    the current algorithm instance.
+  */
+} sns_sam_bte_enable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_BTE_DISABLE
+    @BRIEF Disables a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_BTE_DISABLE_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Identifies the algorithm instance.  */
+} sns_sam_bte_disable_req_msg;
+
+//! @MSG     SNS_SAM_BTE_DISABLE_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  /**< Common response message. */
+  mandatory uint8                            instance_id;
+  /**< Identifies the algorithm instance.  */
+} sns_sam_bte_disable_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_BTE_REPORT
+    @BRIEF Output report from a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_BTE_REPORT_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Identifies the algorithm instance.  */
+  mandatory uint32                           timestamp;
+  /**< Timestamp of the input that caused this indication; in SSC ticks. */
+  mandatory sns_sam_bring_to_ear_event_e     state;
+  /**< State. */
+} sns_sam_bte_report_ind_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_BTE_GET_REPORT
+    @BRIEF Gets the latest report output from a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_BTE_GET_REPORT_REQ
+//! @TYPE    Request
+//! @SENDER  Client
+//----------------------------------------------------------------------------
+
+message {
+  mandatory uint8                            instance_id;
+  /**< Identifies the algorithm instance.  */
+} sns_sam_bte_get_report_req_msg;
+
+//! @MSG     SNS_SAM_BTE_GET_REPORT_RESP
+//! @TYPE    Response
+//! @SENDER  Service
+//----------------------------------------------------------------------------
+
+message {
+  mandatory sns_common_resp_s                resp = 2;
+  /**< Common response message. */
+  mandatory uint8                            instance_id;
+  /**< Identifies the algorithm instance.  */
+  mandatory uint32                           timestamp;
+  /**< Timestamp. */
+  mandatory sns_sam_bring_to_ear_event_e   state;
+  /**< State. */
+} sns_sam_bte_get_report_resp_msg;
+
+
+//============================================================================
+/** @COMMAND SNS_SAM_BTE_ERROR
+    @BRIEF Asynchronous error report from a sensor algorithm.
+*/
+//============================================================================
+
+//! @MSG     SNS_SAM_BTE_ERROR_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+//============================================================================
+
+message {
+  mandatory uint8                            error;
+  /**< Sensors error code. */
+  mandatory uint8                            instance_id;
+  /**< Identifies the algorithm instance.  */
+} sns_sam_bte_error_ind_msg;
+
+//============================================================================
+/** @COMMAND SNS_SAM_BTE_CANCEL
+    @BRIEF This command cancels all requests to the algorithm service.
+*/
+//============================================================================
+
+//============================================================================
+/** @COMMAND SNS_SAM_BTE_VERSION
+    @BRIEF This command requests algorithm service version.
+*/
+//============================================================================
+
+//============================================================================
+// Service definition
+//============================================================================
+service SNS_SAM_BTE_SVC {
+  //! @ID SNS_SAM_BTE_CANCEL
+  sns_common_cancel_req_msg        SNS_SAM_BTE_CANCEL_REQ,
+  sns_common_cancel_resp_msg       SNS_SAM_BTE_CANCEL_RESP
+    = 0x00;
+
+  //! @ID SNS_SAM_BTE_VERSION
+  sns_common_version_req_msg       SNS_SAM_BTE_VERSION_REQ,
+  sns_common_version_resp_msg      SNS_SAM_BTE_VERSION_RESP
+    = 0x01;
+
+  //! @ID SNS_SAM_BTE_ENABLE
+  sns_sam_bte_enable_req_msg       SNS_SAM_BTE_ENABLE_REQ,
+  sns_sam_bte_enable_resp_msg      SNS_SAM_BTE_ENABLE_RESP
+    = 0x02;
+
+  //! @ID SNS_SAM_BTE_DISABLE
+  sns_sam_bte_disable_req_msg      SNS_SAM_BTE_DISABLE_REQ,
+  sns_sam_bte_disable_resp_msg     SNS_SAM_BTE_DISABLE_RESP
+    = 0x03;
+
+  //! @ID SNS_SAM_BTE_GET_REPORT
+  sns_sam_bte_get_report_req_msg   SNS_SAM_BTE_GET_REPORT_REQ,
+  sns_sam_bte_get_report_resp_msg  SNS_SAM_BTE_GET_REPORT_RESP
+    = 0x04;
+
+  //! @ID SNS_SAM_BTE_REPORT
+  sns_sam_bte_report_ind_msg       SNS_SAM_BTE_REPORT_IND
+    = 0x05;
+
+  //! @ID SNS_SAM_BTE_ERROR
+  sns_sam_bte_error_ind_msg        SNS_SAM_BTE_ERROR_IND
+    = 0x06;
+
+  //! @ID SNS_SAM_GET_ALGO_ATTRIBUTES
+  sns_sam_get_algo_attrib_req_msg  SNS_SAM_BTE_GET_ATTRIBUTES_REQ,
+  sns_sam_get_algo_attrib_resp_msg SNS_SAM_BTE_GET_ATTRIBUTES_RESP
+    = 0x24;
+
+} = SNS_QMI_SVC_ID_10;
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+*/
+
+//============================================================================
+// End of Module
+//============================================================================
+

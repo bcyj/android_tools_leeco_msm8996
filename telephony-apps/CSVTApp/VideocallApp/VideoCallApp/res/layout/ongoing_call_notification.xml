@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<!-- status_bar_latest_event_content.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/status_bar_latest_event_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <ImageView android:id="@+id/icon"
+        android:layout_width="@android:dimen/notification_large_icon_width"
+        android:layout_height="@android:dimen/notification_large_icon_width"
+        android:scaleType="center"
+        />
+<!-- status_bar_latest_event_content_large_icon.xml -->
+<LinearLayout
+    android:id="@+id/status_bar_latest_event_content_large_icon"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    >
+    <TextView android:id="@+id/title"
+        android:textAppearance="@android:style/TextAppearance.StatusBar.EventContent.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:fadingEdge="horizontal"
+        />
+    <TextView android:id="@+id/text2"
+        android:textAppearance="@android:style/TextAppearance.StatusBar.EventContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-2dp"
+        android:layout_marginBottom="-2dp"
+        android:singleLine="true"
+        android:fadingEdge="horizontal"
+        android:ellipsize="marquee"
+        android:visibility="gone"
+        android:alpha="0.7"
+        />
+    <LinearLayout
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:alpha="0.7"
+        >
+        <Chronometer android:id="@+id/txtchrmter"
+            android:textAppearance="@android:style/TextAppearance.StatusBar.EventContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            />
+        <TextView android:id="@+id/txtname"
+            android:textAppearance="@*android:style/TextAppearance.StatusBar.EventContent.Info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0"
+            android:singleLine="true"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            />
+        <ImageView android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0"
+            android:scaleType="center"
+            android:paddingLeft="8dp"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+    <ProgressBar
+        android:id="@android:id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        style="?android:attr/progressBarStyleHorizontal"
+        />
+</LinearLayout> <!-- end of status_bar_latest_event_content_large_icon.xml -->
+
+</LinearLayout> <!-- end of status_bar_latest_event_content.xml -->

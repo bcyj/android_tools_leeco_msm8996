@@ -1,0 +1,33 @@
+TEST NAME: pctest
+
+USAGE:
+1. pctest suspend  <DELAY> <WAKEUP TIMER> <TIMEOUT> [OPTIONS]
+2. pctest idle-pc  <DELAY1> <TIMEOUT1>
+3. pctest idle-pc  <DELAY1> <TIMEOUT1> <TIMER1>
+
+DESCRIPTION:
+Tests the target for suspend power-collapse(1) or idle power collapse(2). Suspend power 
+collapse is user-triggered power collapse mechanism supported by the linux kernel. Idle
+power collapse is triggered when the linux kernel goes idle. Pctest is supported for all
+targets.
+
+INPUTS:
+
+DELAY:        delay in seconds after which the suspend power collapse is started.
+WAKEUP_TIMER: timer in seconds after which the target is woken up from suspend 
+              power collapse
+TIMEOUT:      timeout in seconds after which the suspend power collapse test bails out. 
+OPTIONS can be:
+              -tcxo:  do not test tcxo shutdown 
+DELAY1:       delay in seconds after which the idle-pc test is started
+TIMEOUT1:     duration of sleep for the idle-pc test.
+TIMER1:       periodicity of timer, to stress the idle-pc path.
+
+TARGETS SUPPORTED:
+
+
+The test is supported on all the targets including:
+8660 SURF / FFA
+7x30 SURF / FFA / FLUID
+8650 SURF / FFA
+7627 SURF / FFA

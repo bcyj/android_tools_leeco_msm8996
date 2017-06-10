@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"Прогр. встан. серт-тів"</string>
+
+    <!-- Title of the file picker screen -->
+    <string name="pick_file_title">"Вибрати сертифікат"</string>
+
+    <!-- Title of dialog to enter password for pkcs12 -->
+    <string name="pkcs12_password_dialog_title">"Отримати сертифікат"</string>
+    <!-- message in progress bar when waiting for extracting certs from a pkcs12 package -->
+    <string name="extracting_pkcs12">"Видобування..."</string>
+    <!-- Title of dialog to enter password for pkcs12 file -->
+    <string name="pkcs12_file_password_dialog_title">"Отримати з %s"</string>
+    <!-- Title of dialog to name a credential -->
+    <string name="name_credential_dialog_title">"Дайте назву сертифікату"</string>
+    <!-- Description for the credential name input box -->
+    <string name="credential_name">"Назва сертифіката:"</string>
+    <!-- Title of the credential info -->
+    <!-- Description for the credential password input box -->
+    <string name="credential_password">"Введіть пароль, щоб видобути сертифікати."</string>
+    <string name="credential_info">"Пакет містить:"</string>
+    <string name="p12_description">"Сертиф-ти в сховищі ключів PKCS12."</string>
+
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE] -->
+    <string name="one_userkey">"один ключ корист."</string>
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE] -->
+    <string name="one_usercrt">"один сертифікат корист."</string>
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE] -->
+    <string name="one_cacrt">"один сертифікат ЦС"</string>
+    <!-- Item found in the PKCS12 keystore being investigated [CHAR LIMIT=NONE]-->
+    <string name="n_cacrts">"%d сертифікати ЦА"</string>
+
+    <string name="password_error">"Введіть правильний пароль."</string>
+    <string name="password_empty_error">"Введіть пароль."</string>
+    <string name="name_empty_error">"Введіть ім\'я."</string>
+    <string name="name_char_error">"Введіть назву, яка містить лише літери та цифри."</string>
+    <string name="storage_error">"Не вдалося зберегти сертифікат. Торкніться \"OK\", щоб повторити спробу."</string>
+    <string name="unable_to_save_cert">"Не вдалося зберегти сертифікат. Сховище облікових даних не ввімкнено або не ініціалізовано належним чином."</string>
+    <string name="cert_not_saved">"Сертифікат не встановлено."</string>
+    <string name="no_cert_to_saved">"Немає сертиф. для встановл."</string>
+    <string name="invalid_cert">"Сертифікат недійсний."</string>
+
+    <!-- toast message -->
+    <string name="cert_is_added">"<xliff:g id="CREDENTIAL">%s</xliff:g> встановлено."</string>
+    <!-- toast message -->
+    <string name="cert_too_large_error">"Не вдалося встановити, оскільки розмір сертифіката завеликий."</string>
+    <!-- toast message -->
+    <string name="cert_missing_error">"Не вдалося встановити, оскільки неможливо знайти файл сертифіката."</string>
+    <!-- toast message -->
+    <string name="cert_read_error">"Не вдалося встановити, оскільки неможливо зчитати файл сертифіката."</string>
+
+    <!-- Shown when the certificate file can\'t be found.  [CHAR LIMIT=NONE] -->
+    <string name="no_cert_file_found" product="nosdcard">"На носії USB не знайдено жодного файлу сертифікату."</string>
+    <string name="no_cert_file_found" product="default">"На карті SD не знайд. жодного файлу сертиф."</string>
+    <!-- Shown when USB storage can\'t be found to look for a certificate.  [CHAR LIMIT=30] -->
+    <string name="sdcard_not_present" product="nosdcard">"Носій USB недоступний."</string>
+    <string name="sdcard_not_present" product="default">"Відсутня карта SD."</string>
+
+    <!-- Message displayed when a user other than the owner on a multi-user system tries to
+         install a certificate into the certificate store. [CHAR LIMIT=NONE] -->
+    <string name="only_primary_user_allowed">"Лише власник цього пристрою може встановлювати сертифікати."</string>
+
+    <!-- Label for spinner that shows the possible usage for a credential. Shown when user is
+         installing a credential [CHAR LIMIT=40] -->
+    <string name="credential_usage_label">"Використання облікових даних:"</string>
+
+    <!-- Usage type for a credential that the user is installing. The label will restrict the
+         type of use for that credential. [CHAR LIMIT=40] -->
+    <string-array name="credential_usage">
+        <item>"Мережа VPN і програми"</item>
+        <item>"Wi-Fi"</item>
+    </string-array>
+</resources>

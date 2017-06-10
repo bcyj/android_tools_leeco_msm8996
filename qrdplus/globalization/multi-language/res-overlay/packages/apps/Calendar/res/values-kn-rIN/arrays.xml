@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Choices for the "Reminder method" spinner.
+         These must be kept in sync with the reminder_methods_values array.
+         [CHAR LIMIT=10]
+    -->
+    <string-array name="reminder_methods_labels">
+        <item>"ಅಧಿಸೂಚನೆ"</item>
+        <item>"ಇಮೇಲ್"</item>
+        <item>"SMS"</item>
+        <item>"ಆಲಾರಾಂ"</item>
+    </string-array>
+
+    <!-- This maps reminder_methods_labels to internal constants. -->
+    <integer-array name="reminder_methods_values" translatable="false">
+        <item>1</item>  <!-- METHOD_ALERT -->
+        <item>2</item>  <!-- METHOD_EMAIL -->
+        <item>3</item>  <!-- METHOD_SMS -->
+        <item>4</item>  <!-- METHOD_ALARM -->
+    </integer-array>
+
+    <!-- Choices for the "Reminder minutes" spinner.
+         These must be kept in sync with the reminder_minutes_values array.
+         For consistency, the format should match what
+         EventViewUtils.constructReminderLabel() generates.  (TODO: eliminate
+         this and just generate the list from reminder_minutes_values?)
+         [CHAR LIMIT=15]
+    -->
+    <string-array name="reminder_minutes_labels">
+        <item>"0 ನಿಮಿಷಗಳು"</item>
+        <item>"1 ನಿಮಿಷ"</item>
+        <item>"5 ನಿಮಿಷಗಳು"</item>
+        <item>"10 ನಿಮಿಷಗಳು"</item>
+        <item>"15 ನಿಮಿಷಗಳು"</item>
+        <item>"20 ನಿಮಿಷಗಳು"</item>
+        <item>"25 ನಿಮಿಷಗಳು"</item>
+        <item>"30 ನಿಮಿಷಗಳು"</item>
+        <item>"45 ನಿಮಿಷಗಳು"</item>
+        <item>"1 ಗಂಟೆ"</item>
+        <item>"2 ಗಂಟೆಗಳು"</item>
+        <item>"3 ಗಂಟೆಗಳು"</item>
+        <item>"12 ಗಂಟೆಗಳು"</item>
+        <item>"24 ಗಂಟೆಗಳು"</item>
+        <item>"2 ದಿನಗಳು"</item>
+        <item>"1 ವಾರ"</item>
+    </string-array>
+
+    <integer-array name="reminder_minutes_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+        <item>120</item>
+        <item>180</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>2880</item>
+        <item>10080</item>
+    </integer-array>
+
+  <!-- Choices for the "Reminder minutes" spinner in the settings.
+         These must be kept in sync with the preferences_default_reminder_values array.
+         [CHAR LIMIT=12]
+    -->
+       <string-array name="preferences_default_reminder_labels">
+        <item>"ಯಾವುದೂ ಇಲ್ಲ"</item>
+        <item>"0 ನಿಮಿಷಗಳು"</item>
+        <item>"1 ನಿಮಿಷ"</item>
+        <item>"5 ನಿಮಿಷಗಳು"</item>
+        <item>"10 ನಿಮಿಷಗಳು"</item>
+        <item>"15 ನಿಮಿಷಗಳು"</item>
+        <item>"20 ನಿಮಿಷಗಳು"</item>
+        <item>"25 ನಿಮಿಷಗಳು"</item>
+        <item>"30 ನಿಮಿಷಗಳು"</item>
+        <item>"45 ನಿಮಿಷಗಳು"</item>
+        <item>"1 ಗಂಟೆ"</item>
+        <item>"2 ಗಂಟೆಗಳು"</item>
+        <item>"3 ಗಂಟೆಗಳು"</item>
+        <item>"12 ಗಂಟೆಗಳು"</item>
+        <item>"24 ಗಂಟೆಗಳು"</item>
+        <item>"2 ದಿನಗಳು"</item>
+        <item>"1 ವಾರ"</item>
+    </string-array>
+
+    <string-array name="preferences_default_reminder_values" translatable="false">
+        <item>"-1"</item>
+        <item>"0"</item>
+        <item>"1"</item>
+        <item>"5"</item>
+        <item>"10"</item>
+        <item>"15"</item>
+        <item>"20"</item>
+        <item>"25"</item>
+        <item>"30"</item>
+        <item>"45"</item>
+        <item>"60"</item>
+        <item>"120"</item>
+        <item>"180"</item>
+        <item>"720"</item>
+        <item>"1440"</item>
+        <item>"2880"</item>
+        <item>"10080"</item>
+    </string-array>
+
+    <string-array name="preferences_week_start_day_labels">
+        <item>"ಸ್ಥಳೀಯ ಡೀಫಾಲ್ಟ್‌‌"</item>
+        <item>"ಶನಿವಾರ"</item>
+        <item>"ಭಾನುವಾರ"</item>
+        <item>"ಸೋಮವಾರ"</item>
+    </string-array>
+
+    <string-array name="preferences_week_start_day_values" translatable="false">
+        <item>"-1"</item>
+        <item>"7"</item>
+        <item>"1"</item>
+        <item>"2"</item>
+    </string-array>
+
+
+
+    <string-array name="availability">
+        <item>"ಕಾರ್ಯನಿರತ"</item>
+        <item>"ಲಭ್ಯ"</item>
+        <item>"ಪ್ರಾಯೋಗಿಕ"</item>
+    </string-array>
+
+    <!-- This maps reminder_methods_labels to internal constants. -->
+    <integer-array name="availability_values" translatable="false">
+        <item>0</item>  <!-- Busy -->
+        <item>1</item>  <!-- Available -->
+        <item>2</item>  <!-- Tentative -->
+    </integer-array>
+
+    <string-array name="visibility">
+        <item>"ಡೀಫಾಲ್ಟ್"</item>
+        <item>"ಖಾಸಗಿ"</item>
+        <item>"ಸಾರ್ವಜನಿಕ"</item>
+    </string-array>
+
+    <string-array name="ordinal_labels">
+        <item>"ಮೊದಲು"</item>
+        <item>"ಸೆಕೆಂಡು"</item>
+        <item>"ಮೂರನೇ"</item>
+        <item>"ನಾಲ್ಕನೆಯ"</item>
+        <item>"ಕೊನೆಯ"</item>
+    </string-array>
+
+    <!-- Invitation responses -->
+    <string-array name="response_labels1">
+        <item>"ಯಾವುದೇ ಪ್ರತಿಕ್ರಿಯೆ ಇಲ್ಲ"</item>
+        <item>"ಹೌದು"</item>
+        <item>"ಬಹುಶಃ"</item>
+        <item>"ಇಲ್ಲ"</item>
+    </string-array>
+
+    <!-- The corresponding indices are defined in DeleteEventHelper.java -->
+    <!-- This is a list of choices displayed when the user deletes an event.
+         It only is shown when deleting a recurring event.
+    -->
+    <skip/>
+    <string-array name="delete_repeating_labels">
+        <item>"ಈ ಈವೆಂಟ್ ಮಾತ್ರ"</item>
+        <item>"ಇದು ಮತ್ತು ಭವಿಷ್ಯದ ಈವೆಂಟ್‌ಗಳು"</item>
+        <item>"ಎಲ್ಲ ಈವೆಂಟ್‌ಗಳು"</item>
+    </string-array>
+
+    <!-- DO NOT TRANSLATE These values need to correspond to the indices
+         defined in DeleteEventHelper.java-->
+    <integer-array name="delete_repeating_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+
+    <!-- The corresponding indices are defined in DeleteEventHelper.java -->
+    <!-- This is the same array as above (the "delete_repeating_labels" array,
+         except that the first element "Only this event" is removed.  This
+         array exists to work-around a bug in the CalendarProvider and sync
+         code where you can\'t delete one instance of a repeating event that
+         was created on the phone until that event has been synced to the server.
+     -->
+    <skip/>
+    <string-array name="delete_repeating_labels_no_selected">
+        <item>"ಇದು &amp; ಭವಿಷ್ಯದ ಈವೆಂಟ್‌ಗಳು"</item>
+        <item>"ಎಲ್ಲ ಈವೆಂಟ್‌ಗಳು"</item>
+    </string-array>
+
+    <!-- The corresponding array indices are defined in EventInfoActivity.java -->
+    <skip/>
+    <!-- The list of choices displayed in a dialog box when the user wants to
+    respond to an invitation that repeats. -->
+    <string-array name="change_response_labels">
+        <!-- The choice for responding to only one instance of a repeating event -->
+        <item>"ಈ ಈವೆಂಟ್ ಮಾತ್ರ"</item>
+        <!-- The choice for responding to all instances of a repeating event -->
+        <item>"ಸರಣಿಯಲ್ಲಿನ ಎಲ್ಲಾ ಈವೆಂಟ್‌ಗಳು"</item>
+    </string-array>
+
+    <!-- Strings for buttons in drop down menu -->
+    <string-array name="buttons_list">
+        <item>"ದಿನ"</item>
+        <item>"ವಾರ"</item>
+        <item>"ತಿಂಗಳು"</item>
+        <item>"ಕಾರ್ಯಸೂಚಿ"</item>
+        <item>ವರ್ಷ</item>
+    </string-array>
+
+    <!-- Experimental options for skipping reminders. [CHAR LIMIT = 37] -->
+    <string-array name="preferences_skip_reminders_labels">
+        <!-- Default choice -->
+        <item>"ನಿರಾಕರಿಸಿದರೆ ಮಾತ್ರ"</item>
+        <!-- Second option, for skipping reminders to events not yet responded to. -->
+        <item>"ಒಂದು ವೇಳೆ ನಿರಾಕರಿಸಿದರೆ ಅಥವಾ ಪ್ರತಿಕ್ರಿಯಿಸದಿದ್ದರೆ"</item>
+    </string-array>
+
+    <string-array name="preferences_skip_reminders_values" translatable="false">
+        <item>declined</item>
+        <item>not_responded</item>
+    </string-array>
+
+    <!-- Recurrence picker: How events are to be repeated.  [CHAR LIMIT = 20] -->
+    <string-array name="recurrence_freq">
+        <item>"ಪ್ರತಿದಿನ ಪುನರಾವರ್ತಿಸು"</item>
+        <item>"ವಾರ ಪುನರಾವರ್ತಿಸು"</item>
+        <item>"ತಿಂಗಳು ಪುನರಾವರ್ತಿಸು"</item>
+        <item>"ವಾರ್ಷಿಕ ಪುನರಾವರ್ತಿಸು"</item>
+    </string-array>
+
+    <!-- The following sets of strings describe a monthly recurring event, which will repeat
+         on the Nth WEEKDAY of every month. For example, the 3rd Monday of every month, or
+         the last Sunday. These are set up like this to resolve any gender-matching issues
+         that were present in some languages.
+     -->
+    <!-- Repeat a monthly event on the same nth day of every Sunday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_sun">
+        <item>"ಪ್ರತಿ ಮೊದಲ ಭಾನುವಾರ"</item>
+        <item>"ಪ್ರತಿ ಎರಡನೇ ಭಾನುವಾರ"</item>
+        <item>"ಪ್ರತಿ ಮೂರನೇ ಭಾನುವಾರ"</item>
+        <item>"ಪ್ರತಿ ನಾಲ್ಕನೇ ಭಾನುವಾರ"</item>
+        <item>"ಪ್ರತಿ ಕೊನೆಯ ಭಾನುವಾರ"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Monday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_mon">
+        <item>"ಪ್ರತಿ ಮೊದಲ ಸೋಮವಾರ"</item>
+        <item>"ಪ್ರತಿ ಎರಡನೇ ಸೋಮವಾರ"</item>
+        <item>"ಪ್ರತಿ ಮೂರನೇ ಸೋಮವಾರ"</item>
+        <item>"ಪ್ರತಿ ನಾಲ್ಕನೇ ಸೋಮವಾರ"</item>
+        <item>"ಪ್ರತಿ ಕೊನೆಯ ಸೋಮವಾರ"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Tuesday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_tues">
+        <item>"ಪ್ರತಿ ಮೊದಲ ಮಂಗಳವಾರ"</item>
+        <item>"ಪ್ರತಿ ಎರಡನೇ ಮಂಗಳವಾರ"</item>
+        <item>"ಪ್ರತಿ ಮೂರನೇ ಮಂಗಳವಾರ"</item>
+        <item>"ಪ್ರತಿ ನಾಲ್ಕನೇ ಮಂಗಳವಾರ"</item>
+        <item>"ಪ್ರತಿ ಕೊನೆಯ ಮಂಗಳವಾರ"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Wednesday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_wed">
+        <item>"ಪ್ರತಿ ಮೊದಲ ಬುಧವಾರ"</item>
+        <item>"ಪ್ರತಿ ಎರಡನೇ ಬುಧವಾರ"</item>
+        <item>"ಪ್ರತಿ ಮೂರನೇ ಬುಧವಾರ"</item>
+        <item>"ಪ್ರತಿ ನಾಲ್ಕನೇ ಬುಧವಾರ"</item>
+        <item>"ಪ್ರತಿ ಕೊನೆಯ ಬುಧವಾರ"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Thursday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_thurs">
+        <item>"ಪ್ರತಿ ಮೊದಲ ಗುರುವಾರ"</item>
+        <item>"ಪ್ರತಿ ಎರಡನೇ ಗುರುವಾರ"</item>
+        <item>"ಪ್ರತಿ ಮೂರನೇ ಗುರುವಾರ"</item>
+        <item>"ಪ್ರತಿ ನಾಲ್ಕನೇ ಗುರುವಾರ"</item>
+        <item>"ಪ್ರತಿ ಕೊನೆಯ ಗುರುವಾರ"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Friday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_fri">
+        <item>"ಪ್ರತಿ ಮೊದಲ ಶುಕ್ರವಾರ"</item>
+        <item>"ಪ್ರತಿ ಎರಡನೇ ಶುಕ್ರವಾರ"</item>
+        <item>"ಪ್ರತಿ ಮೂರನೇ ಶುಕ್ರವಾರ"</item>
+        <item>"ಪ್ರತಿ ನಾಲ್ಕನೇ ಶುಕ್ರವಾರ"</item>
+        <item>"ಪ್ರತಿ ಕೊನೆಯ ಶುಕ್ರವಾರ"</item>
+    </string-array>
+    <!-- Repeat a monthly event on the same nth day of every Saturday. [CHAR LIMIT=30] -->
+    <string-array name="repeat_by_nth_sat">
+        <item>"ಪ್ರತಿ ಮೊದಲ ಶನಿವಾರ"</item>
+        <item>"ಪ್ರತಿ ಎರಡನೇ ಶನಿವಾರ"</item>
+        <item>"ಪ್ರತಿ ಮೂರನೇ ಶನಿವಾರ"</item>
+        <item>"ಪ್ರತಿ ನಾಲ್ಕನೇ ಶನಿವಾರ"</item>
+        <item>"ಪ್ರತಿ ಕೊನೆಯ ಶನಿವಾರ"</item>
+    </string-array>
+</resources>

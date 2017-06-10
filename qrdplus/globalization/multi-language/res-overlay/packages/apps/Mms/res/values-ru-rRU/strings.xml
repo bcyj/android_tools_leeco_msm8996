@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution.
+ * Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- The name of the SMS/MMS app as it appears to the user in the Home screen, task switcher, etc. -->
+    <string name="app_label">"SMS/MMS"</string>
+
+    <!-- Command name to open a Compose screen; displays in conversation list.
+         Also used as accessibility text for widget\'s new message button -->
+    <string name="new_message">"Новое сообщение"</string>
+    <!-- Context menu item on an individual message for dialing the sender\'s phone number -->
+    <string name="menu_call_back">"Вызов: <xliff:g id="NAME">%s</xliff:g>"</string>
+    <!-- Context menu item on an individual message for emailing the sender -->
+    <string name="menu_send_email">"Написать письмо пользователю <xliff:g id="NAME">%s</xliff:g>"</string>
+
+    <!-- Menu item for starting a new conversation -->
+    <string name="menu_compose_new">"Новое сообщение"</string>
+    <!-- Menu item for accessing application settings -->
+    <string name="menu_preferences">"Настройки"</string>
+    <!-- Menu shown in the context menu when long pressing on a message when the message contains
+         one or more phone numbers and/or email addresses and the number or email is new to
+         contacts. [CHAR LIMIT=50] -->
+    <string name="menu_add_address_to_contacts">Добавить <xliff:g id="contactEmailOrNumber">%s</xliff:g> в контакты</string>
+    <string name="menu_copy_url">Копировать  <xliff:g id="extractedurl">%s</xliff:g></string>
+    <!-- Menu item to call the recipient of the conversation on the phone (imperative verb) -->
+    <string name="menu_call">"Позвонить"</string>
+    <!-- Menu item for search -->
+    <string name="menu_search">"Поиск"</string>
+    <!-- Menu item for deleting all conversations -->
+    <string name="menu_delete_all">"Удалить все цепочки"</string>
+    <!-- Context menu item on an individual conversation for deleting that conversation -->
+    <string name="menu_delete">"Удалить цепочку"</string>
+    <!-- Context menu item on an individual conversation for viewing that conversation -->
+    <string name="menu_view">"Просмотреть цепочку"</string>
+    <!-- Menu item for debugging - do not localize -->
+    <string name="menu_debug_dump">"ОТЛАДКА ДАМПА"</string>
+    <!-- Message that appears on screen while SIM card messages are retrieved -->
+    <string name="refreshing">"Обновление..."</string>
+    <string name="deleting_threads">Удаление потоков\u2026</string>
+
+    <!-- Menu item to show received cell broadcasts. [CHAR LIMIT=30] -->
+    <string name="menu_cell_broadcasts">"Оповещение населения"</string>
+
+    <!-- Tag appearing on conversations in the conversation list that contain a draft message -->
+    <string name="has_draft">"Черновик"</string>
+
+    <!-- Subject to display in the conversation list if there is no subject -->
+    <string name="no_subject_view">"(Без темы)"</string>
+
+    <!-- Address to display when message is a cell broadcast on channel 50 or 60  -->
+    <string name="cell_broadcast_sender">Канал Cell Broadcast</string>
+
+    <!-- Name of the local user when displaying sender of an outgoing message (personal pronoun) -->
+    <string name="messagelist_sender_self">"Я"</string>
+    <!-- Context menu item on an individual message for viewing an attached slideshow -->
+    <string name="view_slideshow">"Просмотреть слайд-шоу"</string>
+    <!-- Context menu item on an individual message for viewing message details such as time and date -->
+    <string name="view_message_details">"Подробности"</string>
+    <!-- Context menu item on an individual message for viewing a delivery report -->
+    <string name="view_delivery_report">"Просмотреть отчет"</string>
+    <!-- Context menu item on an individual message for deleting only that message -->
+    <string name="delete_message">"Удалить"</string>
+    <!-- Time and date a message was sent -->
+    <string name="sent_on">"Отправлено: <xliff:g id="date">%s</xliff:g>"</string>
+    <!-- Time and date a message is due to expire -->
+    <string name="expire_on">"Срок истекает: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <!-- Time and date a message was received -->
+    <string name="received_on">"Получено: <xliff:g id="date">%s</xliff:g>"</string>
+    <!-- Abbreviation for "kilobyte" -->
+    <string name="kilobyte">"КБ"</string>
+
+    <!-- Dialog box title brought up when warning the user that a message could not be delivered -->
+    <string name="undelivered_msg_dialog_title">"Недоставленное сообщение"</string>
+    <!-- Dialog box message indicating that a message could not be delivered, including the time of last attempt -->
+    <string name="undelivered_msg_dialog_body">"Не удалось отправить сообщение.\nПопыток: <xliff:g id="MESSAGE">%s</xliff:g>."</string>
+    <!-- Dialog box message indicating that a message could not be delivered -->
+    <string name="undelivered_sms_dialog_body">"Не удалось отправить сообщение."</string>
+    <!-- Menu item for deleting the entire conversation currently being viewed -->
+    <string name="delete_thread">"Удалить цепочку"</string>
+    <!-- Context menu item on an individual message for forwarding it to another recipient -->
+    <string name="menu_forward">"Переслать"</string>
+    <string name="menu_forward_conversation">Переслать диалог</string>
+    <!-- Context menu item on an failed message for resending -->
+    <string name="menu_resend">Отправить повторно</string>
+    <!-- Text of a button appearing for MMS messages that have not yet been downloaded, causing the message
+         to be downloaded (imperative verb) -->
+    <string name="download">"Загрузить"</string>
+    <!-- Message displayed in place of the "download message" button once it has been pressed,
+         indicating that the download is in progress -->
+    <string name="downloading">"Загрузка..."</string>
+    <string name="cancel_downloading">"Отмена"</string>
+    <string name="confirm_cancel_downloading">Отменить загрузку MMS?</string>
+    <!-- Formatting for subject displayed inline, prepended to MMS message text -->
+    <string name="inline_subject">"&lt;Тема: <xliff:g id="SUBJECT">%s</xliff:g>&gt;"</string>
+    <!-- Text to display when the actual text is inaccessible due to DRM protection -->
+    <string name="drm_protected_text">"* Текст защищен средствами DRM *"</string>
+    <!-- Error message to display when DRM rights are insufficient to access some data -->
+    <string name="insufficient_drm_rights">"Обнаруженных прав DRM недостаточно."</string>
+    <!-- Individual message context menu item -->
+    <string name="copy_message_text">"Скопировать текст"</string>
+    <!-- Header for context menu on an individual message -->
+    <string name="message_options">"Параметры сообщения"</string>
+    <!-- Header for context menu on an individual slideshow -->
+    <string name="slideshow_options">"Настройки слайд-шоу"</string>
+
+    <!-- Button text on edit slide screen indicating the user wants to finish editing that slide -->
+    <string name="done">"Готово"</string>
+
+    <!-- Menu item in slideshow edit screen for moving the selected slide up in the order -->
+    <string name="move_up">"Переместить вверх"</string>
+    <!-- Menu item in slideshow edit screen for moving the selected slide down in the order -->
+    <string name="move_down">"Переместить вниз"</string>
+    <!-- Menu item in slideshow edit screen for removing the selected slide from the slideshow -->
+    <string name="remove_slide">"Удалить слайд"</string>
+    <!-- Menu item in slideshow edit screen for adding a new slide to the slideshow -->
+    <string name="add_slide">"Добавить слайд"</string>
+    <!-- Text displayed below "Add slide" item in slideshow edit screen -->
+    <string name="add_slide_hint">"Нажмите, чтобы добавить"</string>
+    <!-- Menu item in slideshow edit screen for discarding the entire slideshow -->
+    <string name="discard_slideshow">"Отменить слайд-шоу"</string>
+    <!-- Header of slideshow showing which slide is being displayed -->
+    <string name="slide_show_part">"Часть <xliff:g id="PART">%1$s</xliff:g> из <xliff:g id="TOTAL">%2$s</xliff:g>"</string>
+
+
+    <!-- Menu item in slide edit screen for removing the text from the slide being edited -->
+    <string name="remove_text">"Удалить текст"</string>
+    <!-- Menu item in slide edit screen for adding a picture to the slide being edited -->
+    <string name="add_picture">"Добавить картинку"</string>
+    <!-- Menu item in slide edit screen for removing the picture from the slide being edited -->
+    <string name="remove_picture">"Удалить картинку"</string>
+    <!-- Menu item in slide edit screen for adding music to the slide being edited -->
+    <string name="add_music">"Добавить музыку"</string>
+    <!-- Menu item in slide edit screen for removing the music from the slide being edited -->
+    <string name="remove_music">"Удалить музыку"</string>
+    <!-- Menu item in slide edit screen for adding a video to the slide being edited -->
+    <string name="add_video">"Добавить видео"</string>
+    <!-- Menu item in slide edit screen for removing the video from the slide being edited -->
+    <string name="remove_video">"Удалить видео"</string>
+
+    <!-- Hint displayed in message recipient text box when starting a new conversation -->
+    <string name="to_hint">"Кому:"</string>
+    <!-- Hint displayed in subject edit text box when adding a subject -->
+    <string name="subject_hint">"Тема"</string>
+
+    <!-- Menu item in conversation screen for attaching something to the message being composed -->
+    <string name="add_attachment">"Прикрепить файл"</string>
+    <!-- Menu item in conversation screen for adding a subject to the message being composed -->
+    <string name="add_subject">"Добавить тему"</string>
+    <!-- Menu item in conversation screen for discarding the message currently being composed -->
+    <string name="discard">"Отменить"</string>
+
+    <!-- Toast message for informing user currently will add another attachment or replace current one -->
+    <string name="add_another_attachment">Добавить другое вложение</string>
+    <string name="replace_current_attachment">Заменить текущее вложение</string>
+
+    <!-- Button next to an attachment during message composition to view the attachment (imperative verb) -->
+    <string name="view">Вид</string>
+    <!-- Button next to an attachment during message composition to replace the attachment (imperative verb) -->
+    <string name="replace">Заменить</string>
+    <!-- Button next to an attachment during message composition to remove the attachment (imperative verb) -->
+    <string name="remove">Удал.</string>
+
+    <!-- Button in conversation screen for sending the SMS message currently being composed (imperative verb) -->
+    <string name="send">"Отправить"</string>
+    <string name="send_by_slot1">Отправить через слот 1</string>
+    <string name="send_by_slot2">Отправить через слот 2</string>
+    <!-- Text to appear directly below the "Send" text on the SMS/MMS send button. The "MMS" text is on a second line in a smaller font. This is similar to saying "Send (mms)". -->
+    <string name="mms">"MMS"</string>
+    <!-- Content description for the send button when sending an mms (imperative verb) -->
+    <string name="send_mms">"Отправить MMS"</string>
+
+    <!-- Menu item in conversation screen for returning to the conversation list -->
+    <string name="all_threads">"Все цепочки"</string>
+
+    <!-- Hint text in message body field when keyboard is exposed -->
+    <string name="type_to_compose_text_enter_to_send">"Введите сообщение"</string>
+    <!-- Hint text in message body field when keyboard is hidden -->
+    <string name="open_keyboard_to_compose_message">"Откройте клавиатуру, чтобы ввести сообщение"</string>
+    <!-- Hint text when we are not the default SMS app -->
+    <string name="sending_disabled_not_default_app">"Отправка отключена"</string>
+    <!-- Toast text when user tries to compose while we are not the default SMS app -->
+    <string name="compose_disabled_toast">"Не удалось сохранить сообщение. Это приложение не используется для обмена SMS."</string>
+
+    <!-- Toast message while an image is being resized -->
+    <string name="compressing">"Картинка слишком большая. Выполняется сжатие…"</string>
+
+    <!-- Error message indicating the format for the specified media type (e.g. "picture") is unsupported -->
+    <string name="unsupported_media_format">"Неподдерживаемый формат (<xliff:g id="NAME">%1$s</xliff:g>)."</string>
+    <!-- Error message indicating the format is unsupported -->
+    <string name="unsupported_format">Неподдерживаемый формат.</string>
+    <!-- Message prompting the user to select a different item; item string as type-appropriate (e.g. "picture") -->
+    <string name="select_different_media">"Выберите другой объект (<xliff:g id="NAME">%1$s</xliff:g>)."</string>
+    <!-- Message indicating that the message size limit has been reached -->
+    <string name="exceed_message_size_limitation">Достигнут макс. размер</string>
+    <!-- Message indicating that the message is too big and there is no space to attach a video -->
+    <string name="message_too_big_for_video">"Сообщение слишком велико, чтобы приложить видео."</string>
+    <!-- Error message indicating that the item trying to be attached could not be added -->
+    <string name="failed_to_add_media">"Невозможно добавить этот объект (<xliff:g id="NAME">%1$s</xliff:g>)."</string>
+    <string name="media_size_limit">Превышено ограничение на размер сообщения. Сообщение нельзя отправить.</string>
+    <!-- Error message indicating that the picture being attached and resized could not be resized -->
+    <string name="failed_to_resize_image">"Не удалось изменить размер рисунка."</string>
+    <!-- Error message indicating that the message size or the increase size is negative -->
+    <string name="illegal_message_or_increase_size">Получено сообщение о невозможности доставки, либо необходимо увеличить размер.</string>
+    <!-- Error message indicating that an image being attached is still too large to send even after resize -->
+    <string name="resize_image_error_information">"Изображение слишком велико для отправки даже после изменения размера."</string>
+    <!-- String prepended to forwarded messages to indicate they were forwarded -->
+    <string name="forward_prefix">"Fwd: "</string>
+    <!-- Dialog box title that appears when a draft message will not be saved due to invalid recipients -->
+    <string name="discard_message">"Отменить"</string>
+    <string name="discard_message_reason_all_invalid">"Сообщение будет удалено, поскольку все получатели являются недопустимыми."</string>
+    <string name="discard_message_reason_some_invalid">"Сообщение будет удалено, поскольку некоторые получатели являются недопустимыми."</string>
+    <!-- Dialog message text explaining that a draft message will not be saved due to invalid recipients -->
+    <string name="discard_message_reason">"Сообщение будет удалено, так как не указан ни один реальный получатель."</string>
+    <!-- Dialog box title indicating which recipients are invalid when the user tries to send a message with invalid recipients -->
+    <string name="has_invalid_recipient">"Недопустимые получатели: &lt;<xliff:g id="NAME">%1$s</xliff:g>&gt;"</string>
+    <!-- While sending a message, if it has invalid recipient, display this message. -->
+    <string name="invalid_destination">"Неверный адрес получателя."</string>
+    <!-- While sending a message, this error is expected to be generated when user does not have
+         MMS enabled on his account. [CHAR LIMIT=NONE] -->
+    <string name="service_not_activated">"Услуга не активирована в сети."</string>
+    <!-- If a message has expired and is no longer available on MMSC, show this toast. [CHAR LIMIT=NONE] -->
+    <string name="service_message_not_found">"Срок действия сообщения истек или оно не доступно."</string>
+    <!-- If a message can\'t be sent because of a MMSC network problem, show this toast. [CHAR LIMIT=NONE] -->
+    <string name="service_network_problem">"Не удалось отправить сообщение из-за ошибки сети."</string>
+    <!-- Dialog message text when the user tries to send a message with invalid recipients -->
+    <string name="invalid_recipient_message">"Убедитесь, что все получатели указаны правильно."</string>
+    <!-- Dialog box title indicating the message cannot be sent because there are no valid recipients -->
+    <string name="cannot_send_message">"Не удалось отправить сообщение"</string>
+    <!-- Dialog message text indicating the message cannot be sent because there are no valid recipients -->
+    <string name="cannot_send_message_reason">"Не указано ни одного реального получателя."</string>
+    <!-- Error message displayed when the user attempts to forward a message with DRM-locked contents -->
+    <string name="cannot_forward_drm_obj">"Нельзя переслать DRM-объект из этого сообщения."</string>
+    <string name="cannot_send_attach_reason">"Невозможно получить доступ к вложению. Не удается отправить сообщение."</string>
+
+    <!-- Brief message that appears when converting a message from SMS to MMS. -->
+    <string name="converting_to_picture_message">"Преобразование в сообщение MMS..."</string>
+    <string name="converting_to_text_message">Преобразование в текстовое сообщение\u2026</string>
+    <!-- Brief message that appears when the maximum size of slides has been reached -->
+    <string name="cannot_add_text_anymore">Не удалось добавить текст.</string>
+    <!-- Brief message that appears when the maximum number of slides has been reached -->
+    <string name="cannot_add_slide_anymore">"Добавлено максимальное число слайдов."</string>
+    <!-- Brief message that appears when user tries to add picture to a slide which already has a video. -->
+    <string name="cannot_add_picture_and_video">"Нельзя добавить на слайд и картинку, и видео."</string>
+    <!-- Brief message that appears when the message cannot be saved -->
+    <string name="cannot_save_message">"Не удалось сохранить сообщение."</string>
+    <!-- Brief message that appears when a message has automatically been saved as a draft -->
+    <string name="message_saved_as_draft">"Черновик сообщения сохранен."</string>
+    <!-- Brief message that appears when too many recipients have been added -->
+    <string name="too_many_recipients">"Указано слишком много получателей (<xliff:g id="CURRENTCOUNT">%1$s</xliff:g>). Разрешено не более <xliff:g id="MAXLIMIT">%2$s</xliff:g>."</string>
+    <!-- Brief message that appears when too many videos/pictures are imported -->
+    <string name="too_many_attachments">"Для вложений установлено ограничение: <xliff:g id="MAXLIMIT">%1$s</xliff:g>. Будет добавлено вложений: <xliff:g id="CURRENTCOUNT">%2$s</xliff:g>."</string>
+    <!-- Alert dialog title when adding attachments is taking a while  [CHAR LIMIT=none] -->
+    <string name="adding_attachments_title">"Добавление вложений"</string>
+    <!-- Alert dialog when adding attachments is taking a while -->
+    <string name="adding_attachments">"Добавление. Подождите..."</string>
+    <!-- Alert dialog title when creating a slideshow [CHAR LIMIT=none] -->
+    <string name="building_slideshow_title">"Создание слайд-шоу"</string>
+
+    <!-- Error message indicating that an audio attachment cannot be played -->
+    <string name="cannot_play_audio">"Не удалось воспроизвести аудио."</string>
+
+    <!-- Button in the slide editor screen used to preview the slide (imperative verb) -->
+    <string name="preview">"Просмотреть"</string>
+    <!-- Menu item in the slide editor screen used to preview the entire slideshow (imperative verb) -->
+    <string name="preview_slideshow">"Предпросмотр"</string>
+    <!-- Button in the slide editor screen used to replace the attached picture -->
+    <string name="replace_image">"Заменить картинку"</string>
+    <!-- String for slide duration in seconds -->
+    <string name="duration_sec">"Продолжительность: (<xliff:g id="DURATION">%s</xliff:g> с.)"</string>
+    <!-- Dialog box title for duration selector -->
+    <string name="duration_selector_title">"Продолжительность показа слайда "</string>
+    <!-- Dialog box title for slide layout selector -->
+    <string name="layout_selector_title">"Макет слайд-шоу "</string>
+    <!-- Slide layout option for layout at the top -->
+    <string name="layout_top">"Расположение (внизу)"</string>
+    <!-- Slide layout option for layout at the bottom -->
+    <string name="layout_bottom">"Расположение (внизу)"</string>
+    <!-- Hint in slide text field before text is typed -->
+    <string name="type_to_compose_text_or_leave_blank">"Введите сообщение или оставьте поле пустым"</string>
+    <!-- Toast when the user enters a non-numeric value for the duration of a slide -->
+    <string name="duration_not_a_number">"Должно быть указано числовое значение."</string>
+    <!-- Toast when the user enters a zero value for the duration of a slide -->
+    <string name="duration_zero">"Значение должно быть больше нуля."</string>
+    <!-- Dialog box title for display the current mms size  -->
+    <string name="title_send_message">Отправить сообщение</string>
+    <!-- Toast when the subject is full -->
+    <string name="subject_full">"тема заполнена"</string>
+
+    <!-- In duration selection dialog box, short version of "seconds" -->
+    <string name="secs">"с."</string>
+    <!-- Options for slide duration in duration selection dialog box -->
+    <string-array name="select_dialog_items">
+         <item>"1 секунда"</item>
+         <item>"2 сек."</item>
+         <item>"3 сек."</item>
+         <item>"4 сек."</item>
+         <item>"5 секунд"</item>
+         <item>"6 секунд"</item>
+         <item>"7 секунд"</item>
+         <item>"8 секунд"</item>
+         <item>"9 секунд"</item>
+         <item>"10 секунд"</item>
+         <item>"Другое"</item>
+    </string-array>
+
+    <!-- Context menu item on a message recipient for viewing their contact info -->
+    <string name="menu_view_contact">"Просмотреть контакт"</string>
+    <!-- Context menu item on a message recipient for adding them to the user\'s
+         contacts (used if the recipient is not already in the address book) -->
+    <string name="menu_add_to_contacts">Добавить в контакты</string>
+
+    <!-- Sender to be used if the sender address has been hidden -->
+    <string name="hidden_sender_address">"Адрес отправителя скрыт"</string>
+
+    <!-- Text to be used for affirmative response button in dialog boxes -->
+    <string name="yes">"ОК"</string>
+    <!-- Text to be used for negative response button in dialog boxes -->
+    <string name="no">"Отмена"</string>
+    <!-- Text to be used for affirmative response button in setting SMS limits dialog box -->
+    <string name="set">Задать</string>
+
+    <!-- Button text used for playing an attachment or slideshow (imperative verb) -->
+    <string name="play">"Воспроизвести"</string>
+    <!-- Button text used for editing a slideshow (imperative verb) -->
+    <string name="edit">"Изменить"</string>
+    <!-- Button used for trying to send a message that has some valid recipients and some
+         invalid recipients, in spite of the warning presented to the user -->
+    <string name="try_to_send">"Попытаться отправить"</string>
+
+    <!-- Title of Settings screen -->
+    <string name="preferences_title">"Настройки"</string>
+    <!-- Settings screen menu item for restoring all settings to default -->
+    <string name="restore_default">"Восстановить настройки"</string>
+
+    <!-- Settings screen, section heading for notifications -->
+    <string name="pref_notification_settings_title">"Уведомления"</string>
+    <!-- Settings screen, section heading for MMS-specific settings -->
+    <string name="pref_mms_settings_title">"Настройки MMS"</string>
+    <!-- Settings screen, section heading for SMS-specific settings -->
+    <string name="pref_sms_settings_title">"Настройки SMS"</string>
+    <!-- Settings screen, section heading for storage-specific settings -->
+    <string name="pref_sms_storage_title">"Память"</string>
+
+    <!-- Title for SMS Disabled -->
+    <string name="pref_title_sms_disabled">"SMS-служба отключена"</string>
+    <!-- Summary for SMS Disabled -->
+    <string name="pref_summary_sms_disabled">"Нажмите, чтобы выбрать SMS/MMS для обмена SMS-сообщениями"</string>
+    <!-- Title for SMS Enabled -->
+    <string name="pref_title_sms_enabled">"SMS-служба включена"</string>
+    <!-- Summary for SMS Enabled -->
+    <string name="pref_summary_sms_enabled">"Нажмите, чтобы выбрать другое приложение для обмена SMS"</string>
+
+    <!-- Settings item description for entering SIM card message screen -->
+    <string name="pref_summary_manage_sim_messages">"Управление сообщениями, хранящимися на SIM-карте"</string>
+    <string name="pref_summary_manage_sim_messages_slot">Управление сообщениями, хранящимися на SIM-карте <xliff:g id="NUMBER">%s</xliff:g></string>
+    <!-- Settings item description for boolean MMS delivery report setting -->
+    <string name="pref_summary_mms_delivery_reports">"Запрашивать отчет о доставке для всех отправляемых сообщений"</string>
+    <!-- Settings item description for boolean MMS read report setting -->
+    <string name="pref_summary_mms_read_reports">"Запрашивать отчет о прочтении для всех отправляемых сообщений"</string>
+    <!-- Settings item description for boolean SMS delivery report setting -->
+    <string name="pref_summary_sms_delivery_reports">"Запрашивать отчет о доставке для всех отправляемых сообщений"</string>
+    <!-- Settings item description for boolean auto-delete messages setting -->
+    <string name="pref_summary_auto_delete">"Удалять старые сообщения по достижении макс. количества"</string>
+    <!-- Settings item description for integer auto-delete sms message limit -->
+    <string name="pref_summary_delete_limit">"Сообщений в цепочке: <xliff:g id="COUNT">%1$s</xliff:g>"</string>
+    <!-- Settings item description for boolean MMS enable group MMS setting -->
+    <string name="pref_summary_mms_group_mms">"Для отправки одного сообщения нескольким получателям используйте MMS"</string>
+    <!-- Settings item for entering SIM card message screen -->
+    <string name="pref_title_manage_sim_messages">"Сообщения на SIM-карте"</string>
+    <string name="pref_title_manage_sim_messages_slot1">Управление сообщениями SIM1</string>
+    <string name="pref_title_manage_sim_messages_slot2">Управление сообщениями SIM2</string>
+    <!-- Settings item for boolean option to enable/disable MMS delivery reports -->
+    <string name="pref_title_mms_delivery_reports">"Отчеты о доставке"</string>
+    <!-- Settings item for boolean option to enable/disable MMS group messages -->
+    <string name="pref_title_mms_group_mms">"Групповые сообщения"</string>
+    <!-- Settings item for boolean option to enable/disable MMS read reports -->
+    <string name="pref_title_mms_read_reports">"Отчеты о прочтении"</string>
+    <!-- Settings item for boolean option to enable/disable SMS delivery reports -->
+    <string name="pref_title_sms_delivery_reports">"Отчеты о доставке"</string>
+    <string name="pref_title_sms_delivery_reports_slot1">Отчеты о доставке для SIM1</string>
+    <string name="pref_title_sms_delivery_reports_slot2">Отчеты о доставке для SIM2</string>
+    <!-- Settings item for boolean option to enable/disable auto-deletion of messages -->
+    <string name="pref_title_auto_delete">"Удалять старые"</string>
+    <!-- Settings item for integer option to set SMS delete limit -->
+    <string name="pref_title_sms_delete">"Макс. количество SMS"</string>
+    <!-- Settings item for integer option to set MMS delete limit -->
+    <string name="pref_title_mms_delete">"Макс. количество MMS"</string>
+    <!-- Settings item for boolean option to display message notifications -->
+    <string name="pref_title_notification_enabled">"Уведомления"</string>
+    <!-- Settings item for boolean option to vibrate during message notification -->
+    <string name="pref_title_notification_vibrateWhen">"Вибросигнал"</string>
+    <!-- Settings item for entering ringtone selection screen -->
+    <string name="pref_title_notification_ringtone">"Рингтон"</string>
+    <!-- Settings item for setting the number of message to save for each conversation -->
+    <string name="pref_messages_to_save">"Установить макс. кол-во сообщений в цепочке для хранения"</string>
+    <!-- Settings screen, what to display for Ringtone when the user chooses "silent" [CHAR LIMIT=100]-->
+    <string name="silent_ringtone">"Без звука"</string>
+
+    <!-- The value to use when migrating from old versions for a true vibrate setting -->
+    <string translatable="false" name="prefDefault_vibrate_true">always</string>
+    <!-- The value to use when migrating from old versions for a false vibrate setting -->
+    <string translatable="false" name="prefDefault_vibrate_false">never</string>
+
+    <!-- Settings item for boolean option to auto-retrieve incoming MMS messages -->
+    <string name="pref_title_mms_auto_retrieval">"Автозагрузка"</string>
+    <!-- Settings item description for boolean MMS auto-retrieve option -->
+    <string name="pref_summary_mms_auto_retrieval">"Автоматически загружать MMS-сообщения"</string>
+    <!-- Settings item for boolean option to auto-retrieve incoming MMS messages while roaming -->
+    <string name="pref_title_mms_retrieval_during_roaming">"Автозагрузка в роуминге"</string>
+    <!-- Settings item description for boolean MMS auto-retrieve while roaming option -->
+    <string name="pref_summary_mms_retrieval_during_roaming">"Автоматически загружать MMS-сообщения в роуминге"</string>
+
+    <!-- Confirm Mark As Unread -->
+    <string name="confirm_mark_unread_dialog_title">Пометить как непрочитанное?</string>
+    <plurals name="confirm_mark_unread_conversation">
+        <!-- Case of 1 result. -->
+        <item quantity="one">Одна беседа будет помечена как непрочитанная.</item>
+        <!-- Case of 0 or 2 or more results. -->
+        <item quantity="other">Беседы (<xliff:g id="number" example="15">%1$s</xliff:g>) будут помечены как непрочитанные.</item>
+    </plurals>
+    <string name="confirm_mark_unread_conversation">Беседа будет помечена как непрочитанная.</string>
+    <!-- Mark all threads confirmation dialog message -->
+    <string name="confirm_mark_unread_all_conversations">Все потоки будут помечены как непрочитанные.</string>
+
+    <!-- Confirm Delete -->
+    <!-- Delete confirmation dialog title -->
+    <string name="confirm_dialog_title">"Удалить?"</string>
+    <!-- Delete confirmation dialog title for locked messages -->
+    <string name="confirm_dialog_locked_title">"Удалить заблокированное сообщение?"</string>
+    <!-- This message is displayed in a confirmation dialog when the user selects one or more
+         conversations and then taps the "Delete" button. -->
+    <plurals name="confirm_delete_conversation">
+        <!-- Case of 1 result. -->
+        <item quantity="one">"Цепочка будет удалена."</item>
+        <!-- Case of 0 or 2 or more results. -->
+        <item quantity="other">"Цепочки (<xliff:g id="NUMBER">%1$s</xliff:g>) будут удалены."</item>
+    </plurals>
+    <string name="confirm_delete_conversation">"Вся цепочка будет удалена."</string>
+    <!-- Delete all threads confirmation dialog message -->
+    <string name="confirm_delete_all_conversations">"Все цепочки будут удалены."</string>
+    <!-- Delete message confirmation dialog message -->
+    <string name="confirm_delete_message">"Сообщение будет удалено."</string>
+    <!-- Delete message confirmation dialog message for a locked message -->
+    <string name="confirm_delete_locked_message">"Сообщение заблокировано. Все равно удалить его?"</string>
+    <!-- Delete all the messages on the SIM dialog message -->
+    <string name="confirm_delete_all_SIM_messages">"С SIM-карты будут удалены все сообщения."</string>
+    <!-- Delete the selected message on the SIM dialog message -->
+    <string name="confirm_delete_SIM_message">"Сообщение будет удалено с SIM-карты."</string>
+    <!-- Delete unlocked checkbox title -->
+    <string name="delete_unlocked">"Удалить заблокированные сообщения"</string>
+    <!-- Delete button title -->
+    <string name="delete">"Удалить"</string>
+    <!-- Action bar mode title when multi-selecting conversations -->
+    <string name="select_conversations">"Выберите цепочки"</string>
+    <!-- Show this in the middle of the main activity when there are no conversations [CHAR LIMIT=none] -->
+    <string name="no_conversations">"Пока ничего нет"</string>
+    <!-- Show this in the middle of the main activity when loading conversations [CHAR LIMIT=none] -->
+    <string name="loading_conversations">"Загрузка сообщений..."</string>
+
+    <!-- When the user tries to view message details and some error occurs while
+         retrieving those details, this message will be shown. -->
+    <string name="cannot_get_details">"Не удалось загрузить данные."</string>
+    <!-- Title of "Message details" dialog -->
+    <string name="message_details_title">"Сведения о сообщении"</string>
+    <!-- Label in "Message details" dialog -->
+    <string name="message_type_label">"Тип: "</string>
+    <!-- "Type" value in "Message details" dialog -->
+    <string name="text_message">"SMS-сообщение"</string>
+    <!-- "Type" value in "Message details" dialog -->
+    <string name="multimedia_message">"MMS-сообщение"</string>
+    <!-- "Type" value in "Message details" dialog -->
+    <string name="multimedia_notification">"MMS-уведомление"</string>
+    <!-- Label in "Message details" dialog showing who sent the message. -->
+    <string name="from_label">"От: "</string>
+    <!-- Label in "Message details" dialog -->
+    <string name="to_address_label">"Кому: "</string>
+    <!-- Label in "Message details" dialog -->
+    <string name="bcc_label">"Скрытая копия: "</string>
+    <!-- Label in "Message details" dialog -->
+    <string name="sent_label">"Отправлено: "</string>
+    <!-- Label in "Message details" dialog -->
+    <string name="received_label">"Получено: "</string>
+    <!-- Label in "Message details" dialog -->
+    <string name="saved_label">"Сохранено: "</string>
+    <!-- Label in "Message details" dialog -->
+    <string name="subject_label">"Тема: "</string>
+    <!-- Label in "Message details" dialog -->
+    <string name="message_size_label">"Размер сообщения: "</string>
+    <!-- Label in "Message details" dialog -->
+    <string name="priority_label">"Приоритет: "</string>
+    <!-- "Priority" value in "Message details" dialog -->
+    <string name="priority_high">"высокий"</string>
+    <!-- "Priority" value in "Message details" dialog -->
+    <string name="priority_normal">"обычный"</string>
+    <!-- "Priority" value in "Message details" dialog -->
+    <string name="priority_low">"низкий"</string>
+    <!-- Label in "Message details" dialog -->
+    <string name="message_class_label">"Класс сообщений: "</string>
+    <!-- Label in "Message details" dialog -->
+    <string name="error_code_label">"Код ошибки: "</string>
+
+   <!-- Menu title for editing a message -->
+   <string name="menu_edit">"Изменить"</string>
+   <!-- Menu title for deleting undelivered messages or messages on
+        the SIM card. -->
+   <string name="menu_delete_messages">"Удалить сообщения"</string>
+   <!-- Menu title for locking a message -->
+   <string name="menu_lock">"Заблокировать"</string>
+   <!-- Menu title for unlocking a message -->
+   <string name="menu_unlock">"Разблокировать"</string>
+
+    <!-- Manage SIM Messages -->
+    <!-- Menu title to copy a selected message from the SIM card to the phone. -->
+    <string name="sim_copy_to_phone_memory" product="tablet">"Копировать в память планшетного ПК"</string>
+    <!-- Menu title to copy a selected message from the SIM card to the phone. -->
+    <string name="sim_copy_to_phone_memory" product="default">"Копировать в память телефона"</string>
+    <!-- Menu title to delete a selected messaged from the SIM card. -->
+    <string name="sim_delete">"Удалить"</string>
+    <!-- Title of screen displaying messages on SIM card -->
+    <string name="sim_manage_messages_title">"SMS на SIM-карте"</string>
+    <!-- Context menu item but currently commented out in 1.0. -->
+    <string name="sim_view">Вид</string>
+    <!-- Message that appears on the "SMS messges on SIM card" screen when there are no messages on the SIM card -->
+    <string name="sim_empty">"На SIM-карте нет сообщений."</string>
+
+    <!-- Delivery Header View -->
+    <!-- Title of "Report" window -->
+    <string name="delivery_header_title">"Отчет"</string>
+
+    <!-- Delivery Report Activity -->
+    <!-- Status in "Report" window -->
+    <string name="status_none">"(Нет)"</string>
+    <!-- Status in "Report" window -->
+    <string name="status_pending">"Ожидается отправка"</string>
+    <!-- Status in "Report" window -->
+    <string name="status_read">"Прочитанные"</string>
+    <!-- Status in "Report" window -->
+    <string name="status_received">"Получено"</string>
+    <!-- Status in "Report" window -->
+    <string name="status_failed">"Сбой"</string>
+    <!-- Status in "Report" window -->
+    <string name="status_unread">"Непрочитанные"</string>
+    <!-- Status in "Report" window -->
+    <string name="status_deleted_unread">Удалено без прочтения</string>
+    <!-- Status in "Report" window -->
+    <string name="status_rejected">"Отклоненные"</string>
+    <!-- Label in "Report" window -->
+    <string name="recipient_label">"Получатель: "</string>
+    <!-- Label in "Report" window -->
+    <string name="status_label">"Статус: "</string>
+    <!-- Label in "Report" window [CHAR LIMIT=50]-->
+    <string name="delivered_label">"Доставлено: "</string>
+
+
+    <!-- Attachment Type Selector Adapter. This string is an option in the "Attach" dialog, "Add music" dialog -->
+    <string name="attach_image">"Изображение"</string>
+    <!-- Attachment Type Selector Adapter. This string is an option in the "Attach" dialog, "Add music" dialog -->
+    <string name="attach_take_photo">"Снять фото"</string>
+    <!-- Attachment Type Selector Adapter. This string is an option in the "Attach" dialog, "Add music" dialog -->
+    <string name="attach_video">"Видео"</string>
+    <!-- Attachment Type Selector Adapter. This string is an option in the "Attach" dialog, "Add music" dialog -->
+    <string name="attach_record_video">"Снять видео"</string>
+    <!-- Attachment Type Selector Adapter. This string is an option in the "Attach" dialog, "Add music" dialog -->
+    <string name="attach_sound">"Аудио"</string>
+    <!-- Attachment Type Selector Adapter. This string is an option in the "Attach" dialog, "Add music" dialog -->
+    <string name="attach_record_sound">"Записать аудио"</string>
+    <!-- Attachment Type Selector Adapter. This string is an option in the "Attach" dialog, "Add music" dialog -->
+    <string name="attach_slideshow">"Слайд-шоу"</string>
+
+    <!-- Layout Selector Adapter. Slideshow layout dialog option for aligning an icon. -->
+    <string name="select_bottom_text">"Текст внизу"</string>
+    <!-- Layout Selector Adapter. Slideshow layout dialog option for aligning an icon. -->
+    <string name="select_top_text">"Текст вверху"</string>
+
+    <!-- Delivery Report Toast dialog content -->
+    <string name="delivery_toast_body">"%s: сообщение доставлено"</string>
+
+    <!-- Delivery Report Notification dialog title. -->
+    <string name="notification_multiple">"Новых: <xliff:g id="COUNT">%s</xliff:g>"</string>
+    <!-- Delivery Report Notification dialog title. -->
+    <string name="notification_multiple_title">"Новые сообщения"</string>
+
+    <!-- Failed to send/download Notification dialog title. -->
+    <string name="notification_failed_multiple">"Не удалось отправить сообщения (<xliff:g id="COUNT">%s</xliff:g>)"</string>
+    <!-- Failed to send/download Notification dialog title. -->
+    <string name="notification_failed_multiple_title">"Сообщения не отправлены"</string>
+
+    <!-- Sim Full Notification dialog title. -->
+    <string name="sim_full_title">"SIM-карта заполнена"</string>
+    <!-- Sim Full Notification dialog text. -->
+    <string name="sim_full_body">"Удалите несколько сообщений, чтобы освободить место."</string>
+
+    <!-- Device Full Notification dialog title. -->
+    <string name="sms_full_title">"Память для текстовых сообщений переполнена."</string>
+    <!-- Device Full Notification dialog text. -->
+    <string name="sms_full_body">"Память переполнена. Чтобы сохранить новые сообщения, удалите несколько старых."</string>
+    <!-- Device Low Notification dialog title. -->
+    <string name="memory_low_title">Недостаточно памяти телефона</string>
+    <!-- Device Low Notification dialog text. -->
+    <string name="memory_low_body">Память телефона почти заполнена. Для получения новых сообщений необходимо удалить ненужные данные.</string>
+    <!-- Disk Storage Full Error Notification dialog text. -->
+    <string name="disk_storage_full_error">Ошибка: Хранилище переполнено.</string>
+
+    <!-- Mobile data is turned off dialog text. -->
+    <string name="inform_data_off">Передача данных по мобильной связи отключена. Включите ее в настройках системы и повторите попытку.</string>
+    <!-- Mms size is too large dialog text. -->
+    <string name="mms_too_large">Слишком большое сообщение для загрузки.</string>
+
+    <!-- Sms\'s Being Rejected Notification dialog title. -->
+    <string name="sms_rejected_title">"Сообщение SMS отклонено."</string>
+    <!-- Sms\'s Being Rejected Notification dialog text. -->
+    <string name="sms_rejected_body">"Входящее сообщение отклонено по неизвестной причине."</string>
+
+    <!-- Multimedia type used in building other messages.
+         For instance: Sorry, you cannot add this audio to your message. -->
+    <string name="type_audio">"аудио"</string>
+    <!-- Multimedia type used in building other messages.
+         For instance: Sorry, you cannot add this picture to your message. -->
+    <string name="type_picture">"картинка"</string>
+    <!-- Multimedia type used in building other messages.
+         For instance: Sorry, you cannot add this video to your message. -->
+    <string name="type_video">"видео"</string>
+
+    <!-- Dialog title for the Read Report dialog. -->
+    <string name="confirm">"Подтвердить"</string>
+    <!-- Dialog text for the Read Report dialog. -->
+    <string name="message_send_read_report">"Будет отправлен отчет о прочтении."</string>
+
+    <!-- This is the text of a toast message briefly displayed when a problem occurs
+         while sending. -->
+    <string name="message_queued">"Сервис недоступен. Мы попробуем отправить сообщение позже."</string>
+
+    <!-- dialog error message when only is FDN is allowed. -->
+    <string name="fdn_check_failure">"Вы можете отправлять сообщения только на номера из своего списка разрешенных номеров."</string>
+
+    <!-- Download Manager -->
+    <!-- When an error occurs downloading a new message and a subject isn\'t available, substitute
+         this default subject. -->
+    <string name="no_subject">"(Без темы)"</string>
+    <!-- When an error occurs downloading a new message and the sender is unknown, substitute
+         this default text. -->
+    <string name="unknown_sender">"Неизвестный отправитель"</string>
+    <!-- When an error occurs downloading a new message, display this message.
+         An example: Download of message Wanna get pizza from dorkman was unsuccessful. -->
+    <string name="dl_failure_notification">"Не удалось загрузить сообщение \"<xliff:g id="SUBJECT">%1$s</xliff:g>\" от пользователя <xliff:g id="FROM">%2$s</xliff:g>."</string>
+
+    <!-- This is the confirm rate limit alert dialog title. -->
+    <string name="rate_limit_surpassed">"Подтвердить"</string>
+    <!-- This is the confirm rate limit alert dialog text. -->
+    <string name="confirm_rate_limit">"Отправляется большое количество MMS. Продолжить?"</string>
+
+    <!-- Message Failed Notification -->
+    <!-- Dialog box title when receiving a message failed. -->
+    <string name="message_download_failed_title">"Не удалось загрузить сообщение"</string>
+    <!-- Dialog box title when sending a message failed. -->
+    <string name="message_send_failed_title">"Сообщение не отправлено"</string>
+    <!-- Dialog box message text when failure occurs sending a message. -->
+    <string name="message_failed_body">"Нажмите, чтобы просмотреть сообщение и повторить попытку."</string>
+    <!-- Dialog box message when there\'s a problem retrieving messages. -->
+    <string name="download_later">"Не удалось загрузить сообщения. Повторите попытку позже."</string>
+    <string name="send_failed_retry">Сбой при отправке, автоматический повтор попытки.</string>
+    <string name="download_failed_retry">Сбой при загрузке, автоматический повтор попытки.</string>
+    <!-- Dialog box message when there\'s no APN specified on the device. -->
+    <string name="no_apn">"Для этого устройства не задано ни одной точки доступа."</string>
+
+    <!-- Title for audio file picker -->
+    <string name="select_audio">"Выбор аудио"</string>
+    <string name="system_audio_item">Аудио системы</string>
+    <string name="external_audio_item">Аудио с внешних источников</string>
+    <!-- Menu title to copy an attachment to the shared storage [CHAR LIMIT=25] -->
+    <string name="copy_to_sdcard">"Сохранить приложение"</string>
+    <!-- Toast message on successful copy to shared storage [CHAR LIMIT=30] -->
+    <string name="copy_to_sdcard_success">"Файл сохранен."</string>
+    <!-- Toast message on failed copy to shared storage [CHAR LIMIT=30] -->
+    <string name="copy_to_sdcard_fail">"Файл не сохранен."</string>
+    <!-- Menu title to save a sound as a ringtone -->
+    <string name="save_ringtone">"Сохранить как мелодию звонка"</string>
+    <!-- Toast message on successful copying ringtone to drm provider -->
+    <string name="saved_ringtone">"Рингтон сохранен."</string>
+    <!-- Toast message on failed copying ringtone to drm provider -->
+    <string name="saved_ringtone_fail">"Рингтон не сохранен."</string>
+    <!-- Menu item -->
+    <!-- Menu item  [CHAR LIMIT=40] -->
+    <string name="menu_group_participants">"Группировать"</string>
+
+    <!-- This is the dialog title for the "Select link" dialog, shown when the user clicks on a
+    chat in the chat history view if there are links in the chat message. The dialog displays the
+    links if there are any -->
+    <string name="select_link_title">"Выбор действия"</string>
+
+    <!-- Name of the Nth slide, shown in the list in the slideshow editor. -->
+    <string name="slide_number">"Слайд <xliff:g id="NUMBER">%s</xliff:g>"</string>
+    <!-- Duration of the slide, shown in the list in the slideshow editor -->
+    <plurals name="slide_duration">
+        <!-- Case of 1-second duration. -->
+        <item quantity="one">"<xliff:g id="NUMBER">%s</xliff:g> с."</item>
+        <!-- Case of "few" (small number of) seconds of duration. -->
+        <item quantity="few">"<xliff:g id="NUMBER">%s</xliff:g> с."</item>
+        <!-- Case of multiple-second duration. -->
+        <item quantity="other">"<xliff:g id="NUMBER">%s</xliff:g> с."</item>
+    </plurals>
+
+    <!-- Title of the delivery report activity. -->
+    <string name="delivery_report_activity">"Отчет о доставке"</string>
+
+    <!-- Title of the activity that tells the user about storage limits. -->
+    <string name="storage_limits_activity">"Пределы хранилища"</string>
+
+    <!-- Title of the slide duration editor activity. -->
+    <string name="change_duration_activity">"Изменить продолжительность"</string>
+
+    <!-- Title of the slideshow editor activity. -->
+    <string name="edit_slideshow_activity">"Изменить слайд-шоу"</string>
+
+    <!-- Title of the recipient list activity. [CHAR LIMIT=NONE] -->
+    <string name="recipient_list_activity">"Группы получателей"</string>
+
+    <!-- Title of the slide editor activity. -->
+    <string name="edit_slide_activity">"Изменить слайд"</string>
+
+    <!-- Title of the slideshow activity. -->
+    <string name="slideshow_activity">"Слайд-шоу"</string>
+
+    <!-- Title of the class-0 message activity. -->
+    <string name="class_0_message_activity">"Сообщение класса 0"</string>
+
+    <!-- Application name shown when searching -->
+    <string name="search_label">"SMS/MMS"</string>
+
+    <!-- Search hint -->
+    <string name="search_hint">"Поиск сообщений"</string>
+
+    <!-- Search activity name -->
+    <string name="search">"SMS/MMS"</string>
+    <!-- Search setting description -->
+    <string name="search_setting_description">"Текст в сообщениях"</string>
+
+    <!--  Search empty results -->
+    <string name="search_empty">"Ничего не найдено"</string>
+
+    <!--  Search results title -->
+    <plurals name="search_results_title">
+        <!-- Case of 1 result. -->
+        <item quantity="one">"Поиск \"<xliff:g id="SEARCH">%2$s</xliff:g>\" (<xliff:g id="NUMBER">%1$s</xliff:g>)"</item>
+        <!-- Case of 0 or 2 or more results. -->
+        <item quantity="other">"Поиск \"<xliff:g id="SEARCH">%2$s</xliff:g>\" (<xliff:g id="NUMBER">%1$s</xliff:g>)"</item>
+    </plurals>
+
+    <!--- String saved in history searches. -->
+    <string name="search_history">"Результатов для \"<xliff:g id="SEARCH">%2$s</xliff:g>\": <xliff:g id="COUNT">%1$s</xliff:g>"</string>
+
+    <!-- Button title in Messaging preferences. -->
+    <string name="confirm_clear_search_title">"Очистить"</string>
+    <!-- Text for the preferences button. -->
+    <string name="confirm_clear_search_text">"История поиска будет удалена."</string>
+    <!--- Button title in preferences to clear the search history. It\'s a verb action that takes place
+          immediately when clicked. -->
+    <string name="pref_mms_clear_search_history_title">"Очистить историю поиска"</string>
+    <!--- Button description in preferences to clear the search history. -->
+    <string name="pref_mms_clear_search_history_summary">"Не показывать предыдущие сообщения в поле поиска"</string>
+
+    <!-- Dialog text for display mode save dialog. -->
+    <string name="save">"Сохранить"</string>
+
+    <!-- Dialog title for dialog that informs user about new storage settings. -->
+    <string name="storage_limits_title">"Ограничивать количество сообщений"</string>
+
+    <!-- Dialog message for dialog that informs user about new storage settings. -->
+    <string name="storage_limits_message">"Ограничить число сообщений, сохраняемых в цепочке?"</string>
+
+    <!-- Button title for dialog that informs user about new storage settings. -->
+    <string name="storage_limits_setting">"Установить ограничения"</string>
+
+    <!-- Button title to dismiss dialog that informs user about new storage settings. -->
+    <string name="storage_limits_setting_dismiss">"Нет ограничений"</string>
+
+    <!-- Toast message when a user tries to send a Mms message when there are already too many
+         outstanding unsent message. -->
+    <string name="too_many_unsent_mms">"Не удалось отправить сообщение. Слишком много неотправленных MMS."</string>
+
+    <!-- Brief small label shown to right of message when it is being sent. -->
+    <string name="sending_message">"Отправка..."</string>
+
+    <!-- Title of progress dialog for picker -->
+    <string name="pick_too_many_recipients">"Слишком много получателей"</string>
+
+    <!-- Message of progress dialog for picker -->
+    <string name="adding_recipients">"Добавление получателей..."</string>
+
+    <!-- In conversation list items, this is the separator between a contact\'s name
+         and the draft stamp [CHAR LIMIT=5] -->
+    <string name="draft_separator">,\u0020</string>
+
+    <!-- In conversation list items, this comes after the receipient\'s name and contains
+         the number of messages in the thread [CHAR LIMIT=5] -->
+    <string name="message_count_format">\u00a0<xliff:g id="number" example="1">%1$s</xliff:g></string>
+
+    <!-- When showing a multi-message notification, this is the title [CHAR LIMIT=none] -->
+    <string name="message_count_notification">"Новые сообщения (<xliff:g id="NUMBER">%1$s</xliff:g>)"</string>
+    <!-- In digest notifications when we show N messages, but there are N+M outstanding messages,
+         this text is displayed at the bottom of the notification. [CHAR LIMIT=50] -->
+    <plurals name="message_count_notification_overflow">
+        <!-- Case of 1 result. -->
+        <item quantity="one">"Еще сообщений: <xliff:g id="NUMBER">%1$s</xliff:g>"</item>
+        <!-- Case of 2 or more results. -->
+        <item quantity="other">"Еще сообщений: <xliff:g id="NUMBER">%1$s</xliff:g>"</item>
+    </plurals>
+
+    <!-- For debugging: Dialog box title indicating there\'s a situation where data has unexpectedly
+         changed -->
+    <string name="error_state">"Данные были изменены"</string>
+    <!-- For debugging: Dialog box text indicating there\'s a situation where data has unexpectedly
+         changed -->
+    <string name="error_state_text">"Цепочки не соответствуют получателям. Сделайте снимок экрана и отправьте сообщение об ошибке через веб-сайт http://go/droidanizer"</string>
+
+    <!-- In the title of the compose message activity, when there are multiple recipients, we show
+         the number of recipients in the subtitle of the action bar. There\'s never a case of one. [CHAR LIMIT=50] -->
+    <plurals name="recipient_count">
+        <!-- Case of 0 or 2 or more results. -->
+        <item quantity="other">"<xliff:g id="NUMBER">%1$s</xliff:g> чел."</item>
+    </plurals>
+
+    <!-- Message of the dialog used to disable messaging notifications [CHAR LIMIT=none] -->
+    <string name="disable_notifications_dialog_message">"Не дублировать уведомления об SMS из приложения обмена сообщениями по умолчанию"</string>
+
+    <!-- Displayed at the end of the conversation list in the widget. Tapping on this will open the default conversation list. [CHAR LIMIT=35] -->
+    <string name="view_more_conversations">"Другие цепочки писем"</string>
+
+    <!-- Attachment type shown in notification. [CHAR LIMIT=35] -->
+    <string name="attachment_audio">"Аудио"</string>
+    <!-- Attachment type shown in notification. [CHAR LIMIT=35] -->
+    <string name="attachment_slideshow">"Слайд-шоу"</string>
+    <!-- Attachment type shown in notification. [CHAR LIMIT=35] -->
+    <string name="attachment_video">"Видео"</string>
+    <!-- Attachment type shown in notification. [CHAR LIMIT=35] -->
+    <string name="attachment_picture">"Картинка"</string>
+
+    <!-- Separator between parts of a notification in each line of an inboxStyle notification. [CHAR LIMIT=2] -->
+    <string name="notification_separator">\u0020\u0020</string>
+
+    <!-- An enumeration comma for separating multiple names in notifications. [CHAR LIMIT=2] -->
+    <string name="enumeration_comma">,\u0020</string>
+
+    <!-- In message list items, this string builds the timestamp line when the message is in a group [CHAR LIMIT=NONE] -->
+    <string name="message_timestamp_format"><xliff:g id="string" example="Fred Flinstone">%1$s</xliff:g>\u0020-\u0020<xliff:g id="string" example="9:39AM">%2$s</xliff:g></string>
+
+    <string name="mail_to">mailto:</string>
+    <!-- Menu item to connect the extract url in WwwContextMenuActivity  -->
+    <string name="menu_connect_url">Подключение</string>
+    <string name="do_not_show_connect_warning">Больше не показывать это предупреждение.</string>
+    <!-- Menu item to add the extract url to boomark in WwwContextMenuActivity  -->
+    <string name="menu_add_to_label">Сохранить в закладках</string>
+    <string name="loadurlinfo_str">Предупреждение. URL-адреса из неизвестных источников могут использоваться для хищения личных данных</string>
+    <!-- Message Template -->
+    <string name="pref_summary_message_template">"Изменить шаблон сообщения"</string>
+    <string name="pref_title_message_template">"Шаблон сообщения"</string>
+    <string name="title_new_message_template">"Новый шаблон"</string>
+    <string name="summary_new_message_template">"Создать новый шаблон сообщения"</string>
+    <string name="message_template_title">"Шаблон сообщения"</string>
+    <string name="dialog_editSMSTemplate_title">"Изм."</string>
+    <string name="message_template">"Шаблон сообщения"</string>
+    <string name="import_message_template">"Импортировать шаблон"</string>
+    <string name="delete_template_message">"Удалить"</string>
+    <string name="template_full">"Достигнут предел количества шаблонных текстов."</string>
+    <string name="pref_sms_signature_title">"SMS-подпись"</string>
+    <string name="pref_title_enable_signature">"SMS-подпись"</string>
+    <string name="pref_summary_enable_signature">"SMS-подпись включена"</string>
+    <string name="pref_summary_disable_signature">"SMS-подпись выключена"</string>
+    <string name="pref_title_edit_signature">"Изменить SMS-подпись"</string>
+    <string name="signature_full_toast">Достигнута максимальная длина для подписи.</string>
+
+    <!-- Copy message to sim -->
+    <string name="menu_copy_to">"Копировать"</string>
+    <string name="operation_to_card_memory">Скопир. сообщ. на SIM-карту</string>
+
+    <!-- SMSC -->
+    <string name="pref_smsc_title">Настройки SMSC</string>
+    <string name="pref_one_smcs">"Задать номер SMSC"</string>
+    <string name="pref_more_smcs">"Задать номер SMSC SIM-карты"<xliff:g id="slot_number">%d</xliff:g>"\'"</string>
+    <string name="set_smsc_error">Не удалось настроить номера SMSC</string>
+    <string name="set_smsc_success">Настроить SMSC успешно</string>
+    <string name="set_smsc_confirm_message">Изменение SMSC может привести к невозможности отправки SMS, подтвердить изменения?</string>
+
+    <string name="storage_warning_title">"Недостаточно места"</string>
+    <string name="storage_warning_content">"Вы не сможете получать новые SMS и MMS."</string>
+    <!-- Copy message to sim -->
+    <string name="copy_to_sim">Скопир. сообщ. на SIM-карту</string>
+    <string name="copy_to_sim_success">Копирование SMS на SIM-карту, ИТОГ: %1$d, УСПЕШНО: %2$d</string>
+    <string name="copy_to_sim_fail">"Не удается сохранить сообщение"</string>
+    <string name="copy_to_phone_success">"Сообщение сохранено"</string>
+    <string name="copy_to_phone_fail">"Не удается сохранить сообщение"</string>
+
+    <string name="audio_picker_app_not_found">Не удается найти приложение для выбора аудио</string>
+    <string name="contact_app_not_found">Не удается найти приложение "Контакт"</string>
+    <!-- Gray hint displayed in the search field in Contacts when empty -->
+    <string name="search_bar_hint">"Поиск в контактах"</string>
+    <string name="select_all">"Все"</string>
+
+    <!-- Add for share contact feature -->
+    <string name="type_vcard">vCard</string>
+    <string name="import_vcard">"Импортировать"</string>
+    <string name="attach_add_contact_as_text">Контактные данные</string>
+    <string name="attach_add_contact_as_vcard">Контакт vCard</string>
+
+    <string name="contact_info_text_as_name">Имя:</string>
+    <string name="contact_info_text_as_phone">Тел.:</string>
+    <string name="contact_info_text_as_email">"Эл. почта:"</string>
+
+    <!--  Strings used forh MMS push of messages in outbox -->
+    <string name="label_mms_send_outbox_msg">"Отправка MMS"</string>
+    <string name="desc_mms_send_outbox_msg">"Отправка всех MMS в исходящих"</string>
+
+    <string name="pref_wap_push_title">"Настройка сообщения службы Auto Push"</string>
+    <string name="pref_title_wap_push_enabled">"Включить WAP PUSH"</string>
+    <string name="pref_summary_wap_push_enabled">"Включить, чтобы получать служебное сообщение"</string>
+
+    <!-- Banner in conversation list for making Messaging the default SMS app -->
+    <string name="banner_sms_promo_title_initial">"Приложение SMS/MMS не используется для обмена SMS-сообщениями."</string>
+    <string name="banner_sms_promo_title_application">"Попробуйте \"<xliff:g id="APPNAME">%s</xliff:g>\" для SMS"</string>
+    <!-- select contact group -->
+    <string name="no_contact_group">Нет группы</string>
+    <string name="banner_sms_promo_message">"Этот параметр можно изменить в настройках"</string>
+
+    <!-- title of mailboxmessagecontent -->
+    <string name="sim_card">SIM-карта</string>
+
+    <!-- String used in MemoryStatusActivity.java -->
+    <string name="memory_status_title">Состояние памяти</string>
+    <string name="sms_phone_used">Использовано SMS:</string>
+    <string name="sms_phone_capacity">Макс. число SMS:</string>
+    <string name="mms_phone_used">Использовано MMS:</string>
+    <string name="mms_phone_capacity">Макс. число MMS:</string>
+
+    <string name="sub">SUB</string>
+
+    <!-- Settings item description for SMS Validity period -->
+    <string name="pref_title_sms_validity_period">Период действия SMS</string>
+    <string name="pref_title_sms_validity_period_slot1">Период действия SMS для SIM1</string>
+    <string name="pref_title_sms_validity_period_slot2">Период действия SMS для SIM2</string>
+    <string name="sms_validity_period_not_set">Не задан</string>
+    <string name="sms_validity_period_one_hour">"1 ч."</string>
+    <string name="sms_validity_period_six_hours">"6 ч."</string>
+    <string name="sms_validity_period_twelve_hours">"12 ч."</string>
+    <string name="sms_validity_period_one_day">"1 д."</string>
+    <string name="sms_validity_period_maximum">Максимум</string>
+
+    <string name="operate_success">Операция выполнена!</string>
+    <string name="operate_failure">Операция не выполнена!</string>
+    <string name="menu_reply">"Ответить"</string>
+
+    <string name="slot1">Гнездо 1</string>
+    <string name="slot2">Гнездо 2</string>
+
+    <string name="normal_show">Просмотр в нормальном режиме</string>
+    <string name="cannot_play">Невозможно показать слайд-шоу.</string>
+
+    <string name="confirm_delete_selected_messages">Выбранные сообщения будут удалены.</string>
+    <!-- menu item of mailboxmessagecontent -->
+    <string name="menu_load_push">Загрузить</string>
+    <string name="menu_delete_msg">Удалить</string>
+    <!-- toast for send result -->
+    <string name="send_failure">Сбой при отправке!</string>
+    <string name="send_success">Успешно отправлено!</string>
+    <!-- title of mailboxmessagecontent -->
+    <string name="message_detail">Сведения о сообщении</string>
+    <string name="select_messages">Выбрать сообщения</string>
+    <string name="no_message">Нет сообщений</string>
+    <string name="change_to_folder_mode">Перейти в режим папок</string>
+    <string name="change_to_conversation_mode">Перейти в режим разговора</string>
+    <!-- Spinner item of box type in mailbox-mode -->
+    <string name="box_type_select">Выбор типа ящика</string>
+    <string name="type_inbox">Входящие</string>
+    <string name="type_sent">Отправлено</string>
+    <string name="type_outbox">Исходящие</string>
+    <string name="type_draft">Черновики</string>
+    <!-- Spinner item of slot type in mailbox-mode -->
+    <string name="slot_type_select">Выбрать слот</string>
+    <string name="type_all">Все</string>
+    <string name="type_slot1">Карта1</string>
+    <string name="type_slot2">Карта2</string>
+    <!-- String used in SearchActivityExtend.java -->
+    <string name="search_title">"Поиск сообщений"</string>
+    <string name="search_key">Поиск ключевых слов</string>
+    <string name="search_mode">Режим поиска</string>
+    <string name="search_as_name">"Название"</string>
+    <string name="search_as_number">"Номер"</string>
+    <string name="search_as_content">Содержимое</string>
+    <string name="search_as_subject">"Тема"</string>
+    <string name="invalid_name_toast">Введите допустимое имя!</string>
+
+    <string name="sim_capacity_title">Емкость SIM-карты</string>
+    <string name="sim_capacity_used">Использовано:  </string>
+    <string name="sim_capacity">Емкость:  </string>
+
+    <!-- Settings item description for Mms Validity period -->
+    <string name="pref_title_mms_save_time">Период действия MMS</string>
+    <string name="pref_title_mms_save_time_slot1">Период действия MMS для SIM1</string>
+    <string name="pref_title_mms_save_time_slot2">Период действия MMS для SIM2</string>
+    <string name="mms_one_week">Одна неделя</string>
+    <string name="mms_two_days">Два дня</string>
+    <string name="mms_max">Максимум</string>
+    <string name="save_description">Срок хранения сообщений на сервере</string>
+    <string name="status_expired">Срок хранения MMS истек</string>
+
+    <string name="pref_sim_card_full_save_to_phone">SIM-карта заполнена, сохраните новое сообщение в телефоне.</string>
+
+    <!-- batch delete message in ConversationList and MailBoxMessageList -->
+    <string name="selected_all">Выбрать все</string>
+    <string name="deselected_all">"Отменить все"</string>
+    <string name="selected_count">Выбрано: <xliff:g id="COUNT">%d</xliff:g> </string>
+    <!--add for toast when deleting -->
+    <string name="deleting_title">Удаление</string>
+    <string name="please_wait">Пожалуйста, подождите...</string>
+    <string name="done_delete">"ГОТОВО"</string>
+    <!--add for toast when merging sms -->
+    <string name="merging_sms_title">Объединение SMS</string>
+    <!-- priority of cdma message -->
+    <string translatable="false" name="default_cdma_priority">0</string>
+    <string name="cdma_priority_normal">Обычная</string>
+    <string name="cdma_priority_interactive">Интерактивное</string>
+    <string name="cdma_priority_urgent">Срочное</string>
+    <string name="cdma_priority_emergency">Экстренное</string>
+    <string name="pref_title_cdma_priority">Приоритет сообщения</string>
+    <string name="pref_summary_cdma_priority">Приоритет сообщения CDMA</string>
+    <string name="prefDialogTitle_cdma_priority">Приоритет</string>
+    <string name="download_dialog_title">Подтвердить загрузку этого MMS?</string>
+    <string name="menu_email">Отправить письмо</string>
+
+    <!-- Settings item description for Preferred storage -->
+    <string name="pref_title_sms_store">Предпочитаемое хранилище</string>
+    <string name="pref_title_sms_store_card1">Предпочитаемая память для SIM1</string>
+    <string name="pref_title_sms_store_card2">Предпочитаемая память для SIM2</string>
+    <string name="pref_sms_store_phone">Телефон</string>
+    <string name="pref_sms_store_card">SIM-карта</string>
+    <string name="pref_sms_store_card_unknown_fail">Сбой при получении нового сообщения. SIM-карта не может быть считана корректно</string>
+    <string name="mms_size_indicator"><xliff:g id="mms_size">%1$s</xliff:g>K/<xliff:g id="all_size">%2$s</xliff:g>K</string>
+    <string name="forward_size_over">Запрет переадресации, размер нового сообщения превышает 300 КБ.</string>
+
+    <string name="prefs_title_export_sms_messages">Экспорт SMS-сообщений</string>
+    <string name="prefs_title_import_sms_messages">Импорт SMS-сообщений</string>
+
+    <string name="import_sms_title">"Импорт с накопителя"</string>
+    <string name="export_sms_title">"Экспорт на накопитель"</string>
+    <string name="delete_sms_title">Удалить существующую резервную копию</string>
+    <string name="pick_sms_backup_title">Выбрать резервную копию</string>
+    <string name="delete_sms_toast">Резервная копия удалена.</string>
+    <string name="import_sms_toast">Сообщения импортированы.</string>
+    <string name="export_sms_toast">Сообщения экспортированы.</string>
+    <string name="export_sms_failed_toast">Не удается экспортировать сообщения</string>
+    <string name="import_sms_failed_toast">Не удается импортировать сообщения</string>
+    <string name="perform_backup_title">"Выполняется экспорт"</string>
+    <string name="perform_restore_title">Выполняется импорт</string>
+    <string name="wait_progress_message">Подождите\u2026</string>
+    <string name="backup_file_name_message">Сообщения экспортированы в \'%1$s\'</string>
+    <string name="manage_sdcard_messages">Импорт/экспорт сообщений</string>
+    <string name="no_backups_found">Резервные копии не найдены</string>
+    <string name="remove_subject">Удалить тему</string>
+    <string name="pref_title_notification_creation_mode">Режим создания</string>
+
+    <!-- ConfigurationClient -->
+    <string name="omacp_configuration">Настройка OMACP</string>
+    <string name="configuration_message_key">Настройка сообщений</string>
+    <string name="configuration_message_key_activity">Коснитесь, чтобы настроить сообщения OMACP</string>
+
+    <string name="pref_dialog_title_creation_mode">Выберите режим создания</string>
+    <string name="pref_summary_creation_mode">Режим создания MMS для составного сообщения</string>
+    <string name="restricted_format">Ограниченный формат</string>
+    <string name="attach_anyway">Вложить в любом случае?</string>
+
+    <string name="plugger">Заглушка</string>
+    <string name="file_not_found">Файл не найден</string>
+    <string name="type_attachment">вложение</string>
+    <string name="bad_file">Файл поврежден и не может быть вложен!</string>
+    <string name="indication_send_message_successfully">"Сообщение разослано."</string>
+    <string name="indication_send_message_failed">"Не удалось отправить сообщение."</string>
+
+    <!-- ConfigurationClient -->
+    <string name="omacp_configuration">Настройка OMACP</string>
+    <string name="configuration_message_key">Настройка сообщений</string>
+    <string name="configuration_message_key_activity">Коснитесь, чтобы настроить сообщения OMACP</string>
+    <!-- General settings -->
+    <string name="pref_title_general_settings">Основные</string>
+    <string name="pref_title_notification_settings">"Уведомления"</string>
+
+    <string name="pref_title_display_settings">ДИСПЛЕЙ И СВОЙСТВА</string>
+    <string name="pref_title_show_email_address">Показать адрес эл. почты</string>
+    <string name="pref_summary_show_email_address">Включить адрес эл. почты в результаты поиска контактов</string>
+    <!-- Cell broadcast settings -->
+    <string name="cell_broadcast">"Оповещение населения"</string>
+    <string name="cell_broadcast_title">Настройки широковещ. передачи сообщ.</string>
+    <string name="cell_broadcast_settings">Настройки широковещ. передачи сообщ. SIM-карты</string>
+    <!-- Chat wallpaper -->
+    <string name="pref_chat_wallpaper">Обои чата</string>
+    <string name="dialog_wallpaper_chooser_option_gallery">"Галерея"</string>
+    <string name="dialog_wallpaper_chooser_option_camera">Сделать снимок</string>
+    <string name="dialog_wallpaper_title">Выберите обои</string>
+    <string name="intent_chooser_dialog_title">"Выберите приложение"</string>
+    <string name="gallery_packagename">com.android.gallery3d</string>
+    <string name="camera_packagename">com.android.camera2</string>
+    <string name="pref_title_size_limit">Ограничение по размеру</string>
+    <string name="plugger_priority">999</string>
+</resources>

@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution. Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+<!--
+  ~ Copyright (C) 2013 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Official label of the phone app, as seen in "Manage Applications"
+         and other settings UIs. -->
+    <string name="phoneAppLabel" product="default">"Telefon"</string>
+
+    <!-- Official label for the in-call UI. DO NOT TRANSLATE. -->
+    <string name="inCallLabel" translate="false">InCallUI</string>
+
+    <!-- Call status -->
+
+    <!-- In-call screen: status label for a call that\'s on hold -->
+    <string name="onHold">"Oczekujące"</string>
+
+    <!-- Incoming call screen, name of "unknown" caller -->
+    <string name="unknown">"Nieznany"</string>
+    <!-- Incoming call screen, string when number hidden -->
+    <string name="private_num">"Numer prywatny"</string>
+    <!-- Incoming call screen, string when called from a pay phone -->
+    <string name="payphone">"Płatny telefon"</string>
+
+    <!-- In-call screen: status label for a conference call -->
+    <string name="confCall">"Poł. konferencyjne"</string>
+    <!-- In-call screen: call lost dialog text -->
+    <string name="call_lost">"Połączenie zostało zerwane."</string>
+
+    <!-- Positive button label ("OK") used in several dialogs in the phone UI [CHAR LIMIT=10] -->
+    <string name="ok">"OK"</string>
+
+    <!-- MMI dialog strings -->
+    <!-- Dialog label when an MMI code starts running -->
+
+    <!-- "Audio mode" popup menu: Item label to select the speakerphone [CHAR LIMIT=25] -->
+    <string name="audio_mode_speaker">"Głośnik"</string>
+    <!-- "Audio mode" popup menu: Item label to select the handset earpiece [CHAR LIMIT=25] -->
+    <string name="audio_mode_earpiece">"Słuchawka telefonu"</string>
+    <!-- "Audio mode" popup menu: Item label to select the wired headset [CHAR LIMIT=25] -->
+    <string name="audio_mode_wired_headset">"Przewodowy zestaw słuch."</string>
+    <!-- "Audio mode" popup menu: Item label to select the bluetooth headset [CHAR LIMIT=25] -->
+    <string name="audio_mode_bluetooth">"Bluetooth"</string>
+
+    <!-- post dial -->
+    <!-- In-call screen: body text of the dialog that appears when we encounter
+         the "wait" character in a phone number to be dialed; this dialog asks the
+         user if it\'s OK to send the numbers following the "wait". -->
+    <string name="wait_prompt_str">"Wysłać następujące dzwonki?\n"</string>
+    <!-- In-call screen: body text of the dialog that appears when we encounter
+         the "PAUSE" character in a phone number to be dialed; this dialog gives
+         informative message to the user to show the sending numbers following the "Pause". -->
+    <string name="pause_prompt_str">"Wysyłanie sygnałów\n"</string>
+    <!-- In-call screen: button label on the "wait" prompt dialog -->
+    <string name="send_button">"Wyślij"</string>
+    <!-- In-call screen: button label on the "wait" prompt dialog in CDMA Mode-->
+    <string name="pause_prompt_yes">"Tak"</string>
+    <!-- In-call screen: button label on the "wait" prompt dialog in CDMA Mode-->
+    <string name="pause_prompt_no">"Nie"</string>
+    <!-- In-call screen: on the "wild" character dialog, this is the label
+         for a text widget that lets the user enter the digits that should
+         replace the "wild" character. -->
+    <string name="wild_prompt_str">"Zastąp symbol wieloznaczny"</string>
+
+    <!-- In-call screen: status label for a conference call -->
+    <string name="caller_manage_header">"Poł. konferencyjne <xliff:g id="CONF_CALL_TIME">%s</xliff:g>"</string>
+
+    <!-- Used in FakePhoneActivity test code.  DO NOT TRANSLATE. -->
+    <string name="fake_phone_activity_phoneNumber_text" translatable="false">(650) 555-1234</string>
+    <!-- Used in FakePhoneActivity test code.  DO NOT TRANSLATE. -->
+    <string name="fake_phone_activity_infoText_text" translatable="false">Incoming phone number</string>
+    <!-- Used in FakePhoneActivity test code.  DO NOT TRANSLATE. -->
+    <string name="fake_phone_activity_placeCall_text" translatable="false">Fake Incoming Call</string>
+
+    <!-- Call settings screen, Set voicemail dialog title -->
+    <string name="voicemail_settings_number_label">"Numer poczty głosowej"</string>
+
+    <!-- Card titles -->
+    <!-- In-call screen: status label for a call in the "dialing" state -->
+    <string name="card_title_dialing">"Wybieranie"</string>
+    <!-- In-call screen: status label for a re-dialing call -->
+    <string name="card_title_redialing">"Ponawianie próby"</string>
+    <!-- In-call screen: status label for a conference call -->
+    <string name="card_title_conf_call">"Poł. konferencyjne"</string>
+    <!-- In-call screen: status label for an incoming call -->
+    <string name="card_title_incoming_call">"Połączenie"</string>
+    <!-- In-call screen: status label displayed briefly after a call ends -->
+    <string name="card_title_call_ended">"Połączenie zakończone"</string>
+    <!-- In-call screen: status label for call that\'s on hold -->
+    <string name="card_title_on_hold">"Oczekujące"</string>
+    <!-- In-call screen: status label for a call that\'s in the process of hanging up -->
+    <string name="card_title_hanging_up">"Trwa rozłączanie"</string>
+    <!-- In-call screen: status label for a call that\'s in CDMA flash mode -->
+    <string name="card_title_in_call">"Trwa połączenie"</string>
+    <!-- In-call screen: special status label that shows your own phone
+         number during emergency callback mode (ECM) [CHAR LIMIT=30] -->
+    <string name="card_title_my_phone_number">"Mój numer to <xliff:g id="MY_PHONE_NUMBER">%s</xliff:g>"</string>
+    <!-- In-call screen: status label when connecting video. -->
+    <string name="card_title_video_call_connecting">"Rozpoczynanie rozmowy wideo"</string>
+    <!-- In-call screen: status label when in a video call. -->
+    <string name="card_title_video_call">"Rozmowa wideo"</string>
+    <!-- In-call screen: status label when requesting video. -->
+    <string name="card_title_video_call_requesting">"Wysyłanie żądania wideo"</string>
+    <!-- In-call screen: status label when there is a problem connecting a video call. -->
+    <string name="card_title_video_call_error">"Nie można rozpocząć rozmowy wideo"</string>
+    <!-- In-call screen: status label when in a paused video call. -->
+    <string name="card_title_video_call_paused">Połączenie wideo (wstrzymane)</string>
+
+    <!-- In-call screen: string shown to the user when their outgoing number is different than the
+         number reported by TelephonyManager#getLine1Number() -->
+    <string name="card_title_callback_number">"Twój numer kontaktowy\n <xliff:g id="DARK_NUMBER">%1$s</xliff:g>"</string>
+
+    <!-- In-call screen: string shown to the user when their outgoing number is different than the
+         number reported by TelephonyManager#getLine1Number() and they\'re calling emergency
+         services. -->
+    <string name="card_title_callback_number_emergency">"Twój numer kontaktowy w sytuacjach alarmowych\n <xliff:g id="DARK_NUMBER">%1$s</xliff:g>"</string>
+
+    <!-- Notification strings -->
+    <!-- The "label" of the in-call Notification for a dialing call, used
+         as the format string for a Chronometer widget. [CHAR LIMIT=60] -->
+    <string name="notification_dialing">"Trwa wybieranie numeru"</string>
+    <string name="notification_dialing_video">Wybieranie numeru do połączenia wideo</string>
+    <!-- Missed call notification label, used when there\'s exactly one missed call -->
+    <string name="notification_missedCallTitle">"Nieodebrane połączenie"</string>
+    <!-- Missed call notification label, used when there are two or more missed calls -->
+    <string name="notification_missedCallsTitle">"Połączenia nieodebrane"</string>
+    <!-- Missed call notification message used when there are multiple missed calls -->
+    <string name="notification_missedCallsMsg">"<xliff:g id="NUM_MISSED_CALLS">%s</xliff:g> nieodebranych połączeń"</string>
+    <!-- Missed call notification message used for a single missed call, including
+         the caller-id info from the missed call -->
+    <string name="notification_missedCallTicker">"Nieodebrane połączenie z <xliff:g id="MISSED_CALL_FROM">%s</xliff:g>"</string>
+    <!-- The "label" of the in-call Notification for an ongoing call, used
+         as the format string for a Chronometer widget. [CHAR LIMIT=60] -->
+    <string name="notification_ongoing_call">"Trwa połączenie"</string>
+    <string name="notification_ongoing_video_call">Wychodzące połączenie wideo</string>
+    <!-- The "label" of the in-call Notification for a call that\'s on hold -->
+    <string name="notification_on_hold">"Oczekujące"</string>
+    <!-- The "label" of the in-call Notification for an incoming ringing call -->
+    <string name="notification_incoming_call">"Połączenie przychodzące"</string>
+    <!-- The "label" of the in-call Notification for an incoming ringing video call. -->
+    <string name="notification_incoming_video_call">"Przychodząca rozmowa wideo"</string>
+    <!-- The "label" of the in-call Notification for upgrading an existing call to a video call. -->
+    <string name="notification_requesting_video_call">"Przychodzące żądanie wideo"</string>
+    <!-- Label for the "Voicemail" notification item, when expanded. -->
+    <string name="notification_voicemail_title">"Nowa poczta głosowa"</string>
+    <!-- Label for the expanded "Voicemail" notification item,
+         including a count of messages. -->
+    <string name="notification_voicemail_title_count">"Nowa poczta głosowa (<xliff:g id="COUNT">%d</xliff:g>)"</string>
+    <!-- Message displayed in the "Voicemail" notification item, allowing the user
+         to dial the indicated number. -->
+    <string name="notification_voicemail_text_format">"Zadzwoń do <xliff:g id="VOICEMAIL_NUMBER">%s</xliff:g>"</string>
+    <!-- Message displayed in the "Voicemail" notification item,
+         indicating that there\'s no voicemail number available -->
+    <string name="notification_voicemail_no_vm_number">"Nieznany numer poczty głosowej"</string>
+    <!-- Label for the "No service" notification item, when expanded. -->
+    <string name="notification_network_selection_title">"Brak usługi"</string>
+    <!-- Label for the expanded "No service" notification item, including the
+         operator name set by user -->
+    <string name="notification_network_selection_text">"Wybrana sieć (<xliff:g id="OPERATOR_NAME">%s</xliff:g>) jest niedostępna"</string>
+    <!-- Label for "end call" Action.
+         It is displayed in the "Ongoing call" notification, which is shown
+         when the user is outside the in-call screen while the phone call is still
+         active. [CHAR LIMIT=12] -->
+    <string name="notification_action_end_call">"Rozłącz"</string>
+    <!-- Label for "Video Call" notification action. This is a displayed on the notification for an
+         incoming video call, and answers the call as a video call. [CHAR LIMIT=12] -->
+    <string name="notification_action_answer_video">"Rozmowa wideo"</string>
+    <!-- Label for "More" notification action. This is a displayed on the notification for an
+         incoming call, and brings the phone application to foreground and displays multiple options
+         for accepting (or declining) the call. [CHAR LIMIT=12] -->
+    <string name="notification_action_answer_more">"Więcej"</string>
+    <!-- Label for "Voice" notification action. This is a displayed on the notification for an
+         incoming video call, and answers the call as an audio call. [CHAR LIMIT=12] -->
+    <string name="notification_action_answer_voice">"Głos"</string>
+    <!-- Label for "Accept" notification action. This is somewhat generic, and may refer to
+         scenarios such as accepting an incoming call or accepting a video call request.
+         [CHAR LIMIT=12] -->
+    <string name="notification_action_accept">"Zaakceptuj"</string>
+    <!-- Label for "Dismiss" notification action. This is somewhat generic, and may refer to
+         scenarios such as declining an incoming call or declining a video call request.
+         [CHAR LIMIT=12] -->
+    <string name="notification_action_dismiss">"Odrzuć"</string>
+
+    <!-- Message for "call back" Action, which is displayed in the missed call notificaiton.
+         The user will be able to call back to the person or the phone number.
+         [CHAR LIMIT=60] -->
+    <string name="notification_missedCall_call_back">"Oddzwoń"</string>
+    <!-- Message for "reply via sms" action, which is displayed in the missed call notification.
+         The user will be able to send text messages using the phone number.
+         [CHAR LIMIT=60] -->
+    <string name="notification_missedCall_message">"Wiadomość"</string>
+
+    <!-- In-call screen: call failure message displayed in an error dialog -->
+    <string name="incall_error_power_off">"Aby rozpocząć połączenie, wyłącz najpierw tryb samolotowy"</string>
+    <!-- In-call screen: call failure message displayed in an error dialog.
+         This string is currently unused (see comments in InCallActivity.java.) -->
+    <string name="incall_error_emergency_only">"Nie zarejestrowano w sieci"</string>
+    <!-- In-call screen: call failure message displayed in an error dialog -->
+    <string name="incall_error_out_of_service">"Sieć komórkowa jest niedostępna."</string>
+    <!-- In-call screen: call failure message displayed in an error dialog -->
+    <string name="incall_error_no_phone_number_supplied">"Połączenie niezrealizowane, nie wprowadzono poprawnego numeru."</string>
+    <!-- In-call screen: call failure message displayed in an error dialog -->
+    <string name="incall_error_call_failed">"Połączenie nie zostało zrealizowane."</string>
+    <!-- In-call screen: status message displayed in a dialog when starting an MMI -->
+    <string name="incall_status_dialed_mmi">"Rozpoczynanie sekwencji MMI..."</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_unknown">"Nieobsługiwana usługa."</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_switch">"Nie można przełączyć rozmów."</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_separate">"Nie można rozdzielić połączenia."</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_transfer">"Nie można przekazać połączenia."</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_conference">"Nie można prowadzić rozmów konferencyjnych."</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_reject">"Nie można odrzucić połączenia."</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_hangup">"Nie można zakończyć połączenia (połączeń)."</string>
+
+    <!-- In-call screen: "call type" indication for a SIP call [CHAR LIMIT=30]  -->
+    <string name="incall_call_type_label_sip">"Połączenie SIP"</string>
+
+    <!-- Dialog title for the "radio enable" UI for emergency calls -->
+    <string name="emergency_enable_radio_dialog_title">"Połączenie alarmowe"</string>
+    <!-- Status message for the "radio enable" UI for emergency calls -->
+    <string name="emergency_enable_radio_dialog_message">"Trwa włączanie sieci bezprzewodowych..."</string>
+    <!-- Status message for the "radio enable" UI for emergency calls -->
+    <string name="emergency_enable_radio_dialog_retry">"Obszar nieobsługiwany, ponowna próba..."</string>
+
+    <!-- Dialer text on Emergency Dialer -->
+    <!-- Emergency dialer: message displayed in an error dialog -->
+    <string name="dial_emergency_error">"Połączenie niezrealizowane. <xliff:g id="NON_EMERGENCY_NUMBER">%s</xliff:g> nie jest numerem alarmowym!"</string>
+    <!-- Emergency dialer: message displayed in an error dialog -->
+    <string name="dial_emergency_empty_error">"Połączenie niezrealizowane. Wybierz numer alarmowy!"</string>
+
+    <!-- Displayed in the text entry box in the dialer when in landscape mode to guide the user
+         to dial using the physical keyboard -->
+    <string name="dialerKeyboardHintText">"Aby zadzwonić, użyj klawiatury."</string>
+
+    <!-- Text for the overflow "Hold call" menu item. -->
+    <string name="overflowHoldMenuItemText">"Wstrzymaj połączenie"</string>
+    <!-- Text for the overflow "Resume call" menu item. -->
+    <string name="overflowResumeMenuItemText">"Wznów połączenie"</string>
+    <!-- Text for the overflow "Add call" menu item. -->
+    <string name="overflowAddMenuItemText">"Dodaj połączenie"</string>
+    <!-- Text for the onscreen "Merge calls" menu item. -->
+    <string name="overflowMergeMenuItemText">"Scal połączenia"</string>
+    <!-- Text for the onscreen "Swap calls" menu item. -->
+    <string name="overflowSwapMenuItemText">"Przełącz"</string>
+    <!-- Text for the overflow "Add participant" menu item. -->
+    <string name="overflowAddParticipantMenuItemText">Dodaj uczestnika</string>
+    <!-- Text for the overflow "Manage Conference Video Call" menu item. -->
+    <string name="overflowManageConferenceMenuItemText">Zarządzaj konferencją</string>
+
+    <!-- Text for the onscreen "Hold" button -->
+    <string name="onscreenHoldText">"Wstrzymaj"</string>
+    <!-- Text for the onscreen "End call" button -->
+    <string name="onscreenEndCallText">"Zakończ"</string>
+    <!-- Text for the onscreen "Show Dialpad" button -->
+    <string name="onscreenShowDialpadText">"Klawiatura"</string>
+    <!-- Text for the onscreen "Mute" button -->
+    <string name="onscreenMuteText">"Wycisz"</string>
+    <!-- Text for the onscreen "Add call" button -->
+    <string name="onscreenAddCallText">"Dodaj połączenie"</string>
+    <!-- Text for the onscreen "Merge calls" button -->
+    <string name="onscreenMergeCallsText">"Scal połączenia"</string>
+    <!-- Text for the onscreen "Swap calls" button -->
+    <string name="onscreenSwapCallsText">"Przełącz"</string>
+    <!-- Text for the onscreen "Manage calls" button -->
+    <string name="onscreenManageCallsText">"Zarządzaj połączeniami"</string>
+    <!-- Text for the onscreen "Manage conference" button [CHAR LIMIT=30] -->
+    <string name="onscreenManageConferenceText">"Zarządzaj poł. konf."</string>
+    <!-- Text for the onscreen "Audio" button that lets you switch
+         between speaker / bluetooth / earpiece [CHAR LIMIT=10] -->
+    <string name="onscreenAudioText">"Dźwięk"</string>
+    <!-- Text for the onscreen "Video call" button used to change a voice call
+         to a video call. [CHAR LIMIT=10] -->
+    <string name="onscreenVideoCallText">"Rozmowa wideo"</string>
+    <!-- Text for the onscreen "Change to voice" button. When clicked, this downgrades a video call
+         to a voice call. -->
+    <string name="onscreenChangeToVoiceText">"Zmień na połączenie głosowe"</string>
+    <!-- Text for the onscreen "Switch camera" button. When clicked, this switches the user\'s camera
+         for video calling between the front-facing camera and the back-facing camera. -->
+    <string name="onscreenSwitchCameraText">"Przełącz aparat"</string>
+    <!-- Text for the onscreen "Pause video" button. -->
+    <string name="onscreenPauseVideoText">"Wstrzymaj film"</string>
+    <!-- Text for the onscreen overflow button, to see additional actions which can be done. -->
+    <string name="onscreenOverflowText">"Więcej opcji"</string>
+    <!-- Text for the onscreen "Add Participant" button -->
+    <string name="onscreenAddParticipant">Dodaj uczestnika</string>
+
+    <!-- In-call screen: Modify Call Options for IMS call -->
+    <string name="modify_call_option_title">Jaki typ połączenia?</string>
+    <string name="modify_call_option_vt">VT</string>
+    <string name="modify_call_option_vt_tx">Nadawanie wideo</string>
+    <string name="modify_call_option_vt_rx">Odbiór wideo</string>
+    <string name="modify_call_option_voice">Tylko połączenia głosowe</string>
+
+    <!-- Message indicating video calls not allowed if user enabled TTY Mode -->
+    <string name="video_call_not_allowed_if_tty_enabled">Wyłącz tryb TTY, aby rozszerzyć do połączeń wideo.</string>
+
+    <!-- Message indicating that Video Started flowing for IMS-VT calls -->
+    <string name="player_started">Uruchomiono odtwarzacz</string>
+    <!-- Message indicating that Video Stopped flowing for IMS-VT calls -->
+    <string name="player_stopped">Zatrzymano odtwarzacz</string>
+    <!-- Message indicating that camera failure has occurred for the selected camera and
+         as result camera is not ready -->
+    <string name="camera_not_ready">Aparat nie jest gotowy</string>
+    <!-- Message indicating that camera is ready/available -->
+    <string name="camera_ready">Aparat gotowy</string>
+    <!-- Message indicating unknown call session event -->
+    <string name="unknown_call_session_event">"Nieznane zdarzenie podczas rozmowy"</string>
+
+    <!-- For incoming calls, this is a string we can get from a CDMA network instead of
+         the actual phone number, to indicate there\'s no number present.  DO NOT TRANSLATE. -->
+    <string-array name="absent_num" translatable="false">
+        <item>ABSENT NUMBER</item>
+        <item>ABSENTNUMBER</item>
+    </string-array>
+
+    <!-- Preference for Voicemail service provider under "Voicemail" settings.
+         [CHAR LIMIT=40] -->
+    <string name="voicemail_provider">"Usługa"</string>
+
+    <!-- Preference for Voicemail setting of each provider.
+         [CHAR LIMIT=40] -->
+    <string name="voicemail_settings">"Konfiguracja"</string>
+
+    <!-- String to display in voicemail number summary when no voicemail num is set -->
+    <string name="voicemail_number_not_set">"&lt;Nie ustawiono&gt;"</string>
+
+    <!-- Title displayed above settings coming after voicemail in the call features screen -->
+    <string name="other_settings">"Inne ustawienia połączeń"</string>
+
+    <!-- Title displayed in the overlay for outgoing calls which include the name of the provider.
+         [CHAR LIMIT=40] -->
+    <string name="calling_via_template">"Nawiązywanie połączenia przez <xliff:g id="PROVIDER_NAME">%s</xliff:g>"</string>
+    <!-- Title displayed in the overlay for incoming calls which include the name of the provider.
+         [CHAR LIMIT=40] -->
+    <string name="incoming_via_template">"Przychodzące przez <xliff:g id="PROVIDER_NAME">%s</xliff:g>"</string>
+
+    <!-- Use this as a default to describe the contact photo; currently for screen readers through accessibility. -->
+    <string name="contactPhoto">"zdjęcie kontaktu"</string>
+    <!-- Use this to describe the separate conference call button; currently for screen readers through accessibility. -->
+    <string name="goPrivate">"przejdź do rozmowy prywatnej"</string>
+    <!--  Use this to describe the select contact button in EditPhoneNumberPreference; currently for screen readers through accessibility. -->
+    <string name="selectContact">"wybierz kontakt"</string>
+
+    <!-- "Respond via SMS" option that lets you compose a custom response. [CHAR LIMIT=30] -->
+    <string name="respond_via_sms_custom_message">"Napisz własną..."</string>
+    <!-- "Custom Message" Cancel alert dialog button -->
+    <string name="custom_message_cancel">"Anuluj"</string>
+    <!-- "Custom Message" Send alert dialog button -->
+    <string name="custom_message_send">"Wyślij"</string>
+
+    <!-- String describing the image on ImageButton one
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_one">"jeden"</string>
+
+    <!-- String describing the image on ImageButton two
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_two">"dwa"</string>
+
+    <!-- String describing the image on ImageButton three
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_three">"trzy"</string>
+
+    <!-- String describing the image on ImageButton four
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_four">"cztery"</string>
+
+    <!-- String describing the image on ImageButton five
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_five">"pięć"</string>
+
+    <!-- String describing the image on ImageButton six
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_six">"sześć"</string>
+
+    <!-- String describing the image on ImageButton seven
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_seven">"siedem"</string>
+
+    <!-- String describing the image on ImageButton eight
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_eight">"osiem"</string>
+
+    <!-- String describing the image on ImageButton nine
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_nine">"dziewięć"</string>
+
+    <!-- String describing the image on ImageButton star
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_star">"gwiazdka"</string>
+
+    <!-- String describing the image on ImageButton zero
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_zero">"zero"</string>
+
+    <!-- String describing the image on ImageButton pound
+
+         Note: AccessibilityServices use this attribute to announce what the view represents.
+               This is especially valuable for views without textual representation like ImageView.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_image_button_pound">"znak funta"</string>
+
+    <!-- String describing the Dial ImageButton
+
+         Used by AccessibilityService to announce the purpose of the button.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_dial_button">"wybierz numer"</string>
+
+    <!-- String describing the Delete/Backspace ImageButton
+
+         Used by AccessibilityService to announce the purpose of the button.
+         [CHAR LIMIT=NONE]
+    -->
+    <string name="description_delete_button">"cofnij"</string>
+
+    <!-- String used by AccessibilityService to announce that the speakerphone has been selected for audio output [CHAR LIMIT=NONE]-->
+    <string name="accessibility_speakerphone_selected">"Wybrano głośnik telefonu"</string>
+
+    <!-- String used by AccessibilityService to announce that the phone\'s earpiece has been selected for audio output [CHAR LIMIT=NONE]-->
+    <string name="accessibility_earpiece_selected">"Wybrano słuchawkę"</string>
+
+    <!-- String used by AccessibilityService to announce that the wired headset has been selected for audio output [CHAR LIMIT=NONE]-->
+    <string name="accessibility_wired_headset_selected">"Wybrano przewodowy zestaw słuchawkowy"</string>
+
+    <!-- String used by AccessibilityService to announce that the bluetooth headset has been selected for audio output [CHAR LIMIT=NONE]-->
+    <string name="accessibility_bluetooth_headset_selected">"Wybrano zestaw słuchawkowy Bluetooth"</string>
+
+    <!-- String used by AccessibilityService to announce that the call has been muted [CHAR LIMIT=NONE]-->
+    <string name="accessibility_call_muted">"Połączenie wyciszone."</string>
+
+    <!-- String used by AccessibilityService to announce that the call has been unmuted [CHAR LIMIT=NONE]-->
+    <string name="accessibility_call_unmuted">"Połączenie już nie jest ignorowane."</string>
+
+    <!-- String used by AccessibilityService to announce that the call has been put on hold [CHAR LIMIT=NONE]-->
+    <string name="accessibility_call_put_on_hold">"Połączenie zawieszone."</string>
+
+    <!-- String used by AccessibilityService to announce that the call has been removed from hold [CHAR LIMIT=NONE]-->
+    <string name="accessibility_call_removed_from_hold">"Połączenie odwieszone."</string>
+
+    <!-- Description of the answer target in the Slide unlock screen of Phone. [CHAR LIMIT=12] -->
+    <string name="description_target_answer">"Odpowiedz"</string>
+    <!-- Description of the send_sms target in the Slide unlock screen of Phone. [CHAR LIMIT=NONE] -->
+    <string name="description_target_send_sms">"Wyślij SMS"</string>
+    <!-- Description of the decline target in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_target_decline">"Odrzuć"</string>
+    <!-- Description of the target to answer a call as a video call in the Slide unlock screen.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_answer_video_call">"Odbierz jako rozmowę wideo"</string>
+    <!-- Description of the target to answer a call as an audio call in the Slide unlock screen.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_answer_audio_call">"Odbierz jako rozmowę audio"</string>
+    <!-- Description of the target to accept a request to upgrade from an audio call to a video call.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_accept_upgrade_to_video_request">"Przyjmij połączenie wideo"</string>
+    <!-- Description of the target to decline a request to upgrade from an audio call to a video call.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_decline_upgrade_to_video_request">"Odrzuć połączenie wideo"</string>
+    <!-- Description of the target to accept a request to upgrade from any call to a video transmit call.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_accept_upgrade_to_video_transmit_request">Przyjmij transmisję połączenia wideo</string>
+    <!-- Description of the target to decline a request to upgrade from any call to a video transmit call.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_decline_upgrade_to_video_transmit_request">Odrzuć transmisję połączenia wideo</string>
+        <!-- Description of the target to accept a request to upgrade from any call to a video receive call.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_accept_upgrade_to_video_receive_request">Przyjmij prośbę o połączenie wideo</string>
+    <!-- Description of the target to decline a request to upgrade from any call to a video receive call.
+         [CHAR LIMIT=NONE] -->
+    <string name="description_target_decline_upgrade_to_video_receive_request">Odrzuć prośbę o połączenie wideo</string>
+
+    <!-- Description of the up direction in which one can to slide the handle in the phone answer screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_up">"Przesuń w górę: <xliff:g id="TARGET_DESCRIPTION">%s</xliff:g>."</string>
+    <!-- Description of the left direction in which one can to slide the handle in the phone answer screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_left">"Przesuń w lewo: <xliff:g id="TARGET_DESCRIPTION">%s</xliff:g>."</string>
+    <!-- Description of the right direction in which one can to slide the handle in the phone answer screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_right">"Przesuń w prawo: <xliff:g id="TARGET_DESCRIPTION">%s</xliff:g>."</string>
+    <!-- Description of the down direction in which one can to slide the handle in the phone answer screen. [CHAR LIMIT=NONE] -->
+    <string name="description_direction_down">"Przesuń w dół: <xliff:g id="TARGET_DESCRIPTION">%s</xliff:g>."</string>
+
+    <!-- Dialog title for the vibration settings for voicemail notifications [CHAR LIMIT=40] -->
+    <string name="voicemail_notification_vibrate_when_title" msgid="8731372580674292759">"Wibracje"</string>
+    <!-- Dialog title for the vibration settings for voice mail notifications [CHAR LIMIT=40]-->
+    <string name="voicemail_notification_vibarte_when_dialog_title" msgid="8995274609647451109">"Wibracje"</string>
+
+    <!-- Voicemail ringtone title. The user clicks on this preference to select
+         which sound to play when a voicemail notification is received.
+         [CHAR LIMIT=30] -->
+    <string name="voicemail_notification_ringtone_title">"Dźwięk"</string>
+
+    <!--  The string used to describe a notification if it is the default one in the system. For
+          example, if the user selects the default notification, it will appear as something like
+          Default sound(Capella) in the notification summary.
+          [CHAR LIMIT=40] -->
+    <string name="default_notification_description">"Domyślny dźwięk (<xliff:g id="DEFAULT_SOUND_TITLE">%1$s</xliff:g>)"</string>
+
+    <!-- The default value value for voicemail notification. -->
+    <string name="voicemail_notification_vibrate_when_default" translatable="false">never</string>
+
+    <!-- Actual values used in our code for voicemail notifications. DO NOT TRANSLATE -->
+    <string-array name="voicemail_notification_vibrate_when_values" translatable="false">
+        <item>always</item>
+        <item>silent</item>
+        <item>never</item>
+    </string-array>
+
+    <string name="volume_boost_notify_enabled">"Wzmocnienie głośności wł.."</string>
+    <string name="volume_boost_notify_disabled">"Wzmocnienie głośności wył.."</string>
+    <string name="volume_boost_notify_unavailable">"Wzmocnienie głośności nie jest dostępne podczas korzystania ze słuchawek Bluetooth/przewodowych."</string>
+    <string name="volume_boost_toast_position" translate="false">600</string>
+    <string name="onscreenMoreMenuText">Więcej</string>
+    <string name="menu_start_record">Nagraj rozmowę</string>
+    <string name="menu_stop_record">Zatrzymaj nagrywanie</string>
+    <string name="recording_time_text">Nagrywanie</string>
+
+    <!-- Setting option name to pick ringtone (a list dialog comes up). [CHAR LIMIT=30] -->
+    <string name="ringtone_title" msgid="5379026328015343686">"Dzwonek telefonu"</string>
+
+    <!-- Setting option name to enable or disable vibration when ringing
+         the phone.
+         [CHAR LIMIT=30] -->
+    <string name="vibrate_on_ring_title">"Wibracje i dzwonek"</string>
+
+    <!--  Setting option name to enable or disable dialpad autocomplete functionality
+         [CHAR LIMIT=30] -->
+    <string name="dial_pad_autocomplete">"Autouzupełnianie klawiatury"</string>
+
+    <!-- Title for the category "ringtone", which is shown above ringtone and vibration
+         related settings.
+         [CHAR LIMIT=30] -->
+    <string name="preference_category_ringtone">"Dzwonek i wibracje"</string>
+
+    <!-- Label for "Manage conference call" panel [CHAR LIMIT=40] -->
+    <string name="manageConferenceLabel">"Zarządzaj połączeniem konferencyjnym"</string>
+
+    <!-- This can be used in any application wanting to disable the text "Emergency number" -->
+    <string name="emergency_call_dialog_number_for_display">"Numer alarmowy"</string>
+
+    <!-- message displayed when missing voicemail number -->
+    <string name="incall_error_missing_voicemail_number">Nie ustawiono żadnego numeru poczty głosowej. Czy chcesz go teraz ustawić?</string>
+
+    <!-- Title for Select Account Dialog [CHAR LIMIT=30] -->
+    <string name="select_account_dialog_title">"Wybierz konto"</string>
+    <!-- Set Subscription screen: label sub 1 -->
+    <string name="sub_1">SUB 1</string>
+    <!-- Set Subscription screen: label sub 2 -->
+    <string name="sub_2">SUB 2</string>
+	<string name="change_video_status">Zmień stan wideo</string>
+	<string name="change_video_message">chce zmienić połączenie na tryb wideo. Czy chcesz przesyłać i odbierać sygnał wideo?</string>
+	<string name="change_voice_message">zmienia połączenie na tryb głosowy.</string>
+	<string name="modify_call_prompt_yes">"Tak"</string>
+	<string name="modify_call_prompt_no">"Nie"</string>
+	<string name="connecting_for_modify">"Łączę..."</string>
+
+    <!-- Call substate label -->
+    <string name="call_substate_label">Wywołaj podstan - \u000a</string>
+    <!-- Call substate label for call resumed -->
+    <string name="call_substate_call_resumed">Wznowiono \u000a</string>
+    <!-- Call substate label for call connected suspended (audio) -->
+    <string name="call_substate_connected_suspended_audio">Połączony zawieszony (dźwięk) \u000a</string>
+    <!-- Call substate label for call connected suspended (video) -->
+    <string name="call_substate_connected_suspended_video">Połączony zawieszony (wideo) \u000a</string>
+    <!-- Call substate label for avp retry -->
+    <string name="call_substate_avp_retry">Ponów profil audio/wideo \u000a</string>
+    <!-- Video quality changed message -->
+    <string name="video_quality_changed">Zmieniono jakość obrazu na \u0020</string>
+    <!-- Video quality High -->
+    <string name="video_quality_high">"Wysokie"</string>
+    <!-- Video quality Medium -->
+    <string name="video_quality_medium">"Średnie"</string>
+    <!-- Video quality Low -->
+    <string name="video_quality_low">"Niski"</string>
+    <!-- Video quality Unknown -->
+    <string name="video_quality_unknown">"Nieznane"</string>
+    <string name="display_rich_screen">Wyświetlić bogatszy ekran?</string>
+    <string name="rcs_missdnaddress_string">Brak adresu:</string>
+    <string name="rcs_greeting_string">Powitanie:</string>
+    <string name="call_state_dialing">"Wybieranie"</string>
+    <string name="call_state_holding">Wstrzymano</string>
+    <string name="call_state_active">Aktywna</string>
+    <string name="call_state_unknown">"Nieznany"</string>
+    <string name="call_state_disconnecting">"Rozłączam"</string>
+    <string name="call_state_disconnected">"Rozłączono"</string>
+    <string name="dial_conference_call_error">Nie można nawiązać połączenia konferencyjnego 4G, ponieważ sieć 4G jest niedostępna.</string>
+
+    <string name="apm_turn_on_confirmation">„Tryb samolotowy jest włączony. Czy chcesz go wyłączyć?”</string>
+    <string name="cancel">"Anuluj"</string>
+    <!--Multiparty call-->
+    <string name="end_active_accept_mt_call">Zakończ aktywne, akceptuj przychodzące</string>
+    <!-- Normal call UI will be shown for the emergency call
+        for the numbers which is mentioned in mask_emergency_number-->
+    <string name="mask_emergency_number"/>
+</resources>

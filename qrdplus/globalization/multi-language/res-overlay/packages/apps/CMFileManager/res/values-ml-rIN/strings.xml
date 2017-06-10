@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+     Qualcomm Technologies Proprietary and Confidential.
+
+     Not a Contribution.
+     Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+<!--
+     Copyright (C) 2012-2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- The name of the app -->
+    <string name="app_name">ഫയൽ മാനേജർ</string>
+    <!-- The description of the app -->
+    <string name="app_description">CyanogenMod ഫയൽ മാനേജര്‍</string>
+
+    <!-- Human readable sizes -->
+    <string name="size_bytes">"B"</string>
+    <string name="size_kilobytes">kB</string>
+    <string name="size_megabytes">"MB"</string>
+    <string name="size_gigabytes">"GB"</string>
+
+    <!-- Date/time format order (%1$s: date; %2$s: time) -->
+    <string name="datetime_format_order">%1$s %2$s</string>
+
+    <!-- Devices types -->
+    <string name="device_blockdevice">ബ്ലോക്ക് ഉപകരണം</string>
+    <string name="device_characterdevice">കാരക്ടർ ഉപകരണം</string>
+    <string name="device_namedpipe">നെയ്മ്ഡ് പൈപ്പ്</string>
+    <string name="device_domainsocket">ഡൊമെയ്ൻ സോക്കറ്റ്</string>
+
+    <!-- Mount Point States -->
+    <string name="mount_point_readonly">RO</string>
+    <string name="mount_point_readwrite">RW</string>
+
+    <!-- Default buttons -->
+    <string name="ok" translatable="false">@android:string/ok</string>
+    <string name="cancel" translatable="false">@android:string/cancel</string>
+    <string name="yes">അതെ</string>
+    <string name="no">ഇല്ല</string>
+    <string name="all">"എല്ലാം"</string>
+    <string name="overwrite">മേലെയെഴുതുക</string>
+    <string name="select">"തിരഞ്ഞെടുക്കുക"</string>
+
+    <!-- The root directory name -->
+    <string name="root_directory_name"><![CDATA[<റൂട്ട് ഫോൾഡർ>]]></string>
+    <!-- The search result name -->
+    <string name="search_result_name"><xliff:g id="terms">%1$s</xliff:g> തിരയുക</string>
+
+    <!-- Loading waiting message -->
+    <string name="loading_message">"ലോഡുചെയ്യുന്നു..."</string>
+    <!-- Computing message -->
+    <string name="computing_message" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Computing new line message -->
+    <string name="computing_message_ln" translatable="false"><xliff:g id="data">%1$s</xliff:g></string>
+    <!-- Cancelled message -->
+    <string name="cancelled_message">റദ്ദാക്കി.</string>
+    <!-- Error message -->
+    <string name="error_message">പിശക്.</string>
+    <!-- Copy text content description -->
+    <string name="copy_text_cd">ക്ലിപ്‌ബോർഡിലേക്ക് ടെക്സ്റ്റ് പകർത്തുന്നതിന് സ്പർശിക്കുക</string>
+    <!-- Copy text content message -->
+    <string name="copy_text_msg">ക്ലിപ്‌ബോർഡിലേക്ക് ടെക്സ്റ്റ് പകർത്തി</string>
+
+    <!-- Warning dialog title -->
+    <string name="warning_title">മുന്നറിയിപ്പ്</string>
+    <!-- Error dialog title -->
+    <string name="error_title">പിശക് കണ്ടെത്തി</string>
+    <!-- Confirm operation dialog title -->
+    <string name="confirm_operation">പ്രവർത്തനം സ്ഥിരീകരിക്കുക</string>
+    <!-- Confirm overwrite dialog title -->
+    <string name="confirm_overwrite">പുനരാലേഖനം സ്ഥിരീകരിക്കുക</string>
+    <!-- Confirm deletion dialog title -->
+    <string name="confirm_deletion">ഇല്ലാതാക്കൽ സ്ഥിരീകരിക്കുക</string>
+
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Title -->
+    <string name="msgs_change_to_prompt_access_mode_title">സ്വിച്ച് സ്ഥിരീകരിക്കുക</string>
+    <!--  A console couldn\'t be created - Ask the user to change the access mode - Dialog Message -->
+    <string name="msgs_change_to_prompt_access_mode_msg">റൂട്ട് ആക്സസ് മോഡിൽ റൺ ചെയ്യാനാവില്ല.സുരക്ഷിത മോഡിലേക്ക് മാറുന്നു.\n\nഈ മാറ്റം പ്രയോഗിക്കട്ടെ?</string>
+
+    <!-- A console couldn\'t be created - Without privileges, the app won\'t work -->
+    <string name="msgs_cant_create_console">പ്രവർത്തിക്കാൻ ആവശ്യമായ അവകാശങ്ങൾ നേടാനാവില്ല.</string>
+    <!-- The message shown when an allocation of a privileged console fails, and a non
+         privileged is allocated -->
+    <string name="msgs_privileged_console_alloc_failed">റൂട്ട് ആക്സസ് മോഡിൽ റൺ ചെയ്യാനാവില്ല.സുരക്ഷിത മോഡിലേക്ക് മാറുന്നു.</string>
+    <!-- The selected setting was not applied or stored -->
+    <string name="msgs_settings_save_failure">ക്രമീകരണം പ്രയോഗിക്കാനോ സംഭരിക്കാനോ സാധിച്ചില്ല.</string>
+    <!-- The initial directory has an invalid or inaccessible reference -->
+    <string name="msgs_settings_invalid_initial_directory">പ്രഥമ ഫോൾഡർ \'<xliff:g id="initial_dir">%1$s</xliff:g>\' അസാധുവാണ്. റൂട്ട് ഫോൾഡറിലേക്ക് മാറുന്നു.</string>
+    <!-- Root is not available message -->
+    <string name="root_not_available_msg">ഈ ഉപകരണത്തിൽ റൂട്ട് ലഭ്യമല്ല. ഈ പ്രവർത്തനം നിർവഹിക്കാനാവില്ല.</string>
+
+    <!-- Success -->
+    <string name="msgs_success">പ്രവർത്തനം വിജയകരമായി പൂർത്തിയാക്കി.</string>
+    <!-- Unknown error -->
+    <string name="msgs_unknown">ഒരു പിശ്ക് കണ്ടെത്തി. പ്രവർത്തനം വിജയകരമായിരുന്നില്ല.</string>
+    <!-- When an operation requires elevated privileged (normally caused for the use of a
+         non-privileged console) -->
+    <string name="msgs_insufficient_permissions">ഈ പ്രവർത്തനത്തിന് ഉന്നത അനുമതികൾ ആവശ്യമാണ്. റൂട്ട് ആക്സസ് മോഡിലേക്ക് മാറുന്നതിന് ശ്രമിക്കുക.</string>
+    <!-- When an operation fails because the device has run out of storage. -->
+    <string name="msgs_no_disk_space">ഉപകരണത്തിൽ ഇടമൊന്നും ശേഷിക്കാത്തതിനാൽ ഈ ഓപ്പറേഷൻ പരാജയപ്പെട്ടു.</string>
+    <!-- The file or directory was not found -->
+    <string name="msgs_file_not_found">ഫയലോ ഫോൾഡറോ കണ്ടെത്തിയില്ല.</string>
+    <!-- The command reference couldn\'t be created (not found or invalid definition)
+         (normally caused by a development error) -->
+    <string name="msgs_command_not_found">പ്രവർത്തനത്തിന്‍റെ കമാൻഡ് കണ്ടെത്തിയില്ല അല്ലെങ്കിൽ അസാധുവായ ഒരു നിർവചനം അതിലുണ്ട്.</string>
+    <!-- I/O exception -->
+    <string name="msgs_io_failed">വായന/എഴുത്ത് പരാജയം.</string>
+    <!-- Operation timeout detected -->
+    <string name="msgs_operation_timeout">പ്രവർത്തനത്തിന്‍റെ സമയം കഴിഞ്ഞു.</string>
+    <!-- The operation returns an invalid exit code -->
+    <string name="msgs_operation_failure">പ്രവർത്തനം പരാജയപ്പെട്ടു.</string>
+    <!-- A console couldn\'t be allocated -->
+    <string name="msgs_console_alloc_failure">ഒരു ആന്തരിക പിശക് സംഭവിച്ചു.</string>
+    <!-- An operation can\'t be cancelled -->
+    <string name="msgs_operation_can_not_be_cancelled">പ്രവർത്തനം റദ്ദാക്കാനാവില്ല.</string>
+    <!-- The operation requieres mount the file system prior to execute the command -->
+    <string name="msgs_read_only_filesystem">ഫയൽ സിസ്റ്റം വായിക്കുന്നതിന് മാത്രമുള്ളതാണ്. പ്രവർത്തനത്തിന് ശ്രമിക്കുന്നതിന് മുമ്പ് ഫയൽ സിസ്റ്റത്തെ വായിക്കാനും എഴുതാനുമായി സജ്ജമാക്കാൻ ശ്രമിക്കുക.</string>
+    <!-- Illegal argument (normally caused by a development error when calling internal api) -->
+    <string name="msgs_illegal_argument">അനധികൃത മൂല്യം. സഹായഭ്യർത്ഥന പരാജയപ്പെട്ടു.</string>
+    <!-- The operation will cause inconsistencies -->
+    <string name="msgs_unresolved_inconsistencies">പ്രവർത്തനം അസ്ഥിരതകളെ സൃഷ്ടിക്കുമെന്നതിനാൽ അത് അനുവദനീയമല്ല.</string>
+    <!-- Operation not permitted in current directory -->
+    <string name="msgs_operation_not_allowed_in_current_directory">നിലവിലെ ഫോൾഡറിൽ പ്രവർത്തനം അനുവദനീയമല്ല.\n\nലക്ഷ്യ ഫോൾഡർ സ്രോതസിന്‍റെ ഉപഫോൾഡറോ സ്രോതസിന് സമാനമോ ആകരുത്.</string>
+
+    <!-- The advice message prior to exit the app -->
+    <string name="msgs_push_again_to_exit">പുറത്ത് കടക്കുന്നതിന് വീണ്ടും അമർത്തുക.</string>
+
+    <!-- There is no registered app that can handle the mime-type -->
+    <string name="msgs_not_registered_app">തിരഞ്ഞെടുത്ത ഫയൽ തരം കൈകാര്യം ചെയ്യുന്നതിന് രജിസ്റ്റർ ചെയ്ത ആപ്ലിക്കേഷൻ ഒന്നുമില്ല.</string>
+
+    <!-- Overwrite files? -->
+    <string name="msgs_overwrite_files">ഫയലുകളിൽ ചിലത് ലക്ഷ്യ ഫോൾഡറിൽ നേരത്തേതന്നെ നിലവിലുണ്ട്.\n\nപുനരാലേഖനം ചെയ്യട്ടെ?</string>
+
+    <!-- The association of an action to the app failed -->
+    <string name="msgs_action_association_failed">പ്രവർത്തനത്തെ ആപ്ലിക്കേഷനുമായി ബന്ധപ്പെടുത്തുന്നത് പരാജയപ്പെട്ടു.</string>
+
+    <!-- An operation requires elevated privileged. Ask the user. -->
+    <string name="advise_insufficient_permissions">പ്രവർത്തനത്തിന് ഉന്നത അവകാശങ്ങൾ ആവശ്യമാണ്.\n\nനിങ്ങൾക്ക് റൂട്ട് ആക്സസ് മോഡിലേക്ക് മാറണമെന്നുണ്ടോ?</string>
+
+    <!-- The parent directory of the current directory in navigation view -->
+    <string name="parent_dir">പ്രധാന ഫോൾഡർ</string>
+    <!-- External storage descripton -->
+    <string name="external_storage">ബാഹ്യ സംഭരണം</string>
+    <!-- Usb storage descripton -->
+    <string name="usb_storage">"USB സംഭരണം"</string>
+
+    <!-- ActionBar Buttons - FileSystem -->
+    <string name="actionbar_button_filesystem_cd">ഫയൽ സിസ്റ്റം വിവരം</string>
+    <!-- ActionBar Buttons - Sort Mode -->
+    <string name="actionbar_button_sort_mode_cd">അടുക്കൽ മോഡ്</string>
+    <!-- ActionBar Buttons - Layout Mode -->
+    <string name="actionbar_button_layout_mode_cd">ലേഔട്ട് മോഡ്</string>
+    <!-- ActionBar Buttons - Other View Options -->
+    <string name="actionbar_button_other_view_options_cd">മറ്റ് കാഴ്ച ഐച്ഛികങ്ങൾ</string>
+    <!-- ActionBar Buttons - Done -->
+    <string name="actionbar_button_selection_done_cd">"പൂർത്തിയായി"</string>
+    <!-- ActionBar Buttons - Actions -->
+    <string name="actionbar_button_actions_cd">പ്രവർത്തനങ്ങൾ</string>
+    <!-- ActionBar Buttons - Search -->
+    <string name="actionbar_button_search_cd">"തിരയൽ"</string>
+    <!-- ActionBar Buttons - Overflow -->
+    <string name="actionbar_button_overflow_cd">"കൂടുതല്‍ ഓപ്‌ഷനുകള്‍"</string>
+    <!-- ActionBar Buttons - Storage volumes -->
+    <string name="actionbar_button_storage_cd">സംഭരണ വലുപ്പം</string>
+    <!-- ActionBar Buttons - Save -->
+    <string name="actionbar_button_save_cd">"സംരക്ഷിക്കുക"</string>
+    <!-- ActionBar Buttons - Print -->
+    <string name="actionbar_button_print_cd">"പ്രിന്റുചെയ്യുക"</string>
+
+    <!-- Navigation View - Sort - Sort by name (ascending) -->
+    <string name="sort_by_name_asc">പേര് പ്രകാരം \u25B2</string>
+    <!-- Navigation View - Sort - Sort by name (descending) -->
+    <string name="sort_by_name_desc">പേര് പ്രകാരം \u25BC</string>
+    <!-- Navigation View - Sort - Sort by date (ascending) -->
+    <string name="sort_by_date_asc">തീയതി പ്രകാരം \u25B2</string>
+    <!-- Navigation View - Sort - Sort by date (descending) -->
+    <string name="sort_by_date_desc">തീയതി പ്രകാരം \u25BC</string>
+    <!-- Navigation View - Sort - Sort by size (ascending) -->
+    <string name="sort_by_size_asc">വലുപ്പ പ്രകാരം \u25B2</string>
+    <!-- Navigation View - Sort - Sort by size (descending) -->
+    <string name="sort_by_size_desc">വലുപ്പ പ്രകാരം \u25BC</string>
+    <!-- Navigation View - Sort - Sort by type (ascending) -->
+    <string name="sort_by_type_asc">തര പ്രകാരം \u25B2</string>
+    <!-- Navigation View - Sort - Sort by type (descending) -->
+    <string name="sort_by_type_desc">തര പ്രകാരം \u25BC</string>
+
+    <!-- Navigation View - Layout - Icons -->
+    <string name="layout_icons">ഐക്കണുകൾ</string>
+    <!-- Navigation View - Layout - Simple -->
+    <string name="layout_simple">ലളിതം</string>
+    <!-- Navigation View - Layout - Details -->
+    <string name="layout_details">വിശദാംശങ്ങൾ</string>
+
+    <!-- Navigation View - View - Show folders first -->
+    <string name="cm_filemanager_show_dirs_first">ആദ്യം ഫോൾഡറുകൾ കാണിക്കുക</string>
+    <!-- Navigation View - View - Show hidden files option -->
+    <string name="cm_filemanager_show_hidden">മറയ്ക്കപ്പെട്ട ഫയലുകൾ കാണിക്കുക</string>
+    <!-- Navigation View - View - Show system files option -->
+    <string name="cm_filemanager_show_system">സിസ്റ്റം ഫയലുകൾ കാണിക്കുക</string>
+    <!-- Navigation View - View - Show symlinks option -->
+    <string name="cm_filemanager_show_symlinks">സിംലിങ്ക്സ് കാണിക്കുക</string>
+
+    <!-- Filesystem Info (no data). Dialog title -->
+    <string name="filesystem_info_warning_title">വിവരങ്ങൾ ഒന്നുമില്ല</string>
+    <!-- Filesystem Info (no data). Dialog message -->
+    <string name="filesystem_info_warning_msg">ഫയൽ സിസ്റ്റത്തിനായി വിവരങ്ങളൊന്നും ലഭ്യമല്ല.</string>
+    <!-- Filesystem Info - Filesystem couldn\'t be mounted -->
+    <string name="filesystem_info_cant_be_mounted_msg">ഫയൽ സിസ്റ്റം മൗണ്ട്/അൺമൗണ്ട് ചെയ്യാനാവില്ല.</string>
+    <!-- Filesystem Info - Not allowed message -->
+    <string name="filesystem_info_mount_not_allowed_msg">ഫയൽ സിസ്റ്റം മൗണ്ട് ചെയ്യുന്ന പ്രവർത്തനം സുരക്ഷിത മോഡിൽ അനുവദനീയമല്ല. റൂട്ട് ആക്സസ് മോഡിലേക്ക് മാറുന്നതിന് സ്പർശിക്കുക.</string>
+    <!-- Filesystem Info - Mount failed -->
+    <string name="filesystem_info_mount_failed_msg">ഫയൽ സിസ്റ്റം മൗണ്ട് ചെയ്യുന്ന പ്രവർത്തനം പരാജയപ്പെട്ടു. SD കാർഡുകൾ പോലുള്ള ചില ഫയൽ സിസ്റ്റങ്ങളുടെ നിർമ്മിതി വായിക്കുന്നതിന് മാത്രമുള്ള ഫയൽ സിസ്റ്റങ്ങളുടേതായതിനാൽ അവയെ മൗണ്ട്/അൺമൗണ്ട് ചെയ്യാനാവില്ല.</string>
+    <!-- Filesystem Info Dialog - Title -->
+    <string name="filesystem_info_dialog_title">ഫയൽ സിസ്റ്റം വിവരങ്ങൾ</string>
+    <!-- Filesystem Info Dialog - Tab - Info -->
+    <string name="filesystem_info_dialog_tab_info">"വിവരം"</string>
+    <!-- Filesystem Info Dialog - Tab - Disk Usage -->
+    <string name="filesystem_info_dialog_tab_disk_usage">ഡിസ്ക് ഉപയോഗം</string>
+    <!-- Filesystem Info Dialog - Status Label -->
+    <string name="filesystem_info_dialog_status">അവസ്ഥ:</string>
+    <!-- Filesystem Info Dialog - Mount Point Label -->
+    <string name="filesystem_info_dialog_mount_point">മൗണ്ട് പോയിന്‍റ്</string>
+    <!-- Filesystem Info Dialog - Device Label -->
+    <string name="filesystem_info_dialog_device">ഉപകരണം:</string>
+    <!-- Filesystem Info Dialog - Type Label -->
+    <string name="filesystem_info_dialog_type">തരം:</string>
+    <!-- Filesystem Info Dialog - Options Label -->
+    <string name="filesystem_info_dialog_options">ഐച്ഛികങ്ങൾ:</string>
+    <!-- Filesystem Info Dialog - Dump/Pass Label -->
+    <string name="filesystem_info_dialog_dump_pass">ഡമ്പ് / പാസ്സ്:</string>
+    <!-- Filesystem Info Dialog - Virtual Label -->
+    <string name="filesystem_info_dialog_virtual">വെർച്വൽ:</string>
+    <!-- Filesystem Info Dialog - Total Disk Usage -->
+    <string name="filesystem_info_dialog_total_disk_usage">ആകെ:</string>
+    <!-- Filesystem Info Dialog - Used Disk Usage -->
+    <string name="filesystem_info_dialog_used_disk_usage">ഉപയോഗിച്ചത്:</string>
+    <!-- Filesystem Info Dialog - Free Disk Usage -->
+    <string name="filesystem_info_dialog_free_disk_usage">ശേഷിക്കുന്നത്:</string>
+
+    <!-- Fso Properties - Not allowed message -->
+    <string name="fso_properties_permissions_not_allowed_msg">അനുമതികളുടെ പ്രവർത്തനങ്ങൾ സുരക്ഷിത മോഡിൽ അനുവദനീയമല്ല. റൂട്ട് ആക്സസ് മോഡിലേക്ക് മാറുന്നതിന് സ്പർശിക്കുക.</string>
+    <!-- Fso Properties - Failed to change owner to fso -->
+    <string name="fso_properties_failed_to_change_owner_msg">ഉടമയെ മാറ്റുന്ന പ്രവർത്തനം പരാജയപ്പെട്ടു.\n\nസുരക്ഷാ കാരണങ്ങളാൽ, SD കാർഡുകൾ പോലുള്ള ചില ഫയൽ സിസ്റ്റങ്ങൾ ഉടമസ്ഥത മാറ്റൽ അനുവദിക്കുന്നില്ല.</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_group_msg">ഗ്രൂപ്പിനെ മാറ്റുന്ന പ്രവർത്തനം പരാജയപ്പെട്ടു.\n\nസുരക്ഷാ കാരണങ്ങളാൽ, SD കാർഡുകൾ പോലുള്ള ചില ഫയൽ സിസ്റ്റങ്ങൾ ഗ്രൂപ്പുകളെ മാറ്റൽ അനുവദിക്കുന്നില്ല.</string>
+    <!-- Fso Properties - Failed to change group to fso -->
+    <string name="fso_properties_failed_to_change_permission_msg">അനുമതികളെ മാറ്റുന്ന പ്രവർത്തനം പരാജയപ്പെട്ടു.\n\nസുരക്ഷാ കാരണങ്ങളാൽ, SD കാർഡുകൾ പോലുള്ള ചില ഫയൽ സിസ്റ്റങ്ങൾ അനുമതികളെ മാറ്റൽ അനുവദിക്കുന്നില്ല.</string>
+    <!-- Fso Properties Dialog - Title -->
+    <string name="fso_properties_dialog_title">സവിശേഷഗുണങ്ങൾ</string>
+    <!-- Fso Properties Dialog - Tab - Info -->
+    <string name="fso_properties_dialog_tab_info">"വിവരം"</string>
+    <!-- Fso Properties Dialog - Tab - Permissions -->
+    <string name="fso_properties_dialog_tab_permissions">"അനുമതികൾ"</string>
+    <!-- Fso Properties Dialog - Name Label -->
+    <string name="fso_properties_dialog_name">പേര്:</string>
+    <!-- Fso Properties Dialog - Parent Folder Label -->
+    <string name="fso_properties_dialog_parent">രക്ഷിതാവ്:</string>
+    <!-- Fso Properties Dialog - Type Label -->
+    <string name="fso_properties_dialog_type">തരം:</string>
+    <!-- Fso Properties Dialog - Category Label -->
+    <string name="fso_properties_dialog_category">വിഭാഗം:</string>
+    <!-- Fso Properties Dialog - Link Label -->
+    <string name="fso_properties_dialog_link">ലിങ്ക്:</string>
+    <!-- Fso Properties Dialog - Size Label -->
+    <string name="fso_properties_dialog_size">വലുപ്പം:</string>
+    <!-- Fso Properties Dialog - Contains Label -->
+    <string name="fso_properties_dialog_contains">അടങ്ങുന്നത്:</string>
+    <!-- Fso Properties Dialog - Last Accessed Time Label -->
+    <string name="fso_properties_dialog_last_accessed_date">ആക്സസ് ചെയ്തത്:</string>
+    <!-- Fso Properties Dialog - Last Modified Time Label -->
+    <string name="fso_properties_dialog_last_modified_date">പരിഷ്ക്കരിച്ചത്:</string>
+    <!-- Fso Properties Dialog - Last Changed Time -->
+    <string name="fso_properties_dialog_last_changed_date">മാറ്റിയത്:</string>
+    <!-- Fso Properties Dialog - Owner Label -->
+    <string name="fso_properties_dialog_owner">ഉടമ:</string>
+    <!-- Fso Properties Dialog - Group Label -->
+    <string name="fso_properties_dialog_group">ഗ്രൂപ്പ്:</string>
+    <!-- Fso Properties Dialog - Others Label -->
+    <string name="fso_properties_dialog_others">മറ്റുള്ളവ:</string>
+    <!-- Fso Properties Dialog - Special Label -->
+    <string name="fso_properties_dialog_special" translatable="false">S</string>
+    <!-- Fso Properties Dialog - Read Label -->
+    <string name="fso_properties_dialog_read" translatable="false">R</string>
+    <!-- Fso Properties Dialog - Write Label -->
+    <string name="fso_properties_dialog_write" translatable="false">W</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_execute" translatable="false">X</string>
+    <!-- Fso Properties Dialog - Execute Label -->
+    <string name="fso_properties_dialog_folder_items" translatable="false"><xliff:g id="folders">%1$s</xliff:g> / <xliff:g id="files">%2$s</xliff:g></string>
+    <!-- Fso Properties Dialog - Skip media scan -->
+    <string name="fso_properties_dialog_include_in_media_scan">മീഡിയ സ്കാൻ ഒഴിവാക്കുക:</string>
+    <string name="fso_failed_to_allow_media_scan">മീഡിയ സ്കാനിംഗ് അനുവദിക്കുന്നത് പരാജയപ്പെട്ടു</string>
+    <string name="fso_failed_to_prevent_media_scan">മീഡിയ സ്കാനിംഗ് തടയുന്നത് പരാജയപ്പെട്ടു</string>
+    <string name="fso_delete_nomedia_dir_title">.nomedia ഡയറക്ടറി ഇല്ലാതാക്കുക</string>
+    <string name="fso_delete_nomedia_dir_body">ഈ ഡയറക്ടറിയിൽ ഒരു .nomedia ഡയറക്ടറി അടങ്ങുന്നുണ്ട്.\n\nനിങ്ങൾക്ക് അതിനെയും അതിന്‍റെ എല്ലാ ഉള്ളടക്കത്തെയും ഇല്ലാതാക്കണമെന്നുണ്ടോ?</string>
+    <string name="fso_delete_nomedia_non_empty_title">.nomedia ഫയൽ ഇല്ലാതാക്കുക</string>
+    <string name="fso_delete_nomedia_non_empty_body">ഈ ഡയറക്ടറിയിൽ ഒരു ശൂന്യ-ഇതര .nomedia ഫയൽ അടങ്ങുന്നുണ്ട്.\n\nനിങ്ങൾക്ക് അതിനെ ഇല്ലാതാക്കണമെന്നുണ്ടോ?</string>
+
+    <!-- History - History activity title -->
+    <string name="history">"ചരിത്രം"</string>
+    <!-- History - The history is empty -->
+    <string name="msgs_history_empty">ചരിത്രം ശൂന്യമാണ്.</string>
+    <!-- History - The history reference is not in the actual history list -->
+    <string name="msgs_history_unknown">അജ്ഞാത ചരിത്ര ഇനം.</string>
+
+    <!-- Search - Search activity title -->
+    <string name="search">തിരയൽ ഫലങ്ങൾ</string>
+    <!-- Search - Search hint message -->
+    <string name="search_hint">നിങ്ങളുടെ തിരയൽ ടൈപ്പ് ചെയ്യുക</string>
+    <!-- Search - Voice search hint message -->
+    <string name="search_voice_hint">നിങ്ങളുടെ തിരയൽ പറയുക</string>
+    <!-- Search - Search error message -->
+    <string name="search_error_msg">തിരയുന്ന സമയത്ത് ഒരു തെറ്റ് സംഭവിച്ചു. ഫലങ്ങളൊന്നും കണ്ടെത്തിയില്ല.</string>
+    <!-- Search - Search no results message -->
+    <string name="search_no_results_msg">ഫലങ്ങളൊന്നും കണ്ടെത്തിയില്ല.</string>
+    <!-- Search - Number of items found in directory -->
+    <string name="search_found_items_in_directory"><xliff:g id="path">%2$s</xliff:g> -ലെ <xliff:g id="items">%1$s</xliff:g></string>
+    <!-- Search - Search query terms -->
+    <string name="search_terms">&lt;b&gt;വ്യവസ്ഥകൾ:&lt;/b&gt; <xliff:g id="terms">%1$s</xliff:g></string>
+    <!-- Search - Confirm search -->
+    <string name="search_few_characters_title">തിരയൽ സ്ഥിരീകരിക്കുക</string>
+    <!-- Search - Some terms of the search are too small. The operation could be very costly -->
+    <string name="search_few_characters_msg">തിരയൽ പദങ്ങളിൽ ചിലതിൽ അക്ഷരങ്ങളുടെ എണ്ണം വളരെ കുറവാണ്. സമയത്തിലും സിസ്റ്റം സ്രോതസുകളിലും പ്രവർത്തനം വളരെ ചെലവേറിയതാവാം.\n\nനിങ്ങൾക്ക് തുടരണമെന്നുണ്ടോ?</string>
+    <!-- Search - Searching dialog title -->
+    <string name="searching">ദയവായി കാക്കുക\u2026</string>
+    <!-- Search - Searching label -->
+    <string name="searching_action_label">തിരയൽ പുരോഗമിക്കുന്നു</string>
+
+    <!-- Picker Activity -->
+    <string name="picker" translatable="false">@string/app_name</string>
+    <!-- Picker Activity - Dialog title -->
+    <string name="picker_title">ഒരു ഫയൽ തിരഞ്ഞെടുക്കുക</string>
+    <string name="directory_picker_title">ഒരു ഡയറക്ടറി തിരഞ്ഞെടുക്കുക</string>
+
+    <!-- Editor - Editor activity title -->
+    <string name="editor">എഡിറ്റർ</string>
+    <!-- Editor - Invalid file message -->
+    <string name="editor_invalid_file_msg">അസാധുവായ ഫയൽ‍.</string>
+    <!-- Editor - File not found message -->
+    <string name="editor_file_not_found_msg">ഫയൽ കണ്ടെത്തിയില്ല.</string>
+    <!-- Editor - File size exceed the limit -->
+    <string name="editor_file_exceed_size_msg">ഫയൽ ഈ ഉപകരണത്തിനുള്ളിൽ തുറക്കാവുന്നതിലും വളരെ വലുതാണ്.</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog title -->
+    <string name="editor_dirty_ask_title">പുറത്തുകടക്കൽ സ്ഥിരീകരിക്കുക</string>
+    <!-- Editor - Editor is dirty, ask the user - Dialog message -->
+    <string name="editor_dirty_ask_msg">സംരക്ഷിക്കാത്ത മാറ്റങ്ങളുണ്ട്.\n\nസംരക്ഷിക്കാതെ പുറത്തുകടക്കട്ടെ?</string>
+    <!-- Editor - Save operation success -->
+    <string name="editor_successfully_saved">ഫയൽ വിജയകരമായി സംരക്ഷിച്ചു.</string>
+    <!-- Editor - Read-only file mode -->
+    <string name="editor_read_only_mode">ഫയൽ തുറന്നിട്ടുള്ളത് വായന-മാത്രം മോഡിലാണ്.</string>
+    <!-- Editor - Dumping message -->
+    <string name="dumping_message">ഹെക്സ് ഡമ്പ് സൃഷ്ടിക്കുന്നു…</string>
+    <!-- Editor - Displaying -->
+    <string name="displaying_message">പ്രദർശിപ്പിക്കുന്നു…</string>
+
+    <!-- Bookmarks - Bookmarks activity title -->
+    <string name="bookmarks">ബുക്ക്‌മാർക്കുകൾ</string>
+    <!-- Bookmarks - Bookmark name - Home -->
+    <string name="bookmarks_home">"ഹോം"</string>
+    <!-- Bookmarks - Bookmark name - Root folder -->
+    <string name="bookmarks_root_folder">റൂട്ട് ഫോൾഡർ</string>
+    <!-- Bookmarks - Bookmark name - System folder -->
+    <string name="bookmarks_system_folder">സിസ്റ്റം ഫോൾഡർ</string>
+    <!-- Bookmarks - Bookmark name - Secure storage -->
+    <string name="bookmarks_secure">സുരക്ഷിത സംഭരണം</string>
+    <!-- Bookmarks - Bookmark name - Remote storage -->
+    <string name="bookmarks_remote">റിമോട്ട് സംഭരണം</string>
+    <!-- Bookmarks - Bookmark name - Button - Initial directory content description -->
+    <string name="bookmarks_button_config_cd">പ്രഥമ ഫോൾഡർ ക്രമീകരിക്കുക.</string>
+    <!-- Bookmarks - Bookmark name - Button - Remove bookmark content description -->
+    <string name="bookmarks_button_remove_bookmark_cd">ബുക്ക്‌മാർക്ക് നീക്കംചെയ്യുക.</string>
+    <!-- Bookmarks - Bookmarks - Actions - Bookmark successfully added -->
+    <string name="bookmarks_msgs_add_success">ബുക്ക്‌മാർക്ക് വിജയകരമായി ചേർത്തു.</string>
+
+    <!-- Initial directory dialog title -->
+    <string name="initial_directory_dialog_title">പ്രഥമ ഫോൾഡർ</string>
+    <!-- Initial directory label -->
+    <string name="initial_directory_label">പ്രഥമ ഫോൾഡർ തിരഞ്ഞെടുക്കുക:</string>
+    <!-- Initial directory is relative -->
+    <string name="initial_directory_relative_msg">ബന്ധപ്പെട്ട പാത്തുകൾ അനുവദനീയമല്ല.</string>
+    <!-- Initial directory error message -->
+    <string name="initial_directory_error_msg">പ്രഥമ ഫോൾഡർ സംരക്ഷിക്കുന്ന സമയത്ത് ഒരു പിശക് സംഭവിച്ചു.</string>
+
+    <!-- Menu - Navigation - Search -->
+    <string name="menu_search">"തിരയുക"</string>
+    <!-- Menu - Navigation - Settings -->
+    <string name="menu_settings">"ക്രമീകരണങ്ങൾ"</string>
+    <!-- Menu - History - Clear history -->
+    <string name="menu_clear_history">ചരിത്രം മായ്‌ക്കുക</string>
+    <!-- Menu - Editor - No suggestions -->
+    <string name="menu_no_suggestions">നിർദ്ദേശങ്ങൾ ഒന്നുമില്ല</string>
+    <!-- Menu - Editor - Word wrap -->
+    <string name="menu_word_wrap">വേഡ് റാപ്പ്</string>
+    <!-- Menu - Editor - Sintax highlight -->
+    <string name="menu_syntax_highlight">പദഘടന ഹൈലൈറ്റ്</string>
+
+    <!-- Regular expression for create copy action -->
+    <string name="create_copy_regexp"><xliff:g id="name">%1$s</xliff:g> - <xliff:g id="extension">%2$s</xliff:g> പകർത്തുക</string>
+    <!-- Regular expression for new compressed file -->
+    <string name="create_new_compress_file_regexp"><xliff:g id="name">%1$s</xliff:g> - പുതിയ<xliff:g id="extension">%2$s</xliff:g></string>
+
+    <!-- Waiting dialog - Performing operation message -->
+    <string name="waiting_dialog_msg">പ്രവർത്തനം നിർവഹിക്കുന്നു…</string>
+    <!-- Waiting dialog - Copying title -->
+    <string name="waiting_dialog_copying_title">പകർത്തുന്നു…</string>
+    <!-- Waiting dialog - Copying message -->
+    <string name="waiting_dialog_copying_msg">&lt;b&gt;മുതൽ&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>&lt;br/&gt;&lt;b&gt;To&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g></string>
+    <!-- Waiting dialog - Moving title -->
+    <string name="waiting_dialog_moving_title">നീക്കുന്നു…</string>
+    <!-- Waiting dialog - Moving message -->
+    <string name="waiting_dialog_moving_msg">&lt;b&gt;മുതൽ&lt;/b&gt; <xliff:g id="from">%1$s</xliff:g>&lt;br/&gt;&lt;b&gt;To&lt;/b&gt; <xliff:g id="to">%2$s</xliff:g></string>
+    <!-- Waiting dialog - Deleting title -->
+    <string name="waiting_dialog_deleting_title">ഇല്ലാതാക്കുന്നു…</string>
+    <!-- Waiting dialog - Deleting message -->
+    <string name="waiting_dialog_deleting_msg">&lt;b&gt;ഫയൽ&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_extracting_title">"എക്‌സ്‌ട്രാക്റ്റുചെയ്യുന്നു…"</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_extracting_msg">&lt;b&gt;ഫയൽ&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Extracting title -->
+    <string name="waiting_dialog_compressing_title">കംപ്രസ് ചെയ്യുന്നു…</string>
+    <!-- Waiting dialog - Extracting message -->
+    <string name="waiting_dialog_compressing_msg">&lt;b&gt;ഫയൽ&lt;/b&gt; <xliff:g id="file">%1$s</xliff:g></string>
+    <!-- Waiting dialog - Initializing the dialog -->
+    <string name="waiting_dialog_analizing_msg"><![CDATA[<b>വിശകലനം ചെയ്യുന്നു…</b>]]></string>
+    <!-- Extracting - Success message -->
+    <string name="msgs_extracting_success">എക്‌സ്‌ട്രാക്ട് ചെയ്യൽ പ്രവർത്തനം വിജയകരമായി പൂർത്തിയാക്കി. ഡാറ്റയെ <xliff:g id="destination">%1$s</xliff:g>-ലേക്ക് എക്‌സ്‌ട്രാക്ട് ചെയ്തു.</string>
+    <!-- Compressing - Success message -->
+    <string name="msgs_compressing_success">കംപ്രസ് ചെയ്യൽ പ്രവർത്തനം വിജയകരമായി പൂർത്തിയാക്കി. ഡാറ്റയെ <xliff:g id="destination">%1$s</xliff:g>-ലേക്ക് കംപ്രസ് ചെയ്തു.</string>
+
+    <!-- Actions Dialog - Title -->
+    <string name="actions_dialog_title">പ്രവർത്തനങ്ങൾ</string>
+    <!-- Actions Dialog - Menu - Properties of current folder -->
+    <string name="actions_menu_properties_current_folder">സവിശേഷഗുണങ്ങൾ</string>
+    <!-- Actions Dialog - Menu - Refresh -->
+    <string name="actions_menu_refresh">"പുതുക്കുക"</string>
+    <!-- Actions Dialog - Menu - New directory -->
+    <string name="actions_menu_new_directory">പുതിയ ഫോൾഡർ</string>
+    <!-- Actions Dialog - Menu - New file -->
+    <string name="actions_menu_new_file">പുതിയ ഫയൽ</string>
+    <!-- Actions Dialog - Menu - Select all -->
+    <string name="actions_menu_select_all">എല്ലാം തിരഞ്ഞെടുക്കുക</string>
+    <!-- Actions Dialog - Menu - Deselect all -->
+    <string name="actions_menu_deselect_all">എല്ലാ തിരഞ്ഞെടുപ്പുകളും മാറ്റുക</string>
+    <!-- Actions Dialog - Menu - Select -->
+    <string name="actions_menu_select">"തിരഞ്ഞെടുക്കുക"</string>
+    <!-- Actions Dialog - Menu - Deselect -->
+    <string name="actions_menu_deselect">തിരഞ്ഞെടുപ്പ് മാറ്റുക</string>
+    <!-- Actions Dialog - Menu - Copy/Paste selection -->
+    <string name="actions_menu_paste_selection">തിരഞ്ഞെടുത്തതിനെ ഇവിടേക്ക് പകർത്തുക</string>
+    <!-- Actions Dialog - Menu - Move selection -->
+    <string name="actions_menu_move_selection">തിരഞ്ഞെടുത്തതിനെ ഇവിടേക്ക് നീക്കുക</string>
+    <!-- Actions Dialog - Menu - Delete selection -->
+    <string name="actions_menu_delete_selection">തിരഞ്ഞെടുത്തതിനെ ഇല്ലാതാക്കുക</string>
+    <!-- Actions Dialog - Menu - Compress selection -->
+    <string name="actions_menu_compress_selection">തിരഞ്ഞെടുത്തതിനെ കംപ്രസ് ചെയ്യുക</string>
+    <!-- Actions Dialog - Menu - Create link -->
+    <string name="actions_menu_create_link">ലിങ്ക് സൃഷ്ടിക്കുക</string>
+    <!-- Actions Dialog - Menu - Open -->
+    <string name="actions_menu_open">"തുറക്കുക"</string>
+    <!-- Actions Dialog - Menu - Open with -->
+    <string name="actions_menu_open_with">"ഇത് ഉപയോഗിച്ച് തുറക്കുക"</string>
+    <!-- Actions Dialog - Menu - Execute -->
+    <string name="actions_menu_execute">"നടപ്പിലാക്കുക"</string>
+    <!-- Actions Dialog - Menu - Send -->
+    <string name="actions_menu_send">"അയയ്‌ക്കുക"</string>
+    <!-- Actions Dialog - Menu - Send selection -->
+    <string name="actions_menu_send_selection">തിരഞ്ഞെടുത്തതിനെ അയയ്ക്കുക</string>
+    <!-- Actions Dialog - Menu - Compress -->
+    <string name="actions_menu_compress">കംപ്രസ് ചെയ്യുക</string>
+    <!-- Actions Dialog - Menu - Extract -->
+    <string name="actions_menu_extract">എക്‌സ്‌ട്രാക്ട് ചെയ്യുക</string>
+    <!-- Actions Dialog - Menu - Delete -->
+    <string name="actions_menu_delete">"ഇല്ലാതാക്കുക"</string>
+    <!-- Actions Dialog - Menu - Rename -->
+    <string name="actions_menu_rename">"പേരുമാറ്റുക"</string>
+    <!-- Actions Dialog - Menu - Create copy -->
+    <string name="actions_menu_create_copy">പകർപ്പ് സൃഷ്ടിക്കുക</string>
+    <!-- Actions Dialog - Menu - Properties -->
+    <string name="actions_menu_properties">സവിശേഷഗുണങ്ങൾ</string>
+    <!-- Actions Dialog - Menu - Add to bookmarks -->
+    <string name="actions_menu_add_to_bookmarks">ബുക്ക്‌മാർക്കുകളിൽ ചേർക്കുക</string>
+    <!-- Actions Dialog - Menu - Add shortcut -->
+    <string name="actions_menu_add_shortcut">എളുപ്പവഴി ചേർക്കുക</string>
+    <!-- Actions Dialog - Menu - Open parent folder -->
+    <string name="actions_menu_open_parent_folder">രക്ഷിതാവിനെ തുറക്കുക</string>
+    <!-- Actions Dialog - Menu - Compute checksum -->
+    <string name="actions_menu_compute_checksum">ചെക്ക്സം കണക്കാക്കുക</string>
+    <!-- Actions Dialog - Menu - Print -->
+    <string name="actions_menu_print">"പ്രിന്റുചെയ്യുക"</string>
+    <!-- Actions Dialog - Menu - Set as home -->
+    <string name="actions_menu_set_as_home">ഹോം ആയി ക്രമീകരിക്കുക</string>
+
+    <!-- Actions - Ask user prior to do an undone operation. Dialog message -->
+    <string name="actions_ask_undone_operation_msg">ഈ പ്രവർത്തനം പഴയപടിയാക്കാനാവില്ല. നിങ്ങൾക്ക് തുടരണമെന്നുണ്ടോ?</string>
+
+    <!-- Enter Name Dialog - Label -->
+    <string name="input_name_dialog_label">പേര്:</string>
+    <!-- Enter Name Dialog - Message - Empty name -->
+    <string name="input_name_dialog_message_empty_name">പേര് ശൂന്യമാകരുത്.</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_path_name">അസാധുവായ പേര്. അക്ഷരങ്ങൾ \'<xliff:g id="invalid_characters">%1$s</xliff:g>\' അനുവദനീയമല്ല.</string>
+    <!-- Enter Name Dialog - Message - Invalid name length -->
+    <string name="input_name_dialog_message_invalid_name_length">ഫയൽ പേര് വളരെ വലുതാണ്, 255 പ്രതീകങ്ങളോ അതിൽ കുറവോ ഉള്ള എന്തെങ്കിലും പരിഗണിക്കുക.</string>
+    <!-- Enter Name Dialog - Message - Invalid name -->
+    <string name="input_name_dialog_message_invalid_name">അസാധുവായ പേര്. പേരുകൾ \'.\' കൂടാതെ \'..\' എന്നിവ അനുവദനീയമല്ല.</string>
+    <!-- Enter Name Dialog - Message - Name exists -->
+    <string name="input_name_dialog_message_name_exists">പേര് നേരത്തേതന്നെ നിലവിലുണ്ട്.</string>
+
+    <!-- Associations Dialog - Title -->
+    <string name="associations_dialog_title">അസോസിയേഷൻ</string>
+    <!-- Associations Dialog - Remember the user action -->
+    <string name="associations_dialog_remember">തിരഞ്ഞെടുത്തത് ഓർമ്മിക്കുക</string>
+    <!-- Associations Dialog - Open with Title -->
+    <string name="associations_dialog_openwith_title">"ഇത് ഉപയോഗിച്ച് തുറക്കുക"</string>
+    <!-- Associations Dialog - Open action (button title) -->
+    <string name="associations_dialog_openwith_action">തുറക്കുക</string>
+    <!-- Associations Dialog - Send with Title -->
+    <string name="associations_dialog_sendwith_title">ഇത് ഉപയോഗിച്ച് അയയ്ക്കുക</string>
+    <!-- Associations Dialog - Send action (button title) -->
+    <string name="associations_dialog_sendwith_action">അയയ്ക്കുക</string>
+
+    <!-- Inline Autocomplete Widget - Tab message nothing to complete -->
+    <string name="inline_autocomplete_tab_nothing_to_complete_msg">പൂർത്തിയാക്കാനായി ഒന്നുമില്ല.</string>
+
+    <!-- Execution console - Title -->
+    <string name="execution_console_title">Console</string>
+    <!-- Execution console - The script name label -->
+    <string name="execution_console_script_name_label">സ്ക്രിപ്റ്റ്:</string>
+    <!-- Execution console - The script execution time label -->
+    <string name="execution_console_script_execution_time_label">സമയം:</string>
+    <!-- Execution console - The script exit code label -->
+    <string name="execution_console_script_exitcode_label">പുറത്തുകടക്കൽ കോഡ്:</string>
+    <!-- Execution console - The script execution time seconds string -->
+    <string name="execution_console_script_execution_time_text"><xliff:g id="seconds">%1$s</xliff:g> സെക്കന്‍റ്</string>
+
+    <!-- Compute checksum - Title -->
+    <string name="compute_checksum_title">ചെക്ക്സം കണക്കാക്കുക</string>
+    <!-- Compute checksum - The file name label -->
+    <string name="compute_checksum_filename_label">ഫയൽ:</string>
+    <!-- Compute checksum - The MD5 label -->
+    <string name="compute_checksum_md5_label" translatable="false">MD5:</string>
+    <!-- Compute checksum - The SHA1 label -->
+    <string name="compute_checksum_sha1_label" translatable="false">SHA-1:</string>
+    <!-- Compute checksum - The computing checksum message-->
+    <string name="compute_checksum_computing_checksum_msg">ചെക്ക്സം കണക്കാക്കുന്നു…</string>
+
+    <!-- Mime/Types - Folder -->
+    <string name="mime_folder">ഫോൾഡർ</string>
+    <!-- Mime/Types - Symlink -->
+    <string name="mime_symlink">സിംലിങ്ക്</string>
+    <!-- Mime/Types - Unknown -->
+    <string name="mime_unknown">"അജ്ഞാതം"</string>
+
+    <!--  Filetime formats -->
+    <string name="filetime_format_mode_system">സിസ്റ്റം-നിർവചിതം</string>
+    <string name="filetime_format_mode_locale">ലോക്കേൽ-നിർവചിതം</string>
+    <string name="filetime_format_mode_ddMMyyyy_HHmmss">dd/mm/yyyy hh:mm:ss</string>
+    <string name="filetime_format_mode_MMddyyyy_HHmmss">mm/dd/yyyy hh:mm:ss</string>
+    <string name="filetime_format_mode_yyyyMMdd_HHmmss">yyyy-mm-dd hh:mm:ss</string>
+
+    <!-- Selection -->
+    <!-- For example "2 folders and 1 file selected." -->
+    <string name="selection_folders_and_files"><xliff:g id="folders">%1$s</xliff:g> കൂടാതെ <xliff:g id="files">%2$s</xliff:g> തിരഞ്ഞെടുത്തു.</string>
+
+    <!-- Category descriptions -->
+    <string name="category_system">സിസ്റ്റം</string>
+    <string name="category_app">ആപ്ലിക്കേഷൻ</string>
+    <string name="category_binary">ബൈനറി</string>
+    <string name="category_text">ടെക്സ്റ്റ്</string>
+    <string name="category_document">പ്രമാണം</string>
+    <string name="category_ebook">EBOOK</string>
+    <string name="category_mail">മെയിൽ</string>
+    <string name="category_compress">കംപ്രസ് ചെയ്യുക</string>
+    <string name="category_exec">നടപ്പാക്കാവുന്നത്</string>
+    <string name="category_database">ഡാറ്റാബേസ്</string>
+    <string name="category_font">ഫോണ്ട്</string>
+    <string name="category_image">ചിത്രം</string>
+    <string name="category_audio">ഓഡിയോ</string>
+    <string name="category_video">വീഡിയോ</string>
+    <string name="category_security">സുരക്ഷ</string>
+    <string name="category_all">എല്ലാം</string>
+
+    <!-- Compression - Compression modes dialog title -->
+    <string name="compression_mode_title">കംപ്രഷൻ മോഡ്</string>
+    <!-- Compression - Supported archive and compression modes -->
+    <string name="compression_mode_tar" translatable="false">Tar (tar)</string>
+    <string name="compression_mode_tar_gzip" translatable="false">Tar/gzip (tar.gz)</string>
+    <string name="compression_mode_tar_gzip2" translatable="false">Tar/gzip (tgz)</string>
+    <string name="compression_mode_tar_bzip" translatable="false">Tar/bzip (tar.bz2)</string>
+    <string name="compression_mode_gzip" translatable="false">Gzip (gz)</string>
+    <string name="compression_mode_bzip" translatable="false">Bzip (bz2)</string>
+    <string name="compression_mode_zip" translatable="false">Zip (zip)</string>
+
+    <!-- Shortcut. Failed to handle the shortcut -->
+    <string name="shortcut_failed_msg">എളുപ്പവഴി കൈകാര്യം ചെയ്യുന്നത് പരാജയപ്പെട്ടു.</string>
+    <!-- Shortcut. The shortcut was created -->
+    <string name="shortcut_creation_success_msg">എളുപ്പവഴി വിജയകരമായി സൃഷ്ടിച്ചു.</string>
+    <!-- Shortcut. The shortcut wasn\'t created -->
+    <string name="shortcut_creation_failed_msg">എളുപ്പവഴി സൃഷ്ടിക്കൽ പരാജയപ്പെട്ടു.</string>
+
+    <!-- Preferences title -->
+    <string name="pref">"ക്രമീകരണങ്ങൾ"</string>
+    <!-- Preferences - General title -->
+    <string name="pref_general">"പൊതുക്രമീകരണങ്ങൾ"</string>
+    <!-- Preferences - Search title -->
+    <string name="pref_search">തിരയൽ ഐച്ഛികങ്ങൾ</string>
+    <!-- Preferences - Storage title -->
+    <string name="pref_storage">സംഭരണ ഐച്ഛികങ്ങൾ</string>
+    <!-- Preferences - Editor title -->
+    <string name="pref_editor">എഡിറ്റർ ഐച്ഛികങ്ങൾ</string>
+    <!-- Preferences - Themes title -->
+    <string name="pref_themes">തീമുകൾ</string>
+    <!-- Preferences - About title -->
+    <string name="pref_about">"ആമുഖം"</string>
+    <!-- Preferences - About summary -->
+    <string name="pref_about_summary">ഫയൽ മാനേജർ v<xliff:g id="version">%1$s</xliff:g>\nപകർപ്പവകാശം \u00A9 2012–2014 The CyanogenMod Project</string>
+
+    <!-- Preferences - General - Behaviour category -->
+    <string name="pref_general_behaviour_category">പൊതുവായത്</string>
+    <!-- Preferences - General - Case sensitive sort and navigating title -->
+    <string name="pref_case_sensitive_sort">അക്ഷര സംവേദി</string>
+    <!-- Preferences - General - Case sensitive sort and navigating summary -->
+    <string name="pref_case_sensitive_sort_summary">തിരയൽ ഫലങ്ങൾ അടുക്കുമ്പോഴോ നാവിഗേറ്റ് ചെയ്യുമ്പോഴോ വലിയക്ഷരത്തെ/ചെറിയക്ഷരത്തെ പരിഗണിക്കുക</string>
+    <!-- Preferences - General - Filetime format mode title -->
+    <string name="pref_filetime_format_mode">തീയതി/സമയ ഫോർമാറ്റ്</string>
+    <!-- Preferences - General -Disk usage warning level title -->
+    <string name="pref_disk_usage_warning_level">ഡിസ്ക് ഉപയോഗ മുന്നറിയിപ്പ്</string>
+    <!-- Preferences - General - Disk usage warning level summary -->
+    <!-- FIXME Use "percent" instead of "%" symbol, because it make crash the app on getSummary
+         of ListPreference. This should be fixed in frameworks base prior to be added here. -->
+    <string name="pref_disk_usage_warning_level_summary" formatted="false">ഡിസ്ക് ഉപയോഗ വിജറ്റുകൾ ഡിസ്കിലെ സ്വതന്ത്ര സ്ഥലത്തിന്‍റെ <xliff:g id="level">%1$s</xliff:g> ശതമാനത്തിൽ എത്തുമ്പോൾ അവയിൽ വ്യത്യസ്തമായ ഒരു നിറം പ്രദർശിപ്പിക്കുക</string>
+    <!-- Preferences - General - Compute folder statistics title -->
+    <string name="pref_compute_folder_statistics">ഫോൾഡർ സ്റ്റാറ്റിസ്റ്റിക്സ് കണക്കാക്കുക</string>
+    <!-- Preferences - General - Compute folder statistics summary on -->
+    <string name="pref_compute_folder_statistics_on">മുന്നറിയിപ്പ്! ഫോൾഡർ സ്റ്റാറ്റിസ്റ്റിക്സ് കണക്കാക്കുന്നത് സമയത്തിലും സിസ്റ്റം സ്രോതസുകളിലും വളരെ ചെലവേറിയതാണ്</string>
+    <!-- Preferences - General - Display thumbs -->
+    <string name="pref_display_thumbs">"പ്രിവ്യൂ നടത്തുക"</string>
+    <!-- Preferences - General - Display thumbs summary -->
+    <string name="pref_display_thumbs_summary">ആപ്ലിക്കേഷനുകൾ, സംഗീത ഫയലുകൾ, ചിത്രങ്ങൾ, വീഡിയോകൾ എന്നിവയുടെ ഒരു പ്രിവ്യൂ ചിത്രം കാണിക്കുക</string>
+    <!-- Preferences - General - Use flinger detection -->
+    <string name="pref_use_flinger">സ്വൈപ് ആംഗ്യങ്ങൾ ഉപയോഗിക്കുക</string>
+    <!-- Preferences - General - Use flinger detection summary -->
+    <string name="pref_use_flinger_summary">ഫയലുകളോ ഫോൾഡറുകളോ ഇല്ലാതാക്കുന്നതിന് ഇടത്തുനിന്ന് വലത്തോട്ടുള്ള സ്വൈപ് ആംഗ്യം തിരിച്ചറിയൽ ഉപയോഗിക്കുക</string>
+    <!-- Preferences - General - Advanced settings category -->
+    <string name="pref_general_advanced_settings_category">"വിപുലമായത്"</string>
+    <!-- Preferences - General - Access mode -->
+    <string name="pref_access_mode">ആക്സസ് മോഡ്</string>
+    <!-- Preferences - General - Safe mode -->
+    <string name="pref_access_mode_safe">"സുരക്ഷിത മോഡ്"</string>
+    <!-- Preferences - General - Safe mode summary -->
+    <string name="pref_access_mode_safe_summary">സുരക്ഷിത മോഡ്\n\nഅവകാശങ്ങളില്ലാതെ പ്രവർത്തിക്കുന്ന ഈ ആപ്ലിക്കേഷന് ആക്സസ് ചെയ്യാവുന്ന ഫയൽ സിസ്റ്റങ്ങൾ സംഭരണ വലുപ്പങ്ങൾ (SD കാർഡുകൾ, USB എന്നിവ) മാത്രമാണ്</string>
+    <!-- Preferences - General - Prompt user mode -->
+    <string name="pref_access_mode_prompt">ഉപയോക്തൃ പ്രേരണാ മോഡ്</string>
+    <!-- Preferences - General - Prompt user mode summary -->
+    <string name="pref_access_mode_prompt_summary">ഉപയോക്തൃ പ്രേരണാ മോഡ്\n\nആപ്ലിക്കേഷൻ പ്രവർത്തിക്കുന്നത് ഫയൽ സിസ്റ്റത്തിലേക്കുള്ള സമ്പൂർണ്ണ ആക്സസോടെയാണെങ്കിലും ഏതെങ്കിലും ആധികാരിക പ്രവർത്തനങ്ങൾ നടപ്പാക്കുന്നതിന് മുമ്പ് അനുമതിക്കായി പ്രേരിപ്പിക്കും</string>
+    <!-- Preferences - General - Root access mode -->
+    <string name="pref_access_mode_root">റൂട്ട് ആക്സസ് മോഡ്</string>
+    <!-- Preferences - General - Root access mode summary -->
+    <string name="pref_access_mode_root_summary">റൂട്ട് ആക്സസ് മോഡ്\n\nമുന്നറിയിപ്പ്! നിങ്ങളുടെ ഉപകരണത്തെ തകരാറിലാക്കിയേക്കാവുന്ന പ്രവർത്തനങ്ങൾ ഈ മോഡ് അനുവദിക്കുന്നു. ഒരു പ്രവർത്തനം സുരക്ഷിതമാണെന്ന് ഉറപ്പുവരുത്തേണ്ട ബാധ്യത നിങ്ങൾക്കാണ്.</string>
+    <!-- Preferences - General - Restrict secondary users access title -->
+    <string name="pref_restrict_secondary_users_access_title">ഉപയോക്താക്കളുടെ ആക്സസ് നിയന്ത്രിതമാക്കുക</string>
+    <!-- Preferences - General - Restrict secondary users access summary -->
+    <string name="pref_restrict_secondary_users_access_summary">മുഴുവൻ സിസ്റ്റത്തിലേക്കുള്ള അപ്രധാന ഉപയോക്താക്കളുടെ ആക്സസ് നിയന്ത്രിതമാക്കുക</string>
+    <!-- Preferences - Search - Results category -->
+    <string name="pref_search_results_category">ഫലങ്ങൾ</string>
+    <!-- Preferences - Search - Show relevance widget -->
+    <string name="pref_show_relevance_widget">പ്രസക്ത വിജറ്റ് കാണിക്കുക</string>
+    <!-- Preferences - Search - Highlight search terms -->
+    <string name="pref_highlight_terms">തിരയൽ പദങ്ങൾ ഹൈലൈറ്റ് ചെയ്യുക</string>
+    <!-- Preferences - Search - Sort results mode -->
+    <string name="pref_sort_search_results_mode">ഫലങ്ങൾ അടുക്കൽ മോഡ്</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_none">അടുക്കൽ ഇല്ല</string>
+    <!-- Preferences - Search - Sort results mode. None -->
+    <string name="pref_sort_search_results_mode_name">"പേര് പ്രകാരം"</string>
+    <!-- Preferences - Search - Sort results mode. Relevance -->
+    <string name="pref_sort_search_results_mode_relevance">പ്രസക്തി പ്രകാരം</string>
+    <!-- Preferences - Search - Privacity category -->
+    <string name="pref_search_privacity_category">"സ്വകാര്യത"</string>
+    <!-- Preferences - Search - Save search terms -->
+    <string name="pref_save_search_terms">തിരയൽ പദങ്ങൾ സംരക്ഷിക്കുക</string>
+    <!-- Preferences - Search - Save search terms summary on -->
+    <string name="pref_save_search_terms_on">തിരയൽ പദങ്ങൾ സംരക്ഷിക്കപ്പെടുകയും ഭാവി തിരയലുകളിൽ നിർദ്ദേശങ്ങളായി ഉപയോഗിക്കപ്പെടുകയും ചെയ്യും</string>
+    <!-- Preferences - Search - Save search terms summary off -->
+    <string name="pref_save_search_terms_off">തിരയൽ പദങ്ങൾ സംരക്ഷിക്കപ്പെടില്ല</string>
+    <!-- Preferences - Search - Remove saved search terms -->
+    <string name="pref_remove_saved_search_terms">സംരക്ഷിച്ച തിരയൽ പദങ്ങൾ നീക്കംചെയ്യുക</string>
+    <!-- Preferences - Search - Remove saved search terms summary -->
+    <string name="pref_remove_saved_search_terms_summary">സംരക്ഷിച്ച എല്ലാ തിരയൽ പദങ്ങളും നീക്കംചെയ്യുന്നതിന് സ്പർശിക്കുക</string>
+    <!-- Preferences - Search - Suggestions were truncated -->
+    <string name="pref_remove_saved_search_terms_msg">സംരക്ഷിച്ച എല്ലാ തിരയൽ പദങ്ങളും നീക്കംചെയ്യപ്പെട്ടു</string>
+    <!-- Preferences - Storage - Secure Storage category -->
+    <string name="pref_secure_storage_category">സുരക്ഷിത സംഭരണം</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync title -->
+    <string name="pref_secure_storage_delayed_sync_title">താമസമുള്ള സമന്വയിപ്പിക്കൽ</string>
+    <!-- Preferences - Storage - Secure Storage - Delayed sync summary -->
+    <string name="pref_secure_storage_delayed_sync_summary">സുരക്ഷിത ഫയൽ സിസ്റ്റങ്ങളെ സമന്വയിപ്പിക്കൽ ഒരു ചെലവേറിയ പ്രവർത്തനമാണ്. ഫയൽ സിസ്റ്റം ഉപയോഗിക്കാത്ത സ്ഥിതിയിലായിരിക്കുമ്പോൾ, എന്നാൽ ആപ്ലിക്കേഷൻ ക്രാഷ് ചെയ്യുകയാണെങ്കിൽ തീർച്ചപ്പെടുത്താത്ത വിവരങ്ങൾ സമന്വയിപ്പിക്കാതെ നഷ്ടപ്പെടുത്തുക വഴി ഓരോ പ്രവർത്തനത്തിന് ശേഷവും വേഗമേറിയ പ്രതികരണങ്ങൾ അനുവദിക്കുന്നതിന് ഈ ഐച്ഛികം പ്രാപ്തമാക്കുക.</string>
+    <!-- Preferences - Storage - Secure Storage - Reset password title -->
+    <string name="pref_secure_storage_reset_password_title">പാസ്‌വേഡ് പുനഃക്രമീകരിക്കുക</string>
+    <!-- Preferences - Storage - Secure Storage - Delete storage title -->
+    <string name="pref_secure_storage_delete_storage_title">സംഭരണം ഇല്ലാതാക്കുക</string>
+    <!-- Preferences - Editor - Behaviour category -->
+    <string name="pref_editor_behaviour_category">സ്വഭാവം</string>
+    <!-- Preferences - Editor - No suggestions -->
+    <string name="pref_no_suggestions">നിർദ്ദേശങ്ങൾ ഒന്നുമില്ല</string>
+    <!-- Preferences - Editor - No suggestions summary -->
+    <string name="pref_no_suggestions_desc">ഫയൽ എഡിറ്റ് ചെയ്യുന്ന സമയത്ത് നിഘണ്ടു നിർദ്ദേശങ്ങൾ പ്രദർശിപ്പിക്കാതിരിക്കുക</string>
+    <!-- Preferences - Editor - Word wrap -->
+    <string name="pref_word_wrap">വേഡ് റാപ്പ്</string>
+    <!-- Preferences - Editor - Hex dump -->
+    <string name="pref_hexdump">ഹെക്സ് ഡമ്പ് ബൈനറി ഫയലുകൾ</string>
+    <!-- Preferences - Editor - Hex dump desc -->
+    <string name="pref_hexdump_desc">ഒരു ബൈനറി ഫയൽ തുറക്കുമ്പോൾ, ഫയലിന്‍റെ ഒരു ഹെക്സ് ഡമ്പ് സൃഷ്ടിച്ച് അതിനെ ഹെക്സ് വ്യൂവറിൽ തുറക്കുക</string>
+    <!-- Preferences - Editor - Syntax highlight category -->
+    <string name="pref_editor_syntax_highlight_category">പദഘടന ഹൈലൈറ്റ്</string>
+    <!-- Preferences - Editor - Syntax highlight -->
+    <string name="pref_syntax_highlight">പദഘടന ഹൈലൈറ്റ്</string>
+    <!-- Preferences - Editor - Syntax highlight summary -->
+    <string name="pref_syntax_highlight_desc">എഡിറ്ററിൽ പ്രദർശിപ്പിക്കപ്പെടുന്ന ഫയലിന്‍റെ പദഘടന ഹൈലൈറ്റ് ചെയ്യുക (ഫയലിന്‍റെ തരത്തിന് ഉതകുന്ന ഒരു പദഘടനാ ഹൈലൈറ്റ് പ്രോസസർ ലഭ്യമാവുമ്പോൾ മാത്രം)</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme -->
+    <string name="pref_syntax_highlight_color_scheme">നിറ സ്കീം</string>
+    <!-- Preferences - Editor - Syntax highlight color scheme summary -->
+    <string name="pref_syntax_highlight_color_scheme_desc">പദഘടന ഹൈലൈറ്റ് നിറ സ്കീം തിരഞ്ഞെടുക്കുക</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme -->
+    <string name="pref_syntax_sh_use_theme_default">തീം ഡിഫോൾട്ട് ഉപയോഗിക്കുക</string>
+    <!-- Preferences - Editor - Syntax highlight -Color Scheme summary -->
+    <string name="pref_syntax_sh_use_theme_default_desc">നിലവിലെ തീമിന്‍റെ ഡിഫോൾട്ട് പദഘടന ഹൈലൈറ്റ് ഉപയോഗിക്കുക</string>
+    <!-- Preferences - Editor - Syntax highlight - Color Scheme - Items category -->
+    <string name="pref_editor_sh_item_category">ഇനങ്ങൾ</string>
+    <!-- Preferences - Themes - Themes selection category -->
+    <string name="pref_themes_selection_category">തീമുകൾ</string>
+    <!-- Preferences - Themes - Set theme button -->
+    <string name="pref_themes_set_theme">തീം ക്രമീകരിക്കുക</string>
+    <!-- Preferences - Themes - Confirmation message -->
+    <string name="pref_themes_confirmation">തീം വിജയകരമായി പ്രയോഗിച്ചു.</string>
+    <!-- Preferences - Themes - Theme not found message -->
+    <string name="pref_themes_not_found">തീം കണ്ടെത്തിയില്ല.</string>
+
+    <!-- Preferences - Debug - Capture debug traces -->
+    <string name="pref_debug_traces">ഡീബഗ്ഗിംഗ് വിവരങ്ങൾ ലോഗ് ചെയ്യുക</string>
+
+    <!-- Themes - Default theme name -->
+    <string name="theme_default_name">ഇളം തീം</string>
+    <!-- Themes - Default theme description -->
+    <string name="theme_default_description">CyanogenMod ഫയൽ മാനേജർ എന്നതിനുള്ള ഒരു ഇളം തീം.</string>
+    <!-- Themes - Default theme author -->
+    <string name="themes_author">CyanogenMod</string>
+
+    <!-- Navigation drawer -->
+    <string name="drawer_open">"നാവിഗേഷൻ ഡ്രോയർ തുറക്കുക"</string>
+    <string name="drawer_close">"നാവിഗേഷൻ ഡ്രോയർ അടയ്‌ക്കുക"</string>
+
+    <!-- ColorPickerDialog -->
+    <!-- The text of the alpha slider control -->
+    <string name="color_picker_alpha_slider_text">ആൽഫ</string>
+    <!-- The label of the current color panel -->
+    <string name="color_picker_current_text">നിലവിലുള്ളത്:</string>
+    <!-- The label of the new color panel -->
+    <string name="color_picker_new_text">പുതിയത്:</string>
+    <!-- The label of the color input -->
+    <string name="color_picker_color">നിറം:</string>
+
+    <!-- Android Syntax Highlight -->
+    <string name="ash_reset_color_scheme">ഡിഫോൾട്ട് തീം നിറ സ്കീം പുനഃസ്ഥാപിക്കുക</string>
+    <string name="ash_text">"വാചകസന്ദേശമയയ്‌ക്കുക"</string>
+    <string name="ash_assignment">അസൈൻമെൻറ്</string>
+    <string name="ash_singleline_comment">ഒറ്റ വരി അഭിപ്രായം</string>
+    <string name="ash_multiline_comment">ബഹു വരി അഭിപ്രായം</string>
+    <string name="ash_keyword">കീവാക്ക്</string>
+    <string name="ash_quoted_string">ഉദ്ധരിക്കപ്പെട്ട സ്ട്രിംഗ്</string>
+    <string name="ash_variable">വകഭേദം</string>
+
+    <!-- Secure Storage -->
+    <!-- Secure Storage dialog title - Unlock -->
+    <string name="secure_storage_unlock_title">സംഭരണം അൺലോക്ക് ചെയ്യുക</string>
+    <!-- Secure Storage dialog title - Create -->
+    <string name="secure_storage_create_title">സംഭരണം സൃഷ്ടിക്കുക</string>
+    <!-- Secure Storage dialog title - Reset -->
+    <string name="secure_storage_reset_title">പാസ്‌വേഡ് പുനഃക്രമീകരിക്കുക</string>
+    <!-- Secure Storage dialog title - Delete -->
+    <string name="secure_storage_delete_title">സംഭരണം ഇല്ലാതാക്കുക</string>
+    <!-- Secure Storage unlock dialog message (secure storage exists) -->
+    <string name="secure_storage_unlock_key_prompt_msg">സുരക്ഷിത സംഭരണ ഫയൽ സിസ്റ്റത്തെ അൺലോക്ക് ചെയ്യുന്നതിനായി പാസ്‌വേഡ് ടൈപ്പ് ചെയ്യുക.</string>
+    <!-- Secure Storage unlock dialog message (new secure storage) -->
+    <string name="secure_storage_unlock_key_new_msg">സുരക്ഷിത സംഭരണ ഫയൽ സിസ്റ്റത്തെ സംരക്ഷിക്കുന്നതിനായി പാസ്‌വേഡ് ടൈപ്പ് ചെയ്യുക.</string>
+    <!-- Secure Storage unlock dialog message (reset the current password) -->
+    <string name="secure_storage_unlock_key_reset_msg">സുരക്ഷിത സംഭരണ ഫയൽ സിസ്റ്റത്തെ പുനഃക്രമീകരിക്കുന്നതിനായി പാസ്‌വേഡുകൾ നിലവിലുള്ളതും പുതിയതും ടൈപ്പ് ചെയ്യുക.</string>
+    <!-- Secure Storage unlock dialog message (delete the secure storage) -->
+    <string name="secure_storage_unlock_key_delete_msg">സുരക്ഷിത സംഭരണ ഫയൽ സിസ്റ്റത്തെ ഇല്ലാതാക്കുന്നതിനായി നിലവിലെ പാസ്‌വേഡ് ടൈപ്പ് ചെയ്യുക.</string>
+    <!-- Secure Storage unlock dialog old key title -->
+    <string name="secure_storage_unlock_old_key_title">പഴയ പാസ്‌വേഡ്:</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_new_key_title">പുതിയ പാസ്‌വേഡ്:</string>
+    <!-- Secure Storage unlock dialog key title -->
+    <string name="secure_storage_unlock_key_title">പാസ്‌വേഡ്:</string>
+    <!-- Secure Storage unlock dialog repeat key title-->
+    <string name="secure_storage_unlock_repeat_title">പാസ്‌വേഡ് ആവർത്തിക്കുക:</string>
+    <!-- Secure Storage create button -->
+    <string name="secure_storage_create_button">"സൃഷ്ടിക്കുക"</string>
+    <!-- Secure Storage unlock button -->
+    <string name="secure_storage_unlock_button">"അണ്‍ലോക്ക് ചെയ്യുക"</string>
+    <!-- Secure Storage reset button -->
+    <string name="secure_storage_reset_button">"പുനഃസജ്ജമാക്കുക"</string>
+    <!-- Secure Storage delete button -->
+    <string name="secure_storage_delete_button">ഇല്ലാതാക്കുക</string>
+    <!-- Secure Storage unlock failed toast -->
+    <string name="secure_storage_unlock_failed">സംഭരണം അൺലോക്ക് ചെയ്യാനാവില്ല</string>
+    <!-- Secure Storage unlock validation, length -->
+    <string name="secure_storage_unlock_validation_length">പാസ്‌വേഡിൽ കുറഞ്ഞത് <xliff:g id="characters">%1$d</xliff:g> അക്ഷരങ്ങളെങ്കിലും ഉണ്ടായിരിക്കണം.</string>
+    <!-- Secure Storage unlock validation, equal -->
+    <string name="secure_storage_unlock_validation_equals">പാസ്‌വേഡുകൾ പൊരുത്തപ്പെടുന്നില്ല.</string>
+
+    <!-- Print messages -->
+    <!-- Unsupported document format -->
+    <string name="print_unsupported_document">പിന്തുണയ്ക്കാത്ത പ്രമാണ ഫോർമാറ്റ്</string>
+    <!-- Unsupported image format -->
+    <string name="print_unsupported_image">പിന്തുണയ്‌ക്കാത്ത ചിത്ര ഫോർമാറ്റ്</string>
+    <!-- Print header -->
+    <string name="print_document_header">പ്രമാണം: <xliff:g id="document_name">%1$s</xliff:g></string>
+    <!-- Print footer -->
+    <string name="print_document_footer">പേജ് <xliff:g id="page_number">%1$s</xliff:g></string>
+
+    <!-- Security - Extract relative or absolute files -->
+    <string name="security_warning_extract">മുന്നറിയിപ്പ്!\n\nഒരു ആർക്കൈവ് ഫയലിനെ ബന്ധപ്പെട്ട അല്ലെങ്കിൽ സ്വതന്ത്രമായ പാത്തുകൾ ഉപയോഗിച്ച് എക്‌സ്‌ട്രാക്ട് ചെയ്യുന്നത് സിസ്റ്റം ഫയലുകളെ പുനരാലേഖനം ചെയ്യുന്നത് വഴി നിങ്ങളുടെ ഉപകരണം തകരാറിലാവാൻ കാരണമായേക്കാം.\n\nനിങ്ങൾക്ക് തുടരണമെന്നുണ്ടോ?</string>
+
+    <!-- ChangeLog - Dialog title -->
+    <string name="changelog_title">ലോഗ് മാറ്റുക</string>
+
+    <!-- Welcome Dialog - Title -->
+    <string name="welcome_title">സ്വാഗതം</string>
+    <!-- Welcome Dialog - Message -->
+    <string name="welcome_msg">CyanogenMod ഫയൽ മാനേജരിലേക്ക് സ്വാഗതം.\n\nഫയൽ സിസ്റ്റത്തെ പരീക്ഷിച്ചറിയാനും നിങ്ങളുടെ ഉപകരണത്തെ തകരാറിലാക്കാവുന്ന പ്രവൃത്തികൾ ചെയ്യാനും ഈ ആപ്ലിക്കേഷൻ നിങ്ങളെ അനുവദിക്കുന്നു. കോട്ടം തടയുന്നതിന്, ആപ്ലിക്കേഷൻ സുരക്ഷിതമായ, കുറഞ്ഞ അവകാശ മോഡിൽ ആരംഭിക്കും.\n\nനൂതനമായ, പൂർണ്ണ അവകാശ മോഡിനെ ക്രമീകരണങ്ങൾ വഴി നിങ്ങൾക്ക് ആക്സസ് ചെയ്യാവുന്നതാണ്. ഒരു പ്രവർത്തനം നിങ്ങളുടെ സിസ്റ്റത്തെ തകരാറില്ലാക്കില്ലെന്ന് ഉറപ്പുവരുത്തേണ്ട ബാധ്യത നിങ്ങൾക്കാണ്.\n\nCyanogenMod ടീം</string>
+
+    <string name="easy_mode_type_icon">മൈം തരത്തിനായുള്ള ഐക്കൺ</string>
+    <string name="easy_mode_type_none">എല്ലാ ഫയലുകളും</string>
+    <string name="easy_mode_type_images">ചിത്രങ്ങൾ</string>
+    <string name="easy_mode_type_videos">വീഡിയോകള്‍</string>
+    <string name="easy_mode_type_music">സംഗീതം</string>
+    <string name="easy_mode_type_documents">"പ്രമാണങ്ങൾ"</string>
+
+    <string name="activity_not_found_exception">ഈ ഫയൽ തുറക്കാനുള്ള ഒരു ആപ്ലിക്കേഷനെ കണ്ടെത്താനായില്ല</string>
+    <string name="no_permission_for_drm">"ക്ഷമിക്കുക, DRM ഫയൽ പങ്കിടരുത്"</string>
+    <string name="actions_menu_drm_license_info">Drm ലൈസൻസ് വിവരം</string>
+</resources>

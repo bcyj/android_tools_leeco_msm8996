@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2015 Qualcomm Technologies, Inc.  All Rights Reserved.
+ * Qualcomm Technologies Proprietary and Confidential.
+ *
+ * Not a Contribution.
+ * Apache license notifications and license are retained
+ * for attribution purposes only.
+ */
+-->
+
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- used in various places to indicate there is one song for a given artist or album -->
+    <string name="onesong">"1 kanta"</string>
+    <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
+    <plurals name="Nsongs">
+        <item quantity="other">"<xliff:g id="COUNT">%d</xliff:g> (na) kanta"</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other">"<xliff:g id="COUNT_FOR_ARTIST">%2$d</xliff:g> ng <xliff:g id="TOTAL_COUNT">%1$d</xliff:g> (na) kanta"</item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+        <!-- number of albums is one -->
+        <item quantity="one">"1 album"</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other">"<xliff:g id="COUNT">%d</xliff:g> (na) album"</item>
+    </plurals>
+
+    <!--
+    This string is used as the format string in a String.format call,
+    and 5 additional arguments are available for printing:
+    1 - hours
+    2 - minutes
+    3 - minutes%60
+    4 - seconds
+    5 - second%60
+    -->
+    <skip/>
+    <!-- Do not translate. Duration format for duration < 1 hour -->
+    <string translatable="false" name="durationformatshort"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    <!-- Do not translate. Duration format for duration >= 1 hour -->
+    <string translatable="false" name="durationformatlong"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    <!-- Menu item that takes the user back to the top level screen of the music player -->
+    <string name="goto_start">"Library"</string>
+    <!-- Menu item that switches the music player in to party shuffle mode -->
+    <string name="party_shuffle">"Party shuffle"</string>
+    <!-- Menu item that switches the music player out of party shuffle mode -->
+    <string name="party_shuffle_off">"I-off ang party shuffle"</string>
+    <!-- Menu item that clear all playlists mode -->
+    <string name="clear_all_playlists">I-clear lahat ng playlist</string>
+    <!-- Menu item that deletes the currently selected item, which might be a single song, or a collection of songs.
+         The user will be prompted to confirm before deletion actually takes place -->
+    <string name="delete_item">"Tanggalin"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in shuffle mode -->
+    <string name="shuffle_all">"I-shuffle lahat"</string>
+    <!-- Menu item to play back all the songs in the currently showing list in list order -->
+    <string name="play_all">"I-play lahat"</string>
+    <!-- Menu item to play song in music -->
+    <string name="open_in_music">Buksan sa musika</string>
+    <!-- Menu item to share audio or video -->
+    <string name="share">"Ibahagi"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc">"Permanenteng tanggalin ang lahat ng kanta ni <xliff:g id="ARTIST">%s</xliff:g> mula sa SD card?"</string>
+    <!-- Delete confirmation dialog when deleting an entire artist -->
+    <string name="delete_artist_desc_nosdcard">"Permanenteng tanggalin ang lahat ng kanta ni <xliff:g id="ARTIST">%s</xliff:g> mula sa USB storage?"</string>
+
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc">"Permanenteng tanggalin ang buong album na \"<xliff:g id="ALBUM">%s</xliff:g>\" mula sa SD card?"</string>
+    <!-- Delete confirmation dialog when deleting an entire album -->
+    <string name="delete_album_desc_nosdcard">"Permanenteng tanggalin ang album na \"<xliff:g id="ALBUM">%s</xliff:g>\" mula sa imbakan ng USB?"</string>
+
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc">"Permanenteng tanggalin ang \"<xliff:g id="SONG">%s</xliff:g>\" mula sa SD card?"</string>
+    <!-- Delete confirmation dialog when deleting a single song -->
+    <string name="delete_song_desc_nosdcard">"Permanenteng tanggalin ang \"<xliff:g id="SONG">%s</xliff:g>\" mula sa imbakan ng USB?"</string>
+
+    <!-- Delete confirmation dialog, confirmation button text -->
+    <string name="delete_confirm_button_text">"OK"</string>
+    <!-- Toast confirming that song(s) was/were deleted. -->
+    <plurals name="NNNtracksdeleted">
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">"Tinanggal ang 1 awit."</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other">"Tinanggal ang <xliff:g id="SONGS_TO_DELETE">%d</xliff:g> (na) kanta."</item>
+    </plurals>
+
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning">"Inii-scan ang SD card…"</string>
+    <!-- shown in dialog while the media scanner is starting up -->
+    <string name="scanning_nosdcard">"Ini-scan ang storage ng USB…"</string>
+
+    <!-- title of the "current playlist" screen when not in party shuffle mode -->
+    <string name="nowplaying_title">"Nagpe-play ngayon"</string>
+    <!-- title of the "current playlist" screen when in party shuffle mode-->
+    <string name="partyshuffle_title">"Party shuffle"</string>
+    <!-- Artist screen title -->
+    <string name="artists_title">"Mga Artist"</string>
+    <!-- Category label on Library screen -->
+    <string name="albums_menu">"Mga Album"</string>
+    <!-- Albums screen title -->
+    <string name="albums_title">"Mga Album"</string>
+    <!-- Category label on Library screen -->
+    <string name="tracks_menu">"Mga Kanta"</string>
+    <!-- Songs screen title -->
+    <string name="tracks_title">"Mga Kanta"</string>
+    <!-- Category label on Library screen -->
+    <string name="folder_menu">Folder</string>
+    <!-- Folder screen title -->
+    <string name="folders_title">Folder</string>
+    <!-- Category label on Library screen -->
+    <string name="playlists_menu">"Mga Playlist"</string>
+    <!-- Playlists screen title -->
+    <string name="playlists_title">"Mga Playlist"</string>
+    <!-- Videos screen title -->
+    <string name="videos_title">"Mga Video"</string>
+    <!-- All media screen title -->
+    <string name="all_title">"Lahat ng media"</string>
+    <!-- Category label on Library screen -->
+    <string name="browse_menu">"Mga Artist"</string>
+    <!-- Library screen, menu item -->
+    <string name="search_title">Maghanap</string>
+    <!-- Title of screen when there are no songs, or if the SD card is busy -->
+    <string name="no_tracks_title">"Walang mga kanta"</string>
+    <!-- Title of screen when there are no videos, or if the SD card is busy -->
+    <string name="no_videos_title">"Walang mga video"</string>
+    <!-- Title of screen when there are no playlists, or if the SD card is busy -->
+    <string name="no_playlists_title">"Walang mga playlist"</string>
+    <!-- Playlist context menu item to delete the selected playlist. -->
+    <string name="delete_playlist_menu">"Tanggalin"</string>
+    <!-- Playlist context menu item to edit the selected playlist -->
+    <string name="edit_playlist_menu">"I-edit"</string>
+    <!-- Playlist context menu item to rename the selected playlist-->
+    <string name="rename_playlist_menu">I-rename</string>
+    <!-- Dialog box message shown when clearing all playlists-->
+    <string name="clear_all_playlists_message">Gusto mo bang i-clear ang lahat ng playlist?</string>
+    <!-- Dialog box message shown when deleting a playlist-->
+    <string name="delete_playlist_message">Gusto mo bang tanggalin ang \"<xliff:g id="name">%s</xliff:g>\"?</string>
+    <!-- Dialog box button -->
+    <string name="delete_playlist_button_ok">OK</string>
+    <string name="delete_playlist_button_cancel">Kanselahin</string>
+    <!-- Transient popup message shown after deleting a playlist -->
+    <string name="playlist_deleted_message">"Tinanggal ang playlist."</string>
+    <!-- Transient popup message shown after renaming a playlist -->
+    <string name="playlist_renamed_message">"Pinalitan ang pangalan ng playlist."</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in list view -->
+    <string name="recentlyadded">"Naidagdag kamakailan"</string>
+    <!-- The name of the pseudo-playlist that holds all the recently added files, shown in title bar of songs list -->
+    <string name="recentlyadded_title">"Naidagdag kamakailan"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in list view -->
+    <string name="podcasts_listitem">"Mga Podcast"</string>
+    <!-- The name of the pseudo-playlist that holds all the podcasts, shown in title bar of songs list -->
+    <string name="podcasts_title">"Mga Podcast"</string>
+    <!-- all recordings will show up in the media database in a playlist with thiis name -->
+    <string name="audio_db_playlist_name">"Aking mga pag-record"</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title">"Walang SD card"</string>
+    <!-- Title of screen when no sd card is present -->
+    <string name="sdcard_missing_title_nosdcard">"Walang storage ng USB"</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message">"Walang SD card na nakapasok ang iyong telepono."</string>
+    <!-- label underneath icon used to indicate that no sd card is present -->
+    <string name="sdcard_missing_message_nosdcard">"Walang storage ng USB ang iyong telepono"</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title">"Hindi available ang SD card"</string>
+    <!-- label underneath icon used to indicate that the sd card is present, but currently unavailable -->
+    <string name="sdcard_busy_title_nosdcard">"Hindi available ang storage ng USB"</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message">"Abala ang iyong SD card."</string>
+    <!-- label underneath icon used to indicate sd card is mounted to your computer via USB -->
+    <string name="sdcard_busy_message_nosdcard">"Abala ang iyong imbakan ng USB."</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title">"Error sa SD card"</string>
+    <!-- Title of screen when there was an error accessing the sd card -->
+    <string name="sdcard_error_title_nosdcard">"Error sa storage ng USB"</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message">"May naganap na error sa iyong SD card."</string>
+    <!-- label underneath icon used to indicate there was an error accessing the sd card -->
+    <string name="sdcard_error_message_nosdcard">"May naranasang error sa iyong storage ng USB."</string>
+    <!-- Default name of artist that doesn\'t have a name in the metadata -->
+    <string name="unknown_artist_name">"Hindi kilalang artist"</string>
+    <!-- Default name of album that doesn\'t have a name in the metadata -->
+    <string name="unknown_album_name">"Hindi kilalang album"</string>
+    <!-- Default name of folder that doesn\'t have a path in the metadata -->
+    <string name="unknown_folder_name">Hindi alam na path</string>
+    <!-- Default name of folder that doesn\'t have a count in the metadata -->
+    <string name="unknown_folder_count">Hindi alam na bilang</string>
+    <!-- Toast after turning shuffle on -->
+    <string name="shuffle_on_notif">"Naka-on ang shuffle."</string>
+    <!-- Toast after turning shuffle off -->
+    <string name="shuffle_off_notif">"Naka-off ang shuffle."</string>
+    <!-- Toast after turning repeat off -->
+    <string name="repeat_off_notif">"Naka-off ang ulitin."</string>
+    <!-- Toast after turning single repeat on -->
+    <string name="repeat_current_notif">"Inuulit ang kasalukuyang kanta."</string>
+    <!-- Toast after turning repeat all on -->
+    <string name="repeat_all_notif">"Inuulit ang lahat ng mga kanta."</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu">"Gamitin bilang ringtone ng telepono"</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short">"Gamitin bilang ringtone"</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set">"I-set ang \"<xliff:g id="NAME">%s</xliff:g>\" bilang ringtone ng telepono."</string>
+    <!-- Individual song context menu item -->
+    <string name="ringtone_menu_1">"Gamitin na slot 1 ringtone"</string>
+    <string name="ringtone_menu_2">"Gamitin na slot 2 ringtone"</string>
+    <!-- Menu item -->
+    <string name="ringtone_menu_short_1">"Gamit bilang ringtone 1"</string>
+    <string name="ringtone_menu_short_2">"Gamit bilang ringtone 2"</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_1">Naitakda bilang slot 1 ringtone ang \"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\".</string>
+    <!-- Toast after setting a song as phone ringtone -->
+    <string name="ringtone_set_2">Naitakda bilang slot 2 ringtone ang \"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\".</string>
+    <!-- Context menu item -->
+    <string name="play_selection">"I-play"</string>
+    <!-- Context menu item -->
+    <string name="add_to_playlist">"Idagdag sa playlist"</string>
+    <!-- Context menu item -->
+    <string name="queue">"Kasalukuyang playlist"</string>
+    <!-- Context menu item -->
+    <string name="new_playlist">"Bago"</string>
+    <!-- Template for newly created playlist name -->
+    <string name="new_playlist_name_template">"Bagong playlist na <xliff:g id="NUMBER">%d</xliff:g>"</string>
+    <!-- Toasts after adding song(s) to playlists -->
+    <plurals name="NNNtrackstoplaylist">
+        <!-- message shown when one song was added -->
+        <item quantity="one">"1 kanta ang naidagdag sa playlist."</item>
+        <!-- message shown when zero or more than one song was added -->
+        <item quantity="other">"Naidagdag ang <xliff:g id="NUMBER">%d</xliff:g> (na) kanta sa playlist."</item>
+    </plurals>
+    <!-- Toast after selecting an empty playlist -->
+    <string name="emptyplaylist">"Walang laman ang napiling playlist."</string>
+    <!-- Button name when saving a playlist -->
+    <string name="create_playlist_create_text">"I-save"</string>
+    <!-- Button name when saving a playlist and the new playlist will overwrite an existing one -->
+    <string name="create_playlist_overwrite_text">"I-overwrite"</string>
+    <!-- Dialog box title -->
+    <string name="service_start_error_title">"Problema sa Pag-playback"</string>
+    <!-- Dialog box message -->
+    <string name="service_start_error_msg">"Hindi mape-play ang kantang ito."</string>
+    <!-- Dialog box button -->
+    <string name="service_start_error_button">"OK"</string>
+    <!-- Time span edit options that appear when editing system playlist "Recently added" -->
+    <!-- Used to indicate the number of weeks the "recently added" playlist covers in a selector widget -->
+    <string-array name="weeklist">
+        <item>"1 linggo"</item>
+        <item>"2 linggo"</item>
+        <item>"3 linggo"</item>
+        <item>"4 linggo"</item>
+        <item>"5 linggo"</item>
+        <item>"6 linggo"</item>
+        <item>"7 linggo"</item>
+        <item>"8 linggo"</item>
+        <item>"9 linggo"</item>
+        <item>"10 linggo"</item>
+        <item>"11 linggo"</item>
+        <item>"12 linggo"</item>
+    </string-array>
+    <!-- Button name in time span picker -->
+    <string name="weekpicker_set">"Tapos na"</string>
+    <!-- Title of time span picker -->
+    <string name="weekpicker_title">"Itakda ang oras"</string>
+    <!-- Do not translate. Background color for currently dragged item in playlist edit mode. -->
+    <color name="dragndrop_background">#e0103010</color>
+    <!-- Do not translate. Background color for albums in the artists list view. -->
+    <color name="expanding_child_background">#ff404040</color>
+
+    <!-- menu item to save the current list as a new playlist -->
+    <string name="save_as_playlist">"I-save bilang playlist"</string>
+    <!-- menu item to clear the current playlist -->
+    <string name="clear_playlist">"I-clear ang playlist"</string>
+
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicbrowserlabel">"Musika"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="musicshortcutlabel">"Playlist ng musika"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediaplaybacklabel">"Musika"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="videobrowserlabel">"Mga Video"</string>
+    <!-- Activity label. This might show up in the activity-picker -->
+    <string name="mediapickerlabel">"Musika"</string>
+
+    <!-- Shown as a transient message whenever a file fails to play -->
+    <string name="playback_failed">"Hindi sinusuportahan ng player ang ganitong uri ng audio file."</string>
+    <!-- Shown as a transient message whenever a file fails to open -->
+    <string name="open_failed">Paumanhin, hindi kayang buksan ang file.</string>
+
+    <!-- Text for the "cancel" button in the "delete" and "create playlist" confirmation dialogs -->
+    <string name="cancel">"Kanselahin"</string>
+
+    <!-- context menu item to remove the selected item from the playlist -->
+    <string name="remove_from_playlist">"Alisin mula sa playlist"</string>
+
+    <!-- shown when connecting to a music stream, before it starts playing -->
+    <string name="streamloadingtext">"Kumukonekta sa <xliff:g id="HOST">%s</xliff:g>..."</string>
+
+    <!-- title of contextual music search menu -->
+    <string name="mediasearch">"Hanapin ang <xliff:g id="TERM">%s</xliff:g> gamit ang:"</string>
+
+    <!-- Shown in the title bar while the list of artists is being retrieved in the background -->
+    <string name="working_artists">"Mga Artist…"</string>
+    <!-- Shown in the title bar while the list of albums is being retrieved in the background -->
+    <string name="working_albums">"Mga Album…"</string>
+    <!-- Shown in the title bar while the list of songs is being retrieved in the background -->
+    <string name="working_songs">"Mga Kanta…"</string>
+    <!-- Shown in the title bar while the list of folders is being retrieved in the background -->
+    <string name="working_folders">Mga Folder\u2026</string>
+    <!-- Shown in the title bar while the list of playlists is being retrieved in the background -->
+    <string name="working_playlists">"Mga Playlist…"</string>
+
+    <!-- Shown in the music picker while loading the music database. -->
+    <string name="loading">"Naglo-load..."</string>
+    <!-- Menu in music picker to sort the list by track/song name. -->
+    <string name="sort_by_track">"Mga Track"</string>
+    <!-- Menu in music picker to sort the list by album name. -->
+    <string name="sort_by_album">"Mga Album"</string>
+    <!-- Menu in music picker to sort the list by artist name. -->
+    <string name="sort_by_artist">"Mga Artist"</string>
+    <!--  Title of the music picker activity. -->
+    <string name="music_picker_title">"Pumili ng track ng musika"</string>
+
+    <!-- The string used to describe Music as a searchable item within system search settings. -->
+    <string name="search_settings_description">"Mga artist, album, at track"</string>
+
+    <!-- Shown in the search box as a hint -->
+    <string name="search_hint">"Maghanap ng Musika"</string>
+    <string name="search_hint_video">Hanapin ang Video</string>
+
+    <!--The fast scroll thumb will show one character from this string depending on the position in the list -->
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+
+    <!-- Text shown on widget when first loaded -->
+    <string name="widget_initial_text">"Pindutin upang pumili ng musika."</string>
+
+    <!-- Menu text for the item controlling the audio effects panel [CHAR LIMIT=15] -->
+    <string name="effectspanel">"Mga sound effect"</string>
+
+    <string name="duplicate_playlist_name_alert">May nang playlist nang may pangalang \"<xliff:g id="name">%s</xliff:g>\". Mangyaring pumili ng ibang pangalan.</string>
+    <string name="same_playlist_name_alert">Ang pangalan ng playlist na \"<xliff:g id="name">%s</xliff:g>\" ay hindi nabago. Mangyaring pumili ng ibang pangalan.</string>
+    <string name="button_ok">Ok</string>
+    <string name="list_empty">Walang musika sa playlist.</string>
+
+    <!-- Shown when video is played after disable Gallery app from Settings -->
+    <string name="enable_gallery_app">Di ma-play ang video, paganahin ang Gallery app sa Setting.</string>
+    <string name="close_music">"Wakasan"</string>
+    <string name="delete_video_item_message">Gusto mo bang tanggalin ang \"<xliff:g id="name">%s</xliff:g>\"?</string>
+    <string name="video_deleted_message">Natanggal na ang video file.</string>
+
+    <!-- Menu item that takes the user link to net to see more music -->
+    <string name="more_music">Higit Pang Musika</string>
+    <!-- Menu item that takes the user link to net to see more video -->
+    <string name="more_video">Higit Pang Video</string>
+    <!--gesture control playback status-->
+    <string name="music_gesture_play">"I-play/i-pause ang audio"</string>
+    <string name="music_gesture_prev">"I-play ang naunang track"</string>
+    <string name="music_gesture_next">"I-play ang susunod na track"</string>
+
+    <!-- DRM Related Strings -->
+    <string name="no_permission_for_drm">"Paumanhin, hindi maibahagi ang Drm file"</string>
+    <string name="drm_license_info">Impormasyon ng Drm license</string>
+    <string name="drm_ringtone_error">Hindi maitatakda ang mga CD/SD file bilang ringtone</string>
+
+</resources>

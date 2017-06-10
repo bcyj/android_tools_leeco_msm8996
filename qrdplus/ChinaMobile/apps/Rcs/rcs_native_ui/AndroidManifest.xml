@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2014 pci-suntektech Technologies, Inc.  All Rights Reserved.
+     pci-suntektech Technologies Proprietary and Confidential.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.suntek.mway.rcs.nativeui"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.WRITE_PROFILE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MASTER_CLEAR" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:name="com.suntek.mway.rcs.nativeui.RcsNativeUIApp"
+        android:allowBackup="true"
+        android:theme="@style/AppBaseTheme"
+        android:label="@string/app_name" >
+        <uses-library android:name="com.suntek.mway.rcs.client.api" android:required="false" />
+        <activity
+            android:name="com.suntek.mway.rcs.nativeui.ui.RcsNotificationListActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:icon="@drawable/ic_launcher_smsmms"
+            android:label="@string/notifications"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.suntek.mway.rcs.nativeui.ACTION_LUNCHER_RCS_NOTIFICATION_LIST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.suntek.mway.rcs.nativeui.ui.RcsGroupChatDetailActivity"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher_smsmms"
+            android:label="@string/group_chat_detail"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.suntek.mway.rcs.nativeui.ACTION_LUNCH_RCS_GROUPCHATDETAIL" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.suntek.mway.rcs.nativeui.ui.DialogActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:icon="@drawable/ic_launcher_smsmms"
+            android:label="@string/group_chat_detail"
+            android:theme="@style/dialog_notify" >
+            <intent-filter>
+                <action android:name="com.suntek.mway.rcs.nativeui.ACTION_LUNCHER_DIALOG" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.suntek.mway.rcs.nativeui.ui.RcsInviteToJoinGroupChatActivity"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher_smsmms"
+            android:label="@string/group_chat_detail" >
+            <intent-filter>
+                <action android:name="com.suntek.mway.rcs.nativeui.ACTION_LUNCHER_RCS_INVITE_TO_JOIN_GROUP_CHAT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.suntek.mway.rcs.nativeui.ui.RcsShareFileActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="com.suntek.mway.rcs.nativeui.ACTION_LUNCHER_RCS_SHAREFILE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.suntek.mway.rcs.nativeui.ui.InputSMSVerifyCodeActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="com.suntek.mway.rcs.nativeui.ACTION_LUNCHER_INPUT_SMS_VIRIFYCODE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.suntek.mway.rcs.nativeui.ui.PublicAccountActivity"
+            android:exported="true"
+            android:label="@string/public_account"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.suntek.mway.rcs.nativeui.ui.PUBLIC_ACCOUNT_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.suntek.mway.rcs.nativeui.ui.PublicDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:label="@string/account_detail" >
+            <intent-filter>
+                <action android:name="com.suntek.mway.rcs.nativeui.ACTION_LUNHCER_PUBLIC_DETAIL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.suntek.mway.rcs.nativeui.ui.SearchAccountActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/search_public_account" >
+        </activity>
+        <activity
+            android:name="com.suntek.mway.rcs.nativeui.ui.RecommendPublicAccountActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/rcs_public_account_recommend" >
+        </activity>
+        <activity
+            android:name="com.suntek.mway.rcs.nativeui.ui.ContactsBackupRestoreActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/contact_backup_and_recover" >
+            <intent-filter>
+                <action android:name="com.suntek.mway.rcs.nativeui.ui.BACKUP_RESTORE_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.suntek.mway.rcs.nativeui.ui.MutiMmsSelectList"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:screenOrientation="nosensor"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:configChanges="orientation|keyboardHidden|layoutDirection"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.android.rcs.mms.action.MULTI_PICK_MMS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.suntek.mway.rcs.nativeui.service.RcsNotificationsService" />
+
+        <receiver
+            android:name="com.suntek.mway.rcs.nativeui.service.RcsNotificationReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.suntek.mway.rcs.ACTION_UI_GROUP_MANAGE_NOTIFY"/>
+                <action android:name="com.suntek.mway.rcs.ACTION_UI_SHOW_GROUP_TRANSFER_CHAIRMAN_CONFIRM"/>
+                <action android:name="com.suntek.mway.rcs.ACTION_UI_INVITE_TO_JOIN_GROUP"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.suntek.mway.rcs.nativeui.receiver.DMSReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.suntek.mway.rcs.ACTION_DMS_OPEN_BUSS" />
+                <action android:name="com.suntek.mway.rcs.ACTION_OPEN_PS" />
+                <action android:name="com.suntek.mway.rcs.ACTION_DMS_OPEN_BUSS_RESULT" />
+                <action android:name="com.suntek.mway.rcs.ACTION_CONFIRM_USE_NEW_IMSI" />
+                <action android:name="com.suntek.mway.rcs.ACTION_DMS_USER_STATUS_CHANGED" />
+                <action android:name="com.suntek.mway.rcs.ACTION_FETCH_CONFIG_FINISH"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.suntek.mway.rcs.nativeui.receiver.RichScreenReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MASTER_CLEAR_NOTIFICATION" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MASTER_CLEAR" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.suntek.mway.rcs.nativeui.service.RichScreenService"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,1104 @@
+/*****************************************************************************
+  @FILE   sns_smgr_common_v01.idl
+
+  @BRIEF  Common IDL file for the sensors SMGR subsystem
+
+  @DESCRIPTION
+  Defines common structures and types used by SMGR.
+
+  @COPYRIGHT
+  Copyright (c) 2011-2014 Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+*****************************************************************************/
+include "sns_common_v01.idl";
+
+revision 1;
+
+/** Response message ACK/NAK codes
+  */
+
+const  SNS_SMGR_RESPONSE_ACK_SUCCESS       = 0;
+  /**< The enum are 32 bits for reference only, in actual message, we use 8 bits
+       only to save space */
+
+const  SNS_SMGR_RESPONSE_ACK_MODIFIED      = 1;
+  /**< See reason codes */
+
+const  SNS_SMGR_RESPONSE_NAK_RESOURCES     = 2;
+  /**< Lack table space */
+
+const  SNS_SMGR_RESPONSE_NAK_REPORT_ID     = 3;
+  /**< Can't find report for delete */
+
+const  SNS_SMGR_RESPONSE_NAK_NO_ITEMS      = 4;
+  /**< None supplied or modified away */
+
+const  SNS_SMGR_RESPONSE_NAK_UNK_ACTION    = 5;
+  /**< Invalid action field */
+
+const  SNS_SMGR_RESPONSE_NAK_REPORT_RATE   = 6;
+  /**< Report rate is unsupportable */
+
+const  SNS_SMGR_RESPONSE_NAK_TIME_PERIOD   = 7;
+  /**< Time period in Query request is unsupportable */
+
+const  SNS_SMGR_RESPONSE_NAK_INTERNAL_ERR  = 8;
+  /**< Unspecified internal errors */
+
+const  SNS_SMGR_RESPONSE_NAK_QUERY_ID      = 9;
+  /**< Query request with given QueryID already received */
+
+const  SNS_SMGR_RESPONSE_NAK_SENSOR_ID      = 10;
+  /**< Sensor specified in Query request was not in Buffering request */
+
+/** Reason codes for substituting a default or deleting an item. */
+
+const  SNS_SMGR_REASON_NULL            = 0;
+
+const  SNS_SMGR_REASON_DEFAULT_RATE    = 10;
+  /**< Rate set to 20 Hz or maximum supported rate, whichever is lower */
+
+const  SNS_SMGR_REASON_DEFAULT_TYPE    = 11;
+  /**< Type set to engineering units */
+
+const  SNS_SMGR_REASON_DEFAULT_DECIM   = 12;
+  /**< Decimation set to latest sample */
+
+const  SNS_SMGR_REASON_DEFAULT_STIVTY  = 13;
+  /**< Sensitivity code set to 0 */
+
+const  SNS_SMGR_REASON_DEFAULT_FINAL   = 14;
+
+const  SNS_SMGR_REASON_UNKNOWN_SENSOR  = 15;
+  /**< Item deleted */
+
+const  SNS_SMGR_REASON_FAILED_SENSOR   = 16;
+  /**< Item deleted */
+
+const  SNS_SMGR_REASON_OTHER_FAILURE   = 17;
+  /**< Item deleted */
+
+const  SNS_SMGR_REASON_SAMPLING_RATE   = 18;
+  /**< Sampling rate is unsupportable. Item deleted */
+
+const  SNS_SMGR_REASON_SAMPLE_QUALITY_NORMAL  = 19;
+  /**< Item modified */
+
+/** Status of the report, if OK, or Canceled
+  */
+
+const  SNS_SMGR_REPORT_OK                   = 0;
+
+const  SNS_SMGR_REPORT_CANCEL_RESOURCE      = 1;
+  /**< Lack table space */
+
+const  SNS_SMGR_REPORT_CANCEL_FAILURE       = 2;
+  /**< All req sensors have failed */
+
+const  SNS_SMGR_REPORT_CANCEL_SHUT_DOWN     = 3;
+  /**< Server shut down */
+
+
+/** Sensor Request Activity. Delete or add. Add may act as replace if the same
+    client ID and report ID are found in the SOL
+  */
+
+const  SNS_SMGR_REPORT_ACTION_ADD           = 1;
+const  SNS_SMGR_REPORT_ACTION_DELETE        = 2;
+
+
+/** The Decimation word specifies how to reduce oversampled data.
+    Report most recent sample (Default)
+    Average samples since previous report
+    Filter at half the reporting rate or next lower available frequency
+    sns_smgr_decimation_t
+  */
+const  SNS_SMGR_DECIMATION_RECENT_SAMPLE    = 1;
+  /**< Unfiltered, possibly interpolated and/or calibrated */
+const  SNS_SMGR_DECIMATION_AVERAGE          = 2;
+const  SNS_SMGR_DECIMATION_FILTER           = 3;
+
+/** =============== for sensor report message ===============*/
+
+/** Flag bit values in the Flag word associated with each data item in a sensor
+    report.  The first 3 values correspond to the first 3 data words which are
+    related with XYZ axes of those sensors that have 3 axis measurements.  For
+    sensors that are not axis oriented, these flags correspond to the first
+    three data words.  If any of the first 3 flags is non-zero, it indicates
+    that the corresponding data word was found at the extreme edge of its valid
+    range; this indicates that the sensor was railed.
+    The 4th flag, when non-zero, indicates that the data item is invalid. The
+    Quality word indicates why the item is invalid.
+    sns_smgr_item_flags_t
+  */
+const  SNS_SMGR_ITEM_FLAG_X_RAIL   = 1;
+const  SNS_SMGR_ITEM_FLAG_Y_RAIL   = 2;
+const  SNS_SMGR_ITEM_FLAG_Z_RAIL   = 4;
+const  SNS_SMGR_ITEM_FLAG_INVALID  = 8;
+const  SNS_SMGR_ITEM_FLAG_FAC_CAL  = 16;
+const  SNS_SMGR_ITEM_FLAG_AUTO_CAL = 32;
+
+
+/** The Quality word is associated with each data item in a sensor report. It
+    is a code defining the quality of the measurement.
+  */
+
+const  SNS_SMGR_ITEM_QUALITY_CURRENT_SAMPLE          = 0;
+  /**< Unfiltered sample; available when client requests
+       SNS_SMGR_CAL_SEL_RAW, and
+       SNS_SMGR_DECIMATION_RECENT_SAMPLE, and
+       SNS_SMGR_SAMPLE_QUALITY_ACCURATE_TIMESTAMP */
+
+const  SNS_SMGR_ITEM_QUALITY_PRIOR_VALUE_LATE       = 1;
+  /**< Sensor missed sampling schedule */
+
+const  SNS_SMGR_ITEM_QUALITY_PRIOR_VALUE_SUSPENDED  = 2;
+  /**< Client specified this for no motion */
+
+const  SNS_SMGR_ITEM_QUALITY_AVERAGED_SPECIFIED     = 3;
+  /**< Client specified averaging */
+
+const  SNS_SMGR_ITEM_QUALITY_AVERAGED_FILTER_START  = 4;
+  /**< Average substituted while filter starting */
+
+const  SNS_SMGR_ITEM_QUALITY_FILTERED               = 5;
+  /**< This value is used if SNS_SMGR_DECIMATION_FILTER option was used in the
+       report request */
+
+const  SNS_SMGR_ITEM_QUALITY_INVALID_FAILED_SENSOR  = 10;
+  /**< Sample not available due to failed sensor */
+
+const  SNS_SMGR_ITEM_QUALITY_INVALID_NOT_READY      = 11;
+  /**< Sensor starting */
+
+const  SNS_SMGR_ITEM_QUALITY_INVALID_SUSPENDED      = 12;
+  /**< Not in motion */
+
+const  SNS_SMGR_ITEM_QUALITY_INTERPOLATED           = 13;
+  /**< Sample is the result of interpolation */
+
+const  SNS_SMGR_ITEM_QUALITY_INTERPOLATED_FILTERED  = 14;
+  /**< Sample is the result of interpolation and CIC filtering */
+
+/** Define sensor identifier.
+
+    The following table illustrates what the data types correspond to.
+    For example, primary sensor data type of SNS_SMGR_ID_PROX_LIGHT is
+    proximity sensor and the secondary one is ambient light sensor.
+
+    ID        PRIMARY         SECONDARY
+    --------  --------------  --------------
+    0         Accelerometer   Temperature
+    10        Gyro            Temperature
+    20        Magnetometer    Temperature
+    30        Pressure        Temperature
+    40        Proximity       Ambient light
+    50        Humidity        Temperature
+    60        RGB             Color Temperature/Clear
+    70        SAR             Specific Absorption Rate
+    80        HallEffect      none
+    90        HeartRate       Raw data(Optional)
+    220       Step            none
+    222       Step Count      none
+    224       SMD             none
+    226       GameRV          none
+    228       IR Gesture      Proximity
+    230       Double-tap      Single-tap
+    240-249   OEM-defined     OEM-defined
+*/
+
+const  SNS_SMGR_ID_ACCEL       = 0;
+  /**< This is the primary acceleration sensor ID , namely this is
+       the acceleration ID if there is only one acceleration sensor or the first
+       acceleration sensor ID if there are multiple acceleration sensors */
+
+const  SNS_SMGR_ID_ACCEL_2     = 1;
+const  SNS_SMGR_ID_ACCEL_3     = 2;
+const  SNS_SMGR_ID_ACCEL_4     = 3;
+const  SNS_SMGR_ID_ACCEL_5     = 4;
+
+const  SNS_SMGR_ID_GYRO        = 10;
+  /**< This is primary gyro sensor ID */
+
+const  SNS_SMGR_ID_GYRO_2      = 11;
+const  SNS_SMGR_ID_GYRO_3      = 12;
+const  SNS_SMGR_ID_GYRO_4      = 13;
+const  SNS_SMGR_ID_GYRO_5      = 14;
+
+const  SNS_SMGR_ID_MAG         = 20;
+  /**< This is primary mag sensor ID */
+
+const  SNS_SMGR_ID_PRESSURE    = 30;
+  /**< This is primary pressure sensor ID */
+
+const  SNS_SMGR_ID_PROX_LIGHT  = 40;
+  /**< This is primary proxy light sensor ID*/
+
+const  SNS_SMGR_ID_HUMIDITY    = 50;
+  /**< This is primary humidity sensor ID*/
+
+const  SNS_SMGR_ID_RGB         = 60;
+  /**< Primary = RGB, Secondary = Color temperature and clear component of RGB*/
+
+const  SNS_SMGR_ID_RGB_2       = 61;
+
+const  SNS_SMGR_ID_SAR         = 70;
+  /**< Primary = SAR, Secondary = none*/
+
+const  SNS_SMGR_ID_SAR_2       = 71;
+
+const  SNS_SMGR_ID_HALL_EFFECT = 80;
+  /**< Primary = HallEffect, Secondary = none*/
+
+const  SNS_SMGR_ID_HEART_RATE  = 90;
+  /**< Primary = HeartRate, Secondary = Raw Data(Optional)*/
+
+const  SNS_SMGR_ID_STEP_EVENT  = 220;
+  /**< Embedded sensor: Primary = Step Detection, Secondary = (none) */
+
+const  SNS_SMGR_ID_STEP_COUNT  = 222;
+  /**< Embedded sensor: Primary = Step Count, Secondary = (none) */
+
+const  SNS_SMGR_ID_SMD         = 224;
+  /**< Embedded sensor: Primary = SMD, Secondary = (none) */
+
+const  SNS_SMGR_ID_GAME_ROTATION_VECTOR = 226;
+  /**< Embedded sensor: Primary = Game Rotation Vector, Secondary = (none) */
+
+const  SNS_SMGR_ID_IR_GESTURE  = 228;
+  /**< Embedded sensor: Primary = IR_GESTURE, Secondary = PROXIMITY  */
+
+const  SNS_SMGR_ID_TAP         = 230;
+  /**< Embedded sensor: Primary = Double-tap, Secondary = Single-tap */
+
+/** Sensor IDs for custom sensor types */
+const  SNS_SMGR_ID_OEM_SENSOR_01 = 240;
+const  SNS_SMGR_ID_OEM_SENSOR_02 = 241;
+const  SNS_SMGR_ID_OEM_SENSOR_03 = 242;
+const  SNS_SMGR_ID_OEM_SENSOR_04 = 243;
+const  SNS_SMGR_ID_OEM_SENSOR_05 = 244;
+const  SNS_SMGR_ID_OEM_SENSOR_06 = 245;
+const  SNS_SMGR_ID_OEM_SENSOR_07 = 246;
+const  SNS_SMGR_ID_OEM_SENSOR_08 = 247;
+const  SNS_SMGR_ID_OEM_SENSOR_09 = 248;
+const  SNS_SMGR_ID_OEM_SENSOR_10 = 249;
+
+/** Sensor Unique IDs */
+const SNS_SMGR_SUID_ACCEL_1              = 0x4b118d0883777081;
+  /**< This is the primary acceleration sensor SUID , namely this is
+       the acceleration sensor SUID if there is only one acceleration sensor or the first
+       acceleration sensor SUID if there are multiple acceleration sensors */
+const SNS_SMGR_SUID_ACCEL_2              = 0x3588d0b2ffffff28;
+const SNS_SMGR_SUID_ACCEL_3              = 0x02fd528Cfe45fff8;
+const SNS_SMGR_SUID_ACCEL_4              = 0x5e2b5fa5ffffffD0;
+const SNS_SMGR_SUID_ACCEL_5              = 0x7090c43580000110;
+const SNS_SMGR_SUID_GYRO_1               = 0x35bcdb5f5574ab55;
+  /**< This is primary Gyro sensor SUID */
+const SNS_SMGR_SUID_GYRO_2               = 0xfb40c7220c002008;
+const SNS_SMGR_SUID_GYRO_3               = 0x0a0852e2f582cbe0;
+const SNS_SMGR_SUID_GYRO_4               = 0x27651f7000000020;
+const SNS_SMGR_SUID_GYRO_5               = 0x16c113b169b8397c;
+const SNS_SMGR_SUID_MAG_1                = 0x3ff4eb5fde2790a3;
+const SNS_SMGR_SUID_PRESSURE_1           = 0x4bb62314f99bc876;
+const SNS_SMGR_SUID_ACCEL_TEMP_1         = 0x1f29b4835607d1c2;
+  /**< TEMP Sensor at ACCEL_1. Below cases are similar*/
+const SNS_SMGR_SUID_GYRO_TEMP_1          = 0xdd7ed2528a66bb1c;
+const SNS_SMGR_SUID_MAG_TEMP_1           = 0xd42b24247c1e0f8f;
+const SNS_SMGR_SUID_PRESSURE_TEMP_1      = 0x66384f88e1f7a7a6;
+const SNS_SMGR_SUID_AMBIENT_TEMP_1       = 0xa2e3a4313bbb1ea6;
+const SNS_SMGR_SUID_PROX_1               = 0x1653b115d84ecf43;
+const SNS_SMGR_SUID_LIGH_1               = 0x05699579954d05da;
+const SNS_SMGR_SUID_HUMIDITY_1           = 0x568f71c1a8b35b74;
+const SNS_SMGR_SUID_RGB_1                = 0xf27304ad2058987c;
+  /**< This is primary RGB sensor SUID */
+const SNS_SMGR_SUID_RGB_2                = 0x54cd45be0090c070;
+const SNS_SMGR_SUID_SAR_1                = 0xf8bcccca581e74d3;
+  /**< This is primary SAR sensor SUID */
+const SNS_SMGR_SUID_SAR_2                = 0x26b5860985e2f908;
+const SNS_SMGR_SUID_HALL_EFFECT_1        = 0x544bc2f51529a489;
+const SNS_SMGR_SUID_STEP_EVENT_1         = 0x42940f9fca6ca718;
+const SNS_SMGR_SUID_STEP_COUNT_1         = 0xf6209794bc3c95a4;
+const SNS_SMGR_SUID_SMD_1                = 0xc0881938994b7e4c;
+const SNS_SMGR_SUID_GRV_1                = 0x615fed6621d30a57;
+const SNS_SMGR_SUID_IR_GESTURE_1         = 0xee10aeb33f4f1b95;
+const SNS_SMGR_SUID_DOUBLE_TAP_1         = 0x81c55ae5c11cf11d;
+const SNS_SMGR_SUID_SINGLE_TAP_1         = 0xe7153e8eff55dc10;
+const SNS_SMGR_SUID_COLORTEMP_CLEAR_1    = 0x852532f403c8bb30;
+const SNS_SMGR_SUID_HEART_RATE_1         = 0x8c1ab1a53989e04b;
+
+
+/** Select the sensor data type that should be reported from the sensor.
+    Primary data type for that sensor.
+    Some sensors can also report secondary data Type, this could be expanded.
+  */
+const  SNS_SMGR_DATA_TYPE_PRIMARY      =0;
+const  SNS_SMGR_DATA_TYPE_SECONDARY    =1;
+  /**< Sensor data types, described in subsequent comments */
+
+/** Identify the sensor test type.
+  */
+enum {
+  SNS_SMGR_TEST_SELF,
+  SNS_SMGR_TEST_IRQ,
+  SNS_SMGR_TEST_CONNECTIVITY,
+  SNS_SMGR_TEST_SELF_HW,
+  SNS_SMGR_TEST_SELF_SW,
+  SNS_SMGR_TEST_OEM
+} sns_smgr_test_type_e;
+
+/** Status of sensor test, used in sns_smgr_single_sensor_test_resp_msg
+  */
+enum {
+  SNS_SMGR_TEST_STATUS_SUCCESS = 0,
+  SNS_SMGR_TEST_STATUS_PENDING,
+  SNS_SMGR_TEST_STATUS_DEVICE_BUSY,     /**< Device is busy streaming */
+  SNS_SMGR_TEST_STATUS_INVALID_TEST,    /**< Test case is invalid/undefined */
+  SNS_SMGR_TEST_STATUS_INVALID_PARAM,   /**< Test parameter is invalid */
+  SNS_SMGR_TEST_STATUS_FAIL,            /**< Unspecified error */
+  SNS_SMGR_TEST_STATUS_BUSY_TESTING   /**< Another test is running; try later */
+} sns_smgr_test_status_e;
+
+/** Result of sensor test, used in sns_smgr_single_sensor_test_ind_msg
+  */
+enum {
+  SNS_SMGR_TEST_RESULT_PASS             = 0,
+  SNS_SMGR_TEST_RESULT_FAIL             = 1
+} sns_smgr_test_result_e;
+
+/** Identify sensor's operating mode
+  */
+enum {
+  SNS_SMGR_OP_MODE_POLLING,   /**< sensor is periodically polled by SMGR*/
+  SNS_SMGR_OP_MODE_DRI,       /**< sensor HW produces sample at one of the
+                                   rates the sensor is designed to support*/
+  SNS_SMGR_OP_MODE_FIFO       /**< FIFO mode is DRI mode in which multiple
+                                   samples are delivered by sensor HW together*/
+} sns_smgr_op_mode_e;
+
+/** Select the option for how reports will be generated when the unit is
+   stationary (not moving). This is a power saving feature. The goal is to
+   suspend sampling and/or reporting while the unit is at rest.
+
+   If all items of a report vote for NO_REPORT, that report is suspended
+   until motion resumes. However, if another item of this report votes to
+   continue reporting, this item is effectively promoted to REPORT_PRIOR.
+
+   REPORT_PRIOR votes to continue generating the report, but suspend sampling
+   the sensor named by this item, that is, keep reporting the last available
+   sample. However, if some other report votes to keep this sensor sampling,
+   then the prior sample continues to be updated.
+
+   REPORT_FULL votes to continue sampling this sensor and generating this
+   report.
+
+   REPORT_INTERIM votes to sample and report when hardware indicates motion
+   but the motion detection algorithm has not yet confirmed it.
+  */
+const  SNS_SMGR_REST_OPTION_NO_REPORT       = 0;
+const  SNS_SMGR_REST_OPTION_REPORT_PRIOR    = 1;
+const  SNS_SMGR_REST_OPTION_REPORT_FULL     = 2;
+const  SNS_SMGR_REST_OPTION_REPORT_INTERIM  = 3;
+
+/** The selection of calibration for sampled data in sensor report request message.
+  */
+const  SNS_SMGR_CAL_SEL_FULL_CAL            = 0;
+  /**< Raw sensor data + factory calibration(if available) + auto calibration
+       (if available) */
+
+const  SNS_SMGR_CAL_SEL_FACTORY_CAL         = 1;
+  /**< Raw sensor data + factory calibration(if available) */
+
+const  SNS_SMGR_CAL_SEL_RAW                 = 2;
+  /**< Un-calibrated, possibly interpolated, sensor data. */
+
+/** =============== Other Constants ===============*/
+
+
+const  SNS_SMGR_MAX_ITEMS_PER_REPORT = 10;
+  /**< Maximum number of sensor values in one report */
+
+const  SNS_SMGR_MAX_NUM_REASONS      = 10;
+  /**< Limit number of reason codes in a response message */
+
+/**< Valid report rate request and default. Rate request may be expressed as Hz
+     or msec interval */
+const  SNS_SMGR_REPORT_RATE_MIN_HZ   = 1;
+
+const  SNS_SMGR_REPORT_RATE_MAX_HZ   = 500;
+
+const  SNS_SMGR_REPORT_RATE_MIN_MSEC = 2000;
+  /**< Equivalent to 0.5 Hz */
+
+const  SNS_SMGR_REPORT_RATE_MAX_MSEC = 60000;
+  /**< 1 minute interval */
+
+const  SNS_SMGR_REPORT_RATE_DEFAULT  = 20;
+  /*<  Hz */
+  /**< Use default if in neither range */
+
+const  SNS_SMGR_SENSOR_DIMENSION         = 3;
+  /**< X,y,z axis for primary datatype
+       temperature for secondary datatype
+       others are reserved fields */
+
+const  SNS_SMGR_COMPENSATION_MATRIX_SIZE = 9;
+  /**< Size of the compensation matrix (in this case a 3x3 matrix) */
+
+const  SNS_SMGR_MAX_SENSOR_NUM           = 20;
+  /**< Maximum sensor numbers */
+
+const  SNS_SMGR_MAX_SENSOR_NAME_SIZE     = 80;
+  /**< Maximum number of bytes to store a sensor name */
+
+const  SNS_SMGR_MAX_VENDOR_NAME_SIZE     = 20;
+  /**< Maximum number of bytes to store a sensor name */
+
+
+const  SNS_SMGR_SHORT_SENSOR_NAME_SIZE   = 16;
+  /**< Number of bytes to store a short sensor name */
+
+const  SNS_SMGR_MAX_DATA_TYPE_PER_SENSOR = 3;
+  /**< Maximum data type per sensor, depending on the sensor */
+
+const  SNS_SMGR_CAL_APPLY                = 0;
+  /**< Apply the dynamic calibration data for this report */
+
+const  SNS_SMGR_CAL_DYNAMIC              = SNS_SMGR_CAL_APPLY;
+  /**< Apply the dynamic calibration data for this report */
+
+const  SNS_SMGR_CAL_SAVE                 = 1;
+  /**< This definition is defined for future use, and shall not be used until
+       announce to be used */
+
+const  SNS_SMGR_CAL_FACTORY              = 2;
+  /**< Apply the factory calibration data for this report */
+
+const  SNS_SMGR_POWER_STATUS_ADD         = 0;
+  /**< To add report in sns_smgr_sensor_power_status_req_msg */
+
+
+const  SNS_SMGR_POWER_STATUS_DEL         = 1;
+  /**< To delete report in sns_smgr_sensor_power_status_req_msg */
+
+const  SNS_SMGR_POWER_STATE_NO_CHANGE    = 0;
+  /**< No change since last status report sns_smgr_sensor_power_status_s */
+
+const  SNS_SMGR_POWER_STATE_GO_ACTIVE    = 1;
+  /**< Sensor went active since last report in sns_smgr_sensor_power_status_s */
+
+const  SNS_SMGR_POWER_STATE_GO_LOW_POWER = 2;
+  /**< Sensor went low power since last report in sns_smgr_sensor_power_status_s */
+
+const  SNS_SMGR_POWER_STATE_CYCLE_ACTIVE_AND_LOW =3;
+  /**< Sensor cycled through active and low power since last report in
+       sns_smgr_sensor_power_status_s */
+
+const  SNS_SMGR_POWER_CTRL_AUTO          = 0;
+  /**< Automatic control (default) in sns_smgr_sensor_power_control_req_msg */
+
+const  SNS_SMGR_POWER_CTRL_ACTIVE        = 1;
+  /**< Active state - command the max power state in
+       sns_smgr_sensor_power_control_req_msg */
+
+const  SNS_SMGR_POWER_CTRL_IDLE          = 2;
+  /**< Idle state - command the low power state in
+       sns_smgr_sensor_power_control_req_msg */
+
+const  SNS_SMGR_POWER_CTRL_OFF           = 3;
+  /**< Off state - not possible in 8660 DSPS in sns_smgr_sensor_power_control_req_msg */
+
+const  SNS_SMGR_SENSOR_STATUS_ADD        = 0;
+  /**< To add report in sns_smgr_sensor_status_req_msg */
+
+const  SNS_SMGR_SENSOR_STATUS_DEL        = 1;
+  /**< To delete report in sns_smgr_sensor_status_req_msg */
+
+/** Define sensor state used in sns_smgr_sensor_status_ind_msg */
+const SNS_SMGR_SENSOR_STATUS_UNKNOWN    = 0;
+const SNS_SMGR_SENSOR_STATUS_IDLE       = 1;
+const SNS_SMGR_SENSOR_STATUS_ACTIVE     = 2;
+const SNS_SMGR_SENSOR_STATUS_ONE_CLIENT = 3;
+
+const SNS_SMGR_MAX_SUPPORTED_ODR_NUM     = 100;
+/**< Maximum num of ODRs sensor could support */
+
+/** Bit values for sample quality field in sensor report requests */
+const  SNS_SMGR_SAMPLE_QUALITY_ACCURATE_TIMESTAMP = 1;
+
+
+/** =============== Buffering Specific Constants ===============*/
+
+/** Defines the actions used in buffering requests */
+const  SNS_SMGR_BUFFERING_ACTION_ADD     = 1;
+const  SNS_SMGR_BUFFERING_ACTION_DELETE  = 2;
+
+const  SNS_SMGR_BUFFERING_REQUEST_MAX_ITEMS = 5;
+  /**< Maximum number of sensor/data type pairs in one Buffering request */
+
+const  SNS_SMGR_BUFFERING_REPORT_MAX_SAMPLES = 100;
+  /**< Maximum number of samples in one Buffering report */
+
+const  SNS_SMGR_BUFFERING_REPORT_RATE_NONE   = 0;
+  /**< Buffering reports sent only when queried */
+
+
+/** =============== Sampling Rate Specific Constants ===============*/
+
+const  SNS_SMGR_SAMPLING_RATE_INVERSION_POINT    = 1000;
+  /**< Requested sampling rates above this value (non-inclusive) will be
+       interpreted as a desired period in milliseconds.
+       IMPORTANT! This inversion point is ONLY VALID for the following fields:
+       - sns_smgr_periodic_report_req_msg -> ReportRate
+       - sns_smgr_periodic_report_ind_msg -> CurrentRate
+       - sns_smgr_buffering_req_item_s -> SamplingRate
+  */
+
+const SNS_SMGR_SAMPLE_RATE_MIN_PERIOD_MSEC       = 60000;
+
+
+/* Item definition. The client may request multiple items for the report. This
+   structure contains the data for one item. */
+
+struct {
+  uint8                   SensorId;
+  /**< Defines the sensor that this configuration pertains to. The sensor can be
+    one of following:
+    - 00 - SNS_SMGR_ID_ACCEL
+    - 10 - SNS_SMGR_ID_GYRO
+    - 20 - SNS_SMGR_ID_MAG
+    - 30 - SNS_SMGR_ID_PRESSURE
+    - 40 - SNS_SMGR_ID_PROX_LIGHT
+    - 50 - SNS_SMGR_ID_HUMIDITY
+    - 60 - SNS_SMGR_ID_RGB
+    - 70 - SNS_SMGR_ID_SAR
+    - 80 - SNS_SMGR_ID_HALL_EFFECT
+    - 90 - SNS_SMGR_ID_HEART_RATE
+    - 220 - SNS_SMGR_ID_STEP_EVENT
+    - 222 - SNS_SMGR_ID_STEP_COUNT
+    - 224 - SNS_SMGR_ID_SMD
+    - 226 - SNS_SMGR_ID_GAME_ROTATION_VECTOR
+    - 228 - SNS_SMGR_ID_IR_GESTURE
+    - 230 - SNS_SMGR_ID_TAP
+    - 240-249 - SNS_SMGR_ID_OEM_SENSOR_XX
+    - All other values defined as SNS_SMGR_ID_XXXX style are reserved for future use
+  */
+
+  uint8                   DataType;
+  /**< Defines sensor data type which classifies if the data type is primary
+    or secondary.
+    - 00 - SNS_SMGR_DATA_TYPE_PRIMARY
+    - 01 - SNS_SMGR_DATA_TYPE_SECONDARY
+    - All other values defined as SNS_SMGR_DATA_TYPE_XXXX style are reserved for future use
+      This parameter identifies the sensor data type.
+   */
+
+  uint8                   Sensitivity;
+  /**< This parameter is defined for future use and is NOT implemented.
+       This value shall be set to 0.
+  */
+
+  uint8                   Decimation;
+  /**< Defines decimation option for this item in this report
+    - 01 - SNS_SMGR_DECIMATION_RECENT_SAMPLE
+    - 03 - SNS_SMGR_DECIMATION_FILTER
+    - All other values defined as SNS_SMGR_DECIMATION_XXXX style are reserved
+      for future use
+    The SNS_SMGR_DECIMATION_FILTER option can used only for accelerometer and
+    gyro sensor type to reduce data noise.
+    When SNS_SMGR_DECIMATION_FILTER option is set, multiple samples could be
+    used for one report.
+   */
+
+  uint16                  MinSampleRate;
+  /**< This parameter is defined for future use and is NOT implemented.
+       This value shall be set to 0. */
+
+  uint8                   StationaryOption;
+  /**< This parameter is defined for future use and is NOT implemented.
+       This value shall be set to 0. */
+
+  boolean                 DoThresholdTest;
+  /**< This parameter is defined for future use and is NOT implemented.
+       This value shall be set to 0. */
+
+  boolean                 ThresholdOutsideMinMax;
+  /**< This parameter is defined for future use and is NOT implemented.
+       This value shall be set to 0. */
+
+  boolean                 ThresholdDelta;
+  /**< This parameter is defined for future use and is NOT implemented.
+       This value shall be set to 0. */
+
+  boolean                 ThresholdAllAxes;
+  /**< This parameter is defined for future use and is NOT implemented.
+       This value shall be set to 0. */
+
+  int32                   ThresholdMinMax[2];
+  /**< This parameter is defined for future use and is NOT implemented.
+       This value shall be set to 0. */
+
+} sns_smgr_periodic_report_item_s;
+
+
+struct {
+  uint8                            ItemNum;
+  /**< The Item parameter number in the request msg */
+  uint8                            Reason;
+  /**< Defines reason codes:
+    - 00 - SNS_SMGR_REASON_NULL
+    - 10 - SNS_SMGR_REASON_DEFAULT_RATE
+    - 12 - SNS_SMGR_REASON_DEFAULT_DECIM
+    - 15 - SNS_SMGR_REASON_UNKNOWN_SENSOR
+    - 16 - SNS_SMGR_REASON_FAILED_SENSOR
+    - 17 - SNS_SMGR_REASON_OTHER_FAILURE
+    - 18 - SNS_SMGR_REASON_SAMPLING_RATE
+    - 19 - SNS_SMGR_REASON_SAMPLE_QUALITY_NORMAL
+    - All other values defined as SNS_SMGR_REASON_XXXX style are reserved for future use
+  */
+} sns_smgr_reason_pair_s;
+
+
+/**   Standard Data Item
+    A standard data item contains a timestamp and 3 data values plus status.
+    For 3-axis sensors, the data represents XYZ axis measurements. For
+    single (eg temperature) or double (eg touch screen) valued sensors, only
+    1 or 2 of the values is used. The structure may be used for raw
+    measurements or engineering units.
+*/
+struct {
+
+  uint8                       SensorId;
+  /**< Defines the sensor that this configuration pertains to. Refer to the
+       Sensor ID table defined under "Define sensor identifier" .
+  */
+
+  uint8                       DataType;
+  /**< Defines sensor data type which classifies if the data type is primary
+    or secondary.
+    - 00 - SNS_SMGR_DATA_TYPE_PRIMARY
+    - 01 - SNS_SMGR_DATA_TYPE_SECONDARY
+    - All other values defined as SNS_SMGR_DATA_TYPE_XXXX style are reserved
+      for future use
+      This parameter identifies the sensor data type.
+   */
+  int32                       ItemData[3];
+  /**< For 3-axis items such as accelerometer, gyro, and magnetometer,
+     words [0] to [2] are XYZ. For other items, only the first
+     word is used. The units are defined as following:
+     - ACCEL       : m/s2
+     - GYRO        : rad/s
+     - MAG         : Gauss
+     - PRESSURE    : hPa
+     - PROX        : FAR=0, NEAR=1. Note: still in Q16 format
+     - LIGHT       : lx
+     - TEMPERATURE : Celsius
+     - HUMIDITY    : percentage in Q16
+     - RGB         : Raw ADC counts : X = Red, Y = Green, Z = Blue
+     - SAR         : FAR=0, NEAR=non negative number indicating the sensor touched
+     - HALL_EFFECT : Mag Field present=1, Mag Field not present=0
+     - HEART_RATE  : X, Y, Z = Heart rate in bpm/Unitless raw data from the sensor
+     - CT_C        : X = Color temperature in Q16 (deg Kelvin), Y = Raw ADC counts
+                     for Clear data, Z = Reserved
+     - STEP        : 1 - a step is detected
+     - STEP_COUNT  : number of steps taken
+     - SMD         : 1 - SMD was detected
+     - GAME_ROTATION_VECTOR : quaternion values (Q16)
+     - IR_GESTURE  : (revision 10: Sensor ID defined, but not used)
+     - DOUBLE-TAP/PRIMARY :
+     - SINGLE-TAP/SECONDARY: Dimension-less (raw) value indicating the source of
+                             the tap event, relative to the device. (Consider the
+                             device as a point mass located at the origin (0,0,0)
+                             of the Cartesian coordinate system.)
+
+                             0 = no tap event,      1 = tap from +X axis, 2 = tap from -X axis,
+                             3 = tap from +Y axis,  4 = tap from -Y axis, 5 = tap from +Z axis,
+                             6 = tap from -Z axis,  7 = tap along X axis, 8 = tap along Y axis,
+                             9 = tap along Z axis, 10 = tap event (unknown axis)
+
+     - OEM_SENSOR  : (OEM-defined)
+  */
+  uint32                      TimeStamp;
+  /**< The timestamp when the sample is made in ticks. */
+
+  uint8                       ItemFlags;
+  /**< Defines the item flags. This bit flags have meanings following:
+    - 00 - Normal
+    - 08 - SNS_SMGR_ITEM_FLAG_INVALID
+    - 16 - SNS_SMGR_ITEM_FLAG_FAC_CAL : Factory calibration data was applied
+    - 32 - SNS_SMGR_ITEM_FLAG_AUTO_CAL: Auto calibration data was applied
+    - All other values defined as SNS_SMGR_ITEM_FLAG_XXXX style are reserved
+      for future use
+  */
+
+  uint8                       ItemQuality;
+  /**< Defines the item quality which is associated with the ItemFlags.
+    - 00 - SNS_SMGR_ITEM_QUALITY_CURRENT_SAMPLE
+    - 05 - SNS_SMGR_ITEM_QUALITY_FILTERED
+    - 10 - SNS_SMGR_ITEM_QUALITY_INVALID_FAILED_SENSOR
+    - 11 - SNS_SMGR_ITEM_QUALITY_INVALID_NOT_READY
+    - 13 - SNS_SMGR_ITEM_QUALITY_INTERPOLATED
+    - 14 - SNS_SMGR_ITEM_QUALITY_INTERPOLATED_FILTERED
+    - All other values defined as SNS_SMGR_ITEM_QUALITY_XXXX style are reserved
+      for future use
+  */
+
+  uint8                       ItemSensitivity;
+  /**< This field is defined for future use and is NOT implemented.
+       Any value in this field shall not be referenced.
+  */
+
+} sns_smgr_data_item_s;
+
+
+//* structure for sensor information */
+struct {
+  uint8     SensorID;
+  /**< Defines the sensor that this configuration pertains to. Refer to the
+       Sensor ID table defined under "Define sensor identifier" .
+  */
+
+  char      SensorShortName<SNS_SMGR_SHORT_SENSOR_NAME_SIZE>;
+  /**< The value is a short sensor name:
+  "ACCEL"
+  "GYRO"
+  "MAG"
+  "PROX_LIGHT"
+  "PRESSURE"
+  "HUMIDITY"
+  "RGB"
+  "SAR"
+  "HALL_EFFECT"
+  "HEART_RATE"
+  */
+
+} sns_smgr_sensor_id_info_s;
+
+
+//* structure for sensor data type information */
+struct {
+  uint8             SensorID;
+  /**< Defines the sensor that this configuration pertains to. Refer to the
+       Sensor ID table defined under "Define sensor identifier" .
+  */
+
+  uint8             DataType;
+  /**< Defines sensor data type which classifies if the data type is primary
+    or secondary.
+    - 00 - SNS_SMGR_DATA_TYPE_PRIMARY
+    - 01 - SNS_SMGR_DATA_TYPE_SECONDARY
+    - All other values defined as SNS_SMGR_IDSNS_SMGR_DATA_TYPE_XXXX style are
+      reserved for future use
+  */
+  char              SensorName<SNS_SMGR_MAX_SENSOR_NAME_SIZE>;
+  /**< The model name of the sensor
+  */
+  char              VendorName<SNS_SMGR_MAX_VENDOR_NAME_SIZE>;
+  /**< The vendor name of the sensor */
+  uint32            Version;
+  /**< The version of sensor module */
+  uint16            MaxSampleRate;
+  /**< The maximum freq value that the sensor can stream */
+  uint16            IdlePower;
+  /**< Power consumption in uA when the sensor is in IDLE mode */
+  uint16            MaxPower;
+  /**< Power consumption in uA when the sensor is in operation mode */
+  uint32            MaxRange;
+  /**< The maximum range that the sensor can support in nominal engineering units.
+       This value is represented by Q16 format */
+  uint32            Resolution;
+  /**< The resolution that the sensor uses in nominal engineering units.
+       This value is represented by Q16 format */
+ } sns_smgr_sensor_datatype_info_s;
+
+//* structure for sensor information */
+struct {
+  sns_smgr_sensor_datatype_info_s data_type_info<SNS_SMGR_MAX_DATA_TYPE_PER_SENSOR>;
+ } sns_smgr_sensor_info_s;
+
+//* structure for sensor supported ODR list
+struct {
+  uint16 odrs< SNS_SMGR_MAX_SUPPORTED_ODR_NUM >;
+ } sns_smgr_odr_list_s;
+
+
+ //* structure for sensor information */
+struct {
+  uint8             SensorID;
+  /**< see #define SNS_SMGR_ID_XXX_XXX */
+  boolean           BusCanAccessSensor;
+  boolean           CanCommandSensor;
+  boolean           CanReadSensorStatus;
+  boolean           CanReadSensorData;
+  boolean           DataShowsNoise;
+  boolean           CanReadFactoryCalibrationROM;
+  boolean           ValidSelfTestReport;
+  boolean           CanReceiveInterrupt;
+ } sns_smgr_sensor_test_result_s;
+
+
+//* structure for sensor information */
+struct {
+  uint8             SensorID;
+  /**< see #define SNS_SMGR_ID_XXX_XXX */
+  uint8             PowerAction;
+  /**< see #define SNS_SMGR_POWER_STATE_XXX */
+  uint32            ActiveTimeStamp;
+  /**< Timestamp when state changed to Active */
+  uint32            LowPowerTimeStamp;
+  /**< Timestamp when state changed to Low*/
+  uint32            CycleCount;
+  /**< Number of power state change between on and off since last report*/
+} sns_smgr_sensor_power_status_s;
+
+/** We allow status updates for sensor status by processor, the following
+    constants define the processor mappings  */
+const  SNS_SMGR_DSPS_CLIENTS     = 0;
+  /**< Clients on the dedicated sensors processor (DSPS/ADSP) */
+const  SNS_SMGR_APPS_CLIENTS    = 1;
+  /**< Clients on the processor running the HLOS */
+const  SNS_SMGR_MODEM_CLIENT    = 2;
+  /**< Clients on the modem processor */
+
+
+/** Buffering request item definition. This structure specifies information
+   client must provide for each of the requested items. */
+
+struct {
+  uint8                 SensorId;
+  /**< Identifies the sensor to be sampled for data.  The valid sensors are:
+    - SNS_SMGR_ID_ACCEL
+    - SNS_SMGR_ID_GYRO
+    - SNS_SMGR_ID_MAG
+    - SNS_SMGR_ID_PRESSURE
+    - SNS_SMGR_ID_PROX_LIGHT
+    - SNS_SMGR_ID_HUMIDITY
+    - SNS_SMGR_ID_RGB
+    - SNS_SMGR_ID_SAR
+    - SNS_SMGR_ID_HALL_EFFECT
+    - SNS_SMGR_ID_HEART_RATE
+    - SNS_SMGR_ID_STEP_EVENT
+    - SNS_SMGR_ID_STEP_COUNT
+    - SNS_SMGR_ID_SMD
+    - SNS_SMGR_ID_GAME_ROTATION_VECTOR
+    - SNS_SMGR_ID_IR_GESTURE
+    - SNS_SMGR_ID_TAP
+    - SNS_SMGR_OEM_SENSOR_XX
+    - All other values defined as SNS_SMGR_ID_XXXX style are reserved for future use
+  */
+
+  uint8                 DataType;
+  /**< Identifies which data type of the specified sensor is being requested.
+    - SNS_SMGR_DATA_TYPE_PRIMARY
+    - SNS_SMGR_DATA_TYPE_SECONDARY
+    - All other values defined as SNS_SMGR_DATA_TYPE_XXXX style are reserved for
+      future use
+      This parameter identifies the sensor data type.
+   */
+
+  uint8                 Decimation;
+  /**< Specifies decimation option for samples belonging to this item
+    - SNS_SMGR_DECIMATION_RECENT_SAMPLE
+    - SNS_SMGR_DECIMATION_FILTER
+    - All other values will be rejected.
+    The SNS_SMGR_DECIMATION_FILTER option is only applicable for ACCEL, GYRO,
+    and MAG sensor types to reduce data noise.  When SNS_SMGR_DECIMATION_FILTER
+    option is specified, multiple samples could be used for one report.
+   */
+
+  uint8                 Calibration;
+  /**< Specifies how raw data is to be calibrated
+    - SNS_SMGR_CAL_SEL_FULL_CAL
+    - SNS_SMGR_CAL_SEL_FACTORY_CAL
+    - SNS_SMGR_CAL_SEL_RAW
+    - All other values will be rejected
+    */
+
+  uint16                SamplingRate;
+  /**< Specifies the frequency at which sensor is sampled.
+    This value shall be within the sensor capacity,                                       .
+    expressed in integer format and in unit of Hz.
+    Values outside of sensor capacity will be rejected.
+    If this value is greater than SNS_SMGR_SAMPLING_RATE_INVERSION_POINT,
+    then it will be interpreted as the sampling period, in milliseconds. This
+    allows a client to sample the sensor at a rate less than 1 Hz. It is not
+    recommended to sample any sensor but environmental sensors at a rate less
+    than 1 Hz.
+  */
+
+  uint16                SampleQuality;
+  /**< Specifies the desired quality of sensor data
+    - SNS_SMGR_SAMPLE_QUALITY_ACCURATE_TIMESTAMP - High accuracy for sample timestamp.
+      Delivery sampling rate may be up to twice the requested sampling rate,
+      and may also result in higher report rate.
+      Clients are recommended to specify 50, 100, or 200Hz sampling rates to
+      minimize the chance of increase in sampling rate.
+    */
+
+} sns_smgr_buffering_req_item_s;
+
+
+/** Sample structure in Buffering report
+    For 3-axis sensors, the data represents XYZ axis measurements. For
+    single (eg temperature) or double (eg touch screen) valued sensors, only
+    1 or 2 of the values is used. The structure may be used for raw
+    measurements or engineering units.
+*/
+struct {
+
+  int32                       Data[SNS_SMGR_SENSOR_DIMENSION];
+  /**< Each sample can have up to SNS_SMGR_SENSOR_DIMENSION words, each word
+    is in Q16 format and in the units specific to the sensor/data type pair.
+    For 3-axis samples, Data[0], Data[1], and Data[2] are X, Y, and Z axis,
+    respectively.  For others, only Data[0] has valid measurement.
+     - ACCEL/PRIMARY        : 3 axes, each in meter/second squared (m/s2)
+     - GYRO/PRIMARY         : 3 axes, each in radian/second (rad/s)
+     - MAG/PRIMARY          : 3 axes, each in Gauss
+     - PRESSURE/PRIMARY     : 1 axis, in hectopascal (hPa)
+     - PROX/PRIMARY         : 1 axis, FAR=0, NEAR=1
+     - RGB/PRIMARY          : 3 axis, X axis = raw Red counts, Y axis = raw Green counts,
+                              Z axis = raw Blue counts
+     - SAR/PRIMARY          : 1 axis, FAR=0, NEAR=non negative number indicating the sensor touched
+     - HALL_EFFECT/PRIMARY  : 1 axis, Mag Field present=1, Mag Field not present=0
+     - HEART_RATE/PRIMARY   : 3 axes, X is heart rate in bpm / each is unitless raw data from sensor
+     - HEART_RATE/SECONDARY : 3 axes, each is unitless raw data from sensor
+     - ACCEL/SECONDARY      : 1 axis, in Celsius
+     - GYRO/SECONDARY       : 1 axis, in Celsius
+     - MAG/SECONDARY        : 1 axis, in Celsius
+     - PRESSURE/SECONDARY   : 1 axis, in Celsius
+     - PROX/SECONDARY       : 1 axis, in Lux
+     - RGB/SECONDARY        : 3 axis, X axis = Color temperature in Q16 (deg Kelvin),
+                              Y axis = raw Clear counts , Z axis = Reserved
+     - IR_GESTURE           : (revision 10: Sensor ID defined, but not used)
+     - DOUBLE-TAP/PRIMARY   :
+     - SINGLE-TAP/SECONDARY:  Dimension-less (raw) value indicating the source of the tap
+                              event, relative to the device. (Consider the device as a
+                              point mass located at the origin (0,0,0)
+                              of the Cartesian coordinate system.)
+
+                              0 = no tap event,      1 = tap from +X axis, 2 = tap from -X axis,
+                              3 = tap from +Y axis,  4 = tap from -Y axis, 5 = tap from +Z axis,
+                              6 = tap from -Z axis,  7 = tap along X axis, 8 = tap along Y axis,
+                              9 = tap along Z axis, 10 = tap event (unknown axis)
+
+     - OEM_SENSOR  : (OEM-defined)
+  */
+
+  uint16                      TimeStampOffset;
+  /**< The offset from timestamps of previous sample in report (in SSC ticks).
+       Note: The maximum timestamp offset that can be portrayed with this
+       field is a little less than 2 seconds. */
+
+  uint8                       Flags;
+  /**< Status flags of this sample.
+    - raw data
+    - SNS_SMGR_ITEM_FLAG_INVALID
+    - SNS_SMGR_ITEM_FLAG_FAC_CAL : Factory calibration data was applied
+    - SNS_SMGR_ITEM_FLAG_AUTO_CAL: Auto calibration data was applied
+    - All other values defined as SNS_SMGR_ITEM_FLAG_XXXX style are reserved
+      for future use
+  */
+
+  uint8                       Quality;
+  /**< Quality of this sample.
+    - SNS_SMGR_ITEM_QUALITY_CURRENT_SAMPLE
+    - SNS_SMGR_ITEM_QUALITY_FILTERED
+    - SNS_SMGR_ITEM_QUALITY_INTERPOLATED
+    - SNS_SMGR_ITEM_QUALITY_INTERPOLATED_FILTERED
+    - SNS_SMGR_ITEM_QUALITY_INVALID_FAILED_SENSOR
+    - SNS_SMGR_ITEM_QUALITY_INVALID_NOT_READY
+    - All other values defined as SNS_SMGR_ITEM_QUALITY_XXXX style are reserved
+      for future use
+  */
+
+} sns_smgr_buffering_sample_s;
+
+
+/**   Index structure used in Buffering report */
+struct {
+
+  uint8                       SensorId;
+  /**< Identifies the sensor to which the samples belong.  This shall match one of
+    the requested sensors.
+  */
+
+  uint8                       DataType;
+  /**< Identifies the data type of the specified sensor to which the samples belong.
+   */
+
+  uint8                       FirstSampleIdx;
+  /**< Index into Samples data of the first sample belonging to this
+    SensorId/DataType pair.
+   */
+
+  uint8                       SampleCount;
+  /**< Number of samples belonging to this SensorId/DataType pair.
+   */
+
+  uint32                      FirstSampleTimestamp;
+  /**< Timestamp of first sample belonging to this SensorId/DataType pair. (in SSC ticks)
+    */
+
+  uint32                      SamplingRate;
+  /**< Specifies the frequency at which sensor is actually sampled. This value
+       is expressed in Q16 format and in unit of Hz.
+    */
+} sns_smgr_buffering_sample_index_s;
+
+
+/** Sensor Buffering Report Message sent to a client at the reporting rate.
+*/
+
+//!============================================================================
+/** @COMMAND SNS_SMGR_BUFFERING_IND
+    @BRIEF This command requests sensor data to be sampled and buffered up
+    @USAGE Production
+    @SECURITY_LEVEL Medium Risk
+    @REQUIRED_ACTION Default
+*/
+//!============================================================================
+
+//! @MSG     SNS_SMGR_BUFFERING_IND
+//! @TYPE    Indication
+//! @SENDER  Service
+message {
+
+  mandatory uint8                 ReportId;
+  /**< The ID corresponding to a Buffering request */
+
+  mandatory sns_smgr_buffering_sample_index_s Indices<SNS_SMGR_BUFFERING_REQUEST_MAX_ITEMS>;
+  /**< Identifies which items in Samples belong to which SensorId/DataType pair
+    specified in Buffering request */
+
+  mandatory sns_smgr_buffering_sample_s  Samples<SNS_SMGR_BUFFERING_REPORT_MAX_SAMPLES>;
+  /**< Samples collected since previous report
+    Depending on whether Batching is in effect, this may contain samples for
+    only one of the requested items, or it may contain samples for all of them.
+
+    Note: If any overflow is expected in the TimeStampOffset fields within
+          this field, the SMGR will split each sample into its own indication
+          and send indications back-to-back. */
+
+  //! @VERSION 1.15
+  optional uint8 IndType;
+  /**< Optional batch indication type
+       SNS_BATCH_ONLY_IND - Standalone batch indication. Not part of a back to
+         back indication stream
+       SNS_BATCH_FIRST_IND - First indication in stream of back to back indications
+       SNS_BATCH_INTERMEDIATE_IND - Intermediate indication in stream of back to
+         back indications
+       SNS_BATCH_LAST_IND - Last indication in stream of back to back indications
+    */
+
+} sns_smgr_buffering_ind_msg;
+
+
+
+//============================================================================
+// File footer
+//============================================================================
+/**
+@FOOTER
+*/
+//============================================================================
+// End of Module
+//============================================================================
